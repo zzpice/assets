@@ -11,7 +11,7 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageDraw, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".svg"}
@@ -60,6 +60,18 @@ def svg_size(data):
     return 0, 0
 
 
+def validate_icon(image, image_format, path):
+    if not path.endswith(".png") or image_format != "PNG" or image is None:
+        raise ValueError(f"{path}: 图标必须使用 PNG 格式")
+    if image.size != (512, 512) or image.mode != "RGBA":
+        raise ValueError(f"{path}: 图标必须为 512×512 PNG、RGBA，实际为 {image.size[0]}×{image.size[1]}、{image.mode}")
+    mask = Image.new("L", (512, 512), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, 511, 511], radius=115, fill=255)
+    outside = ImageChops.multiply(image.getchannel("A"), ImageChops.invert(mask))
+    if outside.getbbox() is not None:
+        raise ValueError(f"{path}: r=115 圆角外侧必须完全透明")
+
+
 def usable_preview(root, path, width, height):
     if not isinstance(path, str) or not path.startswith("app/previews/"):
         return False
@@ -95,10 +107,12 @@ def build_catalog(root):
         old = metadata.get(path, {})
         same_source = old.get("sha") in {None, sha}
         image = None
+        image_format = None
         if relative.suffix == ".svg":
             width, height = svg_size(data)
         else:
             with Image.open(io.BytesIO(data)) as original:
+                image_format = original.format
                 image = ImageOps.exif_transpose(original)
                 image.load()
             width, height = image.size
@@ -115,6 +129,7 @@ def build_catalog(root):
             match = re.fullmatch(r"icons/([a-z0-9-]+)/[a-z0-9][a-z0-9-]*\.[a-z0-9]+", path)
             if not match:
                 raise ValueError(f"{path}: 图标路径应为 icons/<种类>/<名称>.<格式>")
+            validate_icon(image, image_format, path)
             kind, category = "icon", match[1]
         else:
             kind = "other"

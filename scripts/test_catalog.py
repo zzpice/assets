@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
 from update_catalog import infer_device, update
 
@@ -77,7 +77,9 @@ class CatalogTests(unittest.TestCase):
     def test_icons_keep_originals_without_duplicate_previews(self):
         icon = self.root / "icons/ai/example.png"
         icon.parent.mkdir(parents=True)
-        Image.new("RGBA", (512, 512), "red").save(icon)
+        image = Image.new("RGBA", (512, 512), (0, 0, 0, 0))
+        ImageDraw.Draw(image).ellipse([100, 100, 411, 411], fill="red")
+        image.save(icon)
         before = icon.read_bytes()
         update(self.root)
         item = next(item for item in self.catalog()["assets"] if item["path"] == "icons/ai/example.png")
@@ -87,6 +89,37 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(icon.read_bytes(), before)
         self.assertEqual(len(list((self.root / "app/previews").glob("*.webp"))), 1)
         update(self.root, check=True)
+
+    def test_icons_reject_wrong_dimensions_or_color_mode(self):
+        icon = self.root / "icons/ai/example.png"
+        icon.parent.mkdir(parents=True)
+        for mode, size in [("RGB", (512, 512)), ("RGBA", (256, 256))]:
+            with self.subTest(mode=mode, size=size):
+                Image.new(mode, size).save(icon)
+                with self.assertRaisesRegex(ValueError, "512×512 PNG、RGBA"):
+                    update(self.root)
+
+    def test_icons_reject_visible_pixels_outside_the_rounded_mask(self):
+        icon = self.root / "icons/proxy/example.png"
+        icon.parent.mkdir(parents=True)
+        for point in [(0, 0), (30, 30)]:
+            with self.subTest(point=point):
+                image = Image.new("RGBA", (512, 512), (0, 0, 0, 0))
+                image.putpixel(point, (255, 0, 0, 255))
+                image.save(icon)
+                with self.assertRaisesRegex(ValueError, "r=115 圆角外侧必须完全透明"):
+                    update(self.root)
+
+    def test_icons_reject_non_png_formats_and_disguised_jpeg(self):
+        icon = self.root / "icons/ai/example.png"
+        icon.parent.mkdir(parents=True)
+        Image.new("RGB", (512, 512)).save(icon, format="JPEG")
+        with self.assertRaisesRegex(ValueError, "PNG 格式"):
+            update(self.root)
+        icon.unlink()
+        (icon.parent / "example.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"/>')
+        with self.assertRaisesRegex(ValueError, "PNG 格式"):
+            update(self.root)
 
     def test_device_is_explicit_and_preserved(self):
         update(self.root)

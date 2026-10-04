@@ -23,6 +23,16 @@
       "sha": "33b82d2a93c51edebc41f614e9129d1e3f7b160e"
     },
     {
+      "path": "icons/ai/copilot.png",
+      "title": "Microsoft Copilot",
+      "kind": "icon",
+      "category": "ai",
+      "width": 512,
+      "height": 512,
+      "size": 70735,
+      "sha": "028bfea5d07d596f39118bf119e1534c0db9633f"
+    },
+    {
       "path": "icons/ai/deepseek.png",
       "title": "DeepSeek",
       "kind": "icon",
@@ -74,7 +84,7 @@
     },
     {
       "path": "icons/ai/openai.png",
-      "title": "OpenAI",
+      "title": "OpenAI / ChatGPT",
       "kind": "icon",
       "category": "ai",
       "width": 512,
@@ -101,6 +111,48 @@
       "height": 512,
       "size": 67469,
       "sha": "8137350587553ed53fdf5ebc7db84aed1d904aba"
+    },
+    {
+      "path": "icons/browsers/chrome.png",
+      "title": "Chrome",
+      "kind": "icon",
+      "category": "browsers",
+      "width": 512,
+      "height": 512,
+      "size": 62029,
+      "sha": "679bdd782f5bc9fb7974ad4593923a9085bd67d7"
+    },
+    {
+      "path": "icons/browsers/edge.png",
+      "title": "Microsoft Edge",
+      "kind": "icon",
+      "category": "browsers",
+      "width": 512,
+      "height": 512,
+      "size": 97736,
+      "sha": "d547a6adc96f6915ddb1a8a94314753a7b073144"
+    },
+    {
+      "path": "icons/browsers/firefox.png",
+      "title": "Firefox",
+      "kind": "icon",
+      "category": "browsers",
+      "width": 512,
+      "height": 512,
+      "note": "采用 Dashboard Icons PNG；保留原始像素尺寸，居中填充透明画布至 512×512。",
+      "size": 109537,
+      "sha": "7ff5928346be37d0256f9851b703299bd85e8ba5"
+    },
+    {
+      "path": "icons/browsers/safari.png",
+      "title": "Safari",
+      "kind": "icon",
+      "category": "browsers",
+      "width": 512,
+      "height": 512,
+      "note": "采用 Dashboard Icons PNG；仅将 r=115 圆角外侧 alpha 置零。",
+      "size": 39962,
+      "sha": "8e88fcaffd41d3f50c89a23e3f8315429ea63823"
     },
     {
       "path": "icons/communication/dingtalk.png",
@@ -143,6 +195,16 @@
       "sha": "9670725bdddf1626f240d532d77c9cdd0394acc2"
     },
     {
+      "path": "icons/communication/netease-mail.png",
+      "title": "网易邮箱",
+      "kind": "icon",
+      "category": "communication",
+      "width": 512,
+      "height": 512,
+      "size": 46384,
+      "sha": "971b83a19c9b62bc85bb31f766559ff6a56e1c99"
+    },
+    {
       "path": "icons/communication/outlook.png",
       "title": "Outlook",
       "kind": "icon",
@@ -151,6 +213,16 @@
       "height": 512,
       "size": 74738,
       "sha": "55f86958139e6756d59f6a4bf1b78390caf7c9aa"
+    },
+    {
+      "path": "icons/communication/qq-mail.png",
+      "title": "QQ 邮箱",
+      "kind": "icon",
+      "category": "communication",
+      "width": 512,
+      "height": 512,
+      "size": 118311,
+      "sha": "a22cd3ce409b67b56c1467ebf19fd1f9339db6be"
     },
     {
       "path": "icons/communication/qq.png",
@@ -223,14 +295,14 @@
       "sha": "8c7a757fde20d08923ba297c3e4b96f450c0d01d"
     },
     {
-      "path": "icons/development/cloudflare.png",
-      "title": "Cloudflare",
+      "path": "icons/development/azure.png",
+      "title": "Azure",
       "kind": "icon",
       "category": "development",
       "width": 512,
       "height": 512,
-      "size": 34191,
-      "sha": "865645e46e36bb471b8201c8f68f8408c32b41cd"
+      "size": 102764,
+      "sha": "cb5f235374d49102b47ec60c9c48944e70c3e172"
     },
     {
       "path": "icons/development/cursor.png",
@@ -263,24 +335,46 @@
       "sha": "e0d6dc5c4fcaa2d277e09288f0f8ef60951eedc2"
     },
     {
-      "path": "icons/development/openwrt.png",
-      "title": "OpenWrt",
+      "path": "icons/development/gitlab.png",
+      "title": "GitLab",
       "kind": "icon",
       "category": "development",
       "width": 512,
       "height": 512,
-      "size": 22198,
-      "sha": "f3df79f1425bf1725de6ac08eaa750ed64e1c145"
+      "note": "采用 Dashboard Icons PNG；按原比例缩至 460×443，透明画布居中留边；不裁切标志。",
+      "size": 31042,
+      "sha": "4e96f4bc5ede29c1cb9825e60e7447376841a41e"
     },
     {
-      "path": "icons/development/synology.png",
-      "title": "群晖",
+      "path": "icons/development/proxmox.png",
+      "title": "Proxmox",
       "kind": "icon",
       "category": "development",
       "width": 512,
       "height": 512,
-      "size": 31222,
-      "sha": "73cb1f16e911eb172c48deb3f948a41f065ecbb9"
+      "size": 24455,
+      "sha": "ae32d9cb19271fffab5dd9994b38aefbee7f6069"
+    },
+    {
+      "path": "icons/development/tencent-cloud.png",
+      "title": "腾讯云",
+      "kind": "icon",
+      "category": "development",
+      "width": 512,
+      "height": 512,
+      "size": 32295,
+      "sha": "583facd30f3b64efcb8b9bfb67f3db4a9d5c5f97"
+    },
+    {
+      "path": "icons/development/vscode.png",
+      "title": "Visual Studio Code",
+      "kind": "icon",
+      "category": "development",
+      "width": 512,
+      "height": 512,
+      "note": "采用 Dashboard Icons PNG；按原比例缩至 460×460，透明画布居中留边；不裁切标志。",
+      "size": 32243,
+      "sha": "6e8d83aecc193dfa90f480fe5deb81264a99c200"
     },
     {
       "path": "icons/gaming/epic-games.png",
@@ -393,6 +487,16 @@
       "sha": "d1f071ee47d30ca32d4709f4ad21faa17e06832b"
     },
     {
+      "path": "icons/music/apple-podcasts.png",
+      "title": "Apple Podcasts",
+      "kind": "icon",
+      "category": "music",
+      "width": 512,
+      "height": 512,
+      "size": 44853,
+      "sha": "bb368f88f6c787fb4ac9c1883a86d74718b86ad7"
+    },
+    {
       "path": "icons/music/netease-cloud-music.png",
       "title": "网易云音乐",
       "kind": "icon",
@@ -411,6 +515,16 @@
       "height": 512,
       "size": 24521,
       "sha": "34d6836539b4e4aaa311acbf1024f853c3430532"
+    },
+    {
+      "path": "icons/music/soundcloud.png",
+      "title": "SoundCloud",
+      "kind": "icon",
+      "category": "music",
+      "width": 512,
+      "height": 512,
+      "size": 6905,
+      "sha": "be9370b8dbbf7591b87635e4f95d8fb25b4b19b4"
     },
     {
       "path": "icons/music/spotify.png",
@@ -443,24 +557,106 @@
       "sha": "088944dea859f98baa2c0a256e696281698cb77f"
     },
     {
-      "path": "icons/productivity/1password.png",
+      "path": "icons/network/1password.png",
       "title": "1Password",
       "kind": "icon",
-      "category": "productivity",
+      "category": "network",
       "width": 512,
       "height": 512,
       "size": 176187,
       "sha": "e5a1ce2a447df9015dbee622d30ad040036c9d0d"
     },
     {
-      "path": "icons/productivity/adguard.png",
+      "path": "icons/network/adguard.png",
       "title": "AdGuard",
       "kind": "icon",
-      "category": "productivity",
+      "category": "network",
       "width": 512,
       "height": 512,
       "size": 28880,
       "sha": "3195ad84c4575c3d246bd75295c758ee216bc037"
+    },
+    {
+      "path": "icons/network/bitwarden.png",
+      "title": "Bitwarden",
+      "kind": "icon",
+      "category": "network",
+      "width": 512,
+      "height": 512,
+      "note": "采用 Dashboard Icons PNG；仅将 r=115 圆角外侧 alpha 置零。",
+      "size": 10687,
+      "sha": "9a23e213348860f164dd9238fa47f4a3a5d89e4c"
+    },
+    {
+      "path": "icons/network/clash.png",
+      "title": "Clash",
+      "kind": "icon",
+      "category": "network",
+      "width": 512,
+      "height": 512,
+      "note": "采用 Dashboard Icons PNG；转换为 RGBA，无颜色量化；保留原始像素尺寸，居中填充透明画布至 512×512。",
+      "size": 31653,
+      "sha": "0bf726fb3bf44cc9d20cc4f651a00b9f3b295f02"
+    },
+    {
+      "path": "icons/network/cloudflare.png",
+      "title": "Cloudflare",
+      "kind": "icon",
+      "category": "network",
+      "width": 512,
+      "height": 512,
+      "size": 34191,
+      "sha": "865645e46e36bb471b8201c8f68f8408c32b41cd"
+    },
+    {
+      "path": "icons/network/openwrt.png",
+      "title": "OpenWrt",
+      "kind": "icon",
+      "category": "network",
+      "width": 512,
+      "height": 512,
+      "size": 22198,
+      "sha": "f3df79f1425bf1725de6ac08eaa750ed64e1c145"
+    },
+    {
+      "path": "icons/network/speedtest.png",
+      "title": "Speedtest",
+      "kind": "icon",
+      "category": "network",
+      "width": 512,
+      "height": 512,
+      "size": 72439,
+      "sha": "67e8236c6843d87f471b8a5f3afeb8281dbe8cf0"
+    },
+    {
+      "path": "icons/network/surge.png",
+      "title": "Surge",
+      "kind": "icon",
+      "category": "network",
+      "width": 512,
+      "height": 512,
+      "size": 45909,
+      "sha": "c8afe44ebe5c2347d4b847f0a69b1e88466e4441"
+    },
+    {
+      "path": "icons/productivity/adobe.png",
+      "title": "Adobe",
+      "kind": "icon",
+      "category": "productivity",
+      "width": 512,
+      "height": 512,
+      "size": 25428,
+      "sha": "47299c31b1275bbf467966d3678476c2322246c9"
+    },
+    {
+      "path": "icons/productivity/google-maps.png",
+      "title": "Google 地图",
+      "kind": "icon",
+      "category": "productivity",
+      "width": 512,
+      "height": 512,
+      "size": 60638,
+      "sha": "9ae84eb7c48b371d7752929b8ce88db08be4b709"
     },
     {
       "path": "icons/productivity/google-translate.png",
@@ -471,16 +667,6 @@
       "height": 512,
       "size": 54544,
       "sha": "e63eeb632a8e0c83e2df9f57df156ab3b08b4624"
-    },
-    {
-      "path": "icons/productivity/google.png",
-      "title": "Google",
-      "kind": "icon",
-      "category": "productivity",
-      "width": 512,
-      "height": 512,
-      "size": 38031,
-      "sha": "380d9b8e229eff6d4ef5aaec88d8db8378e8261e"
     },
     {
       "path": "icons/productivity/notion.png",
@@ -503,16 +689,6 @@
       "sha": "5fd1ed9f93e0a27381a7b0de09a974f84f34e867"
     },
     {
-      "path": "icons/productivity/wikipedia.png",
-      "title": "维基百科",
-      "kind": "icon",
-      "category": "productivity",
-      "width": 512,
-      "height": 512,
-      "size": 19774,
-      "sha": "e8f013a56a4b523a22cfbb8e996f1d91f7ca904c"
-    },
-    {
       "path": "icons/proxy/ad-block.png",
       "title": "广告拦截",
       "kind": "icon",
@@ -529,8 +705,9 @@
       "category": "proxy",
       "width": 512,
       "height": 512,
-      "size": 83021,
-      "sha": "fb5e9ad2fb7c75857a641951a53273a7ddac4462"
+      "note": "按上游 r=115 规范修正圆角外侧透明度；RGB 和圆角内像素未修改。",
+      "size": 89905,
+      "sha": "cdc110c8e3670fdf5c75063139670cc587875cd5"
     },
     {
       "path": "icons/proxy/airport.png",
@@ -539,8 +716,9 @@
       "category": "proxy",
       "width": 512,
       "height": 512,
-      "size": 79255,
-      "sha": "5971d10becb3285905e8d38202c4e5378d021205"
+      "note": "按上游 r=115 规范修正圆角外侧透明度；RGB 和圆角内像素未修改。",
+      "size": 87182,
+      "sha": "727d717fafd9056cbd4ae83c44074b1e04ce6846"
     },
     {
       "path": "icons/proxy/auto.png",
@@ -579,8 +757,9 @@
       "category": "proxy",
       "width": 512,
       "height": 512,
-      "size": 183789,
-      "sha": "5d35840a8c2d0c7fb409853445b492acc22ea251"
+      "note": "按上游 r=115 规范修正圆角外侧透明度；RGB 和圆角内像素未修改。",
+      "size": 199283,
+      "sha": "fbd894eb01ff159af890ff32fb63f00c40d6b8ff"
     },
     {
       "path": "icons/proxy/game.png",
@@ -673,16 +852,6 @@
       "sha": "bf18cd541333e6972d4b4737e16d444e51d017ca"
     },
     {
-      "path": "icons/proxy/surge.png",
-      "title": "Surge",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 45909,
-      "sha": "c8afe44ebe5c2347d4b847f0a69b1e88466e4441"
-    },
-    {
       "path": "icons/proxy/traffic.png",
       "title": "流量",
       "kind": "icon",
@@ -711,6 +880,26 @@
       "height": 512,
       "size": 96936,
       "sha": "52577a8e3b8a39ef524246786d1ef8fd78bc9f92"
+    },
+    {
+      "path": "icons/regions/australia.png",
+      "title": "澳大利亚",
+      "kind": "icon",
+      "category": "regions",
+      "width": 512,
+      "height": 512,
+      "size": 76882,
+      "sha": "bd3ce5b536bb464c2ff802f0135c93c2653d240e"
+    },
+    {
+      "path": "icons/regions/canada.png",
+      "title": "加拿大",
+      "kind": "icon",
+      "category": "regions",
+      "width": 512,
+      "height": 512,
+      "size": 50030,
+      "sha": "d994d5f847bfb745fd9d32c92d8830de4619ac79"
     },
     {
       "path": "icons/regions/china.png",
@@ -751,6 +940,16 @@
       "height": 512,
       "size": 39069,
       "sha": "474db2e5f9285c43fa40fff646beced4bba65fa8"
+    },
+    {
+      "path": "icons/regions/netherlands.png",
+      "title": "荷兰",
+      "kind": "icon",
+      "category": "regions",
+      "width": 512,
+      "height": 512,
+      "size": 52358,
+      "sha": "129c3d1d2202d5e0c79b118bd2846f765b150f44"
     },
     {
       "path": "icons/regions/singapore.png",
@@ -803,6 +1002,76 @@
       "sha": "82e1dddbc770f792a7f80fe3002e52cde344b953"
     },
     {
+      "path": "icons/search/baidu.png",
+      "title": "百度",
+      "kind": "icon",
+      "category": "search",
+      "width": 512,
+      "height": 512,
+      "size": 32596,
+      "sha": "8167278b079b607d8dfbce621cb0fa65716400fd"
+    },
+    {
+      "path": "icons/search/bing.png",
+      "title": "Bing",
+      "kind": "icon",
+      "category": "search",
+      "width": 512,
+      "height": 512,
+      "size": 49359,
+      "sha": "dded6f031a6b51f844dd4841292fee18b3fe6e03"
+    },
+    {
+      "path": "icons/search/google.png",
+      "title": "Google",
+      "kind": "icon",
+      "category": "search",
+      "width": 512,
+      "height": 512,
+      "size": 38031,
+      "sha": "380d9b8e229eff6d4ef5aaec88d8db8378e8261e"
+    },
+    {
+      "path": "icons/search/wikipedia.png",
+      "title": "维基百科",
+      "kind": "icon",
+      "category": "search",
+      "width": 512,
+      "height": 512,
+      "size": 19774,
+      "sha": "e8f013a56a4b523a22cfbb8e996f1d91f7ca904c"
+    },
+    {
+      "path": "icons/social/bangumi.png",
+      "title": "Bangumi 番组计划",
+      "kind": "icon",
+      "category": "social",
+      "width": 512,
+      "height": 512,
+      "size": 132841,
+      "sha": "6646e6554cbe11509e6d0c25d2b3b69ab171853e"
+    },
+    {
+      "path": "icons/social/douban.png",
+      "title": "豆瓣",
+      "kind": "icon",
+      "category": "social",
+      "width": 512,
+      "height": 512,
+      "size": 102564,
+      "sha": "c69336a7553648c2980fa9f2ed6a63b5217a4353"
+    },
+    {
+      "path": "icons/social/facebook.png",
+      "title": "Facebook",
+      "kind": "icon",
+      "category": "social",
+      "width": 512,
+      "height": 512,
+      "size": 4961,
+      "sha": "04ef843cf04f5b2c1f9f4ac5dbbeee02731643f4"
+    },
+    {
       "path": "icons/social/instagram.png",
       "title": "Instagram",
       "kind": "icon",
@@ -813,6 +1082,16 @@
       "sha": "34179f51fc99e03fdd199e291f4cea84efc8b52f"
     },
     {
+      "path": "icons/social/pixiv.png",
+      "title": "pixiv",
+      "kind": "icon",
+      "category": "social",
+      "width": 512,
+      "height": 512,
+      "size": 11868,
+      "sha": "1b4e57356dcb455472bc6469f559690af05373ac"
+    },
+    {
       "path": "icons/social/reddit.png",
       "title": "Reddit",
       "kind": "icon",
@@ -821,6 +1100,16 @@
       "height": 512,
       "size": 43135,
       "sha": "f861542d0c145e0bf7e2d14b4a541999564168f8"
+    },
+    {
+      "path": "icons/social/tieba.png",
+      "title": "百度贴吧",
+      "kind": "icon",
+      "category": "social",
+      "width": 512,
+      "height": 512,
+      "size": 68146,
+      "sha": "8a68238f66b584ebc3f9db2ba5efc1957f23f0a6"
     },
     {
       "path": "icons/social/weibo.png",
@@ -861,6 +1150,26 @@
       "height": 512,
       "size": 176893,
       "sha": "537fb5445fbb9b1eecbacfa6e428d861af2f904a"
+    },
+    {
+      "path": "icons/storage/115.png",
+      "title": "115 网盘",
+      "kind": "icon",
+      "category": "storage",
+      "width": 512,
+      "height": 512,
+      "size": 44802,
+      "sha": "4ff4064c23e4f31218a45326795b95fb34c9af14"
+    },
+    {
+      "path": "icons/storage/123.png",
+      "title": "123 云盘",
+      "kind": "icon",
+      "category": "storage",
+      "width": 512,
+      "height": 512,
+      "size": 57892,
+      "sha": "0cde11b4f933f4c7c30682aa4425f2bcd10f57ad"
     },
     {
       "path": "icons/storage/aliyun-drive.png",
@@ -923,14 +1232,34 @@
       "sha": "ff3dba5366211e0dac609074cefc9997b21f1016"
     },
     {
+      "path": "icons/storage/pikpak.png",
+      "title": "PikPak",
+      "kind": "icon",
+      "category": "storage",
+      "width": 512,
+      "height": 512,
+      "size": 57226,
+      "sha": "0b64535fd28a01670a20c161fe0f5255d6826e12"
+    },
+    {
       "path": "icons/storage/quark.png",
-      "title": "夸克",
+      "title": "夸克网盘",
       "kind": "icon",
       "category": "storage",
       "width": 512,
       "height": 512,
       "size": 67721,
       "sha": "8ec7f016f82fb00e77f66a51b6d20b26e37bcf1c"
+    },
+    {
+      "path": "icons/storage/synology.png",
+      "title": "群晖",
+      "kind": "icon",
+      "category": "storage",
+      "width": 512,
+      "height": 512,
+      "size": 31222,
+      "sha": "73cb1f16e911eb172c48deb3f948a41f065ecbb9"
     },
     {
       "path": "icons/video/bilibili.png",
@@ -943,6 +1272,16 @@
       "sha": "3558e30db3271d388a2d04713a7b1d62ae44f083"
     },
     {
+      "path": "icons/video/crunchyroll.png",
+      "title": "Crunchyroll",
+      "kind": "icon",
+      "category": "video",
+      "width": 512,
+      "height": 512,
+      "size": 26420,
+      "sha": "0744c6c2eb91ad92ab7338b69634a69fbabfe164"
+    },
+    {
       "path": "icons/video/disney-plus.png",
       "title": "Disney+",
       "kind": "icon",
@@ -951,6 +1290,36 @@
       "height": 512,
       "size": 254168,
       "sha": "8716afd9b2197e9fc97f917e6bab2de8c7a4b286"
+    },
+    {
+      "path": "icons/video/douyin.png",
+      "title": "抖音",
+      "kind": "icon",
+      "category": "video",
+      "width": 512,
+      "height": 512,
+      "size": 51126,
+      "sha": "fbb529a6af77ba27ad23a15d490f3e3155764c68"
+    },
+    {
+      "path": "icons/video/emby.png",
+      "title": "Emby",
+      "kind": "icon",
+      "category": "video",
+      "width": 512,
+      "height": 512,
+      "size": 36448,
+      "sha": "50cb58af97fede75709ed8bf077ba3ac2d17a6ad"
+    },
+    {
+      "path": "icons/video/hbo-max.png",
+      "title": "HBO Max",
+      "kind": "icon",
+      "category": "video",
+      "width": 512,
+      "height": 512,
+      "size": 135749,
+      "sha": "92f0711a7c4d816f06e4a955922ca5c3195dba96"
     },
     {
       "path": "icons/video/infuse.png",
@@ -1021,6 +1390,16 @@
       "height": 512,
       "size": 46550,
       "sha": "de217e923aa730557868d7e4229dad2c25231009"
+    },
+    {
+      "path": "icons/video/tiktok.png",
+      "title": "TikTok",
+      "kind": "icon",
+      "category": "video",
+      "width": 512,
+      "height": 512,
+      "size": 23341,
+      "sha": "59b1f170ad1e7263f03e5d2e4466c4611180eb05"
     },
     {
       "path": "icons/video/twitch.png",

@@ -3,7 +3,7 @@
 const repo = "zzpice/assets";
 const base = new URL(".", document.baseURI);
 const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
-const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", ai: "AI", development: "开发与网络", communication: "通讯与邮箱", social: "社交与社区", video: "视频与媒体", music: "音乐与播客", storage: "网盘与存储", productivity: "效率与工具", lifestyle: "购物与支付", proxy: "代理与分流", regions: "国家与地区", other: "其他" };
+const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", ai: "AI", browsers: "浏览器", development: "开发与运维", network: "网络与安全", communication: "通讯与邮箱", social: "社交与社区", search: "搜索与知识", video: "视频与媒体", music: "音乐与播客", storage: "网盘与存储", productivity: "效率与工具", lifestyle: "购物与支付", proxy: "代理与分流", regions: "国家与地区", other: "其他" };
 const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", other: "其他图片" };
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
 const controls = Object.fromEntries(["search","device","category","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
