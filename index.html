@@ -13,8 +13,8 @@
   <link rel="manifest" href="app/manifest.webmanifest">
   <link rel="icon" href="app/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="app/icon-180.png">
-  <link rel="stylesheet" href="app/site.css?v=4e67c9d745">
-  <script src="app/site.js?v=3f43962968" defer></script>
+  <link rel="stylesheet" href="app/site.css?v=5cc189f4ce">
+  <script src="app/site.js?v=3eb497d304" defer></script>
 </head>
 <body>
   <header>
@@ -58,9 +58,10 @@
   </footer>
   <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title">
     <div class="dialog-header"><div><h2 id="preview-title"></h2><p id="preview-size"></p></div><button type="button" class="close-button" data-close="preview-dialog" aria-label="关闭预览">×</button></div>
-    <div class="preview-toolbar"><div class="preview-navigation" aria-label="切换图片"><button id="preview-previous" type="button" class="secondary-button" aria-label="上一张图片">‹</button><span id="preview-position" role="status"></span><button id="preview-next" type="button" class="secondary-button" aria-label="下一张图片">›</button></div><button id="preview-lockscreen" type="button" class="secondary-button" aria-pressed="false">锁屏效果</button></div>
+    <div class="preview-toolbar"><div class="preview-navigation" aria-label="切换图片"><button id="preview-previous" type="button" class="secondary-button" aria-label="上一张图片">‹</button><span id="preview-position" role="status"></span><button id="preview-next" type="button" class="secondary-button" aria-label="下一张图片">›</button></div><button id="preview-lockscreen" type="button" class="secondary-button" aria-pressed="false">锁屏效果</button><button id="preview-avatar-round" type="button" class="secondary-button" aria-pressed="false" hidden>圆形效果</button></div>
     <div class="full-image"><div id="image-stage" class="image-stage"><img id="preview-image" alt=""><div id="lockscreen-clock" class="lockscreen-clock" aria-hidden="true" hidden><span id="lock-date"></span><span id="lock-time"></span></div></div><p id="preview-status" class="image-error" role="status">正在加载原图…</p></div>
     <p id="lockscreen-hint" class="preview-hint" hidden>时钟位置为示意，以手机实际设置为准；下载的图片不含时钟。</p>
+    <p id="avatar-round-hint" class="preview-hint" hidden>圆形效果为居中裁切示意，下载仍保留原图。</p>
     <button id="preview-retry" type="button" class="secondary-button" hidden>重新加载原图</button>
     <div class="dialog-footer"><a id="preview-download" class="primary-button">下载原图</a><button id="preview-share" class="secondary-button" type="button">分享预览</button><button id="preview-copy" class="secondary-button" type="button">复制原图链接</button><p>左右滑动切换，长按图片可保存。分享链接可直接打开图片。</p></div>
   </dialog>

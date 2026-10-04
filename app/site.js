@@ -4,7 +4,6 @@ const repo = "zzpice/assets";
 const base = new URL(".", document.baseURI);
 const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
 const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", other: "其他" };
-const orientationLabels = { portrait: "竖屏", landscape: "横屏", square: "方形", unknown: "方向未标注" };
 const kindLabels = { wallpaper: "壁纸", avatar: "头像", other: "其他图片" };
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
 const controls = Object.fromEntries(["search","device","category","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
@@ -24,6 +23,7 @@ let visibleAssets = [];
 let previewSequence = [];
 let initialRoute = true;
 let lockscreenEnabled = false;
+let avatarRoundEnabled = false;
 let directoryLimited = false;
 let favoritesOnly = false;
 const favoriteKey = "zzpice-assets-favorites:" + base.pathname;
@@ -106,6 +106,9 @@ function refreshControls() {
   controls.category.disabled = kind === "other";
   controls.category.closest(".field").hidden = controls.category.disabled;
   if (controls.category.disabled) controls.category.value = "";
+  controls.orientation.disabled = kind === "avatar";
+  controls.orientation.closest(".field").hidden = controls.orientation.disabled;
+  if (controls.orientation.disabled) controls.orientation.value = "";
   const categoryFiles = deviceFiles.filter(file => !controls.category.value || file.category === controls.category.value);
   const sizes = [...new Map(categoryFiles.map(file => [resolutionKey(file),file])).entries()]
     .sort((a,b) => b[1].width * b[1].height - a[1].width * a[1].height);
@@ -200,6 +203,16 @@ function updateLockscreen() {
   document.getElementById("lock-time").textContent = new Intl.DateTimeFormat("zh-CN",{hour:"2-digit",minute:"2-digit",hour12:false}).format(now);
 }
 
+function updateAvatarShape() {
+  const available = activePreview?.kind === "avatar";
+  if (!available) avatarRoundEnabled = false;
+  const button = document.getElementById("preview-avatar-round");
+  button.hidden = !available;
+  button.setAttribute("aria-pressed",String(avatarRoundEnabled));
+  document.getElementById("image-stage").classList.toggle("round-avatar",avatarRoundEnabled);
+  document.getElementById("avatar-round-hint").hidden = !avatarRoundEnabled;
+}
+
 function loadPreviewImage(force = false) {
   if (!activePreview) return;
   previewUsingThumbnail = false;
@@ -215,6 +228,7 @@ function loadPreviewImage(force = false) {
   if (force === true) url.searchParams.set("retry",Date.now());
   previewImage.src = url.href;
   updateLockscreen();
+  updateAvatarShape();
 }
 
 function openPreview(file,historyMode = "push",sequence = visibleAssets) {
@@ -222,6 +236,7 @@ function openPreview(file,historyMode = "push",sequence = visibleAssets) {
     previewSequence = sequence.filter(item => item.kind === file.kind).map(item => item.path);
     if (!previewSequence.includes(file.path)) previewSequence = assets.filter(item => item.kind === file.kind).map(item => item.path);
     lockscreenEnabled = false;
+    avatarRoundEnabled = false;
   }
   activePreview = file;
   document.getElementById("preview-title").textContent = file.title;
@@ -401,6 +416,7 @@ document.getElementById("preview-share").addEventListener("click",async () => {
 document.getElementById("preview-previous").addEventListener("click",() => movePreview(-1));
 document.getElementById("preview-next").addEventListener("click",() => movePreview(1));
 document.getElementById("preview-lockscreen").addEventListener("click",() => { lockscreenEnabled = !lockscreenEnabled; updateLockscreen(); });
+document.getElementById("preview-avatar-round").addEventListener("click",() => { avatarRoundEnabled = !avatarRoundEnabled; updateAvatarShape(); });
 document.getElementById("preview-retry").addEventListener("click",() => loadPreviewImage(true));
 document.getElementById("preview-download").addEventListener("click",requireConnection);
 document.querySelectorAll("[data-close]").forEach(button => button.addEventListener("click", () => {
@@ -439,7 +455,10 @@ document.getElementById("image-stage").addEventListener("touchend",event => {
   if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 1.5) movePreview(dx < 0 ? 1 : -1);
 },{passive:true});
 document.getElementById("image-stage").addEventListener("touchcancel",() => { swipeStart = null; },{passive:true});
-previewDialog.addEventListener("close", () => { previewImage.removeAttribute("src"); activePreview = null; lockscreenEnabled = false; });
+previewDialog.addEventListener("close", () => {
+  previewImage.removeAttribute("src"); activePreview = null; lockscreenEnabled = false;
+  updateAvatarShape();
+});
 previewImage.addEventListener("load",() => {
   if (!activePreview) return;
   previewImage.hidden = false;

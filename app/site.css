@@ -82,11 +82,13 @@ dialog::backdrop { background: rgb(6 12 18 / .76); }
 .preview-toolbar { justify-content: space-between; margin-top: 10px; }
 .preview-navigation button { width: 44px; padding: 0; font-size: 1.5rem; }
 #preview-position { min-width: 42px; text-align: center; color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; }
-#preview-lockscreen { font-size: .8rem; padding: 9px 10px; }
-#preview-lockscreen[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: var(--accent); }
+#preview-lockscreen,#preview-avatar-round { font-size: .8rem; padding: 9px 10px; }
+#preview-lockscreen[aria-pressed="true"],#preview-avatar-round[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: var(--accent); }
 .full-image { position: relative; display: grid; place-items: center; background: #111718; margin-top: 10px; border-radius: 9px; overflow: hidden; min-height: 100px; }
 .image-stage { position: relative; width: min(100%,calc(52dvh * var(--image-ratio, .46154))); aspect-ratio: var(--image-ratio, .46154); }
 .image-stage img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.image-stage.round-avatar { width: min(100%,52dvh); aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
+.image-stage.round-avatar img { object-fit: cover; }
 .full-image > .image-error { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; margin: 0; }
 .lockscreen-clock { position: absolute; top: 8%; left: 0; width: 100%; display: grid; gap: 0; text-align: center; color: #fff; text-shadow: 0 1px 12px rgb(0 0 0 / .55); pointer-events: none; }
 #lock-date { font-size: .75rem; font-weight: 600; }
