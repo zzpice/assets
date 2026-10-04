@@ -162,6 +162,66 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "实际尺寸 64x48"):
             update(self.root)
 
+    def add_card(self):
+        path = "bank-cards/originals/hong-kong/example/debit.png"
+        file = self.root / path
+        file.parent.mkdir(parents=True)
+        Image.new("RGB", (160, 100), "navy").save(file)
+        source = {"wallet": "Apple Pay", "url": "https://example.com/debit.png", "sha256": hashlib.sha256(file.read_bytes()).hexdigest()}
+        catalog = {"assets": [{"path": path, "title": "示例借记卡", "source": source}], "cardBanks": [{"region": "hong-kong", "bank": "example", "name": "示例银行", "englishName": "Example Bank"}]}
+        (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        return file
+
+    def test_original_card_keeps_source_bank_order_and_bytes(self):
+        file = self.add_card()
+        before = file.read_bytes()
+        update(self.root)
+        item = next(item for item in self.catalog()["assets"] if item["kind"] == "bank-card")
+        self.assertEqual((item["category"], item["bank"], item["edition"]), ("hong-kong", "example", "originals"))
+        self.assertEqual(item["source"]["wallet"], "Apple Pay")
+        self.assertEqual(self.catalog()["cardBanks"][0]["name"], "示例银行")
+        self.assertEqual(file.read_bytes(), before)
+        update(self.root, check=True)
+
+    def test_original_card_rejects_unknown_wallet_or_changed_source(self):
+        self.add_card()
+        catalog = self.catalog()
+        for wallet in ["Mi Pay", "云闪付", "", "Amazon Pay"]:
+            catalog["assets"][0]["source"]["wallet"] = wallet
+            (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "已确认"):
+                update(self.root)
+        catalog["assets"][0]["source"]["wallet"] = "Apple Pay"
+        catalog["assets"][0]["source"]["sha256"] = "0" * 64
+        (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "SHA-256"):
+            update(self.root)
+
+    def test_original_card_cannot_be_overwritten(self):
+        file = self.add_card()
+        update(self.root)
+        Image.new("RGB", (160, 100), "red").save(file)
+        with self.assertRaisesRegex(ValueError, "不能覆盖"):
+            update(self.root)
+
+    def test_custom_card_requires_and_keeps_original_link(self):
+        original = self.add_card()
+        update(self.root)
+        path = "bank-cards/custom/hong-kong/example/debit-blue.png"
+        custom = self.root / path
+        custom.parent.mkdir(parents=True)
+        Image.new("RGB", (160, 100), "blue").save(custom)
+        with self.assertRaisesRegex(ValueError, "derivedFrom"):
+            update(self.root)
+        catalog = self.catalog()
+        catalog["assets"].append({"path": path, "derivedFrom": original.relative_to(self.root).as_posix()})
+        (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        update(self.root)
+        item = next(item for item in self.catalog()["assets"] if item.get("edition") == "custom")
+        self.assertEqual(item["derivedFrom"], original.relative_to(self.root).as_posix())
+        self.assertNotIn("source", item)
+        update(self.root, check=True)
+
     def test_changed_scripts_refresh_page_versions(self):
         script = self.root / "app/site.js"
         script.parent.mkdir(parents=True)

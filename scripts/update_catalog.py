@@ -9,12 +9,56 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+from urllib.parse import urlparse
 import xml.etree.ElementTree as ET
 
 from PIL import Image, ImageChops, ImageDraw, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".svg"}
+CARD_REGIONS = {"hong-kong", "china-mainland", "singapore"}
+CARD_WALLETS = {"Apple Pay", "Google Pay", "Samsung Pay", "PayPal"}
+
+
+def card_bank_index(banks):
+    if not isinstance(banks, list):
+        raise ValueError("cardBanks 应为按展示顺序排列的银行清单")
+    index = {}
+    for bank in banks:
+        if not isinstance(bank, dict) or bank.get("region") not in CARD_REGIONS or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", bank.get("bank", "")):
+            raise ValueError("cardBanks 的地区或银行目录名无效")
+        if not all(isinstance(bank.get(key), str) and bank[key].strip() for key in ("name", "englishName")):
+            raise ValueError("cardBanks 须记录机构名称及英文名称")
+        key = (bank["region"], bank["bank"])
+        if key in index:
+            raise ValueError("cardBanks 的地区与银行不能重复")
+        index[key] = bank
+    return index
+
+
+def card_metadata(root, path, old, data, sha, banks):
+    match = re.fullmatch(r"bank-cards/(originals|custom)/([a-z0-9-]+)/([a-z0-9-]+)/[a-z0-9][a-z0-9-]*\.[a-z0-9]+", path)
+    if not match or (match[2], match[3]) not in banks:
+        raise ValueError(f"{path}: 卡面路径应为 bank-cards/<originals或custom>/<地区>/<已登记银行>/<名称>.<格式>")
+    edition, region, bank = match.groups()
+    info = {"edition": edition, "bank": bank}
+    if edition == "originals":
+        if old.get("sha") and old["sha"] != sha:
+            raise ValueError(f"{path}: 原始卡面不能覆盖，请为不同版本使用新文件名")
+        source = old.get("source")
+        if not isinstance(source, dict) or source.get("wallet") not in CARD_WALLETS:
+            raise ValueError(f"{path}: 原始卡面须记录已确认的 Apple Pay、Google Pay、Samsung Pay 或 PayPal 来源")
+        url = urlparse(source.get("url", ""))
+        if url.scheme != "https" or not url.netloc or source.get("sha256") != hashlib.sha256(data).hexdigest():
+            raise ValueError(f"{path}: 原始卡面须记录 HTTPS 原文件地址和匹配的 SHA-256")
+        info["source"] = source
+    else:
+        original = old.get("derivedFrom", "")
+        prefix = f"bank-cards/originals/{region}/{bank}/"
+        if not isinstance(original, str) or not re.fullmatch(re.escape(prefix) + r"[a-z0-9][a-z0-9-]*\.[a-z0-9]+", original) or not (root / original).is_file():
+            raise ValueError(f"{path}: 修改版须用 derivedFrom 指向同地区、同银行的原始卡面")
+        info["derivedFrom"] = original
+    return region, info
 
 
 def source_paths(root):
@@ -94,6 +138,8 @@ def build_catalog(root):
     catalog_path = root / "catalog.json"
     previous = json.loads(catalog_path.read_text("utf-8")) if catalog_path.exists() else {}
     metadata = {item["path"]: item for item in previous.get("assets", [])}
+    card_banks = previous.get("cardBanks", [])
+    banks = card_bank_index(card_banks)
     assets, previews = [], {}
     for relative in source_paths(root):
         path = relative.as_posix()
@@ -105,6 +151,7 @@ def build_catalog(root):
         data = file.read_bytes()
         sha = git_blob_sha(data)
         old = metadata.get(path, {})
+        card_info = {}
         same_source = old.get("sha") in {None, sha}
         image = None
         image_format = None
@@ -131,10 +178,14 @@ def build_catalog(root):
                 raise ValueError(f"{path}: 图标路径应为 icons/<种类>/<名称>.<格式>")
             validate_icon(image, image_format, path)
             kind, category = "icon", match[1]
+        elif path.startswith("bank-cards/"):
+            category, card_info = card_metadata(root, path, old, data, sha, banks)
+            kind = "bank-card"
         else:
             kind = "other"
             category = None
         item = {"path": path, "title": old.get("title") or relative.stem.replace("-", " "), "kind": kind}
+        item.update(card_info)
         if category:
             item["category"] = category
         if old.get("device"):
@@ -164,6 +215,8 @@ def build_catalog(root):
         item.update(size=len(data), sha=sha)
         assets.append(item)
     catalog = {"version": 1, "assets": assets}
+    if card_banks:
+        catalog["cardBanks"] = card_banks
     text = json.dumps(catalog, ensure_ascii=False, indent=2) + "\n"
     referenced = {item["thumbnail"] for item in assets if item.get("thumbnail")}
     stale = [path for path in (root / "app/previews").glob("*.webp") if path.relative_to(root).as_posix() not in referenced]

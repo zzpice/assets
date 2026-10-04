@@ -4,9 +4,11 @@ const repo = "zzpice/assets";
 const base = new URL(".", document.baseURI);
 const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
 const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", ai: "AI", browsers: "浏览器", development: "开发与运维", network: "网络与安全", communication: "通讯与邮箱", social: "社交与社区", search: "搜索与知识", video: "视频与媒体", music: "音乐与播客", storage: "网盘与存储", productivity: "效率与工具", lifestyle: "购物与支付", proxy: "代理与分流", regions: "国家与地区", other: "其他" };
-const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", other: "其他图片" };
+const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "bank-card": "银行卡面", other: "其他图片" };
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
-const controls = Object.fromEntries(["search","device","category","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
+const cardRegionLabels = { "hong-kong": "香港", "china-mainland": "中国内地", singapore: "新加坡" };
+const cardEditionLabels = { originals: "原始卡面", custom: "修改版" };
+const controls = Object.fromEntries(["search","device","category","bank","edition","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
 const gallery = document.getElementById("gallery");
 const results = document.getElementById("results");
 const reset = document.getElementById("reset");
@@ -14,6 +16,7 @@ const installButton = document.getElementById("install");
 const previewDialog = document.getElementById("preview-dialog");
 const previewImage = document.getElementById("preview-image");
 let assets = [];
+let cardBanks = [];
 let kind = "wallpaper";
 let deferredInstall = null;
 let toastTimeout;
@@ -71,21 +74,41 @@ function makeAsset(file, metadata) {
   const info = metadata.get(file.path) || {};
   const match = file.path.match(/^(?:wallpapers|avatars)\/([^/]+)\/(\d+)x(\d+)\//);
   const iconMatch = file.path.match(/^icons\/([^/]+)\//);
+  const cardMatch = file.path.match(/^bank-cards\/(originals|custom)\/([^/]+)\/([^/]+)\//);
   const currentMetadata = !file.sha || !info.sha || file.sha === info.sha;
-  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : iconMatch ? "icon" : "other";
+  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : iconMatch ? "icon" : cardMatch ? "bank-card" : "other";
   const filename = file.path.split("/").pop();
   const asset = {
     path: file.path, size: file.size || info.size || 0,
     title: info.title || filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
     kind: info.kind || inferredKind,
     device: ["phone","desktop","tablet","unknown"].includes(info.device) ? info.device : "",
-    category: info.category || (match ? match[1] : iconMatch ? iconMatch[1] : "other"),
+    category: info.category || (match ? match[1] : iconMatch ? iconMatch[1] : cardMatch ? cardMatch[2] : "other"),
+    bank: cardMatch ? cardMatch[3] : "", edition: cardMatch ? cardMatch[1] : "",
+    source: currentMetadata && cardMatch ? info.source : undefined,
+    derivedFrom: currentMetadata && cardMatch ? info.derivedFrom : undefined,
     width: (currentMetadata && info.width) || (match ? Number(match[2]) : 0),
     height: (currentMetadata && info.height) || (match ? Number(match[3]) : 0),
     note: currentMetadata ? info.note || "" : "", thumbnail: currentMetadata ? info.thumbnail || "" : ""
   };
   if (asset.kind === "wallpaper" && !asset.device) asset.device = inferDevice(asset.width,asset.height);
   return asset;
+}
+
+function cardBank(file) {
+  return cardBanks.find(bank => bank.region === file.category && bank.bank === file.bank);
+}
+
+function cardRegions() {
+  return [...new Set([...cardBanks.map(bank => bank.region),...Object.keys(cardRegionLabels)])];
+}
+
+function categoryLabel(file) {
+  return file.kind === "bank-card" ? cardRegionLabels[file.category] || file.category : categoryLabels[file.category] || file.category;
+}
+
+function defaultSort() {
+  return kind === "bank-card" ? "collection" : "resolution-desc";
 }
 
 function fillSelect(select, entries, placeholder) {
@@ -103,23 +126,37 @@ function refreshControls() {
   controls.device.closest(".field").hidden = controls.device.disabled;
   if (controls.device.disabled) controls.device.value = "";
   const deviceFiles = files.filter(file => !controls.device.value || file.device === controls.device.value);
-  const categories = [...new Set(deviceFiles.map(file => file.category))].sort();
-  fillSelect(controls.category, categories.map(value => [value,categoryLabels[value] || value]), "全部种类");
+  const categories = kind === "bank-card" ? cardRegions().filter(region => deviceFiles.some(file => file.category === region)) : [...new Set(deviceFiles.map(file => file.category))].sort();
+  fillSelect(controls.category, categories.map(value => [value,(kind === "bank-card" ? cardRegionLabels : categoryLabels)[value] || value]), kind === "bank-card" ? "全部地区" : "全部种类");
   controls.category.disabled = kind === "other";
   controls.category.closest(".field").hidden = controls.category.disabled;
-  document.querySelector('label[for="category"]').textContent = kind === "icon" ? "用途分类" : "画面风格";
+  document.querySelector('label[for="category"]').textContent = kind === "bank-card" ? "地区" : kind === "icon" ? "用途分类" : "画面风格";
   if (controls.category.disabled) controls.category.value = "";
-  controls.orientation.disabled = kind === "avatar" || kind === "icon";
+  controls.orientation.disabled = ["avatar","icon","bank-card"].includes(kind);
   controls.orientation.closest(".field").hidden = controls.orientation.disabled;
   if (controls.orientation.disabled) controls.orientation.value = "";
   const categoryFiles = deviceFiles.filter(file => !controls.category.value || file.category === controls.category.value);
-  const sizes = [...new Map(categoryFiles.map(file => [resolutionKey(file),file])).entries()]
+  const isCard = kind === "bank-card";
+  [controls.bank,controls.edition].forEach(control => {
+    control.disabled = !isCard; control.closest(".field").hidden = !isCard;
+    if (!isCard) control.value = "";
+  });
+  fillSelect(controls.bank,cardBanks.filter(bank => categoryFiles.some(file => file.bank === bank.bank && file.category === bank.region))
+    .map(bank => [bank.region + "/" + bank.bank,(controls.category.value ? "" : cardRegionLabels[bank.region] + " · ") + bank.name]),"全部银行");
+  const bankFiles = categoryFiles.filter(file => !controls.bank.value || file.category + "/" + file.bank === controls.bank.value);
+  fillSelect(controls.edition,Object.keys(cardEditionLabels).filter(edition => bankFiles.some(file => file.edition === edition)).map(value => [value,cardEditionLabels[value]]),"全部版本");
+  const editionFiles = bankFiles.filter(file => !controls.edition.value || file.edition === controls.edition.value);
+  const sort = controls.sort.value;
+  const sortOptions = [...(isCard ? [["collection","地区与银行顺序"]] : []),["resolution-desc","尺寸从大到小"],["resolution-asc","尺寸从小到大"],["name","按名称排序"]];
+  controls.sort.replaceChildren(...sortOptions.map(([value,label]) => new Option(label,value)));
+  controls.sort.value = sortOptions.some(([value]) => value === sort) ? sort : defaultSort();
+  const sizes = [...new Map(editionFiles.map(file => [resolutionKey(file),file])).entries()]
     .sort((a,b) => b[1].width * b[1].height - a[1].width * a[1].height);
   fillSelect(controls.resolution, sizes.map(([key,file]) => [key,key === "unknown" ? "尺寸未标注" : resolutionLabel(file)]), "全部尺寸");
   document.querySelectorAll(".tab").forEach(tab => {
     const count = assets.filter(file => file.kind === tab.dataset.kind).length;
     tab.querySelector("span").textContent = count;
-    tab.hidden = ["icon","other"].includes(tab.dataset.kind) && !count;
+    tab.hidden = ["icon","bank-card","other"].includes(tab.dataset.kind) && !count;
     tab.disabled = !count;
     tab.setAttribute("aria-pressed", String(tab.dataset.kind === kind));
   });
@@ -127,7 +164,8 @@ function refreshControls() {
   const sizeCount = new Set(wallpapers.filter(file => file.width && file.height).map(resolutionKey)).size;
   const avatarCount = assets.filter(file => file.kind === "avatar").length;
   const iconCount = assets.filter(file => file.kind === "icon").length;
-  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "");
+  const cardCount = assets.filter(file => file.kind === "bank-card").length;
+  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "");
   refreshFavoriteCount();
 }
 
@@ -238,7 +276,7 @@ function loadPreviewImage(force = false) {
 
 function openPreview(file,historyMode = "push",sequence = visibleAssets) {
   if (!previewDialog.open) {
-    const sameGroup = item => item.kind === file.kind && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown"));
+    const sameGroup = item => item.kind === file.kind && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.category === file.category && item.bank === file.bank && item.edition === file.edition));
     previewSequence = sequence.filter(sameGroup).map(item => item.path);
     if (!previewSequence.includes(file.path)) previewSequence = assets.filter(sameGroup).map(item => item.path);
     lockscreenEnabled = false;
@@ -313,12 +351,12 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   if (file.width && file.height) { img.width = file.width; img.height = file.height; }
   let usingThumbnail = Boolean(file.thumbnail);
   const meta = element("div", "meta");
-  const size = element("p", "resolution", file.kind === "icon" ? (categoryLabels[file.category] || file.category) : resolutionLabel(file));
+  const size = element("p", "resolution", file.kind === "icon" ? categoryLabel(file) : file.kind === "bank-card" ? cardEditionLabels[file.edition] + (file.source?.wallet ? " · " + file.source.wallet : "") : resolutionLabel(file));
   const info = element("details", "asset-info");
   const details = element("p", "details");
   function updateDetails() {
     const format = file.path.split(".").pop().toUpperCase();
-    details.textContent = (file.kind === "other" ? kindLabels[file.kind] : (categoryLabels[file.category] || file.category)) + (file.device ? " · " + deviceLabels[file.device] : "") + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
+    details.textContent = (file.kind === "other" ? kindLabels[file.kind] : categoryLabel(file)) + (file.kind === "bank-card" ? " · " + resolutionLabel(file) : "") + (file.device ? " · " + deviceLabels[file.device] : "") + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
   }
   updateDetails();
   img.addEventListener("load", () => {
@@ -353,6 +391,19 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   actions.append(download); meta.append(actions);
   info.append(element("summary", "", "图片信息"), details);
   if (file.note) info.append(element("p", "note", file.note));
+  if (file.kind === "bank-card") {
+    const sourcePath = file.edition === "custom" ? file.derivedFrom : file.source?.url;
+    if (sourcePath) {
+      try {
+        const sourceUrl = new URL(sourcePath,base);
+        if (sourceUrl.protocol === "https:" || sourceUrl.origin === base.origin) {
+          const source = element("a","source-link",file.edition === "custom" ? "查看对应原始卡面 ↗" : "Cardentify 原文件 ↗");
+          source.href = sourceUrl.href; source.target = "_blank"; source.rel = "noopener noreferrer";
+          info.append(source);
+        }
+      } catch { /* Invalid source links do not affect browsing or downloads. */ }
+    }
+  }
   const filename = element("span", "filename", file.path.split("/").pop());
   filename.title = file.path; info.append(filename);
   const copy = element("button", "secondary-button", "复制链接");
@@ -375,25 +426,51 @@ function makeDeviceSection(device,files) {
   return section;
 }
 
+function makeCardRegions(files) {
+  return cardRegions().map(region => {
+    const regionFiles = files.filter(file => file.category === region);
+    if (!regionFiles.length) return null;
+    const section = element("section","card-region");
+    const title = element("h2","region-heading",cardRegionLabels[region]);
+    title.append(element("span","device-count",regionFiles.length + " 张"));
+    section.append(title);
+    const banks = [...new Set(regionFiles.map(file => file.bank))].sort((a,b) => cardBanks.findIndex(bank => bank.region === region && bank.bank === a) - cardBanks.findIndex(bank => bank.region === region && bank.bank === b));
+    banks.forEach(bank => {
+      const bankFiles = regionFiles.filter(file => file.bank === bank);
+      const bankInfo = cardBank(bankFiles[0]);
+      const group = element("section","bank-section");
+      group.append(element("h3","bank-heading",bankInfo?.name || bank));
+      if (bankInfo?.englishName && bankInfo.englishName !== bankInfo.name) group.append(element("p","bank-english",bankInfo.englishName));
+      const grid = element("div","grid"); grid.dataset.device = "bank-card";
+      grid.append(...bankFiles.map(file => makeCard(file,bankFiles,"h4")));
+      group.append(grid); section.append(group);
+    });
+    return section;
+  }).filter(Boolean);
+}
+
 function renderGallery() {
   const query = controls.search.value.trim().toLocaleLowerCase();
   const visible = assets.filter(file => file.kind === kind)
     .filter(file => !favoritesOnly || favorites.has(file.path))
     .filter(file => !controls.device.value || file.device === controls.device.value)
     .filter(file => !controls.category.value || file.category === controls.category.value)
+    .filter(file => !controls.bank.value || file.category + "/" + file.bank === controls.bank.value)
+    .filter(file => !controls.edition.value || file.edition === controls.edition.value)
     .filter(file => !controls.resolution.value || resolutionKey(file) === controls.resolution.value)
     .filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value)
-    .filter(file => !query || [file.title,file.path,categoryLabels[file.category] || "",deviceLabels[file.device] || ""].join(" ").toLocaleLowerCase().includes(query));
+    .filter(file => !query || [file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || ""].join(" ").toLocaleLowerCase().includes(query));
   visible.sort((a,b) => {
     const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
-    return controls.sort.value === "name" ? a.title.localeCompare(b.title,"zh-CN") : (controls.sort.value === "resolution-asc" ? difference : -difference) || a.title.localeCompare(b.title,"zh-CN");
+    return controls.sort.value === "collection" || controls.sort.value === "name" ? a.title.localeCompare(b.title,"zh-CN") : (controls.sort.value === "resolution-asc" ? difference : -difference) || a.title.localeCompare(b.title,"zh-CN");
   });
   visibleAssets = visible;
-  const grouped = kind === "wallpaper" && !controls.device.value && visible.length > 0;
+  const grouped = visible.length > 0 && ((kind === "wallpaper" && !controls.device.value) || kind === "bank-card");
   gallery.classList.toggle("grouped",grouped);
   gallery.classList.remove("multiple-device-groups");
   gallery.dataset.device = kind === "wallpaper" ? controls.device.value || "all" : kind;
-  if (grouped) {
+  if (grouped && kind === "bank-card") gallery.replaceChildren(...makeCardRegions(visible));
+  else if (grouped) {
     const sections = ["phone","desktop","tablet","unknown"].map(device => {
       const files = visible.filter(file => (file.device || "unknown") === device);
       return files.length ? makeDeviceSection(device,files) : null;
@@ -409,15 +486,16 @@ function renderGallery() {
     empty.append(element("br"),clear); gallery.replaceChildren(empty);
   }
   results.textContent = "显示 " + visible.length + " / " + assets.filter(file => file.kind === kind).length + (kind === "icon" ? " 个" : " 张") + kindLabels[kind];
-  const count = [controls.device.value,controls.category.value,controls.resolution.value,controls.orientation.value].filter(Boolean).length;
+  const count = [controls.device.value,controls.category.value,controls.bank.value,controls.edition.value,controls.resolution.value,controls.orientation.value].filter(Boolean).length;
   document.getElementById("filter-summary").textContent = count ? count + " 项筛选" : "全部图片";
-  reset.disabled = !query && !count && !favoritesOnly && controls.sort.value === "resolution-desc";
+  reset.disabled = !query && !count && !favoritesOnly && controls.sort.value === defaultSort();
 }
 
 function clearFilters() {
   controls.search.value = ""; controls.device.value = ""; controls.category.value = "";
   controls.resolution.value = ""; controls.orientation.value = "";
-  controls.sort.value = "resolution-desc";
+  controls.bank.value = ""; controls.edition.value = "";
+  controls.sort.value = defaultSort();
   favoritesOnly = false; refreshControls();
 }
 
@@ -426,7 +504,7 @@ document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", (
   kind = tab.dataset.kind; clearFilters(); renderGallery();
 }));
 Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", () => {
-  if (name === "device" || name === "category") refreshControls();
+  if (["device","category","bank","edition"].includes(name)) refreshControls();
   renderGallery();
 }));
 reset.addEventListener("click", () => { clearFilters(); renderGallery(); });
@@ -564,9 +642,9 @@ async function fetchJson(url) {
   } finally { clearTimeout(timeout); }
 }
 
-function applyFiles(files,metadata) {
+function applyFiles(files,metadata,force = false) {
   const next = [...files].map(file => makeAsset(file,metadata)).sort((a,b)=>a.path.localeCompare(b.path));
-  if (JSON.stringify(next) === JSON.stringify(assets)) return;
+  if (!force && JSON.stringify(next) === JSON.stringify(assets)) return;
   assets = next;
   if (assets.length && !assets.some(file => file.kind === kind)) kind = assets[0].kind;
   refreshControls(); renderGallery();
@@ -581,9 +659,15 @@ async function load() {
   const catalogResult = await catalogTask;
   if (generation !== loadGeneration) return;
   const registered = catalogResult.status === "fulfilled" && Array.isArray(catalogResult.value?.assets) ? catalogResult.value.assets : [];
+  let banksChanged = false;
+  if (catalogResult.status === "fulfilled") {
+    const nextBanks = Array.isArray(catalogResult.value?.cardBanks) ? catalogResult.value.cardBanks.filter(bank => bank && typeof bank.region === "string" && typeof bank.bank === "string" && typeof bank.name === "string") : [];
+    banksChanged = JSON.stringify(nextBanks) !== JSON.stringify(cardBanks);
+    cardBanks = nextBanks;
+  }
   const metadata = new Map(registered.map(file => [file.path,file]));
   const registeredImages = registered.filter(file => imagePattern.test(file.path) && !file.path.startsWith("app/"));
-  if (registeredImages.length) applyFiles(registeredImages,metadata);
+  if (registeredImages.length) { applyFiles(registeredImages,metadata,banksChanged); banksChanged = false; }
   const treeResult = await treeTask;
   if (generation !== loadGeneration) return;
   const treeAvailable = treeResult.status === "fulfilled" && Array.isArray(treeResult.value?.tree);
@@ -607,7 +691,7 @@ async function load() {
   }
   directoryLimited = !treeAvailable || Boolean(treeResult.value.truncated);
   updateConnectionNotice();
-  applyFiles(files.values(),metadata);
+  applyFiles(files.values(),metadata,banksChanged);
   if (previewPath() && !assets.some(file => file.path === previewPath())) {
     const url = new URL(location.href); url.hash = "";
     history.replaceState({...history.state,assetPreview:false},"",url);
