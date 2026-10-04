@@ -233,8 +233,9 @@ function loadPreviewImage(force = false) {
 
 function openPreview(file,historyMode = "push",sequence = visibleAssets) {
   if (!previewDialog.open) {
-    previewSequence = sequence.filter(item => item.kind === file.kind).map(item => item.path);
-    if (!previewSequence.includes(file.path)) previewSequence = assets.filter(item => item.kind === file.kind).map(item => item.path);
+    const sameGroup = item => item.kind === file.kind && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown"));
+    previewSequence = sequence.filter(sameGroup).map(item => item.path);
+    if (!previewSequence.includes(file.path)) previewSequence = assets.filter(sameGroup).map(item => item.path);
     lockscreenEnabled = false;
     avatarRoundEnabled = false;
   }
@@ -293,13 +294,14 @@ function movePreview(delta) {
   }
 }
 
-function makeCard(file) {
+function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   const url = imageUrl(file.path);
   const card = element("article", "card");
   const preview = element("button", "preview " + orientation(file));
   preview.type = "button";
+  if (file.width && file.height) preview.style.aspectRatio = file.width + " / " + file.height;
   preview.setAttribute("aria-label", "预览" + file.title);
-  preview.addEventListener("click", () => openPreview(file));
+  preview.addEventListener("click", () => openPreview(file,"push",sequence));
   const img = element("img");
   img.alt = file.title; img.loading = "lazy"; img.decoding = "async";
   if (file.width && file.height) { img.width = file.width; img.height = file.height; }
@@ -337,7 +339,7 @@ function makeCard(file) {
   heart.append(heartPath); favorite.append(heart);
   favorite.addEventListener("click",() => toggleFavorite(file,favorite));
   previewWrap.append(preview,favorite);
-  meta.append(element("h2", "", file.title), size);
+  meta.append(element(titleTag, "", file.title), size);
   const actions = element("div", "actions");
   const download = element("a", "primary-button", "下载原图");
   download.href = url; download.download = file.path.split("/").pop();
@@ -354,6 +356,19 @@ function makeCard(file) {
   return card;
 }
 
+function makeDeviceSection(device,files) {
+  const section = element("section","device-section");
+  const title = element("h2","device-heading",deviceLabels[device] + "壁纸");
+  title.id = "device-heading-" + device;
+  title.append(element("span","device-count",files.length + " 张"));
+  section.setAttribute("aria-labelledby",title.id);
+  const grid = element("div","grid");
+  grid.dataset.device = device;
+  grid.append(...files.map(file => makeCard(file,files,"h3")));
+  section.append(title,grid);
+  return section;
+}
+
 function renderGallery() {
   const query = controls.search.value.trim().toLocaleLowerCase();
   const visible = assets.filter(file => file.kind === kind)
@@ -368,7 +383,18 @@ function renderGallery() {
     return controls.sort.value === "name" ? a.title.localeCompare(b.title,"zh-CN") : (controls.sort.value === "resolution-asc" ? difference : -difference) || a.title.localeCompare(b.title,"zh-CN");
   });
   visibleAssets = visible;
-  if (visible.length) gallery.replaceChildren(...visible.map(makeCard));
+  const grouped = kind === "wallpaper" && !controls.device.value && visible.length > 0;
+  gallery.classList.toggle("grouped",grouped);
+  gallery.classList.remove("multiple-device-groups");
+  gallery.dataset.device = kind === "wallpaper" ? controls.device.value || "all" : kind;
+  if (grouped) {
+    const sections = ["phone","desktop","tablet","unknown"].map(device => {
+      const files = visible.filter(file => (file.device || "unknown") === device);
+      return files.length ? makeDeviceSection(device,files) : null;
+    }).filter(Boolean);
+    gallery.classList.toggle("multiple-device-groups",sections.length > 1);
+    gallery.replaceChildren(...sections);
+  } else if (visible.length) gallery.replaceChildren(...visible.map(file => makeCard(file)));
   else {
     const empty = element("div","empty",favoritesOnly ? "这里还没有符合条件的收藏。点图片右上角的心形即可收藏，收藏保存在当前浏览器。" : "没有找到符合条件的图片。");
     const clear = element("button","secondary-button",favoritesOnly ? "浏览全部图片" : "清除筛选");
