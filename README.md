@@ -1,33 +1,21 @@
 # assets
 
-Personal static asset index for `zzpice`.
+`zzpice` 的个人静态资源索引。
 
 ## Avatar
 
 <img src="https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png" alt="avatar" width="256">
 
-Canonical URL:
+**图片地址**
 
 ```text
 https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png
 ```
 
-Markdown:
+**Markdown**
 
 ```markdown
 ![avatar](https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png)
 ```
 
-HTML:
-
-```html
-<img src="https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png" alt="avatar">
-```
-
-CSS:
-
-```css
-background-image: url("https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png");
-```
-
-The image is hosted externally; this repository serves as the stable index for reusable personal assets.
+> 图片由外部图床托管，本仓库仅用于集中记录和复用常用静态资源。
