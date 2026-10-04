@@ -25,8 +25,7 @@ wallpapers/
       anime-girl-rain.png
     1440x3120/
       anime-girl-wink-shh.png
-backgrounds/                 # 已发布旧链接的兼容副本
-catalog.json                # 可选展示信息与旧路径映射
+catalog.json                # 可选标题、尺寸与处理说明
 index.html
 ```
 
@@ -87,17 +86,13 @@ https://raw.githubusercontent.com/zzpice/assets/main/<文件路径>
 2. 按种类选择目录，再按实际宽高创建分辨率目录。
 3. 用符合规则的描述性英文文件名上传图片。
 4. 首页会自动发现新图片，并从目录读取种类和分辨率；不必手动维护图片列表。
-5. 如需中文标题、处理说明，或迁移已发布的图片，再向 `catalog.json` 添加可选元数据。
+5. 如需中文标题或处理说明，再向 `catalog.json` 添加可选元数据。
 
-`catalog.json` 记录 `path`、`title`、`kind`、`category`、`width`、`height`，以及可选的 `note` 和 `aliases`。它同时作为 GitHub 列表接口暂时不可用时的备用目录。宽高必须与图片文件和分辨率目录一致。未登记的图片仍会自动显示。
-
-## 已发布链接的兼容
-
-已有外链尽量不改名、不移动、不删除。此次归档为两张壁纸新增规范路径，同时保留 `backgrounds/` 下的旧文件作为兼容副本，旧地址仍然可用。首页通过 `catalog.json` 的 `aliases` 识别旧路径，只展示新路径一次。以后新增壁纸直接使用 `wallpapers/`，不再向 `backgrounds/` 新增文件。
+`catalog.json` 记录 `path`、`title`、`kind`、`category`、`width`、`height`，以及可选的 `note`。它同时作为 GitHub 列表接口暂时不可用时的备用目录。宽高必须与图片文件和分辨率目录一致。未登记的图片仍会自动显示。
 
 ## 发布约定
 
 - 保持纯静态站点与 `.nojekyll`，不引入构建框架或额外依赖。
 - 不预建空目录；有实际图片时再创建。
 - Pages 为主要地址，Raw 为备用地址。
-- 已对外分享的图片如需更新，优先新增版本，避免缓存和旧链接失效。
+- 更新图片时遵循用途、种类、实际分辨率和版本命名规则。

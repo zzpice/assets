@@ -132,7 +132,7 @@
     function makeAsset(file, metadata) {
       const info = metadata.get(file.path) || {};
       const match = file.path.match(/^wallpapers\/([^/]+)\/(\d+)x(\d+)\//);
-      const inferredKind = file.path.startsWith("wallpapers/") || file.path.startsWith("backgrounds/") ? "wallpaper" : file.path === "avatar.png" || file.path.startsWith("avatars/") ? "avatar" : "other";
+      const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path === "avatar.png" || file.path.startsWith("avatars/") ? "avatar" : "other";
       const filename = file.path.split("/").pop();
       return {
         path: file.path, size: file.size || 0,
@@ -282,11 +282,9 @@
       ]);
       const registered = catalogResult.status === "fulfilled" && Array.isArray(catalogResult.value.assets) ? catalogResult.value.assets : [];
       const metadata = new Map(registered.map(file => [file.path,file]));
-      const aliases = new Set(registered.flatMap(file => file.aliases || []));
       const treeAvailable = treeResult.status === "fulfilled" && Array.isArray(treeResult.value.tree);
       const tree = treeAvailable ? treeResult.value.tree : [];
-      const canonicalHashes = new Set(tree.filter(file => file.path.startsWith("wallpapers/")).map(file => file.sha));
-      const files = new Map(tree.filter(file => file.type === "blob" && imagePattern.test(file.path) && !aliases.has(file.path) && !(file.path.startsWith("backgrounds/") && canonicalHashes.has(file.sha))).map(file => [file.path,file]));
+      const files = new Map(tree.filter(file => file.type === "blob" && imagePattern.test(file.path)).map(file => [file.path,file]));
       registered.forEach(file => {
         if (imagePattern.test(file.path) && !files.has(file.path)) files.set(file.path, file);
       });
