@@ -50,14 +50,18 @@
   </div>
   <p id="notice" role="status" hidden></p>
   <main id="gallery" class="grid" aria-label="图片列表"><div class="empty">正在读取图片列表…</div></main>
+  <noscript><p class="empty">请开启 JavaScript 浏览图库，也可以<a href="https://github.com/zzpice/assets">在 GitHub 查看和下载图片</a>。</p></noscript>
   <footer>
     <span>点击图片预览 · 下载保留完整尺寸</span>
     <div><a href="https://github.com/zzpice/assets" target="_blank" rel="noopener">GitHub 仓库 ↗</a><a href="https://github.com/zzpice/assets/blob/main/README.md" target="_blank" rel="noopener">归档规则 ↗</a></div>
   </footer>
   <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title">
     <div class="dialog-header"><div><h2 id="preview-title"></h2><p id="preview-size"></p></div><button type="button" class="close-button" data-close="preview-dialog" aria-label="关闭预览">×</button></div>
-    <div class="full-image"><img id="preview-image" alt=""><p id="preview-error" class="image-error" hidden>当前无法加载图片，请联网后重试。</p></div>
-    <div class="dialog-footer"><a id="preview-download" class="primary-button">下载原图</a><button id="preview-copy" class="secondary-button" type="button">复制链接</button><p>手机上也可长按图片，使用浏览器的保存选项。</p></div>
+    <div class="preview-toolbar"><div class="preview-navigation" aria-label="切换图片"><button id="preview-previous" type="button" class="secondary-button" aria-label="上一张图片">‹</button><span id="preview-position" role="status"></span><button id="preview-next" type="button" class="secondary-button" aria-label="下一张图片">›</button></div><button id="preview-lockscreen" type="button" class="secondary-button" aria-pressed="false">锁屏效果</button></div>
+    <div class="full-image"><div id="image-stage" class="image-stage"><img id="preview-image" alt=""><div id="lockscreen-clock" class="lockscreen-clock" aria-hidden="true" hidden><span id="lock-date"></span><span id="lock-time"></span></div></div><p id="preview-status" class="image-error" role="status">正在加载原图…</p></div>
+    <p id="lockscreen-hint" class="preview-hint" hidden>时钟位置为示意，以手机实际设置为准；下载的图片不含时钟。</p>
+    <button id="preview-retry" type="button" class="secondary-button" hidden>重新加载原图</button>
+    <div class="dialog-footer"><a id="preview-download" class="primary-button">下载原图</a><button id="preview-share" class="secondary-button" type="button">分享预览</button><button id="preview-copy" class="secondary-button" type="button">复制原图链接</button><p>左右滑动切换，长按图片可保存。分享链接可直接打开图片。</p></div>
   </dialog>
   <dialog id="install-dialog" class="install-dialog" aria-labelledby="install-title">
     <div class="dialog-header"><h2 id="install-title">添加到主屏幕</h2><button type="button" class="close-button" data-close="install-dialog" aria-label="关闭添加指引">×</button></div>

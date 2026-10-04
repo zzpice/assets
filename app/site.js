@@ -19,6 +19,11 @@ let deferredInstall = null;
 let toastTimeout;
 let activePreview;
 let previewUsingThumbnail = false;
+let visibleAssets = [];
+let previewSequence = [];
+let initialRoute = true;
+let lockscreenEnabled = false;
+let directoryLimited = false;
 let favoritesOnly = false;
 const favoriteKey = "zzpice-assets-favorites:" + base.pathname;
 let favorites = new Set();
@@ -123,6 +128,8 @@ function toggleFavorite(file,button) {
 
 function showToast(message) {
   const toast = document.getElementById("toast");
+  const container = document.querySelector("dialog[open]") || document.body;
+  if (toast.parentNode !== container) container.append(toast);
   clearTimeout(toastTimeout);
   toast.textContent = message;
   toast.hidden = false;
@@ -142,20 +149,112 @@ function imageUrl(path) {
   return new URL(path.split("/").map(encodeURIComponent).join("/"), base).href;
 }
 
-function openPreview(file) {
-  activePreview = file;
+function previewUrl(file) {
+  const url = new URL(base);
+  url.hash = "image=" + encodeURIComponent(file.path);
+  return url.href;
+}
+
+function previewPath() {
+  return new URLSearchParams(location.hash.slice(1)).get("image");
+}
+
+function refreshPreviewNavigation() {
+  const index = previewSequence.indexOf(activePreview?.path);
+  document.getElementById("preview-position").textContent = index < 0 ? "" : (index + 1) + " / " + previewSequence.length;
+  document.getElementById("preview-previous").disabled = index <= 0;
+  document.getElementById("preview-next").disabled = index < 0 || index >= previewSequence.length - 1;
+}
+
+function updateLockscreen() {
+  const available = activePreview?.kind === "wallpaper" && orientation(activePreview) === "portrait";
+  if (!available) lockscreenEnabled = false;
+  const button = document.getElementById("preview-lockscreen");
+  button.hidden = !available;
+  button.setAttribute("aria-pressed",String(lockscreenEnabled));
+  document.getElementById("lockscreen-clock").hidden = !lockscreenEnabled || previewImage.hidden;
+  document.getElementById("lockscreen-hint").hidden = !lockscreenEnabled;
+  const now = new Date();
+  document.getElementById("lock-date").textContent = new Intl.DateTimeFormat("zh-CN",{month:"long",day:"numeric",weekday:"long"}).format(now);
+  document.getElementById("lock-time").textContent = new Intl.DateTimeFormat("zh-CN",{hour:"2-digit",minute:"2-digit",hour12:false}).format(now);
+}
+
+function loadPreviewImage(force = false) {
+  if (!activePreview) return;
   previewUsingThumbnail = false;
-  previewImage.hidden = false;
-  document.getElementById("preview-error").hidden = true;
+  previewImage.hidden = true;
+  const status = document.getElementById("preview-status");
+  status.textContent = "正在加载原图…"; status.hidden = false;
+  const retry = document.getElementById("preview-retry");
+  if (document.activeElement === retry) document.getElementById("preview-download").focus();
+  retry.hidden = true;
+  document.getElementById("preview-size").textContent = resolutionLabel(activePreview);
+  document.getElementById("image-stage").style.setProperty("--image-ratio",activePreview.width && activePreview.height ? activePreview.width / activePreview.height : 1);
+  const url = new URL(imageUrl(activePreview.path));
+  if (force === true) url.searchParams.set("retry",Date.now());
+  previewImage.src = url.href;
+  updateLockscreen();
+}
+
+function openPreview(file,historyMode = "push",sequence = visibleAssets) {
+  if (!previewDialog.open) {
+    previewSequence = sequence.filter(item => item.kind === file.kind).map(item => item.path);
+    if (!previewSequence.includes(file.path)) previewSequence = assets.filter(item => item.kind === file.kind).map(item => item.path);
+    lockscreenEnabled = false;
+  }
+  activePreview = file;
   document.getElementById("preview-title").textContent = file.title;
-  document.getElementById("preview-size").textContent = resolutionLabel(file);
   previewImage.alt = file.title;
-  previewImage.src = imageUrl(file.path);
   const download = document.getElementById("preview-download");
   download.href = imageUrl(file.path);
   download.download = file.path.split("/").pop();
-  previewDialog.showModal();
+  if (historyMode !== "none") {
+    initialRoute = false;
+    history[historyMode + "State"]({ ...history.state,assetPreview:true },"",previewUrl(file));
+  }
+  if (!previewDialog.open) previewDialog.showModal();
   document.body.style.overflow = "hidden";
+  refreshPreviewNavigation(); loadPreviewImage();
+}
+
+function closePreview() {
+  if (history.state?.assetPreview && previewPath()) history.back();
+  else {
+    const url = new URL(location.href); url.hash = "";
+    history.replaceState({...history.state,assetPreview:false},"",url);
+    previewDialog.close();
+  }
+}
+
+function syncPreviewRoute() {
+  const path = previewPath();
+  if (!path) { if (previewDialog.open) previewDialog.close(); return; }
+  const file = assets.find(item => item.path === path);
+  if (!file) return;
+  if (initialRoute) {
+    // A shared image gets a gallery entry beneath it, so Back stays in the app.
+    if (!history.state?.assetPreview) {
+      const imageLink = location.href;
+      const url = new URL(location.href); url.hash = "";
+      history.replaceState({...history.state,assetPreview:false},"",url);
+      history.pushState({...history.state,assetPreview:true},"",imageLink);
+    }
+    initialRoute = false;
+  }
+  if (kind !== file.kind) { kind = file.kind; clearFilters(); refreshControls(); renderGallery(); }
+  if (activePreview?.path !== path || !previewDialog.open) openPreview(file,"none");
+}
+
+function movePreview(delta) {
+  const index = previewSequence.indexOf(activePreview?.path) + delta;
+  if (index < 0 || index >= previewSequence.length) return;
+  const file = assets.find(item => item.path === previewSequence[index]);
+  if (file) {
+    openPreview(file,"replace");
+    const preferred = document.getElementById(delta < 0 ? "preview-previous" : "preview-next");
+    const other = document.getElementById(delta < 0 ? "preview-next" : "preview-previous");
+    (preferred.disabled ? other : preferred).focus();
+  }
 }
 
 function makeCard(file) {
@@ -206,6 +305,7 @@ function makeCard(file) {
   const actions = element("div", "actions");
   const download = element("a", "primary-button", "下载原图");
   download.href = url; download.download = file.path.split("/").pop();
+  download.addEventListener("click",requireConnection);
   actions.append(download); meta.append(actions);
   info.append(element("summary", "", "图片信息"), details);
   if (file.note) info.append(element("p", "note", file.note));
@@ -230,6 +330,7 @@ function renderGallery() {
     const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
     return controls.sort.value === "name" ? a.title.localeCompare(b.title,"zh-CN") : (controls.sort.value === "resolution-asc" ? difference : -difference) || a.title.localeCompare(b.title,"zh-CN");
   });
+  visibleAssets = visible;
   if (visible.length) gallery.replaceChildren(...visible.map(makeCard));
   else {
     const empty = element("div","empty",favoritesOnly ? "这里还没有符合条件的收藏。点图片右上角的心形即可收藏，收藏保存在当前浏览器。" : "没有找到符合条件的图片。");
@@ -263,26 +364,92 @@ document.getElementById("show-favorites").addEventListener("click",() => {
 document.getElementById("preview-copy").addEventListener("click", () => {
   if (activePreview) copyUrl(imageUrl(activePreview.path));
 });
-document.querySelectorAll("[data-close]").forEach(button => button.addEventListener("click", () => document.getElementById(button.dataset.close).close()));
+document.getElementById("preview-share").addEventListener("click",async () => {
+  if (!activePreview) return;
+  const data = {title:activePreview.title,url:previewUrl(activePreview)};
+  if (navigator.share) {
+    try { await navigator.share(data); return; }
+    catch (error) { if (error.name === "AbortError") return; }
+  }
+  await copyUrl(data.url);
+});
+document.getElementById("preview-previous").addEventListener("click",() => movePreview(-1));
+document.getElementById("preview-next").addEventListener("click",() => movePreview(1));
+document.getElementById("preview-lockscreen").addEventListener("click",() => { lockscreenEnabled = !lockscreenEnabled; updateLockscreen(); });
+document.getElementById("preview-retry").addEventListener("click",() => loadPreviewImage(true));
+document.getElementById("preview-download").addEventListener("click",requireConnection);
+document.querySelectorAll("[data-close]").forEach(button => button.addEventListener("click", () => {
+  if (button.dataset.close === "preview-dialog") closePreview();
+  else document.getElementById(button.dataset.close).close();
+}));
 document.querySelectorAll("dialog").forEach(dialog => {
-  dialog.addEventListener("close", () => { document.body.style.overflow = ""; });
+  dialog.addEventListener("close", () => {
+    document.body.style.overflow = "";
+    const toast = document.getElementById("toast");
+    if (toast.parentNode === dialog) document.body.append(toast);
+  });
   dialog.addEventListener("click", event => {
     const rect = dialog.getBoundingClientRect();
-    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) {
+      if (dialog === previewDialog) closePreview(); else dialog.close();
+    }
   });
 });
-previewDialog.addEventListener("close", () => { previewImage.removeAttribute("src"); activePreview = null; });
+previewDialog.addEventListener("cancel",event => { event.preventDefault(); closePreview(); });
+previewDialog.addEventListener("keydown",event => {
+  if (event.altKey || event.ctrlKey || event.metaKey || event.target.closest("input,select,textarea")) return;
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault(); movePreview(event.key === "ArrowLeft" ? -1 : 1);
+  }
+});
+let swipeStart;
+document.getElementById("image-stage").addEventListener("touchstart",event => {
+  swipeStart = event.touches.length === 1 ? {x:event.touches[0].clientX,y:event.touches[0].clientY} : null;
+},{passive:true});
+document.getElementById("image-stage").addEventListener("touchend",event => {
+  if (!swipeStart || event.touches.length || event.changedTouches.length !== 1) { swipeStart = null; return; }
+  const dx = event.changedTouches[0].clientX - swipeStart.x;
+  const dy = event.changedTouches[0].clientY - swipeStart.y;
+  swipeStart = null;
+  if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 1.5) movePreview(dx < 0 ? 1 : -1);
+},{passive:true});
+document.getElementById("image-stage").addEventListener("touchcancel",() => { swipeStart = null; },{passive:true});
+previewDialog.addEventListener("close", () => { previewImage.removeAttribute("src"); activePreview = null; lockscreenEnabled = false; });
+previewImage.addEventListener("load",() => {
+  if (!activePreview) return;
+  previewImage.hidden = false;
+  if (previewImage.naturalWidth && previewImage.naturalHeight) document.getElementById("image-stage").style.setProperty("--image-ratio",previewImage.naturalWidth / previewImage.naturalHeight);
+  document.getElementById("preview-status").hidden = true;
+  updateLockscreen();
+});
 previewImage.addEventListener("error", () => {
   if (!activePreview) return;
+  document.getElementById("preview-retry").hidden = false;
   if (activePreview.thumbnail && !previewUsingThumbnail) {
     previewUsingThumbnail = true;
     previewImage.src = imageUrl(activePreview.thumbnail);
     document.getElementById("preview-size").textContent = resolutionLabel(activePreview) + " · 当前显示预览图";
   } else {
     previewImage.hidden = true;
-    document.getElementById("preview-error").hidden = false;
+    const status = document.getElementById("preview-status");
+    status.textContent = "当前无法加载图片，请联网后重试。"; status.hidden = false;
+    updateLockscreen();
   }
 });
+window.addEventListener("popstate",syncPreviewRoute);
+window.addEventListener("hashchange",syncPreviewRoute);
+
+function requireConnection(event) {
+  if (!navigator.onLine) { event.preventDefault(); showToast("请联网后下载原图"); }
+}
+
+function updateConnectionNotice() {
+  const notice = document.getElementById("notice");
+  notice.hidden = navigator.onLine && !directoryLimited;
+  notice.textContent = navigator.onLine ? "当前显示已登记的图片，完整目录可稍后刷新。" : "当前离线，可浏览已缓存的预览；下载原图需要联网。";
+}
+window.addEventListener("offline",updateConnectionNotice);
+window.addEventListener("online",() => { updateConnectionNotice(); load(); });
 
 function isStandalone() {
   return window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
@@ -323,6 +490,7 @@ function applyFiles(files,metadata) {
   assets = next;
   if (assets.length && !assets.some(file => file.kind === kind)) kind = assets[0].kind;
   refreshControls(); renderGallery();
+  syncPreviewRoute();
 }
 
 async function load() {
@@ -351,10 +519,16 @@ async function load() {
     gallery.replaceChildren(empty); results.textContent = "暂无可显示的图片";
     document.getElementById("summary").textContent = "壁纸、头像与其他图片"; return;
   }
-  const notice = document.getElementById("notice");
-  notice.hidden = treeAvailable && !treeResult.value.truncated;
-  notice.textContent = navigator.onLine ? "当前显示已登记的图片，完整目录可稍后刷新。" : "当前离线，可浏览已缓存的预览；下载原图需要联网。";
+  directoryLimited = !treeAvailable || Boolean(treeResult.value.truncated);
+  updateConnectionNotice();
   applyFiles(files.values(),metadata);
+  if (previewPath() && !assets.some(file => file.path === previewPath())) {
+    const url = new URL(location.href); url.hash = "";
+    history.replaceState({...history.state,assetPreview:false},"",url);
+    if (previewDialog.open) previewDialog.close();
+    showToast("这张图片已移除，已返回图库");
+  }
+  initialRoute = false;
 }
 
 if ("serviceWorker" in navigator) {

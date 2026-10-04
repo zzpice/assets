@@ -78,9 +78,23 @@ dialog::backdrop { background: rgb(6 12 18 / .76); }
 .dialog-header p { color: var(--muted); margin: 4px 0 0; font-size: .8rem; }
 .close-button { flex-shrink: 0; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; background: var(--soft); border: 0; border-radius: 50%; font-size: 1.5rem; line-height: 1; }
 .preview-dialog { width: min(860px,calc(100% - 24px)); }
-.full-image { display: grid; place-items: center; background: #111718; margin-top: 14px; border-radius: 9px; overflow: hidden; min-height: 100px; }
-.full-image img { width: 100%; height: min(62dvh,720px); object-fit: contain; display: block; }
+.preview-toolbar,.preview-navigation { display: flex; align-items: center; gap: 8px; }
+.preview-toolbar { justify-content: space-between; margin-top: 10px; }
+.preview-navigation button { width: 44px; padding: 0; font-size: 1.5rem; }
+#preview-position { min-width: 42px; text-align: center; color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; }
+#preview-lockscreen { font-size: .8rem; padding: 9px 10px; }
+#preview-lockscreen[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: var(--accent); }
+.full-image { position: relative; display: grid; place-items: center; background: #111718; margin-top: 10px; border-radius: 9px; overflow: hidden; min-height: 100px; }
+.image-stage { position: relative; width: min(100%,calc(52dvh * var(--image-ratio, .46154))); aspect-ratio: var(--image-ratio, .46154); }
+.image-stage img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.full-image > .image-error { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; margin: 0; }
+.lockscreen-clock { position: absolute; top: 8%; left: 0; width: 100%; display: grid; gap: 0; text-align: center; color: #fff; text-shadow: 0 1px 12px rgb(0 0 0 / .55); pointer-events: none; }
+#lock-date { font-size: .75rem; font-weight: 600; }
+#lock-time { font-size: clamp(28px,6dvh,64px); font-weight: 650; line-height: 1.2; letter-spacing: -.035em; }
+.preview-hint { margin: 8px 0 0; font-size: .75rem; color: var(--muted); }
+#preview-retry { width: 100%; margin-top: 8px; }
 .dialog-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.dialog-footer .primary-button { grid-column: 1 / -1; }
 .dialog-footer p { grid-column: 1 / -1; font-size: .75rem; color: var(--muted); margin: 0; }
 .install-dialog { width: min(460px,calc(100% - 24px)); }
 .install-intro { color: var(--muted); font-size: .85rem; margin: 10px 0 20px; }
