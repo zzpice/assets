@@ -16,4 +16,6 @@ python3 scripts/update_catalog.py
 
 中文标题和处理说明仍可在 `catalog.json` 中编辑。替换原图后保留标题，旧的处理说明会清除，请按新图补充。GIF 的列表预览显示首帧，下载保留动画；SVG 使用原矢量图预览。
 
+适用设备会按实际尺寸和比例初步分类为手机、电脑、平板；无法明确区分的尺寸（例如 1080×1920）保留为「待分类」。可在 `catalog.json` 中用 `device` 修正：`phone`、`desktop`、`tablet`、`unknown`，手动分类优先。只有手机竖屏壁纸提供锁屏效果，其他图片使用普通预览。
+
 只检查、不写文件：`python3 scripts/update_catalog.py --check`。

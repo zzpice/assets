@@ -6,7 +6,7 @@ import unittest
 
 from PIL import Image
 
-from update_catalog import update
+from update_catalog import infer_device, update
 
 
 class CatalogTests(unittest.TestCase):
@@ -72,6 +72,29 @@ class CatalogTests(unittest.TestCase):
         item = next(item for item in self.catalog()["assets"] if item["path"].endswith(".svg"))
         self.assertEqual((item["width"], item["height"]), (40, 20))
         self.assertNotIn("thumbnail", item)
+
+    def test_device_is_explicit_and_preserved(self):
+        update(self.root)
+        catalog = self.catalog()
+        self.assertEqual(catalog["assets"][0]["device"], "unknown")
+        catalog["assets"][0]["device"] = "tablet"
+        (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        update(self.root)
+        self.assertEqual(self.catalog()["assets"][0]["device"], "tablet")
+        update(self.root, check=True)
+
+    def test_invalid_device_fails(self):
+        update(self.root)
+        catalog = self.catalog()
+        catalog["assets"][0]["device"] = "guess-from-ratio"
+        (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "device 应为"):
+            update(self.root)
+
+    def test_common_devices_and_ambiguous_portrait(self):
+        for size, expected in [((1440, 3120), "phone"), ((1080, 2400), "phone"), ((3840, 2160), "desktop"), ((3440, 1440), "desktop"), ((2048, 2732), "tablet"), ((2732, 2048), "tablet"), ((1080, 1920), "unknown"), ((1000, 1000), "unknown")]:
+            with self.subTest(size=size):
+                self.assertEqual(infer_device(*size), expected)
 
 
 if __name__ == "__main__":

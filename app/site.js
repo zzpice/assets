@@ -6,7 +6,8 @@ const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
 const categoryLabels = { anime: "动漫", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", other: "其他壁纸" };
 const orientationLabels = { portrait: "竖屏", landscape: "横屏", square: "方形", unknown: "方向未标注" };
 const kindLabels = { wallpaper: "壁纸", avatar: "头像", other: "其他图片" };
-const controls = Object.fromEntries(["search","category","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
+const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
+const controls = Object.fromEntries(["search","device","category","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
 const gallery = document.getElementById("gallery");
 const results = document.getElementById("results");
 const reset = document.getElementById("reset");
@@ -56,21 +57,33 @@ function orientation(file) {
   return !file.width || !file.height ? "unknown" : file.width === file.height ? "square" : file.width < file.height ? "portrait" : "landscape";
 }
 
+function inferDevice(width,height) {
+  if (!width || !height) return "unknown";
+  if (width < height && width >= 720 && width <= 1800 && height / width >= 1.9 && height / width <= 2.6) return "phone";
+  const size = Math.min(width,height) + "x" + Math.max(width,height);
+  if (["1536x2048","1668x2224","1668x2388","1640x2360","2048x2732"].includes(size)) return "tablet";
+  if (width >= 1920 && width / height >= 1.7 && width / height <= 3.6) return "desktop";
+  return "unknown";
+}
+
 function makeAsset(file, metadata) {
   const info = metadata.get(file.path) || {};
   const match = file.path.match(/^wallpapers\/([^/]+)\/(\d+)x(\d+)\//);
   const currentMetadata = !file.sha || !info.sha || file.sha === info.sha;
   const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path === "avatar.png" || file.path.startsWith("avatars/") ? "avatar" : "other";
   const filename = file.path.split("/").pop();
-  return {
+  const asset = {
     path: file.path, size: file.size || info.size || 0,
     title: info.title || filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
     kind: info.kind || inferredKind,
+    device: ["phone","desktop","tablet","unknown"].includes(info.device) ? info.device : "",
     category: info.category || (match ? match[1] : "other"),
     width: (currentMetadata && info.width) || (match ? Number(match[2]) : 0),
     height: (currentMetadata && info.height) || (match ? Number(match[3]) : 0),
     note: currentMetadata ? info.note || "" : "", thumbnail: currentMetadata ? info.thumbnail || "" : ""
   };
+  if (asset.kind === "wallpaper" && !asset.device) asset.device = inferDevice(asset.width,asset.height);
+  return asset;
 }
 
 function fillSelect(select, entries, placeholder) {
@@ -82,11 +95,17 @@ function fillSelect(select, entries, placeholder) {
 
 function refreshControls() {
   const files = assets.filter(file => file.kind === kind);
-  const categories = [...new Set(files.map(file => file.category))].sort();
+  const devices = ["phone","desktop","tablet","unknown"].filter(device => files.some(file => file.device === device));
+  fillSelect(controls.device,devices.map(value => [value,deviceLabels[value]]),"全部设备");
+  controls.device.disabled = kind !== "wallpaper";
+  if (controls.device.disabled) controls.device.value = "";
+  const deviceFiles = files.filter(file => !controls.device.value || file.device === controls.device.value);
+  const categories = [...new Set(deviceFiles.map(file => file.category))].sort();
   fillSelect(controls.category, categories.map(value => [value,categoryLabels[value] || value]), "全部种类");
   controls.category.disabled = kind !== "wallpaper";
   if (controls.category.disabled) controls.category.value = "";
-  const sizes = [...new Map(files.map(file => [resolutionKey(file),file])).entries()]
+  const categoryFiles = deviceFiles.filter(file => !controls.category.value || file.category === controls.category.value);
+  const sizes = [...new Map(categoryFiles.map(file => [resolutionKey(file),file])).entries()]
     .sort((a,b) => b[1].width * b[1].height - a[1].width * a[1].height);
   fillSelect(controls.resolution, sizes.map(([key,file]) => [key,key === "unknown" ? "尺寸未标注" : resolutionLabel(file)]), "全部尺寸");
   document.querySelectorAll(".tab").forEach(tab => {
@@ -167,7 +186,7 @@ function refreshPreviewNavigation() {
 }
 
 function updateLockscreen() {
-  const available = activePreview?.kind === "wallpaper" && orientation(activePreview) === "portrait";
+  const available = activePreview?.kind === "wallpaper" && activePreview.device === "phone" && orientation(activePreview) === "portrait";
   if (!available) lockscreenEnabled = false;
   const button = document.getElementById("preview-lockscreen");
   button.hidden = !available;
@@ -274,7 +293,7 @@ function makeCard(file) {
   const details = element("p", "details");
   function updateDetails() {
     const format = file.path.split(".").pop().toUpperCase();
-    details.textContent = (file.kind === "wallpaper" ? (categoryLabels[file.category] || file.category) : kindLabels[file.kind]) + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
+    details.textContent = (file.kind === "wallpaper" ? (categoryLabels[file.category] || file.category) : kindLabels[file.kind]) + (file.device ? " · " + deviceLabels[file.device] : "") + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
   }
   updateDetails();
   img.addEventListener("load", () => {
@@ -322,10 +341,11 @@ function renderGallery() {
   const query = controls.search.value.trim().toLocaleLowerCase();
   const visible = assets.filter(file => file.kind === kind)
     .filter(file => !favoritesOnly || favorites.has(file.path))
+    .filter(file => !controls.device.value || file.device === controls.device.value)
     .filter(file => !controls.category.value || file.category === controls.category.value)
     .filter(file => !controls.resolution.value || resolutionKey(file) === controls.resolution.value)
     .filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value)
-    .filter(file => !query || [file.title,file.path,categoryLabels[file.category] || ""].join(" ").toLocaleLowerCase().includes(query));
+    .filter(file => !query || [file.title,file.path,categoryLabels[file.category] || "",deviceLabels[file.device] || ""].join(" ").toLocaleLowerCase().includes(query));
   visible.sort((a,b) => {
     const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
     return controls.sort.value === "name" ? a.title.localeCompare(b.title,"zh-CN") : (controls.sort.value === "resolution-asc" ? difference : -difference) || a.title.localeCompare(b.title,"zh-CN");
@@ -340,13 +360,13 @@ function renderGallery() {
     empty.append(element("br"),clear); gallery.replaceChildren(empty);
   }
   results.textContent = "显示 " + visible.length + " / " + assets.filter(file => file.kind === kind).length + " 张" + kindLabels[kind];
-  const count = [controls.category.value,controls.resolution.value,controls.orientation.value].filter(Boolean).length;
+  const count = [controls.device.value,controls.category.value,controls.resolution.value,controls.orientation.value].filter(Boolean).length;
   document.getElementById("filter-summary").textContent = count ? count + " 项筛选" : "全部图片";
   reset.disabled = !query && !count && !favoritesOnly && controls.sort.value === "resolution-desc";
 }
 
 function clearFilters() {
-  controls.search.value = ""; controls.category.value = "";
+  controls.search.value = ""; controls.device.value = ""; controls.category.value = "";
   controls.resolution.value = ""; controls.orientation.value = "";
   controls.sort.value = "resolution-desc";
   favoritesOnly = false; refreshFavoriteCount();
@@ -356,7 +376,10 @@ document.getElementById("filters-panel").open = !window.matchMedia("(max-width: 
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => {
   kind = tab.dataset.kind; clearFilters(); refreshControls(); renderGallery();
 }));
-Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", renderGallery));
+Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", () => {
+  if (name === "device" || name === "category") refreshControls();
+  renderGallery();
+}));
 reset.addEventListener("click", () => { clearFilters(); renderGallery(); });
 document.getElementById("show-favorites").addEventListener("click",() => {
   favoritesOnly = !favoritesOnly; refreshFavoriteCount(); renderGallery();

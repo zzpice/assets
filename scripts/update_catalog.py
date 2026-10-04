@@ -37,6 +37,18 @@ def git_blob_sha(data):
     return hashlib.sha1(b"blob " + str(len(data)).encode("ascii") + b"\0" + data).hexdigest()
 
 
+def infer_device(width, height):
+    if not width or not height:
+        return "unknown"
+    if width < height and 720 <= width <= 1800 and 1.9 <= height / width <= 2.6:
+        return "phone"
+    if tuple(sorted((width, height))) in {(1536, 2048), (1668, 2224), (1668, 2388), (1640, 2360), (2048, 2732)}:
+        return "tablet"
+    if width >= 1920 and 1.7 <= width / height <= 3.6:
+        return "desktop"
+    return "unknown"
+
+
 def svg_size(data):
     node = ET.fromstring(data)
     width, height = node.get("width", ""), node.get("height", "")
@@ -103,6 +115,12 @@ def build_catalog(root):
         item = {"path": path, "title": old.get("title") or relative.stem.replace("-", " "), "kind": kind}
         if category:
             item["category"] = category
+        if old.get("device"):
+            if old["device"] not in {"phone", "desktop", "tablet", "unknown"}:
+                raise ValueError(f"{path}: device 应为 phone、desktop、tablet 或 unknown，也可以不填写")
+            item["device"] = old["device"]
+        elif kind == "wallpaper":
+            item["device"] = infer_device(width, height)
         item.update(width=width, height=height)
         if same_source and old.get("note"):
             item["note"] = old["note"]
