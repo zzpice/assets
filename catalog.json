@@ -2,21 +2,22 @@
   "version": 1,
   "assets": [
     {
-      "path": "wallpapers/anime/1440x3120/anime-girl-wink-shh.png",
+      "path": "wallpapers/anime/1440x3120/girl-wink-shh.png",
       "title": "眨眼少女 · 嘘",
       "kind": "wallpaper",
       "category": "anime",
       "width": 1440,
       "height": 3120,
-      "note": "由 853×1844 重绘稿放大导出"
+      "note": "由 852×1846 重绘稿等比例放大导出"
     },
     {
-      "path": "wallpapers/anime/945x2048/anime-girl-rain.png",
+      "path": "wallpapers/anime/1440x3120/girl-rain.png",
       "title": "雨夜少女",
       "kind": "wallpaper",
       "category": "anime",
-      "width": 945,
-      "height": 2048
+      "width": 1440,
+      "height": 3120,
+      "note": "由 852×1846 重绘稿等比例放大导出"
     },
     {
       "path": "avatar.png",
