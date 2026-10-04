@@ -3,8 +3,8 @@
 const repo = "zzpice/assets";
 const base = new URL(".", document.baseURI);
 const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
-const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", other: "其他" };
-const kindLabels = { wallpaper: "壁纸", avatar: "头像", other: "其他图片" };
+const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", brands: "品牌", general: "通用", other: "其他" };
+const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", other: "其他图片" };
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
 const controls = Object.fromEntries(["search","device","category","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
 const gallery = document.getElementById("gallery");
@@ -69,15 +69,16 @@ function inferDevice(width,height) {
 function makeAsset(file, metadata) {
   const info = metadata.get(file.path) || {};
   const match = file.path.match(/^(?:wallpapers|avatars)\/([^/]+)\/(\d+)x(\d+)\//);
+  const iconMatch = file.path.match(/^icons\/([^/]+)\//);
   const currentMetadata = !file.sha || !info.sha || file.sha === info.sha;
-  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : "other";
+  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : iconMatch ? "icon" : "other";
   const filename = file.path.split("/").pop();
   const asset = {
     path: file.path, size: file.size || info.size || 0,
     title: info.title || filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
     kind: info.kind || inferredKind,
     device: ["phone","desktop","tablet","unknown"].includes(info.device) ? info.device : "",
-    category: info.category || (match ? match[1] : "other"),
+    category: info.category || (match ? match[1] : iconMatch ? iconMatch[1] : "other"),
     width: (currentMetadata && info.width) || (match ? Number(match[2]) : 0),
     height: (currentMetadata && info.height) || (match ? Number(match[3]) : 0),
     note: currentMetadata ? info.note || "" : "", thumbnail: currentMetadata ? info.thumbnail || "" : ""
@@ -105,8 +106,9 @@ function refreshControls() {
   fillSelect(controls.category, categories.map(value => [value,categoryLabels[value] || value]), "全部种类");
   controls.category.disabled = kind === "other";
   controls.category.closest(".field").hidden = controls.category.disabled;
+  document.querySelector('label[for="category"]').textContent = kind === "icon" ? "图标类型" : "画面风格";
   if (controls.category.disabled) controls.category.value = "";
-  controls.orientation.disabled = kind === "avatar";
+  controls.orientation.disabled = kind === "avatar" || kind === "icon";
   controls.orientation.closest(".field").hidden = controls.orientation.disabled;
   if (controls.orientation.disabled) controls.orientation.value = "";
   const categoryFiles = deviceFiles.filter(file => !controls.category.value || file.category === controls.category.value);
@@ -116,14 +118,15 @@ function refreshControls() {
   document.querySelectorAll(".tab").forEach(tab => {
     const count = assets.filter(file => file.kind === tab.dataset.kind).length;
     tab.querySelector("span").textContent = count;
-    tab.hidden = tab.dataset.kind === "other" && !count;
+    tab.hidden = ["icon","other"].includes(tab.dataset.kind) && !count;
     tab.disabled = !count;
     tab.setAttribute("aria-pressed", String(tab.dataset.kind === kind));
   });
   const wallpapers = assets.filter(file => file.kind === "wallpaper");
   const sizeCount = new Set(wallpapers.filter(file => file.width && file.height).map(resolutionKey)).size;
   const avatarCount = assets.filter(file => file.kind === "avatar").length;
-  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "");
+  const iconCount = assets.filter(file => file.kind === "icon").length;
+  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "");
   refreshFavoriteCount();
 }
 
@@ -223,6 +226,7 @@ function loadPreviewImage(force = false) {
   if (document.activeElement === retry) document.getElementById("preview-download").focus();
   retry.hidden = true;
   document.getElementById("preview-size").textContent = resolutionLabel(activePreview);
+  document.querySelector(".full-image").classList.toggle("icon-preview",activePreview.kind === "icon");
   document.getElementById("image-stage").style.setProperty("--image-ratio",activePreview.width && activePreview.height ? activePreview.width / activePreview.height : 1);
   const url = new URL(imageUrl(activePreview.path));
   if (force === true) url.searchParams.set("retry",Date.now());
@@ -298,6 +302,7 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   const url = imageUrl(file.path);
   const card = element("article", "card");
   const preview = element("button", "preview " + orientation(file));
+  preview.classList.toggle("icon",file.kind === "icon");
   preview.type = "button";
   if (file.width && file.height) preview.style.aspectRatio = file.width + " / " + file.height;
   preview.setAttribute("aria-label", "预览" + file.title);
@@ -402,7 +407,7 @@ function renderGallery() {
     clear.addEventListener("click", () => { clearFilters(); renderGallery(); });
     empty.append(element("br"),clear); gallery.replaceChildren(empty);
   }
-  results.textContent = "显示 " + visible.length + " / " + assets.filter(file => file.kind === kind).length + " 张" + kindLabels[kind];
+  results.textContent = "显示 " + visible.length + " / " + assets.filter(file => file.kind === kind).length + (kind === "icon" ? " 个" : " 张") + kindLabels[kind];
   const count = [controls.device.value,controls.category.value,controls.resolution.value,controls.orientation.value].filter(Boolean).length;
   document.getElementById("filter-summary").textContent = count ? count + " 项筛选" : "全部图片";
   reset.disabled = !query && !count && !favoritesOnly && controls.sort.value === "resolution-desc";

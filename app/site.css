@@ -46,6 +46,7 @@ h1 { margin: 0 0 6px; font-size: clamp(1.55rem,4vw,2.15rem); letter-spacing: -.0
 .grid.grouped { display: block; }
 .grid[data-device="phone"] { grid-template-columns: repeat(auto-fill,minmax(170px,1fr)); }
 .grid[data-device="desktop"] { grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); }
+.grid[data-device="icon"] { grid-template-columns: repeat(auto-fill,minmax(150px,1fr)); }
 .device-section + .device-section { margin-top: 28px; }
 .device-heading { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 1rem; }
 .device-count { color: var(--muted); font-size: .76rem; font-weight: 400; }
@@ -60,6 +61,9 @@ h1 { margin: 0 0 6px; font-size: clamp(1.55rem,4vw,2.15rem); letter-spacing: -.0
 .preview.portrait { aspect-ratio: 6 / 13; }
 .preview.square { aspect-ratio: 1 / 1; }
 .preview.landscape { aspect-ratio: 4 / 3; }
+.preview.icon { background: #f0f3f6; }
+.preview.icon img { inset: 18%; width: 64%; height: 64%; }
+.preview.icon .image-error { color: #202a36; }
 .image-error { color: #d1d7dc; padding: 15px; font-size: .8rem; }
 .meta { padding: 14px; }
 .card h2,.card h3 { font-size: .95rem; margin: 0 0 5px; overflow-wrap: anywhere; }
@@ -96,6 +100,8 @@ dialog::backdrop { background: rgb(6 12 18 / .76); }
 #preview-lockscreen,#preview-avatar-round { font-size: .8rem; padding: 9px 10px; }
 #preview-lockscreen[aria-pressed="true"],#preview-avatar-round[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: var(--accent); }
 .full-image { position: relative; display: grid; place-items: center; background: #111718; margin-top: 10px; border-radius: 9px; overflow: hidden; min-height: 100px; }
+.full-image.icon-preview { background: #f0f3f6; }
+.full-image.icon-preview > .image-error { color: #202a36; }
 .image-stage { position: relative; width: min(100%,calc(52dvh * var(--image-ratio, .46154))); aspect-ratio: var(--image-ratio, .46154); }
 .image-stage img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .image-stage.round-avatar { width: min(100%,52dvh); aspect-ratio: 1; border-radius: 50%; overflow: hidden; }

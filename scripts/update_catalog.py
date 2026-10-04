@@ -111,6 +111,11 @@ def build_catalog(root):
             if (int(match[2]), int(match[3])) != (width, height):
                 raise ValueError(f"{path}: 目录尺寸与图片实际尺寸 {width}x{height} 不一致")
             kind, category = ("wallpaper" if folder == "wallpapers" else "avatar"), match[1]
+        elif path.startswith("icons/"):
+            match = re.fullmatch(r"icons/([a-z0-9-]+)/[a-z0-9][a-z0-9-]*\.[a-z0-9]+", path)
+            if not match:
+                raise ValueError(f"{path}: 图标路径应为 icons/<种类>/<名称>.<格式>")
+            kind, category = "icon", match[1]
         else:
             kind = "other"
             category = None
@@ -126,7 +131,7 @@ def build_catalog(root):
         item.update(width=width, height=height)
         if same_source and old.get("note"):
             item["note"] = old["note"]
-        if image is not None:
+        if image is not None and kind != "icon":
             if same_source and usable_preview(root, old.get("thumbnail"), width, height):
                 item["thumbnail"] = old["thumbnail"]
             else:
@@ -139,6 +144,7 @@ def build_catalog(root):
                 preview_path = f"app/previews/{relative.stem}-{hashlib.sha256(preview).hexdigest()[:10]}.webp"
                 previews[preview_path] = preview
                 item["thumbnail"] = preview_path
+        if image is not None:
             image.close()
         item.update(size=len(data), sha=sha)
         assets.append(item)
