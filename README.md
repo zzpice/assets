@@ -4,18 +4,18 @@
 
 ## Avatar
 
-<img src="./avatar.jpg" alt="avatar" width="256">
+<img src="https://img.seedvault.cn/i/2026/10/04/avatar6ac1bda6c327c308.png" alt="avatar" width="256">
 
-**固定图片地址**
+**图片地址**
 
 ```text
-https://raw.githubusercontent.com/zzpice/assets/main/avatar.jpg
+https://img.seedvault.cn/i/2026/10/04/avatar6ac1bda6c327c308.png
 ```
 
 **Markdown**
 
 ```markdown
-![avatar](https://raw.githubusercontent.com/zzpice/assets/main/avatar.jpg)
+![avatar](https://img.seedvault.cn/i/2026/10/04/avatar6ac1bda6c327c308.png)
 ```
 
-> 头像文件固定为 `avatar.jpg`。以后只需替换这个文件，其他地方的链接无需修改。
+> 图片由外部图床托管，本仓库用于集中记录和复用常用静态资源。
