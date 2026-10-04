@@ -7,7 +7,11 @@ const shell = ["./","index.html","app/site.css","app/site.js","app/manifest.webm
 
 self.addEventListener("install", event => event.waitUntil((async () => {
   const cache = await caches.open(CACHE_NAME);
-  await cache.addAll(shell.map(path => new URL(path,base).href));
+  await cache.addAll(shell.map(path => new Request(new URL(path,base).href,{cache:"no-cache"})));
+  const page = await cache.match(new URL("index.html",base).href);
+  const html = await page.text();
+  const versioned = [...html.matchAll(/(?:src|href)="(app\/site\.(?:js|css)\?v=[a-f0-9]+)"/g)].map(match => match[1]);
+  await Promise.allSettled(versioned.map(path => cache.add(new Request(new URL(path,base).href,{cache:"no-cache"}))));
   const response = await cache.match(new URL("catalog.json",base).href);
   const catalog = await response.json();
   const thumbnails = (catalog.assets || []).map(file => file.thumbnail).filter(path => path && path.startsWith("app/previews/")).slice(0,24);
@@ -23,11 +27,11 @@ self.addEventListener("activate", event => event.waitUntil((async () => {
 async function networkFirst(request) {
   const cache = await caches.open(CACHE_NAME);
   try {
-    const response = await fetch(request);
+    const response = await fetch(request,{cache:"no-cache"});
     if (response.ok) await cache.put(request,response.clone()).catch(() => {});
     return response;
   } catch (error) {
-    const cached = await cache.match(request, { ignoreSearch: true });
+    const cached = await cache.match(request) || await cache.match(request, { ignoreSearch: true });
     if (cached) return cached;
     if (request.mode === "navigate") {
       const page = await cache.match(base.href);

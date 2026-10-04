@@ -114,6 +114,23 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "实际尺寸 64x48"):
             update(self.root)
 
+    def test_changed_scripts_refresh_page_versions(self):
+        script = self.root / "app/site.js"
+        script.parent.mkdir(parents=True)
+        script.write_text("const version = 1;")
+        page = self.root / "index.html"
+        page.write_text('<script src="app/site.js"></script>')
+        update(self.root)
+        previous = page.read_text()
+        self.assertIn("?v=", previous)
+        update(self.root, check=True)
+        script.write_text("const version = 2;")
+        with self.assertRaises(ValueError):
+            update(self.root, check=True)
+        update(self.root)
+        self.assertNotEqual(page.read_text(), previous)
+        self.assertEqual(page.read_text().count("?v="), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

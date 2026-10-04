@@ -149,13 +149,30 @@ def build_catalog(root):
     return text, previews, stale
 
 
+def versioned_html(root):
+    page = root / "index.html"
+    if not page.exists():
+        return None
+    text = page.read_text("utf-8")
+    for path in ["app/site.js", "app/site.css"]:
+        file = root / path
+        if file.exists():
+            version = hashlib.sha256(file.read_bytes()).hexdigest()[:10]
+            pattern = r'((?:src|href)="' + re.escape(path) + r')(?:\?v=[a-f0-9]+)?(")'
+            text = re.sub(pattern, lambda match: match[1] + "?v=" + version + match[2], text)
+    return text
+
+
 def update(root=ROOT, check=False):
     text, previews, stale = build_catalog(root)
     catalog = root / "catalog.json"
     changed = not catalog.exists() or catalog.read_text("utf-8") != text
+    page = root / "index.html"
+    html = versioned_html(root)
+    page_changed = html is not None and page.read_text("utf-8") != html
     if check:
-        if changed or previews or stale:
-            raise ValueError("目录或预览需要更新，请运行 python3 scripts/update_catalog.py 后提交生成的文件")
+        if changed or previews or stale or page_changed:
+            raise ValueError("目录、预览或页面资源版本需要更新，请运行 python3 scripts/update_catalog.py 后提交生成的文件")
     else:
         for path, data in previews.items():
             destination = root / path
@@ -165,6 +182,8 @@ def update(root=ROOT, check=False):
             temporary = catalog.with_suffix(".json.tmp")
             temporary.write_text(text, encoding="utf-8")
             temporary.replace(catalog)
+        if page_changed:
+            page.write_text(html, encoding="utf-8")
         for path in stale:
             path.unlink()
     return len(json.loads(text)["assets"])
