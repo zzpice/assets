@@ -184,6 +184,24 @@ def versioned_html(root):
     return text
 
 
+def versioned_service_worker(root, catalog_text, html):
+    worker = root / "sw.js"
+    if not worker.exists():
+        return None
+    text = worker.read_text("utf-8")
+    pattern = r'(const CACHE_NAME = CACHE_PREFIX \+ ")[^"]+(";)'
+    normalized = re.sub(pattern, r'\g<1>VERSION\g<2>', text, count=1)
+    digest = hashlib.sha256(normalized.encode("utf-8"))
+    digest.update(("\0catalog.json\0" + catalog_text + "\0index.html\0" + (html or "")).encode("utf-8"))
+    for path in ["app/site.js", "app/site.css", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
+        file = root / path
+        if file.exists():
+            digest.update(("\0" + path + "\0").encode("utf-8"))
+            digest.update(file.read_bytes())
+    version = "v2-" + digest.hexdigest()[:12]
+    return re.sub(pattern, lambda match: match[1] + version + match[2], text, count=1)
+
+
 def update(root=ROOT, check=False):
     text, previews, stale = build_catalog(root)
     catalog = root / "catalog.json"
@@ -191,9 +209,12 @@ def update(root=ROOT, check=False):
     page = root / "index.html"
     html = versioned_html(root)
     page_changed = html is not None and page.read_text("utf-8") != html
+    worker = root / "sw.js"
+    worker_text = versioned_service_worker(root, text, html)
+    worker_changed = worker_text is not None and worker.read_text("utf-8") != worker_text
     if check:
-        if changed or previews or stale or page_changed:
-            raise ValueError("目录、预览或页面资源版本需要更新，请运行 python3 scripts/update_catalog.py 后提交生成的文件")
+        if changed or previews or stale or page_changed or worker_changed:
+            raise ValueError("目录、预览、页面或离线缓存版本需要更新，请运行 python3 scripts/update_catalog.py 后提交生成的文件")
     else:
         for path, data in previews.items():
             destination = root / path
@@ -205,6 +226,8 @@ def update(root=ROOT, check=False):
             temporary.replace(catalog)
         if page_changed:
             page.write_text(html, encoding="utf-8")
+        if worker_changed:
+            worker.write_text(worker_text, encoding="utf-8")
         for path in stale:
             path.unlink()
     return len(json.loads(text)["assets"])

@@ -179,6 +179,45 @@ class CatalogTests(unittest.TestCase):
         self.assertNotEqual(page.read_text(), previous)
         self.assertEqual(page.read_text().count("?v="), 1)
 
+    def test_offline_content_updates_cache_version_without_repeated_changes(self):
+        worker = self.root / "sw.js"
+        worker.write_text('const CACHE_NAME = CACHE_PREFIX + "v1";\n')
+        app = self.root / "app"
+        app.mkdir()
+        stylesheet = app / "site.css"
+        stylesheet.write_text("body { color: navy; }")
+        manifest = app / "manifest.webmanifest"
+        manifest.write_text('{"name":"Gallery"}')
+        update(self.root)
+        previous = worker.read_text()
+        update(self.root, check=True)
+        self.assertEqual(worker.read_text(), previous)
+        for file, content in [(stylesheet, "body { color: red; }"), (manifest, '{"name":"Images"}')]:
+            with self.subTest(file=file.name):
+                file.write_text(content)
+                with self.assertRaises(ValueError):
+                    update(self.root, check=True)
+                update(self.root)
+                self.assertNotEqual(worker.read_text(), previous)
+                previous = worker.read_text()
+                update(self.root, check=True)
+        Image.new("RGB", (120, 260), "red").save(self.image)
+        update(self.root)
+        self.assertNotEqual(worker.read_text(), previous)
+        update(self.root, check=True)
+
+    def test_service_worker_behavior_changes_also_update_cache_version(self):
+        worker = self.root / "sw.js"
+        worker.write_text('const CACHE_NAME = CACHE_PREFIX + "v1";\nconst limit = 24;\n')
+        update(self.root)
+        previous = worker.read_text()
+        worker.write_text(previous.replace("limit = 24", "limit = 32"))
+        with self.assertRaises(ValueError):
+            update(self.root, check=True)
+        update(self.root)
+        self.assertNotEqual(worker.read_text().splitlines()[0], previous.splitlines()[0])
+        update(self.root, check=True)
+
 
 if __name__ == "__main__":
     unittest.main()

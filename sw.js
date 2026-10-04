@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "zzpice-assets-";
-const CACHE_NAME = CACHE_PREFIX + "v1";
+const CACHE_NAME = CACHE_PREFIX + "v2-8a1f7934cd5d";
 const base = new URL("./", self.location.href);
 const shell = ["./","index.html","app/site.css","app/site.js","app/manifest.webmanifest","app/icon.svg","app/icon-180.png","app/icon-192.png","app/icon-512.png","catalog.json"];
 
@@ -26,19 +26,24 @@ self.addEventListener("activate", event => event.waitUntil((async () => {
 
 async function networkFirst(request) {
   const cache = await caches.open(CACHE_NAME);
+  let response;
+  let failure;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(),8000);
   try {
-    const response = await fetch(request,{cache:"no-cache"});
+    response = await fetch(request,{cache:"no-cache",signal:controller.signal});
     if (response.ok) await cache.put(request,response.clone()).catch(() => {});
-    return response;
-  } catch (error) {
-    const cached = await cache.match(request) || await cache.match(request, { ignoreSearch: true });
-    if (cached) return cached;
-    if (request.mode === "navigate") {
-      const page = await cache.match(base.href);
-      if (page) return page;
-    }
-    throw error;
+  } catch (error) { failure = error; }
+  finally { clearTimeout(timeout); }
+  if (response?.ok && !controller.signal.aborted) return response;
+  const cached = await cache.match(request) || await cache.match(request, { ignoreSearch: true });
+  if (cached) return cached;
+  if (request.mode === "navigate") {
+    const page = await cache.match(base.href);
+    if (page) return page;
   }
+  if (response && !controller.signal.aborted) return response;
+  throw failure || new Error("Network request timed out");
 }
 
 async function thumbnailResponse(request) {

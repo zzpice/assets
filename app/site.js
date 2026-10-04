@@ -25,6 +25,7 @@ let initialRoute = true;
 let lockscreenEnabled = false;
 let avatarRoundEnabled = false;
 let directoryLimited = false;
+let loadGeneration = 0;
 let favoritesOnly = false;
 const favoriteKey = "zzpice-assets-favorites:" + base.pathname;
 let favorites = new Set();
@@ -282,7 +283,7 @@ function syncPreviewRoute() {
     }
     initialRoute = false;
   }
-  if (kind !== file.kind) { kind = file.kind; clearFilters(); refreshControls(); renderGallery(); }
+  if (kind !== file.kind) { kind = file.kind; clearFilters(); renderGallery(); }
   if (activePreview?.path !== path || !previewDialog.open) openPreview(file,"none");
 }
 
@@ -417,12 +418,12 @@ function clearFilters() {
   controls.search.value = ""; controls.device.value = ""; controls.category.value = "";
   controls.resolution.value = ""; controls.orientation.value = "";
   controls.sort.value = "resolution-desc";
-  favoritesOnly = false; refreshFavoriteCount();
+  favoritesOnly = false; refreshControls();
 }
 
 document.getElementById("filters-panel").open = !window.matchMedia("(max-width: 760px)").matches;
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => {
-  kind = tab.dataset.kind; clearFilters(); refreshControls(); renderGallery();
+  kind = tab.dataset.kind; clearFilters(); renderGallery();
 }));
 Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", () => {
   if (name === "device" || name === "category") refreshControls();
@@ -554,9 +555,13 @@ installButton.addEventListener("click", async () => {
 document.getElementById("copy-site").addEventListener("click", () => copyUrl(base.href));
 
 async function fetchJson(url) {
-  const response = await fetch(url, { cache: "no-cache" });
-  if (!response.ok) throw new Error("HTTP " + response.status);
-  return response.json();
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(),10000);
+  try {
+    const response = await fetch(url, { cache: "no-cache", signal: controller.signal });
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    return await response.json();
+  } finally { clearTimeout(timeout); }
 }
 
 function applyFiles(files,metadata) {
@@ -569,22 +574,28 @@ function applyFiles(files,metadata) {
 }
 
 async function load() {
+  const generation = ++loadGeneration;
   const settle = promise => promise.then(value => ({status:"fulfilled",value}),reason => ({status:"rejected",reason}));
   const catalogTask = settle(fetchJson(new URL("catalog.json",base)));
   const treeTask = settle(fetchJson("https://api.github.com/repos/" + repo + "/git/trees/main?recursive=1"));
   const catalogResult = await catalogTask;
-  const registered = catalogResult.status === "fulfilled" && Array.isArray(catalogResult.value.assets) ? catalogResult.value.assets : [];
+  if (generation !== loadGeneration) return;
+  const registered = catalogResult.status === "fulfilled" && Array.isArray(catalogResult.value?.assets) ? catalogResult.value.assets : [];
   const metadata = new Map(registered.map(file => [file.path,file]));
   const registeredImages = registered.filter(file => imagePattern.test(file.path) && !file.path.startsWith("app/"));
   if (registeredImages.length) applyFiles(registeredImages,metadata);
   const treeResult = await treeTask;
-  const treeAvailable = treeResult.status === "fulfilled" && Array.isArray(treeResult.value.tree);
+  if (generation !== loadGeneration) return;
+  const treeAvailable = treeResult.status === "fulfilled" && Array.isArray(treeResult.value?.tree);
   const tree = treeAvailable ? treeResult.value.tree : [];
   const files = new Map(tree.filter(isUserImage).map(file => [file.path,file]));
   if (!treeAvailable || treeResult.value.truncated) registered.forEach(file => {
     if (imagePattern.test(file.path) && !file.path.startsWith("app/") && !files.has(file.path)) files.set(file.path,file);
   });
   if (!files.size) {
+    directoryLimited = !treeAvailable || Boolean(treeResult.value.truncated);
+    updateConnectionNotice();
+    if (!treeAvailable && assets.length) return;
     assets = []; refreshControls();
     const empty = element("div","empty",treeAvailable ? "仓库里还没有图片。" : "暂时无法读取图片目录。");
     if (!treeAvailable) {
