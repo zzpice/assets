@@ -1,15 +1,33 @@
 # assets
 
-Personal static assets for `zzpice`.
+Personal static asset index for `zzpice`.
 
 ## Avatar
 
-Canonical file: `avatar.jpg`
+<img src="https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png" alt="avatar" width="256">
 
-Raw URL:
+Canonical URL:
 
 ```text
-https://raw.githubusercontent.com/zzpice/assets/main/avatar.jpg
+https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png
 ```
 
-Keep the filename stable so links can be reused across profiles, READMEs, and websites.
+Markdown:
+
+```markdown
+![avatar](https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png)
+```
+
+HTML:
+
+```html
+<img src="https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png" alt="avatar">
+```
+
+CSS:
+
+```css
+background-image: url("https://img.seedvault.cn/i/2026/10/04/暴雨云幕下的银发少女6ac1ba496db4a308.png");
+```
+
+The image is hosted externally; this repository serves as the stable index for reusable personal assets.
