@@ -8,7 +8,10 @@
       "category": "anime",
       "width": 1440,
       "height": 3120,
-      "note": "由 852×1846 重绘稿等比例放大导出"
+      "note": "由 852×1846 重绘稿等比例放大导出",
+      "thumbnail": "app/previews/girl-wink-shh-cc06503cca.webp",
+      "size": 3895586,
+      "sha": "6cd7c9787e9a51c9a334be98fa3fd497f701052d"
     },
     {
       "path": "wallpapers/anime/1440x3120/girl-rain.png",
@@ -17,14 +20,20 @@
       "category": "anime",
       "width": 1440,
       "height": 3120,
-      "note": "由 852×1846 重绘稿等比例放大导出"
+      "note": "由 852×1846 重绘稿等比例放大导出",
+      "thumbnail": "app/previews/girl-rain-b84ffaff8d.webp",
+      "size": 5052214,
+      "sha": "2abf110efeb100ac9f7d5c251d28b3520c8b4cc4"
     },
     {
       "path": "avatar.png",
       "title": "主头像",
       "kind": "avatar",
       "width": 1254,
-      "height": 1254
+      "height": 1254,
+      "thumbnail": "app/previews/avatar-c8d54431be.webp",
+      "size": 1843255,
+      "sha": "d8a1d44ad1728b8efea73f996876e1ae1d712b50"
     }
   ]
 }
