@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>zzpice / assets</title>
+  <style>
+    :root { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height: 1.5; }
+    body { max-width: 1100px; margin: 0 auto; padding: 40px 20px 64px; }
+    header { margin-bottom: 32px; }
+    h1 { margin: 0 0 8px; font-size: 2rem; }
+    p { margin: 0; opacity: .72; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 18px; }
+    .card { border: 1px solid color-mix(in srgb,currentColor 18%,transparent); border-radius: 14px; overflow: hidden; }
+    .preview { aspect-ratio: 1 / 1; display: grid; place-items: center; background: color-mix(in srgb,currentColor 5%,transparent); }
+    .preview img { width: 100%; height: 100%; object-fit: contain; }
+    .meta { padding: 12px; }
+    .path { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: .84rem; }
+    .actions { display: flex; gap: 8px; margin-top: 10px; }
+    a,button { color: inherit; }
+    button { border: 1px solid color-mix(in srgb,currentColor 20%,transparent); background: transparent; border-radius: 8px; padding: 5px 9px; cursor: pointer; }
+    .status { padding: 24px 0; opacity: .72; }
+    footer { margin-top: 36px; font-size: .85rem; opacity: .58; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>assets</h1>
+    <p>zzpice 的个人静态资源。新增图片到仓库后，这里会自动显示。</p>
+  </header>
+
+  <main id="gallery"><div class="status">正在读取图片列表…</div></main>
+
+  <footer>
+    GitHub Pages · <a href="https://github.com/zzpice/assets">Repository</a>
+  </footer>
+
+  <script>
+    const repo = "zzpice/assets";
+    const branch = "main";
+    const base = "https://zzpice.github.io/assets/";
+    const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
+    const gallery = document.getElementById("gallery");
+
+    function escapeHtml(value) {
+      return value.replace(/[&<>"']/g, c => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
+      })[c]);
+    }
+
+    async function copyUrl(url, button) {
+      try {
+        await navigator.clipboard.writeText(url);
+        const old = button.textContent;
+        button.textContent = "已复制";
+        setTimeout(() => button.textContent = old, 1200);
+      } catch {
+        prompt("复制图片地址：", url);
+      }
+    }
+
+    async function load() {
+      try {
+        const response = await fetch(`https://api.github.com/repos/${repo}/git/trees/${branch}?recursive=1`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const files = data.tree
+          .filter(item => item.type === "blob" && imagePattern.test(item.path))
+          .sort((a,b) => {
+            const da = a.path.includes("/") ? 1 : 0;
+            const db = b.path.includes("/") ? 1 : 0;
+            return da - db || a.path.localeCompare(b.path);
+          });
+
+        if (!files.length) {
+          gallery.innerHTML = '<div class="status">仓库里还没有图片。</div>';
+          return;
+        }
+
+        gallery.className = "grid";
+        gallery.innerHTML = files.map(file => {
+          const encodedPath = file.path.split("/").map(encodeURIComponent).join("/");
+          const url = base + encodedPath;
+          return `
+            <article class="card">
+              <a class="preview" href="${url}" target="_blank" rel="noopener">
+                <img src="${url}" alt="${escapeHtml(file.path)}" loading="lazy">
+              </a>
+              <div class="meta">
+                <span class="path" title="${escapeHtml(file.path)}">${escapeHtml(file.path)}</span>
+                <div class="actions">
+                  <a href="${url}" target="_blank" rel="noopener">打开</a>
+                  <button type="button" data-url="${url}">复制链接</button>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        gallery.querySelectorAll("button[data-url]").forEach(button => {
+          button.addEventListener("click", () => copyUrl(button.dataset.url, button));
+        });
+      } catch (error) {
+        gallery.innerHTML = '<div class="status">暂时无法读取图片列表，但已有图片直链仍可正常访问。</div>';
+      }
+    }
+
+    load();
+  </script>
+</body>
+</html>
