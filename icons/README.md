@@ -9,24 +9,34 @@
 | 用途 | 目录 | 数量 |
 |---|---|---:|
 | AI | [ai/](ai/) | 10 |
-| 浏览器 | [browsers/](browsers/) | 4 |
-| 开发与运维 | [development/](development/) | 10 |
-| 网络与安全 | [network/](network/) | 8 |
-| 通讯与邮箱 | [communication/](communication/) | 12 |
-| 社交与社区 | [social/](social/) | 11 |
 | 搜索与知识 | [search/](search/) | 4 |
-| 视频与媒体 | [video/](video/) | 17 |
+| 浏览器 | [browsers/](browsers/) | 4 |
+| 聊天与会议 | [communication/](communication/) | 8 |
+| 邮箱 | [email/](email/) | 4 |
+| 社交与社区 | [social/](social/) | 11 |
+| 视频与直播 | [video/](video/) | 13 |
+| 媒体播放器 | [media-players/](media-players/) | 4 |
 | 音乐与播客 | [music/](music/) | 8 |
-| 网盘与存储 | [storage/](storage/) | 11 |
-| 效率与工具 | [productivity/](productivity/) | 5 |
 | 游戏 | [gaming/](gaming/) | 4 |
-| 购物与支付 | [lifestyle/](lifestyle/) | 6 |
-| 代理与分流 | [proxy/](proxy/) | 19 |
+| 效率与工具 | [productivity/](productivity/) | 4 |
+| 地图与出行 | [maps/](maps/) | 1 |
+| 网盘与存储 | [storage/](storage/) | 11 |
+| 购物与生活 | [shopping/](shopping/) | 4 |
+| 支付 | [payments/](payments/) | 2 |
+| 开发工具 | [development/](development/) | 5 |
+| 云服务与基础设施 | [cloud/](cloud/) | 5 |
+| 网络工具 | [network/](network/) | 3 |
+| 隐私与安全 | [security/](security/) | 3 |
+| 代理客户端 | [proxy-clients/](proxy-clients/) | 2 |
+| 代理组与分流 | [proxy/](proxy/) | 15 |
+| 线路与专线 | [routes/](routes/) | 4 |
 | 国家与地区 | [regions/](regions/) | 12 |
 
 文件路径为 `icons/<分类>/<名称>.png`，名称使用小写英文、数字和短横线。同一图标只归入一个主要用途，不按母公司嵌套，不制作多尺寸或明暗变体。
 
-分类以使用场景为准：群晖归存储；Surge、AdGuard、1Password 归网络与安全；Google、Bing、百度、维基百科归搜索与知识；Bangumi 归社交与社区；夸克以网盘用途展示。
+表格顺序也是网站「全部种类」的默认分组顺序；筛选菜单与分组标题使用同一顺序。尺寸或名称排序只调整组内图片，不打乱分类。
+
+分类以主要用途为准：邮箱与聊天分开；云平台和虚拟化基础设施与开发工具分开；密码管理和隐私保护归安全；Surge、Clash 归代理客户端；代理组功能图标归分流，BGP、GIA、IEPL、IPLC 归线路。视频与直播服务和媒体播放器分开；购物服务和支付工具分开；地图归出行。群晖归存储，Bangumi 归社区，夸克按网盘用途收录。不要仅因服务能走代理就归入代理组，也不按母公司分类。
 
 ## 使用与来源
 

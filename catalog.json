@@ -1101,6 +1101,56 @@
       "sha": "8e88fcaffd41d3f50c89a23e3f8315429ea63823"
     },
     {
+      "path": "icons/cloud/alibaba-cloud.png",
+      "title": "阿里云",
+      "kind": "icon",
+      "category": "cloud",
+      "width": 512,
+      "height": 512,
+      "size": 6795,
+      "sha": "82e74d100ec5c189d102b400269e1c8c1039e5c1"
+    },
+    {
+      "path": "icons/cloud/aws.png",
+      "title": "AWS",
+      "kind": "icon",
+      "category": "cloud",
+      "width": 512,
+      "height": 512,
+      "size": 34277,
+      "sha": "8c7a757fde20d08923ba297c3e4b96f450c0d01d"
+    },
+    {
+      "path": "icons/cloud/azure.png",
+      "title": "Azure",
+      "kind": "icon",
+      "category": "cloud",
+      "width": 512,
+      "height": 512,
+      "size": 102764,
+      "sha": "cb5f235374d49102b47ec60c9c48944e70c3e172"
+    },
+    {
+      "path": "icons/cloud/proxmox.png",
+      "title": "Proxmox",
+      "kind": "icon",
+      "category": "cloud",
+      "width": 512,
+      "height": 512,
+      "size": 24455,
+      "sha": "ae32d9cb19271fffab5dd9994b38aefbee7f6069"
+    },
+    {
+      "path": "icons/cloud/tencent-cloud.png",
+      "title": "腾讯云",
+      "kind": "icon",
+      "category": "cloud",
+      "width": 512,
+      "height": 512,
+      "size": 32295,
+      "sha": "583facd30f3b64efcb8b9bfb67f3db4a9d5c5f97"
+    },
+    {
       "path": "icons/communication/dingtalk.png",
       "title": "钉钉",
       "kind": "icon",
@@ -1121,16 +1171,6 @@
       "sha": "078e22434f35b545a445687c0d7352407a3ada24"
     },
     {
-      "path": "icons/communication/gmail.png",
-      "title": "Gmail",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 35294,
-      "sha": "7693684c1d5afd860602ba10167b19b4d9d428c7"
-    },
-    {
       "path": "icons/communication/lark.png",
       "title": "飞书",
       "kind": "icon",
@@ -1139,36 +1179,6 @@
       "height": 512,
       "size": 65738,
       "sha": "9670725bdddf1626f240d532d77c9cdd0394acc2"
-    },
-    {
-      "path": "icons/communication/netease-mail.png",
-      "title": "网易邮箱",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 46384,
-      "sha": "971b83a19c9b62bc85bb31f766559ff6a56e1c99"
-    },
-    {
-      "path": "icons/communication/outlook.png",
-      "title": "Outlook",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 74738,
-      "sha": "55f86958139e6756d59f6a4bf1b78390caf7c9aa"
-    },
-    {
-      "path": "icons/communication/qq-mail.png",
-      "title": "QQ 邮箱",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 118311,
-      "sha": "a22cd3ce409b67b56c1467ebf19fd1f9339db6be"
     },
     {
       "path": "icons/communication/qq.png",
@@ -1221,36 +1231,6 @@
       "sha": "fdc6fc0602eb8fc00fd729ccc87e64f3e2ed5990"
     },
     {
-      "path": "icons/development/alibaba-cloud.png",
-      "title": "阿里云",
-      "kind": "icon",
-      "category": "development",
-      "width": 512,
-      "height": 512,
-      "size": 6795,
-      "sha": "82e74d100ec5c189d102b400269e1c8c1039e5c1"
-    },
-    {
-      "path": "icons/development/aws.png",
-      "title": "AWS",
-      "kind": "icon",
-      "category": "development",
-      "width": 512,
-      "height": 512,
-      "size": 34277,
-      "sha": "8c7a757fde20d08923ba297c3e4b96f450c0d01d"
-    },
-    {
-      "path": "icons/development/azure.png",
-      "title": "Azure",
-      "kind": "icon",
-      "category": "development",
-      "width": 512,
-      "height": 512,
-      "size": 102764,
-      "sha": "cb5f235374d49102b47ec60c9c48944e70c3e172"
-    },
-    {
       "path": "icons/development/cursor.png",
       "title": "Cursor",
       "kind": "icon",
@@ -1292,26 +1272,6 @@
       "sha": "4e96f4bc5ede29c1cb9825e60e7447376841a41e"
     },
     {
-      "path": "icons/development/proxmox.png",
-      "title": "Proxmox",
-      "kind": "icon",
-      "category": "development",
-      "width": 512,
-      "height": 512,
-      "size": 24455,
-      "sha": "ae32d9cb19271fffab5dd9994b38aefbee7f6069"
-    },
-    {
-      "path": "icons/development/tencent-cloud.png",
-      "title": "腾讯云",
-      "kind": "icon",
-      "category": "development",
-      "width": 512,
-      "height": 512,
-      "size": 32295,
-      "sha": "583facd30f3b64efcb8b9bfb67f3db4a9d5c5f97"
-    },
-    {
       "path": "icons/development/vscode.png",
       "title": "Visual Studio Code",
       "kind": "icon",
@@ -1321,6 +1281,46 @@
       "note": "采用 Dashboard Icons PNG；按原比例缩至 460×460，透明画布居中留边；不裁切标志。",
       "size": 32243,
       "sha": "6e8d83aecc193dfa90f480fe5deb81264a99c200"
+    },
+    {
+      "path": "icons/email/gmail.png",
+      "title": "Gmail",
+      "kind": "icon",
+      "category": "email",
+      "width": 512,
+      "height": 512,
+      "size": 35294,
+      "sha": "7693684c1d5afd860602ba10167b19b4d9d428c7"
+    },
+    {
+      "path": "icons/email/netease-mail.png",
+      "title": "网易邮箱",
+      "kind": "icon",
+      "category": "email",
+      "width": 512,
+      "height": 512,
+      "size": 46384,
+      "sha": "971b83a19c9b62bc85bb31f766559ff6a56e1c99"
+    },
+    {
+      "path": "icons/email/outlook.png",
+      "title": "Outlook",
+      "kind": "icon",
+      "category": "email",
+      "width": 512,
+      "height": 512,
+      "size": 74738,
+      "sha": "55f86958139e6756d59f6a4bf1b78390caf7c9aa"
+    },
+    {
+      "path": "icons/email/qq-mail.png",
+      "title": "QQ 邮箱",
+      "kind": "icon",
+      "category": "email",
+      "width": 512,
+      "height": 512,
+      "size": 118311,
+      "sha": "a22cd3ce409b67b56c1467ebf19fd1f9339db6be"
     },
     {
       "path": "icons/gaming/epic-games.png",
@@ -1363,64 +1363,54 @@
       "sha": "4c524a7ce1849b0940a9516e21ef72fc754a1a93"
     },
     {
-      "path": "icons/lifestyle/alipay.png",
-      "title": "支付宝",
+      "path": "icons/maps/google-maps.png",
+      "title": "Google 地图",
       "kind": "icon",
-      "category": "lifestyle",
+      "category": "maps",
       "width": 512,
       "height": 512,
-      "size": 30406,
-      "sha": "175071515f3481ca346e2a697a61429400517497"
+      "size": 60638,
+      "sha": "9ae84eb7c48b371d7752929b8ce88db08be4b709"
     },
     {
-      "path": "icons/lifestyle/jd.png",
-      "title": "京东",
+      "path": "icons/media-players/emby.png",
+      "title": "Emby",
       "kind": "icon",
-      "category": "lifestyle",
+      "category": "media-players",
       "width": 512,
       "height": 512,
-      "size": 116381,
-      "sha": "e8fbd951cea35c48fd88b82c4e2496d8cafbb347"
+      "size": 36448,
+      "sha": "50cb58af97fede75709ed8bf077ba3ac2d17a6ad"
     },
     {
-      "path": "icons/lifestyle/meituan.png",
-      "title": "美团",
+      "path": "icons/media-players/infuse.png",
+      "title": "Infuse",
       "kind": "icon",
-      "category": "lifestyle",
+      "category": "media-players",
       "width": 512,
       "height": 512,
-      "size": 9658,
-      "sha": "e4fdc8149600eefd0f8197a81198a5778d6c15fa"
+      "size": 28016,
+      "sha": "d8721c7b14242d7dc82e99b85e622c53fcf98e22"
     },
     {
-      "path": "icons/lifestyle/paypal.png",
-      "title": "PayPal",
+      "path": "icons/media-players/jellyfin.png",
+      "title": "Jellyfin",
       "kind": "icon",
-      "category": "lifestyle",
+      "category": "media-players",
       "width": 512,
       "height": 512,
-      "size": 20046,
-      "sha": "6a5a0152c2af03bebd68fd4b458f9d92da081697"
+      "size": 51246,
+      "sha": "a0524b7072ca868632a62833ab8caeaca5b1468e"
     },
     {
-      "path": "icons/lifestyle/pinduoduo.png",
-      "title": "拼多多",
+      "path": "icons/media-players/plex.png",
+      "title": "Plex",
       "kind": "icon",
-      "category": "lifestyle",
+      "category": "media-players",
       "width": 512,
       "height": 512,
-      "size": 37409,
-      "sha": "20dc1a0e324e0e28ae2a81abb317de4d8ef081af"
-    },
-    {
-      "path": "icons/lifestyle/taobao.png",
-      "title": "淘宝",
-      "kind": "icon",
-      "category": "lifestyle",
-      "width": 512,
-      "height": 512,
-      "size": 63610,
-      "sha": "6c8640392c2fd00a22cd7276e045cf75fdbb4ac9"
+      "size": 61688,
+      "sha": "6389e8e2ded80b7c9d48f5ad60c79cbae5dab1c3"
     },
     {
       "path": "icons/music/apple-music.png",
@@ -1503,48 +1493,6 @@
       "sha": "088944dea859f98baa2c0a256e696281698cb77f"
     },
     {
-      "path": "icons/network/1password.png",
-      "title": "1Password",
-      "kind": "icon",
-      "category": "network",
-      "width": 512,
-      "height": 512,
-      "size": 176187,
-      "sha": "e5a1ce2a447df9015dbee622d30ad040036c9d0d"
-    },
-    {
-      "path": "icons/network/adguard.png",
-      "title": "AdGuard",
-      "kind": "icon",
-      "category": "network",
-      "width": 512,
-      "height": 512,
-      "size": 28880,
-      "sha": "3195ad84c4575c3d246bd75295c758ee216bc037"
-    },
-    {
-      "path": "icons/network/bitwarden.png",
-      "title": "Bitwarden",
-      "kind": "icon",
-      "category": "network",
-      "width": 512,
-      "height": 512,
-      "note": "采用 Dashboard Icons PNG；仅将 r=115 圆角外侧 alpha 置零。",
-      "size": 10687,
-      "sha": "9a23e213348860f164dd9238fa47f4a3a5d89e4c"
-    },
-    {
-      "path": "icons/network/clash.png",
-      "title": "Clash",
-      "kind": "icon",
-      "category": "network",
-      "width": 512,
-      "height": 512,
-      "note": "采用 Dashboard Icons PNG；转换为 RGBA，无颜色量化；保留原始像素尺寸，居中填充透明画布至 512×512。",
-      "size": 31653,
-      "sha": "0bf726fb3bf44cc9d20cc4f651a00b9f3b295f02"
-    },
-    {
       "path": "icons/network/cloudflare.png",
       "title": "Cloudflare",
       "kind": "icon",
@@ -1575,14 +1523,24 @@
       "sha": "67e8236c6843d87f471b8a5f3afeb8281dbe8cf0"
     },
     {
-      "path": "icons/network/surge.png",
-      "title": "Surge",
+      "path": "icons/payments/alipay.png",
+      "title": "支付宝",
       "kind": "icon",
-      "category": "network",
+      "category": "payments",
       "width": 512,
       "height": 512,
-      "size": 45909,
-      "sha": "c8afe44ebe5c2347d4b847f0a69b1e88466e4441"
+      "size": 30406,
+      "sha": "175071515f3481ca346e2a697a61429400517497"
+    },
+    {
+      "path": "icons/payments/paypal.png",
+      "title": "PayPal",
+      "kind": "icon",
+      "category": "payments",
+      "width": 512,
+      "height": 512,
+      "size": 20046,
+      "sha": "6a5a0152c2af03bebd68fd4b458f9d92da081697"
     },
     {
       "path": "icons/productivity/adobe.png",
@@ -1593,16 +1551,6 @@
       "height": 512,
       "size": 25428,
       "sha": "47299c31b1275bbf467966d3678476c2322246c9"
-    },
-    {
-      "path": "icons/productivity/google-maps.png",
-      "title": "Google 地图",
-      "kind": "icon",
-      "category": "productivity",
-      "width": 512,
-      "height": 512,
-      "size": 60638,
-      "sha": "9ae84eb7c48b371d7752929b8ce88db08be4b709"
     },
     {
       "path": "icons/productivity/google-translate.png",
@@ -1677,16 +1625,6 @@
       "sha": "f98dad8643a65a3e87fc1894f44cc47a7e89d4af"
     },
     {
-      "path": "icons/proxy/bgp.png",
-      "title": "BGP",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 72123,
-      "sha": "9b26b5052367d971074368526866a76547c9f53f"
-    },
-    {
       "path": "icons/proxy/direct.png",
       "title": "直连",
       "kind": "icon",
@@ -1718,16 +1656,6 @@
       "sha": "c931b3ed8ea83afe0cd2a7de4325c0d662f6ff0e"
     },
     {
-      "path": "icons/proxy/gia.png",
-      "title": "GIA",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 69799,
-      "sha": "da3b3adba85967d12fecd8b6fb04bbc4a2e682a3"
-    },
-    {
       "path": "icons/proxy/global.png",
       "title": "全球",
       "kind": "icon",
@@ -1736,26 +1664,6 @@
       "height": 512,
       "size": 144586,
       "sha": "64f2fc9c8aa1d42561c22401bec7d0d303c4cd12"
-    },
-    {
-      "path": "icons/proxy/iepl.png",
-      "title": "IEPL",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 67538,
-      "sha": "39dabc0e4250a320b51494268dc254500f75f645"
-    },
-    {
-      "path": "icons/proxy/iplc.png",
-      "title": "IPLC",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 68943,
-      "sha": "0177b8acb1bbd28cb2ddc46414c48601631a40e5"
     },
     {
       "path": "icons/proxy/mail.png",
@@ -1826,6 +1734,27 @@
       "height": 512,
       "size": 96936,
       "sha": "52577a8e3b8a39ef524246786d1ef8fd78bc9f92"
+    },
+    {
+      "path": "icons/proxy-clients/clash.png",
+      "title": "Clash",
+      "kind": "icon",
+      "category": "proxy-clients",
+      "width": 512,
+      "height": 512,
+      "note": "采用 Dashboard Icons PNG；转换为 RGBA，无颜色量化；保留原始像素尺寸，居中填充透明画布至 512×512。",
+      "size": 31653,
+      "sha": "0bf726fb3bf44cc9d20cc4f651a00b9f3b295f02"
+    },
+    {
+      "path": "icons/proxy-clients/surge.png",
+      "title": "Surge",
+      "kind": "icon",
+      "category": "proxy-clients",
+      "width": 512,
+      "height": 512,
+      "size": 45909,
+      "sha": "c8afe44ebe5c2347d4b847f0a69b1e88466e4441"
     },
     {
       "path": "icons/regions/australia.png",
@@ -1948,6 +1877,46 @@
       "sha": "82e1dddbc770f792a7f80fe3002e52cde344b953"
     },
     {
+      "path": "icons/routes/bgp.png",
+      "title": "BGP",
+      "kind": "icon",
+      "category": "routes",
+      "width": 512,
+      "height": 512,
+      "size": 72123,
+      "sha": "9b26b5052367d971074368526866a76547c9f53f"
+    },
+    {
+      "path": "icons/routes/gia.png",
+      "title": "GIA",
+      "kind": "icon",
+      "category": "routes",
+      "width": 512,
+      "height": 512,
+      "size": 69799,
+      "sha": "da3b3adba85967d12fecd8b6fb04bbc4a2e682a3"
+    },
+    {
+      "path": "icons/routes/iepl.png",
+      "title": "IEPL",
+      "kind": "icon",
+      "category": "routes",
+      "width": 512,
+      "height": 512,
+      "size": 67538,
+      "sha": "39dabc0e4250a320b51494268dc254500f75f645"
+    },
+    {
+      "path": "icons/routes/iplc.png",
+      "title": "IPLC",
+      "kind": "icon",
+      "category": "routes",
+      "width": 512,
+      "height": 512,
+      "size": 68943,
+      "sha": "0177b8acb1bbd28cb2ddc46414c48601631a40e5"
+    },
+    {
       "path": "icons/search/baidu.png",
       "title": "百度",
       "kind": "icon",
@@ -1986,6 +1955,77 @@
       "height": 512,
       "size": 19774,
       "sha": "e8f013a56a4b523a22cfbb8e996f1d91f7ca904c"
+    },
+    {
+      "path": "icons/security/1password.png",
+      "title": "1Password",
+      "kind": "icon",
+      "category": "security",
+      "width": 512,
+      "height": 512,
+      "size": 176187,
+      "sha": "e5a1ce2a447df9015dbee622d30ad040036c9d0d"
+    },
+    {
+      "path": "icons/security/adguard.png",
+      "title": "AdGuard",
+      "kind": "icon",
+      "category": "security",
+      "width": 512,
+      "height": 512,
+      "size": 28880,
+      "sha": "3195ad84c4575c3d246bd75295c758ee216bc037"
+    },
+    {
+      "path": "icons/security/bitwarden.png",
+      "title": "Bitwarden",
+      "kind": "icon",
+      "category": "security",
+      "width": 512,
+      "height": 512,
+      "note": "采用 Dashboard Icons PNG；仅将 r=115 圆角外侧 alpha 置零。",
+      "size": 10687,
+      "sha": "9a23e213348860f164dd9238fa47f4a3a5d89e4c"
+    },
+    {
+      "path": "icons/shopping/jd.png",
+      "title": "京东",
+      "kind": "icon",
+      "category": "shopping",
+      "width": 512,
+      "height": 512,
+      "size": 116381,
+      "sha": "e8fbd951cea35c48fd88b82c4e2496d8cafbb347"
+    },
+    {
+      "path": "icons/shopping/meituan.png",
+      "title": "美团",
+      "kind": "icon",
+      "category": "shopping",
+      "width": 512,
+      "height": 512,
+      "size": 9658,
+      "sha": "e4fdc8149600eefd0f8197a81198a5778d6c15fa"
+    },
+    {
+      "path": "icons/shopping/pinduoduo.png",
+      "title": "拼多多",
+      "kind": "icon",
+      "category": "shopping",
+      "width": 512,
+      "height": 512,
+      "size": 37409,
+      "sha": "20dc1a0e324e0e28ae2a81abb317de4d8ef081af"
+    },
+    {
+      "path": "icons/shopping/taobao.png",
+      "title": "淘宝",
+      "kind": "icon",
+      "category": "shopping",
+      "width": 512,
+      "height": 512,
+      "size": 63610,
+      "sha": "6c8640392c2fd00a22cd7276e045cf75fdbb4ac9"
     },
     {
       "path": "icons/social/bangumi.png",
@@ -2248,16 +2288,6 @@
       "sha": "fbb529a6af77ba27ad23a15d490f3e3155764c68"
     },
     {
-      "path": "icons/video/emby.png",
-      "title": "Emby",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 36448,
-      "sha": "50cb58af97fede75709ed8bf077ba3ac2d17a6ad"
-    },
-    {
       "path": "icons/video/hbo-max.png",
       "title": "HBO Max",
       "kind": "icon",
@@ -2266,16 +2296,6 @@
       "height": 512,
       "size": 135749,
       "sha": "92f0711a7c4d816f06e4a955922ca5c3195dba96"
-    },
-    {
-      "path": "icons/video/infuse.png",
-      "title": "Infuse",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 28016,
-      "sha": "d8721c7b14242d7dc82e99b85e622c53fcf98e22"
     },
     {
       "path": "icons/video/iqiyi.png",
@@ -2288,16 +2308,6 @@
       "sha": "7af78759ae2c96ec95cee992e9aff9849c72f9c4"
     },
     {
-      "path": "icons/video/jellyfin.png",
-      "title": "Jellyfin",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 51246,
-      "sha": "a0524b7072ca868632a62833ab8caeaca5b1468e"
-    },
-    {
       "path": "icons/video/netflix.png",
       "title": "Netflix",
       "kind": "icon",
@@ -2306,16 +2316,6 @@
       "height": 512,
       "size": 43472,
       "sha": "6a702bc88a4b396aafe3f3689af74b63ed2b8394"
-    },
-    {
-      "path": "icons/video/plex.png",
-      "title": "Plex",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 61688,
-      "sha": "6389e8e2ded80b7c9d48f5ad60c79cbae5dab1c3"
     },
     {
       "path": "icons/video/prime-video.png",

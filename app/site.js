@@ -3,7 +3,16 @@
 const repo = "zzpice/assets";
 const base = new URL(".", document.baseURI);
 const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
-const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", ai: "AI", browsers: "浏览器", development: "开发与运维", network: "网络与安全", communication: "通讯与邮箱", social: "社交与社区", search: "搜索与知识", video: "视频与媒体", music: "音乐与播客", storage: "网盘与存储", productivity: "效率与工具", lifestyle: "购物与支付", proxy: "代理与分流", regions: "国家与地区", other: "其他" };
+// Insertion order is the browsing order; new categories follow the known ones.
+const styleCategoryLabels = { anime: "动漫", illustration: "插画", landscape: "风景", photography: "摄影", people: "真人", animals: "动物", gaming: "游戏", pixel: "像素", minimal: "极简", abstract: "抽象", other: "其他" };
+const iconCategoryLabels = {
+  ai: "AI", search: "搜索与知识", browsers: "浏览器", communication: "聊天与会议", email: "邮箱",
+  social: "社交与社区", video: "视频与直播", "media-players": "媒体播放器", music: "音乐与播客", gaming: "游戏",
+  productivity: "效率与工具", maps: "地图与出行", storage: "网盘与存储", shopping: "购物与生活", payments: "支付",
+  development: "开发工具", cloud: "云服务与基础设施", network: "网络工具", security: "隐私与安全",
+  "proxy-clients": "代理客户端", proxy: "代理组与分流", routes: "线路与专线", regions: "国家与地区"
+};
+const categoryLabels = { ...styleCategoryLabels, ...iconCategoryLabels };
 const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "bank-card": "银行卡面", other: "其他图片" };
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
 const cardRegionLabels = { "hong-kong": "香港", "china-mainland": "中国内地", singapore: "新加坡" };
@@ -107,8 +116,14 @@ function categoryLabel(file) {
   return file.kind === "bank-card" ? cardRegionLabels[file.category] || file.category : categoryLabels[file.category] || file.category;
 }
 
+function orderedCategories(files) {
+  const present = [...new Set(files.map(file => file.category))];
+  const order = kind === "bank-card" ? cardRegions() : Object.keys(kind === "icon" ? iconCategoryLabels : styleCategoryLabels);
+  return [...order.filter(value => present.includes(value)),...present.filter(value => !order.includes(value)).sort((a,b) => a.localeCompare(b,"zh-CN"))];
+}
+
 function defaultSort() {
-  return kind === "bank-card" ? "collection" : "resolution-desc";
+  return "collection";
 }
 
 function fillSelect(select, entries, placeholder) {
@@ -126,7 +141,7 @@ function refreshControls() {
   controls.device.closest(".field").hidden = controls.device.disabled;
   if (controls.device.disabled) controls.device.value = "";
   const deviceFiles = files.filter(file => !controls.device.value || file.device === controls.device.value);
-  const categories = kind === "bank-card" ? cardRegions().filter(region => deviceFiles.some(file => file.category === region)) : [...new Set(deviceFiles.map(file => file.category))].sort();
+  const categories = orderedCategories(deviceFiles);
   fillSelect(controls.category, categories.map(value => [value,(kind === "bank-card" ? cardRegionLabels : categoryLabels)[value] || value]), kind === "bank-card" ? "全部地区" : "全部种类");
   controls.category.disabled = kind === "other";
   controls.category.closest(".field").hidden = controls.category.disabled;
@@ -147,7 +162,7 @@ function refreshControls() {
   fillSelect(controls.edition,Object.keys(cardEditionLabels).filter(edition => bankFiles.some(file => file.edition === edition)).map(value => [value,cardEditionLabels[value]]),"全部版本");
   const editionFiles = bankFiles.filter(file => !controls.edition.value || file.edition === controls.edition.value);
   const sort = controls.sort.value;
-  const sortOptions = [...(isCard ? [["collection","地区与银行顺序"]] : []),["resolution-desc","尺寸从大到小"],["resolution-asc","尺寸从小到大"],["name","按名称排序"]];
+  const sortOptions = [["collection",isCard ? "地区与银行顺序" : kind === "wallpaper" ? "设备与种类顺序" : "分类顺序"],["resolution-desc","组内尺寸从大到小"],["resolution-asc","组内尺寸从小到大"],["name","组内按名称排序"]];
   controls.sort.replaceChildren(...sortOptions.map(([value,label]) => new Option(label,value)));
   controls.sort.value = sortOptions.some(([value]) => value === sort) ? sort : defaultSort();
   const sizes = [...new Map(editionFiles.map(file => [resolutionKey(file),file])).entries()]
@@ -276,7 +291,7 @@ function loadPreviewImage(force = false) {
 
 function openPreview(file,historyMode = "push",sequence = visibleAssets) {
   if (!previewDialog.open) {
-    const sameGroup = item => item.kind === file.kind && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.category === file.category && item.bank === file.bank && item.edition === file.edition));
+    const sameGroup = item => item.kind === file.kind && item.category === file.category && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.bank === file.bank && item.edition === file.edition));
     previewSequence = sequence.filter(sameGroup).map(item => item.path);
     if (!previewSequence.includes(file.path)) previewSequence = assets.filter(sameGroup).map(item => item.path);
     lockscreenEnabled = false;
@@ -413,16 +428,26 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   return card;
 }
 
+function makeCategorySections(files,device = kind,titleTag = "h2") {
+  return orderedCategories(files).map(category => {
+    const groupFiles = files.filter(file => file.category === category);
+    const section = element("section","category-section");
+    const title = element(titleTag,"category-heading",categoryLabel(groupFiles[0]));
+    title.append(element("span","device-count",groupFiles.length + (kind === "icon" ? " 个" : " 张")));
+    const grid = element("div","grid"); grid.dataset.device = device;
+    grid.append(...groupFiles.map(file => makeCard(file,groupFiles,titleTag === "h2" ? "h3" : "h4")));
+    section.append(title,grid);
+    return section;
+  });
+}
+
 function makeDeviceSection(device,files) {
   const section = element("section","device-section");
   const title = element("h2","device-heading",deviceLabels[device] + "壁纸");
   title.id = "device-heading-" + device;
   title.append(element("span","device-count",files.length + " 张"));
   section.setAttribute("aria-labelledby",title.id);
-  const grid = element("div","grid");
-  grid.dataset.device = device;
-  grid.append(...files.map(file => makeCard(file,files,"h3")));
-  section.append(title,grid);
+  section.append(title,...makeCategorySections(files,device,"h3"));
   return section;
 }
 
@@ -462,22 +487,24 @@ function renderGallery() {
     .filter(file => !query || [file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || ""].join(" ").toLocaleLowerCase().includes(query));
   visible.sort((a,b) => {
     const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
-    return controls.sort.value === "collection" || controls.sort.value === "name" ? a.title.localeCompare(b.title,"zh-CN") : (controls.sort.value === "resolution-asc" ? difference : -difference) || a.title.localeCompare(b.title,"zh-CN");
+    const byName = a.title.localeCompare(b.title,"zh-CN") || a.path.localeCompare(b.path);
+    if (controls.sort.value === "name" || (controls.sort.value === "collection" && kind !== "wallpaper" && kind !== "avatar")) return byName;
+    return (controls.sort.value === "resolution-asc" ? difference : -difference) || byName;
   });
   visibleAssets = visible;
-  const grouped = visible.length > 0 && ((kind === "wallpaper" && !controls.device.value) || kind === "bank-card");
+  const grouped = visible.length > 0;
   gallery.classList.toggle("grouped",grouped);
   gallery.classList.remove("multiple-device-groups");
   gallery.dataset.device = kind === "wallpaper" ? controls.device.value || "all" : kind;
   if (grouped && kind === "bank-card") gallery.replaceChildren(...makeCardRegions(visible));
-  else if (grouped) {
+  else if (grouped && kind === "wallpaper") {
     const sections = ["phone","desktop","tablet","unknown"].map(device => {
       const files = visible.filter(file => (file.device || "unknown") === device);
       return files.length ? makeDeviceSection(device,files) : null;
     }).filter(Boolean);
     gallery.classList.toggle("multiple-device-groups",sections.length > 1);
     gallery.replaceChildren(...sections);
-  } else if (visible.length) gallery.replaceChildren(...visible.map(file => makeCard(file)));
+  } else if (grouped) gallery.replaceChildren(...makeCategorySections(visible));
   else {
     const empty = element("div","empty",favoritesOnly ? "这里还没有符合条件的收藏。点图片右上角的心形即可收藏，收藏保存在当前浏览器。" : "没有找到符合条件的图片。");
     const clear = element("button","secondary-button",favoritesOnly ? "浏览全部图片" : "清除筛选");

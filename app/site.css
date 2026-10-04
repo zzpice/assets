@@ -50,6 +50,9 @@ h1 { margin: 0 0 6px; font-size: clamp(1.55rem,4vw,2.15rem); letter-spacing: -.0
 .device-section + .device-section { margin-top: 28px; }
 .device-heading { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 1rem; }
 .device-count { color: var(--muted); font-size: .76rem; font-weight: 400; }
+.category-section + .category-section { margin-top: 28px; }
+.category-heading { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 1.05rem; }
+.device-section .category-heading { font-size: .92rem; color: var(--muted); }
 @media (min-width: 1100px) {
   .grid.grouped.multiple-device-groups { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,3fr); gap: 28px; }
   .multiple-device-groups .device-section + .device-section { margin-top: 0; }

@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "zzpice-assets-";
-const CACHE_NAME = CACHE_PREFIX + "v2-cd06a47b832c";
+const CACHE_NAME = CACHE_PREFIX + "v2-352b0e64426e";
 const base = new URL("./", self.location.href);
 const shell = ["./","index.html","app/site.css","app/site.js","app/manifest.webmanifest","app/icon.svg","app/icon-180.png","app/icon-192.png","app/icon-512.png","catalog.json"];
 
