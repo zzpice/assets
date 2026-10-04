@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>zzpice / assets</title>
+  <title>静态资源库</title>
   <style>
     :root { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height: 1.5; }
     body { max-width: 1100px; margin: 0 auto; padding: 40px 20px 64px; }
@@ -26,7 +26,7 @@
 </head>
 <body>
   <header>
-    <h1>assets</h1>
+    <h1>静态资源库</h1>
     <p>zzpice 的个人静态资源。新增图片到仓库后，这里会自动显示。</p>
   </header>
 
@@ -102,7 +102,7 @@
           button.addEventListener("click", () => copyUrl(button.dataset.url, button));
         });
       } catch (error) {
-        gallery.innerHTML = '<div class="status">暂时无法读取图片列表，但已有图片直链仍可正常访问。</div>';
+        gallery.innerHTML = '<div class="status">暂时无法读取图片列表。主头像仍可直接打开：<a href="https://zzpice.github.io/assets/avatar.png">avatar.png</a></div>';
       }
     }
 
