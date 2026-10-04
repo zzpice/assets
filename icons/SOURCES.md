@@ -149,6 +149,10 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | 网址分流 | [url.png](proxy/url.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/URL/URL.png) |
 | 流量 | [traffic.png](proxy/traffic.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Traffic/Traffic.png) |
 | Surge | [surge.png](proxy/surge.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Surge/Surge/Surge.png) |
+| BGP | [bgp.png](proxy/bgp.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Proxy/BGP/BGP.png) |
+| GIA | [gia.png](proxy/gia.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Proxy/GIA/GIA.png) |
+| IEPL | [iepl.png](proxy/iepl.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Proxy/IEPL/IEPL.png) |
+| IPLC | [iplc.png](proxy/iplc.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Proxy/IPLC/IPLC.png) |
 
 ## 国家与地区
 

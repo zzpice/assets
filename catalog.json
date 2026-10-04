@@ -553,6 +553,16 @@
       "sha": "f98dad8643a65a3e87fc1894f44cc47a7e89d4af"
     },
     {
+      "path": "icons/proxy/bgp.png",
+      "title": "BGP",
+      "kind": "icon",
+      "category": "proxy",
+      "width": 512,
+      "height": 512,
+      "size": 72123,
+      "sha": "9b26b5052367d971074368526866a76547c9f53f"
+    },
+    {
       "path": "icons/proxy/direct.png",
       "title": "直连",
       "kind": "icon",
@@ -583,6 +593,16 @@
       "sha": "c931b3ed8ea83afe0cd2a7de4325c0d662f6ff0e"
     },
     {
+      "path": "icons/proxy/gia.png",
+      "title": "GIA",
+      "kind": "icon",
+      "category": "proxy",
+      "width": 512,
+      "height": 512,
+      "size": 69799,
+      "sha": "da3b3adba85967d12fecd8b6fb04bbc4a2e682a3"
+    },
+    {
       "path": "icons/proxy/global.png",
       "title": "全球",
       "kind": "icon",
@@ -591,6 +611,26 @@
       "height": 512,
       "size": 144586,
       "sha": "64f2fc9c8aa1d42561c22401bec7d0d303c4cd12"
+    },
+    {
+      "path": "icons/proxy/iepl.png",
+      "title": "IEPL",
+      "kind": "icon",
+      "category": "proxy",
+      "width": 512,
+      "height": 512,
+      "size": 67538,
+      "sha": "39dabc0e4250a320b51494268dc254500f75f645"
+    },
+    {
+      "path": "icons/proxy/iplc.png",
+      "title": "IPLC",
+      "kind": "icon",
+      "category": "proxy",
+      "width": 512,
+      "height": 512,
+      "size": 68943,
+      "sha": "0177b8acb1bbd28cb2ddc46414c48601631a40e5"
     },
     {
       "path": "icons/proxy/mail.png",
