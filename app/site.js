@@ -3,7 +3,7 @@
 const repo = "zzpice/assets";
 const base = new URL(".", document.baseURI);
 const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
-const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", brands: "品牌", general: "通用", other: "其他" };
+const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", ai: "AI", development: "开发与网络", communication: "通讯与邮箱", social: "社交与社区", video: "视频与媒体", music: "音乐与播客", storage: "网盘与存储", productivity: "效率与工具", lifestyle: "购物与支付", proxy: "代理与分流", regions: "国家与地区", other: "其他" };
 const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", other: "其他图片" };
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
 const controls = Object.fromEntries(["search","device","category","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
@@ -106,7 +106,7 @@ function refreshControls() {
   fillSelect(controls.category, categories.map(value => [value,categoryLabels[value] || value]), "全部种类");
   controls.category.disabled = kind === "other";
   controls.category.closest(".field").hidden = controls.category.disabled;
-  document.querySelector('label[for="category"]').textContent = kind === "icon" ? "图标类型" : "画面风格";
+  document.querySelector('label[for="category"]').textContent = kind === "icon" ? "用途分类" : "画面风格";
   if (controls.category.disabled) controls.category.value = "";
   controls.orientation.disabled = kind === "avatar" || kind === "icon";
   controls.orientation.closest(".field").hidden = controls.orientation.disabled;
@@ -312,7 +312,7 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   if (file.width && file.height) { img.width = file.width; img.height = file.height; }
   let usingThumbnail = Boolean(file.thumbnail);
   const meta = element("div", "meta");
-  const size = element("p", "resolution", resolutionLabel(file));
+  const size = element("p", "resolution", file.kind === "icon" ? (categoryLabels[file.category] || file.category) : resolutionLabel(file));
   const info = element("details", "asset-info");
   const details = element("p", "details");
   function updateDetails() {

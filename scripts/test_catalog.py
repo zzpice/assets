@@ -66,22 +66,22 @@ class CatalogTests(unittest.TestCase):
         update(self.root, check=True)
 
     def test_symbols_and_vector_sizes(self):
-        (self.root / "icons/general").mkdir(parents=True)
-        (self.root / "icons/general/mark.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 20"/>')
+        (self.root / "symbols").mkdir()
+        (self.root / "symbols/mark.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 20"/>')
         update(self.root)
         item = next(item for item in self.catalog()["assets"] if item["path"].endswith(".svg"))
         self.assertEqual((item["width"], item["height"]), (40, 20))
-        self.assertEqual((item["kind"], item["category"]), ("icon", "general"))
+        self.assertEqual(item["kind"], "other")
         self.assertNotIn("thumbnail", item)
 
     def test_icons_keep_originals_without_duplicate_previews(self):
-        icon = self.root / "icons/brands/example.png"
+        icon = self.root / "icons/ai/example.png"
         icon.parent.mkdir(parents=True)
         Image.new("RGBA", (512, 512), "red").save(icon)
         before = icon.read_bytes()
         update(self.root)
-        item = next(item for item in self.catalog()["assets"] if item["path"] == "icons/brands/example.png")
-        self.assertEqual((item["kind"], item["category"]), ("icon", "brands"))
+        item = next(item for item in self.catalog()["assets"] if item["path"] == "icons/ai/example.png")
+        self.assertEqual((item["kind"], item["category"]), ("icon", "ai"))
         self.assertNotIn("thumbnail", item)
         self.assertNotIn("device", item)
         self.assertEqual(icon.read_bytes(), before)
