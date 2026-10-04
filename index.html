@@ -4,106 +4,307 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>静态资源库</title>
+  <title>壁纸与静态资源 · zzpice</title>
   <style>
-    :root { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height: 1.5; }
-    body { max-width: 1100px; margin: 0 auto; padding: 40px 20px 64px; }
-    header { margin-bottom: 32px; }
-    h1 { margin: 0 0 8px; font-size: 2rem; }
-    p { margin: 0; opacity: .72; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 18px; }
-    .card { border: 1px solid color-mix(in srgb,currentColor 18%,transparent); border-radius: 14px; overflow: hidden; }
-    .preview { aspect-ratio: 1 / 1; display: grid; place-items: center; background: color-mix(in srgb,currentColor 5%,transparent); }
-    .preview img { width: 100%; height: 100%; object-fit: contain; }
-    .meta { padding: 12px; }
-    .path { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: .84rem; }
-    .actions { display: flex; gap: 8px; margin-top: 10px; }
-    a,button { color: inherit; }
-    button { border: 1px solid color-mix(in srgb,currentColor 20%,transparent); background: transparent; border-radius: 8px; padding: 5px 9px; cursor: pointer; }
-    .status { padding: 24px 0; opacity: .72; }
-    footer { margin-top: 36px; font-size: .85rem; opacity: .58; }
+    :root { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height: 1.5; color: #202a36; background: #f5f6f8; --surface: #fff; --muted: #677383; --line: #dce1e7; --accent: #254f64; --soft: #eaf0f4; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { max-width: 1120px; margin: 0 auto; padding: 40px 24px 56px; }
+    a { color: inherit; }
+    button,input,select { font: inherit; color: inherit; }
+    button,a,input,select { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    button:disabled { opacity: .5; cursor: default; }
+    :focus-visible { outline: 3px solid #77a3bb; outline-offset: 3px; }
+    header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    .eyebrow { color: var(--muted); font-size: .76rem; letter-spacing: .15em; margin: 0 0 8px; }
+    h1 { margin: 0 0 10px; font-size: clamp(1.8rem,4vw,2.4rem); letter-spacing: -.035em; }
+    .intro { margin: 0; color: var(--muted); }
+    #summary { margin: 14px 0 0; color: var(--accent); font-size: .9rem; }
+    .repo-link { flex-shrink: 0; text-decoration: none; border: 1px solid var(--line); border-radius: 10px; padding: 9px 13px; font-size: .85rem; background: var(--surface); }
+    .tabs { display: flex; gap: 8px; margin-bottom: 18px; }
+    .tab { border: 1px solid var(--line); border-radius: 10px; padding: 9px 16px; background: var(--surface); }
+    .tab[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: var(--accent); }
+    .tab span { margin-left: 8px; font-size: .8rem; opacity: .75; }
+    .filters { display: grid; grid-template-columns: 1.4fr repeat(3,1fr); gap: 14px; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .field { min-width: 0; }
+    .field label { display: block; font-size: .8rem; color: var(--muted); margin-bottom: 7px; }
+    .field input,.field select { width: 100%; min-width: 0; min-height: 42px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+    .field select:disabled { opacity: .5; }
+    .results-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin: 20px 0 16px; font-size: .86rem; color: var(--muted); }
+    .result-actions { display: flex; align-items: center; gap: 15px; }
+    #sort { max-width: 180px; background: transparent; border: 0; font-size: .82rem; }
+    #reset { padding: 0; border: 0; background: transparent; text-decoration: underline; text-underline-offset: 3px; font-size: .82rem; }
+    #notice { color: var(--muted); font-size: .85rem; padding: 0 0 14px; margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(230px,1fr)); gap: 20px; align-items: start; }
+    .card { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .preview { position: relative; aspect-ratio: 3 / 4; display: grid; place-items: center; background: #111718; text-decoration: none; }
+    .preview img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+    .preview.portrait { aspect-ratio: 6 / 13; }
+    .preview.square { aspect-ratio: 1 / 1; }
+    .preview.landscape { aspect-ratio: 4 / 3; }
+    .image-error { color: #d1d7dc; padding: 20px; font-size: .85rem; }
+    .meta { padding: 15px; }
+    .card h2 { font-size: 1rem; margin: 0 0 6px; overflow-wrap: anywhere; }
+    .resolution { font-size: .98rem; font-weight: 600; font-variant-numeric: tabular-nums; margin: 0; }
+    .details { margin: 6px 0 0; font-size: .8rem; color: var(--muted); }
+    .note { margin: 9px 0 0; padding: 7px 9px; border-radius: 6px; background: var(--soft); color: var(--muted); font-size: .75rem; }
+    .filename { display: block; margin-top: 11px; color: var(--muted); font-size: .72rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; font-size: .8rem; }
+    .actions a,.actions button { border: 1px solid var(--line); background: transparent; border-radius: 7px; padding: 6px 9px; text-decoration: none; }
+    .actions .download { color: #fff; border-color: var(--accent); background: var(--accent); }
+    .empty { grid-column: 1 / -1; padding: 50px 20px; border: 1px dashed var(--line); border-radius: 12px; text-align: center; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 18px; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; color: var(--muted); font-size: .8rem; }
+    @media (max-width: 760px) { body { padding: 28px 18px 40px; } .filters { grid-template-columns: repeat(2,minmax(0,1fr)); padding: 15px; } .grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; } .meta { padding: 12px; } }
+    @media (max-width: 480px) { header { display: block; } .repo-link { display: inline-block; margin-top: 18px; } .grid { grid-template-columns: 1fr; } .tab { padding: 8px 13px; } .result-actions { width: 100%; justify-content: space-between; } }
+    @media (prefers-color-scheme: dark) { :root { color: #e1e8ed; background: #10171e; --surface: #18212a; --muted: #9cabb8; --line: #32404d; --accent: #356780; --soft: #202f3b; } #summary { color: #a7c7d8; } }
   </style>
 </head>
 <body>
   <header>
-    <h1>静态资源库</h1>
-    <p>zzpice 的个人静态资源。新增图片到仓库后，这里会自动显示。</p>
+    <div>
+      <p class="eyebrow">ZZPICE / ASSETS</p>
+      <h1>壁纸与静态资源</h1>
+      <p class="intro">按画面种类与实际分辨率，找到适合你的图片。</p>
+      <p id="summary">正在整理图片目录…</p>
+    </div>
+    <a class="repo-link" href="https://github.com/zzpice/assets" target="_blank" rel="noopener">查看仓库 ↗</a>
   </header>
-
-  <main id="gallery"><div class="status">正在读取图片列表…</div></main>
-
+  <nav class="tabs" aria-label="资源用途">
+    <button class="tab" type="button" data-kind="wallpaper" aria-pressed="true">壁纸<span>0</span></button>
+    <button class="tab" type="button" data-kind="avatar" aria-pressed="false">头像<span>0</span></button>
+    <button class="tab" type="button" data-kind="other" aria-pressed="false" hidden>其他资源<span>0</span></button>
+  </nav>
+  <section class="filters" aria-label="筛选图片">
+    <div class="field"><label for="search">搜索</label><input id="search" type="search" placeholder="名称或文件名…" autocomplete="off"></div>
+    <div class="field"><label for="category">壁纸种类</label><select id="category"><option value="">全部种类</option></select></div>
+    <div class="field"><label for="resolution">实际分辨率</label><select id="resolution"><option value="">全部分辨率</option></select></div>
+    <div class="field"><label for="orientation">画面方向</label><select id="orientation"><option value="">全部方向</option><option value="portrait">竖屏</option><option value="landscape">横屏</option><option value="square">方形</option><option value="unknown">未标注</option></select></div>
+  </section>
+  <div class="results-bar">
+    <span id="results" role="status" aria-live="polite">正在读取图片…</span>
+    <div class="result-actions">
+      <label for="sort">排序</label>
+      <select id="sort"><option value="resolution-desc">分辨率从高到低</option><option value="resolution-asc">分辨率从低到高</option><option value="name">按名称排序</option></select>
+      <button id="reset" type="button" disabled>清除筛选</button>
+    </div>
+  </div>
+  <p id="notice" role="status" hidden></p>
+  <main id="gallery" class="grid" aria-label="图片列表"><div class="empty">正在读取图片列表…</div></main>
   <footer>
-    GitHub Pages · <a href="https://github.com/zzpice/assets">Repository</a>
+    <span>分辨率标注采用图片文件的实际宽 × 高。</span>
+    <a href="https://github.com/zzpice/assets/blob/main/README.md" target="_blank" rel="noopener">命名与归档规则 ↗</a>
   </footer>
-
   <script>
     const repo = "zzpice/assets";
-    const branch = "main";
-    const base = "https://zzpice.github.io/assets/";
+    const base = new URL(".", document.baseURI);
     const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
+    const categoryLabels = { anime: "动漫", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", other: "其他壁纸" };
+    const orientationLabels = { portrait: "竖屏", landscape: "横屏", square: "方形", unknown: "方向未标注" };
+    const kindLabels = { wallpaper: "壁纸", avatar: "头像", other: "其他资源" };
+    const controls = Object.fromEntries(["search","category","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
     const gallery = document.getElementById("gallery");
+    const results = document.getElementById("results");
+    const reset = document.getElementById("reset");
+    let assets = [];
+    let kind = "wallpaper";
 
-    function escapeHtml(value) {
-      return value.replace(/[&<>"']/g, c => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
-      })[c]);
+    function element(tag, className, text) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined) node.textContent = text;
+      return node;
+    }
+
+    function resolutionKey(file) {
+      return file.width && file.height ? file.width + "x" + file.height : "unknown";
+    }
+
+    function resolutionLabel(file) {
+      if (file.path.endsWith(".svg")) return "SVG 矢量图";
+      return file.width && file.height ? file.width + " × " + file.height : "尺寸读取中";
+    }
+
+    function orientation(file) {
+      return !file.width || !file.height ? "unknown" : file.width === file.height ? "square" : file.width < file.height ? "portrait" : "landscape";
+    }
+
+    function makeAsset(file, metadata) {
+      const info = metadata.get(file.path) || {};
+      const match = file.path.match(/^wallpapers\/([^/]+)\/(\d+)x(\d+)\//);
+      const inferredKind = file.path.startsWith("wallpapers/") || file.path.startsWith("backgrounds/") ? "wallpaper" : file.path === "avatar.png" || file.path.startsWith("avatars/") ? "avatar" : "other";
+      const filename = file.path.split("/").pop();
+      return {
+        path: file.path, size: file.size || 0,
+        title: info.title || filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
+        kind: info.kind || inferredKind,
+        category: info.category || (match ? match[1] : "other"),
+        width: info.width || (match ? Number(match[2]) : 0),
+        height: info.height || (match ? Number(match[3]) : 0),
+        note: info.note || ""
+      };
+    }
+
+    function fillSelect(select, entries, placeholder) {
+      const old = select.value;
+      select.replaceChildren(new Option(placeholder, ""));
+      entries.forEach(([value,label]) => select.add(new Option(label,value)));
+      if (entries.some(([value]) => value === old)) select.value = old;
+    }
+
+    function refreshControls() {
+      const files = assets.filter(file => file.kind === kind);
+      const categories = [...new Set(files.map(file => file.category))].sort();
+      fillSelect(controls.category, categories.map(value => [value,categoryLabels[value] || value]), "全部种类");
+      controls.category.disabled = kind !== "wallpaper";
+      if (controls.category.disabled) controls.category.value = "";
+      const sizes = [...new Map(files.map(file => [resolutionKey(file),file])).entries()]
+        .sort((a,b) => b[1].width * b[1].height - a[1].width * a[1].height);
+      fillSelect(controls.resolution, sizes.map(([key,file]) => [key,key === "unknown" ? "分辨率未标注" : resolutionLabel(file)]), "全部分辨率");
+      document.querySelectorAll(".tab").forEach(tab => {
+        const count = assets.filter(file => file.kind === tab.dataset.kind).length;
+        tab.querySelector("span").textContent = count;
+        tab.hidden = tab.dataset.kind === "other" && !count;
+        tab.disabled = !count;
+        tab.setAttribute("aria-pressed", String(tab.dataset.kind === kind));
+      });
+      const wallpapers = assets.filter(file => file.kind === "wallpaper");
+      const sizeCount = new Set(wallpapers.filter(file => file.width && file.height).map(resolutionKey)).size;
+      const avatarCount = assets.filter(file => file.kind === "avatar").length;
+      document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种分辨率" + (avatarCount ? " · " + avatarCount + " 张头像" : "");
     }
 
     async function copyUrl(url, button) {
       try {
         await navigator.clipboard.writeText(url);
-        const old = button.textContent;
         button.textContent = "已复制";
-        setTimeout(() => button.textContent = old, 1200);
+        setTimeout(() => button.textContent = "复制链接", 1200);
       } catch {
-        prompt("复制图片地址：", url);
+        window.prompt("复制图片地址：", url);
       }
     }
 
-    async function load() {
-      try {
-        const response = await fetch(`https://api.github.com/repos/${repo}/git/trees/${branch}?recursive=1`);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
-        const files = data.tree
-          .filter(item => item.type === "blob" && imagePattern.test(item.path))
-          .sort((a,b) => {
-            const da = a.path.includes("/") ? 1 : 0;
-            const db = b.path.includes("/") ? 1 : 0;
-            return da - db || a.path.localeCompare(b.path);
-          });
+    function imageUrl(path) {
+      return new URL(path.split("/").map(encodeURIComponent).join("/"), base).href;
+    }
 
-        if (!files.length) {
-          gallery.innerHTML = '<div class="status">仓库里还没有图片。</div>';
-          return;
-        }
-
-        gallery.className = "grid";
-        gallery.innerHTML = files.map(file => {
-          const encodedPath = file.path.split("/").map(encodeURIComponent).join("/");
-          const url = base + encodedPath;
-          return `
-            <article class="card">
-              <a class="preview" href="${url}" target="_blank" rel="noopener">
-                <img src="${url}" alt="${escapeHtml(file.path)}" loading="lazy">
-              </a>
-              <div class="meta">
-                <span class="path" title="${escapeHtml(file.path)}">${escapeHtml(file.path)}</span>
-                <div class="actions">
-                  <a href="${url}" target="_blank" rel="noopener">打开</a>
-                  <button type="button" data-url="${url}">复制链接</button>
-                </div>
-              </div>
-            </article>
-          `;
-        }).join("");
-
-        gallery.querySelectorAll("button[data-url]").forEach(button => {
-          button.addEventListener("click", () => copyUrl(button.dataset.url, button));
-        });
-      } catch (error) {
-        gallery.innerHTML = '<div class="status">暂时无法读取图片列表。主头像仍可直接打开：<a href="https://zzpice.github.io/assets/avatar.png">avatar.png</a></div>';
+    function makeCard(file) {
+      const url = imageUrl(file.path);
+      const card = element("article", "card");
+      const preview = element("a", "preview " + orientation(file));
+      preview.href = url; preview.target = "_blank"; preview.rel = "noopener";
+      preview.setAttribute("aria-label", "打开" + file.title);
+      const img = element("img");
+      img.alt = file.title; img.loading = "lazy"; img.decoding = "async";
+      const meta = element("div", "meta");
+      const size = element("p", "resolution", resolutionLabel(file));
+      const details = element("p", "details");
+      function updateDetails() {
+        const format = file.path.split(".").pop().toUpperCase();
+        details.textContent = (file.kind === "wallpaper" ? (categoryLabels[file.category] || file.category) : kindLabels[file.kind]) + " · " + orientationLabels[orientation(file)] + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
       }
+      updateDetails();
+      img.addEventListener("load", () => {
+        if (file.path.toLowerCase().endsWith(".svg")) return;
+        if (img.naturalWidth && img.naturalHeight && (file.width !== img.naturalWidth || file.height !== img.naturalHeight)) {
+          file.width = img.naturalWidth; file.height = img.naturalHeight;
+          size.textContent = resolutionLabel(file);
+          updateDetails();
+          refreshControls();
+          renderGallery();
+        }
+      });
+      img.addEventListener("error", () => {
+        img.remove();
+        preview.append(element("span", "image-error", "图片暂时无法加载"));
+      });
+      img.src = url;
+      preview.append(img);
+      meta.append(element("h2", "", file.title), size, details);
+      if (file.note) meta.append(element("p", "note", file.note));
+      const filename = element("span", "filename", file.path.split("/").pop());
+      filename.title = file.path;
+      meta.append(filename);
+      const actions = element("div", "actions");
+      const download = element("a", "download", "下载");
+      download.href = url; download.download = file.path.split("/").pop();
+      const open = element("a", "", "查看");
+      open.href = url; open.target = "_blank"; open.rel = "noopener";
+      const copy = element("button", "", "复制链接");
+      copy.type = "button";
+      copy.addEventListener("click", () => copyUrl(url, copy));
+      actions.append(download, open, copy);
+      meta.append(actions);
+      card.append(preview, meta);
+      return card;
+    }
+
+    function renderGallery() {
+      const query = controls.search.value.trim().toLocaleLowerCase();
+      const visible = assets.filter(file => file.kind === kind)
+        .filter(file => !controls.category.value || file.category === controls.category.value)
+        .filter(file => !controls.resolution.value || resolutionKey(file) === controls.resolution.value)
+        .filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value)
+        .filter(file => !query || [file.title,file.path,categoryLabels[file.category] || ""].join(" ").toLocaleLowerCase().includes(query));
+      visible.sort((a,b) => {
+        const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
+        return controls.sort.value === "name" ? a.title.localeCompare(b.title,"zh-CN") : (controls.sort.value === "resolution-asc" ? difference : -difference) || a.title.localeCompare(b.title,"zh-CN");
+      });
+      gallery.replaceChildren(...(visible.length ? visible.map(makeCard) : [element("div","empty","没有符合筛选条件的图片。试试清除筛选。")]));
+      results.textContent = "显示 " + visible.length + " / " + assets.filter(file => file.kind === kind).length + " 张" + kindLabels[kind];
+      reset.disabled = !query && !controls.category.value && !controls.resolution.value && !controls.orientation.value && controls.sort.value === "resolution-desc";
+    }
+
+    function clearFilters() {
+      controls.search.value = "";
+      controls.category.value = "";
+      controls.resolution.value = "";
+      controls.orientation.value = "";
+      controls.sort.value = "resolution-desc";
+    }
+
+    document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => {
+      kind = tab.dataset.kind; clearFilters(); refreshControls(); renderGallery();
+    }));
+    Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", renderGallery));
+    reset.addEventListener("click", () => { clearFilters(); renderGallery(); });
+
+    async function fetchJson(url) {
+      const response = await fetch(url, { cache: "no-cache" });
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      return response.json();
+    }
+
+    async function load() {
+      const [catalogResult,treeResult] = await Promise.allSettled([
+        fetchJson(new URL("catalog.json",base)),
+        fetchJson("https://api.github.com/repos/" + repo + "/git/trees/main?recursive=1")
+      ]);
+      const registered = catalogResult.status === "fulfilled" && Array.isArray(catalogResult.value.assets) ? catalogResult.value.assets : [];
+      const metadata = new Map(registered.map(file => [file.path,file]));
+      const aliases = new Set(registered.flatMap(file => file.aliases || []));
+      const treeAvailable = treeResult.status === "fulfilled" && Array.isArray(treeResult.value.tree);
+      const tree = treeAvailable ? treeResult.value.tree : [];
+      const canonicalHashes = new Set(tree.filter(file => file.path.startsWith("wallpapers/")).map(file => file.sha));
+      const files = new Map(tree.filter(file => file.type === "blob" && imagePattern.test(file.path) && !aliases.has(file.path) && !(file.path.startsWith("backgrounds/") && canonicalHashes.has(file.sha))).map(file => [file.path,file]));
+      registered.forEach(file => {
+        if (imagePattern.test(file.path) && !files.has(file.path)) files.set(file.path, file);
+      });
+      assets = [...files.values()].map(file => makeAsset(file,metadata));
+      if (!assets.length) {
+        gallery.replaceChildren(element("div","empty",treeAvailable ? "仓库里还没有图片。" : "暂时无法读取图片，请稍后刷新。"));
+        results.textContent = "暂无可显示的图片";
+        document.getElementById("summary").textContent = "壁纸、头像与其他图片资源";
+        return;
+      }
+      if (!assets.some(file => file.kind === kind)) kind = assets[0].kind;
+      if (!treeAvailable || treeResult.value.truncated) {
+        const notice = document.getElementById("notice");
+        notice.hidden = false;
+        notice.textContent = "当前显示已读取的资源，新增图片可能稍后显示。";
+      }
+      refreshControls();
+      renderGallery();
     }
 
     load();
