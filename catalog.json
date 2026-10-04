@@ -37,6 +37,45 @@
       "thumbnail": "app/previews/girl-wink-shh-cc06503cca.webp",
       "size": 3895586,
       "sha": "6cd7c9787e9a51c9a334be98fa3fd497f701052d"
+    },
+    {
+      "path": "wallpapers/anime/7500x5000/shinchan-snowy-lakeside.jpg",
+      "title": "小新与小白 · 雪夜湖畔",
+      "kind": "wallpaper",
+      "category": "anime",
+      "device": "desktop",
+      "width": 7500,
+      "height": 5000,
+      "note": "来源文件标注：哲风壁纸",
+      "thumbnail": "app/previews/shinchan-snowy-lakeside-440766f1ad.webp",
+      "size": 3129306,
+      "sha": "2a2b1a33373d25f9663011e431f2e54f47b78d06"
+    },
+    {
+      "path": "wallpapers/illustration/6664x3748/starry-study-room.jpg",
+      "title": "星空书房",
+      "kind": "wallpaper",
+      "category": "illustration",
+      "device": "desktop",
+      "width": 6664,
+      "height": 3748,
+      "note": "来源文件标注：哲风壁纸 · AI 扩图",
+      "thumbnail": "app/previews/starry-study-room-229a9af775.webp",
+      "size": 1352444,
+      "sha": "f31a4c3e5baa94778feecca441aa531d7bd73401"
+    },
+    {
+      "path": "wallpapers/landscape/8000x4501/mount-fuji-convenience-store.jpg",
+      "title": "富士山下的便利店",
+      "kind": "wallpaper",
+      "category": "landscape",
+      "device": "desktop",
+      "width": 8000,
+      "height": 4501,
+      "note": "来源文件标注：哲风壁纸",
+      "thumbnail": "app/previews/mount-fuji-convenience-store-535f864e3b.webp",
+      "size": 5399530,
+      "sha": "09f9663f010c2fd777cb1127b6d1fb70528d4f60"
     }
   ]
 }
