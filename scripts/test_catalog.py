@@ -96,6 +96,24 @@ class CatalogTests(unittest.TestCase):
             with self.subTest(size=size):
                 self.assertEqual(infer_device(*size), expected)
 
+    def test_avatar_category_and_resolution(self):
+        avatar = self.root / "avatars/anime/64x64/example.png"
+        avatar.parent.mkdir(parents=True)
+        Image.new("RGB", (64, 64), "red").save(avatar)
+        update(self.root)
+        item = next(item for item in self.catalog()["assets"] if item["kind"] == "avatar")
+        self.assertEqual(item["category"], "anime")
+        self.assertEqual((item["width"], item["height"]), (64, 64))
+        self.assertNotIn("device", item)
+        update(self.root, check=True)
+
+    def test_avatar_resolution_mismatch(self):
+        avatar = self.root / "avatars/anime/64x64/example.png"
+        avatar.parent.mkdir(parents=True)
+        Image.new("RGB", (64, 48), "red").save(avatar)
+        with self.assertRaisesRegex(ValueError, "实际尺寸 64x48"):
+            update(self.root)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -12,7 +12,7 @@ python3 -m pip install -r scripts/requirements.txt
 python3 scripts/update_catalog.py
 ```
 
-把原图、`catalog.json` 和 `app/previews/` 的变化一起提交即可。工具读取实际尺寸、更新文件大小和内容标识、生成小型 WebP 预览、移除不再使用的预览，始终保留原图。壁纸目录尺寸写错时会停止并指出正确尺寸。
+把原图、`catalog.json` 和 `app/previews/` 的变化一起提交即可。工具读取实际尺寸、从目录读取风格分类、更新文件大小和内容标识、生成小型 WebP 预览、移除不再使用的预览，始终保留原图。壁纸和头像目录尺寸写错时会停止并指出正确尺寸。
 
 中文标题和处理说明仍可在 `catalog.json` 中编辑。替换原图后保留标题，旧的处理说明会清除，请按新图补充。GIF 的列表预览显示首帧，下载保留动画；SVG 使用原矢量图预览。
 

@@ -102,15 +102,17 @@ def build_catalog(root):
                 image = ImageOps.exif_transpose(original)
                 image.load()
             width, height = image.size
-        if path.startswith("wallpapers/"):
-            match = re.fullmatch(r"wallpapers/([a-z0-9-]+)/(\d+)x(\d+)/[a-z0-9][a-z0-9-]*\.[a-z0-9]+", path)
+        if path.startswith(("wallpapers/", "avatars/")):
+            folder = relative.parts[0]
+            label = "壁纸" if folder == "wallpapers" else "头像"
+            match = re.fullmatch(folder + r"/([a-z0-9-]+)/(\d+)x(\d+)/[a-z0-9][a-z0-9-]*\.[a-z0-9]+", path)
             if not match:
-                raise ValueError(f"{path}: 壁纸路径应为 wallpapers/<种类>/<宽>x<高>/<名称>.<格式>")
+                raise ValueError(f"{path}: {label}路径应为 {folder}/<种类>/<宽>x<高>/<名称>.<格式>")
             if (int(match[2]), int(match[3])) != (width, height):
                 raise ValueError(f"{path}: 目录尺寸与图片实际尺寸 {width}x{height} 不一致")
-            kind, category = "wallpaper", match[1]
+            kind, category = ("wallpaper" if folder == "wallpapers" else "avatar"), match[1]
         else:
-            kind = "avatar" if path == "avatar.png" or path.startswith("avatars/") else "other"
+            kind = "other"
             category = None
         item = {"path": path, "title": old.get("title") or relative.stem.replace("-", " "), "kind": kind}
         if category:

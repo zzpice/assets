@@ -3,7 +3,7 @@
 const repo = "zzpice/assets";
 const base = new URL(".", document.baseURI);
 const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
-const categoryLabels = { anime: "动漫", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", other: "其他壁纸" };
+const categoryLabels = { anime: "动漫", people: "真人", animals: "动物", pixel: "像素", illustration: "插画", landscape: "风景", minimal: "极简", abstract: "抽象", gaming: "游戏", photography: "摄影", other: "其他" };
 const orientationLabels = { portrait: "竖屏", landscape: "横屏", square: "方形", unknown: "方向未标注" };
 const kindLabels = { wallpaper: "壁纸", avatar: "头像", other: "其他图片" };
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
@@ -68,9 +68,9 @@ function inferDevice(width,height) {
 
 function makeAsset(file, metadata) {
   const info = metadata.get(file.path) || {};
-  const match = file.path.match(/^wallpapers\/([^/]+)\/(\d+)x(\d+)\//);
+  const match = file.path.match(/^(?:wallpapers|avatars)\/([^/]+)\/(\d+)x(\d+)\//);
   const currentMetadata = !file.sha || !info.sha || file.sha === info.sha;
-  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path === "avatar.png" || file.path.startsWith("avatars/") ? "avatar" : "other";
+  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : "other";
   const filename = file.path.split("/").pop();
   const asset = {
     path: file.path, size: file.size || info.size || 0,
@@ -98,11 +98,13 @@ function refreshControls() {
   const devices = ["phone","desktop","tablet","unknown"].filter(device => files.some(file => file.device === device));
   fillSelect(controls.device,devices.map(value => [value,deviceLabels[value]]),"全部设备");
   controls.device.disabled = kind !== "wallpaper";
+  controls.device.closest(".field").hidden = controls.device.disabled;
   if (controls.device.disabled) controls.device.value = "";
   const deviceFiles = files.filter(file => !controls.device.value || file.device === controls.device.value);
   const categories = [...new Set(deviceFiles.map(file => file.category))].sort();
   fillSelect(controls.category, categories.map(value => [value,categoryLabels[value] || value]), "全部种类");
-  controls.category.disabled = kind !== "wallpaper";
+  controls.category.disabled = kind === "other";
+  controls.category.closest(".field").hidden = controls.category.disabled;
   if (controls.category.disabled) controls.category.value = "";
   const categoryFiles = deviceFiles.filter(file => !controls.category.value || file.category === controls.category.value);
   const sizes = [...new Map(categoryFiles.map(file => [resolutionKey(file),file])).entries()]
@@ -293,7 +295,7 @@ function makeCard(file) {
   const details = element("p", "details");
   function updateDetails() {
     const format = file.path.split(".").pop().toUpperCase();
-    details.textContent = (file.kind === "wallpaper" ? (categoryLabels[file.category] || file.category) : kindLabels[file.kind]) + (file.device ? " · " + deviceLabels[file.device] : "") + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
+    details.textContent = (file.kind === "other" ? kindLabels[file.kind] : (categoryLabels[file.category] || file.category)) + (file.device ? " · " + deviceLabels[file.device] : "") + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
   }
   updateDetails();
   img.addEventListener("load", () => {

@@ -2,12 +2,13 @@
   "version": 1,
   "assets": [
     {
-      "path": "avatar.png",
-      "title": "主头像",
+      "path": "avatars/anime/1254x1254/girl-rain.png",
+      "title": "雨夜少女",
       "kind": "avatar",
+      "category": "anime",
       "width": 1254,
       "height": 1254,
-      "thumbnail": "app/previews/avatar-c8d54431be.webp",
+      "thumbnail": "app/previews/girl-rain-c8d54431be.webp",
       "size": 1843255,
       "sha": "d8a1d44ad1728b8efea73f996876e1ae1d712b50"
     },
