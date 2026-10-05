@@ -1323,6 +1323,256 @@
       "sha": "a22cd3ce409b67b56c1467ebf19fd1f9339db6be"
     },
     {
+      "path": "icons/finance/abc.png",
+      "title": "中国农业银行 / ABC",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 26673,
+      "sha": "e8887aa4e0ab57482a603af75e16b0e561eeeb65"
+    },
+    {
+      "path": "icons/finance/bank-of-america.png",
+      "title": "Bank of America / 美国银行",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 21856,
+      "sha": "9daabc2c53845dac376a6e9685243bc65f0e44e4"
+    },
+    {
+      "path": "icons/finance/bank-of-china.png",
+      "title": "中国银行（含中银香港共用标识）/ BOC",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 23605,
+      "sha": "4e818a2ab1bdf84788b5b9ce976acaf0680a323a"
+    },
+    {
+      "path": "icons/finance/bank-of-communications.png",
+      "title": "交通银行 / Bank of Communications",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 19331,
+      "sha": "ad024f2b4c4ce166593fcd1c1a6ca3e36d19c2f2"
+    },
+    {
+      "path": "icons/finance/ccb.png",
+      "title": "中国建设银行 / CCB",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 22018,
+      "sha": "f1af067266116582c01b1a0b7e59967ce240a026"
+    },
+    {
+      "path": "icons/finance/charles-schwab.png",
+      "title": "Charles Schwab / 嘉信理财",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 39020,
+      "sha": "37fec61e3fc87cf68c6e6d36b6db6f83df7a31e9"
+    },
+    {
+      "path": "icons/finance/chase.png",
+      "title": "JPMorgan Chase / 摩根大通",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 11833,
+      "sha": "8ccf4364ab45ae4c63d610923d4225c575781d21"
+    },
+    {
+      "path": "icons/finance/cib.png",
+      "title": "兴业银行 / CIB",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 23475,
+      "sha": "bc4d894246f745eef16834e26d266d877c6916ed"
+    },
+    {
+      "path": "icons/finance/citi.png",
+      "title": "Citi / 花旗银行",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 18958,
+      "sha": "3dce7a0c730f50028495061918d3ec2f21663408"
+    },
+    {
+      "path": "icons/finance/citic-bank.png",
+      "title": "中信银行 / China CITIC Bank",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 34606,
+      "sha": "a102435574270738e64824da0c218b571ae44f49"
+    },
+    {
+      "path": "icons/finance/cmb.png",
+      "title": "招商银行 / CMB",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 24749,
+      "sha": "cbe54ff412524c45d5caff17e03edfa7e1674c87"
+    },
+    {
+      "path": "icons/finance/dbs.png",
+      "title": "DBS / 星展（香港、新加坡共用标识）",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 25098,
+      "sha": "bd65f5b7121c6122838d03c06ec4806e3e5ab79e"
+    },
+    {
+      "path": "icons/finance/deutsche-bank.png",
+      "title": "Deutsche Bank / 德意志银行",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 8871,
+      "sha": "87c11aaa2694428a6239a313288c991128abb72a"
+    },
+    {
+      "path": "icons/finance/fidelity.png",
+      "title": "Fidelity Investments / 富达投资",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 38515,
+      "sha": "75e7a88ab81d90d807aba74b6ab08545c1ce3b6b"
+    },
+    {
+      "path": "icons/finance/goldman-sachs.png",
+      "title": "Goldman Sachs / 高盛",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 28417,
+      "sha": "f322940b1b1d82cf1d1e89fbab7ff25ed73d0b59"
+    },
+    {
+      "path": "icons/finance/hang-seng-bank.png",
+      "title": "Hang Seng Bank / 恒生银行",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 31809,
+      "sha": "d494257604956a6178dc6d91c22770b5b3ccd995"
+    },
+    {
+      "path": "icons/finance/hsbc.png",
+      "title": "HSBC / 汇丰（香港、新加坡共用标识）",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 7778,
+      "sha": "eb6d4f0dd9aa3d6355d4c7b9ab6c52acf04454d6"
+    },
+    {
+      "path": "icons/finance/icbc.png",
+      "title": "中国工商银行 / ICBC",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 22938,
+      "sha": "e809ccc439e451445fe04ef151793646f401f12e"
+    },
+    {
+      "path": "icons/finance/interactive-brokers.png",
+      "title": "Interactive Brokers / 盈透证券",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 15457,
+      "sha": "ee3a6551bb7cb10d2cbc124732897f98f6e80f5d"
+    },
+    {
+      "path": "icons/finance/ocbc.png",
+      "title": "OCBC / 华侨银行",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 26300,
+      "sha": "9927ffd57ab4fae96166066658446b847383b0bb"
+    },
+    {
+      "path": "icons/finance/santander.png",
+      "title": "Santander / 桑坦德银行",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 20276,
+      "sha": "5a910cf6e41102d8d65d78e44d00ef122ce23600"
+    },
+    {
+      "path": "icons/finance/standard-chartered.png",
+      "title": "Standard Chartered / 渣打（香港、新加坡共用标识）",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 23176,
+      "sha": "ec523c1e10f64bc9b0adf0666828d853b0981e17"
+    },
+    {
+      "path": "icons/finance/ubs.png",
+      "title": "UBS / 瑞银",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 29772,
+      "sha": "be504963d400bce1a6e1bcdb71c20de3abe88ddb"
+    },
+    {
+      "path": "icons/finance/uob.png",
+      "title": "UOB / 大华银行",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 8913,
+      "sha": "e6aa7ce99358efe626beedc107681e175970c7ea"
+    },
+    {
+      "path": "icons/finance/wells-fargo.png",
+      "title": "Wells Fargo / 富国银行",
+      "kind": "icon",
+      "category": "finance",
+      "width": 512,
+      "height": 512,
+      "size": 32104,
+      "sha": "77e606be309f614a9c2f30d53df8439162f9b9d8"
+    },
+    {
       "path": "icons/gaming/epic-games.png",
       "title": "Epic Games",
       "kind": "icon",

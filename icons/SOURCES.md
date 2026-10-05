@@ -1,6 +1,6 @@
 # 图标清单与来源
 
-所有文件均为 512×512 PNG、RGBA；链接固定到收录时审查的上游提交。Oasisic-Icons 提供 133 个，Dashboard Icons 提供 8 个；采用原 PNG，不收录 SVG。除下述明确标注的标准化处理外，图片文件字节未修改。
+所有文件均为 512×512 PNG、RGBA；链接固定到收录时审查的上游提交。Oasisic-Icons 提供 133 个，Dashboard Icons 提供 8 个；这两批采用原 PNG。除下述明确标注的标准化处理外，图片文件字节未修改。 金融图标为另外一批矢量素材转换，详见文末清单。
 
 Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `GoogleAI.png`；本集合按图案对应的服务命名。
 
@@ -286,3 +286,41 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | 中国台湾 | [taiwan.png](regions/taiwan.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Country/CN-Taiwan/CN-Taiwan.png) |
 | 英国 | [united-kingdom.png](regions/united-kingdom.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Country/UK/UK.png) |
 | 美国 | [united-states.png](regions/united-states.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Country/US/US.png) |
+
+## 银行、券商与大型金融机构（2026-10-05）
+
+新增 25 个品牌，使用 `finance/` 单层目录，名称仍为小写英文、数字和短横线。中国银行与中银香港、HSBC 香港与新加坡、DBS 香港与新加坡、渣打香港与新加坡共用品牌 symbol，仅保留一份；清单不代表覆盖所有地区机构。
+
+先核对机构官网、官方品牌说明或媒体资料，再采用下表固定提交中的矢量素材。官网列用于核对品牌，不表示这些 SVG 都由官网直接下载。OCBC 使用 2023 年更新后的 symbol，未使用 IconGo 的旧版。未采用来源中为深色主题改色、放大至 250px 或边缘质量不稳定的股票 PNG 集合。平安集团图标不作为平安银行图标；Morgan Stanley、ZA Bank、BNP Paribas 等本次未收录。
+
+所有成品均为 512×512 PNG、RGBA：等比转换 SVG，按 symbol 的实际形状设置留白与居中，并用与整理工具相同的 r=115 整数圆角边界将外侧 alpha 置零。主体不重绘、不加阴影、不量化。IconGo 的白底圆角画布按现有标准重新生成，保留原 symbol 颜色和比例；HSBC、Deutsche Bank、Goldman Sachs 的单色 SVG 分别使用来源元数据的品牌色 `#DB0011`、`#0018A8`、`#7399C6`，配白色主体底板。Charles Schwab 和 Wells Fargo 保留素材本身的蓝色、红色底板，Fidelity 保留绿白图形；IBKR 保留源 symbol 内部渐变。其余透明 symbol 配白色主体底板。横向 symbol 使用较宽留白区域，圆形及纵向 symbol 另行等比缩放，未拉伸或裁切品牌图形。
+
+许可：IconGo 与 Global Bank Logos 的 MIT 许可分别保存在 [icongo-mit.txt](licenses/icongo-mit.txt)、[global-bank-logos-mit.txt](licenses/global-bank-logos-mit.txt)；selfh.st 素材采用 [CC BY 4.0](licenses/selfhst-cc-by-4.0.txt)，作者为 selfh.st，均已转换、缩放、补底和处理圆角；Simple Icons 采用 [CC0](licenses/simple-icons-cc0.txt)。Tgentil 的集合没有授予品牌权利，按其 README 保留品牌归属说明。以上集合许可不授予银行商标权，所有品牌标识归各机构所有，用于识别机构，不表示授权或关联。
+
+| 品牌 | 文件 | 矢量素材（固定提交） | 官网 / 官方核对资料 |
+|---|---|---|---|
+| JPMorgan Chase / 摩根大通 | [chase.png](finance/chase.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/chase.svg) | [官方资料](https://www.jpmorganchase.com/about/our-history) |
+| Bank of America / 美国银行 | [bank-of-america.png](finance/bank-of-america.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/bank-of-america.svg) | [官方资料](https://www.bankofamerica.com) |
+| Citi / 花旗银行 | [citi.png](finance/citi.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/citi.svg) | [官方资料](https://www.citigroup.com/global/about-us) |
+| Wells Fargo / 富国银行 | [wells-fargo.png](finance/wells-fargo.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/wells-fargo.svg) | [官方资料](https://www.wellsfargo.com) |
+| Goldman Sachs / 高盛 | [goldman-sachs.png](finance/goldman-sachs.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/goldmansachs.svg) | [官方资料](https://design.gs.com/brand/goldman-sachs-logo) |
+| Charles Schwab / 嘉信理财 | [charles-schwab.png](finance/charles-schwab.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/charles-schwab.svg) | [官方资料](https://www.schwab.com/media/6616) |
+| Fidelity Investments / 富达投资 | [fidelity.png](finance/fidelity.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/fidelity.svg) | [官方资料](https://www.fidelity.com/wealth/fidelity-go) |
+| Interactive Brokers / 盈透证券 | [interactive-brokers.png](finance/interactive-brokers.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/interactive-brokers.svg) | [官方资料](https://www.interactivebrokers.com/en/general/about/info-and-history.php) |
+| 中国工商银行 / ICBC | [icbc.png](finance/icbc.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/icbc-rect.svg) | [官方资料](https://icbc.com.cn/ICBCLtd/%E5%85%B3%E4%BA%8E%E6%88%91%E8%A1%8C/%E9%9B%86%E5%9B%A2%E5%93%81%E7%89%8C/jcgf.htm) |
+| 中国建设银行 / CCB | [ccb.png](finance/ccb.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/ccb-rect.svg) | [官方资料](https://www.ccb.com/cn/ccbtoday/jhbkhb/20200428_1588069504.html) |
+| 中国农业银行 / ABC | [abc.png](finance/abc.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/abchina-rect.svg) | [官方资料](https://www.abchina.com/cn/aboutabc/nhfm/) |
+| 中国银行（含中银香港共用标识）/ BOC | [bank-of-china.png](finance/bank-of-china.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/boc-rect.svg) | [官方资料](https://www.boc.cn/aboutboc/bi1/201110/t20111014_1556052.html) |
+| 交通银行 / Bank of Communications | [bank-of-communications.png](finance/bank-of-communications.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/bankcomm-rect.svg) | [官方资料](https://www.bankcomm.com/BankCommSite/) |
+| 招商银行 / CMB | [cmb.png](finance/cmb.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/cmbchina-rect.svg) | [官方资料](https://www.cmbchina.com) |
+| 中信银行 / China CITIC Bank | [citic-bank.png](finance/citic-bank.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/citicbank-rect.svg) | [官方资料](https://www.citicbank.com) |
+| 兴业银行 / CIB | [cib.png](finance/cib.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/cib-rect.svg) | [官方资料](https://www.cib.com.cn/cn/aboutCIB/investor/profile/logo.html) |
+| HSBC / 汇丰（香港、新加坡共用标识） | [hsbc.png](finance/hsbc.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/hsbc.svg) | [官方资料](https://www.hsbc.com/news-and-views/our-brand-in-action) |
+| Hang Seng Bank / 恒生银行 | [hang-seng-bank.png](finance/hang-seng-bank.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/hangseng-rect.svg) | [官方资料](https://www.hangseng.com) |
+| Standard Chartered / 渣打（香港、新加坡共用标识） | [standard-chartered.png](finance/standard-chartered.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/standard.svg) | [官方资料](https://www.sc.com/en/media/) |
+| DBS / 星展（香港、新加坡共用标识） | [dbs.png](finance/dbs.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/dbs-rect.svg) | [官方资料](https://www.dbs.com/newsroom/DBS_unveils_new_brand_campaign) |
+| OCBC / 华侨银行 | [ocbc.png](finance/ocbc.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/ocbc.svg) | [官方资料](https://www.ocbc.com/group/about-us/our-brand.page) |
+| UOB / 大华银行 | [uob.png](finance/uob.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/uobchina-rect.svg) | [官方资料](https://www.uobgroup.com/uobgroup/about/index.page) |
+| UBS / 瑞银 | [ubs.png](finance/ubs.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/ubs-rect.svg) | [官方资料](https://www.ubs.com/global/en/our-firm/our-history.html) |
+| Deutsche Bank / 德意志银行 | [deutsche-bank.png](finance/deutsche-bank.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/deutschebank.svg) | [官方资料](https://www.db.com) |
+| Santander / 桑坦德银行 | [santander.png](finance/santander.png) | [源 SVG](https://github.com/Tgentil/Bancos-em-SVG/blob/fe1d43f0cf379135bd01c987bc147a04fdf48c6d/Banco%20Santander%20Brasil%20S.A/banco-santander-logo.svg) | [官方资料](https://www.santander.com/en/about-us/our-brand) |
