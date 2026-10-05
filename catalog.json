@@ -1833,27 +1833,6 @@
       "sha": "5fd1ed9f93e0a27381a7b0de09a974f84f34e867"
     },
     {
-      "path": "icons/proxy-clients/clash.png",
-      "title": "Clash",
-      "kind": "icon",
-      "category": "proxy-clients",
-      "width": 512,
-      "height": 512,
-      "note": "采用 Dashboard Icons PNG；转换为 RGBA，无颜色量化；保留原始像素尺寸，居中填充透明画布至 512×512。",
-      "size": 31653,
-      "sha": "0bf726fb3bf44cc9d20cc4f651a00b9f3b295f02"
-    },
-    {
-      "path": "icons/proxy-clients/surge.png",
-      "title": "Surge",
-      "kind": "icon",
-      "category": "proxy-clients",
-      "width": 512,
-      "height": 512,
-      "size": 45909,
-      "sha": "c8afe44ebe5c2347d4b847f0a69b1e88466e4441"
-    },
-    {
       "path": "icons/proxy/ad-block.png",
       "title": "广告拦截",
       "kind": "icon",
@@ -2005,6 +1984,27 @@
       "height": 512,
       "size": 96936,
       "sha": "52577a8e3b8a39ef524246786d1ef8fd78bc9f92"
+    },
+    {
+      "path": "icons/proxy-clients/clash.png",
+      "title": "Clash",
+      "kind": "icon",
+      "category": "proxy-clients",
+      "width": 512,
+      "height": 512,
+      "note": "采用 Dashboard Icons PNG；转换为 RGBA，无颜色量化；保留原始像素尺寸，居中填充透明画布至 512×512。",
+      "size": 31653,
+      "sha": "0bf726fb3bf44cc9d20cc4f651a00b9f3b295f02"
+    },
+    {
+      "path": "icons/proxy-clients/surge.png",
+      "title": "Surge",
+      "kind": "icon",
+      "category": "proxy-clients",
+      "width": 512,
+      "height": 512,
+      "size": 45909,
+      "sha": "c8afe44ebe5c2347d4b847f0a69b1e88466e4441"
     },
     {
       "path": "icons/regions/australia.png",
