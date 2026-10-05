@@ -1059,136 +1059,6 @@
       "sha": "8137350587553ed53fdf5ebc7db84aed1d904aba"
     },
     {
-      "path": "icons/cloud/alibaba-cloud.png",
-      "title": "阿里云",
-      "kind": "icon",
-      "category": "cloud",
-      "width": 512,
-      "height": 512,
-      "size": 6795,
-      "sha": "82e74d100ec5c189d102b400269e1c8c1039e5c1"
-    },
-    {
-      "path": "icons/cloud/aws.png",
-      "title": "AWS",
-      "kind": "icon",
-      "category": "cloud",
-      "width": 512,
-      "height": 512,
-      "size": 34277,
-      "sha": "8c7a757fde20d08923ba297c3e4b96f450c0d01d"
-    },
-    {
-      "path": "icons/cloud/azure.png",
-      "title": "Azure",
-      "kind": "icon",
-      "category": "cloud",
-      "width": 512,
-      "height": 512,
-      "size": 102764,
-      "sha": "cb5f235374d49102b47ec60c9c48944e70c3e172"
-    },
-    {
-      "path": "icons/cloud/proxmox.png",
-      "title": "Proxmox",
-      "kind": "icon",
-      "category": "cloud",
-      "width": 512,
-      "height": 512,
-      "size": 24455,
-      "sha": "ae32d9cb19271fffab5dd9994b38aefbee7f6069"
-    },
-    {
-      "path": "icons/cloud/tencent-cloud.png",
-      "title": "腾讯云",
-      "kind": "icon",
-      "category": "cloud",
-      "width": 512,
-      "height": 512,
-      "size": 32295,
-      "sha": "583facd30f3b64efcb8b9bfb67f3db4a9d5c5f97"
-    },
-    {
-      "path": "icons/communication/dingtalk.png",
-      "title": "钉钉",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 19968,
-      "sha": "298d141e011765369d70338e12b092360b4b0f8f"
-    },
-    {
-      "path": "icons/communication/discord.png",
-      "title": "Discord",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 10496,
-      "sha": "078e22434f35b545a445687c0d7352407a3ada24"
-    },
-    {
-      "path": "icons/communication/lark.png",
-      "title": "飞书",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 65738,
-      "sha": "9670725bdddf1626f240d532d77c9cdd0394acc2"
-    },
-    {
-      "path": "icons/communication/qq.png",
-      "title": "QQ",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 21677,
-      "sha": "01fd9e5f45e19546295c3656e9eff8d4aaed2a5d"
-    },
-    {
-      "path": "icons/communication/telegram.png",
-      "title": "Telegram",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 33299,
-      "sha": "9275d5ca78790fcd82f503ccaf6b036786b2f61a"
-    },
-    {
-      "path": "icons/communication/wechat.png",
-      "title": "微信",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 25420,
-      "sha": "35f82f3f95d4f0ca615606908842b3e74280108c"
-    },
-    {
-      "path": "icons/communication/whatsapp.png",
-      "title": "WhatsApp",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 17656,
-      "sha": "dd0dfa93e0d43f4ac919a28ee3123cc268f7c261"
-    },
-    {
-      "path": "icons/communication/zoom.png",
-      "title": "Zoom",
-      "kind": "icon",
-      "category": "communication",
-      "width": 512,
-      "height": 512,
-      "size": 43722,
-      "sha": "fdc6fc0602eb8fc00fd729ccc87e64f3e2ed5990"
-    },
-    {
       "path": "icons/development/cursor.png",
       "title": "Cursor",
       "kind": "icon",
@@ -1244,11 +1114,6 @@
       "path": "icons/finance/abc.png",
       "title": "中国农业银行",
       "kind": "icon",
-      "aliases": [
-        "ABC",
-        "Agricultural Bank of China",
-        "农行"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1257,12 +1122,8 @@
     },
     {
       "path": "icons/finance/bank-of-america.png",
-      "title": "美国银行",
+      "title": "Bank of America",
       "kind": "icon",
-      "aliases": [
-        "Bank of America",
-        "BofA"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1273,12 +1134,6 @@
       "path": "icons/finance/bank-of-china.png",
       "title": "中国银行",
       "kind": "icon",
-      "aliases": [
-        "BOC",
-        "Bank of China",
-        "中银香港",
-        "BOCHK"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1289,11 +1144,6 @@
       "path": "icons/finance/bank-of-communications.png",
       "title": "交通银行",
       "kind": "icon",
-      "aliases": [
-        "Bank of Communications",
-        "BOCOM",
-        "交行"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1304,11 +1154,6 @@
       "path": "icons/finance/ccb.png",
       "title": "中国建设银行",
       "kind": "icon",
-      "aliases": [
-        "CCB",
-        "China Construction Bank",
-        "建行"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1317,12 +1162,8 @@
     },
     {
       "path": "icons/finance/charles-schwab.png",
-      "title": "嘉信理财",
+      "title": "Charles Schwab",
       "kind": "icon",
-      "aliases": [
-        "Charles Schwab",
-        "Schwab"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1331,14 +1172,8 @@
     },
     {
       "path": "icons/finance/chase.png",
-      "title": "大通银行",
+      "title": "Chase",
       "kind": "icon",
-      "aliases": [
-        "Chase",
-        "Chase Bank",
-        "JPMorgan Chase",
-        "摩根大通"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1349,10 +1184,6 @@
       "path": "icons/finance/cib.png",
       "title": "兴业银行",
       "kind": "icon",
-      "aliases": [
-        "CIB",
-        "Industrial Bank"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1361,13 +1192,8 @@
     },
     {
       "path": "icons/finance/citi.png",
-      "title": "花旗银行",
+      "title": "Citi",
       "kind": "icon",
-      "aliases": [
-        "Citi",
-        "Citibank",
-        "Citigroup"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1375,28 +1201,9 @@
       "sha": "3dce7a0c730f50028495061918d3ec2f21663408"
     },
     {
-      "path": "icons/finance/citic-bank.png",
-      "title": "中信银行",
-      "kind": "icon",
-      "aliases": [
-        "China CITIC Bank",
-        "CITIC"
-      ],
-      "category": "finance",
-      "width": 512,
-      "height": 512,
-      "size": 34606,
-      "sha": "a102435574270738e64824da0c218b571ae44f49"
-    },
-    {
       "path": "icons/finance/cmb.png",
       "title": "招商银行",
       "kind": "icon",
-      "aliases": [
-        "CMB",
-        "China Merchants Bank",
-        "招行"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1405,12 +1212,8 @@
     },
     {
       "path": "icons/finance/dbs.png",
-      "title": "星展银行",
+      "title": "DBS",
       "kind": "icon",
-      "aliases": [
-        "DBS",
-        "Development Bank of Singapore"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1419,11 +1222,8 @@
     },
     {
       "path": "icons/finance/deutsche-bank.png",
-      "title": "德意志银行",
+      "title": "Deutsche Bank",
       "kind": "icon",
-      "aliases": [
-        "Deutsche Bank"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1432,12 +1232,8 @@
     },
     {
       "path": "icons/finance/fidelity.png",
-      "title": "富达投资",
+      "title": "Fidelity Investments",
       "kind": "icon",
-      "aliases": [
-        "Fidelity Investments",
-        "Fidelity"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1446,12 +1242,8 @@
     },
     {
       "path": "icons/finance/goldman-sachs.png",
-      "title": "高盛",
+      "title": "Goldman Sachs",
       "kind": "icon",
-      "aliases": [
-        "Goldman Sachs",
-        "GS"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1462,10 +1254,6 @@
       "path": "icons/finance/hang-seng-bank.png",
       "title": "恒生银行",
       "kind": "icon",
-      "aliases": [
-        "Hang Seng Bank",
-        "Hang Seng"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1474,12 +1262,8 @@
     },
     {
       "path": "icons/finance/hsbc.png",
-      "title": "汇丰银行",
+      "title": "HSBC",
       "kind": "icon",
-      "aliases": [
-        "HSBC",
-        "The Hongkong and Shanghai Banking Corporation"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1490,11 +1274,6 @@
       "path": "icons/finance/icbc.png",
       "title": "中国工商银行",
       "kind": "icon",
-      "aliases": [
-        "ICBC",
-        "Industrial and Commercial Bank of China",
-        "工行"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1503,12 +1282,8 @@
     },
     {
       "path": "icons/finance/interactive-brokers.png",
-      "title": "盈透证券",
+      "title": "Interactive Brokers",
       "kind": "icon",
-      "aliases": [
-        "Interactive Brokers",
-        "IBKR"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1517,12 +1292,8 @@
     },
     {
       "path": "icons/finance/ocbc.png",
-      "title": "华侨银行",
+      "title": "OCBC",
       "kind": "icon",
-      "aliases": [
-        "OCBC",
-        "Oversea-Chinese Banking Corporation"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1530,26 +1301,9 @@
       "sha": "9927ffd57ab4fae96166066658446b847383b0bb"
     },
     {
-      "path": "icons/finance/santander.png",
-      "title": "桑坦德银行",
-      "kind": "icon",
-      "aliases": [
-        "Santander",
-        "Banco Santander"
-      ],
-      "category": "finance",
-      "width": 512,
-      "height": 512,
-      "size": 20276,
-      "sha": "5a910cf6e41102d8d65d78e44d00ef122ce23600"
-    },
-    {
       "path": "icons/finance/standard-chartered.png",
-      "title": "渣打银行",
+      "title": "Standard Chartered",
       "kind": "icon",
-      "aliases": [
-        "Standard Chartered"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1558,11 +1312,8 @@
     },
     {
       "path": "icons/finance/ubs.png",
-      "title": "瑞银",
+      "title": "UBS",
       "kind": "icon",
-      "aliases": [
-        "UBS"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1571,12 +1322,8 @@
     },
     {
       "path": "icons/finance/uob.png",
-      "title": "大华银行",
+      "title": "UOB",
       "kind": "icon",
-      "aliases": [
-        "UOB",
-        "United Overseas Bank"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -1585,11 +1332,8 @@
     },
     {
       "path": "icons/finance/wells-fargo.png",
-      "title": "富国银行",
+      "title": "Wells Fargo",
       "kind": "icon",
-      "aliases": [
-        "Wells Fargo"
-      ],
       "category": "finance",
       "width": 512,
       "height": 512,
@@ -2091,126 +1835,6 @@
       "sha": "0177b8acb1bbd28cb2ddc46414c48601631a40e5"
     },
     {
-      "path": "icons/social/bangumi.png",
-      "title": "Bangumi 番组计划",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 132841,
-      "sha": "6646e6554cbe11509e6d0c25d2b3b69ab171853e"
-    },
-    {
-      "path": "icons/social/douban.png",
-      "title": "豆瓣",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 102564,
-      "sha": "c69336a7553648c2980fa9f2ed6a63b5217a4353"
-    },
-    {
-      "path": "icons/social/facebook.png",
-      "title": "Facebook",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 4961,
-      "sha": "04ef843cf04f5b2c1f9f4ac5dbbeee02731643f4"
-    },
-    {
-      "path": "icons/social/instagram.png",
-      "title": "Instagram",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 193433,
-      "sha": "34179f51fc99e03fdd199e291f4cea84efc8b52f"
-    },
-    {
-      "path": "icons/social/pixiv.png",
-      "title": "pixiv",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 11868,
-      "sha": "1b4e57356dcb455472bc6469f559690af05373ac"
-    },
-    {
-      "path": "icons/social/reddit.png",
-      "title": "Reddit",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 43135,
-      "sha": "f861542d0c145e0bf7e2d14b4a541999564168f8"
-    },
-    {
-      "path": "icons/social/tieba.png",
-      "title": "百度贴吧",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 68146,
-      "sha": "8a68238f66b584ebc3f9db2ba5efc1957f23f0a6"
-    },
-    {
-      "path": "icons/social/weibo.png",
-      "title": "微博",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 25284,
-      "sha": "076a81343286c1aa50ea997726ccf1d89ee1fdc0"
-    },
-    {
-      "path": "icons/social/x.png",
-      "title": "X",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 14274,
-      "sha": "0fe45ca98fe475a6d6725519c1d55ff09228587d"
-    },
-    {
-      "path": "icons/social/xiaohongshu.png",
-      "title": "小红书",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 7847,
-      "sha": "fe6ab62fa732c599ab20c2718d7740996a845449"
-    },
-    {
-      "path": "icons/social/zhihu.png",
-      "title": "知乎",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "size": 176893,
-      "sha": "537fb5445fbb9b1eecbacfa6e428d861af2f904a"
-    },
-    {
-      "path": "icons/video/bilibili.png",
-      "title": "哔哩哔哩",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 89524,
-      "sha": "3558e30db3271d388a2d04713a7b1d62ae44f083"
-    },
-    {
       "path": "icons/video/crunchyroll.png",
       "title": "Crunchyroll",
       "kind": "icon",
@@ -2231,16 +1855,6 @@
       "sha": "8716afd9b2197e9fc97f917e6bab2de8c7a4b286"
     },
     {
-      "path": "icons/video/douyin.png",
-      "title": "抖音",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 51126,
-      "sha": "fbb529a6af77ba27ad23a15d490f3e3155764c68"
-    },
-    {
       "path": "icons/video/hbo-max.png",
       "title": "HBO Max",
       "kind": "icon",
@@ -2249,16 +1863,6 @@
       "height": 512,
       "size": 135749,
       "sha": "92f0711a7c4d816f06e4a955922ca5c3195dba96"
-    },
-    {
-      "path": "icons/video/iqiyi.png",
-      "title": "爱奇艺",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 86758,
-      "sha": "7af78759ae2c96ec95cee992e9aff9849c72f9c4"
     },
     {
       "path": "icons/video/netflix.png",
@@ -2281,16 +1885,6 @@
       "sha": "6df2ec2ca816e9b42e6e5a08619a63866424df13"
     },
     {
-      "path": "icons/video/tencent-video.png",
-      "title": "腾讯视频",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 46550,
-      "sha": "de217e923aa730557868d7e4229dad2c25231009"
-    },
-    {
       "path": "icons/video/tiktok.png",
       "title": "TikTok",
       "kind": "icon",
@@ -2309,16 +1903,6 @@
       "height": 512,
       "size": 6656,
       "sha": "0ea678c86ca3b6771574a50e0555e46a7671b8ef"
-    },
-    {
-      "path": "icons/video/youku.png",
-      "title": "优酷",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 45123,
-      "sha": "46e7aedc82b870610e9d222cde353c33a6f853d7"
     },
     {
       "path": "icons/video/youtube.png",

@@ -21,10 +21,9 @@ function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]
 
 test("bad display metadata falls back to safe strings and path-derived classifications",()=>{
   const {context}=gallery();
-  const asset=context.makeAsset({path:"wallpapers/anime/1440x3120/girl-rain.png",title:{bad:true},aliases:{bad:true},note:42,kind:"icon",category:"finance",width:{bad:true},height:null});
+  const asset=context.makeAsset({path:"wallpapers/anime/1440x3120/girl-rain.png",title:{bad:true},note:42,kind:"icon",category:"finance",width:{bad:true},height:null});
   assert.equal(asset.title,"girl rain");
   assert.equal(asset.note,"");
-  assert.deepEqual(Array.from(asset.aliases),[]);
   assert.equal(asset.kind,"wallpaper");
   assert.equal(asset.category,"anime");
   assert.equal(asset.width,1440);
@@ -40,20 +39,20 @@ test("icon previews carry a content version while canonical download URLs remain
   assert.equal(context.imageUrl(asset.path),base+asset.path);
 });
 
-test("Chinese display names remain searchable by English brands and abbreviations",()=>{
+test("mixed-language titles and filenames are searchable without extra metadata",()=>{
   const {context,read,nodes}=gallery();
   context.testFiles=[
-    context.makeAsset({path:"icons/finance/hsbc.png",title:"汇丰银行",aliases:["HSBC","The Hongkong and Shanghai Banking Corporation"]}),
-    context.makeAsset({path:"icons/finance/icbc.png",title:"中国工商银行",aliases:["ICBC","工行"]})
+    context.makeAsset({path:"icons/finance/dbs.png",title:"DBS"}),
+    context.makeAsset({path:"icons/finance/icbc.png",title:"中国工商银行"})
   ];
   read('assets=testFiles; kind="icon"; makeCategorySections=()=>[]');
-  for(const [query,path] of [["汇丰","hsbc"],["hSbC","hsbc"],["Hongkong","hsbc"],["工行","icbc"],["ICBC","icbc"]]) {
+  for(const [query,path] of [["dBs","dbs"],["工商","icbc"],["ICBC","icbc"]]) {
     nodes.get("search").value=query;
     context.renderGallery();
     assert.equal(read("visibleAssets.length"),1);
     assert.equal(read("visibleAssets[0].path"),"icons/finance/"+path+".png");
   }
-  assert.equal(context.testFiles[0].title,"汇丰银行");
+  assert.equal(context.testFiles[0].title,"DBS");
 });
 
 test("preview groups separate wallpaper devices and card banks, regions and editions",()=>{
