@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "zzpice-assets-";
-const CACHE_NAME = CACHE_PREFIX + "v3-0f54aaed4ae8";
+const CACHE_NAME = CACHE_PREFIX + "v3-a98aa5607ce3";
 const PREVIEW_CACHE = CACHE_PREFIX + "previews-v1";
 const ICON_CACHE = CACHE_PREFIX + "icons-v1";
 const base = new URL("./", self.location.href);
@@ -11,7 +11,7 @@ const SHELL_HASHES = {
   "catalog.json": "5e84efb94ef50b54c983f13a565cfccb199450f5b6751a768d36830276f83c93",
   "app/site.js?v=34225ecfff": "34225ecfff0fbc552c4e3ccaec0720c2ff5955f83e011a684b5a93ea0f3ec899",
   "app/site.css?v=183c4ec47c": "183c4ec47cac8d11a57ae1acace0364557be0ee44126647fd1d314f30a251105",
-  "app/manifest.webmanifest": "70b1de11f4d8cc8705bff4818fa42cde35e79dd9740086623bb1bff7c2c7fed0",
+  "app/manifest.webmanifest": "7a16a6a6cc4fa1a65676c94d8407b385ab5d823579cce8d2f062cfc6a26613b6",
   "app/icon.svg": "c8df6bbe05021afe1b5e66004a053dbf2606be263dffe9488b682c74e271483f",
   "app/icon-180.png": "04530a5f1b34338c9d3cdfb55e7d8f27c183376be673649b17f91b3c4aa03d77",
   "app/icon-192.png": "f79fc18edff25df7c349392dec9df81b32f0afed88594363a44acaadd02fa50f",
