@@ -1,6 +1,5 @@
 "use strict";
 
-const repo = "zzpice/assets";
 const base = new URL(".", document.baseURI);
 const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
 // Insertion order is the browsing order; new categories follow the known ones.
@@ -36,7 +35,7 @@ let previewSequence = [];
 let initialRoute = true;
 let lockscreenEnabled = false;
 let avatarRoundEnabled = false;
-let directoryLimited = false;
+let directoryUnavailable = false;
 let loadGeneration = 0;
 let favoritesOnly = false;
 const favoriteKey = "zzpice-assets-favorites:" + base.pathname;
@@ -51,10 +50,6 @@ function element(tag, className, text) {
   if (className) node.className = className;
   if (text !== undefined) node.textContent = text;
   return node;
-}
-
-function isUserImage(file) {
-  return file.type === "blob" && imagePattern.test(file.path) && !file.path.startsWith("app/");
 }
 
 function resolutionKey(file) {
@@ -79,26 +74,26 @@ function inferDevice(width,height) {
   return "unknown";
 }
 
-function makeAsset(file, metadata) {
-  const info = metadata.get(file.path) || {};
+function makeAsset(file) {
   const match = file.path.match(/^(?:wallpapers|avatars)\/([^/]+)\/(\d+)x(\d+)\//);
   const iconMatch = file.path.match(/^icons\/([^/]+)\//);
   const cardMatch = file.path.match(/^bank-cards\/(originals|custom)\/([^/]+)\/([^/]+)\//);
-  const currentMetadata = !file.sha || !info.sha || file.sha === info.sha;
   const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : iconMatch ? "icon" : cardMatch ? "bank-card" : "other";
   const filename = file.path.split("/").pop();
   const asset = {
-    path: file.path, size: file.size || info.size || 0,
-    title: info.title || filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
-    kind: info.kind || inferredKind,
-    device: ["phone","desktop","tablet","unknown"].includes(info.device) ? info.device : "",
-    category: info.category || (match ? match[1] : iconMatch ? iconMatch[1] : cardMatch ? cardMatch[2] : "other"),
+    path: file.path, size: Number.isFinite(file.size) && file.size > 0 ? file.size : 0,
+    sha: typeof file.sha === "string" && /^[a-f0-9]{40}$/.test(file.sha) ? file.sha : "",
+    title: typeof file.title === "string" && file.title.trim() ? file.title : filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
+    kind: inferredKind,
+    device: ["phone","desktop","tablet","unknown"].includes(file.device) ? file.device : "",
+    category: match ? match[1] : iconMatch ? iconMatch[1] : cardMatch ? cardMatch[2] : "other",
     bank: cardMatch ? cardMatch[3] : "", edition: cardMatch ? cardMatch[1] : "",
-    source: currentMetadata && cardMatch ? info.source : undefined,
-    derivedFrom: currentMetadata && cardMatch ? info.derivedFrom : undefined,
-    width: (currentMetadata && info.width) || (match ? Number(match[2]) : 0),
-    height: (currentMetadata && info.height) || (match ? Number(match[3]) : 0),
-    note: currentMetadata ? info.note || "" : "", thumbnail: currentMetadata ? info.thumbnail || "" : ""
+    source: cardMatch && file.source && typeof file.source === "object" && !Array.isArray(file.source) ? file.source : undefined,
+    derivedFrom: cardMatch && typeof file.derivedFrom === "string" ? file.derivedFrom : undefined,
+    width: Number.isFinite(file.width) && file.width > 0 ? file.width : match ? Number(match[2]) : 0,
+    height: Number.isFinite(file.height) && file.height > 0 ? file.height : match ? Number(match[3]) : 0,
+    note: typeof file.note === "string" ? file.note : "",
+    thumbnail: typeof file.thumbnail === "string" && /^app\/previews\/[a-z0-9-]+\.webp$/.test(file.thumbnail) ? file.thumbnail : ""
   };
   if (asset.kind === "wallpaper" && !asset.device) asset.device = inferDevice(asset.width,asset.height);
   return asset;
@@ -230,6 +225,12 @@ function imageUrl(path) {
   return new URL(path.split("/").map(encodeURIComponent).join("/"), base).href;
 }
 
+function assetPreviewUrl(file) {
+  const url = new URL(imageUrl(file.path));
+  if (file.kind === "icon" && file.sha) url.searchParams.set("v",file.sha);
+  return url.href;
+}
+
 function previewUrl(file) {
   const url = new URL(base);
   url.hash = "image=" + encodeURIComponent(file.path);
@@ -282,21 +283,24 @@ function loadPreviewImage(force = false) {
   document.getElementById("preview-size").textContent = resolutionLabel(activePreview);
   document.querySelector(".full-image").classList.toggle("icon-preview",activePreview.kind === "icon");
   document.getElementById("image-stage").style.setProperty("--image-ratio",activePreview.width && activePreview.height ? activePreview.width / activePreview.height : 1);
-  const url = new URL(imageUrl(activePreview.path));
+  const url = new URL(assetPreviewUrl(activePreview));
   if (force === true) url.searchParams.set("retry",Date.now());
   previewImage.src = url.href;
   updateLockscreen();
   updateAvatarShape();
 }
 
+function samePreviewGroup(item,file) {
+  return item.kind === file.kind && item.category === file.category && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.bank === file.bank && item.edition === file.edition));
+}
+
 function openPreview(file,historyMode = "push",sequence = visibleAssets) {
-  if (!previewDialog.open) {
-    const sameGroup = item => item.kind === file.kind && item.category === file.category && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.bank === file.bank && item.edition === file.edition));
-    previewSequence = sequence.filter(sameGroup).map(item => item.path);
-    if (!previewSequence.includes(file.path)) previewSequence = assets.filter(sameGroup).map(item => item.path);
+  if (!previewDialog.open || !activePreview || !samePreviewGroup(activePreview,file)) {
     lockscreenEnabled = false;
     avatarRoundEnabled = false;
   }
+  previewSequence = sequence.filter(item => samePreviewGroup(item,file)).map(item => item.path);
+  if (!previewSequence.includes(file.path)) previewSequence = assets.filter(item => samePreviewGroup(item,file)).sort(compareAssets).map(item => item.path);
   activePreview = file;
   document.getElementById("preview-title").textContent = file.title;
   previewImage.alt = file.title;
@@ -336,8 +340,8 @@ function syncPreviewRoute() {
     }
     initialRoute = false;
   }
-  if (kind !== file.kind) { kind = file.kind; clearFilters(); renderGallery(); }
-  if (activePreview?.path !== path || !previewDialog.open) openPreview(file,"none");
+  if (kind !== file.kind || !visibleAssets.some(item => item.path === path)) { kind = file.kind; clearFilters(); renderGallery(); }
+  if (activePreview !== file || !previewDialog.open) openPreview(file,"none");
 }
 
 function movePreview(delta) {
@@ -386,7 +390,7 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
     if (usingThumbnail) { usingThumbnail = false; img.src = url; return; }
     img.remove(); preview.append(element("span", "image-error", "图片暂时无法加载"));
   });
-  img.src = imageUrl(file.thumbnail || file.path);
+  img.src = file.thumbnail ? imageUrl(file.thumbnail) : assetPreviewUrl(file);
   preview.append(img);
   const previewWrap = element("div","preview-wrap");
   const favorite = element("button","favorite-toggle");
@@ -474,6 +478,13 @@ function makeCardRegions(files) {
   }).filter(Boolean);
 }
 
+function compareAssets(a,b) {
+  const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
+  const byName = a.title.localeCompare(b.title,"zh-CN") || a.path.localeCompare(b.path);
+  if (controls.sort.value === "name" || (controls.sort.value === "collection" && kind !== "wallpaper" && kind !== "avatar")) return byName;
+  return (controls.sort.value === "resolution-asc" ? difference : -difference) || byName;
+}
+
 function renderGallery() {
   const query = controls.search.value.trim().toLocaleLowerCase();
   const visible = assets.filter(file => file.kind === kind)
@@ -485,12 +496,7 @@ function renderGallery() {
     .filter(file => !controls.resolution.value || resolutionKey(file) === controls.resolution.value)
     .filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value)
     .filter(file => !query || [file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || ""].join(" ").toLocaleLowerCase().includes(query));
-  visible.sort((a,b) => {
-    const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
-    const byName = a.title.localeCompare(b.title,"zh-CN") || a.path.localeCompare(b.path);
-    if (controls.sort.value === "name" || (controls.sort.value === "collection" && kind !== "wallpaper" && kind !== "avatar")) return byName;
-    return (controls.sort.value === "resolution-asc" ? difference : -difference) || byName;
-  });
+  visible.sort(compareAssets);
   visibleAssets = visible;
   const grouped = visible.length > 0;
   gallery.classList.toggle("grouped",grouped);
@@ -626,8 +632,8 @@ function requireConnection(event) {
 
 function updateConnectionNotice() {
   const notice = document.getElementById("notice");
-  notice.hidden = navigator.onLine && !directoryLimited;
-  notice.textContent = navigator.onLine ? "当前显示已登记的图片，完整目录可稍后刷新。" : "当前离线，可浏览已缓存的预览；下载原图需要联网。";
+  notice.hidden = navigator.onLine && !directoryUnavailable;
+  notice.textContent = navigator.onLine ? "暂时无法刷新图片目录，请稍后重试。" : "当前离线，可浏览已缓存的预览；下载原图需要联网。";
 }
 window.addEventListener("offline",updateConnectionNotice);
 window.addEventListener("online",() => { updateConnectionNotice(); load(); });
@@ -669,8 +675,8 @@ async function fetchJson(url) {
   } finally { clearTimeout(timeout); }
 }
 
-function applyFiles(files,metadata,force = false) {
-  const next = [...files].map(file => makeAsset(file,metadata)).sort((a,b)=>a.path.localeCompare(b.path));
+function applyFiles(files,force = false) {
+  const next = [...files].map(makeAsset).sort((a,b)=>a.path.localeCompare(b.path));
   if (!force && JSON.stringify(next) === JSON.stringify(assets)) return;
   assets = next;
   if (assets.length && !assets.some(file => file.kind === kind)) kind = assets[0].kind;
@@ -680,55 +686,40 @@ function applyFiles(files,metadata,force = false) {
 
 async function load() {
   const generation = ++loadGeneration;
-  const settle = promise => promise.then(value => ({status:"fulfilled",value}),reason => ({status:"rejected",reason}));
-  const catalogTask = settle(fetchJson(new URL("catalog.json",base)));
-  const treeTask = settle(fetchJson("https://api.github.com/repos/" + repo + "/git/trees/main?recursive=1"));
-  const catalogResult = await catalogTask;
-  if (generation !== loadGeneration) return;
-  const registered = catalogResult.status === "fulfilled" && Array.isArray(catalogResult.value?.assets) ? catalogResult.value.assets : [];
-  let banksChanged = false;
-  if (catalogResult.status === "fulfilled") {
-    const nextBanks = Array.isArray(catalogResult.value?.cardBanks) ? catalogResult.value.cardBanks.filter(bank => bank && typeof bank.region === "string" && typeof bank.bank === "string" && typeof bank.name === "string") : [];
-    banksChanged = JSON.stringify(nextBanks) !== JSON.stringify(cardBanks);
+  try {
+    const catalog = await fetchJson(new URL("catalog.json",base));
+    if (generation !== loadGeneration) return;
+    if (!catalog || catalog.version !== 1 || !Array.isArray(catalog.assets)) throw new Error("Invalid image catalog");
+    const nextBanks = Array.isArray(catalog.cardBanks) ? catalog.cardBanks.filter(bank => bank && typeof bank.region === "string" && typeof bank.bank === "string" && typeof bank.name === "string" && typeof bank.englishName === "string") : [];
+    const banksChanged = JSON.stringify(nextBanks) !== JSON.stringify(cardBanks);
     cardBanks = nextBanks;
-  }
-  const metadata = new Map(registered.map(file => [file.path,file]));
-  const registeredImages = registered.filter(file => imagePattern.test(file.path) && !file.path.startsWith("app/"));
-  if (registeredImages.length) { applyFiles(registeredImages,metadata,banksChanged); banksChanged = false; }
-  const treeResult = await treeTask;
-  if (generation !== loadGeneration) return;
-  const treeAvailable = treeResult.status === "fulfilled" && Array.isArray(treeResult.value?.tree);
-  const tree = treeAvailable ? treeResult.value.tree : [];
-  const files = new Map(tree.filter(isUserImage).map(file => [file.path,file]));
-  if (!treeAvailable || treeResult.value.truncated) registered.forEach(file => {
-    if (imagePattern.test(file.path) && !file.path.startsWith("app/") && !files.has(file.path)) files.set(file.path,file);
-  });
-  if (!files.size) {
-    directoryLimited = !treeAvailable || Boolean(treeResult.value.truncated);
+    const files = new Map(catalog.assets.filter(file => file && typeof file.path === "string" && /^[a-z0-9][a-z0-9/.-]*$/.test(file.path) && !file.path.split("/").includes("..") && imagePattern.test(file.path) && !/^(app|scripts)\//.test(file.path)).map(file => [file.path,file]));
+    directoryUnavailable = false;
     updateConnectionNotice();
-    if (!treeAvailable && assets.length) return;
-    assets = []; refreshControls();
-    const empty = element("div","empty",treeAvailable ? "仓库里还没有图片。" : "暂时无法读取图片目录。");
-    if (!treeAvailable) {
-      const retry = element("button","secondary-button","重新加载"); retry.type = "button";
-      retry.addEventListener("click",load); empty.append(element("br"),retry);
+    applyFiles(files.values(),banksChanged);
+    if (!files.size) gallery.replaceChildren(element("div","empty","仓库里还没有图片。"));
+    if (previewPath() && !assets.some(file => file.path === previewPath())) {
+      const url = new URL(location.href); url.hash = "";
+      history.replaceState({...history.state,assetPreview:false},"",url);
+      if (previewDialog.open) previewDialog.close();
+      showToast("这张图片已移除，已返回图库");
     }
+    initialRoute = false;
+  } catch {
+    if (generation !== loadGeneration) return;
+    directoryUnavailable = true;
+    updateConnectionNotice();
+    if (assets.length) return;
+    refreshControls();
+    const empty = element("div","empty","暂时无法读取图片目录。");
+    const retry = element("button","secondary-button","重新加载"); retry.type = "button";
+    retry.addEventListener("click",load); empty.append(element("br"),retry);
     gallery.replaceChildren(empty); results.textContent = "暂无可显示的图片";
-    document.getElementById("summary").textContent = "壁纸、头像与其他图片"; return;
   }
-  directoryLimited = !treeAvailable || Boolean(treeResult.value.truncated);
-  updateConnectionNotice();
-  applyFiles(files.values(),metadata,banksChanged);
-  if (previewPath() && !assets.some(file => file.path === previewPath())) {
-    const url = new URL(location.href); url.hash = "";
-    history.replaceState({...history.state,assetPreview:false},"",url);
-    if (previewDialog.open) previewDialog.close();
-    showToast("这张图片已移除，已返回图库");
-  }
-  initialRoute = false;
 }
 
 if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.addEventListener("controllerchange",() => { if (assets.length) renderGallery(); });
   navigator.serviceWorker.register(new URL("sw.js",base), { scope: base.pathname, updateViaCache: "none" }).catch(() => {});
 }
 load();

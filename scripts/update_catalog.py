@@ -2,6 +2,7 @@
 """Update image metadata and small previews without modifying original images."""
 
 import argparse
+from datetime import date
 import hashlib
 import io
 import json
@@ -20,12 +21,29 @@ CARD_REGIONS = {"hong-kong", "china-mainland", "singapore"}
 CARD_WALLETS = {"Apple Pay", "Google Pay", "Samsung Pay", "PayPal"}
 
 
+def metadata_index(previous):
+    if not isinstance(previous, dict) or not isinstance(previous.get("assets", []), list):
+        raise ValueError("catalog.json 应为对象，assets 应为图片清单")
+    metadata = {}
+    for item in previous.get("assets", []):
+        if not isinstance(item, dict) or not isinstance(item.get("path"), str):
+            raise ValueError("assets 每项须为对象并记录字符串 path")
+        path = item["path"]
+        if path in metadata:
+            raise ValueError(f"{path}: assets 中的图片路径不能重复")
+        for field in ("title", "note", "device", "sha", "thumbnail", "derivedFrom"):
+            if field in item and not isinstance(item[field], str):
+                raise ValueError(f"{path}: {field} 应为字符串")
+        metadata[path] = item
+    return metadata
+
+
 def card_bank_index(banks):
     if not isinstance(banks, list):
         raise ValueError("cardBanks 应为按展示顺序排列的银行清单")
     index = {}
     for bank in banks:
-        if not isinstance(bank, dict) or bank.get("region") not in CARD_REGIONS or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", bank.get("bank", "")):
+        if not isinstance(bank, dict) or not isinstance(bank.get("region"), str) or bank["region"] not in CARD_REGIONS or not isinstance(bank.get("bank"), str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", bank["bank"]):
             raise ValueError("cardBanks 的地区或银行目录名无效")
         if not all(isinstance(bank.get(key), str) and bank[key].strip() for key in ("name", "englishName")):
             raise ValueError("cardBanks 须记录机构名称及英文名称")
@@ -46,11 +64,25 @@ def card_metadata(root, path, old, data, sha, banks):
         if old.get("sha") and old["sha"] != sha:
             raise ValueError(f"{path}: 原始卡面不能覆盖，请为不同版本使用新文件名")
         source = old.get("source")
-        if not isinstance(source, dict) or source.get("wallet") not in CARD_WALLETS:
+        if not isinstance(source, dict) or not isinstance(source.get("wallet"), str) or source["wallet"] not in CARD_WALLETS:
             raise ValueError(f"{path}: 原始卡面须记录已确认的 Apple Pay、Google Pay、Samsung Pay 或 PayPal 来源")
-        url = urlparse(source.get("url", ""))
+        if not isinstance(source.get("url"), str):
+            raise ValueError(f"{path}: source.url 应为 HTTPS 原文件地址字符串")
+        url = urlparse(source["url"])
         if url.scheme != "https" or not url.netloc or source.get("sha256") != hashlib.sha256(data).hexdigest():
             raise ValueError(f"{path}: 原始卡面须记录 HTTPS 原文件地址和匹配的 SHA-256")
+        if not isinstance(source.get("collection"), str) or not source["collection"].strip():
+            raise ValueError(f"{path}: source.collection 须记录来源集合")
+        for field in ("cardId", "assetId"):
+            if type(source.get(field)) is not int or source[field] <= 0:
+                raise ValueError(f"{path}: source.{field} 应为正整数")
+        retrieved = source.get("retrieved")
+        if not isinstance(retrieved, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", retrieved):
+            raise ValueError(f"{path}: source.retrieved 应为 YYYY-MM-DD 获取日期")
+        try:
+            date.fromisoformat(retrieved)
+        except ValueError as error:
+            raise ValueError(f"{path}: source.retrieved 获取日期无效") from error
         info["source"] = source
     else:
         original = old.get("derivedFrom", "")
@@ -137,7 +169,7 @@ def usable_preview(root, path, width, height):
 def build_catalog(root):
     catalog_path = root / "catalog.json"
     previous = json.loads(catalog_path.read_text("utf-8")) if catalog_path.exists() else {}
-    metadata = {item["path"]: item for item in previous.get("assets", [])}
+    metadata = metadata_index(previous)
     card_banks = previous.get("cardBanks", [])
     banks = card_bank_index(card_banks)
     assets, previews = [], {}
@@ -242,6 +274,18 @@ def versioned_service_worker(root, catalog_text, html):
     if not worker.exists():
         return None
     text = worker.read_text("utf-8")
+    shell_hashes = {}
+    contents = {"index.html": (html or "").encode("utf-8"), "catalog.json": catalog_text.encode("utf-8")}
+    for path in ["app/site.js", "app/site.css", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
+        file = root / path
+        if file.exists():
+            contents[path] = file.read_bytes()
+    for path, data in contents.items():
+        digest = hashlib.sha256(data).hexdigest()
+        key = path + "?v=" + digest[:10] if path in {"app/site.js", "app/site.css"} else path
+        shell_hashes[key] = digest
+    shell_pattern = r"const SHELL_HASHES = \{.*?\};"
+    text = re.sub(shell_pattern, lambda _: "const SHELL_HASHES = " + json.dumps(shell_hashes, indent=2) + ";", text, count=1, flags=re.S)
     pattern = r'(const CACHE_NAME = CACHE_PREFIX \+ ")[^"]+(";)'
     normalized = re.sub(pattern, r'\g<1>VERSION\g<2>', text, count=1)
     digest = hashlib.sha256(normalized.encode("utf-8"))
@@ -251,7 +295,7 @@ def versioned_service_worker(root, catalog_text, html):
         if file.exists():
             digest.update(("\0" + path + "\0").encode("utf-8"))
             digest.update(file.read_bytes())
-    version = "v2-" + digest.hexdigest()[:12]
+    version = "v3-" + digest.hexdigest()[:12]
     return re.sub(pattern, lambda match: match[1] + version + match[2], text, count=1)
 
 
