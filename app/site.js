@@ -8,7 +8,7 @@ const styleCategoryLabels = { anime: "动漫", illustration: "插画", landscape
 const iconCategoryLabels = {
   ai: "AI", search: "搜索与知识", browsers: "浏览器", communication: "聊天与会议", email: "邮箱",
   social: "社交与社区", video: "视频与直播", "media-players": "媒体播放器", music: "音乐与播客", gaming: "游戏",
-  productivity: "效率与工具", maps: "地图与出行", storage: "网盘与存储", shopping: "购物与生活", payments: "支付",
+  productivity: "效率与工具", maps: "地图与出行", storage: "网盘与存储", shopping: "购物与生活", payments: "支付", finance: "银行、券商与金融机构",
   development: "开发工具", cloud: "云服务与基础设施", network: "网络工具", security: "隐私与安全",
   "proxy-clients": "代理客户端", proxy: "代理组与分流", routes: "线路与专线", regions: "国家与地区"
 };
