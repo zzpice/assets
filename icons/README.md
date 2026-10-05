@@ -1,6 +1,6 @@
 # 精选图标
 
-95 个图标，覆盖常用服务、银行与券商、代理分流及常用国家和地区。每项保留一个文件，用于个人导航、文档、网页和代理客户端。
+61 个图标，覆盖常用服务、金融机构、代理客户端、线路及常用国家和地区。每项保留一个文件，用于个人导航、文档、网页和代理客户端。
 
 **图片标准：512×512 PNG、RGBA，r=115 圆角外侧完全透明，保留主体底色和图形。**
 
@@ -8,15 +8,12 @@
 
 | 用途 | 目录 | 数量 |
 |---|---|---:|
-| AI | [ai/](ai/) | 10 |
-| 视频与直播 | [video/](video/) | 8 |
+| AI | [ai/](ai/) | 7 |
 | 媒体播放器 | [media-players/](media-players/) | 4 |
-| 音乐与播客 | [music/](music/) | 8 |
 | 游戏 | [gaming/](gaming/) | 4 |
 | 银行、券商与金融机构 | [finance/](finance/) | 23 |
 | 开发工具 | [development/](development/) | 5 |
 | 代理客户端 | [proxy-clients/](proxy-clients/) | 2 |
-| 代理组与分流 | [proxy/](proxy/) | 15 |
 | 线路与专线 | [routes/](routes/) | 4 |
 | 国家与地区 | [regions/](regions/) | 12 |
 
@@ -24,15 +21,13 @@
 
 表格顺序也是网站「全部种类」的默认分组顺序；筛选菜单与分组标题使用同一顺序。尺寸或名称排序只调整组内图片，不打乱分类。
 
-视频与直播保留面向海外市场的平台，TikTok 按国际版收录。
-
-分类以主要用途为准：Surge、Clash 归代理客户端；代理组功能图标归分流，BGP、GIA、IEPL、IPLC 归线路。视频与直播服务和媒体播放器分开。不要仅因服务能走代理就归入代理组，也不按母公司分类。
+分类以主要用途为准：Surge、Clash 归代理客户端；BGP、GIA、IEPL、IPLC 归线路。媒体播放器、游戏等服务独立归类，不按母公司分类。
 
 ## 使用与来源
 
 - [浏览资源](https://zzpice.github.io/assets/)的「图标」页支持用途筛选、预览、下载、收藏和复制链接。
-- 单图直链示例：`https://zzpice.github.io/assets/icons/proxy/direct.png`。
-- 69 个图片来自 [Oasisic-Icons](https://github.com/Hawaiine/Oasisic-Icons/tree/f0f3bc2a44616885682ee5f0e5921540b964e2d8)，保留完整 [MIT 许可](licenses/oasisic-mit.txt)。品牌标识用于识别对应服务，品牌权利归各权利人。
+- 单图直链示例：`https://zzpice.github.io/assets/icons/ai/claude.png`。
+- 35 个图片来自 [Oasisic-Icons](https://github.com/Hawaiine/Oasisic-Icons/tree/f0f3bc2a44616885682ee5f0e5921540b964e2d8)，保留完整 [MIT 许可](licenses/oasisic-mit.txt)。品牌标识用于识别对应服务，品牌权利归各权利人。
 - 另从 [Dashboard Icons](https://github.com/homarr-labs/dashboard-icons/tree/adca944175c9a3eb0471f78a4da87f237476d585) 选取 3 个常用图标，保留完整 [Apache-2.0 许可](licenses/dashboard-icons-apache-2.0.txt)。按需转换通道、补充透明画布或等比留边，并通过相同图片标准；没有收录同名的 Stash 媒体管理图标。
 - [完整清单与逐项来源](SOURCES.md)固定到本次审查的提交。所有修改均在清单和对应文件中注明；其余图片原样保存。
 - 金融分类收录 23 个代表性品牌，采用经官方资料核对的 SVG 转换，按同一尺寸、RGBA 和圆角标准处理；同品牌只收录一个代表性图标。逐项来源、品牌版本、处理方式与许可见清单末节。

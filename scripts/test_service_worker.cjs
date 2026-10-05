@@ -201,7 +201,7 @@ test("canonical originals, external origins and non-GET requests are not interce
   const requests=[
     new Request(base+"wallpapers/anime/1440x3120/image.png"),
     new Request(base+"avatars/anime/512x512/image.png"),
-    new Request(base+"icons/proxy/direct.png"),
+    new Request(base+"icons/ai/claude.png"),
     new Request("https://api.github.com/repos/zzpice/assets/git/trees/main"),
     new Request(base+"catalog.json",{method:"POST"})
   ];

@@ -5,9 +5,9 @@ const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
 // Insertion order is the browsing order; new categories follow the known ones.
 const styleCategoryLabels = { anime: "动漫", illustration: "插画", landscape: "风景", photography: "摄影", people: "真人", animals: "动物", gaming: "游戏", pixel: "像素", minimal: "极简", abstract: "抽象", other: "其他" };
 const iconCategoryLabels = {
-  ai: "AI", video: "视频与直播", "media-players": "媒体播放器", music: "音乐与播客", gaming: "游戏",
+  ai: "AI", "media-players": "媒体播放器", gaming: "游戏",
   finance: "银行、券商与金融机构", development: "开发工具",
-  "proxy-clients": "代理客户端", proxy: "代理组与分流", routes: "线路与专线", regions: "国家与地区"
+  "proxy-clients": "代理客户端", routes: "线路与专线", regions: "国家与地区"
 };
 const categoryLabels = { ...styleCategoryLabels, ...iconCategoryLabels };
 const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "bank-card": "银行卡面", other: "其他图片" };

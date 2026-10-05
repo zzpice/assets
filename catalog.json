@@ -969,16 +969,6 @@
       "sha": "33b82d2a93c51edebc41f614e9129d1e3f7b160e"
     },
     {
-      "path": "icons/ai/copilot.png",
-      "title": "Microsoft Copilot",
-      "kind": "icon",
-      "category": "ai",
-      "width": 512,
-      "height": 512,
-      "size": 70735,
-      "sha": "028bfea5d07d596f39118bf119e1534c0db9633f"
-    },
-    {
       "path": "icons/ai/deepseek.png",
       "title": "DeepSeek",
       "kind": "icon",
@@ -987,16 +977,6 @@
       "height": 512,
       "size": 29829,
       "sha": "666dfdcd49b646c455d3976f968d796768f26f44"
-    },
-    {
-      "path": "icons/ai/doubao.png",
-      "title": "豆包",
-      "kind": "icon",
-      "category": "ai",
-      "width": 512,
-      "height": 512,
-      "size": 166329,
-      "sha": "743c0a0a24dbb2788cdead6f076b6bfbeb08134b"
     },
     {
       "path": "icons/ai/gemini.png",
@@ -1030,7 +1010,7 @@
     },
     {
       "path": "icons/ai/openai.png",
-      "title": "OpenAI / ChatGPT",
+      "title": "ChatGPT",
       "kind": "icon",
       "category": "ai",
       "width": 512,
@@ -1047,16 +1027,6 @@
       "height": 512,
       "size": 129971,
       "sha": "03b6602f61a54434ea1005459edca059b0896a0d"
-    },
-    {
-      "path": "icons/ai/qwen.png",
-      "title": "通义千问",
-      "kind": "icon",
-      "category": "ai",
-      "width": 512,
-      "height": 512,
-      "size": 67469,
-      "sha": "8137350587553ed53fdf5ebc7db84aed1d904aba"
     },
     {
       "path": "icons/development/cursor.png",
@@ -1421,239 +1391,6 @@
       "sha": "6389e8e2ded80b7c9d48f5ad60c79cbae5dab1c3"
     },
     {
-      "path": "icons/music/apple-music.png",
-      "title": "Apple Music",
-      "kind": "icon",
-      "category": "music",
-      "width": 512,
-      "height": 512,
-      "size": 18946,
-      "sha": "d1f071ee47d30ca32d4709f4ad21faa17e06832b"
-    },
-    {
-      "path": "icons/music/apple-podcasts.png",
-      "title": "Apple Podcasts",
-      "kind": "icon",
-      "category": "music",
-      "width": 512,
-      "height": 512,
-      "size": 44853,
-      "sha": "bb368f88f6c787fb4ac9c1883a86d74718b86ad7"
-    },
-    {
-      "path": "icons/music/netease-cloud-music.png",
-      "title": "网易云音乐",
-      "kind": "icon",
-      "category": "music",
-      "width": 512,
-      "height": 512,
-      "size": 23768,
-      "sha": "57cb495ee4df05d41ef683bf04aed0f1626f8765"
-    },
-    {
-      "path": "icons/music/qq-music.png",
-      "title": "QQ 音乐",
-      "kind": "icon",
-      "category": "music",
-      "width": 512,
-      "height": 512,
-      "size": 24521,
-      "sha": "34d6836539b4e4aaa311acbf1024f853c3430532"
-    },
-    {
-      "path": "icons/music/soundcloud.png",
-      "title": "SoundCloud",
-      "kind": "icon",
-      "category": "music",
-      "width": 512,
-      "height": 512,
-      "size": 6905,
-      "sha": "be9370b8dbbf7591b87635e4f95d8fb25b4b19b4"
-    },
-    {
-      "path": "icons/music/spotify.png",
-      "title": "Spotify",
-      "kind": "icon",
-      "category": "music",
-      "width": 512,
-      "height": 512,
-      "size": 7381,
-      "sha": "aa0522a4dc264df732b241134c077ed9032031ab"
-    },
-    {
-      "path": "icons/music/xiaoyuzhou.png",
-      "title": "小宇宙",
-      "kind": "icon",
-      "category": "music",
-      "width": 512,
-      "height": 512,
-      "size": 79770,
-      "sha": "ebc99d2fc8d0164715bf6c334acfe87781d1996d"
-    },
-    {
-      "path": "icons/music/youtube-music.png",
-      "title": "YouTube Music",
-      "kind": "icon",
-      "category": "music",
-      "width": 512,
-      "height": 512,
-      "size": 30014,
-      "sha": "088944dea859f98baa2c0a256e696281698cb77f"
-    },
-    {
-      "path": "icons/proxy/ad-block.png",
-      "title": "广告拦截",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 99228,
-      "sha": "375f742ef62360de1677925920fef08a6156b497"
-    },
-    {
-      "path": "icons/proxy/ai.png",
-      "title": "AI 分流",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "note": "按上游 r=115 规范修正圆角外侧透明度；RGB 和圆角内像素未修改。",
-      "size": 89905,
-      "sha": "cdc110c8e3670fdf5c75063139670cc587875cd5"
-    },
-    {
-      "path": "icons/proxy/airport.png",
-      "title": "机场",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "note": "按上游 r=115 规范修正圆角外侧透明度；RGB 和圆角内像素未修改。",
-      "size": 87182,
-      "sha": "727d717fafd9056cbd4ae83c44074b1e04ce6846"
-    },
-    {
-      "path": "icons/proxy/auto.png",
-      "title": "自动选择",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 39646,
-      "sha": "f98dad8643a65a3e87fc1894f44cc47a7e89d4af"
-    },
-    {
-      "path": "icons/proxy/direct.png",
-      "title": "直连",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 93364,
-      "sha": "00d507a48c0933d2b0b7764d8ee8d2980a14ecbf"
-    },
-    {
-      "path": "icons/proxy/final.png",
-      "title": "兜底",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "note": "按上游 r=115 规范修正圆角外侧透明度；RGB 和圆角内像素未修改。",
-      "size": 199283,
-      "sha": "fbd894eb01ff159af890ff32fb63f00c40d6b8ff"
-    },
-    {
-      "path": "icons/proxy/game.png",
-      "title": "游戏分流",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 72189,
-      "sha": "c931b3ed8ea83afe0cd2a7de4325c0d662f6ff0e"
-    },
-    {
-      "path": "icons/proxy/global.png",
-      "title": "全球",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 144586,
-      "sha": "64f2fc9c8aa1d42561c22401bec7d0d303c4cd12"
-    },
-    {
-      "path": "icons/proxy/mail.png",
-      "title": "邮件分流",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 45669,
-      "sha": "9cc6a7f089ac01647dbff2193449a7845ec985b1"
-    },
-    {
-      "path": "icons/proxy/proxy.png",
-      "title": "代理",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 106629,
-      "sha": "a158db5150f04c61128a7d6cba17a400a6045e29"
-    },
-    {
-      "path": "icons/proxy/reject.png",
-      "title": "拒绝",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 82988,
-      "sha": "c2e167f3ce9ba7246effd1404926d2a1f7a1d7b8"
-    },
-    {
-      "path": "icons/proxy/streaming.png",
-      "title": "流媒体分流",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 59942,
-      "sha": "bf18cd541333e6972d4b4737e16d444e51d017ca"
-    },
-    {
-      "path": "icons/proxy/traffic.png",
-      "title": "流量",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 21967,
-      "sha": "aa387e31ce6524b909f1d9609ef582396940cafd"
-    },
-    {
-      "path": "icons/proxy/url.png",
-      "title": "网址分流",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 35053,
-      "sha": "1efe643d3e40433d1e1ae74a8a8d733c3a5d94de"
-    },
-    {
-      "path": "icons/proxy/wifi.png",
-      "title": "Wi-Fi",
-      "kind": "icon",
-      "category": "proxy",
-      "width": 512,
-      "height": 512,
-      "size": 96936,
-      "sha": "52577a8e3b8a39ef524246786d1ef8fd78bc9f92"
-    },
-    {
       "path": "icons/proxy-clients/clash.png",
       "title": "Clash",
       "kind": "icon",
@@ -1833,86 +1570,6 @@
       "height": 512,
       "size": 68943,
       "sha": "0177b8acb1bbd28cb2ddc46414c48601631a40e5"
-    },
-    {
-      "path": "icons/video/crunchyroll.png",
-      "title": "Crunchyroll",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 26420,
-      "sha": "0744c6c2eb91ad92ab7338b69634a69fbabfe164"
-    },
-    {
-      "path": "icons/video/disney-plus.png",
-      "title": "Disney+",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 254168,
-      "sha": "8716afd9b2197e9fc97f917e6bab2de8c7a4b286"
-    },
-    {
-      "path": "icons/video/hbo-max.png",
-      "title": "HBO Max",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 135749,
-      "sha": "92f0711a7c4d816f06e4a955922ca5c3195dba96"
-    },
-    {
-      "path": "icons/video/netflix.png",
-      "title": "Netflix",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 43472,
-      "sha": "6a702bc88a4b396aafe3f3689af74b63ed2b8394"
-    },
-    {
-      "path": "icons/video/prime-video.png",
-      "title": "Prime Video",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 35074,
-      "sha": "6df2ec2ca816e9b42e6e5a08619a63866424df13"
-    },
-    {
-      "path": "icons/video/tiktok.png",
-      "title": "TikTok",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 23341,
-      "sha": "59b1f170ad1e7263f03e5d2e4466c4611180eb05"
-    },
-    {
-      "path": "icons/video/twitch.png",
-      "title": "Twitch",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 6656,
-      "sha": "0ea678c86ca3b6771574a50e0555e46a7671b8ef"
-    },
-    {
-      "path": "icons/video/youtube.png",
-      "title": "YouTube",
-      "kind": "icon",
-      "category": "video",
-      "width": 512,
-      "height": 512,
-      "size": 13901,
-      "sha": "475b2713375f9c5a6b3dd14fefbda82b12c0ac32"
     },
     {
       "path": "wallpapers/anime/1440x3120/girl-rain.png",

@@ -1,18 +1,8 @@
 # 图标清单与来源
 
-所有文件均为 512×512 PNG、RGBA；链接固定到收录时审查的上游提交。Oasisic-Icons 提供 69 个，Dashboard Icons 提供 3 个；这两批采用原 PNG。除下述明确标注的标准化处理外，图片文件字节未修改。 金融图标为另外一批矢量素材转换，详见文末清单。
+所有文件均为 512×512 PNG、RGBA；链接固定到收录时审查的上游提交。Oasisic-Icons 提供 35 个，Dashboard Icons 提供 3 个；这两批采用原 PNG。除下述明确标注的标准化处理外，图片文件字节未修改。 金融图标为另外一批矢量素材转换，详见文末清单。
 
 Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `GoogleAI.png`；本集合按图案对应的服务命名。
-
-## 圆角修正
-
-上游将这 3 个旧图标登记为[圆角边界历史例外](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/config/icon-mask-exemptions.json)。本集合按其[规范化算法](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/scripts/normalize-icons.py)修正：仅将 r=115 遮罩外的 alpha 置零，整个图像的 RGB 及遮罩内 alpha 与上游逐像素一致。未抠底、未重绘、未锐化、未量化。
-
-| 文件 | 修正的外侧像素数 |
-|---|---:|
-| [proxy/final.png](proxy/final.png) | 118 |
-| [proxy/ai.png](proxy/ai.png) | 20 |
-| [proxy/airport.png](proxy/airport.png) | 76 |
 
 ## Dashboard Icons 补充项与标准化处理
 
@@ -31,28 +21,12 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | 名称 | 本地文件 | 原始来源 |
 |---|---|---|
 | Claude | [claude.png](ai/claude.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/AI/Anthropic/Anthropic.png) |
-| Microsoft Copilot | [copilot.png](ai/copilot.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Microsoft/Copilot/Copilot.png) |
 | DeepSeek | [deepseek.png](ai/deepseek.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/AI/DeepSeek/DeepSeek.png) |
-| 豆包 | [doubao.png](ai/doubao.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/ByteDance/Doubao/Doubao.png) |
 | Gemini | [gemini.png](ai/gemini.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Google/GoogleAI/GoogleAI.png) |
 | Grok | [grok.png](ai/grok.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/SpaceXAI/xAI/Grok/Grok.png) |
 | Kimi | [kimi.png](ai/kimi.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/AI/Kimi/Kimi.png) |
-| OpenAI / ChatGPT | [openai.png](ai/openai.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/AI/OpenAI/OpenAI.png) |
+| ChatGPT | [openai.png](ai/openai.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/AI/OpenAI/OpenAI.png) |
 | Perplexity | [perplexity.png](ai/perplexity.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/AI/Perplexity/Perplexity.png) |
-| 通义千问 | [qwen.png](ai/qwen.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Alibaba/Qwen/Qwen.png) |
-
-## 视频与直播
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| Crunchyroll | [crunchyroll.png](video/crunchyroll.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/SONY/Crunchyroll/Crunchyroll.png) |
-| Disney+ | [disney-plus.png](video/disney-plus.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Disney/DisneyPlus/DisneyPlus.png) |
-| HBO Max | [hbo-max.png](video/hbo-max.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/WarnerBrosDiscovery/HBOMax/HBOMax.png) |
-| Netflix | [netflix.png](video/netflix.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Media/Netflix/Netflix.png) |
-| Prime Video | [prime-video.png](video/prime-video.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Amazon/PrimeVideo/PrimeVideo.png) |
-| TikTok | [tiktok.png](video/tiktok.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/ByteDance/TikTok/TikTok.png) |
-| Twitch | [twitch.png](video/twitch.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Amazon/Twitch/Twitch.png) |
-| YouTube | [youtube.png](video/youtube.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Google/YouTube/YouTube.png) |
 
 ## 媒体播放器
 
@@ -62,19 +36,6 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | Infuse | [infuse.png](media-players/infuse.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Media/Infuse/Infuse.png) |
 | Jellyfin | [jellyfin.png](media-players/jellyfin.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Media/Jellyfin/Jellyfin.png) |
 | Plex | [plex.png](media-players/plex.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Media/Plex/Plex.png) |
-
-## 音乐与播客
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| Apple Music | [apple-music.png](music/apple-music.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Apple/AppleMusic/AppleMusic.png) |
-| Apple Podcasts | [apple-podcasts.png](music/apple-podcasts.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Apple/ApplePodcasts/ApplePodcasts.png) |
-| 网易云音乐 | [netease-cloud-music.png](music/netease-cloud-music.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/NetEase/NetEaseCloudMusic/NetEaseCloudMusic.png) |
-| QQ 音乐 | [qq-music.png](music/qq-music.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Tencent/QQMusic/QQMusic.png) |
-| SoundCloud | [soundcloud.png](music/soundcloud.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Music/SoundCloud/SoundCloud.png) |
-| Spotify | [spotify.png](music/spotify.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Music/Spotify/Spotify.png) |
-| 小宇宙 | [xiaoyuzhou.png](music/xiaoyuzhou.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Media/Xiaoyuzhou/Xiaoyuzhou.png) |
-| YouTube Music | [youtube-music.png](music/youtube-music.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Google/YouTube/YouTubeMusic/YouTubeMusic.png) |
 
 ## 游戏
 
@@ -101,26 +62,6 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 |---|---|---|
 | Clash | [clash.png](proxy-clients/clash.png) | [源文件](https://github.com/homarr-labs/dashboard-icons/blob/adca944175c9a3eb0471f78a4da87f237476d585/png/clash.png) |
 | Surge | [surge.png](proxy-clients/surge.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Surge/Surge/Surge.png) |
-
-## 代理组与分流
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| 广告拦截 | [ad-block.png](proxy/ad-block.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/AD/AD.png) |
-| AI 分流 | [ai.png](proxy/ai.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/GeneralAI/GeneralAI.png) |
-| 机场 | [airport.png](proxy/airport.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Airport/Airport.png) |
-| 自动选择 | [auto.png](proxy/auto.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Auto/Auto.png) |
-| 直连 | [direct.png](proxy/direct.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Direct/Direct.png) |
-| 兜底 | [final.png](proxy/final.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Final/Final.png) |
-| 游戏分流 | [game.png](proxy/game.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Game/Game.png) |
-| 全球 | [global.png](proxy/global.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Global/Global.png) |
-| 邮件分流 | [mail.png](proxy/mail.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Mail/Mail.png) |
-| 代理 | [proxy.png](proxy/proxy.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Proxy/Proxy.png) |
-| 拒绝 | [reject.png](proxy/reject.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Reject/Reject.png) |
-| 流媒体分流 | [streaming.png](proxy/streaming.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Play/Play.png) |
-| 流量 | [traffic.png](proxy/traffic.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/Traffic/Traffic.png) |
-| 网址分流 | [url.png](proxy/url.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/URL/URL.png) |
-| Wi-Fi | [wifi.png](proxy/wifi.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/System/SSID/SSID.png) |
 
 ## 线路与专线
 

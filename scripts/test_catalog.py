@@ -100,7 +100,7 @@ class CatalogTests(unittest.TestCase):
                     update(self.root)
 
     def test_icons_reject_visible_pixels_outside_the_rounded_mask(self):
-        icon = self.root / "icons/proxy/example.png"
+        icon = self.root / "icons/ai/example.png"
         icon.parent.mkdir(parents=True)
         for point in [(0, 0), (30, 30)]:
             with self.subTest(point=point):
