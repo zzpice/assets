@@ -167,7 +167,7 @@ class CatalogTests(unittest.TestCase):
         file = self.root / path
         file.parent.mkdir(parents=True)
         Image.new("RGB", (160, 100), "navy").save(file)
-        source = {"wallet": "Apple Pay", "url": "https://example.com/debit.png", "sha256": hashlib.sha256(file.read_bytes()).hexdigest()}
+        source = {"collection": "Cardentify", "wallet": "Apple Pay", "url": "https://example.com/debit.png", "sha256": hashlib.sha256(file.read_bytes()).hexdigest(), "cardId": 1, "assetId": 2, "retrieved": "2026-10-04"}
         catalog = {"assets": [{"path": path, "title": "示例借记卡", "source": source}], "cardBanks": [{"region": "hong-kong", "bank": "example", "name": "示例银行", "englishName": "Example Bank"}]}
         (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
         return file
@@ -276,6 +276,68 @@ class CatalogTests(unittest.TestCase):
             update(self.root, check=True)
         update(self.root)
         self.assertNotEqual(worker.read_text().splitlines()[0], previous.splitlines()[0])
+        update(self.root, check=True)
+
+    def test_invalid_metadata_types_and_duplicate_paths_fail_before_writing(self):
+        update(self.root)
+        catalog = self.catalog()
+        for field in ("title", "note", "device", "sha", "thumbnail", "derivedFrom"):
+            for value in (None, 42, {}, []):
+                with self.subTest(field=field, value=value):
+                    invalid = json.loads(json.dumps(catalog))
+                    invalid["assets"][0][field] = value
+                    text = json.dumps(invalid)
+                    (self.root / "catalog.json").write_text(text)
+                    for check in (False, True):
+                        with self.assertRaisesRegex(ValueError, field):
+                            update(self.root, check=check)
+                    self.assertEqual((self.root / "catalog.json").read_text(), text)
+        catalog["assets"].append(catalog["assets"][0])
+        (self.root / "catalog.json").write_text(json.dumps(catalog))
+        with self.assertRaisesRegex(ValueError, "路径不能重复"):
+            update(self.root)
+
+    def test_invalid_catalog_structure_has_clear_errors(self):
+        for invalid in ([], {"assets": {}}, {"assets": [None]}, {"assets": [{"path": []}]}):
+            with self.subTest(catalog=invalid):
+                (self.root / "catalog.json").write_text(json.dumps(invalid))
+                with self.assertRaises(ValueError):
+                    update(self.root)
+
+    def test_original_card_requires_complete_source_identifiers_and_date(self):
+        self.add_card()
+        catalog = self.catalog()
+        invalid_fields = [("collection", ""), ("collection", []), ("cardId", True), ("cardId", 0), ("assetId", "2"), ("retrieved", "2026-02-30"), ("retrieved", "2026-1-1"), ("url", [])]
+        for field in ("collection", "cardId", "assetId", "retrieved"):
+            invalid = json.loads(json.dumps(catalog))
+            del invalid["assets"][0]["source"][field]
+            (self.root / "catalog.json").write_text(json.dumps(invalid))
+            with self.assertRaisesRegex(ValueError, field):
+                update(self.root)
+        for field, value in invalid_fields:
+            with self.subTest(field=field, value=value):
+                invalid = json.loads(json.dumps(catalog))
+                invalid["assets"][0]["source"][field] = value
+                (self.root / "catalog.json").write_text(json.dumps(invalid))
+                with self.assertRaisesRegex(ValueError, field):
+                    update(self.root)
+
+    def test_worker_pins_the_generated_page_catalog_and_versioned_scripts(self):
+        app = self.root / "app"
+        app.mkdir()
+        (app / "site.js").write_text("const version = 1;")
+        (app / "site.css").write_text("body { color: navy; }")
+        page = self.root / "index.html"
+        page.write_text('<script src="app/site.js"></script><link href="app/site.css">')
+        worker = self.root / "sw.js"
+        worker.write_text('const CACHE_NAME = CACHE_PREFIX + "v1";\nconst SHELL_HASHES = {};\n')
+        update(self.root)
+        source = worker.read_text()
+        hashes = json.loads(source.split("const SHELL_HASHES = ")[1].split(";")[0])
+        for name in ("index.html", "catalog.json", "app/site.js", "app/site.css"):
+            digest = hashlib.sha256((self.root / name).read_bytes()).hexdigest()
+            key = name + "?v=" + digest[:10] if name.startswith("app/site.") else name
+            self.assertEqual(hashes[key], digest)
         update(self.root, check=True)
 
 
