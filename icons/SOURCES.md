@@ -1,6 +1,6 @@
 # 图标清单与来源
 
-所有文件均为 512×512 PNG、RGBA；链接固定到收录时审查的上游提交。Oasisic-Icons 提供 133 个，Dashboard Icons 提供 8 个；这两批采用原 PNG。除下述明确标注的标准化处理外，图片文件字节未修改。 金融图标为另外一批矢量素材转换，详见文末清单。
+所有文件均为 512×512 PNG、RGBA；链接固定到收录时审查的上游提交。Oasisic-Icons 提供 98 个，Dashboard Icons 提供 3 个；这两批采用原 PNG。除下述明确标注的标准化处理外，图片文件字节未修改。 金融图标为另外一批矢量素材转换，详见文末清单。
 
 Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `GoogleAI.png`；本集合按图案对应的服务命名。
 
@@ -16,17 +16,12 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 
 ## Dashboard Icons 补充项与标准化处理
 
-保留完整 [Apache-2.0 许可](licenses/dashboard-icons-apache-2.0.txt)，版权归 Bjorn Lammers、Meier Lukas、Thomas Camlong 和 Homarr Labs。固定来源提交为 `adca944175c9a3eb0471f78a4da87f237476d585`。仅选取这 8 项，不同步或镜像上游。
+保留完整 [Apache-2.0 许可](licenses/dashboard-icons-apache-2.0.txt)，版权归 Bjorn Lammers、Meier Lukas、Thomas Camlong 和 Homarr Labs。固定来源提交为 `adca944175c9a3eb0471f78a4da87f237476d585`。仅选取这 3 项，不同步或镜像上游。
 
 | 文件 | 处理 |
 |---|---|
-| [browsers/chrome.png](browsers/chrome.png) | 原 PNG 字节不变 |
-| [browsers/edge.png](browsers/edge.png) | 原 PNG 字节不变 |
-| [browsers/firefox.png](browsers/firefox.png) | 保留原始像素尺寸，居中填充透明画布至 512×512 |
-| [browsers/safari.png](browsers/safari.png) | 仅将 r=115 圆角外侧 alpha 置零 |
 | [development/vscode.png](development/vscode.png) | 按原比例缩至 460×460，透明画布居中留边；不裁切标志 |
 | [development/gitlab.png](development/gitlab.png) | 按原比例缩至 460×443，透明画布居中留边；不裁切标志 |
-| [security/bitwarden.png](security/bitwarden.png) | 仅将 r=115 圆角外侧 alpha 置零 |
 | [proxy-clients/clash.png](proxy-clients/clash.png) | 转换为 RGBA，无颜色量化；保留原始像素尺寸，居中填充透明画布至 512×512 |
 
 修改的 PNG 同时内嵌来源、许可与修改说明。原底色保留；等比留边不裁切标志；Clash 原图不放大，保留原始像素细节。
@@ -46,24 +41,6 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | Perplexity | [perplexity.png](ai/perplexity.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/AI/Perplexity/Perplexity.png) |
 | 通义千问 | [qwen.png](ai/qwen.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Alibaba/Qwen/Qwen.png) |
 
-## 搜索与知识
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| 百度 | [baidu.png](search/baidu.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Baidu/Baidu/Baidu.png) |
-| Bing | [bing.png](search/bing.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Microsoft/Bing/Bing.png) |
-| Google | [google.png](search/google.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Google/Google/Google.png) |
-| 维基百科 | [wikipedia.png](search/wikipedia.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Utilities/Wikipedia/Wikipedia.png) |
-
-## 浏览器
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| Chrome | [chrome.png](browsers/chrome.png) | [源文件](https://github.com/homarr-labs/dashboard-icons/blob/adca944175c9a3eb0471f78a4da87f237476d585/png/chrome.png) |
-| Microsoft Edge | [edge.png](browsers/edge.png) | [源文件](https://github.com/homarr-labs/dashboard-icons/blob/adca944175c9a3eb0471f78a4da87f237476d585/png/edge.png) |
-| Firefox | [firefox.png](browsers/firefox.png) | [源文件](https://github.com/homarr-labs/dashboard-icons/blob/adca944175c9a3eb0471f78a4da87f237476d585/png/firefox.png) |
-| Safari | [safari.png](browsers/safari.png) | [源文件](https://github.com/homarr-labs/dashboard-icons/blob/adca944175c9a3eb0471f78a4da87f237476d585/png/safari.png) |
-
 ## 聊天与会议
 
 | 名称 | 本地文件 | 原始来源 |
@@ -76,15 +53,6 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | 微信 | [wechat.png](communication/wechat.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Tencent/WeChat/WeChat.png) |
 | WhatsApp | [whatsapp.png](communication/whatsapp.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Meta/Facebook/WhatsApp/WhatsApp.png) |
 | Zoom | [zoom.png](communication/zoom.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Utilities/Zoom/Zoom.png) |
-
-## 邮箱
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| Gmail | [gmail.png](email/gmail.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Google/Gmail/Gmail.png) |
-| 网易邮箱 | [netease-mail.png](email/netease-mail.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/NetEase/NetEaseMail/NetEaseMail.png) |
-| Outlook | [outlook.png](email/outlook.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Microsoft/Outlook/Outlook.png) |
-| QQ 邮箱 | [qq-mail.png](email/qq-mail.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Tencent/QQMail/QQMail.png) |
 
 ## 社交与社区
 
@@ -151,53 +119,6 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | PlayStation | [playstation.png](gaming/playstation.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/SONY/PlayStation/PlayStation.png) |
 | Steam | [steam.png](gaming/steam.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Game/Steam/Steam.png) |
 
-## 效率与工具
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| Adobe | [adobe.png](productivity/adobe.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Utilities/Adobe/Adobe.png) |
-| Google 翻译 | [google-translate.png](productivity/google-translate.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Google/GoogleTranslate/GoogleTranslate.png) |
-| Notion | [notion.png](productivity/notion.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Utilities/Notion/Notion.png) |
-| Obsidian | [obsidian.png](productivity/obsidian.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Utilities/Obsidian/Obsidian.png) |
-
-## 地图与出行
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| Google 地图 | [google-maps.png](maps/google-maps.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Google/GoogleMaps/GoogleMaps.png) |
-
-## 网盘与存储
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| 115 网盘 | [115.png](storage/115.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/CloudStorage/115/115.png) |
-| 123 云盘 | [123.png](storage/123.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/CloudStorage/123/123.png) |
-| 阿里云盘 | [aliyun-drive.png](storage/aliyun-drive.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Alibaba/AliyunDrive/AliyunDrive.png) |
-| 百度网盘 | [baidu-netdisk.png](storage/baidu-netdisk.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Baidu/BaiduNetdisk/BaiduNetdisk.png) |
-| Dropbox | [dropbox.png](storage/dropbox.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/CloudStorage/Dropbox/Dropbox.png) |
-| Google Drive | [google-drive.png](storage/google-drive.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Google/GoogleDrive/GoogleDrive.png) |
-| iCloud | [icloud.png](storage/icloud.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Apple/iCloud/iCloud.png) |
-| OneDrive | [onedrive.png](storage/onedrive.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Microsoft/OneDrive/OneDrive.png) |
-| PikPak | [pikpak.png](storage/pikpak.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/CloudStorage/PikPak/PikPak.png) |
-| 夸克网盘 | [quark.png](storage/quark.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Alibaba/Quark/Quark.png) |
-| 群晖 | [synology.png](storage/synology.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Infrastructure/Synology/Synology.png) |
-
-## 购物与生活
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| 京东 | [jd.png](shopping/jd.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Shopping/JD/JD.png) |
-| 美团 | [meituan.png](shopping/meituan.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Shopping/Meituan/Meituan.png) |
-| 拼多多 | [pinduoduo.png](shopping/pinduoduo.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Shopping/Pinduoduo/Pinduoduo.png) |
-| 淘宝 | [taobao.png](shopping/taobao.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Alibaba/Taobao/Taobao.png) |
-
-## 支付
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| 支付宝 | [alipay.png](payments/alipay.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Alibaba/AliPay/AliPay.png) |
-| PayPal | [paypal.png](payments/paypal.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Payment/PayPal/PayPal.png) |
-
 ## 开发工具
 
 | 名称 | 本地文件 | 原始来源 |
@@ -217,22 +138,6 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | Azure | [azure.png](cloud/azure.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Microsoft/Azure/Azure.png) |
 | Proxmox | [proxmox.png](cloud/proxmox.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Infrastructure/Proxmox/Proxmox.png) |
 | 腾讯云 | [tencent-cloud.png](cloud/tencent-cloud.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Tencent/TencentCloud/TencentCloud.png) |
-
-## 网络工具
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| Cloudflare | [cloudflare.png](network/cloudflare.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Infrastructure/Cloudflare/Cloudflare.png) |
-| OpenWrt | [openwrt.png](network/openwrt.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Infrastructure/OpenWrt/OpenWrt.png) |
-| Speedtest | [speedtest.png](network/speedtest.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Utilities/Speedtest/Speedtest.png) |
-
-## 隐私与安全
-
-| 名称 | 本地文件 | 原始来源 |
-|---|---|---|
-| 1Password | [1password.png](security/1password.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Utilities/1Password/1Password.png) |
-| AdGuard | [adguard.png](security/adguard.png) | [源文件](https://github.com/Hawaiine/Oasisic-Icons/blob/f0f3bc2a44616885682ee5f0e5921540b964e2d8/icons/Utilities/AdGuard/AdGuard.png) |
-| Bitwarden | [bitwarden.png](security/bitwarden.png) | [源文件](https://github.com/homarr-labs/dashboard-icons/blob/adca944175c9a3eb0471f78a4da87f237476d585/png/bitwarden.png) |
 
 ## 代理客户端
 
@@ -291,6 +196,8 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 
 新增 25 个品牌，使用 `finance/` 单层目录，名称仍为小写英文、数字和短横线。中国银行与中银香港、HSBC 香港与新加坡、DBS 香港与新加坡、渣打香港与新加坡共用品牌 symbol，仅保留一份；清单不代表覆盖所有地区机构。
 
+展示标题使用中文常用名，英文名和缩写用于搜索。蓝色八角形图案对应 Chase 零售银行品牌，展示名为「大通银行」；「摩根大通」保留为搜索别名，品牌关系见下表的官方历史资料。
+
 先核对机构官网、官方品牌说明或媒体资料，再采用下表固定提交中的矢量素材。官网列用于核对品牌，不表示这些 SVG 都由官网直接下载。OCBC 使用 2023 年更新后的 symbol，未使用 IconGo 的旧版。未采用来源中为深色主题改色、放大至 250px 或边缘质量不稳定的股票 PNG 集合。平安集团图标不作为平安银行图标；Morgan Stanley、ZA Bank、BNP Paribas 等本次未收录。
 
 所有成品均为 512×512 PNG、RGBA：等比转换 SVG，按 symbol 的实际形状设置留白与居中，并用与整理工具相同的 r=115 整数圆角边界将外侧 alpha 置零。主体不重绘、不加阴影、不量化。IconGo 的白底圆角画布按现有标准重新生成，保留原 symbol 颜色和比例；HSBC、Deutsche Bank、Goldman Sachs 的单色 SVG 分别使用来源元数据的品牌色 `#DB0011`、`#0018A8`、`#7399C6`，配白色主体底板。Charles Schwab 和 Wells Fargo 保留素材本身的蓝色、红色底板，Fidelity 保留绿白图形；IBKR 保留源 symbol 内部渐变。其余透明 symbol 配白色主体底板。横向 symbol 使用较宽留白区域，圆形及纵向 symbol 另行等比缩放，未拉伸或裁切品牌图形。
@@ -299,28 +206,28 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 
 | 品牌 | 文件 | 矢量素材（固定提交） | 官网 / 官方核对资料 |
 |---|---|---|---|
-| JPMorgan Chase / 摩根大通 | [chase.png](finance/chase.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/chase.svg) | [官方资料](https://www.jpmorganchase.com/about/our-history) |
-| Bank of America / 美国银行 | [bank-of-america.png](finance/bank-of-america.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/bank-of-america.svg) | [官方资料](https://www.bankofamerica.com) |
-| Citi / 花旗银行 | [citi.png](finance/citi.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/citi.svg) | [官方资料](https://www.citigroup.com/global/about-us) |
-| Wells Fargo / 富国银行 | [wells-fargo.png](finance/wells-fargo.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/wells-fargo.svg) | [官方资料](https://www.wellsfargo.com) |
-| Goldman Sachs / 高盛 | [goldman-sachs.png](finance/goldman-sachs.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/goldmansachs.svg) | [官方资料](https://design.gs.com/brand/goldman-sachs-logo) |
-| Charles Schwab / 嘉信理财 | [charles-schwab.png](finance/charles-schwab.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/charles-schwab.svg) | [官方资料](https://www.schwab.com/media/6616) |
-| Fidelity Investments / 富达投资 | [fidelity.png](finance/fidelity.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/fidelity.svg) | [官方资料](https://www.fidelity.com/wealth/fidelity-go) |
-| Interactive Brokers / 盈透证券 | [interactive-brokers.png](finance/interactive-brokers.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/interactive-brokers.svg) | [官方资料](https://www.interactivebrokers.com/en/general/about/info-and-history.php) |
+| 大通银行 / Chase | [chase.png](finance/chase.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/chase.svg) | [官方资料](https://www.jpmorganchase.com/about/our-history) |
+| 美国银行 / Bank of America | [bank-of-america.png](finance/bank-of-america.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/bank-of-america.svg) | [官方资料](https://www.bankofamerica.com) |
+| 花旗银行 / Citi | [citi.png](finance/citi.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/citi.svg) | [官方资料](https://www.citigroup.com/global/about-us) |
+| 富国银行 / Wells Fargo | [wells-fargo.png](finance/wells-fargo.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/wells-fargo.svg) | [官方资料](https://www.wellsfargo.com) |
+| 高盛 / Goldman Sachs | [goldman-sachs.png](finance/goldman-sachs.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/goldmansachs.svg) | [官方资料](https://design.gs.com/brand/goldman-sachs-logo) |
+| 嘉信理财 / Charles Schwab | [charles-schwab.png](finance/charles-schwab.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/charles-schwab.svg) | [官方资料](https://www.schwab.com/media/6616) |
+| 富达投资 / Fidelity Investments | [fidelity.png](finance/fidelity.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/fidelity.svg) | [官方资料](https://www.fidelity.com/wealth/fidelity-go) |
+| 盈透证券 / Interactive Brokers | [interactive-brokers.png](finance/interactive-brokers.png) | [源 SVG](https://github.com/selfhst/icons/blob/b3ce1c7b79b2d6981e51af74bb6d05a01fe604fb/svg/interactive-brokers.svg) | [官方资料](https://www.interactivebrokers.com/en/general/about/info-and-history.php) |
 | 中国工商银行 / ICBC | [icbc.png](finance/icbc.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/icbc-rect.svg) | [官方资料](https://icbc.com.cn/ICBCLtd/%E5%85%B3%E4%BA%8E%E6%88%91%E8%A1%8C/%E9%9B%86%E5%9B%A2%E5%93%81%E7%89%8C/jcgf.htm) |
 | 中国建设银行 / CCB | [ccb.png](finance/ccb.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/ccb-rect.svg) | [官方资料](https://www.ccb.com/cn/ccbtoday/jhbkhb/20200428_1588069504.html) |
 | 中国农业银行 / ABC | [abc.png](finance/abc.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/abchina-rect.svg) | [官方资料](https://www.abchina.com/cn/aboutabc/nhfm/) |
-| 中国银行（含中银香港共用标识）/ BOC | [bank-of-china.png](finance/bank-of-china.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/boc-rect.svg) | [官方资料](https://www.boc.cn/aboutboc/bi1/201110/t20111014_1556052.html) |
+| 中国银行 / BOC | [bank-of-china.png](finance/bank-of-china.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/boc-rect.svg) | [官方资料](https://www.boc.cn/aboutboc/bi1/201110/t20111014_1556052.html) |
 | 交通银行 / Bank of Communications | [bank-of-communications.png](finance/bank-of-communications.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/bankcomm-rect.svg) | [官方资料](https://www.bankcomm.com/BankCommSite/) |
 | 招商银行 / CMB | [cmb.png](finance/cmb.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/cmbchina-rect.svg) | [官方资料](https://www.cmbchina.com) |
 | 中信银行 / China CITIC Bank | [citic-bank.png](finance/citic-bank.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/citicbank-rect.svg) | [官方资料](https://www.citicbank.com) |
 | 兴业银行 / CIB | [cib.png](finance/cib.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/cib-rect.svg) | [官方资料](https://www.cib.com.cn/cn/aboutCIB/investor/profile/logo.html) |
-| HSBC / 汇丰（香港、新加坡共用标识） | [hsbc.png](finance/hsbc.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/hsbc.svg) | [官方资料](https://www.hsbc.com/news-and-views/our-brand-in-action) |
-| Hang Seng Bank / 恒生银行 | [hang-seng-bank.png](finance/hang-seng-bank.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/hangseng-rect.svg) | [官方资料](https://www.hangseng.com) |
-| Standard Chartered / 渣打（香港、新加坡共用标识） | [standard-chartered.png](finance/standard-chartered.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/standard.svg) | [官方资料](https://www.sc.com/en/media/) |
-| DBS / 星展（香港、新加坡共用标识） | [dbs.png](finance/dbs.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/dbs-rect.svg) | [官方资料](https://www.dbs.com/newsroom/DBS_unveils_new_brand_campaign) |
-| OCBC / 华侨银行 | [ocbc.png](finance/ocbc.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/ocbc.svg) | [官方资料](https://www.ocbc.com/group/about-us/our-brand.page) |
-| UOB / 大华银行 | [uob.png](finance/uob.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/uobchina-rect.svg) | [官方资料](https://www.uobgroup.com/uobgroup/about/index.page) |
-| UBS / 瑞银 | [ubs.png](finance/ubs.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/ubs-rect.svg) | [官方资料](https://www.ubs.com/global/en/our-firm/our-history.html) |
-| Deutsche Bank / 德意志银行 | [deutsche-bank.png](finance/deutsche-bank.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/deutschebank.svg) | [官方资料](https://www.db.com) |
-| Santander / 桑坦德银行 | [santander.png](finance/santander.png) | [源 SVG](https://github.com/Tgentil/Bancos-em-SVG/blob/fe1d43f0cf379135bd01c987bc147a04fdf48c6d/Banco%20Santander%20Brasil%20S.A/banco-santander-logo.svg) | [官方资料](https://www.santander.com/en/about-us/our-brand) |
+| 汇丰银行 / HSBC | [hsbc.png](finance/hsbc.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/hsbc.svg) | [官方资料](https://www.hsbc.com/news-and-views/our-brand-in-action) |
+| 恒生银行 / Hang Seng Bank | [hang-seng-bank.png](finance/hang-seng-bank.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/hangseng-rect.svg) | [官方资料](https://www.hangseng.com) |
+| 渣打银行 / Standard Chartered | [standard-chartered.png](finance/standard-chartered.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/standard.svg) | [官方资料](https://www.sc.com/en/media/) |
+| 星展银行 / DBS | [dbs.png](finance/dbs.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/dbs-rect.svg) | [官方资料](https://www.dbs.com/newsroom/DBS_unveils_new_brand_campaign) |
+| 华侨银行 / OCBC | [ocbc.png](finance/ocbc.png) | [源 SVG](https://github.com/auraveni/global-bank-logos/blob/ad33060ca976397a9fcb46dd40c2d77bce5ce7e1/assets/bank/international-bank/ocbc.svg) | [官方资料](https://www.ocbc.com/group/about-us/our-brand.page) |
+| 大华银行 / UOB | [uob.png](finance/uob.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/uobchina-rect.svg) | [官方资料](https://www.uobgroup.com/uobgroup/about/index.page) |
+| 瑞银 / UBS | [ubs.png](finance/ubs.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/ubs-rect.svg) | [官方资料](https://www.ubs.com/global/en/our-firm/our-history.html) |
+| 德意志银行 / Deutsche Bank | [deutsche-bank.png](finance/deutsche-bank.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/deutschebank.svg) | [官方资料](https://www.db.com) |
+| 桑坦德银行 / Santander | [santander.png](finance/santander.png) | [源 SVG](https://github.com/Tgentil/Bancos-em-SVG/blob/fe1d43f0cf379135bd01c987bc147a04fdf48c6d/Banco%20Santander%20Brasil%20S.A/banco-santander-logo.svg) | [官方资料](https://www.santander.com/en/about-us/our-brand) |

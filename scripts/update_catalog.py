@@ -34,6 +34,9 @@ def metadata_index(previous):
         for field in ("title", "note", "device", "sha", "thumbnail", "derivedFrom"):
             if field in item and not isinstance(item[field], str):
                 raise ValueError(f"{path}: {field} 应为字符串")
+        aliases = item.get("aliases", [])
+        if not isinstance(aliases, list) or not all(isinstance(alias, str) and alias.strip() for alias in aliases):
+            raise ValueError(f"{path}: aliases 应为非空字符串组成的列表")
         metadata[path] = item
     return metadata
 
@@ -217,6 +220,8 @@ def build_catalog(root):
             kind = "other"
             category = None
         item = {"path": path, "title": old.get("title") or relative.stem.replace("-", " "), "kind": kind}
+        if old.get("aliases"):
+            item["aliases"] = old["aliases"]
         item.update(card_info)
         if category:
             item["category"] = category

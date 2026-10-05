@@ -37,7 +37,7 @@ class CatalogTests(unittest.TestCase):
     def test_replacement_keeps_title_and_removes_stale_note(self):
         update(self.root)
         catalog = self.catalog()
-        catalog["assets"][0].update(title="中文标题", note="旧的处理说明")
+        catalog["assets"][0].update(title="中文标题", aliases=["English title", "缩写"], note="旧的处理说明")
         (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
         old_preview = catalog["assets"][0]["thumbnail"]
         Image.new("RGB", (120, 260), "red").save(self.image)
@@ -46,6 +46,7 @@ class CatalogTests(unittest.TestCase):
         update(self.root)
         item = self.catalog()["assets"][0]
         self.assertEqual(item["title"], "中文标题")
+        self.assertEqual(item["aliases"], ["English title", "缩写"])
         self.assertNotIn("note", item)
         self.assertNotEqual(item["thumbnail"], old_preview)
         self.assertFalse((self.root / old_preview).exists())
@@ -303,6 +304,20 @@ class CatalogTests(unittest.TestCase):
                 (self.root / "catalog.json").write_text(json.dumps(invalid))
                 with self.assertRaises(ValueError):
                     update(self.root)
+
+    def test_invalid_search_aliases_fail_before_writing(self):
+        update(self.root)
+        catalog = self.catalog()
+        for value in (None, "HSBC", {}, [None], [42], [""], ["   "], ["HSBC", {}]):
+            with self.subTest(aliases=value):
+                invalid = json.loads(json.dumps(catalog))
+                invalid["assets"][0]["aliases"] = value
+                text = json.dumps(invalid)
+                (self.root / "catalog.json").write_text(text)
+                for check in (False, True):
+                    with self.assertRaisesRegex(ValueError, "aliases"):
+                        update(self.root, check=check)
+                self.assertEqual((self.root / "catalog.json").read_text(), text)
 
     def test_original_card_requires_complete_source_identifiers_and_date(self):
         self.add_card()

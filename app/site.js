@@ -5,10 +5,9 @@ const imagePattern = /\.(png|jpe?g|gif|webp|svg|avif)$/i;
 // Insertion order is the browsing order; new categories follow the known ones.
 const styleCategoryLabels = { anime: "动漫", illustration: "插画", landscape: "风景", photography: "摄影", people: "真人", animals: "动物", gaming: "游戏", pixel: "像素", minimal: "极简", abstract: "抽象", other: "其他" };
 const iconCategoryLabels = {
-  ai: "AI", search: "搜索与知识", browsers: "浏览器", communication: "聊天与会议", email: "邮箱",
+  ai: "AI", communication: "聊天与会议",
   social: "社交与社区", video: "视频与直播", "media-players": "媒体播放器", music: "音乐与播客", gaming: "游戏",
-  productivity: "效率与工具", maps: "地图与出行", storage: "网盘与存储", shopping: "购物与生活", payments: "支付", finance: "银行、券商与金融机构",
-  development: "开发工具", cloud: "云服务与基础设施", network: "网络工具", security: "隐私与安全",
+  finance: "银行、券商与金融机构", development: "开发工具", cloud: "云服务与基础设施",
   "proxy-clients": "代理客户端", proxy: "代理组与分流", routes: "线路与专线", regions: "国家与地区"
 };
 const categoryLabels = { ...styleCategoryLabels, ...iconCategoryLabels };
@@ -84,6 +83,7 @@ function makeAsset(file) {
     path: file.path, size: Number.isFinite(file.size) && file.size > 0 ? file.size : 0,
     sha: typeof file.sha === "string" && /^[a-f0-9]{40}$/.test(file.sha) ? file.sha : "",
     title: typeof file.title === "string" && file.title.trim() ? file.title : filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
+    aliases: Array.isArray(file.aliases) ? file.aliases.filter(alias => typeof alias === "string" && alias.trim()) : [],
     kind: inferredKind,
     device: ["phone","desktop","tablet","unknown"].includes(file.device) ? file.device : "",
     category: match ? match[1] : iconMatch ? iconMatch[1] : cardMatch ? cardMatch[2] : "other",
@@ -495,7 +495,7 @@ function renderGallery() {
     .filter(file => !controls.edition.value || file.edition === controls.edition.value)
     .filter(file => !controls.resolution.value || resolutionKey(file) === controls.resolution.value)
     .filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value)
-    .filter(file => !query || [file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || ""].join(" ").toLocaleLowerCase().includes(query));
+    .filter(file => !query || [file.title,...file.aliases,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || ""].join(" ").toLocaleLowerCase().includes(query));
   visible.sort(compareAssets);
   visibleAssets = visible;
   const grouped = visible.length > 0;

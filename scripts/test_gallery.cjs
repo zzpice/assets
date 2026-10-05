@@ -9,7 +9,7 @@ const base = "https://example.test/assets/";
 
 function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]}')) {
   const nodes = new Map();
-  const node = () => ({value:"",style:{setProperty(){}},classList:{toggle(){},remove(){}},addEventListener(){},setAttribute(){},removeAttribute(){},replaceChildren(...children){this.children=children;},append(){},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
+  const node = () => ({value:"",dataset:{},style:{setProperty(){}},classList:{toggle(){},remove(){}},addEventListener(){},setAttribute(){},removeAttribute(){},replaceChildren(...children){this.children=children;},append(){},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
   const document = {baseURI:base,body:node(),getElementById(id){if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);},querySelectorAll:()=>[],querySelector:()=>node(),createElement:node};
   const context = vm.createContext({URL,URLSearchParams,Response,AbortController,setTimeout,clearTimeout,document,fetch:fetchResponse,
     localStorage:{getItem:()=>null},navigator:{onLine:true},location:{href:base,hash:""},history:{state:null},
@@ -21,9 +21,10 @@ function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]
 
 test("bad display metadata falls back to safe strings and path-derived classifications",()=>{
   const {context}=gallery();
-  const asset=context.makeAsset({path:"wallpapers/anime/1440x3120/girl-rain.png",title:{bad:true},note:42,kind:"icon",category:"finance",width:{bad:true},height:null});
+  const asset=context.makeAsset({path:"wallpapers/anime/1440x3120/girl-rain.png",title:{bad:true},aliases:{bad:true},note:42,kind:"icon",category:"finance",width:{bad:true},height:null});
   assert.equal(asset.title,"girl rain");
   assert.equal(asset.note,"");
+  assert.deepEqual(Array.from(asset.aliases),[]);
   assert.equal(asset.kind,"wallpaper");
   assert.equal(asset.category,"anime");
   assert.equal(asset.width,1440);
@@ -37,6 +38,22 @@ test("icon previews carry a content version while canonical download URLs remain
   const asset=context.makeAsset({path:"icons/finance/icbc.png",sha,title:"工商银行",width:512,height:512});
   assert.equal(context.assetPreviewUrl(asset),base+asset.path+"?v="+sha);
   assert.equal(context.imageUrl(asset.path),base+asset.path);
+});
+
+test("Chinese display names remain searchable by English brands and abbreviations",()=>{
+  const {context,read,nodes}=gallery();
+  context.testFiles=[
+    context.makeAsset({path:"icons/finance/hsbc.png",title:"汇丰银行",aliases:["HSBC","The Hongkong and Shanghai Banking Corporation"]}),
+    context.makeAsset({path:"icons/finance/icbc.png",title:"中国工商银行",aliases:["ICBC","工行"]})
+  ];
+  read('assets=testFiles; kind="icon"; makeCategorySections=()=>[]');
+  for(const [query,path] of [["汇丰","hsbc"],["hSbC","hsbc"],["Hongkong","hsbc"],["工行","icbc"],["ICBC","icbc"]]) {
+    nodes.get("search").value=query;
+    context.renderGallery();
+    assert.equal(read("visibleAssets.length"),1);
+    assert.equal(read("visibleAssets[0].path"),"icons/finance/"+path+".png");
+  }
+  assert.equal(context.testFiles[0].title,"汇丰银行");
 });
 
 test("preview groups separate wallpaper devices and card banks, regions and editions",()=>{
