@@ -125,7 +125,10 @@ window.ActressGallery = (() => {
       about.append(node("summary", "", directory.series.title + " · 官方年度 TOP 100"), node("p", "", directory.series.method));
       if (selected.ranking) about.append(sourceLink("官方榜单 ↗", selected.ranking.source), sourceLink("来源记录 ↗", url(selected.ranking.snapshot)));
       navigation.append(about);
-    } else navigation.append(node("p", "person-description", state.view === "hall" ? "本项目精选的历史代表人物，不设排名；入选依据见人物资料。" : directory.people.length + " 位已收录人物 · 搜索展示名、日文艺名、别名和已记录的罗马字。"));
+    } else {
+      navigation.append(node("p", "person-description", state.view === "hall" ? "本项目精选不同年代的代表人物，不设排名或固定名额；具体入选依据见人物资料。" : directory.people.length + " 位已收录人物 · 搜索展示名、日文艺名、别名和已记录的罗马字。"));
+      if (state.view === "hall") navigation.append(sourceLink("入选标准与本次审查 ↗", "https://github.com/zzpice/assets/blob/main/actresses/HALL-OF-FAME.md"));
+    }
     gallery.classList.remove("grouped", "multiple-device-groups");
     gallery.classList.add("person-gallery"); gallery.dataset.device = "actress";
     const grid = node("div", "person-grid");
@@ -222,6 +225,7 @@ window.ActressGallery = (() => {
     const treatment = person.portrait.display ? "列表与详情采用经审核的预览取景；下载保留完整源图。" : "保留源图尺寸和构图。";
     sources.append(node("summary", "", "头像来源与版权"), node("p", "", "来源：" + person.portrait.source.provider + " · 获取于 " + person.portrait.source.retrieved + "。" + treatment + "版权归摄影者、所属经纪公司及其他原权利人，本项目不另授许可。"), sourceLink("选定源文件 ↗", person.portrait.source.url));
     if (person.portrait.source.profile) sources.append(sourceLink("原网站人物页与声明 ↗", person.portrait.source.profile));
+    if (person.portrait.source.restoration) sources.append(node("p", "", "头像采用上游 AI 修复版本，已与历史原图比较；修复细节不作为人物事实依据。"), sourceLink("历史未修复原图 ↗", person.portrait.source.restoration.originalUrl));
     if (person.portrait.source.provider === "Gfriends") sources.append(sourceLink("Gfriends 来源声明 ↗", "https://github.com/gfriends/gfriends/blob/" + person.portrait.source.revision + "/README.md"));
     facts.append(sources);
     const actions = node("div", "person-detail-actions");

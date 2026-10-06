@@ -13,7 +13,7 @@
 
 外链格式：`https://zzpice.github.io/assets/<文件路径>`。
 
-[女优图库](https://zzpice.github.io/assets/#actresses=annual)提供年度榜单、名人堂、全部女优三个入口，共用人物资料和每人一张头像。年度采用 2023 年起的 FANZA 月额 DVD 租赁官方 TOP 100；名人堂为项目精选，不设排名。搜索支持已记录姓名、别名与罗马字，每页最多 48 人；详情名次与次数只统计已收录年份。
+[女优图库](https://zzpice.github.io/assets/#actresses=annual)提供年度榜单、名人堂、全部女优三个入口，共用人物资料和每人一张头像。年度采用 2023 年起的 FANZA 月额 DVD 租赁官方 TOP 100；名人堂精选不同年代的代表人物，不设排名或固定名额；[入选依据](actresses/HALL-OF-FAME.md)逐人记录。搜索支持已记录姓名、别名与罗马字，每页最多 48 人；详情名次与次数只统计已收录年份。
 
 ## 归档
 

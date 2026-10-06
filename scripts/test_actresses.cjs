@@ -49,7 +49,7 @@ test("hall membership overlaps annual rankings and never invents a hall rank",()
   const module = gallery();
   module.route(new URLSearchParams({actresses:"hall"}));
   const hall = module.select();
-  assert.equal(hall.count,10);
+  assert.equal(hall.count,catalog.actresses.people.filter(person=>person.hallOfFame).length);
   assert.ok(hall.items.every(item=>item.rank===undefined && item.person.hallOfFame));
   assert.ok(hall.items.some(item=>module.histories(item.person.id).length>0));
   const yuma = hall.items.find(item=>item.person.id==="p0004");
@@ -67,7 +67,7 @@ test("search and pagination survive shareable routes; obsolete letter filters ca
   module.route(new URLSearchParams(target.hash.slice(1)));
   assert.equal(module.select().items[0].person.id,"p0054");
   module.route(new URLSearchParams({actresses:"all",letter:"S"}));
-  assert.equal(module.select().count,174);
+  assert.equal(module.select().count,catalog.actresses.people.length);
   assert.ok(!new URLSearchParams(new URL(module.viewUrl()).hash.slice(1)).has("letter"));
   assert.equal(module.select("Mizuki Yayoi").items[0].person.id,"p0066");
   module.route(new URLSearchParams({actresses:"annual",year:2026}));

@@ -102,6 +102,19 @@ class ActressTests(unittest.TestCase):
         self.data["redirects"]["p9999"] = "p0001"; self.write()
         with self.assertRaisesRegex(ValueError, "without chains or cycles"): directory(self.root)
 
+    def test_ai_restoration_requires_explicit_original_provenance(self):
+        source = self.people[0]["portrait"]["source"]
+        source.update(provider="Gfriends", revision="a" * 40, path="Content/example/AI-Fix-person.jpg",
+                      url="https://raw.githubusercontent.com/gfriends/gfriends/" + "a" * 40 + "/Content/example/AI-Fix-person.jpg")
+        self.write()
+        with self.assertRaisesRegex(ValueError, "AI-Fix requires"): directory(self.root)
+        source["restoration"] = {"method": "Upstream AI-Fix", "originalUrl": "https://example.test/original.jpg",
+                                 "originalSha256": "b" * 64, "reviewed": "2026-01-01"}
+        self.write(); directory(self.root)
+        source["restoration"]["originalSha256"] = source["sha256"]
+        self.write()
+        with self.assertRaisesRegex(ValueError, "distinct original"): directory(self.root)
+
     def test_missing_page_rank_and_incompatible_scope_never_publish(self):
         initial = copy.deepcopy(self.snapshot)
         for field, value, message in [("pages", self.snapshot["pages"][:4], "all five"), ("rows", self.snapshot["rows"][:99], "without gaps"), ("series", "video-sales", "incompatible")]:

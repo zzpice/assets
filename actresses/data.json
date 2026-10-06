@@ -48,7 +48,15 @@
         }
       },
       "romanization": "Kazama Yumi",
-      "japaneseName": "風間ゆみ"
+      "japaneseName": "風間ゆみ",
+      "hallOfFame": {
+        "reason": "本人参与的出道 25 周年项目确认 1997 年出道及长期职业经历；作为从 1990 年代延续到后续年代的熟女题材代表入选。",
+        "sources": [
+          "https://greenfunding.jp/lab/projects/5699",
+          "https://adult-awards.com/archives/2011/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0002",
@@ -112,11 +120,12 @@
         }
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "2009、2011、2014 年官方租赁年度榜均有记录，并获 2013 年スカパー！アダルト放送大賞作品賞；代表 2000 年代出道、跨入 2010 年代的长期人气。",
         "sources": [
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
-          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
+          "https://adult-awards.com/archives/2013/"
         ],
         "reviewed": "2026-10-06"
       },
@@ -173,8 +182,10 @@
         }
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "获 2008 年スカパー！アダルト放送大賞最多出演賞及 2014 年 DMM 特別賞；2009、2011 年官方租赁榜亦记录其人气，作为 2000 年代中期代表入选。",
         "sources": [
+          "https://adult-awards.com/archives/2008/",
+          "https://wpb.shueisha.co.jp/news/lifestyle/20140426-29609/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/"
         ],
@@ -214,7 +225,15 @@
           "reviewed": "2026-10-06"
         }
       },
-      "japaneseName": "翔田千里"
+      "japaneseName": "翔田千里",
+      "hallOfFame": {
+        "reason": "获 2007 年スカパー！アダルト放送大賞熟女女優賞、2009 年最多出演賞；作为 2000 年代熟女题材发展中的代表入选。",
+        "sources": [
+          "https://adult-awards.com/archives/2007/",
+          "https://adult-awards.com/archives/2009/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0006",
@@ -253,8 +272,9 @@
         }
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "本人采访回顾自 2006 年开始的约 16 年职业经历，2009、2011、2014 年官方租赁榜均有记录；作为长期持续获得认可的 2000 年代代表入选。",
         "sources": [
+          "https://shueisha.online/articles/-/90726",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
@@ -410,9 +430,10 @@
         }
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "获 2011 年スカパー！アダルト放送大賞熟女女優賞，出版方人物介绍确认 2004 年出道；代表 2000 年代开始、持续获得认可的熟女题材人物。",
         "sources": [
-          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/"
+          "https://adult-awards.com/archives/2011/",
+          "https://shueisha.online/list/persons/65aa13f88ce1159272000479"
         ],
         "reviewed": "2026-10-06"
       },
@@ -474,9 +495,10 @@
         }
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "获 2009 年スカパー！アダルト放送大賞女優賞及 2014 年 DMM 話題賞；作为从 2000 年代后期 AV 人气延伸到更广泛公众知名度的人物入选。",
         "sources": [
-          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/"
+          "https://adult-awards.com/archives/2009/",
+          "https://wpb.shueisha.co.jp/news/lifestyle/20140426-29609/"
         ],
         "reviewed": "2026-10-06"
       },
@@ -523,8 +545,10 @@
         "reviewed": "2026-10-06"
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "获 2014 年スカパー！アダルト放送大賞女優賞、2018 年最多出演賞，2014、2016 年官方租赁榜亦有记录；代表 2000 年代后期出道、跨时期持续活跃的企划型演员。",
         "sources": [
+          "https://adult-awards.com/archives/2014/",
+          "https://adult-awards.com/archives/2018/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
         ],
@@ -572,7 +596,15 @@
         "reviewed": "2026-10-06"
       },
       "romanization": "Hohjoh Maki",
-      "japaneseName": "北条麻妃"
+      "japaneseName": "北条麻妃",
+      "hallOfFame": {
+        "reason": "获 2012 年スカパー！アダルト放送大賞熟女女優賞；原始颁奖报道回顾其多年职业经历，作为 2000 年代后期至 2010 年代的熟女题材代表入选。",
+        "sources": [
+          "https://adult-awards.com/archives/2012/",
+          "https://blog.livedoor.jp/adult_awards/archives/3705130.html"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0013",
@@ -627,7 +659,15 @@
         "heightCm": 161,
         "birthDate": "1988-02-21"
       },
-      "japaneseName": "大槻ひびき"
+      "japaneseName": "大槻ひびき",
+      "hallOfFame": {
+        "reason": "2016 年 DMM 最優秀女優賞得主；当年采访确认 2008 年出道。作为从企划作品积累认可、在 2010 年代获得主要行业奖项的代表入选。",
+        "sources": [
+          "https://www.nikkan-gendai.com/articles/view/geinox/180796",
+          "https://wpb.shueisha.co.jp/news/lifestyle/20170506-84344/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0014",
@@ -732,11 +772,12 @@
         }
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "2011、2014、2016 年官方租赁榜均有记录，官方人物项目另纪念出道 15 周年；作为 2010 年代起持续具有辨识度的专属型演员入选。",
         "sources": [
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
-          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/",
+          "https://www.cmore.jp/julia/news/20250622.html"
         ],
         "reviewed": "2026-10-06"
       },
@@ -781,7 +822,17 @@
         },
         "reviewed": "2026-10-06"
       },
-      "japaneseName": "葵つかさ"
+      "japaneseName": "葵つかさ",
+      "hallOfFame": {
+        "reason": "2011、2013、2019 年官方租赁榜连续跨时期记录其人气；原始导演采访讨论其参与的偶像化作品，作为 2010 年代专属型演员的代表入选。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2013/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2019/",
+          "https://wpb.shueisha.co.jp/news/lifestyle/20151128-57430/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0018",
@@ -829,7 +880,15 @@
         }
       },
       "romanization": "Shinoda Yuu",
-      "japaneseName": "篠田ゆう"
+      "japaneseName": "篠田ゆう",
+      "hallOfFame": {
+        "reason": "获 2019 年スカパー！アダルト放送大賞東京スポーツ賞，并在同年官方租赁榜位列第 6；作为 2010 年代积累、延续至后续已收录年度的企划型代表入选。",
+        "sources": [
+          "https://adult-awards.com/archives/2019/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2019/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0019",
@@ -899,8 +958,9 @@
         }
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "2014 年 DMM 最優秀女優賞得主；当年原始颁奖报道与 2014、2016 年官方租赁榜共同记录其高峰期，作为 2010 年代前半代表入选。",
         "sources": [
+          "https://wpb.shueisha.co.jp/news/lifestyle/20140426-29609/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
         ],
@@ -954,8 +1014,10 @@
       },
       "romanization": "Sakura Mana",
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "获 2013 年スカパー！アダルト放送大賞新人女優賞、2015 年女優賞；结合 2014 年官方租赁榜，作为 2010 年代前半迅速获得持续认可的人物入选。",
         "sources": [
+          "https://adult-awards.com/archives/2013/",
+          "https://adult-awards.com/archives/2015/",
           "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
         ],
         "reviewed": "2026-10-06"
@@ -1040,7 +1102,18 @@
           "reviewed": "2026-10-06"
         }
       },
-      "japaneseName": "鈴村あいり"
+      "japaneseName": "鈴村あいり",
+      "hallOfFame": {
+        "reason": "2013 年官方租赁年度榜第 3，2014、2015 年均第 2，2016、2019 年继续位列前十；以多年度持续人气作为 2010 年代专属型代表入选。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2013/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2015/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2019/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0024",
@@ -1407,9 +1480,9 @@
         "reviewed": "2026-10-06"
       },
       "hallOfFame": {
-        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "reason": "2017 年 DMM 最優秀女優賞得主；当年原始报道明确回顾其从偶像领域转入 AV 的经历，作为 2010 年代后半跨领域成名路径的代表入选。",
         "sources": [
-          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
+          "https://wpb.shueisha.co.jp/news/lifestyle/20170506-84344/"
         ],
         "reviewed": "2026-10-06"
       },
@@ -1488,7 +1561,15 @@
           "reviewed": "2026-10-06"
         }
       },
-      "japaneseName": "桃乃木かな"
+      "japaneseName": "桃乃木かな",
+      "hallOfFame": {
+        "reason": "2017 年スカパー！アダルト放送大賞新人女優賞与東京スポーツ賞双奖得主；结合 2016 年及后续已收录官方年度记录，作为 2010 年代后半持续获得认可的代表入选。",
+        "sources": [
+          "https://adult-awards.com/archives/2017/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0035",
@@ -2250,7 +2331,18 @@
         "heightCm": 169,
         "birthDate": "1999-04-24"
       },
-      "japaneseName": "河北彩花"
+      "japaneseName": "河北彩花",
+      "hallOfFame": {
+        "reason": "出版方本人采访确认 2018 年 AV 出道；在 FLASH 2021 年综合销量与读者投票的企划中居首，并在已收录的 2023–2025 年官方租赁榜持续位列前四，作为连接 2010 年代后半与 2020 年代的人物入选。",
+        "sources": [
+          "https://wpb.shueisha.co.jp/gravure/news/20241028-124919/",
+          "https://smart-flash.jp/gravure/otonano-entame/167842/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     },
     {
       "id": "p0055",
@@ -6439,6 +6531,507 @@
         "reviewed": "2026-10-06"
       },
       "japaneseName": "桜乃りの"
+    },
+    {
+      "id": "p0175",
+      "name": "小林瞳",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=小林瞳&oldid=94766514",
+      "japaneseName": "小林ひとみ",
+      "aliases": [
+        {
+          "name": "小林ひとみ",
+          "source": "https://www.tv-tokyo.co.jp/plus/entertainment/entry/202404/14994.html"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1402"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0175.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/y-Minnano/AI-Fix-小林ひとみ.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/AI-Fix-%E5%B0%8F%E6%9E%97%E3%81%B2%E3%81%A8%E3%81%BF.jpg",
+          "sha256": "e0bedfa20ae02c3ba4a359d16246bcf7c9d086f24d35a14b4a94066d488589af",
+          "provider": "Gfriends",
+          "upstreamGroup": "y-Minnano",
+          "retrieved": "2026-10-06",
+          "restoration": {
+            "method": "Gfriends AI-Fix（上游未公布模型）",
+            "originalUrl": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E5%B0%8F%E6%9E%97%E3%81%B2%E3%81%A8%E3%81%BF.jpg",
+            "originalSha256": "b6c795e1f293480b69c59ef642e16b4efd974b80b648c18f61dc7b9d5eef3ca5",
+            "reviewed": "2026-10-06"
+          }
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "东京电视台本人采访回顾 1986 年出道及当时的社会关注，代表 1980 年代 AV 演员进入大众视野的早期阶段。",
+        "sources": [
+          "https://www.tv-tokyo.co.jp/plus/entertainment/entry/202404/14994.html"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0176",
+      "name": "黑木香",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=黑木香&oldid=94727617",
+      "japaneseName": "黒木香",
+      "aliases": [
+        {
+          "name": "黒木香",
+          "source": "https://www.shinchosha.co.jp/book/101982/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "5012"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0176.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/y-Minnano/AI-Fix-黒木香.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/AI-Fix-%E9%BB%92%E6%9C%A8%E9%A6%99.jpg",
+          "sha256": "4625be03dae0848d92f30005cca5fea7b37bd9894908ff0b9bd7c8b1ce3ae861",
+          "provider": "Gfriends",
+          "upstreamGroup": "y-Minnano",
+          "retrieved": "2026-10-06",
+          "restoration": {
+            "method": "Gfriends AI-Fix（上游未公布模型）",
+            "originalUrl": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E9%BB%92%E6%9C%A8%E9%A6%99.jpg",
+            "originalSha256": "0d466c59a4cdc39ca28f89160aaaa942b593ca608d6e0785b09ee8f83b1c9055",
+            "reviewed": "2026-10-06"
+          }
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "出版方的村西导演传记将其列为 1980 年代事业高峰期的重要人物；作为该时期 AV 与大众媒体讨论交汇的代表入选。",
+        "sources": [
+          "https://www.shinchosha.co.jp/book/101982/",
+          "https://www.kodansha.co.jp/book/products/0000357243"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0177",
+      "name": "桜樹ルイ",
+      "nameSource": "https://prtimes.jp/main/html/rd/p/000000950.000014531.html",
+      "japaneseName": "桜樹ルイ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1098"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0177.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/y-Minnano/桜樹ルイ.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E6%A1%9C%E6%A8%B9%E3%83%AB%E3%82%A4.jpg",
+          "sha256": "dd612463714d13607d4f32f4cbda8f7768c8d24aab6512f21e25d28c9e5f43b2",
+          "provider": "Gfriends",
+          "upstreamGroup": "y-Minnano",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "本人采访与自传出版方介绍回顾 1989 年 AV 出道、1990 年代广泛的影视曝光及当时的人气；作为 1990 年代跨媒体代表入选。",
+        "sources": [
+          "https://prtimes.jp/main/html/rd/p/000000950.000014531.html",
+          "https://shueisha.online/articles/-/252682?page=1"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0178",
+      "name": "饭岛爱",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=飯島愛&oldid=92799025",
+      "japaneseName": "飯島愛",
+      "aliases": [
+        {
+          "name": "飯島愛",
+          "source": "https://www.vip-times.co.jp/?talent_id=W93-0231"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "2672"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0178.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/y-Minnano/飯島愛.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E9%A3%AF%E5%B3%B6%E6%84%9B.jpg",
+          "sha256": "28e1592eb28ece8d567fefa6edf946aa89e34c3861947236cdf11c3adfe033e3",
+          "provider": "Gfriends",
+          "upstreamGroup": "y-Minnano",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "日本タレント名鑑记录 1992 年 AV 出道及后续电视经历；本人著作的出版记录与后辈本人采访共同说明其跨入大众娱乐领域的影响，作为 1990 年代代表入选。",
+        "sources": [
+          "https://www.vip-times.co.jp/?talent_id=W93-0231",
+          "https://www.books.or.jp/book-details/9784094023961",
+          "https://book.asahi.com/article/13481742"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0179",
+      "name": "苍井空",
+      "nameSource": "https://aoisola.jp/",
+      "japaneseName": "蒼井そら",
+      "aliases": [
+        {
+          "name": "蒼井そら",
+          "source": "https://book.asahi.com/article/13481742"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "3996"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0179.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/y-Minnano/蒼井そら.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E8%92%BC%E4%BA%95%E3%81%9D%E3%82%89.jpg",
+          "sha256": "73010a7f8ccb82c18af036f6aba1c1e7d117d4a52e6f339ec7d134ffd8fa5efd",
+          "provider": "Gfriends",
+          "upstreamGroup": "y-Minnano",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "朝日新闻本人采访确认 2002 年 AV 出道及向电视、东亚公众传播的经历；作为 2000 年代 AV 人物在中文环境中形成广泛认知的代表入选。",
+        "sources": [
+          "https://book.asahi.com/article/13481742",
+          "https://aoisola.jp/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0180",
+      "name": "松岛枫",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=松島楓&oldid=89328791",
+      "japaneseName": "松島かえで",
+      "aliases": [
+        {
+          "name": "松島かえで",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2005/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "3788"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0180.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/7-S1/松島かえで.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%9D%BE%E5%B3%B6%E3%81%8B%E3%81%88%E3%81%A7.jpg",
+          "sha256": "a83366ef15b6e6e0cdb9ee13466375871e952cb7a415c7c53201a853bf13281f",
+          "provider": "Gfriends",
+          "upstreamGroup": "7-S1",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06",
+        "display": {
+          "crop": [
+            110,
+            0,
+            320,
+            400
+          ],
+          "sourceSha256": "a83366ef15b6e6e0cdb9ee13466375871e952cb7a415c7c53201a853bf13281f",
+          "reviewed": "2026-10-06"
+        }
+      },
+      "hallOfFame": {
+        "reason": "2005 年官方租赁年度榜第 4，2006、2007 年继续上榜；以当年的持续市场记录作为 2000 年代前半代表入选。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2005/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2006/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2007/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0181",
+      "name": "小泽玛利亚",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=小澤瑪麗亞&oldid=91271655",
+      "japaneseName": "小澤マリア",
+      "aliases": [
+        {
+          "name": "小澤マリア",
+          "source": "https://www.menscyzo.com/2009/10/post_460.html"
+        },
+        {
+          "name": "小泽玛丽亚",
+          "source": "https://zh.wikipedia.org/w/index.php?title=小澤瑪麗亞&oldid=91271655"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "15187"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0181.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/y-Minnano/小澤マリア.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E5%B0%8F%E6%BE%A4%E3%83%9E%E3%83%AA%E3%82%A2.jpg",
+          "sha256": "86e197c8f23e2ca5c96534a838f16486f2433047bf967bf0e47c8faf493b8d5c",
+          "provider": "Gfriends",
+          "upstreamGroup": "y-Minnano",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "2009 年本人采访回顾约四年的 AV 职业经历及海外辨识度；结合 2006–2008 年官方租赁榜，作为 2000 年代中期及跨地区传播的代表入选。",
+        "sources": [
+          "https://www.menscyzo.com/2009/10/post_460.html",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2006/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2007/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2008/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0182",
+      "name": "Rio",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=Rio&oldid=92418838",
+      "japaneseName": "Rio",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1010469"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0182.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/2-Nanairo/Rio.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/2-Nanairo/Rio.jpg",
+          "sha256": "0ff9b857f26c5e19ec171fb40725a9a41dabb810feaf9114ba73a4a20b4ebc41",
+          "provider": "Gfriends",
+          "upstreamGroup": "2-Nanairo",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "2008 年スカパー！アダルト放送大賞女優賞得主；作为 2000 年代后半专属型演员与艺名转变的代表入选。",
+        "sources": [
+          "https://adult-awards.com/archives/2008/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0183",
+      "name": "穗花",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=下村愛&oldid=94667403",
+      "japaneseName": "穂花",
+      "aliases": [
+        {
+          "name": "穂花",
+          "source": "https://adult-awards.com/archives/2007/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "9537"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0183.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/8-Ideapocket/穂花.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E7%A9%82%E8%8A%B1.jpg",
+          "sha256": "4c9e8b1cb710584e39181d70db8ef5f1569d2a57873ecd949509938ca0efea81",
+          "provider": "Gfriends",
+          "upstreamGroup": "8-Ideapocket",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "2007 年スカパー！アダルト放送大賞女優賞得主，2007、2008 年官方租赁榜分别第 4、第 7；作为 2000 年代中期获得奖项与市场双重认可的代表入选。",
+        "sources": [
+          "https://adult-awards.com/archives/2007/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2007/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2008/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0184",
+      "name": "天使萌",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=天使萌&oldid=93581885",
+      "japaneseName": "天使もえ",
+      "aliases": [
+        {
+          "name": "天使もえ",
+          "source": "https://adult-awards.com/archives/2015/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1025419"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0184.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/1-FALENO/天使もえ.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/1-FALENO/%E5%A4%A9%E4%BD%BF%E3%82%82%E3%81%88.jpg",
+          "sha256": "cbb84247cbc8a4543bf3be43ffc9d95a578884e20000a031cdc5c07205862952",
+          "provider": "Gfriends",
+          "upstreamGroup": "1-FALENO",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06",
+        "display": {
+          "crop": [
+            180,
+            0,
+            960,
+            1200
+          ],
+          "sourceSha256": "cbb84247cbc8a4543bf3be43ffc9d95a578884e20000a031cdc5c07205862952",
+          "reviewed": "2026-10-06"
+        }
+      },
+      "hallOfFame": {
+        "reason": "获 2015 年スカパー！アダルト放送大賞新人女優賞、2018 年女優賞；结合 2015 年官方租赁榜第 7，作为 2010 年代中期成长为主要奖项得主的人物入选。",
+        "sources": [
+          "https://adult-awards.com/archives/2015/",
+          "https://adult-awards.com/archives/2018/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2015/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0185",
+      "name": "桥本有菜",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=新有菜&oldid=94250109",
+      "japaneseName": "新ありな",
+      "aliases": [
+        {
+          "name": "新ありな",
+          "source": "https://wpb.shueisha.co.jp/news/entertainment/20180703-106472/"
+        },
+        {
+          "name": "橋本ありな",
+          "source": "https://actenter.com/talent/新ありな/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1032668"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0185.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/1-FALENO/橋本ありな.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/1-FALENO/%E6%A9%8B%E6%9C%AC%E3%81%82%E3%82%8A%E3%81%AA.jpg",
+          "sha256": "7b23e05c96105b297dad631e6b985edc4d434a0c4d39387a124d7d06f14a256d",
+          "provider": "Gfriends",
+          "upstreamGroup": "1-FALENO",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06",
+        "display": {
+          "crop": [
+            420,
+            0,
+            1040,
+            1300
+          ],
+          "sourceSha256": "7b23e05c96105b297dad631e6b985edc4d434a0c4d39387a124d7d06f14a256d",
+          "reviewed": "2026-10-06"
+        }
+      },
+      "hallOfFame": {
+        "reason": "以橋本ありな名义获 2018 年 DMM 最優秀女優賞及週プレ賞；官方人物页确认新ありな与旧名的对应，作为 2010 年代后半代表入选。",
+        "sources": [
+          "https://wpb.shueisha.co.jp/news/entertainment/20180703-106472/",
+          "https://actenter.com/talent/新ありな/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0186",
+      "name": "高桥圣子",
+      "nameSource": "https://zh.wikipedia.org/w/index.php?title=高橋聖子&oldid=94289186",
+      "japaneseName": "高橋しょう子",
+      "aliases": [
+        {
+          "name": "高橋しょう子",
+          "source": "https://www.art-techne.com/technenews/news201704251512.html"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1034355"
+        ]
+      },
+      "portrait": {
+        "path": "actresses/portraits/p0186.jpg",
+        "source": {
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "path": "Content/7-S1/高橋しょう子.jpg",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E9%AB%98%E6%A9%8B%E3%81%97%E3%82%87%E3%81%86%E5%AD%90.jpg",
+          "sha256": "e931c4034c6e511fbf247d8196dc828b543b46e89a196422201b5e0d2d8e9abc",
+          "provider": "Gfriends",
+          "upstreamGroup": "7-S1",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "2017 年 DMM 最優秀新人女優賞得主，并在同年官方租赁年度榜居首、2018 年第 5；作为 2010 年代后半从写真领域转入 AV 的代表入选。",
+        "sources": [
+          "https://www.art-techne.com/technenews/news201704251512.html",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2017/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2018/"
+        ],
+        "reviewed": "2026-10-06"
+      }
     }
   ]
 }

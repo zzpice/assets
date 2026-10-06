@@ -121,6 +121,15 @@ def directory(root):
         https(source.get("url"), pid + ".portrait.source.url")
         required_text(source.get("provider"), pid + ".portrait.source.provider")
         dated(source.get("retrieved"), pid + ".portrait.source.retrieved")
+        if "restoration" in source:
+            restoration = source["restoration"]
+            if not isinstance(restoration, dict) or set(restoration) != {"method", "originalUrl", "originalSha256", "reviewed"}:
+                raise ValueError(f"{pid}: restoration requires original provenance")
+            required_text(restoration["method"], pid + ".portrait.restoration.method")
+            https(restoration["originalUrl"], pid + ".portrait.restoration.originalUrl")
+            dated(restoration["reviewed"], pid + ".portrait.restoration.reviewed")
+            if not re.fullmatch(r"[a-f0-9]{64}", restoration["originalSha256"]) or restoration["originalSha256"] == source.get("sha256"):
+                raise ValueError(f"{pid}: restoration needs the distinct original SHA-256")
         if "profile" in source:
             https(source["profile"], pid + ".portrait.source.profile")
         digest = source.get("sha256")
@@ -146,6 +155,8 @@ def directory(root):
             expected = f"https://raw.githubusercontent.com/gfriends/gfriends/{revision}/{upstream}"
             if not re.fullmatch(r"[a-f0-9]{40}", revision) or not upstream.startswith("Content/") or unquote(source["url"]) != expected:
                 raise ValueError(f"{pid}: Gfriends source requires a pinned commit and upstream path")
+            if Path(upstream).name.startswith("AI-Fix-") and "restoration" not in source:
+                raise ValueError(f"{pid}: AI-Fix requires explicit original provenance and review")
         if "hallOfFame" in person:
             hall = person["hallOfFame"]
             required_text(hall.get("reason"), pid + ".hallOfFame.reason")
