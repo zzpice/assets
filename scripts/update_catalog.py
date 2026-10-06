@@ -242,7 +242,15 @@ def build_catalog(root):
         if kind not in {"game-cover", "actress"} and same_source and old.get("note"):
             item["note"] = old["note"]
         if image is not None and kind != "icon":
-            if same_source and usable_preview(root, old.get("thumbnail"), width, height):
+            preview_width, preview_height = width, height
+            crop = card_info.get("previewCrop")
+            if crop:
+                x, y, preview_width, preview_height = crop
+                cropped = image.crop((x, y, x + preview_width, y + preview_height))
+                image.close()
+                image = cropped
+            same_recipe = old.get("previewCrop") == crop
+            if same_source and same_recipe and usable_preview(root, old.get("thumbnail"), preview_width, preview_height):
                 item["thumbnail"] = old["thumbnail"]
             else:
                 image.thumbnail((420, 1024), Image.Resampling.LANCZOS)

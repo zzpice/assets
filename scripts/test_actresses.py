@@ -109,6 +109,60 @@ class ActressTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, message): update(self.root)
             self.snapshot = copy.deepcopy(initial)
 
+    def test_reviewed_crop_changes_preview_content_and_keeps_original(self):
+        path = self.root / self.people[0]["portrait"]["path"]
+        image = Image.new("RGB", (80, 80), "red")
+        image.paste("blue", (40, 0, 80, 80)); image.save(path)
+        original = path.read_bytes()
+        digest = hashlib.sha256(original).hexdigest()
+        portrait = self.people[0]["portrait"]
+        portrait["source"]["sha256"] = digest
+        portrait["display"] = {"crop": [0, 0, 40, 50], "sourceSha256": digest, "reviewed": "2026-01-01"}
+        self.write(); update(self.root)
+        first = json.loads((self.root / "catalog.json").read_text())["assets"][0]
+        self.assertEqual((first["width"], first["height"]), (80, 80))
+        with Image.open(self.root / first["thumbnail"]) as preview:
+            self.assertEqual(preview.size, (40, 50))
+        portrait["display"]["crop"] = [40, 0, 40, 50]  # Same ratio, different pixels: must invalidate cache.
+        self.write(); update(self.root)
+        second = json.loads((self.root / "catalog.json").read_text())["assets"][0]
+        self.assertNotEqual(first["thumbnail"], second["thumbnail"])
+        self.assertFalse((self.root / first["thumbnail"]).exists())
+        self.assertEqual(path.read_bytes(), original)
+        portrait.pop("display"); self.write(); update(self.root)
+        final = json.loads((self.root / "catalog.json").read_text())["assets"][0]
+        with Image.open(self.root / final["thumbnail"]) as preview:
+            self.assertEqual(preview.size, (80, 80))
+        update(self.root, check=True)
+
+    def test_crop_requires_current_source_review_and_valid_bounds(self):
+        portrait = self.people[0]["portrait"]
+        portrait["display"] = {"crop": [0, 0, 24, 32], "sourceSha256": "a" * 64, "reviewed": "2026-01-01"}
+        self.write()
+        with self.assertRaisesRegex(ValueError, "current portrait digest"): update(self.root)
+        portrait["display"]["sourceSha256"] = portrait["source"]["sha256"]
+        for crop, message in [([-1, 0, 20, 25], "nonnegative"), ([0, 0, 30, 32], "exceeds source")]:
+            portrait["display"]["crop"] = crop; self.write()
+            with self.assertRaisesRegex(ValueError, message): update(self.root)
+
+    def test_optional_profiles_preserve_precision_identity_and_agency_ids(self):
+        self.data["agencies"] = {"example": {"name": "事务所原名", "url": "https://example.test/"}}
+        self.people[0]["profile"] = {"agency": "example", "sourceName": "人物1", "heightCm": 169, "birthYear": 2000,
+                                     "measurementsCm": [87, 57, 86], "source": {"url": "https://example.test/profile", "sha256": "a" * 64, "retrieved": "2026-01-01"}, "reviewed": "2026-01-01"}
+        self.write(); update(self.root)
+        self.data["agencies"]["example"]["name"] = "Agency official name"
+        self.people[0].update(name="中文常用名", aliases=[{"name": "人物1", "source": "https://example.test/name"}])
+        self.write(); update(self.root)
+        person = json.loads((self.root / "catalog.json").read_text())["actresses"]["people"][0]
+        self.assertEqual(person["profile"]["agency"], "example")
+        self.assertEqual(person["profile"]["birthYear"], 2000)
+        self.assertNotIn("birthDate", person["profile"])
+        self.assertEqual(person["id"], "p0001")
+        for field, value, message in [("agency", "unmapped", "unknown agency"), ("heightCm", "169 cm", "heightCm"), ("sourceName", "another person", "identity mapping"), ("birthDate", "2000-02-30", "valid ISO date")]:
+            profile = self.people[0]["profile"]; before = profile.copy(); profile[field] = value; self.write()
+            with self.assertRaisesRegex(ValueError, message): update(self.root)
+            self.people[0]["profile"] = before
+
     def test_source_parser_ignores_products_and_detects_gate_or_missing_rank(self):
         cells = "".join(f'<td class=""><span class="rank">{rank}</span><img src="https://pics.dmm.co.jp/mono/actjpgs/example.jpg"><a href="https://www.dmm.co.jp/rental/-/list/=/article=actress/id={rank}/">人物{rank}</a><a href="https://example.test/product">Do not import product descriptions</a></td>' for rank in range(1, 21))
         page = ("2023年 年間 AV女優ランキング" + cells).encode()

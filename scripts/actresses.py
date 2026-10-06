@@ -38,6 +38,35 @@ def normalized(value):
     return "".join(unicodedata.normalize("NFKC", value).casefold().split())
 
 
+def validate_profile(profile, agencies, names, pid):
+    """A reviewed official profile snapshot; missing facts are deliberately absent."""
+    allowed = {"sourceName", "source", "reviewed", "agency", "heightCm", "birthDate", "birthYear", "measurementsCm"}
+    if not isinstance(profile, dict) or set(profile) - allowed:
+        raise ValueError(f"{pid}: unsupported profile fields")
+    if normalized(required_text(profile.get("sourceName"), pid + ".profile.sourceName")) not in names:
+        raise ValueError(f"{pid}: profile name requires reviewed identity mapping")
+    dated(profile.get("reviewed"), pid + ".profile.reviewed")
+    source = profile.get("source", {})
+    https(source.get("url"), pid + ".profile.source.url")
+    dated(source.get("retrieved"), pid + ".profile.source.retrieved")
+    if not re.fullmatch(r"[a-f0-9]{64}", source.get("sha256", "")):
+        raise ValueError(f"{pid}: profile source needs a snapshot SHA-256")
+    if "agency" in profile and profile["agency"] not in agencies:
+        raise ValueError(f"{pid}: unknown agency ID")
+    if "heightCm" in profile and (type(profile["heightCm"]) is not int or not 100 <= profile["heightCm"] <= 230):
+        raise ValueError(f"{pid}: heightCm must be a plausible integer in cm")
+    if "birthDate" in profile:
+        dated(profile["birthDate"], pid + ".profile.birthDate")
+        if date.fromisoformat(profile["birthDate"]) > date.today() or "birthYear" in profile:
+            raise ValueError(f"{pid}: conflicting or future birth date")
+    if "birthYear" in profile and (type(profile["birthYear"]) is not int or not 1900 <= profile["birthYear"] <= date.today().year):
+        raise ValueError(f"{pid}: invalid birthYear")
+    if "measurementsCm" in profile:
+        values = profile["measurementsCm"]
+        if not isinstance(values, list) or len(values) != 3 or any(type(v) is not int or not 30 <= v <= 200 for v in values):
+            raise ValueError(f"{pid}: measurementsCm requires bust, waist, hip in cm")
+
+
 def directory(root):
     file = root / "actresses/data.json"
     if not file.exists():
@@ -47,6 +76,14 @@ def directory(root):
     data = json.loads(file.read_text("utf-8"))
     if data.get("version") != 1 or not isinstance(data.get("people"), list) or not data["people"]:
         raise ValueError("actresses/data.json: invalid person registry")
+    agencies = data.get("agencies", {})
+    if not isinstance(agencies, dict):
+        raise ValueError("agencies must be an ID mapping")
+    for aid, agency in agencies.items():
+        if not re.fullmatch(r"[a-z][a-z0-9-]*", aid) or not isinstance(agency, dict):
+            raise ValueError("Agencies need stable internal IDs")
+        required_text(agency.get("name"), aid + ".name")
+        https(agency.get("url"), aid + ".url")
     ids, identities, paths, hashes, names = {}, {}, set(), set(), {}
     for person in data["people"]:
         pid = person.get("id")
@@ -77,6 +114,8 @@ def directory(root):
         roman = person.get("romanization")
         if roman is not None and (not isinstance(roman, str) or normalized(roman) not in aliases):
             raise ValueError(f"{pid}: romanization must be a sourced name or alias")
+        if "profile" in person:
+            validate_profile(person["profile"], agencies, aliases, pid)
         photo = person.get("portrait", {})
         path = photo.get("path")
         if not isinstance(path, str) or not re.fullmatch(r"actresses/portraits/" + re.escape(pid) + r"\.(jpg|png|webp)", path) or path in paths:
@@ -87,6 +126,8 @@ def directory(root):
         https(source.get("url"), pid + ".portrait.source.url")
         required_text(source.get("provider"), pid + ".portrait.source.provider")
         dated(source.get("retrieved"), pid + ".portrait.source.retrieved")
+        if "profile" in source:
+            https(source["profile"], pid + ".portrait.source.profile")
         digest = source.get("sha256")
         if not isinstance(digest, str) or not re.fullmatch(r"[a-f0-9]{64}", digest):
             raise ValueError(f"{pid}: portrait source requires SHA-256")
@@ -96,6 +137,14 @@ def directory(root):
         if digest in hashes:
             raise ValueError(f"{pid}: identical photo belongs to two people; review duplicate identity")
         hashes.add(digest)
+        display = photo.get("display")
+        if display is not None:
+            if not isinstance(display, dict) or set(display) != {"crop", "sourceSha256", "reviewed"} or display.get("sourceSha256") != digest:
+                raise ValueError(f"{pid}: display crop requires review against the current portrait digest")
+            dated(display["reviewed"], pid + ".portrait.display.reviewed")
+            crop = display["crop"]
+            if not isinstance(crop, list) or len(crop) != 4 or any(type(v) is not int for v in crop) or min(crop[:2]) < 0 or min(crop[2:]) <= 0:
+                raise ValueError(f"{pid}: crop requires nonnegative x/y and positive width/height")
         if source["provider"] == "Gfriends":
             revision = source.get("revision", "")
             upstream = source.get("path", "")
@@ -170,6 +219,8 @@ def directory(root):
         rankings.append({"series": SERIES, "year": year, "source": pages[0]["url"], "retrieved": snapshot["retrieved"], "snapshot": f"actresses/rankings/{year}.json", "entries": entries})
     compiled = {"people": data["people"], "redirects": redirects, "rankings": rankings,
                 "series": {"id": SERIES, "title": "FANZA 月额 DVD 租赁", "method": "官方年度榜原始顺序；不进行月榜换算。仅反映该平台月额 DVD 租赁口径，不代表全行业人气；官方未公开本数、销售额及完整计算细则。"}}
+    if agencies:
+        compiled["agencies"] = agencies
     return compiled, {person["portrait"]["path"]: person for person in ids.values()}
 
 
@@ -178,4 +229,11 @@ def portrait_metadata(path, image, image_format, people):
     formats = {".jpg": "JPEG", ".png": "PNG", ".webp": "WEBP"}
     if not person or image is None or image_format != formats.get(Path(path).suffix):
         raise ValueError(f"{path}: portrait must be registered with its actual source image format")
-    return {"title": person["name"], "person": person["id"]}
+    metadata = {"title": person["name"], "person": person["id"]}
+    display = person["portrait"].get("display")
+    if display:
+        x, y, width, height = display["crop"]
+        if x + width > image.width or y + height > image.height:
+            raise ValueError(f"{path}: reviewed display crop exceeds source dimensions")
+        metadata["previewCrop"] = display["crop"]
+    return metadata

@@ -52,7 +52,7 @@ test("hall membership overlaps annual rankings and never invents a hall rank",()
   assert.equal(hall.count,10);
   assert.ok(hall.items.every(item=>item.rank===undefined && item.person.hallOfFame));
   assert.ok(hall.items.some(item=>module.histories(item.person.id).length>0));
-  const yuma = hall.items.find(item=>item.person.name==="麻美ゆま");
+  const yuma = hall.items.find(item=>item.person.id==="p0004");
   assert.equal(module.histories(yuma.person.id).length,0);
 });
 
@@ -60,7 +60,7 @@ test("search, pagination and optional roman index survive shareable routes",()=>
   const module = gallery();
   module.route(new URLSearchParams({actresses:"all",q:"  sHiNoDa yUu ",page:99}));
   assert.equal(module.select().count,1);
-  assert.equal(module.select().items[0].person.name,"篠田ゆう");
+  assert.equal(module.select().items[0].person.name,"筱田优");
   assert.equal(module.state.page,1);
   const target = new URL(module.viewUrl({query:"河北彩花",page:1},"p0054"));
   assert.equal(new URLSearchParams(target.hash.slice(1)).get("person"),"p0054");
@@ -77,4 +77,26 @@ test("retired person links resolve directly to the retained profile",()=>{
   module.configure({...catalog.actresses,redirects:{p9999:"p0054"}},catalog.assets,()=>{});
   const target = new URL(module.viewUrl({view:"all"},"p9999"));
   assert.equal(new URLSearchParams(target.hash.slice(1)).get("person"),"p0054");
+});
+
+test("common Chinese and original Japanese names share a canonical identity",()=>{
+  const module=gallery(); module.route(new URLSearchParams({actresses:"all"}));
+  for (const [cn, jp, pid] of [["河北彩花","河北彩伽","p0054"],["樱空桃","桜空もも","p0041"],["枫花恋","楓カレン","p0058"],["美谷朱里","美谷朱音","p0043"]]) {
+    assert.equal(module.select(cn).items[0].person.id,pid);
+    assert.equal(module.select(jp).items[0].person.id,pid);
+    assert.equal(module.select(cn).items[0].person.name,cn);
+  }
+});
+
+test("profile display keeps missing dates and stable agency IDs independent of labels",()=>{
+  const module=gallery();
+  const byId=new Map(catalog.actresses.people.map(p=>[p.id,p]));
+  assert.ok(module.profileRows(byId.get("p0054")).some(([label,value])=>label==="身高" && value==="169 cm"));
+  assert.ok(module.profileRows(byId.get("p0100")).some(([label,value])=>label==="出生年份" && value==="2000 年"));
+  assert.ok(!module.profileRows(byId.get("p0124")).some(([label])=>label.startsWith("出生")));
+  assert.equal(module.profileRows(byId.get("p0001")).length,0);
+  const agencies={...catalog.actresses.agencies,"t-powers":{name:"测试显示名称",url:"https://example.test/"}};
+  module.configure({...catalog.actresses,agencies},catalog.assets,()=>{});
+  assert.ok(module.profileRows(byId.get("p0054")).some(([label,value])=>label==="事务所（审核时）" && value==="测试显示名称"));
+  assert.equal(byId.get("p0054").profile.agency,"t-powers");
 });

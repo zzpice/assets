@@ -23,6 +23,20 @@ window.ActressGallery = (() => {
   const years = () => directory.rankings.map(item => item.year).sort((a, b) => b - a);
   const resolve = id => directory.redirects[id] || id;
 
+  function profileRows(person) {
+    const profile = person.profile;
+    if (!profile) return [];
+    const rows = [];
+    if (profile.birthDate) {
+      const [year, month, day] = profile.birthDate.split("-").map(Number);
+      rows.push(["出生日期", `${year}年${month}月${day}日`]);
+    } else if (profile.birthYear) rows.push(["出生年份", profile.birthYear + " 年"]);
+    if (profile.heightCm) rows.push(["身高", profile.heightCm + " cm"]);
+    if (profile.measurementsCm) rows.push(["三围（胸 / 腰 / 臀）", profile.measurementsCm.join(" / ") + " cm"]);
+    if (profile.agency && directory.agencies?.[profile.agency]) rows.push(["事务所（审核时）", directory.agencies[profile.agency].name]);
+    return rows;
+  }
+
   function configure(data, files, onNavigate) {
     directory = data || { people: [], rankings: [], redirects: {} };
     people = new Map(directory.people.map(person => [person.id, { ...person, search: normalize([person.name, person.romanization || "", ...person.aliases.map(alias => alias.name)].join(" ")) } ]));
@@ -62,7 +76,7 @@ window.ActressGallery = (() => {
     const scope = items.length;
     const needle = normalize(query.trim());
     items = items.filter(({ person }) => (!needle || person.search.includes(needle)) && (state.view !== "all" || !state.letter || initial(person) === state.letter));
-    if (state.view !== "annual") items.sort((a, b) => (a.person.romanization || a.person.name).localeCompare(b.person.romanization || b.person.name, "ja") || a.person.id.localeCompare(b.person.id));
+    if (state.view !== "annual") items.sort((a, b) => (a.person.romanization || a.person.name).localeCompare(b.person.romanization || b.person.name, "zh-Hans-CN") || a.person.id.localeCompare(b.person.id));
     const count = items.length;
     const pages = Math.max(1, Math.ceil(count / PAGE_SIZE));
     state.page = Math.min(state.page, pages);
@@ -139,7 +153,7 @@ window.ActressGallery = (() => {
       const frame = node("div", "person-photo");
       if (photo) {
         const image = node("img"); image.src = url(photo.thumbnail); image.alt = person.name + "头像";
-        image.width = photo.width; image.height = photo.height; image.loading = "lazy"; image.decoding = "async";
+        image.width = photo.previewCrop?.[2] || photo.width; image.height = photo.previewCrop?.[3] || photo.height; image.loading = "lazy"; image.decoding = "async";
         image.addEventListener("error", () => { image.hidden = true; frame.append(node("span", "person-image-error", "头像暂不可用")); }, { once: true });
         frame.append(image);
       }
@@ -178,11 +192,20 @@ window.ActressGallery = (() => {
     const content = document.getElementById("person-content");
     const frame = node("div", "person-detail-photo");
     if (photo) {
-      const image = node("img"); image.src = url(photo.path) + "?v=" + photo.sha; image.alt = person.name + "头像";
-      image.width = photo.width; image.height = photo.height;
+      const image = node("img"); image.src = photo.previewCrop ? url(photo.thumbnail) : url(photo.path) + "?v=" + photo.sha; image.alt = person.name + "头像";
+      image.width = photo.previewCrop?.[2] || photo.width; image.height = photo.previewCrop?.[3] || photo.height;
       image.addEventListener("error", () => { image.src = url(photo.thumbnail); }, { once: true }); frame.append(image);
     }
     const facts = node("div", "person-facts");
+    const rows = profileRows(person);
+    if (rows.length) {
+      facts.append(node("h3", "", "基本资料"));
+      const list = node("dl", "person-profile");
+      for (const [label, value] of rows) list.append(node("dt", "", label), node("dd", "", value));
+      const provenance = node("details", "person-method");
+      provenance.append(node("summary", "", "资料来源 · " + person.profile.reviewed), node("p", "", "官方公开资料。身高、三围为来源公布值；事务所按审核时记录，可能发生变化。缺失信息不补全。"), sourceLink("官方人物资料 ↗", person.profile.source.url));
+      facts.append(list, provenance);
+    }
     if (person.aliases.length) {
       facts.append(node("h3", "", "姓名与别名"), node("p", "", person.aliases.map(alias => alias.name).join(" · ")));
       const sources = [...new Set(person.aliases.map(alias => alias.source))];
@@ -207,7 +230,9 @@ window.ActressGallery = (() => {
       person.hallOfFame.sources.forEach((source, index) => facts.append(sourceLink("入选依据 " + (index + 1) + " ↗", source)));
     }
     const sources = node("details", "person-method");
-    sources.append(node("summary", "", "头像来源与版权"), node("p", "", "来源：" + person.portrait.source.provider + " · 获取于 " + person.portrait.source.retrieved + "。保留源图尺寸和构图；版权归摄影者、所属经纪公司及其他原权利人，本项目不另授许可。"), sourceLink("选定源文件 ↗", person.portrait.source.url));
+    const treatment = person.portrait.display ? "列表与详情采用经审核的预览取景；下载保留完整源图。" : "保留源图尺寸和构图。";
+    sources.append(node("summary", "", "头像来源与版权"), node("p", "", "来源：" + person.portrait.source.provider + " · 获取于 " + person.portrait.source.retrieved + "。" + treatment + "版权归摄影者、所属经纪公司及其他原权利人，本项目不另授许可。"), sourceLink("选定源文件 ↗", person.portrait.source.url));
+    if (person.portrait.source.profile) sources.append(sourceLink("原网站人物页与声明 ↗", person.portrait.source.profile));
     if (person.portrait.source.provider === "Gfriends") sources.append(sourceLink("Gfriends 来源声明 ↗", "https://github.com/gfriends/gfriends/blob/" + person.portrait.source.revision + "/README.md"));
     facts.append(sources);
     const actions = node("div", "person-detail-actions");
@@ -237,5 +262,5 @@ window.ActressGallery = (() => {
     });
   }
 
-  return { configure, route, viewUrl, select, render, syncPerson, histories, bind, initial, normalize, get state() { return state; } };
+  return { configure, route, viewUrl, select, render, syncPerson, histories, bind, initial, normalize, profileRows, get state() { return state; } };
 })();
