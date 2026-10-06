@@ -14,6 +14,8 @@
 
 ## 更新与检查
 
+女优人物图库遵循[人物与榜单规则](../actresses/README.md)：唯一登记表为 `actresses/data.json`，每人一张源图，年度使用带来源的 `rankings/<年>.json`。不要直接改生成的 `catalog.actresses`、按名称建重复人物或按年份复制头像。`actress_sources.py` 只在仓库外生成审核报告，不自动更新发布内容。人物登记、来源快照、原图和生成文件一起提交；`app/actresses.js` 与既有界面同样由更新命令生成页面和离线缓存版本。
+
 使用 Python 3.10 或更新版本，安装一次依赖：
 
 ```sh

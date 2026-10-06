@@ -1,0 +1,4413 @@
+{
+  "version": 1,
+  "redirects": {},
+  "people": [
+    {
+      "id": "p0001",
+      "name": "風間ゆみ",
+      "aliases": [
+        {
+          "name": "Kazama Yumi",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "2752"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0001.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Madonna/風間ゆみ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Madonna",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E9%A2%A8%E9%96%93%E3%82%86%E3%81%BF.jpg",
+          "sha256": "382ad607198cd5f7d7cc34b67cad7d2a53102f16726750dffaf591d21a91bb97",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Kazama Yumi"
+    },
+    {
+      "id": "p0002",
+      "name": "友田真希",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "4294"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0002.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Madonna/友田真希.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Madonna",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E5%8F%8B%E7%94%B0%E7%9C%9F%E5%B8%8C.jpg",
+          "sha256": "eda23b6d93cda3c9793116ecc787d3640c201232e6cf0e1dbb8dd15098460076",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0003",
+      "name": "吉沢明歩",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "6644"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
+      "portrait": {
+        "path": "actresses/portraits/p0003.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/吉沢明歩.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E5%90%89%E6%B2%A2%E6%98%8E%E6%AD%A9.jpg",
+          "sha256": "a14c5856f4ec64dbeb50bb9355dff1b3d50875d7ef4309e8f4f29713d02ec421",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0004",
+      "name": "麻美ゆま",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "15365"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
+      "portrait": {
+        "path": "actresses/portraits/p0004.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/麻美ゆま.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E9%BA%BB%E7%BE%8E%E3%82%86%E3%81%BE.jpg",
+          "sha256": "3acac2930ad0d031df0460e5856368d193f9fd8e00029336a1ea1ab66a1645fa",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0005",
+      "name": "翔田千里",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "16322"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0005.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Madonna/翔田千里.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Madonna",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E7%BF%94%E7%94%B0%E5%8D%83%E9%87%8C.jpg",
+          "sha256": "f0ba57f32020bdb246f0f3b5b29b2028a2ecf2f541a1ca2fd27b3aeefed3dcbb",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0006",
+      "name": "つぼみ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "17802"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
+      "portrait": {
+        "path": "actresses/portraits/p0006.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/つぼみ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E3%81%A4%E3%81%BC%E3%81%BF.jpg",
+          "sha256": "f72a7f4370a96f802b9651527cbee80be82200b8d5d8d72727fa728296bbd1f9",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0007",
+      "name": "仲村みう",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "20640"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0007.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/仲村みう.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E4%BB%B2%E6%9D%91%E3%81%BF%E3%81%86.jpg",
+          "sha256": "66682b7e884c3b3def19059b06b69c0b6fd82659796dba6c9b6dc89c918cffa1",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0008",
+      "name": "佐山愛",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "21549"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0008.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/佐山愛.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E4%BD%90%E5%B1%B1%E6%84%9B.jpg",
+          "sha256": "5c08df84afe9d7a13f1f6ef548e378d9970f781e961d69193f0a8a7e2ed847c8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0009",
+      "name": "川上ゆう",
+      "aliases": [
+        {
+          "name": "森野雫",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "23130"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/",
+      "portrait": {
+        "path": "actresses/portraits/p0009.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/5-Premium/川上ゆう.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "5-Premium",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Premium/%E5%B7%9D%E4%B8%8A%E3%82%86%E3%81%86.jpg",
+          "sha256": "e7923512dcdcc58d2657b590e2a50d7d7226851c6c1234e8ecd3e69a1f61782a",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0010",
+      "name": "明日花キララ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "23988"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/",
+      "portrait": {
+        "path": "actresses/portraits/p0010.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/明日花キララ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%98%8E%E6%97%A5%E8%8A%B1%E3%82%AD%E3%83%A9%E3%83%A9.jpg",
+          "sha256": "d5ae2928cbdd8d9a25cd69adfcee197e991521bd44b4471d95dd57fda4d7dc8a",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0011",
+      "name": "波多野結衣",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "26225"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/",
+      "portrait": {
+        "path": "actresses/portraits/p0011.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/波多野結衣.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E6%B3%A2%E5%A4%9A%E9%87%8E%E7%B5%90%E8%A1%A3.jpg",
+          "sha256": "5925860dbdf95b75c78a446b096e758281d1fcb3b33a45cb791d98fe4b28a87c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0012",
+      "name": "北条麻妃",
+      "aliases": [
+        {
+          "name": "Hohjoh Maki",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "29949"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0012.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Madonna/北条麻妃.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Madonna",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E5%8C%97%E6%9D%A1%E9%BA%BB%E5%A6%83.jpg",
+          "sha256": "04a35eaef95aad75a4340e622b7e7921e3d8aba7f14a7e8853444c115c792455",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Hohjoh Maki"
+    },
+    {
+      "id": "p0013",
+      "name": "大槻ひびき",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "30130"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0013.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/大槻ひびき.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%A4%A7%E6%A7%BB%E3%81%B2%E3%81%B3%E3%81%8D.jpg",
+          "sha256": "ddb26054b8535be99d8a940b44bc350158e4a6d6f188dc891f4b9327e0c3c48e",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0014",
+      "name": "椎名ゆな",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "30317"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0014.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Cmore/椎名ゆな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Cmore",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Cmore/%E6%A4%8E%E5%90%8D%E3%82%86%E3%81%AA.jpg",
+          "sha256": "52d52b77ea1ef76edcb82391bb268c642487ca6d85f7165ee62198d5ff3ce271",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0015",
+      "name": "春菜はな",
+      "aliases": [
+        {
+          "name": "Haruna Hana",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1001206"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0015.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/春菜はな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%98%A5%E8%8F%9C%E3%81%AF%E3%81%AA.jpg",
+          "sha256": "9b907ea5fa6aec9ec9fdde297b791881ba8b2828d7fa0904a3f55f357dfc38c0",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Haruna Hana"
+    },
+    {
+      "id": "p0016",
+      "name": "JULIA",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1004672"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/",
+      "portrait": {
+        "path": "actresses/portraits/p0016.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/JULIA.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/JULIA.jpg",
+          "sha256": "b65a0c1b4bf665914eb03a64e164a0bcdff3e9206e52c5a08aa963a931e315f7",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0017",
+      "name": "葵つかさ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1006229"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0017.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/葵つかさ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E8%91%B5%E3%81%A4%E3%81%8B%E3%81%95.jpg",
+          "sha256": "90424ee84854d2e95462c9fa9f7f0966283c0a4d9f5b25734b3f33b7e80fc036",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0018",
+      "name": "篠田ゆう",
+      "aliases": [
+        {
+          "name": "Shinoda Yuu",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1008785"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0018.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/篠田ゆう.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E7%AF%A0%E7%94%B0%E3%82%86%E3%81%86.jpg",
+          "sha256": "46b7013dd8db50fb9b029a523d4f97b5c137c17536efd0fe7b16aeee59173d8d",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Shinoda Yuu"
+    },
+    {
+      "id": "p0019",
+      "name": "奥田咲",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1008965"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0019.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/奥田咲.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E5%A5%A5%E7%94%B0%E5%92%B2.jpg",
+          "sha256": "dcfde0345c79653fa43b2ee4741c769fb7fad3205705d13b1758155e06c8a787",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0020",
+      "name": "上原亜衣",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1011199"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/",
+      "portrait": {
+        "path": "actresses/portraits/p0020.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/0-Hand-Storage/上原亜衣.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "0-Hand-Storage",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/0-Hand-Storage/%E4%B8%8A%E5%8E%9F%E4%BA%9C%E8%A1%A3.jpg",
+          "sha256": "41998d11a982572b786d773b1b59f8816445dc3c7810732ce85ed775358155be",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0021",
+      "name": "紗倉まな",
+      "aliases": [
+        {
+          "name": "Sakura Mana",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1012844"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
+      "portrait": {
+        "path": "actresses/portraits/p0021.png",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/紗倉まな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E7%B4%97%E5%80%89%E3%81%BE%E3%81%AA.jpg",
+          "sha256": "04b1ddbfe2dab96e5bc55cd271b151e3afb2cb7eba68b36db253aeed03ffcfdc",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Sakura Mana",
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0022",
+      "name": "小早川怜子",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1014614"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0022.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/小早川怜子.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E5%B0%8F%E6%97%A9%E5%B7%9D%E6%80%9C%E5%AD%90.jpg",
+          "sha256": "6a94efa8ebc6cbb7ba87572fa0061b3a69085c170698d3a9731436704273aabf",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0023",
+      "name": "鈴村あいり",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1019076"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0023.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/鈴村あいり.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E9%88%B4%E6%9D%91%E3%81%82%E3%81%84%E3%82%8A.jpg",
+          "sha256": "fbd0c7e6ecabd33aef10525f03157e7d16ee0cd3c4055a55df196359792a9eb2",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0024",
+      "name": "夢乃あいか",
+      "aliases": [
+        {
+          "name": "Yumeno Aika",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1019323"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0024.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/夢乃あいか.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E5%A4%A2%E4%B9%83%E3%81%82%E3%81%84%E3%81%8B.jpg",
+          "sha256": "3002714c7805965976a797044aba3b62f5f65ce984607246b3e7f24900dd1fd3",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Yumeno Aika"
+    },
+    {
+      "id": "p0025",
+      "name": "森沢かな",
+      "aliases": [
+        {
+          "name": "飯岡かなこ",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1020685"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0025.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/森沢かな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E6%A3%AE%E6%B2%A2%E3%81%8B%E3%81%AA.jpg",
+          "sha256": "111155310f46e409a3171e4797075f76a5a6a7e5f6e14e825b715edb986c65fc",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0026",
+      "name": "夏目彩春",
+      "aliases": [
+        {
+          "name": "Natume Iroha",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1021359"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0026.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/夏目彩春.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%A4%8F%E7%9B%AE%E5%BD%A9%E6%98%A5.jpg",
+          "sha256": "125ea688ab3d98d2a9ecd3ff8a40e1088da493219b526c25df44aacf5a826d05",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Natume Iroha"
+    },
+    {
+      "id": "p0027",
+      "name": "希島あいり",
+      "aliases": [
+        {
+          "name": "Kijima Airi",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1021367"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0027.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/5-Premium/希島あいり.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "5-Premium",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Premium/%E5%B8%8C%E5%B3%B6%E3%81%82%E3%81%84%E3%82%8A.jpg",
+          "sha256": "c5a7deb7ae0e4a84619fd7dc4f37df9a83401ce2cc0d150b7958feaa3047b953",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Kijima Airi"
+    },
+    {
+      "id": "p0028",
+      "name": "通野未帆",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1021901"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0028.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/5-Premium/通野未帆.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "5-Premium",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Premium/%E9%80%9A%E9%87%8E%E6%9C%AA%E5%B8%86.jpg",
+          "sha256": "c2e73f6c373bf60e177b6f500bfaeb491a41c448705c9c3c73eb5ad8f579d5f7",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0029",
+      "name": "橘メアリー",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1024513"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0029.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/なぎさ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E3%81%AA%E3%81%8E%E3%81%95.jpg",
+          "sha256": "588767a3c3cb3eb10101227641fb90e84492b16683d7b63e04d83b3f52975a43",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0030",
+      "name": "武藤あやか",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1026902"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0030.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/武藤あやか.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E6%AD%A6%E8%97%A4%E3%81%82%E3%82%84%E3%81%8B.jpg",
+          "sha256": "5e6545e91b129ffd8011f49e6209acd06567d1e3bdee39a8564a7d585fbd8474",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0031",
+      "name": "美咲かんな",
+      "aliases": [
+        {
+          "name": "Misaki Kanna",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1027558"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0031.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/美咲かんな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E7%BE%8E%E5%92%B2%E3%81%8B%E3%82%93%E3%81%AA.jpg",
+          "sha256": "6695948d8a120cdcf6f9c64e190ed51eba7f51c685b8f3de9d4263356d04a4c8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Misaki Kanna"
+    },
+    {
+      "id": "p0032",
+      "name": "三上悠亜",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1030262"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/",
+      "portrait": {
+        "path": "actresses/portraits/p0032.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/三上悠亜.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E4%B8%89%E4%B8%8A%E6%82%A0%E4%BA%9C.jpg",
+          "sha256": "d74b699042ba2053a7fa5d2a0568398d1d7dddd96b194c21546712a0232f76e2",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "hallOfFame": {
+        "reason": "项目精选：早期年度租赁榜中的代表人物。",
+        "sources": [
+          "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
+        ],
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0033",
+      "name": "加藤あやの",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1030312"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0033.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/加藤あやの.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%8A%A0%E8%97%A4%E3%81%82%E3%82%84%E3%81%AE.jpg",
+          "sha256": "26b72b5ede11d637b3a155f26a2d4fdc5bfb50a0ccdb816db8e17404635b8ec5",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0034",
+      "name": "桃乃木かな",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1031805"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0034.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/桃乃木かな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%A1%83%E4%B9%83%E6%9C%A8%E3%81%8B%E3%81%AA.jpg",
+          "sha256": "d0fafdfba9c096f283521f103e05de57f11d750f80b4bac1a02f23596cac832f",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0035",
+      "name": "向井藍",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1032266"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0035.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Madonna/向井藍.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Madonna",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E5%90%91%E4%BA%95%E8%97%8D.jpg",
+          "sha256": "bd3ba441910f6937b6a434693680db5ef7312ae71849bc397a6d1629c2da51a8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0036",
+      "name": "相沢みなみ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1035513"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0036.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/相沢みなみ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E7%9B%B8%E6%B2%A2%E3%81%BF%E3%81%AA%E3%81%BF.jpg",
+          "sha256": "219abce6c871960ef20e93b6d3e3138e36cd67cbe6a04e58b7bac22b633b97d6",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0037",
+      "name": "新村あかり",
+      "aliases": [
+        {
+          "name": "Niimura Akari",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1036352"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0037.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/5-Ebody/のぞみ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "5-Ebody",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Ebody/%E3%81%AE%E3%81%9E%E3%81%BF.jpg",
+          "sha256": "1c13d651f5e9a4a54b3ada5b00a3371b47a47b38becbd3c9dfef6be415fe899a",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Niimura Akari"
+    },
+    {
+      "id": "p0038",
+      "name": "一色桃子",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1037291"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0038.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Madonna/一色桃子.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Madonna",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E4%B8%80%E8%89%B2%E6%A1%83%E5%AD%90.jpg",
+          "sha256": "3d72a620f21c7d2eacc32f192cdf2293e5a7ba6cdde629e5242e64cdc765e708",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0039",
+      "name": "明里つむぎ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1037663"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0039.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/明里つむぎ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%98%8E%E9%87%8C%E3%81%A4%E3%82%80%E3%81%8E.jpg",
+          "sha256": "b0440e30eea79b0d05a4abb179f8bf4f43d88d8dab45380d1f22fa23ccda08d5",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0040",
+      "name": "水卜さくら",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1038706"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0040.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/水卜さくら.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%B0%B4%E5%8D%9C%E3%81%95%E3%81%8F%E3%82%89.jpg",
+          "sha256": "fd78dd4a84c5f79d071766f7ecc4e7c6c4a010358f3ead3db4c967db7b28cfc8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0041",
+      "name": "桜空もも",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1039157"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0041.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/桜空もも.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%A1%9C%E7%A9%BA%E3%82%82%E3%82%82.jpg",
+          "sha256": "8dcb80a86d87a116ccff14fa474e4a983d9d933e7e1f4e3dafb32a0c24c62619",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0042",
+      "name": "山岸あや花",
+      "aliases": [
+        {
+          "name": "山岸逢花",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1039921"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0042.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/山岸逢花.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E5%B1%B1%E5%B2%B8%E9%80%A2%E8%8A%B1.jpg",
+          "sha256": "2cee4d5dcb5cc3b94765daa499198a115b1e8be559eba9926d0650d21ddc336c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0043",
+      "name": "美谷朱音",
+      "aliases": [
+        {
+          "name": "美谷朱里",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/"
+        },
+        {
+          "name": "Mitani Akari",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1039982"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0043.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/美谷朱里.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E7%BE%8E%E8%B0%B7%E6%9C%B1%E9%87%8C.jpg",
+          "sha256": "b1b4c296ec912a03ffa765a5d079effd06936ae25e5de688aeaaabc067167181",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Mitani Akari"
+    },
+    {
+      "id": "p0044",
+      "name": "君島みお",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1040946"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0044.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/君島みお.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%90%9B%E5%B3%B6%E3%81%BF%E3%81%8A.jpg",
+          "sha256": "9b84c7b29b25e71cf8d1b8c85b9668c6fe78e4b978aecdd7306af99b5b20e8af",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0045",
+      "name": "岬ななみ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1041833"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0045.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/岬ななみ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%B2%AC%E3%81%AA%E3%81%AA%E3%81%BF.jpg",
+          "sha256": "c3e88d40d7a2b7f8b30daa2423efef469728a7221df4fe4d63fca7f5b5b26f7b",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0046",
+      "name": "水戸かな",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1041891"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0046.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Madonna/水戸かな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Madonna",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E6%B0%B4%E6%88%B8%E3%81%8B%E3%81%AA.jpg",
+          "sha256": "fdf3f38d857d0c486d053118f756b753473dfe7444cd78320ea130f3caa1904c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0047",
+      "name": "神宮寺ナオ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1041897"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0047.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/神宮寺ナオ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E7%A5%9E%E5%AE%AE%E5%AF%BA%E3%83%8A%E3%82%AA.jpg",
+          "sha256": "d4fc355f23c6022e5def6c0f752dac15509f5376296d7ea7c2743382f0cb8bd3",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0048",
+      "name": "七沢みあ",
+      "aliases": [
+        {
+          "name": "Nanasawa Mia",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1042129"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0048.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/七沢みあ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E4%B8%83%E6%B2%A2%E3%81%BF%E3%81%82.jpg",
+          "sha256": "6195f5b36323b52ac690eb05689dc17bf67ceb54599f72f1f3970b48c5e37bba",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Nanasawa Mia"
+    },
+    {
+      "id": "p0049",
+      "name": "架乃ゆら",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1042219"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0049.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/架乃ゆら.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%9E%B6%E4%B9%83%E3%82%86%E3%82%89.jpg",
+          "sha256": "c1df5a308c1e6d5a74119cbd519118719f8f8ea00ba4b2745ae468f6571531cc",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0050",
+      "name": "伊藤舞雪",
+      "aliases": [
+        {
+          "name": "Itou Mayuki",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1042907"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0050.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/伊藤舞雪.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E4%BC%8A%E8%97%A4%E8%88%9E%E9%9B%AA.jpg",
+          "sha256": "2bcf4cdf15bce132d08e1c2052459b531031d437ec874109860e825716c74463",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Itou Mayuki"
+    },
+    {
+      "id": "p0051",
+      "name": "宝田もなみ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1043832"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0051.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/宝田もなみ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E5%AE%9D%E7%94%B0%E3%82%82%E3%81%AA%E3%81%BF.jpg",
+          "sha256": "371c5e6fa784d132bc854c516b5792abcf3873fd01b96cf5e5d8dfe4da571364",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0052",
+      "name": "河合あすな",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1044046"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0052.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/河合あすな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%B2%B3%E5%90%88%E3%81%82%E3%81%99%E3%81%AA.jpg",
+          "sha256": "d19e58232ee6f8a1ffc296671ba96ce753d168aafb1b9dc3ddb482f02488696a",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0053",
+      "name": "美園和花",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1044099"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0053.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/美園和花.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E7%BE%8E%E5%9C%92%E5%92%8C%E8%8A%B1.jpg",
+          "sha256": "ec6c9549c34d6da79b98f1c571e8d29fbedf52dd64cf5778ea635bd9bd22158f",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0054",
+      "name": "河北彩伽",
+      "aliases": [
+        {
+          "name": "河北彩花",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1044864"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0054.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/河北彩伽.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%B2%B3%E5%8C%97%E5%BD%A9%E4%BC%BD.jpg",
+          "sha256": "d3065740d1459eed2e0eecad9c52b254e95a38a64f7d3809714ccdf5dae3b015",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0055",
+      "name": "水川スミレ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1044982"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0055.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/水川スミレ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%B0%B4%E5%B7%9D%E3%82%B9%E3%83%9F%E3%83%AC.jpg",
+          "sha256": "34456754a4b6188ad56ef740a44fbbddde1f20c3ba21139f3bf01bcb0325baad",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0056",
+      "name": "黒川すみれ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1047611"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0056.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/黒川すみれ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E9%BB%92%E5%B7%9D%E3%81%99%E3%81%BF%E3%82%8C.jpg",
+          "sha256": "2e26f0e0992c8da18916318082349155cc44f61bbaf597fe225160225be6192c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0057",
+      "name": "星宮一花",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1048277"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0057.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/星宮一花.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%98%9F%E5%AE%AE%E4%B8%80%E8%8A%B1.jpg",
+          "sha256": "8435f21078d7f105274e13f85890b3a8ab53e94954df65f298ae9945c5834592",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0058",
+      "name": "楓カレン",
+      "aliases": [
+        {
+          "name": "Kaede Karen",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1049284"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0058.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/楓カレン.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%A5%93%E3%82%AB%E3%83%AC%E3%83%B3.jpg",
+          "sha256": "32915195793a5ca5af7abeb3f86816d9b925f0476c9b89a72c4be468c3482173",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Kaede Karen"
+    },
+    {
+      "id": "p0059",
+      "name": "渚みつき",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1049908"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0059.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/渚みつき.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%B8%9A%E3%81%BF%E3%81%A4%E3%81%8D.jpg",
+          "sha256": "dc8de7381c0da3d3979f7c5e63184f018d70c785214e58e02510cce764133a32",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0060",
+      "name": "月乃ルナ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1050439"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0060.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/月乃ルナ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%9C%88%E4%B9%83%E3%83%AB%E3%83%8A.jpg",
+          "sha256": "c45196c623279c6129f9902ae46b4263e9f1b16dbeb398d65757f90586f6042c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0061",
+      "name": "日下部加奈",
+      "aliases": [
+        {
+          "name": "Kusakabe Kana",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1051402"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0061.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/日下部加奈.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%97%A5%E4%B8%8B%E9%83%A8%E5%8A%A0%E5%A5%88.jpg",
+          "sha256": "1d2edfd0980fcff9c0eac82e23a4dfdedb95fb843ab6fc646f16affe01446dc4",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Kusakabe Kana"
+    },
+    {
+      "id": "p0062",
+      "name": "根尾あかり",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1051794"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0062.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/根尾あかり.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%A0%B9%E5%B0%BE%E3%81%82%E3%81%8B%E3%82%8A.jpg",
+          "sha256": "e4f8ea0ebfd5ffad675cc3348e0cfd1b015cb5edda3a74380e894f3644671875",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0063",
+      "name": "涼森れむ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1051912"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0063.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/涼森れむ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E6%B6%BC%E6%A3%AE%E3%82%8C%E3%82%80.jpg",
+          "sha256": "e8aeaf98af83bbc48f92720936e6cd8bfe63ef4ff654d0e637db53adc6761687",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0064",
+      "name": "吉根ゆりあ",
+      "aliases": [
+        {
+          "name": "Yoshine Julia",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1052930"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0064.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/吉根ゆりあ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E5%90%89%E6%A0%B9%E3%82%86%E3%82%8A%E3%81%82.jpg",
+          "sha256": "6f1621db98428e387b846d8803ed0a1d6a6139ddb7a5323f008d51c54279181e",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Yoshine Julia"
+    },
+    {
+      "id": "p0065",
+      "name": "竹内有紀",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1053420"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0065.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/5-Premium/竹内有紀.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "5-Premium",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Premium/%E7%AB%B9%E5%86%85%E6%9C%89%E7%B4%80.jpg",
+          "sha256": "5be6b35480737c668d3565628ff9d5358793e373d7cbb017ab0af9dafae5b8d9",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0066",
+      "name": "弥生みづき",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1054168"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0066.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/弥生みづき.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E5%BC%A5%E7%94%9F%E3%81%BF%E3%81%A5%E3%81%8D.jpg",
+          "sha256": "28dd396f6a1a1c8f32c4dbc24eeff43c58c0b46ba4b05b1fc3b483305c823e4b",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0067",
+      "name": "松本いちか",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1054998"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0067.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/3-Arrows/松本いちか.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "3-Arrows",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/3-Arrows/%E6%9D%BE%E6%9C%AC%E3%81%84%E3%81%A1%E3%81%8B.jpg",
+          "sha256": "3ac079ab90a2d57ac911217a4600b74233ff219a55e636da6067b0bc8f43ff4f",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0068",
+      "name": "斎藤あみり",
+      "aliases": [
+        {
+          "name": "Saitoh Amiri",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1055079"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0068.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/斎藤あみり.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E6%96%8E%E8%97%A4%E3%81%82%E3%81%BF%E3%82%8A.jpg",
+          "sha256": "01033d07c8b6a0400c240274bedffbb1e1600343e20b20f661fbedb57d8430bf",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Saitoh Amiri"
+    },
+    {
+      "id": "p0069",
+      "name": "青空ひかり",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1055590"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0069.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Cmore/青空ひかり.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Cmore",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Cmore/%E9%9D%92%E7%A9%BA%E3%81%B2%E3%81%8B%E3%82%8A.jpg",
+          "sha256": "1a345739bba38ce0723bf177aae929f995da97f1996e80483a95e182a9c50fb7",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0070",
+      "name": "天川そら",
+      "aliases": [
+        {
+          "name": "Amakawa Sora",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1056220"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0070.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/3-Arrows/天川そら.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "3-Arrows",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/3-Arrows/%E5%A4%A9%E5%B7%9D%E3%81%9D%E3%82%89.jpg",
+          "sha256": "bfa34adaa90d72862ba1fef1d4b2c8b352b2304bab53b780fdd6015498911589",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Amakawa Sora"
+    },
+    {
+      "id": "p0071",
+      "name": "八木奈々",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1057477"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0071.png",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/八木奈々.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E5%85%AB%E6%9C%A8%E5%A5%88%E3%80%85.jpg",
+          "sha256": "babcf8d424353ceaf029c208f317b984ed5d111388f7b27708cdf59b8dfc0774",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0072",
+      "name": "加美杏奈",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1058114"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0072.png",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/加美杏奈.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E5%8A%A0%E7%BE%8E%E6%9D%8F%E5%A5%88.jpg",
+          "sha256": "32608af8d0de74921e51f18135342fc61c1152d5ab30a1084340b9e15d7c0179",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0073",
+      "name": "藤森里穂",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1058710"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0073.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/藤森里穂.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E8%97%A4%E6%A3%AE%E9%87%8C%E7%A9%82.jpg",
+          "sha256": "cbafa9647062e4cfbfa769ac966cbe7f7df4cec952f15c0d4f073d0a73897e33",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0074",
+      "name": "東條なつ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1059080"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0074.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/1-FALENO/東條なつ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "1-FALENO",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/1-FALENO/%E6%9D%B1%E6%A2%9D%E3%81%AA%E3%81%A4.jpg",
+          "sha256": "83c6fddbbc9a1d5b937a32e7cd6698a0ab2ba6714fdc84dcb0c90e8f9fd7bd6b",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0075",
+      "name": "木下凛々子",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1059227"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0075.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Madonna/木下凛々子.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Madonna",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E6%9C%A8%E4%B8%8B%E5%87%9B%E3%80%85%E5%AD%90.jpg",
+          "sha256": "1b3ebce2091e454fe692b071d9c4f0f6cb735e3bc83fcb088cfd585c2bbc3647",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0076",
+      "name": "梓ヒカリ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1059342"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0076.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/梓ヒカリ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%A2%93%E3%83%92%E3%82%AB%E3%83%AA.jpg",
+          "sha256": "83757ae7c3b8189afeefdb887aa484fe6d589bf5af8a1fae0524dc240444a658",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0077",
+      "name": "木下ひまり",
+      "aliases": [
+        {
+          "name": "花沢ひまり",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=3/"
+        },
+        {
+          "name": "Kinoshita Himari",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1060141"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0077.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/木下ひまり.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E6%9C%A8%E4%B8%8B%E3%81%B2%E3%81%BE%E3%82%8A.jpg",
+          "sha256": "b4c4b0d002e61f5ef01898850af93194cdcf645b4349ebc93971db4d7c5c5416",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Kinoshita Himari"
+    },
+    {
+      "id": "p0078",
+      "name": "田中ねね",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1060480"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0078.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/田中ねね.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E7%94%B0%E4%B8%AD%E3%81%AD%E3%81%AD.jpg",
+          "sha256": "55e91ff439d38e7ddf4249645f3ef0af84cfe25b6df94a6cdf2d40b9299210b0",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0079",
+      "name": "小野六花",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1060677"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0079.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/1-Diaz/小野六花.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "1-Diaz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/1-Diaz/%E5%B0%8F%E9%87%8E%E5%85%AD%E8%8A%B1.jpg",
+          "sha256": "31b1d999697d38ded2ec751efad5bea28fb9b7b49beee40df3a26c1993b4f0e9",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0080",
+      "name": "蜜美杏",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1060892"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0080.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/蜜美杏.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E8%9C%9C%E7%BE%8E%E6%9D%8F.jpg",
+          "sha256": "3b490734e8297a88a6e6ff646088ecabbc6e7141029f0b231ce1dc565a418196",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0081",
+      "name": "石原希望",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1061063"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0081.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/石原希望.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E7%9F%B3%E5%8E%9F%E5%B8%8C%E6%9C%9B.jpg",
+          "sha256": "a9f39c2d73e950fcaf0a3b12d00c8e66a7e225873d85cdb8db5fea721a9810d8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0082",
+      "name": "森日向子",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1061586"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0082.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/森日向子.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%A3%AE%E6%97%A5%E5%90%91%E5%AD%90.jpg",
+          "sha256": "90a58a7d6d9dc6292fab5db3c61b6971bbc4b9d6db87162f0fd7ffec8bb3d3c6",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0083",
+      "name": "葵いぶき",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1061760"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0083.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/葵いぶき.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E8%91%B5%E3%81%84%E3%81%B6%E3%81%8D.jpg",
+          "sha256": "552d79d093951c731370870428905b43f651f9252a58c8299a4dc29e2fb32fc1",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0084",
+      "name": "さつき芽衣",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1062041"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0084.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/さつき芽衣.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E3%81%95%E3%81%A4%E3%81%8D%E8%8A%BD%E8%A1%A3.jpg",
+          "sha256": "18d2d8cd3c191308d5b180278a2b1b9c76b556d3a0c0b053422c4fe4bae5e459",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0085",
+      "name": "宮島めい",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1062074"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0085.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/宮島めい.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%AE%AE%E5%B3%B6%E3%82%81%E3%81%84.jpg",
+          "sha256": "ebaedb2ba3a1d0bd27af938ee914c5b3f7a46067a1a5f6998cf2bd6f7dd9cf81",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0086",
+      "name": "三宮つばき",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1062909"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0086.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Cmore/三宮つばき.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Cmore",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Cmore/%E4%B8%89%E5%AE%AE%E3%81%A4%E3%81%B0%E3%81%8D.jpg",
+          "sha256": "862d018216366e1416989a8d5f5604dfc0b8030494230915ffe868b13f48d094",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0087",
+      "name": "七瀬アリス",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1063724"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0087.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/3-Allpro/七瀬アリス.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "3-Allpro",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/3-Allpro/%E4%B8%83%E7%80%AC%E3%82%A2%E3%83%AA%E3%82%B9.jpg",
+          "sha256": "28114982190d56b84b4a3179fe85a7c6471a5009d10f25ed824fa47d8f3b7502",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0088",
+      "name": "白桃はな",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1064132"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0088.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/白桃はな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E7%99%BD%E6%A1%83%E3%81%AF%E3%81%AA.jpg",
+          "sha256": "1d8b78df5274e618519bca289a7c5950c3b40a132b9185c7e81172c1ef9e8a5b",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0089",
+      "name": "栗山莉緒",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1064392"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0089.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/栗山莉緒.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E6%A0%97%E5%B1%B1%E8%8E%89%E7%B7%92.jpg",
+          "sha256": "97f411b8761a3796e980541f4b99f99b426397458d6afee134fb5c72953bb8b6",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0090",
+      "name": "八掛うみ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1064982"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0090.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/八掛うみ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%85%AB%E6%8E%9B%E3%81%86%E3%81%BF.jpg",
+          "sha256": "1f2bfda66154e555da4054715ef236299b672cb027993a6de422ae1b146e2374",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0091",
+      "name": "市来まひろ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1065376"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0091.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/市来まひろ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E5%B8%82%E6%9D%A5%E3%81%BE%E3%81%B2%E3%82%8D.jpg",
+          "sha256": "1b596a7b96335f5897fb12c3e9bc15515a6347d20073324c33b9c1b503d27fb8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0092",
+      "name": "乙アリス",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1065724"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0092.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/乙アリス.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E4%B9%99%E3%82%A2%E3%83%AA%E3%82%B9.jpg",
+          "sha256": "e2afdcb07d512cc7c604dce531db34bf3420aa7de427cbfe7138ffd74d464b23",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0093",
+      "name": "白峰ミウ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1066537"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0093.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/3-Allpro/白峰ミウ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "3-Allpro",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/3-Allpro/%E7%99%BD%E5%B3%B0%E3%83%9F%E3%82%A6.jpg",
+          "sha256": "503f0104f5d252b213c1495e4151a286837289bd3c69da2a5d5d3c00d43081ba",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0094",
+      "name": "楪カレン",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1067267"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0094.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/楪カレン.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E6%A5%AA%E3%82%AB%E3%83%AC%E3%83%B3.jpg",
+          "sha256": "93759d27a8220b1dc2db8fa592b0af27f9dc21c84f82b08cd22de36ad849fe82",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0095",
+      "name": "花狩まい",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1068670"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0095.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/花狩まい.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E8%8A%B1%E7%8B%A9%E3%81%BE%E3%81%84.jpg",
+          "sha256": "bed06d2689eace039458427739111e08675adad2a39d7165400c9b20680f7967",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0096",
+      "name": "北野未奈",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1068671"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0096.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/北野未奈.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E5%8C%97%E9%87%8E%E6%9C%AA%E5%A5%88.jpg",
+          "sha256": "35648104af0d67cdf9b30c817eae0e790050f1b97456fcc6627dda639b7d8998",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0097",
+      "name": "小宵こなん",
+      "aliases": [
+        {
+          "name": "Koyoi Konan",
+          "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1069330"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0097.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Cmore/小宵こなん.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Cmore",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Cmore/%E5%B0%8F%E5%AE%B5%E3%81%93%E3%81%AA%E3%82%93.jpg",
+          "sha256": "170b65df2d8abe65da708ec3859e38f2f41f4992a58f57a8b5f059dea5bd9fe8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      },
+      "romanization": "Koyoi Konan"
+    },
+    {
+      "id": "p0098",
+      "name": "工藤ララ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1069384"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0098.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/工藤ララ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E5%B7%A5%E8%97%A4%E3%83%A9%E3%83%A9.jpg",
+          "sha256": "df8470b2f6f32263163b4c67f99b7c617a098a67643d0cbcdca2b0a292a0a27d",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0099",
+      "name": "愛弓りょう",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1069634"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0099.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/愛弓りょう.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%84%9B%E5%BC%93%E3%82%8A%E3%82%87%E3%81%86.jpg",
+          "sha256": "68cce5010d6e6b656c497eac0a41875a7b5450b8608d366ca8c2dcc5824a6659",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0100",
+      "name": "MINAMO",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1069697"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0100.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/MINAMO.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/MINAMO.jpg",
+          "sha256": "f1e552b3fec3c520ccb19bd7c24ad45a03e8b2c5175aabb218179b298ba9202d",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0101",
+      "name": "横宮七海",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1069900"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0101.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/横宮七海.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E6%A8%AA%E5%AE%AE%E4%B8%83%E6%B5%B7.jpg",
+          "sha256": "6af783974954caebccdac7b7a7e9dcc1b419f51292cdd534567bc36b16ada530",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0102",
+      "name": "新井リマ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1069952"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0102.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/新井リマ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E6%96%B0%E4%BA%95%E3%83%AA%E3%83%9E.jpg",
+          "sha256": "5d659a608cc5b1957591f24ccb43160c5790109816417ecf75b5c7ca78e9832b",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0103",
+      "name": "楓ふうあ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1071155"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0103.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Cmore/楓ふうあ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Cmore",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Cmore/%E6%A5%93%E3%81%B5%E3%81%86%E3%81%82.jpg",
+          "sha256": "b8a836837bd5e820e270ab213bfb2e80ca7e5d2ad85dd0218784e6ef4f890d88",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0104",
+      "name": "石川澪",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1072127"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0104.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/石川澪.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E7%9F%B3%E5%B7%9D%E6%BE%AA.jpg",
+          "sha256": "f5c5e7c8e534dfb8bf208a81eddb5792898b52548ca17a0d9eb6fc6f5ccf0c68",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0105",
+      "name": "小花のん",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1072206"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0105.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Cmore/小花のん.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Cmore",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Cmore/%E5%B0%8F%E8%8A%B1%E3%81%AE%E3%82%93.jpg",
+          "sha256": "4932485a516a841cd2e739461b43a1c328cba8546b1801b309b70d97c2fd7efb",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0106",
+      "name": "倉本すみれ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1072360"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0106.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/倉本すみれ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E5%80%89%E6%9C%AC%E3%81%99%E3%81%BF%E3%82%8C.jpg",
+          "sha256": "c029d6f4a89c02cc3dfe87f2d9cbafabfedf0f06828635f0fbb60b76737313b7",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0107",
+      "name": "つばさ舞",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1072395"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0107.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/つばさ舞.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E3%81%A4%E3%81%B0%E3%81%95%E8%88%9E.jpg",
+          "sha256": "a4d14b23bd9e1f3b4a2bead5871a2e3c0c31ece25bd11e8284b92ebc298e63cc",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0108",
+      "name": "山手梨愛",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1073118"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/",
+      "portrait": {
+        "path": "actresses/portraits/p0108.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/山手梨愛.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E5%B1%B1%E6%89%8B%E6%A2%A8%E6%84%9B.jpg",
+          "sha256": "76a312efbe882707822f71cf8beb9e215dff4cfc6c28830db07af1a7263113e8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0109",
+      "name": "時田亜美",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1073511"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0109.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/1-FALENO/時田亜美.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "1-FALENO",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/1-FALENO/%E6%99%82%E7%94%B0%E4%BA%9C%E7%BE%8E.jpg",
+          "sha256": "6afa66537157f98cd997d1261b458c5a46cd8aade85ee3c6ff357b9633bd5bbb",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0110",
+      "name": "宮西ひかる",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1073977"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0110.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/宮西ひかる.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E5%AE%AE%E8%A5%BF%E3%81%B2%E3%81%8B%E3%82%8B.jpg",
+          "sha256": "7201406a45f4412af70df9a7454d57a03b9ce3c1919be3352201b1ea5bd58b19",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0111",
+      "name": "宍戸里帆",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1075010"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0111.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/宍戸里帆.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E5%AE%8D%E6%88%B8%E9%87%8C%E5%B8%86.jpg",
+          "sha256": "e210d4198970838f5c4b144fbfb59d947b063b514d4a63bb3df6a5ce1723831b",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0112",
+      "name": "東雲みれい",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1075158"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0112.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/東雲みれい.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%9D%B1%E9%9B%B2%E3%81%BF%E3%82%8C%E3%81%84.jpg",
+          "sha256": "d6bd25cee270a5f1d6aa20795ce05135da5c3f6ec60541f99145b857d85d1779",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0113",
+      "name": "柏木こなつ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1075302"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0113.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/柏木こなつ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%9F%8F%E6%9C%A8%E3%81%93%E3%81%AA%E3%81%A4.jpg",
+          "sha256": "ac0613b0ee75e6f227e2575cc82f34d108b8d0bd9369fe54de8c582e5b2dae5b",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0114",
+      "name": "皆瀬あかり",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1075330"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0114.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/皆瀬あかり.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E7%9A%86%E7%80%AC%E3%81%82%E3%81%8B%E3%82%8A.jpg",
+          "sha256": "f0c150712ee66b7c5c54cf601f10f7281df734ac76b70efa1cb29a946a602f49",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0115",
+      "name": "宮下玲奈",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1075464"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0115.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/宮下玲奈.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E5%AE%AE%E4%B8%8B%E7%8E%B2%E5%A5%88.jpg",
+          "sha256": "1bcabfbb47d225cdcd44cb9b8eb6ad1e6d527e66e39fc8873ac60fc972e1518a",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0116",
+      "name": "希咲那奈",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1075658"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0116.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/希咲那奈.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E5%B8%8C%E5%92%B2%E9%82%A3%E5%A5%88.jpg",
+          "sha256": "652b0782843ba8e8c7fe5cd3c8d1d4e647e549c6005b7731bb826d21c1378f5c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0117",
+      "name": "末広純",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1075675"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/",
+      "portrait": {
+        "path": "actresses/portraits/p0117.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/末広純.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%9C%AB%E5%BA%83%E7%B4%94.jpg",
+          "sha256": "be946a64a168cfb5fb6c9f169cb6f40137180caf236ecaf18bb598c77ab608b4",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0118",
+      "name": "恋渕ももな",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1075829"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0118.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/恋渕ももな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E6%81%8B%E6%B8%95%E3%82%82%E3%82%82%E3%81%AA.jpg",
+          "sha256": "5442b9ea00807c2f4ff45254f76b6cddffded9b529272dafcfb81474382b2b4a",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0119",
+      "name": "神木麗",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1076785"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0119.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/神木麗.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E7%A5%9E%E6%9C%A8%E9%BA%97.jpg",
+          "sha256": "89a2327841a1fb6cb10fa48299b648a084e36df7f74b41b62730365a2f240ab2",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0120",
+      "name": "しおかわ雲丹",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1076816"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0120.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/しおかわ雲丹.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E3%81%97%E3%81%8A%E3%81%8B%E3%82%8F%E9%9B%B2%E4%B8%B9.jpg",
+          "sha256": "b4a56ff4c42bc28796ae3ae1b708b95ca3b4e97971b88cb3c04f4735fac357b5",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0121",
+      "name": "綾瀬こころ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1076928"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0121.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/綾瀬こころ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E7%B6%BE%E7%80%AC%E3%81%93%E3%81%93%E3%82%8D.jpg",
+          "sha256": "ac1ab9da03019b1bc4536d2f0a911eb0b91dd9cc4785b883ba591d526f160231",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0122",
+      "name": "未歩なな",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1077071"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0122.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/未歩なな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%9C%AA%E6%AD%A9%E3%81%AA%E3%81%AA.jpg",
+          "sha256": "458d632e14e10e08a0ebe04e25ef473be7e867061cd7b19129c4af9075125671",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0123",
+      "name": "藤かんな",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1077426"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0123.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/藤かんな.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E8%97%A4%E3%81%8B%E3%82%93%E3%81%AA.jpg",
+          "sha256": "2b1913f56ef6ed7da9e0194b01094f52acc2a1c398cd1813bd295fc158a51043",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0124",
+      "name": "小湊よつ葉",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1077723"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0124.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/小湊よつ葉.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%B0%8F%E6%B9%8A%E3%82%88%E3%81%A4%E8%91%89.jpg",
+          "sha256": "b083ee8c84d48662b3996321e70e2658ffcd0727ea79d9db5c6e489df7401982",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0125",
+      "name": "都月るいさ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1078009"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0125.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/都月るいさ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E9%83%BD%E6%9C%88%E3%82%8B%E3%81%84%E3%81%95.jpg",
+          "sha256": "038ae3e39472f055ee789c10e50e86a795a346049409811a61972c47b7934202",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0126",
+      "name": "星乃夏月",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1078105"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0126.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/5-Ebody/星乃夏月.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "5-Ebody",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Ebody/%E6%98%9F%E4%B9%83%E5%A4%8F%E6%9C%88.jpg",
+          "sha256": "69c67a91a19505007a56dc043b046d11695871a2ed4b9069b68347c8e3a18f08",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0127",
+      "name": "日向かえで",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1078179"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0127.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/日向かえで.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%97%A5%E5%90%91%E3%81%8B%E3%81%88%E3%81%A7.jpg",
+          "sha256": "c182538a9977a49eb376e189839d5be868ce2137f53e661e80c9a6826e4d1149",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0128",
+      "name": "流川はる香",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1078181"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0128.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/流川はる香.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E6%B5%81%E5%B7%9D%E3%81%AF%E3%82%8B%E9%A6%99.jpg",
+          "sha256": "be05d901f40a2e23f283804cbb5cc8cfd925ad13fc2369940658a5a5dd021238",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0129",
+      "name": "九野ひなの",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1078407"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0129.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/九野ひなの.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E4%B9%9D%E9%87%8E%E3%81%B2%E3%81%AA%E3%81%AE.jpg",
+          "sha256": "a69b4173b95759d270484c7facca5ad8adb3c1d02986eb59e88ebc33d64a01c6",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0130",
+      "name": "星乃莉子",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1079035"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0130.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/星乃莉子.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E6%98%9F%E4%B9%83%E8%8E%89%E5%AD%90.jpg",
+          "sha256": "e6cc4f78eee8fb76a317eacb2780e50ca85f7e19b630974d2bf9ef8eb3ce02fb",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0131",
+      "name": "凪ひかる",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1080873"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0131.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/凪ひかる.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E5%87%AA%E3%81%B2%E3%81%8B%E3%82%8B.jpg",
+          "sha256": "230432987a0210fd6727522ceaed2dbeb1b80bc119061beefaf55db005bc9b83",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0132",
+      "name": "入田真綾",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1081914"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0132.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/入田真綾.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E5%85%A5%E7%94%B0%E7%9C%9F%E7%B6%BE.jpg",
+          "sha256": "7dcb332cdab1732b793602c963a7fc95ea427280d139c85f0eafd5926846a4c2",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0133",
+      "name": "天月あず",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1082666"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0133.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/天月あず.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E5%A4%A9%E6%9C%88%E3%81%82%E3%81%9A.jpg",
+          "sha256": "930bb1012452bd06aa3b24928913e80119832545c45f19b81506cf5d8d2a7714",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0134",
+      "name": "柴崎はる",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1083217"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0134.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/柴崎はる.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E6%9F%B4%E5%B4%8E%E3%81%AF%E3%82%8B.jpg",
+          "sha256": "b70146d778d710ca69f4fe8f88a52b0f3baa67a9b8ebf1f8e9bb14157ef6243c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0135",
+      "name": "小日向みゆう",
+      "aliases": [
+        {
+          "name": "清原みゆう",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1084111"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0135.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/小日向みゆう.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%B0%8F%E6%97%A5%E5%90%91%E3%81%BF%E3%82%86%E3%81%86.jpg",
+          "sha256": "b18978f731a5deff0b5bd4d63a29a7c3327a47b347a01f127987eab627aace6c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0136",
+      "name": "宇野みれい",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1084112"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0136.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/宇野みれい.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E5%AE%87%E9%87%8E%E3%81%BF%E3%82%8C%E3%81%84.jpg",
+          "sha256": "e0ee69a1e96f1dd0889dcd7c798022f744363d5e10176e766fca6ae272b54680",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0137",
+      "name": "羽月乃蒼",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1084337"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0137.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/羽月乃蒼.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E7%BE%BD%E6%9C%88%E4%B9%83%E8%92%BC.jpg",
+          "sha256": "99d7c43a4fc174d9cb81bb7fc45932592a484d0771c872f58ea40afcddcd3a79",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0138",
+      "name": "川越にこ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1084346"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0138.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/川越にこ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E5%B7%9D%E8%B6%8A%E3%81%AB%E3%81%93.jpg",
+          "sha256": "5a113e5fc3c7cf756eda86fe023a4a2f5dba7deb4ceaad8bdde9093c16762896",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0139",
+      "name": "五日市芽依",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1084796"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0139.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/五日市芽依.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E4%BA%94%E6%97%A5%E5%B8%82%E8%8A%BD%E4%BE%9D.jpg",
+          "sha256": "e7783d36ea76774e8db271d5ba131065023986a0b8e83fdc86a5cdf581b1a47e",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0140",
+      "name": "明日葉みつは",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1084920"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0140.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/明日葉みつは.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%98%8E%E6%97%A5%E8%91%89%E3%81%BF%E3%81%A4%E3%81%AF.jpg",
+          "sha256": "39e6dc53ca09f8a386ca267d2b67ef226d009123dff873bfa7bcf7784f6c8baf",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0141",
+      "name": "沖宮那美",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1085279"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0141.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/y-Minnano/沖宮那美.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "y-Minnano",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E6%B2%96%E5%AE%AE%E9%82%A3%E7%BE%8E.jpg",
+          "sha256": "81d1f2ed8edbd2e893fcee1e5f65a8abe09fbfb4a79518064a8db0993f1c4636",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0142",
+      "name": "本郷愛",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1085397"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0142.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/本郷愛.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%9C%AC%E9%83%B7%E6%84%9B.jpg",
+          "sha256": "c8178c89b0dad57016d42897e068017f26224fa0100a721a6f471e738e5b7f8c",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0143",
+      "name": "黒島玲衣",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1085628"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0143.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/4-Kawaii/黒島玲衣.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "4-Kawaii",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E9%BB%92%E5%B3%B6%E7%8E%B2%E8%A1%A3.jpg",
+          "sha256": "ee1e05160d719988c01f03045a5ee599842f18963469c375d1cae2d2040766be",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0144",
+      "name": "佐藤しお",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1086061"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0144.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Honnaka/佐藤しお.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Honnaka",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Honnaka/%E4%BD%90%E8%97%A4%E3%81%97%E3%81%8A.jpg",
+          "sha256": "2f5324dde5c2870a8fad14340ea315e84cd0863ef84f74ebc5152d90daf156f0",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0145",
+      "name": "白石もも",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1086062"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0145.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/白石もも.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E7%99%BD%E7%9F%B3%E3%82%82%E3%82%82.jpg",
+          "sha256": "733357e8e2b2b24e1d4a977db42a273dbbdfe229caa909514cfa9e440c9caa42",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0146",
+      "name": "浅野こころ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1086581"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0146.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/浅野こころ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%B5%85%E9%87%8E%E3%81%93%E3%81%93%E3%82%8D.jpg",
+          "sha256": "c3bcb8dd169481058563fc58010c95fe5bd66739bdd2ba1d123c53d609c9c233",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0147",
+      "name": "瀧本雫葉",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1086883"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0147.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/瀧本雫葉.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E7%80%A7%E6%9C%AC%E9%9B%AB%E8%91%89.jpg",
+          "sha256": "6f548e0dd81216b041deed983e6aa59b8c1ba4c9db78cdc155b040d4c0599769",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0148",
+      "name": "仁藤さや香",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1087024"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0148.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Mines/仁藤さや香.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Mines",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Mines/%E4%BB%81%E8%97%A4%E3%81%95%E3%82%84%E9%A6%99.jpg",
+          "sha256": "3e5a30a437845ac0c1b80a551b243ce31adf9c2512a801e1d8d2aed99543daa9",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0149",
+      "name": "渚恋生",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1087032"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0149.jpg",
+        "source": {
+          "provider": "FANZA",
+          "url": "https://pics.dmm.co.jp/mono/actjpgs/nagisa_koiki.jpg",
+          "sha256": "e63f51dea2c733bbf28f56fb52b6e2ce93c29c8f7fd6064a189dc5cf480a1e51",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0150",
+      "name": "佐々木さき",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1087624"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0150.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/佐々木さき.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E4%BD%90%E3%80%85%E6%9C%A8%E3%81%95%E3%81%8D.jpg",
+          "sha256": "b158209783278d9c9d163241b87557521936685dbfbce12e1dd9064b650798cb",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0151",
+      "name": "三田真鈴",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1087625"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0151.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/三田真鈴.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E4%B8%89%E7%94%B0%E7%9C%9F%E9%88%B4.jpg",
+          "sha256": "01ac61f51c2620ac618b56b6e7b3c07df55352865edd15b93e84997e4cc71bc5",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0152",
+      "name": "月野江すい",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1087778"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0152.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/月野江すい.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E6%9C%88%E9%87%8E%E6%B1%9F%E3%81%99%E3%81%84.jpg",
+          "sha256": "95aeb6f65d3b20d47006dc01d20eb9b6172c1ba705d844904146b144c2dad0ff",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0153",
+      "name": "百田光稀",
+      "aliases": [
+        {
+          "name": "百田光希",
+          "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=3/"
+        }
+      ],
+      "identities": {
+        "fanza": [
+          "1088420"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0153.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/百田光稀.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E7%99%BE%E7%94%B0%E5%85%89%E7%A8%80.jpg",
+          "sha256": "31edf5305c309e29925f76998b55b74c0e34ee464a35dcc64d74185ce78840d3",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0154",
+      "name": "逢沢みゆ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1088602"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0154.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/逢沢みゆ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E9%80%A2%E6%B2%A2%E3%81%BF%E3%82%86.jpg",
+          "sha256": "5f1ba38e08d2f9dc1e300ae613d836befa4c12a8ac2a8020bc6b81d914e076e8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0155",
+      "name": "蒼乃美月",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1088685"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0155.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/蒼乃美月.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E8%92%BC%E4%B9%83%E7%BE%8E%E6%9C%88.jpg",
+          "sha256": "15a6218d4a2ff92f985d9b005f9f0928c0ef094b0c268805897e5229376a35f9",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0156",
+      "name": "長浜みつり",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1089578"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0156.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/長浜みつり.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E9%95%B7%E6%B5%9C%E3%81%BF%E3%81%A4%E3%82%8A.jpg",
+          "sha256": "585894b5242baafdbee741e06d64dc646bc7f4fce40827fe1d75866bee456c64",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0157",
+      "name": "小坂七香",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1090884"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0157.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/小坂七香.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E5%B0%8F%E5%9D%82%E4%B8%83%E9%A6%99.jpg",
+          "sha256": "ce493aab64f9f4bf1d1e73deecda2ee2dd3f46ae009052260ef74aebf0988605",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0158",
+      "name": "宮本留衣",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1091791"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0158.jpg",
+        "source": {
+          "provider": "FANZA",
+          "url": "https://pics.dmm.co.jp/mono/actjpgs/miyamoto_rui2.jpg",
+          "sha256": "e248ee3d5ee36eb9f7111a59e86433c3e32fd33a29e0b5f3647177a6713ace01",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0159",
+      "name": "金松季歩",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1092091"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0159.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/金松季歩.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E9%87%91%E6%9D%BE%E5%AD%A3%E6%AD%A9.jpg",
+          "sha256": "149782305f9a8fc657d0bca96cfd207a7e7016651fa44ed7eec2f04f639ffee6",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0160",
+      "name": "春陽モカ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1092219"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0160.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/春陽モカ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%98%A5%E9%99%BD%E3%83%A2%E3%82%AB.jpg",
+          "sha256": "290959d82addf4596734653df9f093147099709db7b6b346a17f4d1f6e9e28f2",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0161",
+      "name": "北岡果林",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1092427"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0161.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/北岡果林.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E5%8C%97%E5%B2%A1%E6%9E%9C%E6%9E%97.jpg",
+          "sha256": "6cb23b475d4a2697ecce17cc33d42a045e6156c7f8fc42a6c7b6564155b00136",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0162",
+      "name": "白上咲花",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1092662"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0162.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/白上咲花.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E7%99%BD%E4%B8%8A%E5%92%B2%E8%8A%B1.jpg",
+          "sha256": "40a79a426f5e95f27cb9d36722b4a6c173215738564cc741bac1b8421c51e4c2",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0163",
+      "name": "役野満里奈",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1092918"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0163.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/役野満里奈.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E5%BD%B9%E9%87%8E%E6%BA%80%E9%87%8C%E5%A5%88.jpg",
+          "sha256": "1e480bee06cf6adb17d1b7b9e0d41f306929fe3d4b5ff0c723b824559e51afff",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0164",
+      "name": "倉木華",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1092997"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0164.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/6-Tpowers/倉木華.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "6-Tpowers",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E5%80%89%E6%9C%A8%E8%8F%AF.jpg",
+          "sha256": "1653bdd793bac9bc124014a8907e7e95cf76b4aa20413c7e9827434c97adc785",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0165",
+      "name": "小野坂ゆいか",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1093790"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0165.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/小野坂ゆいか.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E5%B0%8F%E9%87%8E%E5%9D%82%E3%82%86%E3%81%84%E3%81%8B.jpg",
+          "sha256": "4ad88481c1abb8fb2a1d6acc7f7fbc76adabb941c37d44223586a9fd1984fef8",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0166",
+      "name": "静河",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1094637"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0166.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/静河.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E9%9D%99%E6%B2%B3.jpg",
+          "sha256": "e6cba11c8f02f80f3fd11879e56e609dbb26162d85b4de7c301a3122628daacb",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0167",
+      "name": "泉ももか",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1096172"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+      "portrait": {
+        "path": "actresses/portraits/p0167.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/泉ももか.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E6%B3%89%E3%82%82%E3%82%82%E3%81%8B.jpg",
+          "sha256": "54808ffa2e295b66566c45dcad9c272926a2d948ce964c5e9f68a07245929448",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0168",
+      "name": "榊原萌",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1096639"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0168.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/榊原萌.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%A6%8A%E5%8E%9F%E8%90%8C.jpg",
+          "sha256": "029cd3ffa0130da3c8858f3cb18693565f9fc88520871b5820f01be83e7a7274",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0169",
+      "name": "輝星きら",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1098260"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0169.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/輝星きら.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E8%BC%9D%E6%98%9F%E3%81%8D%E3%82%89.jpg",
+          "sha256": "478a7f431d3f7285a4e98c79e12136f479e8e820a130db1bb526271fcafaad4b",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0170",
+      "name": "篠原いよ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1098810"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0170.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-Moodyz/篠原いよ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-Moodyz",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E7%AF%A0%E5%8E%9F%E3%81%84%E3%82%88.jpg",
+          "sha256": "9fda72de11c978cc7155e0e3141604c7321d3d1767746996735f39862ed5a02e",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0171",
+      "name": "愛才りあ",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1099161"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+      "portrait": {
+        "path": "actresses/portraits/p0171.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/8-Ideapocket/愛才りあ.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "8-Ideapocket",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Ideapocket/%E6%84%9B%E6%89%8D%E3%82%8A%E3%81%82.jpg",
+          "sha256": "c4c50d8a56ddbce2c3cb5d69c87e9734f8130e308bcb9e86fadacc7dd8bbf19f",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0172",
+      "name": "瀬戸環奈",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1099472"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/",
+      "portrait": {
+        "path": "actresses/portraits/p0172.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/瀬戸環奈.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88.jpg",
+          "sha256": "9f0ab4980ac3d29641ca37de7c4a23785ea36b2a656c8fe0b2518c1789091390",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0173",
+      "name": "新木希空",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1099846"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+      "portrait": {
+        "path": "actresses/portraits/p0173.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/新木希空.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%96%B0%E6%9C%A8%E5%B8%8C%E7%A9%BA.jpg",
+          "sha256": "1df82f5405da09b183d76152dcdecfebd51032a902e18e31e6b86bf02dedd1b3",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    },
+    {
+      "id": "p0174",
+      "name": "桜乃りの",
+      "aliases": [],
+      "identities": {
+        "fanza": [
+          "1100579"
+        ]
+      },
+      "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+      "portrait": {
+        "path": "actresses/portraits/p0174.jpg",
+        "source": {
+          "provider": "Gfriends",
+          "path": "Content/7-S1/桜乃りの.jpg",
+          "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+          "upstreamGroup": "7-S1",
+          "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%A1%9C%E4%B9%83%E3%82%8A%E3%81%AE.jpg",
+          "sha256": "3f67bc9b9a7daf3bdb4835eff0a98f586c807ea3ef19fac6b635122cad2d86a1",
+          "retrieved": "2026-10-06"
+        },
+        "reviewed": "2026-10-06"
+      }
+    }
+  ]
+}

@@ -10,7 +10,9 @@ const iconCategoryLabels = {
   "proxy-clients": "代理客户端", routes: "线路与专线", regions: "国家与地区"
 };
 const categoryLabels = { ...styleCategoryLabels, ...iconCategoryLabels };
-const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "bank-card": "银行卡面", "game-cover": "游戏封面", other: "其他图片" };
+const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "bank-card": "银行卡面", "game-cover": "游戏封面", actress: "女优", other: "其他图片" };
+const actressGallery = window.ActressGallery;
+let actressData;
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
 const cardRegionLabels = { "hong-kong": "香港", "china-mainland": "中国内地", singapore: "新加坡" };
 const cardEditionLabels = { originals: "原始卡面", custom: "修改版" };
@@ -83,10 +85,10 @@ function makeAsset(file) {
   const selectedCover = file.path.match(/^game-covers\/([^/]+)\/([^/]+)\.(?:jpg|png)$/);
   const extraCover = file.path.match(/^game-covers\/([^/]+)\/extras\/([^/]+)\/[^/]+\.(?:jpg|png)$/);
   const coverMatch = selectedCover || extraCover;
-  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : iconMatch ? "icon" : cardMatch ? "bank-card" : coverMatch ? "game-cover" : "other";
+  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : /^actresses\/portraits\/p\d{4,}\.(jpg|png|webp)$/.test(file.path) ? "actress" : iconMatch ? "icon" : cardMatch ? "bank-card" : coverMatch ? "game-cover" : "other";
   const filename = file.path.split("/").pop();
   const asset = {
-    path: file.path, size: Number.isFinite(file.size) && file.size > 0 ? file.size : 0,
+    path: file.path, person: inferredKind === "actress" ? file.person : undefined, size: Number.isFinite(file.size) && file.size > 0 ? file.size : 0,
     sha: typeof file.sha === "string" && /^[a-f0-9]{40}$/.test(file.sha) ? file.sha : "",
     title: typeof file.title === "string" && file.title.trim() ? file.title : filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
     kind: inferredKind,
@@ -152,7 +154,14 @@ function fillSelect(select, entries, placeholder) {
 function refreshControls() {
   const files = viewFiles();
   const isCover = kind === "game-cover";
-  document.getElementById("filters-panel").hidden = isCover;
+  const isPerson = kind === "actress";
+  document.getElementById("filters-panel").hidden = isCover || isPerson;
+  document.getElementById("actress-navigation").hidden = !isPerson;
+  document.getElementById("actress-index").hidden = !isPerson;
+  document.getElementById("show-favorites").hidden = isPerson;
+  controls.search.placeholder = isPerson ? "搜索姓名、别名或罗马字" : "搜索名称、种类或文件名";
+  document.querySelector('label[for="search"]').textContent = isPerson ? "搜索人物" : "搜索图片";
+  document.getElementById("gallery").setAttribute("aria-label", isPerson ? "人物列表" : "图片列表");
   const devices = ["phone","desktop","tablet","unknown"].filter(device => files.some(file => file.device === device));
   fillSelect(controls.device,devices.map(value => [value,deviceLabels[value]]),"全部设备");
   controls.device.disabled = kind !== "wallpaper";
@@ -192,7 +201,7 @@ function refreshControls() {
   document.querySelectorAll(".tab").forEach(tab => {
     const count = assets.filter(file => file.kind === tab.dataset.kind && (file.kind !== "game-cover" || !file.extra)).length;
     tab.querySelector("span").textContent = count;
-    tab.hidden = ["icon","bank-card","game-cover","other"].includes(tab.dataset.kind) && !count;
+    tab.hidden = ["icon","bank-card","game-cover","actress","other"].includes(tab.dataset.kind) && !count;
     tab.disabled = !count;
     tab.setAttribute("aria-pressed", String(tab.dataset.kind === kind));
   });
@@ -202,7 +211,8 @@ function refreshControls() {
   const iconCount = assets.filter(file => file.kind === "icon").length;
   const coverCount = assets.filter(file => file.kind === "game-cover" && !file.extra).length;
   const cardCount = assets.filter(file => file.kind === "bank-card").length;
-  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "") + (coverCount ? " · " + coverCount + " 张游戏封面" : "");
+  const personCount = assets.filter(file => file.kind === "actress").length;
+  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "") + (coverCount ? " · " + coverCount + " 张游戏封面" : "") + (personCount ? " · " + personCount + " 位女优" : "");
   refreshFavoriteCount();
 }
 
@@ -297,12 +307,27 @@ function syncRoute() {
   const params = new URLSearchParams(location.hash.slice(1));
   const series = params.get("series");
   const nextSeries = gameSeries.some(item => item.id === series) ? series : "";
-  const nextKind = params.has("series") || params.has("covers") ? "game-cover" : history.state?.galleryKind || kind;
+  const nextKind = params.has("actresses") || params.has("person") ? "actress" : params.has("series") || params.has("covers") ? "game-cover" : history.state?.galleryKind || kind;
+  if (nextKind === "actress" && actressGallery && actressData) {
+    kind = "actress"; activeSeries = "";
+    const state = actressGallery.route(params);
+    controls.search.value = state.query;
+    refreshControls(); renderGallery();
+    syncPreviewRoute(); actressGallery.syncPerson(params.get("person"));
+    return;
+  }
+  if (actressGallery) actressGallery.syncPerson(null);
   if (activeSeries !== nextSeries || kind !== nextKind) {
     activeSeries = nextSeries; kind = nextKind;
     clearFilters(); renderGallery();
   }
   syncPreviewRoute();
+}
+
+function navigatePersonView(url, scroll = true, replace = false) {
+  history[replace ? "replaceState" : "pushState"]({galleryKind:"actress",assetPreview:false},"",url);
+  syncRoute();
+  if (scroll) window.scrollTo(0,0);
 }
 
 function previewPath() {
@@ -617,6 +642,13 @@ function compareAssets(a,b) {
 }
 
 function renderGallery() {
+  gallery.classList.remove("person-gallery");
+  if (kind === "actress" && actressGallery && actressData) {
+    document.getElementById("cover-navigation").hidden = true;
+    actressGallery.render(controls.search.value, gallery, results);
+    reset.disabled = !controls.search.value && !actressGallery.state.letter;
+    return;
+  }
   const query = controls.search.value.trim().toLocaleLowerCase();
   const scope = viewFiles();
   const visible = scope
@@ -667,11 +699,23 @@ function clearFilters() {
   controls.bank.value = ""; controls.edition.value = "";
   controls.sort.value = defaultSort();
   favoritesOnly = false; refreshControls();
+  if (kind === "actress" && actressGallery && actressData) {
+    const url = actressGallery.viewUrl({query:"",letter:"",page:1});
+    history.replaceState({galleryKind:"actress"},"",url);
+    actressGallery.route(new URLSearchParams(new URL(url).hash.slice(1)));
+  }
 }
 
 document.getElementById("filters-panel").open = !window.matchMedia("(max-width: 760px)").matches;
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => {
   const nextKind = tab.dataset.kind;
+  if (nextKind === "actress" && actressGallery) {
+    navigatePersonView(actressGallery.viewUrl({view:"annual",query:"",letter:"",page:1})); return;
+  }
+  if (kind === "actress") {
+    if (actressGallery) actressGallery.syncPerson(null);
+    history.pushState({galleryKind:nextKind,assetPreview:false},"",nextKind === "game-cover" ? coverViewUrl() : base.href);
+  }
   if (kind !== nextKind && (kind === "game-cover" || nextKind === "game-cover")) {
     history.replaceState({...history.state,galleryKind:kind},"",location.href);
     history.pushState({galleryKind:nextKind,assetPreview:false},"",nextKind === "game-cover" ? coverViewUrl() : base.href);
@@ -682,6 +726,11 @@ document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", (
 }));
 document.querySelector("#cover-navigation a").addEventListener("click",event => navigateCoverView(event));
 Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", () => {
+  if (kind === "actress" && actressGallery && name === "search") {
+    const url = actressGallery.viewUrl({query:control.value,page:1});
+    history.replaceState({galleryKind:"actress"},"",url);
+    actressGallery.route(new URLSearchParams(new URL(url).hash.slice(1)));
+  }
   if (["device","category","bank","edition"].includes(name)) refreshControls();
   renderGallery();
 }));
@@ -843,9 +892,12 @@ async function load() {
     const banksChanged = JSON.stringify(nextBanks) !== JSON.stringify(cardBanks);
     cardBanks = nextBanks;
     const files = new Map(catalog.assets.filter(file => file && typeof file.path === "string" && /^[a-z0-9][a-z0-9/.-]*$/.test(file.path) && !file.path.split("/").includes("..") && imagePattern.test(file.path) && !/^(app|scripts)\//.test(file.path)).map(file => [file.path,file]));
+    const peopleChanged = JSON.stringify(actressData) !== JSON.stringify(catalog.actresses);
+    actressData = catalog.actresses;
+    if (actressGallery) actressGallery.configure(actressData, [...files.values()], navigatePersonView);
     directoryUnavailable = false;
     updateConnectionNotice();
-    applyFiles(files.values(),banksChanged || gamesChanged);
+    applyFiles(files.values(),banksChanged || gamesChanged || peopleChanged);
     if (!files.size) gallery.replaceChildren(element("div","empty","仓库里还没有图片。"));
     if (previewPath() && !assets.some(file => file.path === previewPath())) {
       history.replaceState({...history.state,assetPreview:false},"",withoutPreviewUrl());
@@ -870,4 +922,5 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.addEventListener("controllerchange",() => { if (assets.length) renderGallery(); });
   navigator.serviceWorker.register(new URL("sw.js",base), { scope: base.pathname, updateViaCache: "none" }).catch(() => {});
 }
+if (actressGallery) actressGallery.bind();
 load();

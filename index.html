@@ -6,15 +6,16 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#10171e" media="(prefers-color-scheme: dark)">
-  <meta name="description" content="浏览壁纸、头像、图标、银行卡面与游戏封面，分类预览、下载并添加到手机主屏幕。">
+  <meta name="description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与女优人物图库。">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="图片资源">
   <title>图片资源库 · zzpice</title>
   <link rel="manifest" href="app/manifest.webmanifest">
   <link rel="icon" href="app/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="app/icon-180.png">
-  <link rel="stylesheet" href="app/site.css?v=accd876803">
-  <script src="app/site.js?v=6ba83a5f4e" defer></script>
+  <link rel="stylesheet" href="app/site.css?v=a2e54fac14">
+  <script src="app/actresses.js?v=3de35a943d" defer></script>
+  <script src="app/site.js?v=bec1381665" defer></script>
 </head>
 <body>
   <header>
@@ -32,8 +33,10 @@
     <button class="tab" type="button" data-kind="icon" aria-pressed="false" hidden>图标<span>0</span></button>
     <button class="tab" type="button" data-kind="bank-card" aria-pressed="false" hidden>银行卡面<span>0</span></button>
     <button class="tab" type="button" data-kind="game-cover" aria-pressed="false" hidden>游戏封面<span>0</span></button>
+    <button class="tab" type="button" data-kind="actress" aria-pressed="false" hidden>女优图库<span>0</span></button>
     <button class="tab" type="button" data-kind="other" aria-pressed="false" hidden>其他图片<span>0</span></button>
   </nav>
+  <section id="actress-navigation" hidden aria-label="女优人物图库"></section>
   <nav id="cover-navigation" class="cover-navigation" aria-label="游戏封面导航" hidden>
     <a href="#covers">游戏封面</a><span aria-hidden="true"> / </span><span id="cover-series-title"></span>
   </nav>
@@ -41,6 +44,7 @@
     <label class="sr-only" for="search">搜索图片</label>
     <input id="search" type="search" placeholder="搜索名称、种类或文件名" autocomplete="off">
   </div>
+  <nav id="actress-index" class="person-index" aria-label="按罗马字首字母查找" hidden></nav>
   <details class="filter-panel" id="filters-panel">
     <summary><span>筛选与排序</span><span id="filter-summary">全部图片</span></summary>
     <section class="filters" aria-label="筛选图片">
@@ -64,6 +68,10 @@
     <span>点击图片预览 · 下载保留完整尺寸</span>
     <div><a href="https://github.com/zzpice/assets" target="_blank" rel="noopener">GitHub 仓库 ↗</a><a href="https://github.com/zzpice/assets/blob/main/README.md" target="_blank" rel="noopener">归档规则 ↗</a></div>
   </footer>
+  <dialog id="person-dialog" class="person-dialog" aria-labelledby="person-title">
+    <div class="dialog-header"><div><h2 id="person-title"></h2><p id="person-romanization"></p></div><button id="person-close" class="close-button" type="button" aria-label="关闭人物资料">×</button></div>
+    <div id="person-content" class="person-content"></div>
+  </dialog>
   <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title">
     <div class="dialog-header"><div><h2 id="preview-title"></h2><p id="preview-size"></p></div><button type="button" class="close-button" data-close="preview-dialog" aria-label="关闭预览">×</button></div>
     <div class="preview-toolbar"><div class="preview-navigation" aria-label="切换图片"><button id="preview-previous" type="button" class="secondary-button" aria-label="上一张图片">‹</button><span id="preview-position" role="status"></span><button id="preview-next" type="button" class="secondary-button" aria-label="下一张图片">›</button></div><button id="preview-lockscreen" type="button" class="secondary-button" aria-pressed="false">锁屏效果</button><button id="preview-avatar-round" type="button" class="secondary-button" aria-pressed="false" hidden>圆形效果</button></div>

@@ -16,6 +16,7 @@ import xml.etree.ElementTree as ET
 from PIL import Image, ImageChops, ImageDraw, ImageOps
 
 from game_covers import cover_metadata, game_indexes, validate_selected_covers
+from actresses import directory, portrait_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".svg"}
@@ -176,6 +177,7 @@ def build_catalog(root):
     banks = card_bank_index(card_banks)
     game_series, games = previous.get("gameSeries", []), previous.get("games", [])
     _, game_index = game_indexes(game_series, games)
+    actress_directory, people = directory(root)
     assets, previews = [], {}
     for relative in source_paths(root):
         path = relative.as_posix()
@@ -214,6 +216,9 @@ def build_catalog(root):
                 raise ValueError(f"{path}: 图标路径应为 icons/<种类>/<名称>.<格式>")
             validate_icon(image, image_format, path)
             kind, category = "icon", match[1]
+        elif path.startswith("actresses/"):
+            card_info = portrait_metadata(path, image, image_format, people)
+            kind, category = "actress", None
         elif path.startswith("game-covers/"):
             category, card_info = cover_metadata(path, old, image, image_format, game_index)
             kind = "game-cover"
@@ -227,14 +232,14 @@ def build_catalog(root):
         item.update(card_info)
         if category:
             item["category"] = category
-        if kind != "game-cover" and old.get("device"):
+        if kind not in {"game-cover", "actress"} and old.get("device"):
             if old["device"] not in {"phone", "desktop", "tablet", "unknown"}:
                 raise ValueError(f"{path}: device 应为 phone、desktop、tablet 或 unknown，也可以不填写")
             item["device"] = old["device"]
         elif kind == "wallpaper":
             item["device"] = infer_device(width, height)
         item.update(width=width, height=height)
-        if kind != "game-cover" and same_source and old.get("note"):
+        if kind not in {"game-cover", "actress"} and same_source and old.get("note"):
             item["note"] = old["note"]
         if image is not None and kind != "icon":
             if same_source and usable_preview(root, old.get("thumbnail"), width, height):
@@ -259,6 +264,8 @@ def build_catalog(root):
         catalog["cardBanks"] = card_banks
     if game_series or games:
         catalog.update(gameSeries=game_series, games=games)
+    if actress_directory:
+        catalog["actresses"] = actress_directory
     text = json.dumps(catalog, ensure_ascii=False, indent=2) + "\n"
     referenced = {item["thumbnail"] for item in assets if item.get("thumbnail")}
     stale = [path for path in (root / "app/previews").glob("*.webp") if path.relative_to(root).as_posix() not in referenced]
@@ -270,7 +277,7 @@ def versioned_html(root):
     if not page.exists():
         return None
     text = page.read_text("utf-8")
-    for path in ["app/site.js", "app/site.css"]:
+    for path in ["app/site.js", "app/site.css", "app/actresses.js"]:
         file = root / path
         if file.exists():
             version = hashlib.sha256(file.read_bytes()).hexdigest()[:10]
@@ -286,13 +293,13 @@ def versioned_service_worker(root, catalog_text, html):
     text = worker.read_text("utf-8")
     shell_hashes = {}
     contents = {"index.html": (html or "").encode("utf-8"), "catalog.json": catalog_text.encode("utf-8")}
-    for path in ["app/site.js", "app/site.css", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
+    for path in ["app/site.js", "app/site.css", "app/actresses.js", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
         file = root / path
         if file.exists():
             contents[path] = file.read_bytes()
     for path, data in contents.items():
         digest = hashlib.sha256(data).hexdigest()
-        key = path + "?v=" + digest[:10] if path in {"app/site.js", "app/site.css"} else path
+        key = path + "?v=" + digest[:10] if path in {"app/site.js", "app/site.css", "app/actresses.js"} else path
         shell_hashes[key] = digest
     shell_pattern = r"const SHELL_HASHES = \{.*?\};"
     text = re.sub(shell_pattern, lambda _: "const SHELL_HASHES = " + json.dumps(shell_hashes, indent=2) + ";", text, count=1, flags=re.S)
@@ -300,7 +307,7 @@ def versioned_service_worker(root, catalog_text, html):
     normalized = re.sub(pattern, r'\g<1>VERSION\g<2>', text, count=1)
     digest = hashlib.sha256(normalized.encode("utf-8"))
     digest.update(("\0catalog.json\0" + catalog_text + "\0index.html\0" + (html or "")).encode("utf-8"))
-    for path in ["app/site.js", "app/site.css", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
+    for path in ["app/site.js", "app/site.css", "app/actresses.js", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
         file = root / path
         if file.exists():
             digest.update(("\0" + path + "\0").encode("utf-8"))

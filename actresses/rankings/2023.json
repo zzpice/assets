@@ -1,0 +1,729 @@
+{
+  "series": "fanza-monthly-dvd-rental",
+  "year": 2023,
+  "retrieved": "2026-10-06",
+  "pages": [
+    {
+      "url": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/",
+      "sha256": "c3996cbb43f297c6b61b4770c037d345c04c35eb02a0d5b5c73a0295586a04b6"
+    },
+    {
+      "url": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/",
+      "sha256": "a424ded643e2e2bb4ffe595452bdf780934ccea8dfbf2a41b2bb3a2826ae2b2e"
+    },
+    {
+      "url": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=3/",
+      "sha256": "a707df04e0f89da7c5a82b4f70604880eb0bb0574483fec6470d3e1433dd7b34"
+    },
+    {
+      "url": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+      "sha256": "09e3835eabbdaeace780ba0f54c4a6f351df02af43e2ffc3d41bd902d99a3267"
+    },
+    {
+      "url": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/",
+      "sha256": "c166963dff7b0be8bd092a398f1e1c60a15e3de53b7fad038d29a319b22d9191"
+    }
+  ],
+  "rows": [
+    {
+      "rank": 1,
+      "sourceId": "1067267",
+      "name": "楪カレン",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1067267/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yuzuriha_karen.jpg"
+    },
+    {
+      "rank": 2,
+      "sourceId": "1072360",
+      "name": "倉本すみれ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1072360/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kuramoto_sumire.jpg"
+    },
+    {
+      "rank": 3,
+      "sourceId": "1059080",
+      "name": "東條なつ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1059080/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/toujyou_natu.jpg"
+    },
+    {
+      "rank": 4,
+      "sourceId": "1044864",
+      "name": "河北彩花（河北彩伽）",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1044864/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kawakita_saika.jpg"
+    },
+    {
+      "rank": 5,
+      "sourceId": "1072206",
+      "name": "小花のん",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1072206/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/ohana_non.jpg"
+    },
+    {
+      "rank": 6,
+      "sourceId": "1061760",
+      "name": "葵いぶき",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1061760/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/aoi_ibuki.jpg"
+    },
+    {
+      "rank": 7,
+      "sourceId": "1030262",
+      "name": "三上悠亜",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1030262/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/mikami_yua.jpg"
+    },
+    {
+      "rank": 8,
+      "sourceId": "1075675",
+      "name": "末広純",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1075675/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/suehiro_zyun.jpg"
+    },
+    {
+      "rank": 9,
+      "sourceId": "1020685",
+      "name": "森沢かな（飯岡かなこ）",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1020685/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/iioka_kanako.jpg"
+    },
+    {
+      "rank": 10,
+      "sourceId": "1064982",
+      "name": "八掛うみ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1064982/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yatugake_umi.jpg"
+    },
+    {
+      "rank": 11,
+      "sourceId": "1047611",
+      "name": "黒川すみれ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1047611/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kurokawa_sumire.jpg"
+    },
+    {
+      "rank": 12,
+      "sourceId": "1054998",
+      "name": "松本いちか",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1054998/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/matumoto_itika.jpg"
+    },
+    {
+      "rank": 13,
+      "sourceId": "1069952",
+      "name": "新井リマ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1069952/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/arai_rima.jpg"
+    },
+    {
+      "rank": 14,
+      "sourceId": "1072127",
+      "name": "石川澪",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1072127/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/isikawa_mio.jpg"
+    },
+    {
+      "rank": 15,
+      "sourceId": "1042907",
+      "name": "伊藤舞雪",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1042907/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/ito_mayuki.jpg"
+    },
+    {
+      "rank": 16,
+      "sourceId": "1079035",
+      "name": "星乃莉子",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1079035/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/hosino_riko.jpg"
+    },
+    {
+      "rank": 17,
+      "sourceId": "1039921",
+      "name": "山岸あや花（山岸逢花）",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1039921/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yamagishi_aika.jpg"
+    },
+    {
+      "rank": 18,
+      "sourceId": "1073118",
+      "name": "山手梨愛",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1073118/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yamate_ria.jpg"
+    },
+    {
+      "rank": 19,
+      "sourceId": "1008785",
+      "name": "篠田ゆう",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1008785/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/sinoda_yuu.jpg"
+    },
+    {
+      "rank": 20,
+      "sourceId": "1041897",
+      "name": "神宮寺ナオ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1041897/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/zinguuzi_nao.jpg"
+    },
+    {
+      "rank": 21,
+      "sourceId": "1039982",
+      "name": "美谷朱音（美谷朱里）",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1039982/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/mitani_akari.jpg"
+    },
+    {
+      "rank": 22,
+      "sourceId": "1056220",
+      "name": "天川そら",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1056220/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/amakawa_sora.jpg"
+    },
+    {
+      "rank": 23,
+      "sourceId": "1054168",
+      "name": "弥生みづき",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1054168/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yayoi_miduki.jpg"
+    },
+    {
+      "rank": 24,
+      "sourceId": "1077723",
+      "name": "小湊よつ葉",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1077723/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kominato_yotuha.jpg"
+    },
+    {
+      "rank": 25,
+      "sourceId": "1019076",
+      "name": "鈴村あいり",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1019076/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/suzumura_airi.jpg"
+    },
+    {
+      "rank": 26,
+      "sourceId": "1037663",
+      "name": "明里つむぎ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1037663/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/akari_tumugi.jpg"
+    },
+    {
+      "rank": 27,
+      "sourceId": "1008965",
+      "name": "奥田咲",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1008965/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/okuda_saki.jpg"
+    },
+    {
+      "rank": 28,
+      "sourceId": "26225",
+      "name": "波多野結衣",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=26225/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/hatano_yui.jpg"
+    },
+    {
+      "rank": 29,
+      "sourceId": "1004672",
+      "name": "JULIA",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1004672/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/julia.jpg"
+    },
+    {
+      "rank": 30,
+      "sourceId": "1021367",
+      "name": "希島あいり",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1021367/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kizima_airi.jpg"
+    },
+    {
+      "rank": 31,
+      "sourceId": "1062909",
+      "name": "三宮つばき",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1062909/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/sannomiya_tubaki.jpg"
+    },
+    {
+      "rank": 32,
+      "sourceId": "1062041",
+      "name": "さつき芽衣",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1062041/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/satuki_mei3.jpg"
+    },
+    {
+      "rank": 33,
+      "sourceId": "1064132",
+      "name": "白桃はな",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1064132/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/sirato_hana.jpg"
+    },
+    {
+      "rank": 34,
+      "sourceId": "1035513",
+      "name": "相沢みなみ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1035513/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/aizawa_minami.jpg"
+    },
+    {
+      "rank": 35,
+      "sourceId": "1051912",
+      "name": "涼森れむ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1051912/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/suzumori_remu.jpg"
+    },
+    {
+      "rank": 36,
+      "sourceId": "1021359",
+      "name": "夏目彩春",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1021359/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/natume_iroha.jpg"
+    },
+    {
+      "rank": 37,
+      "sourceId": "1069634",
+      "name": "愛弓りょう",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1069634/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/ayumi_ryou.jpg"
+    },
+    {
+      "rank": 38,
+      "sourceId": "1039157",
+      "name": "桜空もも",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1039157/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/sakura_momo4.jpg"
+    },
+    {
+      "rank": 39,
+      "sourceId": "1075464",
+      "name": "宮下玲奈",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1075464/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/miyasita_rena2.jpg"
+    },
+    {
+      "rank": 40,
+      "sourceId": "1068670",
+      "name": "花狩まい",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1068670/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kagari_mai.jpg"
+    },
+    {
+      "rank": 41,
+      "sourceId": "1076928",
+      "name": "綾瀬こころ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1076928/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/ayase_kokoro.jpg"
+    },
+    {
+      "rank": 42,
+      "sourceId": "1065724",
+      "name": "乙アリス",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1065724/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/otu_arisu.jpg"
+    },
+    {
+      "rank": 43,
+      "sourceId": "1068671",
+      "name": "北野未奈",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1068671/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kitano_mina.jpg"
+    },
+    {
+      "rank": 44,
+      "sourceId": "1038706",
+      "name": "水卜さくら",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1038706/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/miura_sakura.jpg"
+    },
+    {
+      "rank": 45,
+      "sourceId": "1042219",
+      "name": "架乃ゆら",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1042219/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kano_yura.jpg"
+    },
+    {
+      "rank": 46,
+      "sourceId": "1006229",
+      "name": "葵つかさ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1006229/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/aoi_tukasa.jpg"
+    },
+    {
+      "rank": 47,
+      "sourceId": "1078179",
+      "name": "日向かえで",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1078179/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/hinata_kaede.jpg"
+    },
+    {
+      "rank": 48,
+      "sourceId": "1059227",
+      "name": "木下凛々子",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1059227/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kinosita_ririko.jpg"
+    },
+    {
+      "rank": 49,
+      "sourceId": "1031805",
+      "name": "桃乃木かな",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1031805/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/momonogi_kana.jpg"
+    },
+    {
+      "rank": 50,
+      "sourceId": "2752",
+      "name": "風間ゆみ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=2752/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kazama_yumi.jpg"
+    },
+    {
+      "rank": 51,
+      "sourceId": "1060141",
+      "name": "木下ひまり（花沢ひまり）",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1060141/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kinosita_himari.jpg"
+    },
+    {
+      "rank": 52,
+      "sourceId": "1057477",
+      "name": "八木奈々",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1057477/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yagi_nana.jpg"
+    },
+    {
+      "rank": 53,
+      "sourceId": "17802",
+      "name": "つぼみ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=17802/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/tubomi.jpg"
+    },
+    {
+      "rank": 54,
+      "sourceId": "1066537",
+      "name": "白峰ミウ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1066537/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/siromine_miu.jpg"
+    },
+    {
+      "rank": 55,
+      "sourceId": "1014614",
+      "name": "小早川怜子",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1014614/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kobayakawa_reiko.jpg"
+    },
+    {
+      "rank": 56,
+      "sourceId": "1081914",
+      "name": "入田真綾",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1081914/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/irita_maaya.jpg"
+    },
+    {
+      "rank": 57,
+      "sourceId": "1071155",
+      "name": "楓ふうあ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1071155/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kaede_huua.jpg"
+    },
+    {
+      "rank": 58,
+      "sourceId": "1061063",
+      "name": "石原希望",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1061063/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/isihara_nozomi2.jpg"
+    },
+    {
+      "rank": 59,
+      "sourceId": "1036352",
+      "name": "新村あかり",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1036352/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/niimura_akari.jpg"
+    },
+    {
+      "rank": 60,
+      "sourceId": "4294",
+      "name": "友田真希",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=4294/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/tomoda_maki.jpg"
+    },
+    {
+      "rank": 61,
+      "sourceId": "1075302",
+      "name": "柏木こなつ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1075302/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kasiwagi_konatu.jpg"
+    },
+    {
+      "rank": 62,
+      "sourceId": "1058710",
+      "name": "藤森里穂",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1058710/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/huzimori_riho.jpg"
+    },
+    {
+      "rank": 63,
+      "sourceId": "1042129",
+      "name": "七沢みあ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1042129/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/nanasawa_mia.jpg"
+    },
+    {
+      "rank": 64,
+      "sourceId": "1069900",
+      "name": "横宮七海",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1069900/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yokomiya_nanami.jpg"
+    },
+    {
+      "rank": 65,
+      "sourceId": "1041891",
+      "name": "水戸かな",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1041891/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/mito_kana.jpg"
+    },
+    {
+      "rank": 66,
+      "sourceId": "1082666",
+      "name": "天月あず",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1082666/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/amatuki_azu.jpg"
+    },
+    {
+      "rank": 67,
+      "sourceId": "1032266",
+      "name": "向井藍",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1032266/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/mukai_ai.jpg"
+    },
+    {
+      "rank": 68,
+      "sourceId": "1019323",
+      "name": "夢乃あいか",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1019323/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yumeno_aika.jpg"
+    },
+    {
+      "rank": 69,
+      "sourceId": "1049908",
+      "name": "渚みつき",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1049908/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/nagisa_mituki.jpg"
+    },
+    {
+      "rank": 70,
+      "sourceId": "1044046",
+      "name": "河合あすな",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1044046/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kawai_asuna.jpg"
+    },
+    {
+      "rank": 71,
+      "sourceId": "1044982",
+      "name": "水川スミレ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1044982/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/mizukawa_sumire.jpg"
+    },
+    {
+      "rank": 72,
+      "sourceId": "1060892",
+      "name": "蜜美杏",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1060892/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/mitumi_an.jpg"
+    },
+    {
+      "rank": 73,
+      "sourceId": "1001206",
+      "name": "春菜はな",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1001206/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/haruna_hana.jpg"
+    },
+    {
+      "rank": 74,
+      "sourceId": "1076785",
+      "name": "神木麗",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1076785/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kamiki_rei.jpg"
+    },
+    {
+      "rank": 75,
+      "sourceId": "1050439",
+      "name": "月乃ルナ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1050439/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/tukino_runa2.jpg"
+    },
+    {
+      "rank": 76,
+      "sourceId": "1062074",
+      "name": "宮島めい",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1062074/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/miyazima_mei.jpg"
+    },
+    {
+      "rank": 77,
+      "sourceId": "1059342",
+      "name": "梓ヒカリ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1059342/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/azusa_hikari.jpg"
+    },
+    {
+      "rank": 78,
+      "sourceId": "1012844",
+      "name": "紗倉まな",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1012844/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/sakura_mana.jpg"
+    },
+    {
+      "rank": 79,
+      "sourceId": "1075829",
+      "name": "恋渕ももな",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1075829/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/koibuti_momona.jpg"
+    },
+    {
+      "rank": 80,
+      "sourceId": "1058114",
+      "name": "加美杏奈",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1058114/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kami_anna.jpg"
+    },
+    {
+      "rank": 81,
+      "sourceId": "1052930",
+      "name": "吉根ゆりあ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1052930/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/yoshine_yuria.jpg"
+    },
+    {
+      "rank": 82,
+      "sourceId": "1077426",
+      "name": "藤かんな",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1077426/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/huzi_kanna.jpg"
+    },
+    {
+      "rank": 83,
+      "sourceId": "1073511",
+      "name": "時田亜美",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1073511/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/tokita_ami.jpg"
+    },
+    {
+      "rank": 84,
+      "sourceId": "23130",
+      "name": "川上ゆう（森野雫）",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=23130/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kawakami_yuu.jpg"
+    },
+    {
+      "rank": 85,
+      "sourceId": "1069330",
+      "name": "小宵こなん",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1069330/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/koyoi_konan.jpg"
+    },
+    {
+      "rank": 86,
+      "sourceId": "1040946",
+      "name": "君島みお",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1040946/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kimizima_mio.jpg"
+    },
+    {
+      "rank": 87,
+      "sourceId": "16322",
+      "name": "翔田千里",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=16322/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/syouda_tisato.jpg"
+    },
+    {
+      "rank": 88,
+      "sourceId": "1076816",
+      "name": "しおかわ雲丹",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1076816/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/siokawa_uni.jpg"
+    },
+    {
+      "rank": 89,
+      "sourceId": "1051402",
+      "name": "日下部加奈",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1051402/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kusakabe_kana.jpg"
+    },
+    {
+      "rank": 90,
+      "sourceId": "1048277",
+      "name": "星宮一花",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1048277/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/hosimiya_itika.jpg"
+    },
+    {
+      "rank": 91,
+      "sourceId": "1026902",
+      "name": "武藤あやか",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1026902/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/mutou_ayaka.jpg"
+    },
+    {
+      "rank": 92,
+      "sourceId": "1041833",
+      "name": "岬ななみ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1041833/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/misaki_nanami.jpg"
+    },
+    {
+      "rank": 93,
+      "sourceId": "1075158",
+      "name": "東雲みれい",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1075158/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/sinonome_mirei.jpg"
+    },
+    {
+      "rank": 94,
+      "sourceId": "1060480",
+      "name": "田中ねね",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1060480/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/tanaka_nene.jpg"
+    },
+    {
+      "rank": 95,
+      "sourceId": "1064392",
+      "name": "栗山莉緒",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1064392/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kuriyama_rio.jpg"
+    },
+    {
+      "rank": 96,
+      "sourceId": "1037291",
+      "name": "一色桃子",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1037291/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/issiki_momoko.jpg"
+    },
+    {
+      "rank": 97,
+      "sourceId": "1075658",
+      "name": "希咲那奈",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1075658/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kisaki_nana.jpg"
+    },
+    {
+      "rank": 98,
+      "sourceId": "30130",
+      "name": "大槻ひびき",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=30130/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/ootuki_hibiki.jpg"
+    },
+    {
+      "rank": 99,
+      "sourceId": "1075330",
+      "name": "皆瀬あかり",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1075330/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/minase_akari.jpg"
+    },
+    {
+      "rank": 100,
+      "sourceId": "1069384",
+      "name": "工藤ララ",
+      "profile": "https://www.dmm.co.jp/rental/-/list/=/article=actress/id=1069384/",
+      "portrait": "https://pics.dmm.co.jp/mono/actjpgs/kudou_rara.jpg"
+    }
+  ]
+}
