@@ -96,11 +96,33 @@ test("enduring profile display preserves missing birth precision and AV debut de
   assert.ok(module.profileRows(byId.get("p0054")).some(([label,value])=>label==="身高" && value==="169 cm"));
   assert.ok(module.profileRows(byId.get("p0100")).some(([label,value])=>label==="出生年份" && value==="2000 年"));
   assert.ok(!module.profileRows(byId.get("p0124")).some(([label])=>label.startsWith("出生")));
-  assert.equal(module.profileRows(byId.get("p0001")).length,0);
+  assert.equal(module.profileRows({}).length,0);
   assert.ok(module.profileRows(byId.get("p0067")).some(([label,value])=>label==="AV 出道年份" && value==="2019 年"));
   assert.ok(!module.profileRows(byId.get("p0067")).some(([label])=>label.startsWith("出生")));
   for (const person of byId.values()) {
     assert.ok(!module.profileRows(person).some(([label])=>/事务所|三围|罩杯|状态/.test(label)));
   }
   assert.ok(!Object.hasOwn(catalog.actresses,"agencies"));
+});
+
+test("field evidence overrides only its own fact and retains legacy fallback",()=>{
+  const module=gallery();
+  const original={sourceName:"same person",source:{url:"https://example.test/birth"},reviewed:"2026-01-01"};
+  const height={...original,source:{url:"https://example.test/height"}};
+  const person={profile:{...original,birthYear:2000,heightCm:165,fieldSources:{heightCm:[height]}}};
+  const evidence=module.profileEvidence(person);
+  assert.deepEqual(Array.from(evidence,entry=>[entry.field,entry.sources[0].source.url]),[["birthYear","https://example.test/birth"],["heightCm","https://example.test/height"]]);
+  assert.equal(evidence[0].label,"出生年份");
+  assert.equal(module.profileEvidence({}).length,0);
+  const shoda=catalog.actresses.people.find(person=>person.id==="p0005");
+  assert.equal(module.profileEvidence(shoda).find(entry=>entry.field==="birthYear").sources.length,2);
+});
+
+test("supplemental Chinese names and sourced Latin spellings retain the same identities",()=>{
+  const module=gallery(); module.route(new URLSearchParams({actresses:"all"}));
+  for(const [cn,jp,latin,pid] of [["春菜花","春菜はな","Haruna Hana","p0015"],["美咲佳奈","美咲かんな","Misaki Kanna","p0031"],["水川堇","水川スミレ","Mizukawa Sumire","p0055"]]) {
+    for(const query of [cn,jp,latin]) assert.equal(module.select(query).items[0].person.id,pid);
+    assert.equal(module.select(cn).items[0].person.name,cn);
+  }
+  assert.equal(module.select("Kuroki Kaoru").items[0].person.id,"p0176");
 });

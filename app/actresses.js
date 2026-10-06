@@ -42,6 +42,15 @@ window.ActressGallery = (() => {
     navigate = onNavigate;
   }
 
+  function profileEvidence(person) {
+    const profile = person.profile;
+    if (!profile) return [];
+    const labels = { birthDate: "出生日期", birthYear: "出生年份", heightCm: "身高", debutYear: "AV 出道年份" };
+    return Object.entries(labels).filter(([field]) => profile[field] !== undefined).map(([field, label]) => ({
+      field, label, sources: profile.fieldSources?.[field] || [{ sourceName: profile.sourceName, source: profile.source, reviewed: profile.reviewed }]
+    }));
+  }
+
   function route(params) {
     const view = params.get("actresses");
     state.view = Object.hasOwn(labels, view) ? view : "annual";
@@ -192,7 +201,10 @@ window.ActressGallery = (() => {
       const list = node("dl", "person-profile");
       for (const [label, value] of rows) list.append(node("dt", "", label), node("dd", "", value));
       const provenance = node("details", "person-method");
-      provenance.append(node("summary", "", "资料来源 · " + person.profile.reviewed), node("p", "", "保留已核对的长期资料，身高为来源公布值；出道年份仅指 AV 出道。缺失信息不补全。"), sourceLink("人物资料出处 ↗", person.profile.source.url));
+      provenance.append(node("summary", "", "资料来源 · " + person.profile.reviewed), node("p", "", "保留已核对的长期资料，身高为来源公布值；出道年份仅指 AV 出道。缺失信息不推测。"));
+      for (const { label, sources } of profileEvidence(person)) {
+        sources.forEach((entry, index) => provenance.append(sourceLink(label + "出处" + (sources.length > 1 ? " " + (index + 1) : "") + " · " + entry.reviewed + " ↗", entry.source.url)));
+      }
       facts.append(list, provenance);
     }
     if (person.japaneseName || person.aliases.length) {
@@ -255,5 +267,5 @@ window.ActressGallery = (() => {
     });
   }
 
-  return { configure, route, viewUrl, select, render, syncPerson, histories, bind, normalize, profileRows, get state() { return state; } };
+  return { configure, route, viewUrl, select, render, syncPerson, histories, bind, normalize, profileRows, profileEvidence, get state() { return state; } };
 })();

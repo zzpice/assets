@@ -38,19 +38,40 @@ def normalized(value):
     return "".join(unicodedata.normalize("NFKC", value).casefold().split())
 
 
-def validate_profile(profile, names, pid):
-    """Reviewed enduring facts, with the source's actual date precision."""
-    allowed = {"sourceName", "source", "reviewed", "heightCm", "birthDate", "birthYear", "debutYear"}
-    if not isinstance(profile, dict) or set(profile) - allowed:
-        raise ValueError(f"{pid}: unsupported profile fields")
-    if normalized(required_text(profile.get("sourceName"), pid + ".profile.sourceName")) not in names:
+def validate_fact_source(evidence, names, pid):
+    if normalized(required_text(evidence.get("sourceName"), pid + ".profile.sourceName")) not in names:
         raise ValueError(f"{pid}: profile name requires reviewed identity mapping")
-    dated(profile.get("reviewed"), pid + ".profile.reviewed")
-    source = profile.get("source", {})
+    dated(evidence.get("reviewed"), pid + ".profile.reviewed")
+    source = evidence.get("source", {})
     https(source.get("url"), pid + ".profile.source.url")
     dated(source.get("retrieved"), pid + ".profile.source.retrieved")
     if not re.fullmatch(r"[a-f0-9]{64}", source.get("sha256", "")):
         raise ValueError(f"{pid}: profile source needs a snapshot SHA-256")
+
+
+def validate_profile(profile, names, pid):
+    """Reviewed enduring facts, with optional field-specific evidence."""
+    facts = {"heightCm", "birthDate", "birthYear", "debutYear"}
+    allowed = {"sourceName", "source", "reviewed", "fieldSources"} | facts
+    if not isinstance(profile, dict) or set(profile) - allowed:
+        raise ValueError(f"{pid}: unsupported profile fields")
+    validate_fact_source(profile, names, pid)
+    if "fieldSources" in profile:
+        overrides = profile["fieldSources"]
+        if not isinstance(overrides, dict) or not overrides or set(overrides) - (facts & profile.keys()):
+            raise ValueError(f"{pid}: fieldSources must refer to recorded enduring facts")
+        for entries in overrides.values():
+            if not isinstance(entries, list) or not entries:
+                raise ValueError(f"{pid}: fieldSources needs nonempty evidence")
+            urls = set()
+            for entry in entries:
+                if not isinstance(entry, dict) or set(entry) != {"sourceName", "source", "reviewed"}:
+                    raise ValueError(f"{pid}: invalid fieldSources evidence")
+                validate_fact_source(entry, names, pid)
+                url = entry["source"]["url"]
+                if url in urls:
+                    raise ValueError(f"{pid}: duplicate fieldSources URL")
+                urls.add(url)
     if "heightCm" in profile and (type(profile["heightCm"]) is not int or not 100 <= profile["heightCm"] <= 230):
         raise ValueError(f"{pid}: heightCm must be a plausible integer in cm")
     if "birthDate" in profile:

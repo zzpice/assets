@@ -211,7 +211,7 @@
     },
     {
       "path": "actresses/portraits/p0015.jpg",
-      "title": "春菜はな",
+      "title": "春菜花",
       "kind": "actress",
       "person": "p0015",
       "width": 600,
@@ -429,7 +429,7 @@
     },
     {
       "path": "actresses/portraits/p0031.jpg",
-      "title": "美咲かんな",
+      "title": "美咲佳奈",
       "kind": "actress",
       "person": "p0031",
       "width": 470,
@@ -735,7 +735,7 @@
     },
     {
       "path": "actresses/portraits/p0055.jpg",
-      "title": "水川スミレ",
+      "title": "水川堇",
       "kind": "actress",
       "person": "p0055",
       "previewCrop": [
@@ -4692,12 +4692,42 @@
             "https://adult-awards.com/archives/2011/"
           ],
           "reviewed": "2026-10-06"
+        },
+        "profile": {
+          "sourceName": "風間ゆみ",
+          "source": {
+            "url": "https://www.capsule.bz/model/yumikazama/",
+            "sha256": "114807dabe5918799ef71c0e242b3a09470dc88ca399f265a4faba17dd10e72a",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1979-02-22",
+          "heightCm": 160,
+          "debutYear": 1997,
+          "fieldSources": {
+            "debutYear": [
+              {
+                "sourceName": "風間ゆみ",
+                "source": {
+                  "url": "https://greenfunding.jp/lab/projects/5699",
+                  "sha256": "db0886941bdd22d9afed09ff4baeb202a360a51537ea0b9faf21b77b29aceb56",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
         }
       },
       {
         "id": "p0002",
         "name": "友田真希",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Tomoda Maki",
+            "source": "https://fitch-av.com/actress/ta?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "4294"
@@ -4717,7 +4747,32 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "友田真希"
+        "japaneseName": "友田真希",
+        "profile": {
+          "sourceName": "友田真希",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=4294&item=video",
+            "sha256": "f68055d40d4ff11fab4ecef2bd4b4cc4882722e69824b1d8714d76b025a5598d",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1972-08-20",
+          "heightCm": 160,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "友田真希",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/258951",
+                  "sha256": "cd866da2fb2cf033e2abbebf17f6e65091227a63f95f4aea35224f1ae705ae78",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Tomoda Maki"
       },
       {
         "id": "p0003",
@@ -4786,6 +4841,10 @@
           {
             "name": "麻美ゆま",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/"
+          },
+          {
+            "name": "Asami Yuma",
+            "source": "https://id.ndl.go.jp/auth/ndlna/01157726"
           }
         ],
         "identities": {
@@ -4827,12 +4886,29 @@
           ],
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "麻美ゆま"
+        "japaneseName": "麻美ゆま",
+        "profile": {
+          "sourceName": "麻美ゆま",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/3934",
+            "sha256": "ed69ddeff0102c3873de13b0fa0a5aba5fcd78561d13381999a21384945de48a",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1987-03-24",
+          "heightCm": 158
+        },
+        "romanization": "Asami Yuma"
       },
       {
         "id": "p0005",
         "name": "翔田千里",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Shoda Chisato",
+            "source": "https://fitch-av.com/actress/sa?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "16322"
@@ -4869,7 +4945,41 @@
             "https://adult-awards.com/archives/2009/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "翔田千里",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/259243",
+            "sha256": "66dde4a011036000a529b1fad72dc1d2d2ea944f31016501ef7c1e56130edc9e",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 163,
+          "birthYear": 1968,
+          "fieldSources": {
+            "birthYear": [
+              {
+                "sourceName": "翔田千里",
+                "source": {
+                  "url": "https://osusume.dmm.co.jp/list/?actress=16322&item=video",
+                  "sha256": "02bac2f7907629b4d08a6f66ba905decb1dd25dcbb90542edd4457bf70cafdf0",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              },
+              {
+                "sourceName": "翔田千里",
+                "source": {
+                  "url": "https://xxx.xcity.jp/idol/detail/134/",
+                  "sha256": "7364ef63a21a4a66c22045af1f45796b9f43f9a57ba38325be66744597303ec0",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Shoda Chisato"
       },
       {
         "id": "p0006",
@@ -4878,6 +4988,10 @@
           {
             "name": "つぼみ",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
+          },
+          {
+            "name": "Tsubomi",
+            "source": "https://kawaiikawaii.jp/actress/ta?page=4"
           }
         ],
         "identities": {
@@ -4928,7 +5042,8 @@
             "sha256": "52b2546699d49fcb930d9e01cc2d06096e9ef883df6b6e06b9171d55b9011924"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Tsubomi"
       },
       {
         "id": "p0007",
@@ -4937,6 +5052,10 @@
           {
             "name": "仲村みう",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/"
+          },
+          {
+            "name": "Nakamura Miu",
+            "source": "https://ideapocket.com/actress/na"
           }
         ],
         "identities": {
@@ -4978,7 +5097,8 @@
           "reviewed": "2026-10-06",
           "heightCm": 157
         },
-        "japaneseName": "仲村みう"
+        "japaneseName": "仲村みう",
+        "romanization": "Nakamura Miu"
       },
       {
         "id": "p0008",
@@ -4987,6 +5107,10 @@
           {
             "name": "佐山愛",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/"
+          },
+          {
+            "name": "Sayama Ai",
+            "source": "https://fitch-av.com/actress/sa?page=4"
           }
         ],
         "identities": {
@@ -5019,7 +5143,8 @@
           "heightCm": 165,
           "birthDate": "1989-01-08"
         },
-        "japaneseName": "佐山愛"
+        "japaneseName": "佐山愛",
+        "romanization": "Sayama Ai"
       },
       {
         "id": "p0009",
@@ -5036,6 +5161,10 @@
           {
             "name": "川上優",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=94150293"
+          },
+          {
+            "name": "Kawakami Yu",
+            "source": "https://fitch-av.com/actress/ka?page=3"
           }
         ],
         "identities": {
@@ -5084,7 +5213,8 @@
             "sha256": "9a84c031bb683bfaa395d6356cc2c3fa77f3b93a79472fa460a72a02c387f85b"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Kawakami Yu"
       },
       {
         "id": "p0010",
@@ -5159,6 +5289,10 @@
           {
             "name": "波多野結衣",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
+          },
+          {
+            "name": "Hatano Yui",
+            "source": "https://fitch-av.com/actress/ha"
           }
         ],
         "identities": {
@@ -5201,7 +5335,8 @@
           "heightCm": 163,
           "birthDate": "1988-05-24"
         },
-        "japaneseName": "波多野結衣"
+        "japaneseName": "波多野結衣",
+        "romanization": "Hatano Yui"
       },
       {
         "id": "p0012",
@@ -5240,6 +5375,16 @@
             "https://blog.livedoor.jp/adult_awards/archives/3705130.html"
           ],
           "reviewed": "2026-10-06"
+        },
+        "profile": {
+          "sourceName": "北条麻妃",
+          "source": {
+            "url": "https://madonna-av.com/actress/detail/214659",
+            "sha256": "594b385423babffc3dab575044e928bc4d112cdb55200cc718e2aa56fe735acf",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 168
         }
       },
       {
@@ -5253,6 +5398,10 @@
           {
             "name": "大槻響",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=90127189"
+          },
+          {
+            "name": "Otsuki Hibiki",
+            "source": "https://fitch-av.com/actress/a?page=11"
           }
         ],
         "identities": {
@@ -5303,7 +5452,8 @@
             "https://wpb.shueisha.co.jp/news/lifestyle/20170506-84344/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Otsuki Hibiki"
       },
       {
         "id": "p0014",
@@ -5312,6 +5462,10 @@
           {
             "name": "椎名ゆな",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/"
+          },
+          {
+            "name": "Shiina Yuna",
+            "source": "https://madonna-av.com/actress/sa?page=10"
           }
         ],
         "identities": {
@@ -5343,15 +5497,32 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "椎名ゆな"
+        "japaneseName": "椎名ゆな",
+        "profile": {
+          "sourceName": "椎名ゆな",
+          "source": {
+            "url": "https://cmore.jp/official/model-shiina.html",
+            "sha256": "76379b3099dc378978e8fef88d0c076bbb7f967cd702af34b5490c875b35d8df",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1986-11-18",
+          "heightCm": 158,
+          "debutYear": 2009
+        },
+        "romanization": "Shiina Yuna"
       },
       {
         "id": "p0015",
-        "name": "春菜はな",
+        "name": "春菜花",
         "aliases": [
           {
             "name": "Haruna Hana",
             "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+          },
+          {
+            "name": "春菜はな",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/"
           }
         ],
         "identities": {
@@ -5359,7 +5530,7 @@
             "1001206"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+        "nameSource": "https://www.newton.com.tw/wiki/%E6%98%A5%E8%8F%9C%E8%8A%B1/18663350",
         "portrait": {
           "path": "actresses/portraits/p0015.jpg",
           "source": {
@@ -5374,7 +5545,17 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Haruna Hana",
-        "japaneseName": "春菜はな"
+        "japaneseName": "春菜はな",
+        "profile": {
+          "sourceName": "春菜はな",
+          "source": {
+            "url": "https://madonna-av.com/actress/detail/214532",
+            "sha256": "49215996613fba70515e4609394111a3a29cb7f4fd7d27eb928b5313ef7ae272",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 162
+        }
       },
       {
         "id": "p0016",
@@ -5428,7 +5609,8 @@
             "sha256": "a8fcb246047330797853d1c7694e3aa63b460fb2c87e1b80d1cbda24c81588bf"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Julia"
       },
       {
         "id": "p0017",
@@ -5437,6 +5619,10 @@
           {
             "name": "葵つかさ",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=3/"
+          },
+          {
+            "name": "Aoi Tsukasa",
+            "source": "https://s1s1s1.com/actress/a?page=2"
           }
         ],
         "identities": {
@@ -5468,7 +5654,19 @@
             "https://wpb.shueisha.co.jp/news/lifestyle/20151128-57430/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "葵つかさ",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/13278",
+            "sha256": "413aba09f2f351fba518a3a79f5cf7da771aa8095e5a960eaee71eeec20941b9",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1990-08-14",
+          "heightCm": 163
+        },
+        "romanization": "Aoi Tsukasa"
       },
       {
         "id": "p0018",
@@ -5524,12 +5722,28 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2019/"
           ],
           "reviewed": "2026-10-06"
+        },
+        "profile": {
+          "sourceName": "篠田ゆう",
+          "source": {
+            "url": "https://ideapocket.com/actress/detail/63903",
+            "sha256": "309851d5128eb23603ff37289d9e0f95729b56c5d10797612bbcf82b92dea3f7",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1991-07-21",
+          "heightCm": 155
         }
       },
       {
         "id": "p0019",
         "name": "奥田咲",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Okuda Saki",
+            "source": "https://moodyz.com/actress/a?page=25"
+          }
+        ],
         "identities": {
           "fanza": [
             "1008965"
@@ -5549,7 +5763,41 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "奥田咲"
+        "japaneseName": "奥田咲",
+        "profile": {
+          "sourceName": "奥田咲",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/16033",
+            "sha256": "2ac0b23dc905deb5db9773b4079063a98a80a4abf470ddf6303a6ef78bdad605",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 148,
+          "birthYear": 1992,
+          "fieldSources": {
+            "birthYear": [
+              {
+                "sourceName": "奥田咲",
+                "source": {
+                  "url": "https://s1s1s1.com/actress/detail/16033",
+                  "sha256": "2ac0b23dc905deb5db9773b4079063a98a80a4abf470ddf6303a6ef78bdad605",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              },
+              {
+                "sourceName": "奥田咲",
+                "source": {
+                  "url": "https://moodyz.com/actress/detail/704209",
+                  "sha256": "3eddfb6029b0bc1f9c7a4cc290e53fa0fb039bbe6ff9d3ece6ed0eb74372fb23",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Okuda Saki"
       },
       {
         "id": "p0020",
@@ -5562,6 +5810,10 @@
           {
             "name": "上原亞衣",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=94710415"
+          },
+          {
+            "name": "Ai Uehara",
+            "source": "https://ai-uehara-official.studio.site/"
           }
         ],
         "identities": {
@@ -5602,7 +5854,18 @@
           ],
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "上原亜衣"
+        "japaneseName": "上原亜衣",
+        "profile": {
+          "sourceName": "上原亜衣",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1011199&item=video",
+            "sha256": "1c79c6724e370c96d59bebaa1f3b034f968c0638e3cdd410e7b178244b3432cc",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1992-11-12"
+        },
+        "romanization": "Ai Uehara"
       },
       {
         "id": "p0021",
@@ -5674,7 +5937,12 @@
       {
         "id": "p0022",
         "name": "小早川怜子",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kobayakawa Reiko",
+            "source": "https://fitch-av.com/actress/ka?page=10"
+          }
+        ],
         "identities": {
           "fanza": [
             "1014614"
@@ -5694,7 +5962,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "小早川怜子"
+        "japaneseName": "小早川怜子",
+        "profile": {
+          "sourceName": "小早川怜子",
+          "source": {
+            "url": "https://www.capsule.bz/models/2160/",
+            "sha256": "03220ff2441cf4eb632f89528affd4d6307c81d65aa5bf771f9b70ad4b6a3a55",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 165
+        },
+        "romanization": "Kobayakawa Reiko"
       },
       {
         "id": "p0023",
@@ -5707,6 +5986,10 @@
           {
             "name": "鈴村愛里",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=93016111"
+          },
+          {
+            "name": "Suzumura Airi",
+            "source": "https://www.minnano-av.com/actress102284.html"
           }
         ],
         "identities": {
@@ -5749,7 +6032,19 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2019/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "鈴村あいり",
+          "source": {
+            "url": "https://official.nax-pro.com/model/105",
+            "sha256": "40df7ceef6a1aa821580371f71feb8860c5b067fd3788da27390781fd608bec1",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1993-09-24",
+          "heightCm": 152
+        },
+        "romanization": "Suzumura Airi"
       },
       {
         "id": "p0024",
@@ -5788,7 +6083,18 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Yumeno Aika",
-        "japaneseName": "夢乃あいか"
+        "japaneseName": "夢乃あいか",
+        "profile": {
+          "sourceName": "夢乃あいか",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/16027",
+            "sha256": "112f88f6c7354af4583edc59784d7d41ec75ed3b963aedfb0a0e4ae16038b5f5",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1994-08-26",
+          "heightCm": 149
+        }
       },
       {
         "id": "p0025",
@@ -5805,6 +6111,10 @@
           {
             "name": "森澤佳奈",
             "source": "https://www.hk01.com/article/1008394"
+          },
+          {
+            "name": "Morisawa Kana",
+            "source": "https://fitch-av.com/actress/ma?page=10"
           }
         ],
         "identities": {
@@ -5837,7 +6147,8 @@
           "heightCm": 160,
           "birthDate": "1992-05-09"
         },
-        "japaneseName": "森沢かな"
+        "japaneseName": "森沢かな",
+        "romanization": "Morisawa Kana"
       },
       {
         "id": "p0026",
@@ -5948,7 +6259,12 @@
       {
         "id": "p0028",
         "name": "通野未帆",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Tono Miho",
+            "source": "https://fitch-av.com/actress/ta?page=5"
+          }
+        ],
         "identities": {
           "fanza": [
             "1021901"
@@ -5968,7 +6284,32 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "通野未帆"
+        "japaneseName": "通野未帆",
+        "profile": {
+          "sourceName": "通野未帆",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1021901&item=video",
+            "sha256": "d64924f553a2fad7655d28e8b671c624604531c6435ef387536e06cc02b11e0e",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1991-01-21",
+          "heightCm": 160,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "通野未帆",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/272351",
+                  "sha256": "465b150c75b4985f6fb315f0481949965df8bda7126c1f4a46cb5784e1745225",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Tono Miho"
       },
       {
         "id": "p0029",
@@ -6021,7 +6362,12 @@
       {
         "id": "p0030",
         "name": "武藤あやか",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Muto Ayaka",
+            "source": "https://madonna-av.com/actress/ma?page=19"
+          }
+        ],
         "identities": {
           "fanza": [
             "1026902"
@@ -6051,15 +6397,30 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "武藤あやか"
+        "japaneseName": "武藤あやか",
+        "profile": {
+          "sourceName": "武藤あやか",
+          "source": {
+            "url": "https://madonna-av.com/actress/detail/223252",
+            "sha256": "f1ff15b73a90916186e22da4b8e32275837828d645357f74fe998352cbb4bf68",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 160
+        },
+        "romanization": "Muto Ayaka"
       },
       {
         "id": "p0031",
-        "name": "美咲かんな",
+        "name": "美咲佳奈",
         "aliases": [
           {
             "name": "Misaki Kanna",
             "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+          },
+          {
+            "name": "美咲かんな",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/"
           }
         ],
         "identities": {
@@ -6067,7 +6428,7 @@
             "1027558"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/",
+        "nameSource": "https://www.xsnvshen.com/girl/19297",
         "portrait": {
           "path": "actresses/portraits/p0031.jpg",
           "source": {
@@ -6082,7 +6443,31 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Misaki Kanna",
-        "japaneseName": "美咲かんな"
+        "japaneseName": "美咲かんな",
+        "profile": {
+          "sourceName": "美咲かんな",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1027558&item=video",
+            "sha256": "84d1f250cb48843f269b306ae95ac8af2ee47818031ba624a323f2e4fead88ff",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1994-07-03",
+          "heightCm": 158,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "美咲かんな",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/273522",
+                  "sha256": "7062b11cfa095962bffe3664b5e355b089cd57ed0ce6d8968529da1376322315",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        }
       },
       {
         "id": "p0032",
@@ -6095,6 +6480,10 @@
           {
             "name": "三上悠亞",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=94786199"
+          },
+          {
+            "name": "Mikami Yua",
+            "source": "https://ideapocket.com/actress/ma"
           }
         ],
         "identities": {
@@ -6122,12 +6511,42 @@
           ],
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "三上悠亜"
+        "japaneseName": "三上悠亜",
+        "profile": {
+          "sourceName": "三上悠亜",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1030262&item=video",
+            "sha256": "247ce1414457636e2aca7f2ad1aafd712863a29bd2b505e5ed5d8a62140ee36c",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1993-08-16",
+          "heightCm": 159,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "三上悠亜",
+                "source": {
+                  "url": "https://ideapocket.com/actress/detail/70549",
+                  "sha256": "39590f00faf31ff78db8f4f780684e23626e3b80621fa62985e0b8bafac3ee2d",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Mikami Yua"
       },
       {
         "id": "p0033",
         "name": "加藤あやの",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kato Ayano",
+            "source": "https://madonna-av.com/actress/ka?page=5"
+          }
+        ],
         "identities": {
           "fanza": [
             "1030312"
@@ -6157,7 +6576,32 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "加藤あやの"
+        "japaneseName": "加藤あやの",
+        "profile": {
+          "sourceName": "加藤あやの",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1030312&item=video",
+            "sha256": "d10161389970b6e19cd8a3db16efa66457d1d41fb39913192e03088b65aaf840",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1983-09-29",
+          "heightCm": 162,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "加藤あやの",
+                "source": {
+                  "url": "https://madonna-av.com/actress/detail/223859",
+                  "sha256": "0be6f3b31c4fd418beb0e6c21e96e9fa2161b791fcb7deb2a78b978c1931d355",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Kato Ayano"
       },
       {
         "id": "p0034",
@@ -6166,6 +6610,10 @@
           {
             "name": "桃乃木かな",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/"
+          },
+          {
+            "name": "Momonogi Kana",
+            "source": "https://ideapocket.com/actress/ma?page=3"
           }
         ],
         "identities": {
@@ -6205,7 +6653,19 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "桃乃木かな",
+          "source": {
+            "url": "https://ideapocket.com/actress/detail/70591",
+            "sha256": "f2a5645abe1cc9d09098e97b2101be1c47ea20d578e10a0243900186c953706f",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1996-12-24",
+          "heightCm": 153
+        },
+        "romanization": "Momonogi Kana"
       },
       {
         "id": "p0035",
@@ -6214,6 +6674,10 @@
           {
             "name": "向井藍",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/"
+          },
+          {
+            "name": "Mukai Ai",
+            "source": "https://fitch-av.com/actress/ma?page=8"
           }
         ],
         "identities": {
@@ -6235,7 +6699,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "向井藍"
+        "japaneseName": "向井藍",
+        "profile": {
+          "sourceName": "向井藍",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/275110",
+            "sha256": "557e36f10e2b7848cf493f4617ddc4ae98a179923c9ed6c553e9488be5c6b63c",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 157
+        },
+        "romanization": "Mukai Ai"
       },
       {
         "id": "p0036",
@@ -6248,6 +6723,10 @@
           {
             "name": "相澤南",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=94296511"
+          },
+          {
+            "name": "Aizawa Minami",
+            "source": "https://ideapocket.com/actress/a"
           }
         ],
         "identities": {
@@ -6279,7 +6758,18 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "相沢みなみ"
+        "japaneseName": "相沢みなみ",
+        "profile": {
+          "sourceName": "相沢みなみ",
+          "source": {
+            "url": "https://ideapocket.com/actress/detail/71698",
+            "sha256": "d11ea8590673a58e19581232e0b83127b616325dddef9db1c4848d5e6b565b06",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1996-06-14"
+        },
+        "romanization": "Aizawa Minami"
       },
       {
         "id": "p0037",
@@ -6318,12 +6808,27 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Niimura Akari",
-        "japaneseName": "新村あかり"
+        "japaneseName": "新村あかり",
+        "profile": {
+          "sourceName": "新村あかり",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/276010",
+            "sha256": "40347e8e3f9be7e324abd0092bfa0dff1c3fa04fe74afa5604ccba8685162c1b",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 153
+        }
       },
       {
         "id": "p0038",
         "name": "一色桃子",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Isshiki Momoko",
+            "source": "https://madonna-av.com/actress/a?page=22"
+          }
+        ],
         "identities": {
           "fanza": [
             "1037291"
@@ -6343,7 +6848,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "一色桃子"
+        "japaneseName": "一色桃子",
+        "profile": {
+          "sourceName": "一色桃子",
+          "source": {
+            "url": "https://madonna-av.com/actress/detail/225624",
+            "sha256": "8c693021d67f1d1d1be46f6fba417b64287e629452c13eb798c4e405cff7deb8",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 158
+        },
+        "romanization": "Isshiki Momoko"
       },
       {
         "id": "p0039",
@@ -6352,6 +6868,10 @@
           {
             "name": "明里つむぎ",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/"
+          },
+          {
+            "name": "Akari Tsumugi",
+            "source": "https://ideapocket.com/actress/a"
           }
         ],
         "identities": {
@@ -6385,7 +6905,8 @@
             "sha256": "fda13373b2435ccf7c3fe1a0b73acca983621a0bff8fb9b51106a76040af650a"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Akari Tsumugi"
       },
       {
         "id": "p0040",
@@ -6398,6 +6919,10 @@
           {
             "name": "水卜櫻",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=91945831"
+          },
+          {
+            "name": "Miura Sakura",
+            "source": "https://moodyz.com/actress/ma?page=5"
           }
         ],
         "identities": {
@@ -6419,7 +6944,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "水卜さくら"
+        "japaneseName": "水卜さくら",
+        "profile": {
+          "sourceName": "水卜さくら",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/23139",
+            "sha256": "b516e4380161c318309d4443de4a3734bd29139af69baf19a4b52c27dba298dc",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 152
+        },
+        "romanization": "Miura Sakura"
       },
       {
         "id": "p0041",
@@ -6432,6 +6968,10 @@
           {
             "name": "櫻空桃",
             "source": "https://zh.wikipedia.org/wiki/樱空桃"
+          },
+          {
+            "name": "Sakura Momo",
+            "source": "https://ideapocket.com/actress/sa"
           }
         ],
         "identities": {
@@ -6464,7 +7004,8 @@
           "heightCm": 160,
           "birthDate": "1996-12-03"
         },
-        "japaneseName": "桜空もも"
+        "japaneseName": "桜空もも",
+        "romanization": "Sakura Momo"
       },
       {
         "id": "p0042",
@@ -6473,6 +7014,10 @@
           {
             "name": "山岸あや花",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/"
+          },
+          {
+            "name": "Yamagishi Ayaka",
+            "source": "https://moodyz.com/actress/ya?page=2"
           }
         ],
         "identities": {
@@ -6493,7 +7038,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "山岸あや花"
+        "japaneseName": "山岸あや花",
+        "profile": {
+          "sourceName": "山岸逢花",
+          "source": {
+            "url": "https://premium-beauty.com/actress/detail/175186",
+            "sha256": "f31d2840744d4ed82935a420a2374c0f2e929e2e9f1feae3d63e2fcb189093f3",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1992-11-30"
+        },
+        "romanization": "Yamagishi Ayaka"
       },
       {
         "id": "p0043",
@@ -6528,7 +7084,31 @@
           }
         },
         "romanization": "Mitani Akari",
-        "japaneseName": "美谷朱音"
+        "japaneseName": "美谷朱音",
+        "profile": {
+          "sourceName": "美谷朱音",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1039982&item=video",
+            "sha256": "bf22024b0238817548175ba3286a2bd9ecfb19dba3138cca72f93c3c542f6f6a",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1997-04-15",
+          "heightCm": 165,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "美谷朱音",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/842689",
+                  "sha256": "1d855456861a6d7c78d34429dd7a184b0144f30df7b4a16dce3ca4a1f255dc53",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        }
       },
       {
         "id": "p0044",
@@ -6541,6 +7121,10 @@
           {
             "name": "君島美緒",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=93288666"
+          },
+          {
+            "name": "Kimijima Mio",
+            "source": "https://fitch-av.com/actress/ka?page=5"
           }
         ],
         "identities": {
@@ -6583,7 +7167,8 @@
           "heightCm": 162,
           "birthDate": "1988-04-25"
         },
-        "japaneseName": "君島みお"
+        "japaneseName": "君島みお",
+        "romanization": "Kimijima Mio"
       },
       {
         "id": "p0045",
@@ -6592,6 +7177,10 @@
           {
             "name": "岬ななみ",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/"
+          },
+          {
+            "name": "Misaki Nanami",
+            "source": "https://ideapocket.com/actress/ma"
           }
         ],
         "identities": {
@@ -6613,7 +7202,19 @@
             "retrieved": "2026-10-06"
           }
         },
-        "japaneseName": "岬ななみ"
+        "japaneseName": "岬ななみ",
+        "profile": {
+          "sourceName": "岬ななみ",
+          "source": {
+            "url": "https://ideapocket.com/actress/detail/73600",
+            "sha256": "6cd81244724f02b8fcde6ca09ec6af54c8e48fb849ec3891a88ba113feb02297",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1996-06-09",
+          "heightCm": 150
+        },
+        "romanization": "Misaki Nanami"
       },
       {
         "id": "p0046",
@@ -6626,6 +7227,10 @@
           {
             "name": "水戶香奈",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=90208984"
+          },
+          {
+            "name": "Mito Kana",
+            "source": "https://madonna-av.com/actress/ma?page=14"
           }
         ],
         "identities": {
@@ -6647,7 +7252,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "水戸かな"
+        "japaneseName": "水戸かな",
+        "profile": {
+          "sourceName": "水戸かな",
+          "source": {
+            "url": "https://madonna-av.com/actress/detail/226478",
+            "sha256": "89e01436fbf14203eefeeb52ecd274bdcb1e9e11feff0440a911e14376a75753",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 162
+        },
+        "romanization": "Mito Kana"
       },
       {
         "id": "p0047",
@@ -6660,6 +7276,10 @@
           {
             "name": "神宮寺奈緒",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=90194410"
+          },
+          {
+            "name": "Jinguji Nao",
+            "source": "https://kawaiikawaii.jp/actress/sa?page=7"
           }
         ],
         "identities": {
@@ -6681,7 +7301,19 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "神宮寺ナオ"
+        "japaneseName": "神宮寺ナオ",
+        "profile": {
+          "sourceName": "神宮寺ナオ",
+          "source": {
+            "url": "https://kawaiikawaii.jp/actress/detail/762075",
+            "sha256": "09f0edf9b34e07329b1fbf060853aad9a57a506fad33bf9a2f9c55c186abd172",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1997-02-15",
+          "heightCm": 160
+        },
+        "romanization": "Jinguji Nao"
       },
       {
         "id": "p0048",
@@ -6719,7 +7351,18 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Nanasawa Mia",
-        "japaneseName": "七沢みあ"
+        "japaneseName": "七沢みあ",
+        "profile": {
+          "sourceName": "七沢みあ",
+          "source": {
+            "url": "https://moodyz.com/actress/detail/710895",
+            "sha256": "b2a6a3b572cf70aded2c956bac545219ce0d89206ef3113b78c7aa87a874ca81",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1998-12-13",
+          "heightCm": 145
+        }
       },
       {
         "id": "p0049",
@@ -6732,6 +7375,10 @@
           {
             "name": "架乃由羅",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=92864816"
+          },
+          {
+            "name": "Kano Yura",
+            "source": "https://s1s1s1.com/actress/ka?page=2"
           }
         ],
         "identities": {
@@ -6764,7 +7411,8 @@
             "sha256": "bd39390aec44ecd2143f36c20e9d86488672dca1bc24d4354d425c914a70ea09"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Kano Yura"
       },
       {
         "id": "p0050",
@@ -6805,7 +7453,17 @@
           }
         },
         "romanization": "Itou Mayuki",
-        "japaneseName": "伊藤舞雪"
+        "japaneseName": "伊藤舞雪",
+        "profile": {
+          "sourceName": "伊藤舞雪",
+          "source": {
+            "url": "https://ideapocket.com/actress/detail/73867",
+            "sha256": "ee5b21c942a7d59145982fd81aacd366251e29ac9150aba975e383ac2fa78bb3",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 160
+        }
       },
       {
         "id": "p0051",
@@ -6818,6 +7476,10 @@
           {
             "name": "寶田萌奈美",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=92483682"
+          },
+          {
+            "name": "Takarada Monami",
+            "source": "https://fitch-av.com/actress/ta"
           }
         ],
         "identities": {
@@ -6839,7 +7501,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "宝田もなみ"
+        "japaneseName": "宝田もなみ",
+        "profile": {
+          "sourceName": "宝田もなみ",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/277878",
+            "sha256": "19cc3e1594ee0c0e3f9bf8fbae2e4dbd9ec8b9c6882a4e28240a6d4f63066bc5",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 160
+        },
+        "romanization": "Takarada Monami"
       },
       {
         "id": "p0052",
@@ -6848,6 +7521,10 @@
           {
             "name": "河合あすな",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/"
+          },
+          {
+            "name": "Kawai Asuna",
+            "source": "https://www.t-powers.co.jp/talent/%e6%b2%b3%e5%90%88%e3%81%82%e3%81%99%e3%81%aa/"
           }
         ],
         "identities": {
@@ -6888,7 +7565,8 @@
           "heightCm": 158,
           "birthDate": "1998-03-21"
         },
-        "japaneseName": "河合あすな"
+        "japaneseName": "河合あすな",
+        "romanization": "Kawai Asuna"
       },
       {
         "id": "p0053",
@@ -6897,6 +7575,10 @@
           {
             "name": "美園和花",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/"
+          },
+          {
+            "name": "Misono Waka",
+            "source": "https://fitch-av.com/actress/ma?page=5"
           }
         ],
         "identities": {
@@ -6918,7 +7600,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "美園和花"
+        "japaneseName": "美園和花",
+        "profile": {
+          "sourceName": "美園和花",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/279105",
+            "sha256": "1b6dcc6f33460eaf5c966560a447b8509b0f938112d1c1f79d015201a1ce28b9",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 160
+        },
+        "romanization": "Misono Waka"
       },
       {
         "id": "p0054",
@@ -6927,6 +7620,10 @@
           {
             "name": "河北彩伽",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/"
+          },
+          {
+            "name": "Kawakita Saika",
+            "source": "https://s1s1s1.com/actress/ka?page=2"
           }
         ],
         "identities": {
@@ -6978,18 +7675,28 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Kawakita Saika"
       },
       {
         "id": "p0055",
-        "name": "水川スミレ",
-        "aliases": [],
+        "name": "水川堇",
+        "aliases": [
+          {
+            "name": "Mizukawa Sumire",
+            "source": "https://fitch-av.com/actress/ma?page=4"
+          },
+          {
+            "name": "水川スミレ",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1044982"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/",
+        "nameSource": "https://www.haoxueedu.com/edu/2244.html",
         "portrait": {
           "path": "actresses/portraits/p0055.jpg",
           "source": {
@@ -7024,12 +7731,18 @@
             "sha256": "5fd86344d8fbe143f5462eb4bf588e9b07d708cc4f02e675c9ccbed7fdef36c9"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Mizukawa Sumire"
       },
       {
         "id": "p0056",
         "name": "黒川すみれ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kurokawa Sumire",
+            "source": "https://fitch-av.com/actress/ka?page=8"
+          }
+        ],
         "identities": {
           "fanza": [
             "1047611"
@@ -7068,7 +7781,8 @@
           "heightCm": 167,
           "birthDate": "1991-04-25"
         },
-        "japaneseName": "黒川すみれ"
+        "japaneseName": "黒川すみれ",
+        "romanization": "Kurokawa Sumire"
       },
       {
         "id": "p0057",
@@ -7077,6 +7791,10 @@
           {
             "name": "星宮一花",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/"
+          },
+          {
+            "name": "Hoshimiya Ichika",
+            "source": "https://madonna-av.com/actress/ha?page=14"
           }
         ],
         "identities": {
@@ -7098,7 +7816,32 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "星宮一花"
+        "japaneseName": "星宮一花",
+        "profile": {
+          "sourceName": "星宮一花",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1048277&item=video",
+            "sha256": "000397418d2cd01ce86acd6a4aedace857982d3faf65f2bb88f58b6d1d71d14e",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1998-06-28",
+          "heightCm": 168,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "星宮一花",
+                "source": {
+                  "url": "https://madonna-av.com/actress/detail/227524",
+                  "sha256": "6f6f14ec63d54fcf11c5d4e1f9f49af936cba5f9d5f526ffd05465174a4eef7f",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Hoshimiya Ichika"
       },
       {
         "id": "p0058",
@@ -7137,7 +7880,18 @@
           }
         },
         "romanization": "Kaede Karen",
-        "japaneseName": "楓カレン"
+        "japaneseName": "楓カレン",
+        "profile": {
+          "sourceName": "楓カレン",
+          "source": {
+            "url": "https://life-Promotion.com/model/kaede-karen.php",
+            "sha256": "b2a561f24ae7a4862d7f2b14fff474729454791a45d51ea175a9bf07288ea9b1",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1999-08-25",
+          "heightCm": 162
+        }
       },
       {
         "id": "p0059",
@@ -7146,6 +7900,10 @@
           {
             "name": "渚みつき",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/"
+          },
+          {
+            "name": "Nagisa Mitsuki",
+            "source": "https://fitch-av.com/actress/na"
           }
         ],
         "identities": {
@@ -7167,12 +7925,28 @@
             "retrieved": "2026-10-06"
           }
         },
-        "japaneseName": "渚みつき"
+        "japaneseName": "渚みつき",
+        "profile": {
+          "sourceName": "渚みつき",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/278808",
+            "sha256": "246f9e89e22da52b554a536124b121dab699bcba89c0cf98e487cf8ec6e609c8",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 155
+        },
+        "romanization": "Nagisa Mitsuki"
       },
       {
         "id": "p0060",
         "name": "月乃ルナ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Tsukino Runa",
+            "source": "https://fitch-av.com/actress/ta?page=4"
+          }
+        ],
         "identities": {
           "fanza": [
             "1050439"
@@ -7192,7 +7966,32 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "月乃ルナ"
+        "japaneseName": "月乃ルナ",
+        "profile": {
+          "sourceName": "月乃ルナ",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1050439&item=video",
+            "sha256": "0bd63f1d23d8c358cdee1de9e43fecbf7d601e3388af5ec7806c92532109dae3",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1995-10-01",
+          "heightCm": 163,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "月乃ルナ",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/279892",
+                  "sha256": "44fe48a6a6052c1446a7725c47597a9705ea052886c55b8d5f04e30b6138b281",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Tsukino Runa"
       },
       {
         "id": "p0061",
@@ -7223,7 +8022,18 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Kusakabe Kana",
-        "japaneseName": "日下部加奈"
+        "japaneseName": "日下部加奈",
+        "profile": {
+          "sourceName": "日下部加奈",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1051402&item=video",
+            "sha256": "6e3a46e76a5ad955af23d9273096eef2019cc4fa4549c3938a20cd32a31820b7",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1995-07-11",
+          "heightCm": 160
+        }
       },
       {
         "id": "p0062",
@@ -7232,6 +8042,10 @@
           {
             "name": "根尾あかり",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/"
+          },
+          {
+            "name": "Neo Akari",
+            "source": "https://fitch-av.com/actress/na?page=4"
           }
         ],
         "identities": {
@@ -7253,7 +8067,19 @@
             "retrieved": "2026-10-06"
           }
         },
-        "japaneseName": "根尾あかり"
+        "japaneseName": "根尾あかり",
+        "profile": {
+          "sourceName": "根尾あかり",
+          "source": {
+            "url": "https://life-promotion.com/model/neo-akari.php",
+            "sha256": "3e3a38c08c784680738b59c0b71a8197cd03d46ac07548d235eea96cbaea3ede",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 156,
+          "birthDate": "1998-11-19"
+        },
+        "romanization": "Neo Akari"
       },
       {
         "id": "p0063",
@@ -7266,6 +8092,10 @@
           {
             "name": "涼森玲夢",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=92675483"
+          },
+          {
+            "name": "Suzumori Remu",
+            "source": "https://www.t-powers.co.jp/talent/%e6%b6%bc%e6%a3%ae%e3%82%8c%e3%82%80/"
           }
         ],
         "identities": {
@@ -7308,7 +8138,8 @@
           "heightCm": 160,
           "birthDate": "1997-12-03"
         },
-        "japaneseName": "涼森れむ"
+        "japaneseName": "涼森れむ",
+        "romanization": "Suzumori Remu"
       },
       {
         "id": "p0064",
@@ -7343,7 +8174,17 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Yoshine Julia",
-        "japaneseName": "吉根ゆりあ"
+        "japaneseName": "吉根ゆりあ",
+        "profile": {
+          "sourceName": "吉根ゆりあ",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/279184",
+            "sha256": "4492664e00ae78680309f621db1840d2c30c1d2e83bbb72cc3e51b29a902675b",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 153
+        }
       },
       {
         "id": "p0065",
@@ -7356,6 +8197,10 @@
           {
             "name": "竹內有紀",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=92184043"
+          },
+          {
+            "name": "Yuki Takeuchi",
+            "source": "https://life-promotion.com/model/takeuchi-yuki.php"
           }
         ],
         "identities": {
@@ -7377,7 +8222,19 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "竹内有紀"
+        "japaneseName": "竹内有紀",
+        "profile": {
+          "sourceName": "竹内有紀",
+          "source": {
+            "url": "https://life-promotion.com/model/takeuchi-yuki.php",
+            "sha256": "beaea01789c7ecab67683ca57053fabc984a78a968a98c38b2190310407b074a",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 158,
+          "birthDate": "1995-02-12"
+        },
+        "romanization": "Yuki Takeuchi"
       },
       {
         "id": "p0066",
@@ -7522,6 +8379,10 @@
           {
             "name": "青空ひかり",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/"
+          },
+          {
+            "name": "Aozora Hikari",
+            "source": "https://www.minnano-av.com/actress380512.html"
           }
         ],
         "identities": {
@@ -7563,7 +8424,8 @@
             "sha256": "458775676faf490b998e3153258e35d8648b3b3d15d312f1aa394e617bee7c19"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Aozora Hikari"
       },
       {
         "id": "p0070",
@@ -7598,7 +8460,17 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Amakawa Sora",
-        "japaneseName": "天川そら"
+        "japaneseName": "天川そら",
+        "profile": {
+          "sourceName": "天川そら",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/279995",
+            "sha256": "9fa44922849fe7cf72bcc02d9c008efc8ad42dd5a14afaf1e78299e2ac85f427",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 165
+        }
       },
       {
         "id": "p0071",
@@ -7607,6 +8479,10 @@
           {
             "name": "八木奈々",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/"
+          },
+          {
+            "name": "Yagi Nana",
+            "source": "https://moodyz.com/actress/ya"
           }
         ],
         "identities": {
@@ -7647,12 +8523,18 @@
           "heightCm": 156,
           "birthDate": "2000-09-03"
         },
-        "japaneseName": "八木奈々"
+        "japaneseName": "八木奈々",
+        "romanization": "Yagi Nana"
       },
       {
         "id": "p0072",
         "name": "加美杏奈",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kami Anna",
+            "source": "https://ideapocket.com/actress/ka"
+          }
+        ],
         "identities": {
           "fanza": [
             "1058114"
@@ -7682,12 +8564,18 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "加美杏奈"
+        "japaneseName": "加美杏奈",
+        "romanization": "Kami Anna"
       },
       {
         "id": "p0073",
         "name": "藤森里穂",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Fujimori Riho",
+            "source": "https://kawaiikawaii.jp/actress/ha?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "1058710"
@@ -7707,7 +8595,19 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "藤森里穂"
+        "japaneseName": "藤森里穂",
+        "profile": {
+          "sourceName": "藤森里穂",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1058710&item=video",
+            "sha256": "3617ab6720a2a0bd0c51b94f7bdc53be2749ae8037089a2aa541eb72bc5da914",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1996-12-03",
+          "heightCm": 160
+        },
+        "romanization": "Fujimori Riho"
       },
       {
         "id": "p0074",
@@ -7720,6 +8620,10 @@
           {
             "name": "東條夏",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=93385741"
+          },
+          {
+            "name": "Tojo Natsu",
+            "source": "https://kawaiikawaii.jp/actress/ta?page=5"
           }
         ],
         "identities": {
@@ -7762,7 +8666,8 @@
             "sha256": "8c5006d90f74f3f4c13afc0179aabd399736b236bf68f0d79558cce456b4dbed"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Tojo Natsu"
       },
       {
         "id": "p0075",
@@ -7771,6 +8676,10 @@
           {
             "name": "木下凛々子",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/"
+          },
+          {
+            "name": "Kinoshita Ririko",
+            "source": "https://madonna-av.com/actress/ka?page=15"
           }
         ],
         "identities": {
@@ -7792,12 +8701,42 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "木下凛々子"
+        "japaneseName": "木下凛々子",
+        "profile": {
+          "sourceName": "木下凛々子",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1059227&item=video",
+            "sha256": "f72383580bb881ea1105613dd17a06e5e6c93758564921cc6e2859b0ea5cff39",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1985-10-04",
+          "heightCm": 165,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "木下凛々子",
+                "source": {
+                  "url": "https://madonna-av.com/actress/detail/229199",
+                  "sha256": "363b65ea9b55835717dc931231777abd8bb455f1d2e2be9fde413c5c1eef1b90",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Kinoshita Ririko"
       },
       {
         "id": "p0076",
         "name": "梓ヒカリ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Azusa Hikari",
+            "source": "https://ideapocket.com/actress/a?page=2"
+          }
+        ],
         "identities": {
           "fanza": [
             "1059342"
@@ -7827,7 +8766,32 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "梓ヒカリ"
+        "japaneseName": "梓ヒカリ",
+        "profile": {
+          "sourceName": "梓ヒカリ",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1059342&item=video",
+            "sha256": "1be19cda4baec2b40a5a93c9a9b0e7eecfd1ca8f8e3a7aeab43a877d561ea054",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1999-11-30",
+          "heightCm": 155,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "梓ヒカリ",
+                "source": {
+                  "url": "https://ideapocket.com/actress/detail/76232",
+                  "sha256": "cfa13417ac1e0b0796544d092c21683b16a109e13afe16155dcf478637e30814",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Azusa Hikari"
       },
       {
         "id": "p0077",
@@ -7866,12 +8830,41 @@
           "reviewed": "2026-10-06"
         },
         "romanization": "Kinoshita Himari",
-        "japaneseName": "木下ひまり"
+        "japaneseName": "木下ひまり",
+        "profile": {
+          "sourceName": "木下ひまり",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1060141&item=video",
+            "sha256": "8db3892392271af78a65b5cad5fc49c67fcd823062bc8b097427c36aff50d0cd",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1996-05-21",
+          "heightCm": 169,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "木下ひまり",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/766739",
+                  "sha256": "d8b760189ccf4bbcd95ae10bbb8c2b0b8fefa1f8a7e5820c91a4d054f7913ed8",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        }
       },
       {
         "id": "p0078",
         "name": "田中ねね",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Tanaka Nene",
+            "source": "https://fitch-av.com/actress/ta?page=2"
+          }
+        ],
         "identities": {
           "fanza": [
             "1060480"
@@ -7891,12 +8884,42 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "田中ねね"
+        "japaneseName": "田中ねね",
+        "profile": {
+          "sourceName": "田中ねね",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1060480&item=video",
+            "sha256": "04cdc58b4a15da518b09fb4192d2e636437a4f27b5eb89e4793721fa151f03e4",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1999-09-20",
+          "heightCm": 151,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "田中ねね",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/280232",
+                  "sha256": "c8ba7f3fa1bd7286980e1140dd33d141df95f36375ce4659f5858159dd175dcd",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Tanaka Nene"
       },
       {
         "id": "p0079",
         "name": "小野六花",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Ono Rikka",
+            "source": "https://moodyz.com/actress/a?page=26"
+          }
+        ],
         "identities": {
           "fanza": [
             "1060677"
@@ -7926,12 +8949,42 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "小野六花"
+        "japaneseName": "小野六花",
+        "profile": {
+          "sourceName": "小野六花",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1060677&item=video",
+            "sha256": "3771d31f5770b4fefd3b8cfd4936391fd3ed84603c7dc53b40913d7c3952cd16",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2002-02-14",
+          "heightCm": 148,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "小野六花",
+                "source": {
+                  "url": "https://moodyz.com/actress/detail/713490",
+                  "sha256": "2bf4fc0b1586f21af26aa3fa3d93c8bcfb46911b03062e4ee1238ab81262e5ba",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Ono Rikka"
       },
       {
         "id": "p0080",
         "name": "蜜美杏",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Mitsumi An",
+            "source": "https://fitch-av.com/actress/ma?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "1060892"
@@ -7951,12 +9004,42 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "蜜美杏"
+        "japaneseName": "蜜美杏",
+        "profile": {
+          "sourceName": "蜜美杏",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1060892&item=video",
+            "sha256": "fbde24331783c506b8e01fe265edc4296ea6f58ca37839b9a0b34a99e0a80d14",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2000-11-15",
+          "heightCm": 170,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "蜜美杏",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/813904",
+                  "sha256": "2398cc33898c8e7631c9e1a249fb4c47a1e81599e57997f100c3985f4ad40309",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Mitsumi An"
       },
       {
         "id": "p0081",
         "name": "石原希望",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Ishihara Nozomi",
+            "source": "https://fitch-av.com/actress/a?page=8"
+          }
+        ],
         "identities": {
           "fanza": [
             "1061063"
@@ -7976,12 +9059,30 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "石原希望"
+        "japaneseName": "石原希望",
+        "profile": {
+          "sourceName": "石原希望",
+          "source": {
+            "url": "https://lightpro.jp/talent/ishiharanozomi.html",
+            "sha256": "2f0d86f73d7db14d199db41eef3bbc1ee82bcdcfab36de4b93506d13168f7004",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2000-07-25",
+          "heightCm": 158,
+          "debutYear": 2020
+        },
+        "romanization": "Ishihara Nozomi"
       },
       {
         "id": "p0082",
         "name": "森日向子",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Mori Hinako",
+            "source": "https://fitch-av.com/actress/ma?page=10"
+          }
+        ],
         "identities": {
           "fanza": [
             "1061586"
@@ -8001,7 +9102,32 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "森日向子"
+        "japaneseName": "森日向子",
+        "profile": {
+          "sourceName": "森日向子",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1061586&item=video",
+            "sha256": "cb480536e175eeb7d0ac6312a9746c69b185d82c2980530155a5db0f0dcfd89e",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2000-09-09",
+          "heightCm": 166,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "森日向子",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/796905",
+                  "sha256": "5fd4ed6cfdb3874e9321df95e9b16c6bb194de80488889b8b1e7c138f78a9123",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Mori Hinako"
       },
       {
         "id": "p0083",
@@ -8055,6 +9181,10 @@
           {
             "name": "さつき芽衣",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/"
+          },
+          {
+            "name": "Satsuki Mei",
+            "source": "https://fitch-av.com/actress/sa?page=3"
           }
         ],
         "identities": {
@@ -8097,12 +9227,18 @@
           "heightCm": 154,
           "birthDate": "2000-08-16"
         },
-        "japaneseName": "さつき芽衣"
+        "japaneseName": "さつき芽衣",
+        "romanization": "Satsuki Mei"
       },
       {
         "id": "p0085",
         "name": "宮島めい",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Miyajima Mei",
+            "source": "https://www.t-powers.co.jp/talent/%e5%ae%ae%e5%b3%b6%e3%82%81%e3%81%84/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1062074"
@@ -8143,7 +9279,8 @@
           "heightCm": 155,
           "birthDate": "2000-10-17"
         },
-        "japaneseName": "宮島めい"
+        "japaneseName": "宮島めい",
+        "romanization": "Miyajima Mei"
       },
       {
         "id": "p0086",
@@ -8156,6 +9293,10 @@
           {
             "name": "三宮椿",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=90253833"
+          },
+          {
+            "name": "Sannomiya Tsubaki",
+            "source": "https://s1s1s1.com/actress/sa?page=2"
           }
         ],
         "identities": {
@@ -8187,7 +9328,20 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "三宮つばき"
+        "japaneseName": "三宮つばき",
+        "profile": {
+          "sourceName": "三宮つばき",
+          "source": {
+            "url": "https://cmore.jp/official/model-sannomiya.html",
+            "sha256": "fdb4797a25ee998eac17a6937901d904ae285b5f8479bef52222d4052cf3518b",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1998-05-04",
+          "heightCm": 152,
+          "debutYear": 2020
+        },
+        "romanization": "Sannomiya Tsubaki"
       },
       {
         "id": "p0087",
@@ -8200,6 +9354,10 @@
           {
             "name": "七瀨愛麗絲",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=93837146"
+          },
+          {
+            "name": "Nanase Alice",
+            "source": "https://ideapocket.com/actress/na"
           }
         ],
         "identities": {
@@ -8242,7 +9400,8 @@
           "heightCm": 155,
           "birthDate": "1997-02-25"
         },
-        "japaneseName": "七瀬アリス"
+        "japaneseName": "七瀬アリス",
+        "romanization": "Nanase Alice"
       },
       {
         "id": "p0088",
@@ -8251,6 +9410,10 @@
           {
             "name": "白桃はな",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/"
+          },
+          {
+            "name": "Shirato Hana",
+            "source": "https://fitch-av.com/actress/sa?page=6"
           }
         ],
         "identities": {
@@ -8272,12 +9435,42 @@
             "retrieved": "2026-10-06"
           }
         },
-        "japaneseName": "白桃はな"
+        "japaneseName": "白桃はな",
+        "profile": {
+          "sourceName": "白桃はな",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1064132&item=video",
+            "sha256": "5cecdb400133c84021d6682686d31282e50647cf35844323cd32999a3afaf3d0",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2000-05-12",
+          "heightCm": 153,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "白桃はな",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/766826",
+                  "sha256": "8312ed24394f39d768472d731b2505de98f357677f1958cd7fa952fa1159383b",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Shirato Hana"
       },
       {
         "id": "p0089",
         "name": "栗山莉緒",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kuriyama Rio",
+            "source": "https://ideapocket.com/actress/ka?page=2"
+          }
+        ],
         "identities": {
           "fanza": [
             "1064392"
@@ -8318,7 +9511,8 @@
           "heightCm": 148,
           "birthDate": "1998-08-02"
         },
-        "japaneseName": "栗山莉緒"
+        "japaneseName": "栗山莉緒",
+        "romanization": "Kuriyama Rio"
       },
       {
         "id": "p0090",
@@ -8331,6 +9525,10 @@
           {
             "name": "八掛海",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=92184173"
+          },
+          {
+            "name": "Yatsugake Umi",
+            "source": "https://www.t-powers.co.jp/talent/%e5%85%ab%e6%8e%9b%e3%81%86%e3%81%bf/"
           }
         ],
         "identities": {
@@ -8373,12 +9571,18 @@
           "heightCm": 160,
           "birthDate": "2000-09-02"
         },
-        "japaneseName": "八掛うみ"
+        "japaneseName": "八掛うみ",
+        "romanization": "Yatsugake Umi"
       },
       {
         "id": "p0091",
         "name": "市来まひろ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Ichiki Mahiro",
+            "source": "https://fitch-av.com/actress/a?page=8"
+          }
+        ],
         "identities": {
           "fanza": [
             "1065376"
@@ -8398,7 +9602,19 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "市来まひろ"
+        "japaneseName": "市来まひろ",
+        "profile": {
+          "sourceName": "市来まひろ",
+          "source": {
+            "url": "https://pub.linx.live/contents/model/5040/",
+            "sha256": "9b9195cdf6d9fc4fb8475cbc1ed36264ea9947c147ba8f414bb6d7850dbf4fc8",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 155,
+          "birthDate": "1994-07-20"
+        },
+        "romanization": "Ichiki Mahiro"
       },
       {
         "id": "p0092",
@@ -8411,6 +9627,10 @@
           {
             "name": "乙愛麗絲",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=86612172"
+          },
+          {
+            "name": "Otsu Alice",
+            "source": "https://fitch-av.com/actress/a?page=13"
           }
         ],
         "identities": {
@@ -8432,7 +9652,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "乙アリス"
+        "japaneseName": "乙アリス",
+        "romanization": "Otsu Alice"
       },
       {
         "id": "p0093",
@@ -8441,6 +9662,10 @@
           {
             "name": "白峰ミウ",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/"
+          },
+          {
+            "name": "Shiromine Miu",
+            "source": "https://ideapocket.com/actress/sa?page=3"
           }
         ],
         "identities": {
@@ -8472,7 +9697,32 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "白峰ミウ"
+        "japaneseName": "白峰ミウ",
+        "profile": {
+          "sourceName": "白峰ミウ",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1066537&item=video",
+            "sha256": "a1848530fa1847182ff96e80921de3222a52a23fee78814cf0f09dc9e191dd45",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1997-02-16",
+          "heightCm": 170,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "白峰ミウ",
+                "source": {
+                  "url": "https://ideapocket.com/actress/detail/798093",
+                  "sha256": "a954c6c289ebe852d646ed9a6904de03d3bdb070517b6214a3b4bf809d3670b1",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Shiromine Miu"
       },
       {
         "id": "p0094",
@@ -8485,6 +9735,10 @@
           {
             "name": "楪可憐",
             "source": "https://www.hk01.com/article/905155"
+          },
+          {
+            "name": "Yuzuriha Karen",
+            "source": "https://ideapocket.com/actress/ya"
           }
         ],
         "identities": {
@@ -8527,7 +9781,8 @@
           "heightCm": 148,
           "birthDate": "2001-03-28"
         },
-        "japaneseName": "楪カレン"
+        "japaneseName": "楪カレン",
+        "romanization": "Yuzuriha Karen"
       },
       {
         "id": "p0095",
@@ -8536,6 +9791,10 @@
           {
             "name": "花狩まい",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/"
+          },
+          {
+            "name": "Kagari Mai",
+            "source": "https://kawaiikawaii.jp/actress/ka"
           }
         ],
         "identities": {
@@ -8557,12 +9816,42 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "花狩まい"
+        "japaneseName": "花狩まい",
+        "profile": {
+          "sourceName": "花狩まい",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1068670&item=video",
+            "sha256": "27dab6cdc1fa2a545f6508ade19bf941ecce745142044090a55b61f5bab200f2",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2000-11-20",
+          "heightCm": 160,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "花狩まい",
+                "source": {
+                  "url": "https://madonna-av.com/actress/detail/801659",
+                  "sha256": "39c79eff7bb20025993f0a6dd8231a0f84d44102e1d7b4471923e59b66ebcb81",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Kagari Mai"
       },
       {
         "id": "p0096",
         "name": "北野未奈",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kitano Mina",
+            "source": "https://fitch-av.com/actress/ka?page=5"
+          }
+        ],
         "identities": {
           "fanza": [
             "1068671"
@@ -8582,7 +9871,32 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "北野未奈"
+        "japaneseName": "北野未奈",
+        "profile": {
+          "sourceName": "北野未奈",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1068671&item=video",
+            "sha256": "f790a2ce40ba65ba5ec2e1a20f8120344fa05788a09c146a969ff041076aaaf8",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2000-05-20",
+          "heightCm": 162,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "北野未奈",
+                "source": {
+                  "url": "https://fitch-av.com/actress/detail/802827",
+                  "sha256": "a9624c627d946a645aed530ab0ef1a24549cea55219f7fae7de7f26a3276c0f6",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Kitano Mina"
       },
       {
         "id": "p0097",
@@ -8617,7 +9931,31 @@
           }
         },
         "romanization": "Koyoi Konan",
-        "japaneseName": "小宵こなん"
+        "japaneseName": "小宵こなん",
+        "profile": {
+          "sourceName": "小宵こなん",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1069330&item=video",
+            "sha256": "a77a5f1e2a89814796dba228a304ad3c59c437262fe990b1a2bde28974537c46",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1999-04-02",
+          "heightCm": 164,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "小宵こなん",
+                "source": {
+                  "url": "https://s1s1s1.com/actress/detail/804227",
+                  "sha256": "024edfbfd78dd085c704aa64dbf9d08bb29c669c4f840afc1fa7ef4c8faf755e",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        }
       },
       {
         "id": "p0098",
@@ -8626,6 +9964,10 @@
           {
             "name": "工藤ララ",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=5/"
+          },
+          {
+            "name": "Kudo Rara",
+            "source": "https://fitch-av.com/actress/ka?page=7"
           }
         ],
         "identities": {
@@ -8647,12 +9989,28 @@
             "retrieved": "2026-10-06"
           }
         },
-        "japaneseName": "工藤ララ"
+        "japaneseName": "工藤ララ",
+        "profile": {
+          "sourceName": "工藤ララ",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/806944",
+            "sha256": "31ffe4a2d145e73139d3924e0914285240fd6e2ed53a6ccdb411208def8f7f1e",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 142
+        },
+        "romanization": "Kudo Rara"
       },
       {
         "id": "p0099",
         "name": "愛弓りょう",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Ayumi Ryo",
+            "source": "https://fitch-av.com/actress/a?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "1069634"
@@ -8672,7 +10030,32 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "愛弓りょう"
+        "japaneseName": "愛弓りょう",
+        "profile": {
+          "sourceName": "愛弓りょう",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/803040",
+            "sha256": "a8df9bc48b12340d13744ac8a420d963b94f3550b0be3a4a3239cb2e1f9b8919",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 167,
+          "birthDate": "1982-10-27",
+          "fieldSources": {
+            "birthDate": [
+              {
+                "sourceName": "愛弓りょう",
+                "source": {
+                  "url": "https://actenter.com/talent/愛弓りょう/",
+                  "sha256": "1d15c91907f5cdb5fa44b479cbbdf1198c49fb24eac392ae9760db7caca6f6fa",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Ayumi Ryo"
       },
       {
         "id": "p0100",
@@ -8718,7 +10101,8 @@
           "heightCm": 153,
           "birthYear": 2000
         },
-        "japaneseName": "MINAMO"
+        "japaneseName": "MINAMO",
+        "romanization": "MINAMO"
       },
       {
         "id": "p0101",
@@ -8731,6 +10115,10 @@
           {
             "name": "橫宮七海",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=92454367"
+          },
+          {
+            "name": "Yokomiya Nanami",
+            "source": "https://kawaiikawaii.jp/actress/ya?page=3"
           }
         ],
         "identities": {
@@ -8752,12 +10140,29 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "横宮七海"
+        "japaneseName": "横宮七海",
+        "profile": {
+          "sourceName": "横宮七海",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1069900&item=video",
+            "sha256": "7d9cff2b0544e8d13c756f8ff3f767bb49b9da49809a65c07e2fff0110f175c8",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2002-02-17",
+          "heightCm": 154
+        },
+        "romanization": "Yokomiya Nanami"
       },
       {
         "id": "p0102",
         "name": "新井リマ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Arai Rima",
+            "source": "https://fitch-av.com/actress/a?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "1069952"
@@ -8777,7 +10182,20 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "新井リマ"
+        "japaneseName": "新井リマ",
+        "profile": {
+          "sourceName": "新井リマ",
+          "source": {
+            "url": "https://lightpro.jp/talent/arairima.html",
+            "sha256": "54be500417fd4274f36fc6a9b5bae0d047199623d7b49206acc0bd4024608288",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2000-10-03",
+          "heightCm": 157,
+          "debutYear": 2021
+        },
+        "romanization": "Arai Rima"
       },
       {
         "id": "p0103",
@@ -8790,6 +10208,10 @@
           {
             "name": "楓富愛",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=93103286"
+          },
+          {
+            "name": "Kaede Fua",
+            "source": "https://madonna-av.com/actress/ka"
           }
         ],
         "identities": {
@@ -8811,12 +10233,28 @@
             "retrieved": "2026-10-06"
           }
         },
-        "japaneseName": "楓ふうあ"
+        "japaneseName": "楓ふうあ",
+        "profile": {
+          "sourceName": "楓ふうあ",
+          "source": {
+            "url": "https://madonna-av.com/actress/detail/804124",
+            "sha256": "6d3f8810394dabcf1620ca0a2f743b5a8746a14f8e72a030c499401db2d4c8cc",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 170
+        },
+        "romanization": "Kaede Fua"
       },
       {
         "id": "p0104",
         "name": "石川澪",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Ishikawa Mio",
+            "source": "https://moodyz.com/actress/a?page=15"
+          }
+        ],
         "identities": {
           "fanza": [
             "1072127"
@@ -8836,7 +10274,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "石川澪"
+        "japaneseName": "石川澪",
+        "profile": {
+          "sourceName": "石川澪",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1072127&item=video",
+            "sha256": "9149f7863dc876349257687ae10e7037a2b231830fe3083f84793ae326149cea",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 158
+        },
+        "romanization": "Ishikawa Mio"
       },
       {
         "id": "p0105",
@@ -8845,6 +10294,10 @@
           {
             "name": "小花のん",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/"
+          },
+          {
+            "name": "Ohana Non",
+            "source": "https://fitch-av.com/actress/a?page=13"
           }
         ],
         "identities": {
@@ -8866,12 +10319,30 @@
             "retrieved": "2026-10-06"
           }
         },
-        "japaneseName": "小花のん"
+        "japaneseName": "小花のん",
+        "profile": {
+          "sourceName": "小花のん",
+          "source": {
+            "url": "https://cmore.jp/official/model-ohana.html",
+            "sha256": "ce32acf6b207141740cb75c5cdb1bcd53a9a08d82ef0d188b2e78ed34d2f094e",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2001-06-28",
+          "heightCm": 157,
+          "debutYear": 2021
+        },
+        "romanization": "Ohana Non"
       },
       {
         "id": "p0106",
         "name": "倉本すみれ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kuramoto Sumire",
+            "source": "https://fitch-av.com/actress/ka?page=7"
+          }
+        ],
         "identities": {
           "fanza": [
             "1072360"
@@ -8891,7 +10362,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "倉本すみれ"
+        "japaneseName": "倉本すみれ",
+        "profile": {
+          "sourceName": "倉本すみれ",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/810396",
+            "sha256": "3ea25b88710a41d64fafd5de97a8b576b71ae34f0571b0937a6db86a7a6bd87e",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 153
+        },
+        "romanization": "Kuramoto Sumire"
       },
       {
         "id": "p0107",
@@ -8900,6 +10382,10 @@
           {
             "name": "つばさ舞",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/"
+          },
+          {
+            "name": "Tsubasa Mai",
+            "source": "https://madonna-av.com/actress/ta?page=11"
           }
         ],
         "identities": {
@@ -8921,7 +10407,32 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "つばさ舞"
+        "japaneseName": "つばさ舞",
+        "profile": {
+          "sourceName": "つばさ舞",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1072395&item=video",
+            "sha256": "f54bfd2310a7e1172dd2bd76aec279ecf86b93325565ff63b8c28ae69afa58b5",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1999-05-08",
+          "heightCm": 165,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "つばさ舞",
+                "source": {
+                  "url": "https://madonna-av.com/actress/detail/813698",
+                  "sha256": "004c6a84d566c1b3896097a383ba4615d684835a854961d165d63bc9348383c5",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Tsubasa Mai"
       },
       {
         "id": "p0108",
@@ -8930,6 +10441,10 @@
           {
             "name": "山手梨愛",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/"
+          },
+          {
+            "name": "Yamate Ria",
+            "source": "https://s1s1s1.com/actress/ya"
           }
         ],
         "identities": {
@@ -8951,7 +10466,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "山手梨愛"
+        "japaneseName": "山手梨愛",
+        "profile": {
+          "sourceName": "山手梨愛",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/812725",
+            "sha256": "c254a5a78d8b7ed298b7e454caee25dbc43b040f06c072aec5c57300a5bea431",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 170
+        },
+        "romanization": "Yamate Ria"
       },
       {
         "id": "p0109",
@@ -8964,6 +10490,10 @@
           {
             "name": "時田亞美",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=86136527"
+          },
+          {
+            "name": "Tokita Ami",
+            "source": "https://www.minnano-av.com/actress224754.html"
           }
         ],
         "identities": {
@@ -8995,12 +10525,29 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "時田亜美"
+        "japaneseName": "時田亜美",
+        "profile": {
+          "sourceName": "時田亜美",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1073511&item=video",
+            "sha256": "e458cee058e0d7a80664c395664db8d7b3083cb8979df10119e921946f6edd1d",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2001-10-10",
+          "heightCm": 160
+        },
+        "romanization": "Tokita Ami"
       },
       {
         "id": "p0110",
         "name": "宮西ひかる",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Miyanishi Hikaru",
+            "source": "https://fitch-av.com/actress/ma?page=8"
+          }
+        ],
         "identities": {
           "fanza": [
             "1073977"
@@ -9030,12 +10577,30 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "宮西ひかる"
+        "japaneseName": "宮西ひかる",
+        "profile": {
+          "sourceName": "宮西ひかる",
+          "source": {
+            "url": "https://lightpro.jp/talent/miyanishihikaru.html",
+            "sha256": "9b917343dd05f812931554d3bda960e5690b3c6161a064b5946ccf7e93cb8f56",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 161,
+          "birthDate": "1999-08-22",
+          "debutYear": 2022
+        },
+        "romanization": "Miyanishi Hikaru"
       },
       {
         "id": "p0111",
         "name": "宍戸里帆",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Shishido Riho",
+            "source": "https://kawaiikawaii.jp/actress/sa?page=5"
+          }
+        ],
         "identities": {
           "fanza": [
             "1075010"
@@ -9066,12 +10631,18 @@
           "heightCm": 153,
           "birthDate": "2001-10-14"
         },
-        "japaneseName": "宍戸里帆"
+        "japaneseName": "宍戸里帆",
+        "romanization": "Shishido Riho"
       },
       {
         "id": "p0112",
         "name": "東雲みれい",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Shinonome Mirei",
+            "source": "https://s1s1s1.com/actress/sa?page=3"
+          }
+        ],
         "identities": {
           "fanza": [
             "1075158"
@@ -9091,12 +10662,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "東雲みれい"
+        "japaneseName": "東雲みれい",
+        "romanization": "Shinonome Mirei"
       },
       {
         "id": "p0113",
         "name": "柏木こなつ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kashiwagi Konatsu",
+            "source": "https://fitch-av.com/actress/ka"
+          }
+        ],
         "identities": {
           "fanza": [
             "1075302"
@@ -9116,12 +10693,28 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "柏木こなつ"
+        "japaneseName": "柏木こなつ",
+        "profile": {
+          "sourceName": "柏木こなつ",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/816033",
+            "sha256": "aae31c9a0975ce0e971b8bf24953b8cdc75f1be7276e8e79301281998fe6a712",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 155
+        },
+        "romanization": "Kashiwagi Konatsu"
       },
       {
         "id": "p0114",
         "name": "皆瀬あかり",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Akari Minase",
+            "source": "https://attractive-llc.net/model/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1075330"
@@ -9141,7 +10734,19 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "皆瀬あかり"
+        "japaneseName": "皆瀬あかり",
+        "profile": {
+          "sourceName": "皆瀬あかり",
+          "source": {
+            "url": "https://attractive-llc.net/model/",
+            "sha256": "3eda6538e8c0d4858b08406b050c4f015e6946c1f3e6e33e631e0a0a248f8f47",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2002-03-14",
+          "heightCm": 158
+        },
+        "romanization": "Akari Minase"
       },
       {
         "id": "p0115",
@@ -9150,6 +10755,10 @@
           {
             "name": "宮下玲奈",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/"
+          },
+          {
+            "name": "Miyashita Rena",
+            "source": "https://moodyz.com/actress/ma?page=15"
           }
         ],
         "identities": {
@@ -9171,12 +10780,30 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "宮下玲奈"
+        "japaneseName": "宮下玲奈",
+        "profile": {
+          "sourceName": "宮下玲奈",
+          "source": {
+            "url": "https://wpb.shueisha.co.jp/gravure/news/20231007-120898/",
+            "sha256": "143f30c1e8bd0b4b9b8a8fe635cf8b9c18e63c2352e4c631ff060460c333de0c",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2002-07-15",
+          "heightCm": 162,
+          "debutYear": 2022
+        },
+        "romanization": "Miyashita Rena"
       },
       {
         "id": "p0116",
         "name": "希咲那奈",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kisaki Nana",
+            "source": "https://kawaiikawaii.jp/actress/ka?page=3"
+          }
+        ],
         "identities": {
           "fanza": [
             "1075658"
@@ -9207,12 +10834,18 @@
           "heightCm": 166,
           "birthDate": "1999-10-27"
         },
-        "japaneseName": "希咲那奈"
+        "japaneseName": "希咲那奈",
+        "romanization": "Kisaki Nana"
       },
       {
         "id": "p0117",
         "name": "末広純",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Suehiro Jun",
+            "source": "https://fitch-av.com/actress/sa?page=7"
+          }
+        ],
         "identities": {
           "fanza": [
             "1075675"
@@ -9232,7 +10865,20 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "末広純"
+        "japaneseName": "末広純",
+        "profile": {
+          "sourceName": "末広純",
+          "source": {
+            "url": "https://lightpro.jp/talent/suehirojun.html",
+            "sha256": "b1ae5407b9a9b1f4022aac56eb1d50d05adc40370d64ecb73500e4368d0a24e0",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 154,
+          "birthDate": "2000-01-10",
+          "debutYear": 2022
+        },
+        "romanization": "Suehiro Jun"
       },
       {
         "id": "p0118",
@@ -9241,6 +10887,10 @@
           {
             "name": "恋渕ももな",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/"
+          },
+          {
+            "name": "Momona Koibuchi",
+            "source": "https://life-promotion.com/model/koibuchi-momona.php"
           }
         ],
         "identities": {
@@ -9272,7 +10922,33 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "恋渕ももな"
+        "japaneseName": "恋渕ももな",
+        "profile": {
+          "sourceName": "恋渕ももな",
+          "source": {
+            "url": "https://life-promotion.com/model/koibuchi-momona.php",
+            "sha256": "3dcd0a52e1c212e9450305f49bc1e212748e30058b36e180c87de7939dee4850",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 161,
+          "birthDate": "1999-03-03",
+          "debutYear": 2022,
+          "fieldSources": {
+            "debutYear": [
+              {
+                "sourceName": "恋渕ももな",
+                "source": {
+                  "url": "https://gravidia.jp/news/18680",
+                  "sha256": "a12c43271c53ed56fc8ac5b3b10330c306e4711178989ea570cc60b447f5111b",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Momona Koibuchi"
       },
       {
         "id": "p0119",
@@ -9281,6 +10957,10 @@
           {
             "name": "神木麗",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=4/"
+          },
+          {
+            "name": "Kamiki Rei",
+            "source": "https://www.minnano-av.com/actress671983.html"
           }
         ],
         "identities": {
@@ -9312,12 +10992,42 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "神木麗"
+        "japaneseName": "神木麗",
+        "profile": {
+          "sourceName": "神木麗",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1076785&item=video",
+            "sha256": "b72e526cf85120a7471f07cfa44e9f28acad3e57678e5e13b316f28f0ede5ed0",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 169,
+          "debutYear": 2022,
+          "fieldSources": {
+            "debutYear": [
+              {
+                "sourceName": "神木麗",
+                "source": {
+                  "url": "https://gravidia.jp/news/18680",
+                  "sha256": "a12c43271c53ed56fc8ac5b3b10330c306e4711178989ea570cc60b447f5111b",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Kamiki Rei"
       },
       {
         "id": "p0120",
         "name": "しおかわ雲丹",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Shiokawa Uni",
+            "source": "https://ideapocket.com/actress/sa?page=2"
+          }
+        ],
         "identities": {
           "fanza": [
             "1076816"
@@ -9347,12 +11057,18 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "しおかわ雲丹"
+        "japaneseName": "しおかわ雲丹",
+        "romanization": "Shiokawa Uni"
       },
       {
         "id": "p0121",
         "name": "綾瀬こころ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Ayase Kokoro",
+            "source": "https://fitch-av.com/actress/a?page=5"
+          }
+        ],
         "identities": {
           "fanza": [
             "1076928"
@@ -9372,7 +11088,19 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "綾瀬こころ"
+        "japaneseName": "綾瀬こころ",
+        "profile": {
+          "sourceName": "綾瀬こころ",
+          "source": {
+            "url": "https://official.nax-pro.com/model/14149",
+            "sha256": "b8f9b47f54cb396465fddb3beb7b953a4e8da011ea2ba331bf53c632ac6bb8ec",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 160,
+          "birthDate": "2003-09-20"
+        },
+        "romanization": "Ayase Kokoro"
       },
       {
         "id": "p0122",
@@ -9422,7 +11150,12 @@
       {
         "id": "p0123",
         "name": "藤かんな",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Fuji Kanna",
+            "source": "https://www.minnano-av.com/actress289466.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1077426"
@@ -9452,12 +11185,28 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "藤かんな"
+        "japaneseName": "藤かんな",
+        "profile": {
+          "sourceName": "藤かんな",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1077426&item=video",
+            "sha256": "5d824d8906f62ebdbc4b29632c61c7683d30827410bc9786c13001ac3c02cf3d",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 153
+        },
+        "romanization": "Fuji Kanna"
       },
       {
         "id": "p0124",
         "name": "小湊よつ葉",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kominato Yotsuha",
+            "source": "https://www.t-powers.co.jp/talent/%e5%b0%8f%e6%b9%8a%e3%82%88%e3%81%a4%e8%91%89/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1077723"
@@ -9495,14 +11244,34 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06",
-          "heightCm": 153
+          "heightCm": 153,
+          "debutYear": 2022,
+          "fieldSources": {
+            "debutYear": [
+              {
+                "sourceName": "小湊よつ葉",
+                "source": {
+                  "url": "https://gravidia.jp/news/18680",
+                  "sha256": "a12c43271c53ed56fc8ac5b3b10330c306e4711178989ea570cc60b447f5111b",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
         },
-        "japaneseName": "小湊よつ葉"
+        "japaneseName": "小湊よつ葉",
+        "romanization": "Kominato Yotsuha"
       },
       {
         "id": "p0125",
         "name": "都月るいさ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Totsuki Ruisa",
+            "source": "https://fitch-av.com/actress/ta?page=5"
+          }
+        ],
         "identities": {
           "fanza": [
             "1078009"
@@ -9532,12 +11301,28 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "都月るいさ"
+        "japaneseName": "都月るいさ",
+        "profile": {
+          "sourceName": "都月るいさ",
+          "source": {
+            "url": "https://ideapocket.com/actress/detail/819193",
+            "sha256": "0e7de249f7662e4ab430ae00f339576b7b7339e9d714fb570d5905d4dce8b2bb",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 165
+        },
+        "romanization": "Totsuki Ruisa"
       },
       {
         "id": "p0126",
         "name": "星乃夏月",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Hoshino Natsuki",
+            "source": "https://moodyz.com/actress/ha?page=15"
+          }
+        ],
         "identities": {
           "fanza": [
             "1078105"
@@ -9557,12 +11342,29 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "星乃夏月"
+        "japaneseName": "星乃夏月",
+        "profile": {
+          "sourceName": "星乃夏月",
+          "source": {
+            "url": "https://sod-kyuzin.jp/models/hosinonatsuki/",
+            "sha256": "f64fdbf3cd715b9a553d57a4d7ea1b41bbab3673b2d9b1d6a776c531ae199a73",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2003-03-27",
+          "heightCm": 150
+        },
+        "romanization": "Hoshino Natsuki"
       },
       {
         "id": "p0127",
         "name": "日向かえで",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "HINATA KAEDE",
+            "source": "https://s1s1s1.com/actress/detail/822033"
+          }
+        ],
         "identities": {
           "fanza": [
             "1078179"
@@ -9582,12 +11384,29 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "日向かえで"
+        "japaneseName": "日向かえで",
+        "profile": {
+          "sourceName": "日向かえで",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/822033",
+            "sha256": "1c7b6369f66e842f70bf72fce57ab1cad256a2dc670173b5a7e830ab7f025f9b",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2002-02-16",
+          "heightCm": 162
+        },
+        "romanization": "HINATA KAEDE"
       },
       {
         "id": "p0128",
         "name": "流川はる香",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Rukawa Haruka",
+            "source": "https://www.minnano-av.com/actress777877.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1078181"
@@ -9607,12 +11426,28 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "流川はる香"
+        "japaneseName": "流川はる香",
+        "profile": {
+          "sourceName": "流川はる香",
+          "source": {
+            "url": "https://madonna-av.com/actress/detail/822368",
+            "sha256": "9ec7f7c94c606434c4c20f79e1fcf9c0ec0abcbdebe1efa1608f4a603e103f71",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 158
+        },
+        "romanization": "Rukawa Haruka"
       },
       {
         "id": "p0129",
         "name": "九野ひなの",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kuno Hinano",
+            "source": "https://moodyz.com/actress/ka?page=12"
+          }
+        ],
         "identities": {
           "fanza": [
             "1078407"
@@ -9653,12 +11488,18 @@
           "heightCm": 157,
           "birthDate": "2001-05-25"
         },
-        "japaneseName": "九野ひなの"
+        "japaneseName": "九野ひなの",
+        "romanization": "Kuno Hinano"
       },
       {
         "id": "p0130",
         "name": "星乃莉子",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Hoshino Riko",
+            "source": "https://www.minnano-av.com/actress78817.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1079035"
@@ -9688,12 +11529,54 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "星乃莉子"
+        "japaneseName": "星乃莉子",
+        "profile": {
+          "sourceName": "星乃莉子",
+          "source": {
+            "url": "https://thetv.jp/person/2000096656/",
+            "sha256": "ac9803af6a104e6b8ad93a38581d3f52fa7b29c44e550b83d5308de6a62b3142",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1999-04-20",
+          "heightCm": 152,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "星乃莉子",
+                "source": {
+                  "url": "https://gravidia.jp/news/18680",
+                  "sha256": "a12c43271c53ed56fc8ac5b3b10330c306e4711178989ea570cc60b447f5111b",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ],
+            "debutYear": [
+              {
+                "sourceName": "星乃莉子",
+                "source": {
+                  "url": "https://gravidia.jp/news/18680",
+                  "sha256": "a12c43271c53ed56fc8ac5b3b10330c306e4711178989ea570cc60b447f5111b",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          },
+          "debutYear": 2022
+        },
+        "romanization": "Hoshino Riko"
       },
       {
         "id": "p0131",
         "name": "凪ひかる",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Nagi Hikaru",
+            "source": "https://s1s1s1.com/actress/na"
+          }
+        ],
         "identities": {
           "fanza": [
             "1080873"
@@ -9713,12 +11596,28 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "凪ひかる"
+        "japaneseName": "凪ひかる",
+        "profile": {
+          "sourceName": "凪ひかる",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1080873&item=video",
+            "sha256": "29ff217f28a07049e5c29471bc0ed4dab7ea9b2f27e6af986409e468b92a34bc",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 162
+        },
+        "romanization": "Nagi Hikaru"
       },
       {
         "id": "p0132",
         "name": "入田真綾",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Irita Maya",
+            "source": "https://kawaiikawaii.jp/actress/a?page=10"
+          }
+        ],
         "identities": {
           "fanza": [
             "1081914"
@@ -9749,12 +11648,18 @@
           "heightCm": 156,
           "birthDate": "1990-11-15"
         },
-        "japaneseName": "入田真綾"
+        "japaneseName": "入田真綾",
+        "romanization": "Irita Maya"
       },
       {
         "id": "p0133",
         "name": "天月あず",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Amatsuki Azu",
+            "source": "https://www.minnano-av.com/actress824871.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1082666"
@@ -9774,12 +11679,28 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "天月あず"
+        "japaneseName": "天月あず",
+        "profile": {
+          "sourceName": "天月あず",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/825862",
+            "sha256": "437fad2678147f4f428320ad480385b23c22dfce68eda14983c22252b1c0999f",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 161
+        },
+        "romanization": "Amatsuki Azu"
       },
       {
         "id": "p0134",
         "name": "柴崎はる",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Shibazaki Haru",
+            "source": "https://www.minnano-av.com/actress632346.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1083217"
@@ -9818,7 +11739,8 @@
             "sha256": "a3e6e991a6836ae425ab9d718c8fedc72aaab7e912ea3b6f19723a6d9efbbfae"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Shibazaki Haru"
       },
       {
         "id": "p0135",
@@ -9827,6 +11749,10 @@
           {
             "name": "清原みゆう",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/"
+          },
+          {
+            "name": "Kohinata Miyu",
+            "source": "https://s1s1s1.com/actress/ka?page=5"
           }
         ],
         "identities": {
@@ -9869,12 +11795,18 @@
           "heightCm": 160,
           "birthDate": "2002-07-10"
         },
-        "japaneseName": "小日向みゆう"
+        "japaneseName": "小日向みゆう",
+        "romanization": "Kohinata Miyu"
       },
       {
         "id": "p0136",
         "name": "宇野みれい",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Uno Mirei",
+            "source": "https://s1s1s1.com/actress/a?page=7"
+          }
+        ],
         "identities": {
           "fanza": [
             "1084112"
@@ -9894,12 +11826,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "宇野みれい"
+        "japaneseName": "宇野みれい",
+        "romanization": "Uno Mirei"
       },
       {
         "id": "p0137",
         "name": "羽月乃蒼",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Haruna Noa",
+            "source": "https://kawaiikawaii.jp/actress/ha?page=3"
+          }
+        ],
         "identities": {
           "fanza": [
             "1084337"
@@ -9930,7 +11868,8 @@
           "heightCm": 158,
           "birthDate": "2001-11-13"
         },
-        "japaneseName": "羽月乃蒼"
+        "japaneseName": "羽月乃蒼",
+        "romanization": "Haruna Noa"
       },
       {
         "id": "p0138",
@@ -9976,7 +11915,12 @@
       {
         "id": "p0139",
         "name": "五日市芽依",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Mei Itsukaichi",
+            "source": "https://life-promotion.com/model/itsukaichi-mei.php"
+          }
+        ],
         "identities": {
           "fanza": [
             "1084796"
@@ -9996,12 +11940,29 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "五日市芽依"
+        "japaneseName": "五日市芽依",
+        "profile": {
+          "sourceName": "五日市芽依",
+          "source": {
+            "url": "https://life-promotion.com/model/itsukaichi-mei.php",
+            "sha256": "32d8a230079d6df4eee65f344ee4afc0a987dde21201074dc7e04a484b92f592",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 161,
+          "birthDate": "2000-09-18"
+        },
+        "romanization": "Mei Itsukaichi"
       },
       {
         "id": "p0140",
         "name": "明日葉みつは",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Ashitaba Mituha",
+            "source": "https://ideapocket.com/actress/a?page=2"
+          }
+        ],
         "identities": {
           "fanza": [
             "1084920"
@@ -10031,7 +11992,8 @@
           "reviewed": "2026-10-06",
           "heightCm": 175
         },
-        "japaneseName": "明日葉みつは"
+        "japaneseName": "明日葉みつは",
+        "romanization": "Ashitaba Mituha"
       },
       {
         "id": "p0141",
@@ -10040,6 +12002,10 @@
           {
             "name": "沖宮那美",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/"
+          },
+          {
+            "name": "Okimiya Nami",
+            "source": "https://madonna-av.com/actress/a?page=31"
           }
         ],
         "identities": {
@@ -10071,7 +12037,18 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "沖宮那美"
+        "japaneseName": "沖宮那美",
+        "profile": {
+          "sourceName": "沖宮那美",
+          "source": {
+            "url": "https://sod-kyuzin.jp/models/okimiyanami/",
+            "sha256": "3d8b37ed50644440f08ba8a730488077fd1a1cba62b6714c5079df6362b25ac7",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 165
+        },
+        "romanization": "Okimiya Nami"
       },
       {
         "id": "p0142",
@@ -10080,6 +12057,10 @@
           {
             "name": "本郷愛",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/"
+          },
+          {
+            "name": "Hongo Ai",
+            "source": "https://s1s1s1.com/actress/ha?page=5"
           }
         ],
         "identities": {
@@ -10101,12 +12082,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "本郷愛"
+        "japaneseName": "本郷愛",
+        "romanization": "Hongo Ai"
       },
       {
         "id": "p0143",
         "name": "黒島玲衣",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Rei Kuroshima",
+            "source": "https://lightpro.jp/talent/kuroshimarei.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1085628"
@@ -10126,12 +12113,30 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "黒島玲衣"
+        "japaneseName": "黒島玲衣",
+        "profile": {
+          "sourceName": "黒島玲衣",
+          "source": {
+            "url": "https://lightpro.jp/talent/kuroshimarei.html",
+            "sha256": "fdf4db44fb5bd4af0d0431667052ece740e31ff9f146ea3696254f3da34d18a5",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 160,
+          "birthDate": "2003-04-25",
+          "debutYear": 2023
+        },
+        "romanization": "Rei Kuroshima"
       },
       {
         "id": "p0144",
         "name": "佐藤しお",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Satou Shio",
+            "source": "https://moodyz.com/actress/sa?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "1086061"
@@ -10151,12 +12156,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "佐藤しお"
+        "japaneseName": "佐藤しお",
+        "romanization": "Satou Shio"
       },
       {
         "id": "p0145",
         "name": "白石もも",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Shiraishi Momo",
+            "source": "https://kawaiikawaii.jp/actress/sa?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "1086062"
@@ -10176,12 +12187,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "白石もも"
+        "japaneseName": "白石もも",
+        "romanization": "Shiraishi Momo"
       },
       {
         "id": "p0146",
         "name": "浅野こころ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Asano Kokoro",
+            "source": "https://moodyz.com/actress/a?page=7"
+          }
+        ],
         "identities": {
           "fanza": [
             "1086581"
@@ -10201,7 +12218,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "浅野こころ"
+        "japaneseName": "浅野こころ",
+        "romanization": "Asano Kokoro"
       },
       {
         "id": "p0147",
@@ -10210,6 +12228,10 @@
           {
             "name": "瀧本雫葉",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=4/"
+          },
+          {
+            "name": "Takimoto Shizuha",
+            "source": "https://www.t-powers.co.jp/talent/%e7%80%a7%e6%9c%ac%e9%9b%ab%e8%91%89/"
           }
         ],
         "identities": {
@@ -10250,12 +12272,18 @@
           "heightCm": 166,
           "birthDate": "1999-05-08"
         },
-        "japaneseName": "瀧本雫葉"
+        "japaneseName": "瀧本雫葉",
+        "romanization": "Takimoto Shizuha"
       },
       {
         "id": "p0148",
         "name": "仁藤さや香",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Nitou Sayaka",
+            "source": "https://s1s1s1.com/actress/na?page=3"
+          }
+        ],
         "identities": {
           "fanza": [
             "1087024"
@@ -10275,12 +12303,28 @@
             "retrieved": "2026-10-06"
           }
         },
-        "japaneseName": "仁藤さや香"
+        "japaneseName": "仁藤さや香",
+        "profile": {
+          "sourceName": "仁藤さや香",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/832661",
+            "sha256": "3e676732d4f94f3167bc25d95ae4af875587450ec0065d424106c26e59a0ba92",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 158
+        },
+        "romanization": "Nitou Sayaka"
       },
       {
         "id": "p0149",
         "name": "渚恋生",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Nagisa Koiki",
+            "source": "https://www.minnano-av.com/actress619500.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1087032"
@@ -10308,7 +12352,18 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "渚恋生"
+        "japaneseName": "渚恋生",
+        "profile": {
+          "sourceName": "渚恋生",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1087032&item=video",
+            "sha256": "2f84cb89d6268330f47f656adb98323f30a796bfc180023eaa94f137fdb83f38",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 167
+        },
+        "romanization": "Nagisa Koiki"
       },
       {
         "id": "p0150",
@@ -10368,6 +12423,10 @@
           {
             "name": "三田真鈴",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/"
+          },
+          {
+            "name": "Marin Mita",
+            "source": "https://lightpro.jp/talent/mitamarin.html"
           }
         ],
         "identities": {
@@ -10389,12 +12448,30 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "三田真鈴"
+        "japaneseName": "三田真鈴",
+        "profile": {
+          "sourceName": "三田真鈴",
+          "source": {
+            "url": "https://lightpro.jp/talent/mitamarin.html",
+            "sha256": "b73712f01dcae53f09d552424e9c38580ba4de8ed839aa63a05e5ae0bedb5b78",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2002-06-28",
+          "heightCm": 157,
+          "debutYear": 2023
+        },
+        "romanization": "Marin Mita"
       },
       {
         "id": "p0152",
         "name": "月野江すい",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Tsukinoe Sui",
+            "source": "https://fitch-av.com/actress/ta?page=3"
+          }
+        ],
         "identities": {
           "fanza": [
             "1087778"
@@ -10425,7 +12502,8 @@
           "heightCm": 166,
           "birthDate": "2001-06-15"
         },
-        "japaneseName": "月野江すい"
+        "japaneseName": "月野江すい",
+        "romanization": "Tsukinoe Sui"
       },
       {
         "id": "p0153",
@@ -10434,6 +12512,10 @@
           {
             "name": "百田光希",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=3/"
+          },
+          {
+            "name": "Mitsuki Momota",
+            "source": "https://lightpro.jp/talent/momotamitsuki.html"
           }
         ],
         "identities": {
@@ -10455,7 +12537,20 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "百田光稀"
+        "japaneseName": "百田光稀",
+        "profile": {
+          "sourceName": "百田光稀",
+          "source": {
+            "url": "https://lightpro.jp/talent/momotamitsuki.html",
+            "sha256": "ab26dd051446f617c88a09e52e1335a42c1ea51bb8454edefb9bcbb15af90965",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2002-08-25",
+          "heightCm": 166,
+          "debutYear": 2023
+        },
+        "romanization": "Mitsuki Momota"
       },
       {
         "id": "p0154",
@@ -10468,6 +12563,10 @@
           {
             "name": "逢澤美優",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=93103280"
+          },
+          {
+            "name": "Aizawa Miyu",
+            "source": "https://fitch-av.com/actress/a"
           }
         ],
         "identities": {
@@ -10489,12 +12588,28 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "逢沢みゆ"
+        "japaneseName": "逢沢みゆ",
+        "profile": {
+          "sourceName": "逢沢みゆ",
+          "source": {
+            "url": "https://fitch-av.com/actress/detail/832771",
+            "sha256": "5d3584edae1a7f313f5360ea4cf943f6afa5f26ad9ad320e9da5f29ef192167b",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 155
+        },
+        "romanization": "Aizawa Miyu"
       },
       {
         "id": "p0155",
         "name": "蒼乃美月",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Aono Mizuki",
+            "source": "https://kawaiikawaii.jp/actress/a?page=3"
+          }
+        ],
         "identities": {
           "fanza": [
             "1088685"
@@ -10535,12 +12650,18 @@
           "heightCm": 165,
           "birthDate": "2002-10-30"
         },
-        "japaneseName": "蒼乃美月"
+        "japaneseName": "蒼乃美月",
+        "romanization": "Aono Mizuki"
       },
       {
         "id": "p0156",
         "name": "長浜みつり",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Nagahama Mitsuri",
+            "source": "https://ideapocket.com/actress/na"
+          }
+        ],
         "identities": {
           "fanza": [
             "1089578"
@@ -10581,12 +12702,18 @@
           "heightCm": 161,
           "birthDate": "2002-06-01"
         },
-        "japaneseName": "長浜みつり"
+        "japaneseName": "長浜みつり",
+        "romanization": "Nagahama Mitsuri"
       },
       {
         "id": "p0157",
         "name": "小坂七香",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kosaka Nanaka",
+            "source": "https://kawaiikawaii.jp/actress/ka?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "1090884"
@@ -10606,12 +12733,28 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "小坂七香"
+        "japaneseName": "小坂七香",
+        "profile": {
+          "sourceName": "小坂七香",
+          "source": {
+            "url": "https://kawaiikawaii.jp/actress/detail/839439",
+            "sha256": "7cca98c344b750a9367ae5eed2adbeb8bf727aff9644899b33e0bc6c03b6fc2b",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 172
+        },
+        "romanization": "Kosaka Nanaka"
       },
       {
         "id": "p0158",
         "name": "宮本留衣",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Rui Miyamoto",
+            "source": "https://lightpro.jp/talent/miyamotorui.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1091791"
@@ -10648,14 +12791,21 @@
             "sha256": "9ac8ad7207e56a327b9cb2b6d57e635c88d427644b5e8c3ca9718bddeb4c49b8",
             "retrieved": "2026-10-06"
           },
-          "reviewed": "2026-10-06"
+          "reviewed": "2026-10-06",
+          "debutYear": 2024
         },
-        "japaneseName": "宮本留衣"
+        "japaneseName": "宮本留衣",
+        "romanization": "Rui Miyamoto"
       },
       {
         "id": "p0159",
         "name": "金松季歩",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kanematsu Kiho",
+            "source": "https://moodyz.com/actress/ka?page=4"
+          }
+        ],
         "identities": {
           "fanza": [
             "1092091"
@@ -10675,12 +12825,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "金松季歩"
+        "japaneseName": "金松季歩",
+        "romanization": "Kanematsu Kiho"
       },
       {
         "id": "p0160",
         "name": "春陽モカ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Haruhi Moka",
+            "source": "https://moodyz.com/actress/ha?page=6"
+          }
+        ],
         "identities": {
           "fanza": [
             "1092219"
@@ -10700,12 +12856,18 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "春陽モカ"
+        "japaneseName": "春陽モカ",
+        "romanization": "Haruhi Moka"
       },
       {
         "id": "p0161",
         "name": "北岡果林",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kitaoka Karin",
+            "source": "https://fitch-av.com/actress/ka?page=4"
+          }
+        ],
         "identities": {
           "fanza": [
             "1092427"
@@ -10746,12 +12908,18 @@
           "heightCm": 160,
           "birthDate": "2003-09-19"
         },
-        "japaneseName": "北岡果林"
+        "japaneseName": "北岡果林",
+        "romanization": "Kitaoka Karin"
       },
       {
         "id": "p0162",
         "name": "白上咲花",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Emika Shirakami",
+            "source": "https://bambi.ne.jp/model.php?id=347"
+          }
+        ],
         "identities": {
           "fanza": [
             "1092662"
@@ -10771,12 +12939,28 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "白上咲花"
+        "japaneseName": "白上咲花",
+        "profile": {
+          "sourceName": "白上咲花",
+          "source": {
+            "url": "https://bambi.ne.jp/model.php?id=347",
+            "sha256": "318b6499f9f5834ff2293116cb0664fbfc5db63c881978b515497244500dae49",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 168
+        },
+        "romanization": "Emika Shirakami"
       },
       {
         "id": "p0163",
         "name": "役野満里奈",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Yakuno Marina",
+            "source": "https://www.minnano-av.com/actress334346.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1092918"
@@ -10806,7 +12990,20 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "役野満里奈"
+        "japaneseName": "役野満里奈",
+        "profile": {
+          "sourceName": "役野満里奈",
+          "source": {
+            "url": "https://www.ys-entertainment.jp/%E5%BD%B9%E9%87%8E%E6%BA%80%E9%87%8C%E5%A5%88/",
+            "sha256": "5350ee3b9f13ce7e329b8e2266ac67d6d5bb2cc2ca88e52637abcaf828d2b062",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 160,
+          "birthDate": "2004-07-24",
+          "debutYear": 2024
+        },
+        "romanization": "Yakuno Marina"
       },
       {
         "id": "p0164",
@@ -10815,6 +13012,10 @@
           {
             "name": "倉木華",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/"
+          },
+          {
+            "name": "Kuraki Hana",
+            "source": "https://s1s1s1.com/actress/ka?page=4"
           }
         ],
         "identities": {
@@ -10857,12 +13058,18 @@
           "heightCm": 168,
           "birthDate": "2001-08-07"
         },
-        "japaneseName": "倉木華"
+        "japaneseName": "倉木華",
+        "romanization": "Kuraki Hana"
       },
       {
         "id": "p0165",
         "name": "小野坂ゆいか",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Onosaka Yuika",
+            "source": "https://fitch-av.com/actress/a?page=13"
+          }
+        ],
         "identities": {
           "fanza": [
             "1093790"
@@ -10903,12 +13110,18 @@
           "heightCm": 164,
           "birthDate": "2002-02-09"
         },
-        "japaneseName": "小野坂ゆいか"
+        "japaneseName": "小野坂ゆいか",
+        "romanization": "Onosaka Yuika"
       },
       {
         "id": "p0166",
         "name": "静河",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Shizuka",
+            "source": "https://kawaiikawaii.jp/actress/sa?page=5"
+          }
+        ],
         "identities": {
           "fanza": [
             "1094637"
@@ -10928,12 +13141,29 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "静河"
+        "japaneseName": "静河",
+        "profile": {
+          "sourceName": "静河",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1094637&item=video",
+            "sha256": "7fcd1e1ae813b6fa486c5e6ee7a4472c5c628449f3c931a19f6e97bd5a529ff1",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2002-10-16",
+          "heightCm": 158
+        },
+        "romanization": "Shizuka"
       },
       {
         "id": "p0167",
         "name": "泉ももか",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Izumi Momoka",
+            "source": "https://www.t-powers.co.jp/talent/%e6%b3%89%e3%82%82%e3%82%82%e3%81%8b/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1096172"
@@ -10972,12 +13202,18 @@
           "heightCm": 156,
           "birthDate": "2002-10-25"
         },
-        "japaneseName": "泉ももか"
+        "japaneseName": "泉ももか",
+        "romanization": "Izumi Momoka"
       },
       {
         "id": "p0168",
         "name": "榊原萌",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Sakakibara Moe",
+            "source": "https://www.minnano-av.com/actress90073.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1096639"
@@ -10997,12 +13233,29 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "榊原萌"
+        "japaneseName": "榊原萌",
+        "profile": {
+          "sourceName": "榊原萌",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/845163",
+            "sha256": "fa65f65bf9f6f40920b534ea3f3bd00b7bdc5ab58932fc747ace7ee88c4db807",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2004-07-07",
+          "heightCm": 158
+        },
+        "romanization": "Sakakibara Moe"
       },
       {
         "id": "p0169",
         "name": "輝星きら",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kira Kira",
+            "source": "https://lightpro.jp/talent/kirakira.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1098260"
@@ -11022,12 +13275,30 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "輝星きら"
+        "japaneseName": "輝星きら",
+        "profile": {
+          "sourceName": "輝星きら",
+          "source": {
+            "url": "https://lightpro.jp/talent/kirakira.html",
+            "sha256": "330fe30b19c8a5b96b1223077c62777ee4515dcd26fd8b2679b3d9c091e31109",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2004-03-03",
+          "heightCm": 158,
+          "debutYear": 2024
+        },
+        "romanization": "Kira Kira"
       },
       {
         "id": "p0170",
         "name": "篠原いよ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Shinohara Iyo",
+            "source": "https://madonna-av.com/actress/sa?page=11"
+          }
+        ],
         "identities": {
           "fanza": [
             "1098810"
@@ -11047,12 +13318,28 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "篠原いよ"
+        "japaneseName": "篠原いよ",
+        "profile": {
+          "sourceName": "篠原いよ",
+          "source": {
+            "url": "https://madonna-av.com/actress/detail/851642",
+            "sha256": "672c5510e679e29a280a5825ffc988a49808fc382414318552e7f41ed681c048",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 160
+        },
+        "romanization": "Shinohara Iyo"
       },
       {
         "id": "p0171",
         "name": "愛才りあ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Ria Aise",
+            "source": "https://attractive-llc.net/model/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1099161"
@@ -11082,7 +13369,18 @@
             "reviewed": "2026-10-06"
           }
         },
-        "japaneseName": "愛才りあ"
+        "japaneseName": "愛才りあ",
+        "profile": {
+          "sourceName": "愛才りあ",
+          "source": {
+            "url": "https://attractive-llc.net/model/",
+            "sha256": "8a41764544b668924e1873b26f1906a93dd0b17be796fc2bb43b32faaf4e6e5c",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 165
+        },
+        "romanization": "Ria Aise"
       },
       {
         "id": "p0172",
@@ -11095,6 +13393,10 @@
           {
             "name": "瀨戶環奈",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=93114917"
+          },
+          {
+            "name": "Seto Kanna",
+            "source": "https://s1s1s1.com/actress/sa?page=4"
           }
         ],
         "identities": {
@@ -11116,12 +13418,29 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "瀬戸環奈"
+        "japaneseName": "瀬戸環奈",
+        "profile": {
+          "sourceName": "瀬戸環奈",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/849776",
+            "sha256": "da34d650e9b47085a86776f36da3bc9bad5dec11251131a4a0e2605ca8d74527",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2004-05-10",
+          "heightCm": 170
+        },
+        "romanization": "Seto Kanna"
       },
       {
         "id": "p0173",
         "name": "新木希空",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Araki Noa",
+            "source": "https://s1s1s1.com/actress/a?page=4"
+          }
+        ],
         "identities": {
           "fanza": [
             "1099846"
@@ -11141,12 +13460,29 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "新木希空"
+        "japaneseName": "新木希空",
+        "profile": {
+          "sourceName": "新木希空",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/855268",
+            "sha256": "3bc2d2d4a65a1bab889c39b52ba7b1886f22a3b7a165febd49daba8af2aebf2b",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2004-10-10",
+          "heightCm": 162
+        },
+        "romanization": "Araki Noa"
       },
       {
         "id": "p0174",
         "name": "桜乃りの",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Sakurano Rino",
+            "source": "https://ideapocket.com/actress/sa"
+          }
+        ],
         "identities": {
           "fanza": [
             "1100579"
@@ -11166,7 +13502,19 @@
           },
           "reviewed": "2026-10-06"
         },
-        "japaneseName": "桜乃りの"
+        "japaneseName": "桜乃りの",
+        "profile": {
+          "sourceName": "桜乃りの",
+          "source": {
+            "url": "https://ideapocket.com/actress/detail/854916",
+            "sha256": "0827f2fe64864af69a50bcd3875ff4a4f0cae28a2cf8369e5bcda53fc4f4a312",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "2004-11-12",
+          "heightCm": 156
+        },
+        "romanization": "Sakurano Rino"
       },
       {
         "id": "p0175",
@@ -11177,6 +13525,10 @@
           {
             "name": "小林ひとみ",
             "source": "https://www.tv-tokyo.co.jp/plus/entertainment/entry/202404/14994.html"
+          },
+          {
+            "name": "Kobayashi Hitomi",
+            "source": "https://www.minnano-av.com/actress162359.html"
           }
         ],
         "identities": {
@@ -11209,7 +13561,18 @@
             "https://www.tv-tokyo.co.jp/plus/entertainment/entry/202404/14994.html"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "小林ひとみ",
+          "source": {
+            "url": "https://www.tv-tokyo.co.jp/plus/entertainment/entry/202404/14994.html",
+            "sha256": "14bdb4dd01cbea0733388d7f4bf7f7ad4bf69b6aeae8821fda7eaab58053bdf2",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "debutYear": 1986
+        },
+        "romanization": "Kobayashi Hitomi"
       },
       {
         "id": "p0176",
@@ -11220,6 +13583,10 @@
           {
             "name": "黒木香",
             "source": "https://www.shinchosha.co.jp/book/101982/"
+          },
+          {
+            "name": "Kuroki Kaoru",
+            "source": "https://www.minnano-av.com/actress477386.html"
           }
         ],
         "identities": {
@@ -11253,14 +13620,20 @@
             "https://www.kodansha.co.jp/book/products/0000357243"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Kuroki Kaoru"
       },
       {
         "id": "p0177",
         "name": "桜樹ルイ",
         "nameSource": "https://prtimes.jp/main/html/rd/p/000000950.000014531.html",
         "japaneseName": "桜樹ルイ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Sakuragi Rui",
+            "source": "https://www.minnano-av.com/actress67380.html"
+          }
+        ],
         "identities": {
           "fanza": [
             "1098"
@@ -11286,7 +13659,32 @@
             "https://shueisha.online/articles/-/252682?page=1"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "桜樹ルイ",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=1098&item=video",
+            "sha256": "1ac473f7e0513d4eafb74364215708a88f4c3048901d2d4da60ea4ecb1e0965b",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "heightCm": 164,
+          "debutYear": 1989,
+          "fieldSources": {
+            "debutYear": [
+              {
+                "sourceName": "桜樹ルイ",
+                "source": {
+                  "url": "https://prtimes.jp/main/html/rd/p/000000950.000014531.html",
+                  "sha256": "12aaf014db26029a104cbbbc657d93491b868974dcd77e362c2c0a7c41611d69",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Sakuragi Rui"
       },
       {
         "id": "p0178",
@@ -11325,6 +13723,18 @@
             "https://book.asahi.com/article/13481742"
           ],
           "reviewed": "2026-10-06"
+        },
+        "profile": {
+          "sourceName": "飯島愛",
+          "source": {
+            "url": "https://www.vip-times.co.jp/?talent_id=W93-0231",
+            "sha256": "bda1243cf1fd152e3acd8c17ccec02bcf42f9f693d1cd1e3ccf8e605f3c1a13e",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1972-10-31",
+          "heightCm": 161,
+          "debutYear": 1992
         }
       },
       {
@@ -11336,6 +13746,10 @@
           {
             "name": "蒼井そら",
             "source": "https://book.asahi.com/article/13481742"
+          },
+          {
+            "name": "Sola Aoi",
+            "source": "https://aoisola.jp/"
           }
         ],
         "identities": {
@@ -11363,7 +13777,18 @@
             "https://aoisola.jp/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "蒼井そら",
+          "source": {
+            "url": "https://book.asahi.com/article/13481742",
+            "sha256": "9f3618bee72a1fce7c9962d18099b25a9b3d3b395bf7da6b73025759e43b332c",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "debutYear": 2002
+        },
+        "romanization": "Sola Aoi"
       },
       {
         "id": "p0180",
@@ -11412,6 +13837,16 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2007/"
           ],
           "reviewed": "2026-10-06"
+        },
+        "profile": {
+          "sourceName": "松島かえで",
+          "source": {
+            "url": "https://osusume.dmm.co.jp/list/?actress=3788&item=video",
+            "sha256": "3c1af03cd814221337a7a707ed1d87a91584edf94a43c97f45dc4443b338fda4",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1982-11-07"
         }
       },
       {
@@ -11427,6 +13862,10 @@
           {
             "name": "小泽玛丽亚",
             "source": "https://zh.wikipedia.org/w/index.php?title=小澤瑪麗亞&oldid=91271655"
+          },
+          {
+            "name": "Ozawa Maria",
+            "source": "https://moodyz.com/actress/a?page=25"
           }
         ],
         "identities": {
@@ -11456,7 +13895,33 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2008/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "小澤マリア",
+          "source": {
+            "url": "https://moodyz.com/actress/detail/690095",
+            "sha256": "97161e8ed97050772143de8b1a81f9821569552560e1cba8de26968c6a76bda4",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1986-01-08",
+          "heightCm": 162,
+          "debutYear": 2005,
+          "fieldSources": {
+            "debutYear": [
+              {
+                "sourceName": "小澤マリア",
+                "source": {
+                  "url": "https://bunshun.jp/articles/-/54436",
+                  "sha256": "a9c57a9d94a6a419c712d61a412c1033464cd6da18c2acbdeba9985b24ede000",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Ozawa Maria"
       },
       {
         "id": "p0182",
@@ -11488,7 +13953,19 @@
             "https://adult-awards.com/archives/2008/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "Rio",
+          "source": {
+            "url": "https://www.jvcmusic.co.jp/-/Profile/A024605.html",
+            "sha256": "60fc735954feac9bba7d0c8fdcea526b8e2592420468d1af94d615895d09b28c",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1986-10-29",
+          "heightCm": 154
+        },
+        "romanization": "Rio"
       },
       {
         "id": "p0183",
@@ -11499,6 +13976,10 @@
           {
             "name": "穂花",
             "source": "https://adult-awards.com/archives/2007/"
+          },
+          {
+            "name": "Honoka",
+            "source": "https://ideapocket.com/actress/ha?page=4"
           }
         ],
         "identities": {
@@ -11527,7 +14008,8 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2008/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "romanization": "Honoka"
       },
       {
         "id": "p0184",
@@ -11538,6 +14020,10 @@
           {
             "name": "天使もえ",
             "source": "https://adult-awards.com/archives/2015/"
+          },
+          {
+            "name": "Amatsuka Moe",
+            "source": "https://s1s1s1.com/actress/a?page=4"
           }
         ],
         "identities": {
@@ -11576,7 +14062,19 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2015/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "天使もえ",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/18082",
+            "sha256": "f54aef7f0bdeb21111bace40d57159c907cad27b8bedd152e3d46158f089e911",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1994-07-10",
+          "heightCm": 155
+        },
+        "romanization": "Amatsuka Moe"
       },
       {
         "id": "p0185",
@@ -11591,6 +14089,10 @@
           {
             "name": "橋本ありな",
             "source": "https://actenter.com/talent/新ありな/"
+          },
+          {
+            "name": "Arata Arina",
+            "source": "https://moodyz.com/actress/a?page=13"
           }
         ],
         "identities": {
@@ -11628,7 +14130,32 @@
             "https://actenter.com/talent/新ありな/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "新ありな",
+          "source": {
+            "url": "https://actenter.com/talent/新ありな/",
+            "sha256": "f4833e4a042dda194e589f352bbac63b39c26a8b56279679900db5c4d1b4dd95",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1996-12-15",
+          "heightCm": 166,
+          "fieldSources": {
+            "heightCm": [
+              {
+                "sourceName": "橋本ありな",
+                "source": {
+                  "url": "https://ideapocket.com/actress/detail/71273",
+                  "sha256": "2fd0b22a6238c6bcd5d6b4cb08534e212f1b6009bb7607b99b514b61bbf6f7b2",
+                  "retrieved": "2026-10-06"
+                },
+                "reviewed": "2026-10-06"
+              }
+            ]
+          }
+        },
+        "romanization": "Arata Arina"
       },
       {
         "id": "p0186",
@@ -11639,6 +14166,10 @@
           {
             "name": "高橋しょう子",
             "source": "https://www.art-techne.com/technenews/news201704251512.html"
+          },
+          {
+            "name": "Takahashi Shoko",
+            "source": "https://moodyz.com/actress/ta?page=2"
           }
         ],
         "identities": {
@@ -11667,7 +14198,19 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2018/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "profile": {
+          "sourceName": "高橋しょう子",
+          "source": {
+            "url": "https://s1s1s1.com/actress/detail/20934",
+            "sha256": "785c2cd5de1921f4a2003032866d4e0ab314a66d1cc67eef50eaac4222d6e4f5",
+            "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06",
+          "birthDate": "1993-05-13",
+          "heightCm": 161
+        },
+        "romanization": "Takahashi Shoko"
       }
     ],
     "redirects": {},

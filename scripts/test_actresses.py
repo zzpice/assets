@@ -182,6 +182,29 @@ class ActressTests(unittest.TestCase):
         self.people[0]["japaneseName"] = "unreviewed name"; self.write()
         with self.assertRaisesRegex(ValueError, "sourced name or alias"): update(self.root)
 
+    def test_field_evidence_requires_a_recorded_fact_and_reviewed_identity(self):
+        evidence = {"sourceName": "人物1", "source": {"url": "https://example.test/birthday", "sha256": "a" * 64, "retrieved": "2026-01-01"}, "reviewed": "2026-01-01"}
+        height = copy.deepcopy(evidence)
+        height["source"]["url"] = "https://example.test/height"
+        profile = {**evidence, "birthYear": 2000, "heightCm": 169, "fieldSources": {"heightCm": [height]}}
+        self.people[0]["profile"] = profile
+        self.write(); update(self.root)
+        recorded = json.loads((self.root / "catalog.json").read_text())["actresses"]["people"][0]["profile"]
+        self.assertEqual(recorded["fieldSources"]["heightCm"][0]["source"]["url"], "https://example.test/height")
+        self.assertEqual(recorded["source"]["url"], "https://example.test/birthday")
+        invalid = [
+            ({"debutYear": [height]}, "recorded enduring facts"),
+            ({"heightCm": []}, "nonempty evidence"),
+            ({"heightCm": [height, height]}, "duplicate fieldSources URL"),
+            ({"heightCm": [{**height, "sourceName": "other person"}]}, "identity mapping"),
+            ({"heightCm": [{**height, "reviewed": "not a date"}]}, "valid ISO date"),
+            ({"heightCm": [{**height, "source": {**height["source"], "sha256": "missing"}}]}, "snapshot SHA-256"),
+        ]
+        for overrides, error in invalid:
+            with self.subTest(error=error):
+                profile["fieldSources"] = overrides; self.write()
+                with self.assertRaisesRegex(ValueError, error): update(self.root)
+
     def test_registry_rejects_obsolete_agency_mapping(self):
         self.data["agencies"] = {}; self.write()
         with self.assertRaisesRegex(ValueError, "not part of the enduring person registry"): update(self.root)
