@@ -9,10 +9,19 @@ const base = "https://example.test/assets/";
 
 function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]}')) {
   const nodes = new Map();
-  const node = () => ({value:"",children:[],dataset:{},style:{setProperty(){}},classList:{toggle(){},remove(){}},addEventListener(){},setAttribute(){},removeAttribute(){},replaceChildren(...children){this.children=children;},append(...children){this.children.push(...children);},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
+  const node = (tagName="") => ({tagName,value:"",children:[],dataset:{},style:{setProperty(){}},classList:{toggle(){},remove(){}},addEventListener(){},setAttribute(){},removeAttribute(){},closest(){return this.field ||= {};},add(child){this.children.push(child);},replaceChildren(...children){this.children=children;if(this.tagName==="select")this.value=children[0]?.value || "";},append(...children){this.children.push(...children);},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
   const document = {baseURI:base,body:node(),getElementById(id){if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);},querySelectorAll:()=>[],querySelector:()=>node(),createElement:node,createElementNS:node};
+  for(const id of ["device","category","bank","edition","resolution","orientation","sort"]) document.getElementById(id).tagName="select";
+  const location={href:base,hash:""};
+  const setLocation=url=>{location.href=new URL(url,base).href;location.hash=new URL(location.href).hash;};
+  const history={state:null,entries:[{url:base,state:null}],index:0,
+    pushState(state,unused,url){this.state=state;setLocation(url);this.entries.splice(++this.index);this.entries.push({url:location.href,state});},
+    replaceState(state,unused,url){this.state=state;setLocation(url);this.entries[this.index]={url:location.href,state};},
+    back(){if(this.index){const entry=this.entries[--this.index];this.state=entry.state;setLocation(entry.url);}}
+  };
   const context = vm.createContext({URL,URLSearchParams,Response,AbortController,setTimeout,clearTimeout,document,fetch:fetchResponse,
-    localStorage:{getItem:()=>null},navigator:{onLine:true},location:{href:base,hash:""},history:{state:null},
+    Option:function(label,value){return {textContent:label,value};},
+    localStorage:{getItem:()=>null},navigator:{onLine:true},location,history,
     window:{matchMedia:()=>({matches:false}),addEventListener(){}}
   });
   vm.runInContext(source,context);
@@ -122,55 +131,132 @@ test("a slower prior refresh cannot replace a newer catalog",async()=>{
   assert.equal(state.read("assets[0].path"),"icons/ai/new.png");
 });
 
-test("game covers infer series and work from paths, group editions together and keep main first",()=>{
-  const {context,read,nodes}=gallery();
-  const first=context.makeAsset({path:"game-covers/zero-escape/999/original-nds-na.jpg",edition:"main",cover:{platform:"Nintendo DS",region:"North America",version:"北美首版（2010）"},kind:"icon"});
-  const later=context.makeAsset({path:"game-covers/zero-escape/999/reissue-nds-na.jpg",edition:"alternate",cover:{version:"再版（2012）"}});
-  const other=context.makeAsset({path:"game-covers/zero-escape/zero-time-dilemma/original-ps-vita-na.jpg",edition:"main"});
-  assert.equal(first.kind,"game-cover");
-  assert.equal(first.category,"zero-escape");
-  assert.equal(first.game,"999");
-  assert.equal(context.samePreviewGroup(first,later),true);
-  assert.equal(context.samePreviewGroup(first,other),false);
-  read('kind="game-cover"'); nodes.get("sort").value="collection";
-  assert.equal([later,first].sort(context.compareAssets)[0],first);
+function coverGallery() {
+  const state=gallery();
+  state.read(`gameSeries=[{id:"zero-escape",title:"极限脱出"},{id:"ace-attorney",title:"逆转裁判"}]; games=[
+    {series:"zero-escape",id:"999",title:"999：9小时9人9扇门",firstReleaseYear:2009},
+    {series:"zero-escape",id:"vlr",title:"极限脱出：善人死亡",firstReleaseYear:2012},
+    {series:"zero-escape",id:"ztd",title:"极限脱出：刻之困境",firstReleaseYear:2016},
+    {series:"ace-attorney",id:"first",title:"逆转裁判",firstReleaseYear:2001}
+  ]; kind="game-cover"`);
+  state.context.testFiles=[
+    state.context.makeAsset({path:"game-covers/zero-escape/ztd.jpg",width:803,height:1024}),
+    state.context.makeAsset({path:"game-covers/zero-escape/extras/999/ps4-jp.jpg",cover:{platform:"PlayStation 4",region:"Japan",version:"特别收藏"}}),
+    state.context.makeAsset({path:"game-covers/zero-escape/vlr.jpg",width:1920,height:2496}),
+    state.context.makeAsset({path:"game-covers/zero-escape/999.jpg",width:1400,height:1252,cover:{platform:"Nintendo DS",region:"North America"}}),
+    state.context.makeAsset({path:"game-covers/ace-attorney/first.png"})
+  ];
+  state.read('assets=testFiles');
+  state.context.refreshControls();
+  return state;
+}
+
+const descend=node=>[node,...node.children.flatMap(descend)];
+
+test("gallery overview shows one selected image per work, in year order, with series links",()=>{
+  const {context,read,nodes}=coverGallery();
+  context.renderGallery();
+  assert.equal(read("visibleAssets.length"),4);
+  assert.equal(read("visibleAssets.some(file=>file.extra)"),false);
+  const sections=nodes.get("gallery").children;
+  assert.equal(sections.length,2);
+  const zero=descend(sections[0]);
+  assert.equal(zero.find(node=>node.className==="series-link").href,base+"#series=zero-escape");
+  assert.equal(zero.find(node=>node.className==="grid series-strip").children.length,3);
+  assert.deepEqual(zero.filter(node=>node.tagName==="h3").map(node=>node.textContent),["999：9小时9人9扇门","极限脱出：善人死亡","极限脱出：刻之困境"]);
+  assert.equal(zero.filter(node=>node.className==="extra-covers").length,0);
+  assert.equal(nodes.get("filters-panel").hidden,true);
+  assert.equal(nodes.get("results").textContent,"4 款作品 · 2 个系列");
 });
 
-test("game-cover cards use the registered work title and a single source link",()=>{
-  const {context,read}=gallery();
-  read('games=[{series:"zero-escape",id:"999",title:"999：9小时9人9扇门",firstReleaseYear:2009}]; gameSeries=[{id:"zero-escape",title:"极限脱出"}]');
-  const file=context.makeAsset({path:"game-covers/zero-escape/999/nds-na.jpg",title:"善人死亡",game:"virtues-last-reward",edition:"main",cover:{platform:"Nintendo DS",region:"North America",version:"北美首版（2010）"},source:"https://example.com/999.jpg",width:1000,height:1500});
+test("series scope includes rare extras under the work, collapsed until needed by search",()=>{
+  const {context,read,nodes}=coverGallery();
+  context.history.pushState(null,"",base+"#series=zero-escape");
+  context.syncRoute();
+  assert.equal(read("activeSeries"),"zero-escape");
+  assert.equal(read("visibleAssets.length"),4);
+  assert.equal(read('visibleAssets.some(file=>file.category==="ace-attorney")'),false);
+  assert.equal(nodes.get("cover-navigation").hidden,false);
+  assert.equal(nodes.get("cover-series-title").textContent,"极限脱出");
+  let extra=descend(nodes.get("gallery")).find(node=>node.className==="extra-covers");
+  assert.equal(extra.open,false);
+  assert.equal(nodes.get("results").textContent,"3 款作品 · 4 张封面");
+  nodes.get("search").value="特别收藏";
+  context.renderGallery();
+  assert.equal(read("visibleAssets.length"),1);
+  extra=descend(nodes.get("gallery")).find(node=>node.className==="extra-covers");
+  assert.equal(extra.open,true);
+  assert.equal(extra.children[1].tagName,"article");
+});
+
+test("game-cover cards show identity and one source, without processing or duplicated release history",()=>{
+  const {context}=coverGallery();
+  const file=context.makeAsset({path:"game-covers/zero-escape/999.jpg",title:"善人死亡",game:"vlr",edition:"alternate",cover:{platform:"Nintendo DS",region:"North America"},source:"https://example.com/999.jpg",note:"旧处理细节",width:1400,height:1252});
   assert.equal(file.title,"999：9小时9人9扇门");
   assert.equal(file.game,"999");
-  const card=context.makeCard(file,[file]);
-  const descend=node=>[node,...node.children.flatMap(descend)];
-  const contents=descend(card);
+  assert.equal(file.extra,false);
+  assert.equal(file.edition,"");
+  const contents=descend(context.makeCard(file,[file]));
   const links=contents.filter(node=>node.className==="source-link");
   assert.equal(links.length,1);
   assert.equal(links[0].href,file.source);
-  assert.equal(contents.filter(node=>node.textContent?.startsWith("作品首发：")).length,1);
-  assert.ok(contents.some(node=>node.textContent==="北美首版（2010）"));
+  assert.equal(contents.filter(node=>node.textContent==="首发 2009").length,1);
+  assert.ok(contents.some(node=>node.textContent==="Nintendo DS · 北美"));
+  assert.equal(contents.some(node=>node.className==="note"),false);
+  const preview=contents.find(node=>node.tagName==="button" && node.className.startsWith("preview "));
+  assert.equal(preview.style.aspectRatio,undefined);
+  assert.ok(contents.some(node=>node.className==="cover-backdrop"));
+  assert.equal(contents.find(node=>node.textContent==="下载原始封面").href,base+file.path);
+  const optional=context.makeAsset({path:"game-covers/zero-escape/vlr.jpg",source:"https://example.com/vlr.jpg"});
+  assert.equal(descend(context.makeCard(optional)).some(node=>node.textContent?.includes("undefined")),false);
   const unsafe=context.makeAsset({...file,source:"javascript:alert(1)"});
-  assert.equal(descend(context.makeCard(unsafe,[unsafe])).filter(node=>node.className==="source-link").length,0);
+  assert.equal(descend(context.makeCard(unsafe)).filter(node=>node.className==="source-link").length,0);
 });
 
-test("game-cover filters and search distinguish work, main, other versions, platform and region",()=>{
-  const {context,read,nodes}=gallery();
-  context.testFiles=[
-    context.makeAsset({path:"game-covers/zero-escape/999/original-nds-na.jpg",title:"999",edition:"main",cover:{platform:"Nintendo DS",region:"North America"}}),
-    context.makeAsset({path:"game-covers/zero-escape/999/remaster-ps4-jp.jpg",title:"高清版",edition:"alternate",cover:{platform:"PlayStation 4",region:"Japan"}}),
-    context.makeAsset({path:"game-covers/zero-escape/zero-time-dilemma/original-ps-vita-na.jpg",title:"刻之困境",edition:"main"})
-  ];
-  read('assets=testFiles; kind="game-cover"; gameSeries=[{id:"zero-escape",title:"极限脱出"}]; games=[{series:"zero-escape",id:"999",title:"9小时9人9扇门",firstReleaseYear:2009}]; makeGameSeries=()=>[]');
-  nodes.get("bank").value="zero-escape/999";
-  context.renderGallery(); assert.equal(read("visibleAssets.length"),2);
-  nodes.get("edition").value="main";
-  context.renderGallery(); assert.equal(read("visibleAssets.length"),1);
-  assert.equal(read("visibleAssets[0].edition"),"main");
-  nodes.get("edition").value="";
-  for(const [query,edition] of [["PlayStation 4","alternate"],["Japan","alternate"],["Nintendo DS","main"]]) {
-    nodes.get("search").value=query; context.renderGallery();
-    assert.equal(read("visibleAssets.length"),1); assert.equal(read("visibleAssets[0].edition"),edition);
-  }
-  nodes.get("search").value="9小时";context.renderGallery();assert.equal(read("visibleAssets.length"),2);
+test("series links support refresh, Back, overview and unknown-series fallback",()=>{
+  const {context,read,nodes}=coverGallery();
+  context.history.replaceState(null,"",base+"#covers");
+  context.syncRoute();
+  context.history.pushState(null,"",context.coverViewUrl("zero-escape"));
+  context.syncRoute();
+  assert.equal(read("activeSeries"),"zero-escape");
+  context.history.back(); context.syncRoute();
+  assert.equal(read("activeSeries"),"");
+  assert.equal(read("visibleAssets.length"),4);
+  assert.equal(nodes.get("cover-navigation").hidden,true);
+  // A fresh document must restore series scope without first clicking the tab.
+  read('kind="wallpaper"; activeSeries=""');
+  context.history.replaceState(null,"",base+"#series=zero-escape"); context.syncRoute();
+  assert.equal(read("kind"),"game-cover");
+  assert.equal(read("activeSeries"),"zero-escape");
+  context.history.replaceState(null,"",base+"#series=unknown"); context.syncRoute();
+  assert.equal(read("activeSeries"),"");
+  assert.equal(read("visibleAssets.some(file=>file.extra)"),false);
+  context.history.replaceState({galleryKind:"icon"},"",base); context.syncRoute();
+  assert.equal(read("kind"),"icon");
+  assert.equal(nodes.get("filters-panel").hidden,false);
+});
+
+test("shared cover previews preserve their gallery context and navigate across works in the same series",()=>{
+  const {context,read,nodes}=coverGallery();
+  context.history.replaceState(null,"",base+"#covers"); context.renderGallery();
+  const selected=context.testFiles.find(file=>file.game==="999" && !file.extra);
+  const extra=context.testFiles.find(file=>file.extra);
+  assert.equal(new URL(context.previewUrl(selected)).hash.startsWith("#covers="),true);
+  assert.equal(new URL(context.previewUrl(extra)).hash.startsWith("#series=zero-escape"),true);
+  context.history.replaceState(null,"",context.previewUrl(extra));
+  context.syncRoute();
+  assert.equal(read("activeSeries"),"zero-escape");
+  assert.equal(read("activePreview.extra"),true);
+  assert.equal(read("previewSequence.length"),4);
+  assert.equal(read('previewSequence.some(path=>path.includes("ace-attorney"))'),false);
+  assert.equal(context.withoutPreviewUrl().hash,"#series=zero-escape");
+  context.closePreview(); context.syncRoute();
+  assert.equal(nodes.get("preview-dialog").open,false);
+  assert.equal(context.location.hash,"#series=zero-escape");
+  context.openPreview(selected,"push");
+  context.movePreview(2);
+  assert.equal(read("activePreview.game"),"vlr");
+  assert.equal(new URL(context.location.href).searchParams.size,0);
+  assert.equal(new URLSearchParams(context.location.hash.slice(1)).get("series"),"zero-escape");
 });

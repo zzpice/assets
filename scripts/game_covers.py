@@ -1,4 +1,4 @@
-"""Game-cover metadata checks shared by the catalog and the manual image workflow."""
+"""Minimal work identity and source checks for the curated game-cover gallery."""
 
 from datetime import date
 import re
@@ -47,32 +47,45 @@ def game_indexes(series, games):
     return series_index, game_index
 
 
+def cover_identity(path):
+    selected = re.fullmatch(rf"game-covers/({SLUG})/({SLUG})\.(jpg|png)", path)
+    extra = re.fullmatch(rf"game-covers/({SLUG})/extras/({SLUG})/{SLUG}\.(jpg|png)", path)
+    match = selected or extra
+    if not match:
+        raise ValueError(f"{path}: 封面路径应为 game-covers/<系列>/<作品>.jpg 或 extras/<作品>/<名称>.jpg（也支持 PNG）")
+    return *match.groups(), bool(extra)
+
+
 def cover_metadata(path, old, image, image_format, games):
-    match = re.fullmatch(rf"game-covers/({SLUG})/({SLUG})/({SLUG})\.(jpg|png)", path)
-    if not match or match[1] + "/" + match[2] not in games:
-        raise ValueError(f"{path}: 封面路径应为 game-covers/<已登记系列>/<已登记作品>/<平台-地区[-版本]>.jpg 或 .png")
-    series, game, _, extension = match.groups()
-    if image is None or image_format != {"jpg": "JPEG", "png": "PNG"}[extension] or image.size != (1000, 1500) or image.mode != "RGB":
-        raise ValueError(f"{path}: 封面必须为 1000×1500（2:3）、RGB 的 JPEG 或 PNG")
-    edition, cover, source = (old.get(key) for key in ("edition", "cover", "source"))
-    if edition not in {"main", "alternate"} or not isinstance(cover, dict):
-        raise ValueError(f"{path}: 须登记 edition（main/alternate）和 cover")
-    for field in ("platform", "region"):
-        require_text(cover.get(field), path + ".cover." + field)
-    if "version" in cover:
-        require_text(cover["version"], path + ".cover.version")
-    require_url(source, path + ".source")
-    # Work identity and display title have one source of truth, independent of edition.
-    details = {field: cover[field] for field in ("platform", "region", "version") if field in cover}
-    return series, {"title": games[series + "/" + game]["title"], "game": game, "edition": edition, "cover": details, "source": source}
+    series, game, extension, _ = cover_identity(path)
+    if series + "/" + game not in games:
+        raise ValueError(f"{path}: 系列与作品须先在 catalog 登记")
+    if image is None or image_format != {"jpg": "JPEG", "png": "PNG"}[extension]:
+        raise ValueError(f"{path}: 须为真实 JPEG 或 PNG；保留源图尺寸与比例")
+    require_url(old.get("source"), path + ".source")
+    info = {"title": games[series + "/" + game]["title"], "game": game, "source": old["source"]}
+    if "cover" in old:
+        if not isinstance(old["cover"], dict):
+            raise ValueError(f"{path}: cover 应为可选的说明对象")
+        details = {key: value for key, value in old["cover"].items() if key in {"platform", "region", "version"}}
+        for field, value in details.items():
+            require_text(value, path + ".cover." + field)
+        if details:
+            info["cover"] = details
+    return series, info
 
 
-def validate_main_covers(assets):
-    mains = set()
+def validate_selected_covers(assets):
+    selected, extras = set(), set()
     for item in assets:
-        if item["kind"] != "game-cover" or item["edition"] != "main":
+        if item["kind"] != "game-cover":
             continue
         key = item["category"] + "/" + item["game"]
-        if key in mains:
-            raise ValueError(f"{key}: 每款游戏最多只能登记一个主封面")
-        mains.add(key)
+        if cover_identity(item["path"])[3]:
+            extras.add(key)
+        elif key in selected:
+            raise ValueError(f"{key}: 每部作品只保留一张默认封面；少数额外收藏放在 extras")
+        else:
+            selected.add(key)
+    if extras - selected:
+        raise ValueError(f"{', '.join(sorted(extras - selected))}: 额外收藏须有对应的默认封面")

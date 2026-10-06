@@ -959,62 +959,55 @@
       "sha": "15884f156354da21b74bed2464ae0ccf2ea740f9"
     },
     {
-      "path": "game-covers/zero-escape/999/original-nds-na.jpg",
+      "path": "game-covers/zero-escape/999.jpg",
       "title": "999：9小时9人9扇门",
       "kind": "game-cover",
       "game": "999",
-      "edition": "main",
+      "source": "https://images.launchbox-app.com/7323c92b-1d28-4db4-802b-2c3c85517d37.jpg",
       "cover": {
         "platform": "Nintendo DS",
-        "region": "North America",
-        "version": "北美首版（2010）"
+        "region": "North America"
       },
-      "source": "https://www.aksysgames.com/wp-content/uploads/2015/11/999-9-hours-9-persons-9-doors-cover.jpg",
       "category": "zero-escape",
-      "width": 1000,
-      "height": 1500,
-      "note": "Aksys 源图 800×718，等比放大、白色留边；保留九人群像首版封面。",
-      "thumbnail": "app/previews/original-nds-na-f1f3184538.webp",
-      "size": 492192,
-      "sha": "28980ca96ee02219584a8b52aca43679e8d31851"
+      "width": 1400,
+      "height": 1252,
+      "thumbnail": "app/previews/999-d9c2a12db2.webp",
+      "size": 2132359,
+      "sha": "5b1a5a23964e82e7d19708cf0ec78d31e15bba79"
     },
     {
-      "path": "game-covers/zero-escape/virtues-last-reward/ps-vita-na.jpg",
+      "path": "game-covers/zero-escape/virtues-last-reward.jpg",
       "title": "极限脱出：善人死亡",
       "kind": "game-cover",
       "game": "virtues-last-reward",
-      "edition": "main",
+      "source": "https://images.launchbox-app.com/6cd07fb7-2431-4a5a-957d-671c821ef33c.jpg",
       "cover": {
         "platform": "PlayStation Vita",
         "region": "North America"
       },
-      "source": "https://images.launchbox-app.com/6cd07fb7-2431-4a5a-957d-671c821ef33c.jpg",
       "category": "zero-escape",
-      "width": 1000,
-      "height": 1500,
-      "note": "LaunchBox 北美 PS Vita 正式封面；源图 1920×2496，等比缩小、白色留边。",
-      "thumbnail": "app/previews/ps-vita-na-8d97d703d3.webp",
-      "size": 366749,
-      "sha": "153c648d480ec60fc7206edd06043c918a54c6bc"
+      "width": 1920,
+      "height": 2496,
+      "thumbnail": "app/previews/virtues-last-reward-15bc631e56.webp",
+      "size": 557452,
+      "sha": "eff69471002d5e1e0b87e0da5efa5296cfbd6c49"
     },
     {
-      "path": "game-covers/zero-escape/zero-time-dilemma/original-ps-vita-na.jpg",
+      "path": "game-covers/zero-escape/zero-time-dilemma.jpg",
       "title": "极限脱出：刻之困境",
       "kind": "game-cover",
       "game": "zero-time-dilemma",
-      "edition": "main",
+      "source": "https://www.aksysgames.com/wp-content/uploads/2018/12/ZTDPSV_BF1a.jpg",
       "cover": {
         "platform": "PlayStation Vita",
         "region": "North America"
       },
-      "source": "https://www.aksysgames.com/wp-content/uploads/2018/12/ZTDPSV_BF1a.jpg",
       "category": "zero-escape",
-      "width": 1000,
-      "height": 1500,
-      "note": "Aksys 源图 803×1024，等比放大、白色留边。",
-      "thumbnail": "app/previews/original-ps-vita-na-ca9c74e71e.webp",
-      "size": 474051,
-      "sha": "bd4ace880b6228503f6c2b8c6589663a506d2090"
+      "width": 803,
+      "height": 1024,
+      "thumbnail": "app/previews/zero-time-dilemma-e136b5c83c.webp",
+      "size": 557986,
+      "sha": "14e3c4e7d5640e294ee632651c6eeb418ee75a7d"
     },
     {
       "path": "icons/ai/claude.png",

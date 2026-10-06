@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 
 from PIL import Image, ImageChops, ImageDraw, ImageOps
 
-from game_covers import cover_metadata, game_indexes, validate_main_covers
+from game_covers import cover_metadata, game_indexes, validate_selected_covers
 
 ROOT = Path(__file__).resolve().parents[1]
 EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".svg"}
@@ -227,14 +227,14 @@ def build_catalog(root):
         item.update(card_info)
         if category:
             item["category"] = category
-        if old.get("device"):
+        if kind != "game-cover" and old.get("device"):
             if old["device"] not in {"phone", "desktop", "tablet", "unknown"}:
                 raise ValueError(f"{path}: device 应为 phone、desktop、tablet 或 unknown，也可以不填写")
             item["device"] = old["device"]
         elif kind == "wallpaper":
             item["device"] = infer_device(width, height)
         item.update(width=width, height=height)
-        if same_source and old.get("note"):
+        if kind != "game-cover" and same_source and old.get("note"):
             item["note"] = old["note"]
         if image is not None and kind != "icon":
             if same_source and usable_preview(root, old.get("thumbnail"), width, height):
@@ -253,7 +253,7 @@ def build_catalog(root):
             image.close()
         item.update(size=len(data), sha=sha)
         assets.append(item)
-    validate_main_covers(assets)
+    validate_selected_covers(assets)
     catalog = {"version": 1, "assets": assets}
     if card_banks:
         catalog["cardBanks"] = card_banks

@@ -14,7 +14,6 @@ const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "ban
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
 const cardRegionLabels = { "hong-kong": "香港", "china-mainland": "中国内地", singapore: "新加坡" };
 const cardEditionLabels = { originals: "原始卡面", custom: "修改版" };
-const coverEditionLabels = { main: "主封面", alternate: "其他版本封面" };
 const coverRegionLabels = { Japan: "日本", "North America": "北美", Europe: "欧洲", Worldwide: "全球" };
 const controls = Object.fromEntries(["search","device","category","bank","edition","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
 const gallery = document.getElementById("gallery");
@@ -27,6 +26,7 @@ let assets = [];
 let cardBanks = [];
 let gameSeries = [];
 let games = [];
+let activeSeries = "";
 let kind = "wallpaper";
 let deferredInstall = null;
 let toastTimeout;
@@ -80,7 +80,9 @@ function makeAsset(file) {
   const match = file.path.match(/^(?:wallpapers|avatars)\/([^/]+)\/(\d+)x(\d+)\//);
   const iconMatch = file.path.match(/^icons\/([^/]+)\//);
   const cardMatch = file.path.match(/^bank-cards\/(originals|custom)\/([^/]+)\/([^/]+)\//);
-  const coverMatch = file.path.match(/^game-covers\/([^/]+)\/([^/]+)\//);
+  const selectedCover = file.path.match(/^game-covers\/([^/]+)\/([^/]+)\.(?:jpg|png)$/);
+  const extraCover = file.path.match(/^game-covers\/([^/]+)\/extras\/([^/]+)\/[^/]+\.(?:jpg|png)$/);
+  const coverMatch = selectedCover || extraCover;
   const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : iconMatch ? "icon" : cardMatch ? "bank-card" : coverMatch ? "game-cover" : "other";
   const filename = file.path.split("/").pop();
   const asset = {
@@ -91,7 +93,7 @@ function makeAsset(file) {
     device: ["phone","desktop","tablet","unknown"].includes(file.device) ? file.device : "",
     category: match ? match[1] : iconMatch ? iconMatch[1] : cardMatch ? cardMatch[2] : coverMatch ? coverMatch[1] : "other",
     bank: cardMatch ? cardMatch[3] : "", game: coverMatch ? coverMatch[2] : "",
-    edition: cardMatch ? cardMatch[1] : coverMatch && ["main","alternate"].includes(file.edition) ? file.edition : "",
+    edition: cardMatch ? cardMatch[1] : "", extra: Boolean(extraCover),
     cover: coverMatch && file.cover && typeof file.cover === "object" ? Object.fromEntries(Object.entries(file.cover).filter(([key,value]) => ["version","platform","region"].includes(key) && typeof value === "string")) : undefined,
     source: coverMatch ? typeof file.source === "string" ? file.source : undefined : cardMatch && file.source && typeof file.source === "object" && !Array.isArray(file.source) ? file.source : undefined,
     derivedFrom: cardMatch && typeof file.derivedFrom === "string" ? file.derivedFrom : undefined,
@@ -118,7 +120,11 @@ function gameInfo(file) {
 }
 
 function collectionKey(file) {
-  return file.category + "/" + (file.kind === "game-cover" ? file.game : file.bank);
+  return file.category + "/" + file.bank;
+}
+
+function viewFiles() {
+  return assets.filter(file => file.kind === kind && (kind !== "game-cover" || (activeSeries ? file.category === activeSeries : !file.extra)));
 }
 
 function categoryLabel(file) {
@@ -144,8 +150,9 @@ function fillSelect(select, entries, placeholder) {
 }
 
 function refreshControls() {
-  const files = assets.filter(file => file.kind === kind);
+  const files = viewFiles();
   const isCover = kind === "game-cover";
+  document.getElementById("filters-panel").hidden = isCover;
   const devices = ["phone","desktop","tablet","unknown"].filter(device => files.some(file => file.device === device));
   fillSelect(controls.device,devices.map(value => [value,deviceLabels[value]]),"全部设备");
   controls.device.disabled = kind !== "wallpaper";
@@ -153,10 +160,10 @@ function refreshControls() {
   if (controls.device.disabled) controls.device.value = "";
   const deviceFiles = files.filter(file => !controls.device.value || file.device === controls.device.value);
   const categories = orderedCategories(deviceFiles);
-  fillSelect(controls.category, categories.map(value => [value,categoryLabel({kind,category:value})]), isCover ? "全部系列" : kind === "bank-card" ? "全部地区" : "全部种类");
-  controls.category.disabled = kind === "other";
+  fillSelect(controls.category, categories.map(value => [value,categoryLabel({kind,category:value})]), kind === "bank-card" ? "全部地区" : "全部种类");
+  controls.category.disabled = kind === "other" || isCover;
   controls.category.closest(".field").hidden = controls.category.disabled;
-  document.querySelector('label[for="category"]').textContent = isCover ? "系列" : kind === "bank-card" ? "地区" : kind === "icon" ? "用途分类" : "画面风格";
+  document.querySelector('label[for="category"]').textContent = kind === "bank-card" ? "地区" : kind === "icon" ? "用途分类" : "画面风格";
   if (controls.category.disabled) controls.category.value = "";
   controls.orientation.disabled = ["avatar","icon","bank-card","game-cover"].includes(kind);
   controls.orientation.closest(".field").hidden = controls.orientation.disabled;
@@ -164,28 +171,26 @@ function refreshControls() {
   const categoryFiles = deviceFiles.filter(file => !controls.category.value || file.category === controls.category.value);
   const isCard = kind === "bank-card";
   [controls.bank,controls.edition].forEach(control => {
-    control.disabled = !(isCard || isCover); control.closest(".field").hidden = control.disabled;
+    control.disabled = !isCard; control.closest(".field").hidden = control.disabled;
     if (control.disabled) control.value = "";
   });
-  document.querySelector('label[for="bank"]').textContent = isCover ? "作品" : "银行";
-  document.querySelector('label[for="edition"]').textContent = isCover ? "封面版本" : "卡面版本";
-  const entries = isCover ? games.filter(game => categoryFiles.some(file => file.category === game.series && file.game === game.id))
-    .map(game => [game.series + "/" + game.id,game.title]) : cardBanks.filter(bank => categoryFiles.some(file => file.bank === bank.bank && file.category === bank.region))
+  const entries = cardBanks.filter(bank => categoryFiles.some(file => file.bank === bank.bank && file.category === bank.region))
     .map(bank => [bank.region + "/" + bank.bank,(controls.category.value ? "" : cardRegionLabels[bank.region] + " · ") + bank.name]);
-  fillSelect(controls.bank,entries,isCover ? "全部作品" : "全部银行");
+  fillSelect(controls.bank,entries,"全部银行");
   const bankFiles = categoryFiles.filter(file => !controls.bank.value || collectionKey(file) === controls.bank.value);
-  const editionLabels = isCover ? coverEditionLabels : cardEditionLabels;
-  fillSelect(controls.edition,Object.keys(editionLabels).filter(edition => bankFiles.some(file => file.edition === edition)).map(value => [value,editionLabels[value]]),"全部版本");
+  fillSelect(controls.edition,Object.keys(cardEditionLabels).filter(edition => bankFiles.some(file => file.edition === edition)).map(value => [value,cardEditionLabels[value]]),"全部版本");
   const editionFiles = bankFiles.filter(file => !controls.edition.value || file.edition === controls.edition.value);
   const sort = controls.sort.value;
-  const sortOptions = [["collection",isCover ? "系列与作品首发顺序" : isCard ? "地区与银行顺序" : kind === "wallpaper" ? "设备与种类顺序" : "分类顺序"],["resolution-desc","组内尺寸从大到小"],["resolution-asc","组内尺寸从小到大"],["name","组内按名称排序"]];
+  const sortOptions = [["collection",isCard ? "地区与银行顺序" : kind === "wallpaper" ? "设备与种类顺序" : "分类顺序"],["resolution-desc","组内尺寸从大到小"],["resolution-asc","组内尺寸从小到大"],["name","组内按名称排序"]];
   controls.sort.replaceChildren(...sortOptions.map(([value,label]) => new Option(label,value)));
   controls.sort.value = sortOptions.some(([value]) => value === sort) ? sort : defaultSort();
   const sizes = [...new Map(editionFiles.map(file => [resolutionKey(file),file])).entries()]
     .sort((a,b) => b[1].width * b[1].height - a[1].width * a[1].height);
   fillSelect(controls.resolution, sizes.map(([key,file]) => [key,key === "unknown" ? "尺寸未标注" : resolutionLabel(file)]), "全部尺寸");
+  controls.resolution.disabled = isCover;
+  if (isCover) { controls.resolution.value = ""; controls.sort.value = defaultSort(); }
   document.querySelectorAll(".tab").forEach(tab => {
-    const count = assets.filter(file => file.kind === tab.dataset.kind).length;
+    const count = assets.filter(file => file.kind === tab.dataset.kind && (file.kind !== "game-cover" || !file.extra)).length;
     tab.querySelector("span").textContent = count;
     tab.hidden = ["icon","bank-card","game-cover","other"].includes(tab.dataset.kind) && !count;
     tab.disabled = !count;
@@ -195,14 +200,14 @@ function refreshControls() {
   const sizeCount = new Set(wallpapers.filter(file => file.width && file.height).map(resolutionKey)).size;
   const avatarCount = assets.filter(file => file.kind === "avatar").length;
   const iconCount = assets.filter(file => file.kind === "icon").length;
-  const coverCount = assets.filter(file => file.kind === "game-cover").length;
+  const coverCount = assets.filter(file => file.kind === "game-cover" && !file.extra).length;
   const cardCount = assets.filter(file => file.kind === "bank-card").length;
   document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "") + (coverCount ? " · " + coverCount + " 张游戏封面" : "");
   refreshFavoriteCount();
 }
 
 function refreshFavoriteCount() {
-  document.getElementById("favorite-count").textContent = assets.filter(file => file.kind === kind && favorites.has(file.path)).length;
+  document.getElementById("favorite-count").textContent = viewFiles().filter(file => favorites.has(file.path)).length;
   document.getElementById("show-favorites").setAttribute("aria-pressed", String(favoritesOnly));
 }
 
@@ -255,8 +260,40 @@ function assetPreviewUrl(file) {
 
 function previewUrl(file) {
   const url = new URL(base);
-  url.hash = "image=" + encodeURIComponent(file.path);
+  const params = new URLSearchParams();
+  if (file.kind === "game-cover") {
+    if (activeSeries || file.extra) params.set("series",file.category);
+    else params.set("covers","");
+  }
+  params.set("image",file.path);
+  url.hash = params.toString();
   return url.href;
+}
+
+function coverViewUrl(series = "") {
+  const url = new URL(base);
+  url.hash = series ? new URLSearchParams({series}).toString() : "covers";
+  return url.href;
+}
+
+function withoutPreviewUrl() {
+  const url = new URL(location.href);
+  const params = new URLSearchParams(url.hash.slice(1));
+  params.delete("image");
+  url.hash = params.toString();
+  return url;
+}
+
+function syncRoute() {
+  const params = new URLSearchParams(location.hash.slice(1));
+  const series = params.get("series");
+  const nextSeries = gameSeries.some(item => item.id === series) ? series : "";
+  const nextKind = params.has("series") || params.has("covers") ? "game-cover" : history.state?.galleryKind || kind;
+  if (activeSeries !== nextSeries || kind !== nextKind) {
+    activeSeries = nextSeries; kind = nextKind;
+    clearFilters(); renderGallery();
+  }
+  syncPreviewRoute();
 }
 
 function previewPath() {
@@ -313,7 +350,7 @@ function loadPreviewImage(force = false) {
 }
 
 function samePreviewGroup(item,file) {
-  return item.kind === file.kind && item.category === file.category && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.bank === file.bank && item.edition === file.edition)) && (file.kind !== "game-cover" || item.game === file.game);
+  return item.kind === file.kind && item.category === file.category && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.bank === file.bank && item.edition === file.edition));
 }
 
 function openPreview(file,historyMode = "push",sequence = visibleAssets) {
@@ -341,8 +378,7 @@ function openPreview(file,historyMode = "push",sequence = visibleAssets) {
 function closePreview() {
   if (history.state?.assetPreview && previewPath()) history.back();
   else {
-    const url = new URL(location.href); url.hash = "";
-    history.replaceState({...history.state,assetPreview:false},"",url);
+    history.replaceState({...history.state,assetPreview:false},"",withoutPreviewUrl());
     previewDialog.close();
   }
 }
@@ -356,13 +392,16 @@ function syncPreviewRoute() {
     // A shared image gets a gallery entry beneath it, so Back stays in the app.
     if (!history.state?.assetPreview) {
       const imageLink = location.href;
-      const url = new URL(location.href); url.hash = "";
-      history.replaceState({...history.state,assetPreview:false},"",url);
+      history.replaceState({...history.state,assetPreview:false},"",withoutPreviewUrl());
       history.pushState({...history.state,assetPreview:true},"",imageLink);
     }
     initialRoute = false;
   }
-  if (kind !== file.kind || !visibleAssets.some(item => item.path === path)) { kind = file.kind; clearFilters(); renderGallery(); }
+  if (kind !== file.kind || !visibleAssets.some(item => item.path === path)) {
+    kind = file.kind;
+    if (file.kind === "game-cover" && (file.extra || activeSeries)) activeSeries = file.category;
+    clearFilters(); renderGallery();
+  }
   if (activePreview !== file || !previewDialog.open) openPreview(file,"none");
 }
 
@@ -380,11 +419,13 @@ function movePreview(delta) {
 
 function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   const url = imageUrl(file.path);
+  const work = file.kind === "game-cover" ? gameInfo(file) : undefined;
   const card = element("article", "card");
   const preview = element("button", "preview " + orientation(file));
   preview.classList.toggle("icon",file.kind === "icon");
+  preview.classList.toggle("game-cover",file.kind === "game-cover");
   preview.type = "button";
-  if (file.width && file.height) preview.style.aspectRatio = file.width + " / " + file.height;
+  if (file.kind !== "game-cover" && file.width && file.height) preview.style.aspectRatio = file.width + " / " + file.height;
   preview.setAttribute("aria-label", "预览" + file.title);
   preview.addEventListener("click", () => openPreview(file,"push",sequence));
   const img = element("img");
@@ -392,7 +433,7 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   if (file.width && file.height) { img.width = file.width; img.height = file.height; }
   let usingThumbnail = Boolean(file.thumbnail);
   const meta = element("div", "meta");
-  const size = element("p", "resolution", file.kind === "game-cover" ? [coverEditionLabels[file.edition],file.cover?.platform,coverRegionLabels[file.cover?.region] || file.cover?.region].filter(Boolean).join(" · ") : file.kind === "icon" ? categoryLabel(file) : file.kind === "bank-card" ? cardEditionLabels[file.edition] + (file.source?.wallet ? " · " + file.source.wallet : "") : resolutionLabel(file));
+  const size = element("p", "resolution", file.kind === "game-cover" ? work ? "首发 " + work.firstReleaseYear : "游戏封面" : file.kind === "icon" ? categoryLabel(file) : file.kind === "bank-card" ? cardEditionLabels[file.edition] + (file.source?.wallet ? " · " + file.source.wallet : "") : resolutionLabel(file));
   const info = element("details", "asset-info");
   const details = element("p", "details");
   function updateDetails() {
@@ -413,6 +454,12 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
     img.remove(); preview.append(element("span", "image-error", "图片暂时无法加载"));
   });
   img.src = file.thumbnail ? imageUrl(file.thumbnail) : assetPreviewUrl(file);
+  if (file.kind === "game-cover") {
+    const backdrop = element("span","cover-backdrop");
+    backdrop.setAttribute("aria-hidden","true");
+    backdrop.style.backgroundImage = 'url("' + img.src + '")';
+    preview.append(backdrop);
+  }
   preview.append(img);
   const previewWrap = element("div","preview-wrap");
   const favorite = element("button","favorite-toggle");
@@ -425,16 +472,16 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   favorite.addEventListener("click",() => toggleFavorite(file,favorite));
   previewWrap.append(preview,favorite);
   meta.append(element(titleTag, "", file.title), size);
-  if (file.kind === "game-cover" && gameInfo(file)) meta.append(element("p","details","作品首发：" + gameInfo(file).firstReleaseYear));
   const actions = element("div", "actions");
   const download = element("a", "primary-button", "下载原图");
-  if (file.kind === "game-cover") download.textContent = "下载封面";
+  if (file.kind === "game-cover") download.textContent = "下载原始封面";
   download.href = url; download.download = file.path.split("/").pop();
   download.addEventListener("click",requireConnection);
   actions.append(download); meta.append(actions);
   info.append(element("summary", "", "图片信息"), details);
   if (file.kind === "game-cover") {
-    if (file.cover?.version) info.append(element("p","details",file.cover.version));
+    const label = [file.cover?.version,file.cover?.platform,coverRegionLabels[file.cover?.region] || file.cover?.region].filter(Boolean).join(" · ");
+    if (label) info.append(element("p","details",label));
     try {
       const link = new URL(file.source);
       if (["http:","https:"].includes(link.protocol)) {
@@ -444,7 +491,7 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
       }
     } catch { /* Invalid source links do not interrupt the gallery. */ }
   }
-  if (file.note) info.append(element("p", "note", file.note));
+  if (file.note && file.kind !== "game-cover") info.append(element("p", "note", file.note));
   if (file.kind === "bank-card") {
     const sourcePath = file.edition === "custom" ? file.derivedFrom : file.source?.url;
     if (sourcePath) {
@@ -517,16 +564,33 @@ function makeGameSeries(files) {
   return orderedCategories(files).map(series => {
     const seriesFiles = files.filter(file => file.category === series);
     const section = element("section","category-section");
-    const title = element("h2","category-heading",categoryLabel(seriesFiles[0]));
-    const ids = [...new Set(seriesFiles.map(file => file.game))].sort((a,b) => {
-      const left = gameInfo({category:series,game:a}), right = gameInfo({category:series,game:b});
-      return (left?.firstReleaseYear || 0) - (right?.firstReleaseYear || 0) || (left?.title || a).localeCompare(right?.title || b,"zh-CN");
-    });
-    title.append(element("span","device-count",ids.length + " 款 · " + seriesFiles.length + " 张"));
-    const grid = element("div","grid"); grid.dataset.device = "game-cover";
+    const title = element("h2","category-heading");
+    const name = categoryLabel(seriesFiles[0]);
+    if (activeSeries) title.append(element("span","",name));
+    else {
+      const link = element("a","series-link",name + " →");
+      link.href = coverViewUrl(series); title.append(link);
+    }
+    const ids = [...new Set(seriesFiles.map(file => file.game))];
+    title.append(element("span","device-count",ids.length + " 款作品"));
+    const grid = element("div",activeSeries ? "grid" : "grid series-strip"); grid.dataset.device = "game-cover";
     ids.forEach(id => {
       const covers = seriesFiles.filter(file => file.game === id);
-      grid.append(...covers.map(file => makeCard(file,covers,"h3")));
+      const selected = covers.find(file => !file.extra);
+      if (!activeSeries) {
+        if (selected) grid.append(makeCard(selected,seriesFiles,"h3"));
+        return;
+      }
+      const work = element("div","game-work");
+      if (selected) work.append(makeCard(selected,seriesFiles,"h3"));
+      const extras = covers.filter(file => file.extra);
+      if (extras.length) {
+        const details = element("details","extra-covers");
+        details.open = !selected;
+        details.append(element("summary","",extras.length + " 张额外收藏"),...extras.map(file => makeCard(file,seriesFiles,"h4")));
+        work.append(details);
+      }
+      grid.append(work);
     });
     section.append(title,grid);
     return section;
@@ -536,14 +600,15 @@ function makeGameSeries(files) {
 function compareAssets(a,b) {
   const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
   const byName = a.title.localeCompare(b.title,"zh-CN") || a.path.localeCompare(b.path);
-  if (kind === "game-cover" && controls.sort.value === "collection") return (a.edition === "main" ? 0 : 1) - (b.edition === "main" ? 0 : 1) || byName;
+  if (kind === "game-cover") return (gameInfo(a)?.firstReleaseYear || 0) - (gameInfo(b)?.firstReleaseYear || 0) || a.title.localeCompare(b.title,"zh-CN") || Number(a.extra) - Number(b.extra) || a.path.localeCompare(b.path);
   if (controls.sort.value === "name" || (controls.sort.value === "collection" && kind !== "wallpaper" && kind !== "avatar")) return byName;
   return (controls.sort.value === "resolution-asc" ? difference : -difference) || byName;
 }
 
 function renderGallery() {
   const query = controls.search.value.trim().toLocaleLowerCase();
-  const visible = assets.filter(file => file.kind === kind)
+  const scope = viewFiles();
+  const visible = scope
     .filter(file => !favoritesOnly || favorites.has(file.path))
     .filter(file => !controls.device.value || file.device === controls.device.value)
     .filter(file => !controls.category.value || file.category === controls.category.value)
@@ -554,6 +619,10 @@ function renderGallery() {
     .filter(file => !query || [file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || "",gameInfo(file)?.title || "",file.cover?.version || "",file.cover?.platform || "",file.cover?.region || ""].join(" ").toLocaleLowerCase().includes(query));
   visible.sort(compareAssets);
   visibleAssets = visible;
+  const inSeries = kind === "game-cover" && Boolean(activeSeries);
+  document.getElementById("cover-navigation").hidden = !inSeries;
+  document.getElementById("cover-series-title").textContent = inSeries ? gameSeries.find(series => series.id === activeSeries)?.title || activeSeries : "";
+  refreshFavoriteCount();
   const grouped = visible.length > 0;
   gallery.classList.toggle("grouped",grouped);
   gallery.classList.remove("multiple-device-groups");
@@ -575,7 +644,7 @@ function renderGallery() {
     clear.addEventListener("click", () => { clearFilters(); renderGallery(); });
     empty.append(element("br"),clear); gallery.replaceChildren(empty);
   }
-  results.textContent = "显示 " + visible.length + " / " + assets.filter(file => file.kind === kind).length + (kind === "icon" ? " 个" : " 张") + kindLabels[kind];
+  results.textContent = kind === "game-cover" ? new Set(visible.map(collection => collection.category + "/" + collection.game)).size + " 款作品 · " + (inSeries ? visible.length + " 张封面" : new Set(visible.map(file => file.category)).size + " 个系列") : "显示 " + visible.length + " / " + scope.length + (kind === "icon" ? " 个" : " 张") + kindLabels[kind];
   const count = [controls.device.value,controls.category.value,controls.bank.value,controls.edition.value,controls.resolution.value,controls.orientation.value].filter(Boolean).length;
   document.getElementById("filter-summary").textContent = count ? count + " 项筛选" : "全部图片";
   reset.disabled = !query && !count && !favoritesOnly && controls.sort.value === defaultSort();
@@ -591,7 +660,14 @@ function clearFilters() {
 
 document.getElementById("filters-panel").open = !window.matchMedia("(max-width: 760px)").matches;
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => {
-  kind = tab.dataset.kind; clearFilters(); renderGallery();
+  const nextKind = tab.dataset.kind;
+  if (kind !== nextKind && (kind === "game-cover" || nextKind === "game-cover")) {
+    history.replaceState({...history.state,galleryKind:kind},"",location.href);
+    history.pushState({galleryKind:nextKind,assetPreview:false},"",nextKind === "game-cover" ? coverViewUrl() : base.href);
+  } else if (nextKind === "game-cover" && activeSeries) history.pushState({galleryKind:nextKind,assetPreview:false},"",coverViewUrl());
+  kind = nextKind; activeSeries = "";
+  history.replaceState({...history.state,galleryKind:kind},"",location.href);
+  clearFilters(); renderGallery();
 }));
 Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", () => {
   if (["device","category","bank","edition"].includes(name)) refreshControls();
@@ -680,8 +756,8 @@ previewImage.addEventListener("error", () => {
     updateLockscreen();
   }
 });
-window.addEventListener("popstate",syncPreviewRoute);
-window.addEventListener("hashchange",syncPreviewRoute);
+window.addEventListener("popstate",syncRoute);
+window.addEventListener("hashchange",syncRoute);
 
 function requireConnection(event) {
   if (!navigator.onLine) { event.preventDefault(); showToast("请联网后下载原图"); }
@@ -738,7 +814,7 @@ function applyFiles(files,force = false) {
   assets = next;
   if (assets.length && !assets.some(file => file.kind === kind)) kind = assets[0].kind;
   refreshControls(); renderGallery();
-  syncPreviewRoute();
+  syncRoute();
 }
 
 async function load() {
@@ -760,8 +836,7 @@ async function load() {
     applyFiles(files.values(),banksChanged || gamesChanged);
     if (!files.size) gallery.replaceChildren(element("div","empty","仓库里还没有图片。"));
     if (previewPath() && !assets.some(file => file.path === previewPath())) {
-      const url = new URL(location.href); url.hash = "";
-      history.replaceState({...history.state,assetPreview:false},"",url);
+      history.replaceState({...history.state,assetPreview:false},"",withoutPreviewUrl());
       if (previewDialog.open) previewDialog.close();
       showToast("这张图片已移除，已返回图库");
     }

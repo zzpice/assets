@@ -13,8 +13,8 @@
   <link rel="manifest" href="app/manifest.webmanifest">
   <link rel="icon" href="app/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="app/icon-180.png">
-  <link rel="stylesheet" href="app/site.css?v=183c4ec47c">
-  <script src="app/site.js?v=830b2c9d0f" defer></script>
+  <link rel="stylesheet" href="app/site.css?v=accd876803">
+  <script src="app/site.js?v=5622886da7" defer></script>
 </head>
 <body>
   <header>
@@ -33,6 +33,9 @@
     <button class="tab" type="button" data-kind="bank-card" aria-pressed="false" hidden>银行卡面<span>0</span></button>
     <button class="tab" type="button" data-kind="game-cover" aria-pressed="false" hidden>游戏封面<span>0</span></button>
     <button class="tab" type="button" data-kind="other" aria-pressed="false" hidden>其他图片<span>0</span></button>
+  </nav>
+  <nav id="cover-navigation" class="cover-navigation" aria-label="游戏封面导航" hidden>
+    <a href="#covers">游戏封面</a><span aria-hidden="true"> / </span><span id="cover-series-title"></span>
   </nav>
   <div class="search-row">
     <label class="sr-only" for="search">搜索图片</label>

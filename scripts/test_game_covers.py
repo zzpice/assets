@@ -6,7 +6,6 @@ import unittest
 
 from PIL import Image
 
-from normalize_cover import normalize
 from update_catalog import update
 
 
@@ -15,12 +14,10 @@ class CoverTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        self.path = "game-covers/example/first/nds-jp.png"
+        self.path = "game-covers/example/first.png"
         (self.root / self.path).parent.mkdir(parents=True)
-        Image.new("RGB", (1000, 1500), "red").save(self.root / self.path)
-        self.asset = {"path": self.path, "edition": "main", "cover": {
-            "platform": "Nintendo DS", "region": "Japan"
-        }, "source": "https://example.com/cover.png"}
+        Image.new("RGB", (600, 540), "red").save(self.root / self.path)
+        self.asset = {"path": self.path, "source": "https://example.com/cover.png"}
         self.metadata = {"gameSeries": [{"id": "example", "title": "示例系列"}], "games": [
             {"series": "example", "id": "first", "title": "首作", "firstReleaseYear": 2009}
         ], "assets": [self.asset]}
@@ -37,142 +34,118 @@ class CoverTests(unittest.TestCase):
         asset.update(path=path, **changes)
         destination = self.root / path
         destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_bytes((self.root / self.path).read_bytes())
+        Image.new("RGB", (400, 520), "blue").save(destination)
         self.metadata["assets"].append(asset)
         return asset
 
-    def test_minimal_metadata_generates_work_identity_and_title(self):
-        # An accidentally copied title/work key must not mix up two games.
-        self.asset.update(title="另一款作品", game="wrong", category="wrong")
+    def test_minimal_metadata_derives_identity_and_preserves_native_image(self):
+        self.asset.update(title="另一款作品", game="wrong", category="wrong", edition="alternate", note="旧处理说明")
         self.save()
         before = (self.root / self.path).read_bytes()
         update(self.root)
         update(self.root, check=True)
         asset = self.read()["assets"][0]
         self.assertEqual((asset["title"], asset["category"], asset["game"]), ("首作", "example", "first"))
-        for field in ("source", "edition", "cover"):
-            self.assertEqual(asset[field], self.asset[field])
+        self.assertEqual(asset["source"], self.asset["source"])
         self.assertEqual(self.read()["games"], self.metadata["games"])
-        self.assertEqual((asset["width"], asset["height"]), (1000, 1500))
-        self.assertNotIn("processing", asset)
-        self.assertNotIn("note", asset)
+        self.assertEqual((asset["width"], asset["height"]), (600, 540))
+        self.assertTrue({"edition", "processing", "note", "cover"}.isdisjoint(asset))
         self.assertEqual(before, (self.root / self.path).read_bytes())
+        with Image.open(self.root / asset["thumbnail"]) as thumbnail:
+            self.assertEqual(thumbnail.size, (420, 378))
 
-    def test_other_versions_keep_the_work_first_release(self):
-        later = self.add_cover("game-covers/example/first/ps4-jp-remaster.png", edition="alternate")
-        later["cover"].update(version="高清版（2017）", platform="PlayStation 4")
+    def test_optional_identity_details_are_kept_without_release_history(self):
+        self.asset["cover"] = {"platform": "Nintendo DS", "region": "North America", "version": "再版", "releaseType": "original", "publisher": "旧字段"}
+        self.save()
+        update(self.root)
+        self.assertEqual(self.read()["assets"][0]["cover"], {"platform": "Nintendo DS", "region": "North America", "version": "再版"})
+        self.assertEqual(self.read()["games"][0]["firstReleaseYear"], 2009)
+
+    def test_rare_extra_cover_does_not_change_selected_work_or_first_year(self):
+        self.add_cover("game-covers/example/extras/first/ps4-jp.png", cover={"version": "高清版（2017）"})
         self.save()
         update(self.root)
         self.assertEqual(self.read()["games"][0]["firstReleaseYear"], 2009)
-        self.assertEqual({a["edition"] for a in self.read()["assets"]}, {"main", "alternate"})
+        self.assertEqual(len(self.read()["assets"]), 2)
+        self.assertTrue(all("edition" not in asset for asset in self.read()["assets"]))
 
-    def test_remake_and_collection_can_each_have_their_own_main(self):
+    def test_distinct_remake_and_collection_are_independent_works(self):
         for game, title, year in [("remake", "首作重制版", 2023), ("bundle", "系列合集", 2017)]:
             self.metadata["games"].append({"series": "example", "id": game, "title": title, "firstReleaseYear": year})
-            self.add_cover(f"game-covers/example/{game}/ps4-jp.png")
+            self.add_cover(f"game-covers/example/{game}.png")
         self.save()
         update(self.root)
-        assets = {a["game"]: a for a in self.read()["assets"]}
+        assets = {asset["game"]: asset for asset in self.read()["assets"]}
         self.assertEqual(set(assets), {"first", "remake", "bundle"})
-        self.assertTrue(all(a["edition"] == "main" for a in assets.values()))
         self.assertEqual(assets["first"]["title"], "首作")
         self.assertEqual(assets["bundle"]["title"], "系列合集")
 
-    def test_two_mains_for_the_same_work_are_rejected(self):
-        self.add_cover("game-covers/example/first/nds-na.png")
+    def test_duplicate_selected_jpeg_and_png_are_rejected(self):
+        self.add_cover("game-covers/example/first.jpg")
         self.save()
-        with self.assertRaisesRegex(ValueError, "一个主封面"):
+        with self.assertRaisesRegex(ValueError, "一张默认封面"):
             update(self.root)
 
-    def test_alternate_is_not_automatically_promoted(self):
-        self.asset["edition"] = "alternate"
+    def test_extra_requires_a_selected_image(self):
+        self.add_cover("game-covers/example/extras/first/scan.png")
+        (self.root / self.path).unlink()
+        self.metadata["assets"].pop(0)
         self.save()
-        update(self.root)
-        self.assertEqual(self.read()["assets"][0]["edition"], "alternate")
+        with self.assertRaisesRegex(ValueError, "额外收藏须有对应"):
+            update(self.root)
 
-    def test_exact_dimensions_rgb_and_actual_format_are_required(self):
-        for mode, size, format in [("RGB", (1000, 1499), "PNG"), ("RGBA", (1000, 1500), "PNG"), ("RGB", (1000, 1500), "JPEG")]:
-            with self.subTest(mode=mode, size=size, format=format):
-                Image.new(mode, size).save(self.root / self.path, format)
-                with self.assertRaisesRegex(ValueError, "1000×1500"):
-                    update(self.root)
+    def test_small_images_and_native_color_modes_are_not_rejected_or_upscaled(self):
+        for mode, size in [("RGB", (150, 230)), ("RGBA", (400, 510)), ("L", (320, 270))]:
+            with self.subTest(mode=mode, size=size):
+                Image.new(mode, size).save(self.root / self.path)
+                before = (self.root / self.path).read_bytes()
+                update(self.root)
+                asset = self.read()["assets"][0]
+                self.assertEqual((asset["width"], asset["height"]), size)
+                self.assertEqual(before, (self.root / self.path).read_bytes())
+                with Image.open(self.root / asset["thumbnail"]) as preview:
+                    self.assertEqual(preview.size, size)
 
-    def test_unknown_identity_and_invalid_core_fields_fail(self):
+    def test_actual_format_must_match_extension(self):
+        Image.new("RGB", (600, 540)).save(self.root / self.path, "JPEG")
+        with self.assertRaisesRegex(ValueError, "真实 JPEG 或 PNG"):
+            update(self.root)
+
+    def test_unknown_identity_and_invalid_required_or_optional_fields_fail(self):
         baseline = copy.deepcopy(self.metadata)
         cases = [
             ("game", "firstReleaseYear", "2009"), ("game", "firstReleaseYear", True),
             ("game", "series", "missing"), ("game", "id", "different"),
             ("cover", "region", ""), ("cover", "platform", ""), ("cover", "version", 2017),
-            ("asset", "edition", "remake"), ("asset", "source", "javascript:alert(1)"),
+            ("asset", "cover", []), ("asset", "source", "javascript:alert(1)"),
             ("asset", "source", "https://"), ("asset", "source", {"url": "https://example.com"})
         ]
         for section, field, value in cases:
             with self.subTest(section=section, field=field):
                 self.metadata = copy.deepcopy(baseline)
-                target = self.metadata["games"][0] if section == "game" else self.metadata["assets"][0]["cover"] if section == "cover" else self.metadata["assets"][0]
-                target[field] = value
+                target = self.metadata["games"][0] if section == "game" else self.metadata["assets"][0]
+                if section == "cover":
+                    target["cover"] = {field: value}
+                else:
+                    target[field] = value
                 self.save()
                 with self.assertRaises(ValueError):
                     update(self.root)
 
-    def test_historical_http_source_and_optional_note_are_allowed(self):
-        self.asset.update(source="http://example.com/archive/cover.png", note="低分辨率历史扫描，等比放大。")
+    def test_historical_http_sources_are_allowed_and_obsolete_notes_removed(self):
+        self.asset.update(source="http://example.com/archive/cover.png", note="已无需固定尺寸处理")
         self.save()
         update(self.root)
-        self.assertEqual(self.read()["assets"][0]["note"], self.asset["note"])
+        asset = self.read()["assets"][0]
+        self.assertEqual(asset["source"], self.asset["source"])
+        self.assertNotIn("note", asset)
 
-    def test_changed_image_updates_generated_hash_and_drops_stale_note(self):
-        self.asset["note"] = "旧图说明"
-        self.save()
+    def test_image_replacement_refreshes_hash_and_preview(self):
         update(self.root)
         old = self.read()["assets"][0]
-        Image.new("RGB", (1000, 1500), "blue").save(self.root / self.path)
+        Image.new("RGB", (800, 1100), "blue").save(self.root / self.path)
         update(self.root)
         new = self.read()["assets"][0]
         self.assertNotEqual(new["sha"], old["sha"])
         self.assertNotEqual(new["thumbnail"], old["thumbnail"])
-        self.assertNotIn("note", new)
-
-
-class NormalizationTests(unittest.TestCase):
-    def test_contain_keeps_geometry_and_preserves_source(self):
-        with tempfile.TemporaryDirectory() as temp:
-            source, output = Path(temp) / "source.png", Path(temp) / "cover.png"
-            Image.new("RGB", (1200, 1200), "red").save(source)
-            before = source.read_bytes()
-            report = normalize(source, output, mode="contain")
-            with Image.open(output) as image:
-                self.assertEqual((image.size, image.mode), ((1000, 1500), "RGB"))
-                self.assertEqual(image.getpixel((500, 249)), (255, 255, 255))
-                self.assertEqual(image.getpixel((500, 250)), (255, 0, 0))
-                self.assertEqual(image.getpixel((500, 1249)), (255, 0, 0))
-                self.assertEqual(image.getpixel((500, 1250)), (255, 255, 255))
-            self.assertEqual(before, source.read_bytes())
-            self.assertEqual(set(report), {"note"})
-            with self.assertRaisesRegex(ValueError, "输出文件已存在"):
-                normalize(source, output, mode="contain")
-
-    def test_crop_requires_explicit_bounds_and_safe_ratio(self):
-        with tempfile.TemporaryDirectory() as temp:
-            source, output = Path(temp) / "source.png", Path(temp) / "cover.png"
-            Image.new("RGB", (600, 900), "red").save(source)
-            for crop, message in [(None, "显式提供"), ([0, 0, 600, 600], "2:3"), ([0, 0, 700, 900], "范围")]:
-                with self.subTest(crop=crop), self.assertRaisesRegex(ValueError, message):
-                    normalize(source, output, mode="crop", crop=crop)
-            report = normalize(source, output, mode="crop", crop=[0, 0, 600, 900])
-            self.assertIn("600×900，等比放大", report["note"])
-            with Image.open(output) as image:
-                self.assertEqual((image.size, image.mode), ((1000, 1500), "RGB"))
-
-    def test_low_resolution_can_be_padded_without_stretching(self):
-        with tempfile.TemporaryDirectory() as temp:
-            source, output = Path(temp) / "source.png", Path(temp) / "cover.png"
-            Image.new("RGBA", (400, 500), (255, 0, 0, 255)).save(source)
-            report = normalize(source, output, mode="contain")
-            self.assertIn("等比放大", report["note"])
-            with Image.open(output) as image:
-                self.assertEqual((image.size, image.mode), ((1000, 1500), "RGB"))
-                self.assertEqual(image.getpixel((500, 124)), (255, 255, 255))
-                self.assertEqual(image.getpixel((500, 125)), (255, 0, 0))
-                self.assertEqual(image.getpixel((500, 1374)), (255, 0, 0))
-                self.assertEqual(image.getpixel((500, 1375)), (255, 255, 255))
+        self.assertEqual((new["width"], new["height"]), (800, 1100))
