@@ -976,21 +976,22 @@
       "sha": "07d3f0d34817f2b90f056622e8445988cf4f86d0"
     },
     {
-      "path": "game-covers/ace-attorney/dual-destinies.jpg",
+      "path": "game-covers/ace-attorney/dual-destinies.png",
       "title": "逆转裁判5",
       "kind": "game-cover",
       "game": "dual-destinies",
-      "source": "https://images.launchbox-app.com/56f593a8-d915-43d6-bf41-173b8ef36a23.jpg",
+      "source": "https://images.launchbox-app.com/031f0646-af2a-4031-b953-3395eaabffd0.png",
       "cover": {
         "platform": "Nintendo 3DS",
-        "region": "Japan"
+        "region": "North America",
+        "version": "Nintendo eShop digital cover"
       },
       "category": "ace-attorney",
-      "width": 768,
-      "height": 680,
-      "thumbnail": "app/previews/dual-destinies-7f16e75f9f.webp",
-      "size": 187492,
-      "sha": "d647421f11ea27d1d37a60c1621b3bdb0028dc1d"
+      "width": 1377,
+      "height": 1376,
+      "thumbnail": "app/previews/dual-destinies-0e70ab8ebc.webp",
+      "size": 1747908,
+      "sha": "4563077479ee4275cdf001573c4b681ae628f9ca"
     },
     {
       "path": "game-covers/ace-attorney/investigations-2.jpg",
