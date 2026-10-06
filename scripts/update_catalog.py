@@ -15,6 +15,8 @@ import xml.etree.ElementTree as ET
 
 from PIL import Image, ImageChops, ImageDraw, ImageOps
 
+from game_covers import cover_metadata, game_indexes, validate_main_covers
+
 ROOT = Path(__file__).resolve().parents[1]
 EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".svg"}
 CARD_REGIONS = {"hong-kong", "china-mainland", "singapore"}
@@ -172,6 +174,8 @@ def build_catalog(root):
     metadata = metadata_index(previous)
     card_banks = previous.get("cardBanks", [])
     banks = card_bank_index(card_banks)
+    game_series, games = previous.get("gameSeries", []), previous.get("games", [])
+    _, game_index = game_indexes(game_series, games)
     assets, previews = [], {}
     for relative in source_paths(root):
         path = relative.as_posix()
@@ -210,6 +214,9 @@ def build_catalog(root):
                 raise ValueError(f"{path}: 图标路径应为 icons/<种类>/<名称>.<格式>")
             validate_icon(image, image_format, path)
             kind, category = "icon", match[1]
+        elif path.startswith("game-covers/"):
+            category, card_info = cover_metadata(path, old, image, image_format, data, game_index)
+            kind = "game-cover"
         elif path.startswith("bank-cards/"):
             category, card_info = card_metadata(root, path, old, data, sha, banks)
             kind = "bank-card"
@@ -227,7 +234,7 @@ def build_catalog(root):
         elif kind == "wallpaper":
             item["device"] = infer_device(width, height)
         item.update(width=width, height=height)
-        if same_source and old.get("note"):
+        if (same_source or kind == "game-cover") and old.get("note"):
             item["note"] = old["note"]
         if image is not None and kind != "icon":
             if same_source and usable_preview(root, old.get("thumbnail"), width, height):
@@ -246,9 +253,12 @@ def build_catalog(root):
             image.close()
         item.update(size=len(data), sha=sha)
         assets.append(item)
+    validate_main_covers(assets)
     catalog = {"version": 1, "assets": assets}
     if card_banks:
         catalog["cardBanks"] = card_banks
+    if game_series or games:
+        catalog.update(gameSeries=game_series, games=games)
     text = json.dumps(catalog, ensure_ascii=False, indent=2) + "\n"
     referenced = {item["thumbnail"] for item in assets if item.get("thumbnail")}
     stale = [path for path in (root / "app/previews").glob("*.webp") if path.relative_to(root).as_posix() not in referenced]

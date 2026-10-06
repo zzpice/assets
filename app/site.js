@@ -10,10 +10,13 @@ const iconCategoryLabels = {
   "proxy-clients": "代理客户端", routes: "线路与专线", regions: "国家与地区"
 };
 const categoryLabels = { ...styleCategoryLabels, ...iconCategoryLabels };
-const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "bank-card": "银行卡面", other: "其他图片" };
+const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "bank-card": "银行卡面", "game-cover": "游戏封面", other: "其他图片" };
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
 const cardRegionLabels = { "hong-kong": "香港", "china-mainland": "中国内地", singapore: "新加坡" };
 const cardEditionLabels = { originals: "原始卡面", custom: "修改版" };
+const coverEditionLabels = { main: "主封面", alternate: "其他版本封面" };
+const coverRegionLabels = { Japan: "日本", "North America": "北美", Europe: "欧洲", Worldwide: "全球" };
+const coverTypeLabels = { original: "独立首发版本", port: "移植版", remaster: "高清复刻版", remake: "重制版", collection: "合集", reissue: "再发行版" };
 const controls = Object.fromEntries(["search","device","category","bank","edition","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
 const gallery = document.getElementById("gallery");
 const results = document.getElementById("results");
@@ -23,6 +26,8 @@ const previewDialog = document.getElementById("preview-dialog");
 const previewImage = document.getElementById("preview-image");
 let assets = [];
 let cardBanks = [];
+let gameSeries = [];
+let games = [];
 let kind = "wallpaper";
 let deferredInstall = null;
 let toastTimeout;
@@ -76,7 +81,8 @@ function makeAsset(file) {
   const match = file.path.match(/^(?:wallpapers|avatars)\/([^/]+)\/(\d+)x(\d+)\//);
   const iconMatch = file.path.match(/^icons\/([^/]+)\//);
   const cardMatch = file.path.match(/^bank-cards\/(originals|custom)\/([^/]+)\/([^/]+)\//);
-  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : iconMatch ? "icon" : cardMatch ? "bank-card" : "other";
+  const coverMatch = file.path.match(/^game-covers\/([^/]+)\/([^/]+)\//);
+  const inferredKind = file.path.startsWith("wallpapers/") ? "wallpaper" : file.path.startsWith("avatars/") ? "avatar" : iconMatch ? "icon" : cardMatch ? "bank-card" : coverMatch ? "game-cover" : "other";
   const filename = file.path.split("/").pop();
   const asset = {
     path: file.path, size: Number.isFinite(file.size) && file.size > 0 ? file.size : 0,
@@ -84,9 +90,11 @@ function makeAsset(file) {
     title: typeof file.title === "string" && file.title.trim() ? file.title : filename.replace(/\.[^.]+$/,"").replace(/-/g," "),
     kind: inferredKind,
     device: ["phone","desktop","tablet","unknown"].includes(file.device) ? file.device : "",
-    category: match ? match[1] : iconMatch ? iconMatch[1] : cardMatch ? cardMatch[2] : "other",
-    bank: cardMatch ? cardMatch[3] : "", edition: cardMatch ? cardMatch[1] : "",
-    source: cardMatch && file.source && typeof file.source === "object" && !Array.isArray(file.source) ? file.source : undefined,
+    category: match ? match[1] : iconMatch ? iconMatch[1] : cardMatch ? cardMatch[2] : coverMatch ? coverMatch[1] : "other",
+    bank: cardMatch ? cardMatch[3] : "", game: coverMatch ? coverMatch[2] : "",
+    edition: cardMatch ? cardMatch[1] : coverMatch && ["main","alternate"].includes(file.edition) ? file.edition : "",
+    cover: coverMatch && file.cover && typeof file.cover === "object" ? Object.fromEntries(Object.entries(file.cover).filter(([key,value]) => ["version","platform","region","releaseType","releaseSource"].includes(key) ? typeof value === "string" : key === "releaseYear" && Number.isInteger(value))) : undefined,
+    source: (cardMatch || coverMatch) && file.source && typeof file.source === "object" && !Array.isArray(file.source) ? file.source : undefined,
     derivedFrom: cardMatch && typeof file.derivedFrom === "string" ? file.derivedFrom : undefined,
     width: Number.isFinite(file.width) && file.width > 0 ? file.width : match ? Number(match[2]) : 0,
     height: Number.isFinite(file.height) && file.height > 0 ? file.height : match ? Number(match[3]) : 0,
@@ -105,13 +113,22 @@ function cardRegions() {
   return [...new Set([...cardBanks.map(bank => bank.region),...Object.keys(cardRegionLabels)])];
 }
 
+function gameInfo(file) {
+  return games.find(game => game.series === file.category && game.id === file.game);
+}
+
+function collectionKey(file) {
+  return file.category + "/" + (file.kind === "game-cover" ? file.game : file.bank);
+}
+
 function categoryLabel(file) {
+  if (file.kind === "game-cover") return gameSeries.find(series => series.id === file.category)?.title || file.category;
   return file.kind === "bank-card" ? cardRegionLabels[file.category] || file.category : categoryLabels[file.category] || file.category;
 }
 
 function orderedCategories(files) {
   const present = [...new Set(files.map(file => file.category))];
-  const order = kind === "bank-card" ? cardRegions() : Object.keys(kind === "icon" ? iconCategoryLabels : styleCategoryLabels);
+  const order = kind === "game-cover" ? gameSeries.map(series => series.id) : kind === "bank-card" ? cardRegions() : Object.keys(kind === "icon" ? iconCategoryLabels : styleCategoryLabels);
   return [...order.filter(value => present.includes(value)),...present.filter(value => !order.includes(value)).sort((a,b) => a.localeCompare(b,"zh-CN"))];
 }
 
@@ -128,6 +145,7 @@ function fillSelect(select, entries, placeholder) {
 
 function refreshControls() {
   const files = assets.filter(file => file.kind === kind);
+  const isCover = kind === "game-cover";
   const devices = ["phone","desktop","tablet","unknown"].filter(device => files.some(file => file.device === device));
   fillSelect(controls.device,devices.map(value => [value,deviceLabels[value]]),"全部设备");
   controls.device.disabled = kind !== "wallpaper";
@@ -135,27 +153,32 @@ function refreshControls() {
   if (controls.device.disabled) controls.device.value = "";
   const deviceFiles = files.filter(file => !controls.device.value || file.device === controls.device.value);
   const categories = orderedCategories(deviceFiles);
-  fillSelect(controls.category, categories.map(value => [value,(kind === "bank-card" ? cardRegionLabels : categoryLabels)[value] || value]), kind === "bank-card" ? "全部地区" : "全部种类");
+  fillSelect(controls.category, categories.map(value => [value,categoryLabel({kind,category:value})]), isCover ? "全部系列" : kind === "bank-card" ? "全部地区" : "全部种类");
   controls.category.disabled = kind === "other";
   controls.category.closest(".field").hidden = controls.category.disabled;
-  document.querySelector('label[for="category"]').textContent = kind === "bank-card" ? "地区" : kind === "icon" ? "用途分类" : "画面风格";
+  document.querySelector('label[for="category"]').textContent = isCover ? "系列" : kind === "bank-card" ? "地区" : kind === "icon" ? "用途分类" : "画面风格";
   if (controls.category.disabled) controls.category.value = "";
-  controls.orientation.disabled = ["avatar","icon","bank-card"].includes(kind);
+  controls.orientation.disabled = ["avatar","icon","bank-card","game-cover"].includes(kind);
   controls.orientation.closest(".field").hidden = controls.orientation.disabled;
   if (controls.orientation.disabled) controls.orientation.value = "";
   const categoryFiles = deviceFiles.filter(file => !controls.category.value || file.category === controls.category.value);
   const isCard = kind === "bank-card";
   [controls.bank,controls.edition].forEach(control => {
-    control.disabled = !isCard; control.closest(".field").hidden = !isCard;
-    if (!isCard) control.value = "";
+    control.disabled = !(isCard || isCover); control.closest(".field").hidden = control.disabled;
+    if (control.disabled) control.value = "";
   });
-  fillSelect(controls.bank,cardBanks.filter(bank => categoryFiles.some(file => file.bank === bank.bank && file.category === bank.region))
-    .map(bank => [bank.region + "/" + bank.bank,(controls.category.value ? "" : cardRegionLabels[bank.region] + " · ") + bank.name]),"全部银行");
-  const bankFiles = categoryFiles.filter(file => !controls.bank.value || file.category + "/" + file.bank === controls.bank.value);
-  fillSelect(controls.edition,Object.keys(cardEditionLabels).filter(edition => bankFiles.some(file => file.edition === edition)).map(value => [value,cardEditionLabels[value]]),"全部版本");
+  document.querySelector('label[for="bank"]').textContent = isCover ? "作品" : "银行";
+  document.querySelector('label[for="edition"]').textContent = isCover ? "封面版本" : "卡面版本";
+  const entries = isCover ? games.filter(game => categoryFiles.some(file => file.category === game.series && file.game === game.id))
+    .map(game => [game.series + "/" + game.id,game.title]) : cardBanks.filter(bank => categoryFiles.some(file => file.bank === bank.bank && file.category === bank.region))
+    .map(bank => [bank.region + "/" + bank.bank,(controls.category.value ? "" : cardRegionLabels[bank.region] + " · ") + bank.name]);
+  fillSelect(controls.bank,entries,isCover ? "全部作品" : "全部银行");
+  const bankFiles = categoryFiles.filter(file => !controls.bank.value || collectionKey(file) === controls.bank.value);
+  const editionLabels = isCover ? coverEditionLabels : cardEditionLabels;
+  fillSelect(controls.edition,Object.keys(editionLabels).filter(edition => bankFiles.some(file => file.edition === edition)).map(value => [value,editionLabels[value]]),"全部版本");
   const editionFiles = bankFiles.filter(file => !controls.edition.value || file.edition === controls.edition.value);
   const sort = controls.sort.value;
-  const sortOptions = [["collection",isCard ? "地区与银行顺序" : kind === "wallpaper" ? "设备与种类顺序" : "分类顺序"],["resolution-desc","组内尺寸从大到小"],["resolution-asc","组内尺寸从小到大"],["name","组内按名称排序"]];
+  const sortOptions = [["collection",isCover ? "系列与作品首发顺序" : isCard ? "地区与银行顺序" : kind === "wallpaper" ? "设备与种类顺序" : "分类顺序"],["resolution-desc","组内尺寸从大到小"],["resolution-asc","组内尺寸从小到大"],["name","组内按名称排序"]];
   controls.sort.replaceChildren(...sortOptions.map(([value,label]) => new Option(label,value)));
   controls.sort.value = sortOptions.some(([value]) => value === sort) ? sort : defaultSort();
   const sizes = [...new Map(editionFiles.map(file => [resolutionKey(file),file])).entries()]
@@ -164,7 +187,7 @@ function refreshControls() {
   document.querySelectorAll(".tab").forEach(tab => {
     const count = assets.filter(file => file.kind === tab.dataset.kind).length;
     tab.querySelector("span").textContent = count;
-    tab.hidden = ["icon","bank-card","other"].includes(tab.dataset.kind) && !count;
+    tab.hidden = ["icon","bank-card","game-cover","other"].includes(tab.dataset.kind) && !count;
     tab.disabled = !count;
     tab.setAttribute("aria-pressed", String(tab.dataset.kind === kind));
   });
@@ -172,8 +195,9 @@ function refreshControls() {
   const sizeCount = new Set(wallpapers.filter(file => file.width && file.height).map(resolutionKey)).size;
   const avatarCount = assets.filter(file => file.kind === "avatar").length;
   const iconCount = assets.filter(file => file.kind === "icon").length;
+  const coverCount = assets.filter(file => file.kind === "game-cover").length;
   const cardCount = assets.filter(file => file.kind === "bank-card").length;
-  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "");
+  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "") + (coverCount ? " · " + coverCount + " 张游戏封面" : "");
   refreshFavoriteCount();
 }
 
@@ -289,7 +313,7 @@ function loadPreviewImage(force = false) {
 }
 
 function samePreviewGroup(item,file) {
-  return item.kind === file.kind && item.category === file.category && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.bank === file.bank && item.edition === file.edition));
+  return item.kind === file.kind && item.category === file.category && (file.kind !== "wallpaper" || (item.device || "unknown") === (file.device || "unknown")) && (file.kind !== "bank-card" || (item.bank === file.bank && item.edition === file.edition)) && (file.kind !== "game-cover" || item.game === file.game);
 }
 
 function openPreview(file,historyMode = "push",sequence = visibleAssets) {
@@ -368,12 +392,12 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   if (file.width && file.height) { img.width = file.width; img.height = file.height; }
   let usingThumbnail = Boolean(file.thumbnail);
   const meta = element("div", "meta");
-  const size = element("p", "resolution", file.kind === "icon" ? categoryLabel(file) : file.kind === "bank-card" ? cardEditionLabels[file.edition] + (file.source?.wallet ? " · " + file.source.wallet : "") : resolutionLabel(file));
+  const size = element("p", "resolution", file.kind === "game-cover" ? [coverEditionLabels[file.edition],file.cover?.platform,coverRegionLabels[file.cover?.region] || file.cover?.region].filter(Boolean).join(" · ") : file.kind === "icon" ? categoryLabel(file) : file.kind === "bank-card" ? cardEditionLabels[file.edition] + (file.source?.wallet ? " · " + file.source.wallet : "") : resolutionLabel(file));
   const info = element("details", "asset-info");
   const details = element("p", "details");
   function updateDetails() {
     const format = file.path.split(".").pop().toUpperCase();
-    details.textContent = (file.kind === "other" ? kindLabels[file.kind] : categoryLabel(file)) + (file.kind === "bank-card" ? " · " + resolutionLabel(file) : "") + (file.device ? " · " + deviceLabels[file.device] : "") + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
+    details.textContent = (file.kind === "other" ? kindLabels[file.kind] : categoryLabel(file)) + (["bank-card","game-cover"].includes(file.kind) ? " · " + resolutionLabel(file) : "") + (file.device ? " · " + deviceLabels[file.device] : "") + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
   }
   updateDetails();
   img.addEventListener("load", () => {
@@ -401,12 +425,29 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   favorite.addEventListener("click",() => toggleFavorite(file,favorite));
   previewWrap.append(preview,favorite);
   meta.append(element(titleTag, "", file.title), size);
+  if (file.kind === "game-cover" && gameInfo(file)) meta.append(element("p","details","作品首发：" + gameInfo(file).firstReleaseYear));
   const actions = element("div", "actions");
   const download = element("a", "primary-button", "下载原图");
+  if (file.kind === "game-cover") download.textContent = "下载封面";
   download.href = url; download.download = file.path.split("/").pop();
   download.addEventListener("click",requireConnection);
   actions.append(download); meta.append(actions);
   info.append(element("summary", "", "图片信息"), details);
+  if (file.kind === "game-cover") {
+    const game = gameInfo(file);
+    if (game) info.append(element("p","details","作品首发：" + game.firstReleaseYear));
+    info.append(element("p","details",[file.cover?.version,coverTypeLabels[file.cover?.releaseType],file.cover?.releaseYear ? "当前版本发行：" + file.cover.releaseYear : ""].filter(Boolean).join(" · ")));
+    if (Array.isArray(game?.includes)) info.append(element("p","details","收录作品：" + game.includes.map(key => games.find(item => item.series + "/" + item.id === key)?.title || key).join("、")));
+    for (const [label,url] of [["图片来源：" + (file.source?.publisher || "来源记录"),file.source?.page],["官方源文件",file.source?.url],["作品首发出处",game?.firstReleaseSource],["当前版本发行出处",file.cover?.releaseSource]]) {
+      try {
+        const link = new URL(url);
+        if (link.protocol !== "https:") continue;
+        const source = element("a","source-link",label + " ↗");
+        source.href = link.href; source.target = "_blank"; source.rel = "noopener noreferrer";
+        info.append(source,element("br"));
+      } catch { /* Incomplete source links do not interrupt the gallery. */ }
+    }
+  }
   if (file.note) info.append(element("p", "note", file.note));
   if (file.kind === "bank-card") {
     const sourcePath = file.edition === "custom" ? file.derivedFrom : file.source?.url;
@@ -476,9 +517,30 @@ function makeCardRegions(files) {
   }).filter(Boolean);
 }
 
+function makeGameSeries(files) {
+  return orderedCategories(files).map(series => {
+    const seriesFiles = files.filter(file => file.category === series);
+    const section = element("section","category-section");
+    const title = element("h2","category-heading",categoryLabel(seriesFiles[0]));
+    const ids = [...new Set(seriesFiles.map(file => file.game))].sort((a,b) => {
+      const left = gameInfo({category:series,game:a}), right = gameInfo({category:series,game:b});
+      return (left?.firstReleaseYear || 0) - (right?.firstReleaseYear || 0) || (left?.title || a).localeCompare(right?.title || b,"zh-CN");
+    });
+    title.append(element("span","device-count",ids.length + " 款 · " + seriesFiles.length + " 张"));
+    const grid = element("div","grid"); grid.dataset.device = "game-cover";
+    ids.forEach(id => {
+      const covers = seriesFiles.filter(file => file.game === id);
+      grid.append(...covers.map(file => makeCard(file,covers,"h3")));
+    });
+    section.append(title,grid);
+    return section;
+  });
+}
+
 function compareAssets(a,b) {
   const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
   const byName = a.title.localeCompare(b.title,"zh-CN") || a.path.localeCompare(b.path);
+  if (kind === "game-cover" && controls.sort.value === "collection") return (a.edition === "main" ? 0 : 1) - (b.edition === "main" ? 0 : 1) || (a.cover?.releaseYear || 0) - (b.cover?.releaseYear || 0) || byName;
   if (controls.sort.value === "name" || (controls.sort.value === "collection" && kind !== "wallpaper" && kind !== "avatar")) return byName;
   return (controls.sort.value === "resolution-asc" ? difference : -difference) || byName;
 }
@@ -489,18 +551,19 @@ function renderGallery() {
     .filter(file => !favoritesOnly || favorites.has(file.path))
     .filter(file => !controls.device.value || file.device === controls.device.value)
     .filter(file => !controls.category.value || file.category === controls.category.value)
-    .filter(file => !controls.bank.value || file.category + "/" + file.bank === controls.bank.value)
+    .filter(file => !controls.bank.value || collectionKey(file) === controls.bank.value)
     .filter(file => !controls.edition.value || file.edition === controls.edition.value)
     .filter(file => !controls.resolution.value || resolutionKey(file) === controls.resolution.value)
     .filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value)
-    .filter(file => !query || [file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || ""].join(" ").toLocaleLowerCase().includes(query));
+    .filter(file => !query || [file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || "",gameInfo(file)?.title || "",file.cover?.version || "",file.cover?.platform || "",file.cover?.region || ""].join(" ").toLocaleLowerCase().includes(query));
   visible.sort(compareAssets);
   visibleAssets = visible;
   const grouped = visible.length > 0;
   gallery.classList.toggle("grouped",grouped);
   gallery.classList.remove("multiple-device-groups");
   gallery.dataset.device = kind === "wallpaper" ? controls.device.value || "all" : kind;
-  if (grouped && kind === "bank-card") gallery.replaceChildren(...makeCardRegions(visible));
+  if (grouped && kind === "game-cover") gallery.replaceChildren(...makeGameSeries(visible));
+  else if (grouped && kind === "bank-card") gallery.replaceChildren(...makeCardRegions(visible));
   else if (grouped && kind === "wallpaper") {
     const sections = ["phone","desktop","tablet","unknown"].map(device => {
       const files = visible.filter(file => (file.device || "unknown") === device);
@@ -689,12 +752,16 @@ async function load() {
     if (generation !== loadGeneration) return;
     if (!catalog || catalog.version !== 1 || !Array.isArray(catalog.assets)) throw new Error("Invalid image catalog");
     const nextBanks = Array.isArray(catalog.cardBanks) ? catalog.cardBanks.filter(bank => bank && typeof bank.region === "string" && typeof bank.bank === "string" && typeof bank.name === "string" && typeof bank.englishName === "string") : [];
+    const nextSeries = Array.isArray(catalog.gameSeries) ? catalog.gameSeries.filter(item => item && typeof item.id === "string" && typeof item.title === "string") : [];
+    const nextGames = Array.isArray(catalog.games) ? catalog.games.filter(item => item && typeof item.id === "string" && typeof item.series === "string" && typeof item.title === "string" && Number.isInteger(item.firstReleaseYear)) : [];
+    const gamesChanged = JSON.stringify([nextSeries,nextGames]) !== JSON.stringify([gameSeries,games]);
+    gameSeries = nextSeries; games = nextGames;
     const banksChanged = JSON.stringify(nextBanks) !== JSON.stringify(cardBanks);
     cardBanks = nextBanks;
     const files = new Map(catalog.assets.filter(file => file && typeof file.path === "string" && /^[a-z0-9][a-z0-9/.-]*$/.test(file.path) && !file.path.split("/").includes("..") && imagePattern.test(file.path) && !/^(app|scripts)\//.test(file.path)).map(file => [file.path,file]));
     directoryUnavailable = false;
     updateConnectionNotice();
-    applyFiles(files.values(),banksChanged);
+    applyFiles(files.values(),banksChanged || gamesChanged);
     if (!files.size) gallery.replaceChildren(element("div","empty","仓库里还没有图片。"));
     if (previewPath() && !assets.some(file => file.path === previewPath())) {
       const url = new URL(location.href); url.hash = "";

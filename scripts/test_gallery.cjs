@@ -121,3 +121,38 @@ test("a slower prior refresh cannot replace a newer catalog",async()=>{
   await first;
   assert.equal(state.read("assets[0].path"),"icons/ai/new.png");
 });
+
+test("game covers infer series and work from paths, group editions together and keep main first",()=>{
+  const {context,read,nodes}=gallery();
+  const first=context.makeAsset({path:"game-covers/zero-escape/999/original-nds-na.jpg",edition:"main",cover:{platform:"Nintendo DS",region:"North America",releaseYear:2010},kind:"icon"});
+  const later=context.makeAsset({path:"game-covers/zero-escape/999/reissue-nds-na.jpg",edition:"alternate",cover:{releaseYear:2012}});
+  const other=context.makeAsset({path:"game-covers/zero-escape/zero-time-dilemma/original-ps-vita-na.jpg",edition:"main"});
+  assert.equal(first.kind,"game-cover");
+  assert.equal(first.category,"zero-escape");
+  assert.equal(first.game,"999");
+  assert.equal(context.samePreviewGroup(first,later),true);
+  assert.equal(context.samePreviewGroup(first,other),false);
+  read('kind="game-cover"'); nodes.get("sort").value="collection";
+  assert.equal([later,first].sort(context.compareAssets)[0],first);
+});
+
+test("game-cover filters and search distinguish work, main, other versions, platform and region",()=>{
+  const {context,read,nodes}=gallery();
+  context.testFiles=[
+    context.makeAsset({path:"game-covers/zero-escape/999/original-nds-na.jpg",title:"999",edition:"main",cover:{platform:"Nintendo DS",region:"North America"}}),
+    context.makeAsset({path:"game-covers/zero-escape/999/remaster-ps4-jp.jpg",title:"高清版",edition:"alternate",cover:{platform:"PlayStation 4",region:"Japan"}}),
+    context.makeAsset({path:"game-covers/zero-escape/zero-time-dilemma/original-ps-vita-na.jpg",title:"刻之困境",edition:"main"})
+  ];
+  read('assets=testFiles; kind="game-cover"; gameSeries=[{id:"zero-escape",title:"极限脱出"}]; games=[{series:"zero-escape",id:"999",title:"9小时9人9扇门",firstReleaseYear:2009}]; makeGameSeries=()=>[]');
+  nodes.get("bank").value="zero-escape/999";
+  context.renderGallery(); assert.equal(read("visibleAssets.length"),2);
+  nodes.get("edition").value="main";
+  context.renderGallery(); assert.equal(read("visibleAssets.length"),1);
+  assert.equal(read("visibleAssets[0].edition"),"main");
+  nodes.get("edition").value="";
+  for(const [query,edition] of [["PlayStation 4","alternate"],["Japan","alternate"],["Nintendo DS","main"]]) {
+    nodes.get("search").value=query; context.renderGallery();
+    assert.equal(read("visibleAssets.length"),1); assert.equal(read("visibleAssets[0].edition"),edition);
+  }
+  nodes.get("search").value="9小时";context.renderGallery();assert.equal(read("visibleAssets.length"),2);
+});

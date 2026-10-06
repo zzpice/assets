@@ -959,6 +959,92 @@
       "sha": "15884f156354da21b74bed2464ae0ccf2ea740f9"
     },
     {
+      "path": "game-covers/zero-escape/999/original-nds-na.jpg",
+      "title": "999：9小时9人9扇门",
+      "kind": "game-cover",
+      "game": "999",
+      "edition": "main",
+      "cover": {
+        "version": "北美独立发行首版",
+        "releaseType": "original",
+        "platform": "Nintendo DS",
+        "region": "North America",
+        "releaseYear": 2010,
+        "releaseSource": "https://gamefaqs.gamespot.com/ds/961351-nine-hours-nine-persons-nine-doors/data"
+      },
+      "source": {
+        "width": 800,
+        "height": 718,
+        "sha256": "a8ca970d09eea37bf1dca35f532c62027197b2f088f55acee58256ca19e6f35f",
+        "publisher": "Aksys Games",
+        "page": "https://www.aksysgames.com/wp-json/wp/v2/media/60131",
+        "url": "https://www.aksysgames.com/wp-content/uploads/2015/11/999-9-hours-9-persons-9-doors-cover.jpg",
+        "retrieved": "2026-10-06"
+      },
+      "processing": {
+        "mode": "contain",
+        "crop": [
+          0,
+          0,
+          800,
+          718
+        ],
+        "background": "#ffffff",
+        "scale": 1.25,
+        "sha256": "114847432aeb1f527ec7b2ad0f9762639112c13f8fd74aae36798db131c497d6"
+      },
+      "category": "zero-escape",
+      "width": 1000,
+      "height": 1500,
+      "note": "官方源图 800×718；完整保留原图；等比放大 1.250 倍至 1000×898，白色居中留边至 1000×1500。未重绘或更改官方美术。 选择可核验官方出处的北美独立首版；原平台包装标识完整保留。",
+      "thumbnail": "app/previews/original-nds-na-f1f3184538.webp",
+      "size": 492192,
+      "sha": "28980ca96ee02219584a8b52aca43679e8d31851"
+    },
+    {
+      "path": "game-covers/zero-escape/zero-time-dilemma/original-ps-vita-na.jpg",
+      "title": "极限脱出：刻之困境",
+      "kind": "game-cover",
+      "game": "zero-time-dilemma",
+      "edition": "main",
+      "cover": {
+        "version": "北美独立发行首版",
+        "releaseType": "original",
+        "platform": "PlayStation Vita",
+        "region": "North America",
+        "releaseYear": 2016,
+        "releaseSource": "https://gamefaqs.gamespot.com/vita/175994-zero-escape-zero-time-dilemma/data"
+      },
+      "source": {
+        "width": 803,
+        "height": 1024,
+        "sha256": "26a087d990db0ce148d3b0f2f4c199f220feea1b01bfb218a640be3e6590bc13",
+        "publisher": "Aksys Games",
+        "page": "https://www.aksysgames.com/wp-json/wp/v2/media/63659",
+        "url": "https://www.aksysgames.com/wp-content/uploads/2018/12/ZTDPSV_BF1a.jpg",
+        "retrieved": "2026-10-06"
+      },
+      "processing": {
+        "mode": "contain",
+        "crop": [
+          0,
+          0,
+          803,
+          1024
+        ],
+        "background": "#ffffff",
+        "scale": 1.24533,
+        "sha256": "605eca4ab949497056a37fd31b51e6291ccba6df4b4947c53a825546b9380007"
+      },
+      "category": "zero-escape",
+      "width": 1000,
+      "height": 1500,
+      "note": "官方源图 803×1024；完整保留原图；等比放大 1.245 倍至 1000×1275，白色居中留边至 1000×1500。未重绘或更改官方美术。 选择可核验官方出处的北美独立首版；原平台包装标识完整保留。",
+      "thumbnail": "app/previews/original-ps-vita-na-ca9c74e71e.webp",
+      "size": 474051,
+      "sha": "bd4ace880b6228503f6c2b8c6589663a506d2090"
+    },
+    {
       "path": "icons/ai/claude.png",
       "title": "Claude",
       "kind": "icon",
@@ -1717,6 +1803,28 @@
       "englishName": "DBS Bank",
       "country": "SG",
       "url": "https://www.dbs.com.sg"
+    }
+  ],
+  "gameSeries": [
+    {
+      "id": "zero-escape",
+      "title": "极限脱出（Zero Escape）"
+    }
+  ],
+  "games": [
+    {
+      "series": "zero-escape",
+      "id": "999",
+      "title": "999：9小时9人9扇门",
+      "firstReleaseYear": 2009,
+      "firstReleaseSource": "https://www.spike-chunsoft.co.jp/pages/zendesu/about/index.html"
+    },
+    {
+      "series": "zero-escape",
+      "id": "zero-time-dilemma",
+      "title": "极限脱出：刻之困境",
+      "firstReleaseYear": 2016,
+      "firstReleaseSource": "https://gamefaqs.gamespot.com/vita/175994-zero-escape-zero-time-dilemma/data"
     }
   ]
 }
