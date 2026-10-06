@@ -16,7 +16,6 @@ const cardRegionLabels = { "hong-kong": "香港", "china-mainland": "中国内�
 const cardEditionLabels = { originals: "原始卡面", custom: "修改版" };
 const coverEditionLabels = { main: "主封面", alternate: "其他版本封面" };
 const coverRegionLabels = { Japan: "日本", "North America": "北美", Europe: "欧洲", Worldwide: "全球" };
-const coverTypeLabels = { original: "独立首发版本", port: "移植版", remaster: "高清复刻版", remake: "重制版", collection: "合集", reissue: "再发行版" };
 const controls = Object.fromEntries(["search","device","category","bank","edition","resolution","orientation","sort"].map(id => [id,document.getElementById(id)]));
 const gallery = document.getElementById("gallery");
 const results = document.getElementById("results");
@@ -93,14 +92,15 @@ function makeAsset(file) {
     category: match ? match[1] : iconMatch ? iconMatch[1] : cardMatch ? cardMatch[2] : coverMatch ? coverMatch[1] : "other",
     bank: cardMatch ? cardMatch[3] : "", game: coverMatch ? coverMatch[2] : "",
     edition: cardMatch ? cardMatch[1] : coverMatch && ["main","alternate"].includes(file.edition) ? file.edition : "",
-    cover: coverMatch && file.cover && typeof file.cover === "object" ? Object.fromEntries(Object.entries(file.cover).filter(([key,value]) => ["version","platform","region","releaseType","releaseSource"].includes(key) ? typeof value === "string" : key === "releaseYear" && Number.isInteger(value))) : undefined,
-    source: (cardMatch || coverMatch) && file.source && typeof file.source === "object" && !Array.isArray(file.source) ? file.source : undefined,
+    cover: coverMatch && file.cover && typeof file.cover === "object" ? Object.fromEntries(Object.entries(file.cover).filter(([key,value]) => ["version","platform","region"].includes(key) && typeof value === "string")) : undefined,
+    source: coverMatch ? typeof file.source === "string" ? file.source : undefined : cardMatch && file.source && typeof file.source === "object" && !Array.isArray(file.source) ? file.source : undefined,
     derivedFrom: cardMatch && typeof file.derivedFrom === "string" ? file.derivedFrom : undefined,
     width: Number.isFinite(file.width) && file.width > 0 ? file.width : match ? Number(match[2]) : 0,
     height: Number.isFinite(file.height) && file.height > 0 ? file.height : match ? Number(match[3]) : 0,
     note: typeof file.note === "string" ? file.note : "",
     thumbnail: typeof file.thumbnail === "string" && /^app\/previews\/[a-z0-9-]+\.webp$/.test(file.thumbnail) ? file.thumbnail : ""
   };
+  if (asset.kind === "game-cover") asset.title = gameInfo(asset)?.title || asset.title;
   if (asset.kind === "wallpaper" && !asset.device) asset.device = inferDevice(asset.width,asset.height);
   return asset;
 }
@@ -434,19 +434,15 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   actions.append(download); meta.append(actions);
   info.append(element("summary", "", "图片信息"), details);
   if (file.kind === "game-cover") {
-    const game = gameInfo(file);
-    if (game) info.append(element("p","details","作品首发：" + game.firstReleaseYear));
-    info.append(element("p","details",[file.cover?.version,coverTypeLabels[file.cover?.releaseType],file.cover?.releaseYear ? "当前版本发行：" + file.cover.releaseYear : ""].filter(Boolean).join(" · ")));
-    if (Array.isArray(game?.includes)) info.append(element("p","details","收录作品：" + game.includes.map(key => games.find(item => item.series + "/" + item.id === key)?.title || key).join("、")));
-    for (const [label,url] of [["图片来源：" + (file.source?.publisher || "来源记录"),file.source?.page],["官方源文件",file.source?.url],["作品首发出处",game?.firstReleaseSource],["当前版本发行出处",file.cover?.releaseSource]]) {
-      try {
-        const link = new URL(url);
-        if (link.protocol !== "https:") continue;
-        const source = element("a","source-link",label + " ↗");
+    if (file.cover?.version) info.append(element("p","details",file.cover.version));
+    try {
+      const link = new URL(file.source);
+      if (["http:","https:"].includes(link.protocol)) {
+        const source = element("a","source-link","图片来源（" + link.hostname + "） ↗");
         source.href = link.href; source.target = "_blank"; source.rel = "noopener noreferrer";
         info.append(source,element("br"));
-      } catch { /* Incomplete source links do not interrupt the gallery. */ }
-    }
+      }
+    } catch { /* Invalid source links do not interrupt the gallery. */ }
   }
   if (file.note) info.append(element("p", "note", file.note));
   if (file.kind === "bank-card") {
@@ -540,7 +536,7 @@ function makeGameSeries(files) {
 function compareAssets(a,b) {
   const difference = (a.width || 0) * (a.height || 0) - (b.width || 0) * (b.height || 0);
   const byName = a.title.localeCompare(b.title,"zh-CN") || a.path.localeCompare(b.path);
-  if (kind === "game-cover" && controls.sort.value === "collection") return (a.edition === "main" ? 0 : 1) - (b.edition === "main" ? 0 : 1) || (a.cover?.releaseYear || 0) - (b.cover?.releaseYear || 0) || byName;
+  if (kind === "game-cover" && controls.sort.value === "collection") return (a.edition === "main" ? 0 : 1) - (b.edition === "main" ? 0 : 1) || byName;
   if (controls.sort.value === "name" || (controls.sort.value === "collection" && kind !== "wallpaper" && kind !== "avatar")) return byName;
   return (controls.sort.value === "resolution-asc" ? difference : -difference) || byName;
 }

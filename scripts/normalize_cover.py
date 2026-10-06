@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Manually adapt a verified official cover; never fetch, stretch, or invent artwork."""
+"""Adapt a verified release cover with proportional resize and manual crop or padding."""
 
 import argparse
-import hashlib
 import json
 from pathlib import Path
 import re
@@ -10,7 +9,7 @@ import re
 from PIL import Image, ImageOps
 
 
-def normalize(input_path, output_path, *, mode, crop=None, background="#ffffff", allow_upscale=False):
+def normalize(input_path, output_path, *, mode, crop=None, background="#ffffff"):
     input_path, output_path = Path(input_path), Path(output_path)
     if output_path.exists() or input_path.resolve() == output_path.resolve():
         raise ValueError("输出文件已存在；请使用新名称，不覆盖封面或源文件")
@@ -18,7 +17,6 @@ def normalize(input_path, output_path, *, mode, crop=None, background="#ffffff",
         raise ValueError("输出须为 .jpg 或 .png")
     if mode not in {"crop", "contain"} or not re.fullmatch(r"#[0-9a-fA-F]{6}", background):
         raise ValueError("须明确选择 crop/contain 和 #RRGGBB 背景色")
-    source_data = input_path.read_bytes()
     with Image.open(input_path) as original:
         if getattr(original, "n_frames", 1) != 1:
             raise ValueError("只接受单帧封面")
@@ -33,8 +31,6 @@ def normalize(input_path, output_path, *, mode, crop=None, background="#ffffff",
     if mode == "crop" and cw * 3 != ch * 2:
         raise ValueError("crop 模式的裁切区域须为 2:3；其他比例请使用 contain 留边")
     scale = min(1000 / cw, 1500 / ch)
-    if scale > 1 and not allow_upscale:
-        raise ValueError("素材需要放大；先寻找更高质量来源，确认可用后显式添加 --allow-upscale")
     resized = image.crop(crop).resize((round(cw * scale), round(ch * scale)), Image.Resampling.LANCZOS)
     result = Image.new("RGB", (1000, 1500), background)
     result.paste(resized, ((1000 - resized.width) // 2, (1500 - resized.height) // 2), resized)
@@ -43,11 +39,10 @@ def normalize(input_path, output_path, *, mode, crop=None, background="#ffffff",
         result.save(output_path, "JPEG", quality=95, subsampling=0, optimize=True)
     else:
         result.save(output_path, "PNG", optimize=True)
-    adaptation = "无留边适配为 1000×1500" if resized.size == (1000, 1500) else "纯色居中留边至 1000×1500"
+    adaptation = "" if resized.size == (1000, 1500) else "、纯色留边"
+    cropped = "、人工裁切" if crop != [0, 0, width, height] else ""
     return {
-        "source": {"width": width, "height": height, "sha256": hashlib.sha256(source_data).hexdigest()},
-        "processing": {"mode": mode, "crop": crop, "background": background, "scale": round(scale, 6), "sha256": hashlib.sha256(output_path.read_bytes()).hexdigest()},
-        "note": f"官方源图 {width}×{height}；{'完整保留原图' if crop == [0, 0, width, height] else '按人工确认范围裁切'}；等比{'放大' if scale > 1 else '缩放'} {scale:.3f} 倍至 {resized.width}×{resized.height}，{adaptation}。未重绘或更改官方美术。",
+        "note": f"源图 {width}×{height}，等比{'放大' if scale > 1 else '缩小' if scale < 1 else '保留尺寸'}{cropped}{adaptation}。",
     }
 
 
@@ -58,10 +53,9 @@ def main():
     parser.add_argument("--mode", choices=("crop", "contain"), required=True)
     parser.add_argument("--crop", nargs=4, type=int, metavar=("LEFT", "TOP", "RIGHT", "BOTTOM"))
     parser.add_argument("--background", default="#ffffff")
-    parser.add_argument("--allow-upscale", action="store_true")
     args = parser.parse_args()
     try:
-        report = normalize(args.input, args.output, mode=args.mode, crop=args.crop, background=args.background, allow_upscale=args.allow_upscale)
+        report = normalize(args.input, args.output, mode=args.mode, crop=args.crop, background=args.background)
     except (ValueError, OSError) as error:
         parser.exit(1, str(error) + "\n")
     print(json.dumps(report, ensure_ascii=False, indent=2))

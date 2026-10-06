@@ -215,7 +215,7 @@ def build_catalog(root):
             validate_icon(image, image_format, path)
             kind, category = "icon", match[1]
         elif path.startswith("game-covers/"):
-            category, card_info = cover_metadata(path, old, image, image_format, data, game_index)
+            category, card_info = cover_metadata(path, old, image, image_format, game_index)
             kind = "game-cover"
         elif path.startswith("bank-cards/"):
             category, card_info = card_metadata(root, path, old, data, sha, banks)
@@ -234,7 +234,7 @@ def build_catalog(root):
         elif kind == "wallpaper":
             item["device"] = infer_device(width, height)
         item.update(width=width, height=height)
-        if (same_source or kind == "game-cover") and old.get("note"):
+        if same_source and old.get("note"):
             item["note"] = old["note"]
         if image is not None and kind != "icon":
             if same_source and usable_preview(root, old.get("thumbnail"), width, height):

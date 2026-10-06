@@ -9,8 +9,8 @@ const base = "https://example.test/assets/";
 
 function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]}')) {
   const nodes = new Map();
-  const node = () => ({value:"",dataset:{},style:{setProperty(){}},classList:{toggle(){},remove(){}},addEventListener(){},setAttribute(){},removeAttribute(){},replaceChildren(...children){this.children=children;},append(){},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
-  const document = {baseURI:base,body:node(),getElementById(id){if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);},querySelectorAll:()=>[],querySelector:()=>node(),createElement:node};
+  const node = () => ({value:"",children:[],dataset:{},style:{setProperty(){}},classList:{toggle(){},remove(){}},addEventListener(){},setAttribute(){},removeAttribute(){},replaceChildren(...children){this.children=children;},append(...children){this.children.push(...children);},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
+  const document = {baseURI:base,body:node(),getElementById(id){if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);},querySelectorAll:()=>[],querySelector:()=>node(),createElement:node,createElementNS:node};
   const context = vm.createContext({URL,URLSearchParams,Response,AbortController,setTimeout,clearTimeout,document,fetch:fetchResponse,
     localStorage:{getItem:()=>null},navigator:{onLine:true},location:{href:base,hash:""},history:{state:null},
     window:{matchMedia:()=>({matches:false}),addEventListener(){}}
@@ -124,8 +124,8 @@ test("a slower prior refresh cannot replace a newer catalog",async()=>{
 
 test("game covers infer series and work from paths, group editions together and keep main first",()=>{
   const {context,read,nodes}=gallery();
-  const first=context.makeAsset({path:"game-covers/zero-escape/999/original-nds-na.jpg",edition:"main",cover:{platform:"Nintendo DS",region:"North America",releaseYear:2010},kind:"icon"});
-  const later=context.makeAsset({path:"game-covers/zero-escape/999/reissue-nds-na.jpg",edition:"alternate",cover:{releaseYear:2012}});
+  const first=context.makeAsset({path:"game-covers/zero-escape/999/original-nds-na.jpg",edition:"main",cover:{platform:"Nintendo DS",region:"North America",version:"北美首版（2010）"},kind:"icon"});
+  const later=context.makeAsset({path:"game-covers/zero-escape/999/reissue-nds-na.jpg",edition:"alternate",cover:{version:"再版（2012）"}});
   const other=context.makeAsset({path:"game-covers/zero-escape/zero-time-dilemma/original-ps-vita-na.jpg",edition:"main"});
   assert.equal(first.kind,"game-cover");
   assert.equal(first.category,"zero-escape");
@@ -134,6 +134,24 @@ test("game covers infer series and work from paths, group editions together and 
   assert.equal(context.samePreviewGroup(first,other),false);
   read('kind="game-cover"'); nodes.get("sort").value="collection";
   assert.equal([later,first].sort(context.compareAssets)[0],first);
+});
+
+test("game-cover cards use the registered work title and a single source link",()=>{
+  const {context,read}=gallery();
+  read('games=[{series:"zero-escape",id:"999",title:"999：9小时9人9扇门",firstReleaseYear:2009}]; gameSeries=[{id:"zero-escape",title:"极限脱出"}]');
+  const file=context.makeAsset({path:"game-covers/zero-escape/999/nds-na.jpg",title:"善人死亡",game:"virtues-last-reward",edition:"main",cover:{platform:"Nintendo DS",region:"North America",version:"北美首版（2010）"},source:"https://example.com/999.jpg",width:1000,height:1500});
+  assert.equal(file.title,"999：9小时9人9扇门");
+  assert.equal(file.game,"999");
+  const card=context.makeCard(file,[file]);
+  const descend=node=>[node,...node.children.flatMap(descend)];
+  const contents=descend(card);
+  const links=contents.filter(node=>node.className==="source-link");
+  assert.equal(links.length,1);
+  assert.equal(links[0].href,file.source);
+  assert.equal(contents.filter(node=>node.textContent?.startsWith("作品首发：")).length,1);
+  assert.ok(contents.some(node=>node.textContent==="北美首版（2010）"));
+  const unsafe=context.makeAsset({...file,source:"javascript:alert(1)"});
+  assert.equal(descend(context.makeCard(unsafe,[unsafe])).filter(node=>node.className==="source-link").length,0);
 });
 
 test("game-cover filters and search distinguish work, main, other versions, platform and region",()=>{
