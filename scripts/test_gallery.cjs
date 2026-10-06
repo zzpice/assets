@@ -260,3 +260,35 @@ test("shared cover previews preserve their gallery context and navigate across w
   assert.equal(new URL(context.location.href).searchParams.size,0);
   assert.equal(new URLSearchParams(context.location.hash.slice(1)).get("series"),"zero-escape");
 });
+
+test("cover navigation starts at the top while Back and modified links retain browser behavior",()=>{
+  const {context,read}=coverGallery();
+  const scrolls=[];
+  context.window.scrollTo=(x,y)=>scrolls.push([x,y,read("activeSeries")]);
+  context.history.replaceState(null,"",base+"#covers"); context.syncRoute();
+  let prevented=false;
+  const click={button:0,preventDefault(){prevented=true;}};
+  context.navigateCoverView(click,"zero-escape");
+  assert.equal(prevented,true);
+  assert.equal(context.location.hash,"#series=zero-escape");
+  assert.equal(read("visibleAssets.length"),4);
+  assert.deepEqual(scrolls,[[0,0,"zero-escape"]]);
+  context.history.back(); context.syncRoute();
+  assert.equal(read("activeSeries"),"");
+  assert.equal(scrolls.length,1); // Back must not force a new scroll position.
+  const entries=context.history.entries.length;
+  for(const modifier of [{button:1},{metaKey:true},{ctrlKey:true},{shiftKey:true},{altKey:true}]) {
+    prevented=false;
+    context.navigateCoverView({...click,...modifier},"ace-attorney");
+    assert.equal(prevented,false);
+    assert.equal(context.history.entries.length,entries);
+    assert.equal(context.location.hash,"#covers");
+    assert.equal(scrolls.length,1);
+  }
+  context.navigateCoverView(click,"ace-attorney");
+  assert.equal(read("visibleAssets.length"),1);
+  context.navigateCoverView(click);
+  assert.equal(context.location.hash,"#covers");
+  assert.equal(read("visibleAssets.length"),4);
+  assert.deepEqual(scrolls.at(-1),[0,0,""]);
+});

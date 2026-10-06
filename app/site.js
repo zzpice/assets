@@ -276,6 +276,15 @@ function coverViewUrl(series = "") {
   return url.href;
 }
 
+function navigateCoverView(event,series = "") {
+  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  history.pushState({galleryKind:"game-cover",assetPreview:false},"",coverViewUrl(series));
+  syncRoute();
+  // Scroll after saving the overview position, so Back can restore it.
+  window.scrollTo(0,0);
+}
+
 function withoutPreviewUrl() {
   const url = new URL(location.href);
   const params = new URLSearchParams(url.hash.slice(1));
@@ -569,7 +578,9 @@ function makeGameSeries(files) {
     if (activeSeries) title.append(element("span","",name));
     else {
       const link = element("a","series-link",name + " →");
-      link.href = coverViewUrl(series); title.append(link);
+      link.href = coverViewUrl(series);
+      link.addEventListener("click",event => navigateCoverView(event,series));
+      title.append(link);
     }
     const ids = [...new Set(seriesFiles.map(file => file.game))];
     title.append(element("span","device-count",ids.length + " 款作品"));
@@ -669,6 +680,7 @@ document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", (
   history.replaceState({...history.state,galleryKind:kind},"",location.href);
   clearFilters(); renderGallery();
 }));
+document.querySelector("#cover-navigation a").addEventListener("click",event => navigateCoverView(event));
 Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", () => {
   if (["device","category","bank","edition"].includes(name)) refreshControls();
   renderGallery();

@@ -959,6 +959,281 @@
       "sha": "15884f156354da21b74bed2464ae0ccf2ea740f9"
     },
     {
+      "path": "game-covers/ace-attorney/apollo-justice.jpg",
+      "title": "逆转裁判4",
+      "kind": "game-cover",
+      "game": "apollo-justice",
+      "source": "https://images.launchbox-app.com/a88650d9-b26d-4246-80a0-1b5cf495dafa.jpg",
+      "cover": {
+        "platform": "Nintendo DS",
+        "region": "North America"
+      },
+      "category": "ace-attorney",
+      "width": 1526,
+      "height": 1371,
+      "thumbnail": "app/previews/apollo-justice-57e69fd007.webp",
+      "size": 337582,
+      "sha": "07d3f0d34817f2b90f056622e8445988cf4f86d0"
+    },
+    {
+      "path": "game-covers/ace-attorney/dual-destinies.jpg",
+      "title": "逆转裁判5",
+      "kind": "game-cover",
+      "game": "dual-destinies",
+      "source": "https://images.launchbox-app.com/56f593a8-d915-43d6-bf41-173b8ef36a23.jpg",
+      "cover": {
+        "platform": "Nintendo 3DS",
+        "region": "Japan"
+      },
+      "category": "ace-attorney",
+      "width": 768,
+      "height": 680,
+      "thumbnail": "app/previews/dual-destinies-7f16e75f9f.webp",
+      "size": 187492,
+      "sha": "d647421f11ea27d1d37a60c1621b3bdb0028dc1d"
+    },
+    {
+      "path": "game-covers/ace-attorney/investigations-2.jpg",
+      "title": "逆转检事2",
+      "kind": "game-cover",
+      "game": "investigations-2",
+      "source": "https://images.launchbox-app.com/e6e1849e-f9f8-438d-9306-d4c11474a03c.jpg",
+      "cover": {
+        "platform": "Nintendo DS",
+        "region": "Japan",
+        "version": "New Best Price! 2000"
+      },
+      "category": "ace-attorney",
+      "width": 768,
+      "height": 680,
+      "thumbnail": "app/previews/investigations-2-71de490e69.webp",
+      "size": 211953,
+      "sha": "cff285e1f61b902804f5c28618854f6fa6278bfd"
+    },
+    {
+      "path": "game-covers/ace-attorney/investigations-miles-edgeworth.jpg",
+      "title": "逆转检事",
+      "kind": "game-cover",
+      "game": "investigations-miles-edgeworth",
+      "source": "https://images.launchbox-app.com/07d8cc52-454f-4343-88e6-43d9fe8df2e4.jpg",
+      "cover": {
+        "platform": "Nintendo DS",
+        "region": "North America"
+      },
+      "category": "ace-attorney",
+      "width": 1500,
+      "height": 1345,
+      "thumbnail": "app/previews/investigations-miles-edgeworth-6f61503787.webp",
+      "size": 1087701,
+      "sha": "4dc714006bf178081ab80257854dba77983ea2c1"
+    },
+    {
+      "path": "game-covers/ace-attorney/justice-for-all.jpg",
+      "title": "逆转裁判2",
+      "kind": "game-cover",
+      "game": "justice-for-all",
+      "source": "https://images.launchbox-app.com/0ddaf393-763f-4042-b496-91465cddc06b.jpg",
+      "cover": {
+        "platform": "Nintendo DS",
+        "region": "North America"
+      },
+      "category": "ace-attorney",
+      "width": 1532,
+      "height": 1370,
+      "thumbnail": "app/previews/justice-for-all-6aa83fb3ee.webp",
+      "size": 1163101,
+      "sha": "96fe5cd90c7e81fa690aff4afea93bd0b3b75a6e"
+    },
+    {
+      "path": "game-covers/ace-attorney/phoenix-wright-ace-attorney.png",
+      "title": "逆转裁判",
+      "kind": "game-cover",
+      "game": "phoenix-wright-ace-attorney",
+      "source": "https://images.launchbox-app.com/8ac0fbe3-2178-40da-85e9-5b7e88c7c6c9.png",
+      "cover": {
+        "platform": "Nintendo DS",
+        "region": "North America"
+      },
+      "category": "ace-attorney",
+      "width": 1538,
+      "height": 1384,
+      "thumbnail": "app/previews/phoenix-wright-ace-attorney-7542b3a2c9.webp",
+      "size": 3055237,
+      "sha": "62c432f63951cf195156b7e31b72f4cd6e214874"
+    },
+    {
+      "path": "game-covers/ace-attorney/professor-layton-vs-phoenix-wright.jpg",
+      "title": "雷顿教授 VS 逆转裁判",
+      "kind": "game-cover",
+      "game": "professor-layton-vs-phoenix-wright",
+      "source": "https://images.launchbox-app.com/d50c85ee-1166-4f07-bd0e-7273fdf38b7b.jpg",
+      "cover": {
+        "platform": "Nintendo 3DS",
+        "region": "North America"
+      },
+      "category": "ace-attorney",
+      "width": 1801,
+      "height": 1602,
+      "thumbnail": "app/previews/professor-layton-vs-phoenix-wright-b07fa14b20.webp",
+      "size": 343320,
+      "sha": "d3babc1aaa894ceb65594fd401e3a38913879dda"
+    },
+    {
+      "path": "game-covers/ace-attorney/spirit-of-justice.jpg",
+      "title": "逆转裁判6",
+      "kind": "game-cover",
+      "game": "spirit-of-justice",
+      "source": "https://images.launchbox-app.com/b35288f6-3669-476a-bab2-ac85e45c60ef.jpg",
+      "cover": {
+        "platform": "Nintendo 3DS",
+        "region": "Japan"
+      },
+      "category": "ace-attorney",
+      "width": 768,
+      "height": 680,
+      "thumbnail": "app/previews/spirit-of-justice-686fc3995b.webp",
+      "size": 183381,
+      "sha": "9df187c6d1bbca8c974d03335705ec9485ee06d4"
+    },
+    {
+      "path": "game-covers/ace-attorney/the-great-ace-attorney-2-resolve.png",
+      "title": "大逆转裁判2：成步堂龙之介的觉悟",
+      "kind": "game-cover",
+      "game": "the-great-ace-attorney-2-resolve",
+      "source": "https://images.launchbox-app.com/e810aa5b-4bbd-4098-a8b8-05facf5472a0.png",
+      "cover": {
+        "platform": "Nintendo 3DS",
+        "region": "Japan"
+      },
+      "category": "ace-attorney",
+      "width": 815,
+      "height": 725,
+      "thumbnail": "app/previews/the-great-ace-attorney-2-resolve-274c90c6ea.webp",
+      "size": 1327794,
+      "sha": "b542ecf389a0a4c3a4feaea983074121388ff6a8"
+    },
+    {
+      "path": "game-covers/ace-attorney/the-great-ace-attorney-adventures.png",
+      "title": "大逆转裁判：成步堂龙之介的冒险",
+      "kind": "game-cover",
+      "game": "the-great-ace-attorney-adventures",
+      "source": "https://images.launchbox-app.com/f6aa0629-a51d-4be6-a8f8-435f715dd775.png",
+      "cover": {
+        "platform": "Nintendo 3DS",
+        "region": "Japan"
+      },
+      "category": "ace-attorney",
+      "width": 1000,
+      "height": 889,
+      "thumbnail": "app/previews/the-great-ace-attorney-adventures-9076e541e4.webp",
+      "size": 1545736,
+      "sha": "5179f25ffee83330ef0613b140500d5cbc7e1690"
+    },
+    {
+      "path": "game-covers/ace-attorney/trials-and-tribulations.jpg",
+      "title": "逆转裁判3",
+      "kind": "game-cover",
+      "game": "trials-and-tribulations",
+      "source": "https://images.launchbox-app.com/9eeffa5b-493a-413b-83ff-dc303560c4cf.jpg",
+      "cover": {
+        "platform": "Nintendo DS",
+        "region": "North America"
+      },
+      "category": "ace-attorney",
+      "width": 1538,
+      "height": 1370,
+      "thumbnail": "app/previews/trials-and-tribulations-f9b9c1c98b.webp",
+      "size": 678700,
+      "sha": "ae31557d326fb84dabfad603ece29bb22d5c272d"
+    },
+    {
+      "path": "game-covers/danganronpa/goodbye-despair.jpg",
+      "title": "超级弹丸论破2：再见绝望学园",
+      "kind": "game-cover",
+      "game": "goodbye-despair",
+      "source": "https://images.launchbox-app.com/55717e88-4890-4bd7-aa4e-d86489f7d746.jpg",
+      "cover": {
+        "platform": "PlayStation Vita",
+        "region": "North America"
+      },
+      "category": "danganronpa",
+      "width": 1158,
+      "height": 1473,
+      "thumbnail": "app/previews/goodbye-despair-4d2a97e6cb.webp",
+      "size": 473332,
+      "sha": "fed72edbd36c4a76e78ddb72d3ba8ceb00d28a46"
+    },
+    {
+      "path": "game-covers/danganronpa/killing-harmony.jpg",
+      "title": "新弹丸论破V3：大家的自相残杀新学期",
+      "kind": "game-cover",
+      "game": "killing-harmony",
+      "source": "https://images.launchbox-app.com/ef2ba84d-d548-4484-90a3-208baab7e7bc.jpg",
+      "cover": {
+        "platform": "PlayStation 4",
+        "region": "North America",
+        "version": "Day One Edition"
+      },
+      "category": "danganronpa",
+      "width": 800,
+      "height": 1000,
+      "thumbnail": "app/previews/killing-harmony-d286df62f4.webp",
+      "size": 277697,
+      "sha": "80fcfd15c3a78fca1a410b4cf6d3c3da0adb5d80"
+    },
+    {
+      "path": "game-covers/danganronpa/trigger-happy-havoc.jpg",
+      "title": "弹丸论破：希望的学园和绝望的高中生",
+      "kind": "game-cover",
+      "game": "trigger-happy-havoc",
+      "source": "https://images.launchbox-app.com/f6070e01-2d23-45c7-a5bb-e19051cb8f23.jpg",
+      "cover": {
+        "platform": "PlayStation Vita",
+        "region": "North America"
+      },
+      "category": "danganronpa",
+      "width": 1280,
+      "height": 1646,
+      "thumbnail": "app/previews/trigger-happy-havoc-ba20de3df7.webp",
+      "size": 371459,
+      "sha": "8e31511a8d821ffc06f5704f539e4fd87fea7d4f"
+    },
+    {
+      "path": "game-covers/danganronpa/ultimate-summer-camp.jpg",
+      "title": "快乐弹丸论破S：超高中级的南国掷骰合宿",
+      "kind": "game-cover",
+      "game": "ultimate-summer-camp",
+      "source": "https://cdn.akamai.steamstatic.com/steam/apps/1691970/library_600x900_2x.jpg",
+      "cover": {
+        "platform": "Windows (Steam)",
+        "region": "Worldwide",
+        "version": "Steam library cover"
+      },
+      "category": "danganronpa",
+      "width": 600,
+      "height": 900,
+      "thumbnail": "app/previews/ultimate-summer-camp-7221bd5364.webp",
+      "size": 304465,
+      "sha": "88c3ed3f32f9b340b2e1d6a7791afc46dd17717a"
+    },
+    {
+      "path": "game-covers/danganronpa/ultra-despair-girls.jpg",
+      "title": "绝对绝望少女：弹丸论破 Another Episode",
+      "kind": "game-cover",
+      "game": "ultra-despair-girls",
+      "source": "https://images.launchbox-app.com/ec9de2fd-498c-4281-a706-f280391bfafe.jpg",
+      "cover": {
+        "platform": "PlayStation Vita",
+        "region": "North America"
+      },
+      "category": "danganronpa",
+      "width": 1157,
+      "height": 1486,
+      "thumbnail": "app/previews/ultra-despair-girls-dc1dc67949.webp",
+      "size": 388325,
+      "sha": "1ce1fd9585ba8a9c157a390e01287237e74dc2b5"
+    },
+    {
       "path": "game-covers/zero-escape/999.jpg",
       "title": "999：9小时9人9扇门",
       "kind": "game-cover",
@@ -1774,6 +2049,14 @@
     {
       "id": "zero-escape",
       "title": "极限脱出（Zero Escape）"
+    },
+    {
+      "id": "ace-attorney",
+      "title": "逆转裁判（Ace Attorney）"
+    },
+    {
+      "id": "danganronpa",
+      "title": "弹丸论破（Danganronpa）"
     }
   ],
   "games": [
@@ -1794,6 +2077,102 @@
       "id": "zero-time-dilemma",
       "title": "极限脱出：刻之困境",
       "firstReleaseYear": 2016
+    },
+    {
+      "series": "ace-attorney",
+      "id": "phoenix-wright-ace-attorney",
+      "title": "逆转裁判",
+      "firstReleaseYear": 2001
+    },
+    {
+      "series": "ace-attorney",
+      "id": "justice-for-all",
+      "title": "逆转裁判2",
+      "firstReleaseYear": 2002
+    },
+    {
+      "series": "ace-attorney",
+      "id": "trials-and-tribulations",
+      "title": "逆转裁判3",
+      "firstReleaseYear": 2004
+    },
+    {
+      "series": "ace-attorney",
+      "id": "apollo-justice",
+      "title": "逆转裁判4",
+      "firstReleaseYear": 2007
+    },
+    {
+      "series": "ace-attorney",
+      "id": "investigations-miles-edgeworth",
+      "title": "逆转检事",
+      "firstReleaseYear": 2009
+    },
+    {
+      "series": "ace-attorney",
+      "id": "investigations-2",
+      "title": "逆转检事2",
+      "firstReleaseYear": 2011
+    },
+    {
+      "series": "ace-attorney",
+      "id": "professor-layton-vs-phoenix-wright",
+      "title": "雷顿教授 VS 逆转裁判",
+      "firstReleaseYear": 2012
+    },
+    {
+      "series": "ace-attorney",
+      "id": "dual-destinies",
+      "title": "逆转裁判5",
+      "firstReleaseYear": 2013
+    },
+    {
+      "series": "ace-attorney",
+      "id": "the-great-ace-attorney-adventures",
+      "title": "大逆转裁判：成步堂龙之介的冒险",
+      "firstReleaseYear": 2015
+    },
+    {
+      "series": "ace-attorney",
+      "id": "spirit-of-justice",
+      "title": "逆转裁判6",
+      "firstReleaseYear": 2016
+    },
+    {
+      "series": "ace-attorney",
+      "id": "the-great-ace-attorney-2-resolve",
+      "title": "大逆转裁判2：成步堂龙之介的觉悟",
+      "firstReleaseYear": 2017
+    },
+    {
+      "series": "danganronpa",
+      "id": "trigger-happy-havoc",
+      "title": "弹丸论破：希望的学园和绝望的高中生",
+      "firstReleaseYear": 2010
+    },
+    {
+      "series": "danganronpa",
+      "id": "goodbye-despair",
+      "title": "超级弹丸论破2：再见绝望学园",
+      "firstReleaseYear": 2012
+    },
+    {
+      "series": "danganronpa",
+      "id": "ultra-despair-girls",
+      "title": "绝对绝望少女：弹丸论破 Another Episode",
+      "firstReleaseYear": 2014
+    },
+    {
+      "series": "danganronpa",
+      "id": "killing-harmony",
+      "title": "新弹丸论破V3：大家的自相残杀新学期",
+      "firstReleaseYear": 2017
+    },
+    {
+      "series": "danganronpa",
+      "id": "ultimate-summer-camp",
+      "title": "快乐弹丸论破S：超高中级的南国掷骰合宿",
+      "firstReleaseYear": 2021
     }
   ]
 }
