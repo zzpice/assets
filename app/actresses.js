@@ -7,7 +7,7 @@ window.ActressGallery = (() => {
   let directory = { people: [], rankings: [], redirects: {} };
   let people = new Map();
   let photos = new Map();
-  let state = { view: "annual", year: 0, query: "", letter: "", page: 1 };
+  let state = { view: "annual", year: 0, query: "", page: 1 };
   let activePerson = "";
   let navigate;
   const base = new URL(".", document.baseURI);
@@ -18,7 +18,6 @@ window.ActressGallery = (() => {
     return result;
   };
   const normalize = value => value.normalize("NFKC").normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase().replace(/[\s·・-]+/g, "");
-  const initial = person => (person.romanization || person.name).normalize("NFD").replace(/\p{M}/gu, "").charAt(0).toUpperCase().match(/[A-Z]/)?.[0] || "#";
   const url = path => new URL(path, base).href;
   const years = () => directory.rankings.map(item => item.year).sort((a, b) => b - a);
   const resolve = id => directory.redirects[id] || id;
@@ -32,14 +31,13 @@ window.ActressGallery = (() => {
       rows.push(["出生日期", `${year}年${month}月${day}日`]);
     } else if (profile.birthYear) rows.push(["出生年份", profile.birthYear + " 年"]);
     if (profile.heightCm) rows.push(["身高", profile.heightCm + " cm"]);
-    if (profile.measurementsCm) rows.push(["三围（胸 / 腰 / 臀）", profile.measurementsCm.join(" / ") + " cm"]);
-    if (profile.agency && directory.agencies?.[profile.agency]) rows.push(["事务所（审核时）", directory.agencies[profile.agency].name]);
+    if (profile.debutYear) rows.push(["AV 出道年份", profile.debutYear + " 年"]);
     return rows;
   }
 
   function configure(data, files, onNavigate) {
     directory = data || { people: [], rankings: [], redirects: {} };
-    people = new Map(directory.people.map(person => [person.id, { ...person, search: normalize([person.name, person.romanization || "", ...person.aliases.map(alias => alias.name)].join(" ")) } ]));
+    people = new Map(directory.people.map(person => [person.id, { ...person, search: normalize([person.name, person.japaneseName || "", person.romanization || "", ...person.aliases.map(alias => alias.name)].join(" ")) } ]));
     photos = new Map(files.filter(file => file.kind === "actress").map(file => [file.person, file]));
     navigate = onNavigate;
   }
@@ -51,7 +49,6 @@ window.ActressGallery = (() => {
     const year = Number(params.get("year"));
     state.year = available.includes(year) ? year : available[0] || 0;
     state.query = params.get("q") || "";
-    state.letter = /^[A-Z#]$/.test(params.get("letter") || "") ? params.get("letter") : "";
     state.page = Math.max(1, Number(params.get("page")) || 1);
     state.page = Math.floor(state.page);
     return state;
@@ -62,7 +59,6 @@ window.ActressGallery = (() => {
     const params = new URLSearchParams({ actresses: next.view });
     if (next.view === "annual" && next.year) params.set("year", next.year);
     if (next.query) params.set("q", next.query);
-    if (next.view === "all" && next.letter) params.set("letter", next.letter);
     if (next.page > 1) params.set("page", next.page);
     if (person) params.set("person", resolve(person));
     const target = new URL(base); target.hash = params.toString();
@@ -75,7 +71,7 @@ window.ActressGallery = (() => {
     items = items.filter(item => item.person);
     const scope = items.length;
     const needle = normalize(query.trim());
-    items = items.filter(({ person }) => (!needle || person.search.includes(needle)) && (state.view !== "all" || !state.letter || initial(person) === state.letter));
+    items = items.filter(({ person }) => !needle || person.search.includes(needle));
     if (state.view !== "annual") items.sort((a, b) => (a.person.romanization || a.person.name).localeCompare(b.person.romanization || b.person.name, "zh-Hans-CN") || a.person.id.localeCompare(b.person.id));
     const count = items.length;
     const pages = Math.max(1, Math.ceil(count / PAGE_SIZE));
@@ -109,12 +105,12 @@ window.ActressGallery = (() => {
     navigation.replaceChildren();
     const tabs = node("nav", "person-tabs"); tabs.setAttribute("aria-label", "人物图库栏目");
     for (const [view, label] of Object.entries(labels)) {
-      const anchor = link(label, { view, page: 1, query: "", letter: "" });
+      const anchor = link(label, { view, page: 1, query: "" });
       if (state.view === view) anchor.setAttribute("aria-current", "page");
       tabs.append(anchor);
     }
     const heading = node("div", "person-heading");
-    heading.append(node("h2", "", state.view === "annual" ? state.year + " 年度榜单" : state.view === "hall" ? "Hall of Fame" : "人物索引"));
+    heading.append(node("h2", "", state.view === "annual" ? state.year + " 年度榜单" : state.view === "hall" ? "名人堂" : "人物索引"));
     if (state.view === "annual") {
       const label = node("label", "person-year", "年份 ");
       const select = node("select"); select.setAttribute("aria-label", "选择榜单年份");
@@ -129,17 +125,7 @@ window.ActressGallery = (() => {
       about.append(node("summary", "", directory.series.title + " · 官方年度 TOP 100"), node("p", "", directory.series.method));
       if (selected.ranking) about.append(sourceLink("官方榜单 ↗", selected.ranking.source), sourceLink("来源记录 ↗", url(selected.ranking.snapshot)));
       navigation.append(about);
-    } else navigation.append(node("p", "person-description", state.view === "hall" ? "本项目精选的历史代表人物，不设排名；入选依据见人物资料。" : directory.people.length + " 位已收录人物 · 搜索姓名、别名；字母索引仅覆盖已记录的罗马字。"));
-    const index = document.getElementById("actress-index"); index.replaceChildren(); index.hidden = state.view !== "all";
-    if (state.view === "all") {
-      const available = new Set([...people.values()].map(initial));
-      const all = link("全部", { letter: "", page: 1 }); if (!state.letter) all.setAttribute("aria-current", "page"); index.append(all);
-      for (const letter of [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ", "#"].filter(value => available.has(value))) {
-        const anchor = link(letter === "#" ? "未录罗马字" : letter, { letter, page: 1 });
-        anchor.setAttribute("aria-label", letter === "#" ? "暂无罗马字索引的人物" : "罗马字以 " + letter + " 开头");
-        if (state.letter === letter) anchor.setAttribute("aria-current", "page"); index.append(anchor);
-      }
-    }
+    } else navigation.append(node("p", "person-description", state.view === "hall" ? "本项目精选的历史代表人物，不设排名；入选依据见人物资料。" : directory.people.length + " 位已收录人物 · 搜索展示名、日文艺名、别名和已记录的罗马字。"));
     gallery.classList.remove("grouped", "multiple-device-groups");
     gallery.classList.add("person-gallery"); gallery.dataset.device = "actress";
     const grid = node("div", "person-grid");
@@ -203,11 +189,14 @@ window.ActressGallery = (() => {
       const list = node("dl", "person-profile");
       for (const [label, value] of rows) list.append(node("dt", "", label), node("dd", "", value));
       const provenance = node("details", "person-method");
-      provenance.append(node("summary", "", "资料来源 · " + person.profile.reviewed), node("p", "", "官方公开资料。身高、三围为来源公布值；事务所按审核时记录，可能发生变化。缺失信息不补全。"), sourceLink("官方人物资料 ↗", person.profile.source.url));
+      provenance.append(node("summary", "", "资料来源 · " + person.profile.reviewed), node("p", "", "保留已核对的长期资料，身高为来源公布值；出道年份仅指 AV 出道。缺失信息不补全。"), sourceLink("人物资料出处 ↗", person.profile.source.url));
       facts.append(list, provenance);
     }
-    if (person.aliases.length) {
-      facts.append(node("h3", "", "姓名与别名"), node("p", "", person.aliases.map(alias => alias.name).join(" · ")));
+    if (person.japaneseName || person.aliases.length) {
+      facts.append(node("h3", "", "姓名与别名"));
+      if (person.japaneseName) facts.append(node("p", "", "日文主艺名：" + person.japaneseName));
+      const otherNames = person.aliases.filter(alias => alias.name !== person.japaneseName && alias.name !== person.romanization);
+      if (otherNames.length) facts.append(node("p", "", "其他已确认表记：" + otherNames.map(alias => alias.name).join(" · ")));
       const sources = [...new Set(person.aliases.map(alias => alias.source))];
       const aliases = node("details", "person-method"); aliases.append(node("summary", "", "姓名来源"), sourceLink("人物表记 ↗", person.nameSource));
       for (const [index, source] of sources.entries()) aliases.append(sourceLink("别名来源 " + (index + 1) + " ↗", source));
@@ -220,7 +209,7 @@ window.ActressGallery = (() => {
       facts.append(node("p", "person-stat", "最佳第 " + best + " 名 · 上榜 " + history.length + " 次"));
       const list = node("ul", "person-history");
       for (const item of history) {
-        const li = node("li"); li.append(link(item.year + " 年", { view: "annual", year: item.year, page: Math.floor((item.rank - 1) / PAGE_SIZE) + 1, query: "", letter: "" }), node("span", "", "第 " + item.rank + " 名")); list.append(li);
+        const li = node("li"); li.append(link(item.year + " 年", { view: "annual", year: item.year, page: Math.floor((item.rank - 1) / PAGE_SIZE) + 1, query: "" }), node("span", "", "第 " + item.rank + " 名")); list.append(li);
       }
       facts.append(list);
     } else facts.append(node("p", "", "暂无已收录的年度排名。"));
@@ -241,7 +230,7 @@ window.ActressGallery = (() => {
     }
     const copy = node("button", "secondary-button", "复制人物链接"); copy.type = "button";
     copy.addEventListener("click", async () => {
-      const canonical = viewUrl({ view: "all", page: 1, query: "", letter: "" }, pid);
+      const canonical = viewUrl({ view: "all", page: 1, query: "" }, pid);
       try { await navigator.clipboard.writeText(canonical); copy.textContent = "已复制"; }
       catch { window.prompt("复制人物地址", canonical); }
     }); actions.append(copy); facts.append(actions);
@@ -262,5 +251,5 @@ window.ActressGallery = (() => {
     });
   }
 
-  return { configure, route, viewUrl, select, render, syncPerson, histories, bind, initial, normalize, profileRows, get state() { return state; } };
+  return { configure, route, viewUrl, select, render, syncPerson, histories, bind, normalize, profileRows, get state() { return state; } };
 })();

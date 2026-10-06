@@ -157,7 +157,6 @@ function refreshControls() {
   const isPerson = kind === "actress";
   document.getElementById("filters-panel").hidden = isCover || isPerson;
   document.getElementById("actress-navigation").hidden = !isPerson;
-  document.getElementById("actress-index").hidden = !isPerson;
   document.getElementById("show-favorites").hidden = isPerson;
   controls.search.placeholder = isPerson ? "搜索姓名、别名或罗马字" : "搜索名称、种类或文件名";
   document.querySelector('label[for="search"]').textContent = isPerson ? "搜索人物" : "搜索图片";

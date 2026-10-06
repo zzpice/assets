@@ -6,11 +6,17 @@
       "title": "风间由美",
       "kind": "actress",
       "person": "p0001",
-      "width": 230,
-      "height": 300,
-      "thumbnail": "app/previews/p0001-762754b40d.webp",
-      "size": 21055,
-      "sha": "69de292de45ccfce4c61ce670ab957e6a022668a"
+      "previewCrop": [
+        80,
+        80,
+        560,
+        700
+      ],
+      "width": 686,
+      "height": 1024,
+      "thumbnail": "app/previews/p0001-b9a9d7bc84.webp",
+      "size": 404327,
+      "sha": "3fdb873536dd23fdd7e9b02cf31d96e24c7d2cbf"
     },
     {
       "path": "actresses/portraits/p0002.jpg",
@@ -56,22 +62,34 @@
       "title": "翔田千里",
       "kind": "actress",
       "person": "p0005",
-      "width": 230,
-      "height": 300,
-      "thumbnail": "app/previews/p0005-f6168b72c9.webp",
-      "size": 18015,
-      "sha": "edb9655ac3a2c00e8497cece8002313751b0cccc"
+      "previewCrop": [
+        0,
+        25,
+        384,
+        480
+      ],
+      "width": 384,
+      "height": 576,
+      "thumbnail": "app/previews/p0005-eeb4caf886.webp",
+      "size": 70817,
+      "sha": "2f6248150d3a22f1e854e47eb2300b90c9cb901e"
     },
     {
       "path": "actresses/portraits/p0006.jpg",
       "title": "蕾",
       "kind": "actress",
       "person": "p0006",
-      "width": 640,
-      "height": 896,
-      "thumbnail": "app/previews/p0006-48c04f0949.webp",
-      "size": 93431,
-      "sha": "b117179fc3436c1fa0eac83b17573ff3e25dc472"
+      "previewCrop": [
+        50,
+        0,
+        400,
+        500
+      ],
+      "width": 500,
+      "height": 500,
+      "thumbnail": "app/previews/p0006-6f238fadc3.webp",
+      "size": 53415,
+      "sha": "7a6ed233a8e6ba9a2fac74df2b0ca80f42058eb4"
     },
     {
       "path": "actresses/portraits/p0007.jpg",
@@ -106,22 +124,34 @@
       "title": "川上优",
       "kind": "actress",
       "person": "p0009",
-      "width": 544,
-      "height": 724,
-      "thumbnail": "app/previews/p0009-51ab2df3b8.webp",
-      "size": 82974,
-      "sha": "d6d048882caeb58d5d282e98422f588d294e5d27"
+      "previewCrop": [
+        45,
+        0,
+        400,
+        500
+      ],
+      "width": 500,
+      "height": 500,
+      "thumbnail": "app/previews/p0009-9eb7e99349.webp",
+      "size": 43728,
+      "sha": "be73f3d860b54ee8049fa3c1523ee3ee2d58426b"
     },
     {
       "path": "actresses/portraits/p0010.jpg",
       "title": "明日花绮罗",
       "kind": "actress",
       "person": "p0010",
-      "width": 470,
-      "height": 600,
-      "thumbnail": "app/previews/p0010-7bbb6e7c13.webp",
-      "size": 104613,
-      "sha": "1b2153b72c8644a67566f5fb23f4939e49bbd9f4"
+      "previewCrop": [
+        75,
+        0,
+        600,
+        750
+      ],
+      "width": 750,
+      "height": 750,
+      "thumbnail": "app/previews/p0010-68ec321c9f.webp",
+      "size": 36069,
+      "sha": "19a6cedaa991d20dbc2229e563d297bc7f6f503e"
     },
     {
       "path": "actresses/portraits/p0011.jpg",
@@ -195,11 +225,17 @@
       "title": "JULIA",
       "kind": "actress",
       "person": "p0016",
-      "width": 600,
-      "height": 783,
-      "thumbnail": "app/previews/p0016-66c33cb159.webp",
-      "size": 116820,
-      "sha": "7caf06e11d6d511f166a3daaa77ed494b1578341"
+      "previewCrop": [
+        55,
+        0,
+        412,
+        515
+      ],
+      "width": 516,
+      "height": 516,
+      "thumbnail": "app/previews/p0016-65c74ddc9d.webp",
+      "size": 230715,
+      "sha": "8227b4bb70318117edac2870a68757dde79040da"
     },
     {
       "path": "actresses/portraits/p0017.jpg",
@@ -217,11 +253,17 @@
       "title": "筱田优",
       "kind": "actress",
       "person": "p0018",
-      "width": 640,
-      "height": 896,
-      "thumbnail": "app/previews/p0018-9e2a7bedcb.webp",
-      "size": 97564,
-      "sha": "1b36d013e22cf6b9642e48b0506311f7ea2d565d"
+      "previewCrop": [
+        100,
+        0,
+        800,
+        1000
+      ],
+      "width": 1000,
+      "height": 1000,
+      "thumbnail": "app/previews/p0018-c4eeed8025.webp",
+      "size": 457501,
+      "sha": "7a531a306d43292f2eaa624e58ea822fc1cc127d"
     },
     {
       "path": "actresses/portraits/p0019.jpg",
@@ -362,11 +404,11 @@
       "title": "橘玛丽",
       "kind": "actress",
       "person": "p0029",
-      "width": 640,
-      "height": 896,
-      "thumbnail": "app/previews/p0029-c6d1e0e63c.webp",
-      "size": 89413,
-      "sha": "3ae69362efc0e2ae7bc02a63f10ffb08c43ec84d"
+      "width": 309,
+      "height": 387,
+      "thumbnail": "app/previews/p0029-72e0f9a40e.webp",
+      "size": 35375,
+      "sha": "5abb054e7cca864b8125c6652fa8549259d4e894"
     },
     {
       "path": "actresses/portraits/p0030.jpg",
@@ -401,11 +443,11 @@
       "title": "三上悠亚",
       "kind": "actress",
       "person": "p0032",
-      "width": 470,
-      "height": 600,
-      "thumbnail": "app/previews/p0032-3a4a4049c9.webp",
-      "size": 68462,
-      "sha": "07852625ec4aa71d588649180a79e55185560885"
+      "width": 600,
+      "height": 783,
+      "thumbnail": "app/previews/p0032-1a1eee40e5.webp",
+      "size": 117344,
+      "sha": "0c540bdb9055b12c83a323d7d71b7eb96e1cc236"
     },
     {
       "path": "actresses/portraits/p0033.jpg",
@@ -531,9 +573,9 @@
       "person": "p0042",
       "width": 544,
       "height": 724,
-      "thumbnail": "app/previews/p0042-4d8df0243f.webp",
-      "size": 99020,
-      "sha": "bc953a8be72cb6bf3c1b22067e8cbce2f749adab"
+      "thumbnail": "app/previews/p0042-dce415680e.webp",
+      "size": 73424,
+      "sha": "523b484edb0f0611655b498840da7e802f105662"
     },
     {
       "path": "actresses/portraits/p0043.jpg",
@@ -601,11 +643,11 @@
       "title": "七泽米亚",
       "kind": "actress",
       "person": "p0048",
-      "width": 600,
-      "height": 783,
-      "thumbnail": "app/previews/p0048-468f8bada4.webp",
-      "size": 110792,
-      "sha": "f65ea184bdb316559eb153b4f5e666307714e24a"
+      "width": 1105,
+      "height": 1536,
+      "thumbnail": "app/previews/p0048-227054e67e.webp",
+      "size": 1083760,
+      "sha": "5fe4e2a3fc84dc6b709600d419325ee0584d9239"
     },
     {
       "path": "actresses/portraits/p0049.jpg",
@@ -810,7 +852,7 @@
     },
     {
       "path": "actresses/portraits/p0064.jpg",
-      "title": "吉根ゆりあ",
+      "title": "吉根柚莉爱",
       "kind": "actress",
       "person": "p0064",
       "width": 600,
@@ -869,16 +911,16 @@
       "kind": "actress",
       "person": "p0069",
       "previewCrop": [
-        528,
+        50,
         0,
-        864,
-        1080
+        412,
+        515
       ],
-      "width": 1920,
-      "height": 1080,
-      "thumbnail": "app/previews/p0069-bb7301c0b1.webp",
-      "size": 662747,
-      "sha": "2e1d62a4506e482458f255a98527e830dafead32"
+      "width": 516,
+      "height": 516,
+      "thumbnail": "app/previews/p0069-0ce80e53c9.webp",
+      "size": 203737,
+      "sha": "251d5529052831723219b45e5f79bdb5fa580599"
     },
     {
       "path": "actresses/portraits/p0070.jpg",
@@ -955,7 +997,7 @@
     },
     {
       "path": "actresses/portraits/p0075.jpg",
-      "title": "木下凛々子",
+      "title": "木下凛凛子",
       "kind": "actress",
       "person": "p0075",
       "width": 320,
@@ -1055,7 +1097,7 @@
     },
     {
       "path": "actresses/portraits/p0083.jpg",
-      "title": "葵いぶき",
+      "title": "葵伊吹",
       "kind": "actress",
       "person": "p0083",
       "width": 600,
@@ -1235,7 +1277,7 @@
     },
     {
       "path": "actresses/portraits/p0095.jpg",
-      "title": "花狩まい",
+      "title": "花狩舞",
       "kind": "actress",
       "person": "p0095",
       "width": 600,
@@ -1373,7 +1415,7 @@
     },
     {
       "path": "actresses/portraits/p0107.jpg",
-      "title": "つばさ舞",
+      "title": "翼舞",
       "kind": "actress",
       "person": "p0107",
       "width": 564,
@@ -1568,7 +1610,7 @@
     },
     {
       "path": "actresses/portraits/p0122.jpg",
-      "title": "未歩なな",
+      "title": "未步奈奈",
       "kind": "actress",
       "person": "p0122",
       "width": 564,
@@ -1734,16 +1776,16 @@
       "kind": "actress",
       "person": "p0134",
       "previewCrop": [
-        21,
+        180,
         0,
-        179,
-        224
+        800,
+        1000
       ],
-      "width": 222,
-      "height": 224,
-      "thumbnail": "app/previews/p0134-539c50d9cd.webp",
-      "size": 18833,
-      "sha": "17c7c58d10284e34b317bd0cba44067df8367245"
+      "width": 1000,
+      "height": 1500,
+      "thumbnail": "app/previews/p0134-f3953cf3da.webp",
+      "size": 126595,
+      "sha": "91adec83fb2d8e840017721a1440a8dec44996ef"
     },
     {
       "path": "actresses/portraits/p0135.jpg",
@@ -1836,7 +1878,7 @@
     },
     {
       "path": "actresses/portraits/p0142.jpg",
-      "title": "本郷愛",
+      "title": "本乡爱",
       "kind": "actress",
       "person": "p0142",
       "width": 564,
@@ -4473,16 +4515,26 @@
           "path": "actresses/portraits/p0001.jpg",
           "source": {
             "provider": "Gfriends",
-            "path": "Content/7-Madonna/風間ゆみ.jpg",
             "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "7-Madonna",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E9%A2%A8%E9%96%93%E3%82%86%E3%81%BF.jpg",
-            "sha256": "382ad607198cd5f7d7cc34b67cad7d2a53102f16726750dffaf591d21a91bb97",
-            "retrieved": "2026-10-06"
+            "path": "Content/6-Capsule/風間ゆみ.jpg",
+            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Capsule/%E9%A2%A8%E9%96%93%E3%82%86%E3%81%BF.jpg",
+            "retrieved": "2026-10-06",
+            "sha256": "f6484567987d9c5042485e99e7c947a508687ff5f8da19df0d31be32209b048a"
           },
-          "reviewed": "2026-10-06"
+          "reviewed": "2026-10-06",
+          "display": {
+            "crop": [
+              80,
+              80,
+              560,
+              700
+            ],
+            "sourceSha256": "f6484567987d9c5042485e99e7c947a508687ff5f8da19df0d31be32209b048a",
+            "reviewed": "2026-10-06"
+          }
         },
-        "romanization": "Kazama Yumi"
+        "romanization": "Kazama Yumi",
+        "japaneseName": "風間ゆみ"
       },
       {
         "id": "p0002",
@@ -4506,7 +4558,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "友田真希"
       },
       {
         "id": "p0003",
@@ -4519,6 +4572,10 @@
           {
             "name": "吉澤明步",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=94686829"
+          },
+          {
+            "name": "Akiho Yoshizawa",
+            "source": "https://akiho15th.wixsite.com/special"
           }
         ],
         "identities": {
@@ -4548,7 +4605,20 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "吉沢明歩",
+        "profile": {
+          "birthDate": "1984-03-03",
+          "heightCm": 161,
+          "sourceName": "吉沢明歩",
+          "source": {
+            "url": "https://akiho15th.wixsite.com/special",
+            "retrieved": "2026-10-06",
+            "sha256": "89e673576dbc5142cb0846c911cd12698887b5c816f5703913c5a94642d4b6b8"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Akiho Yoshizawa"
       },
       {
         "id": "p0004",
@@ -4595,7 +4665,8 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "麻美ゆま"
       },
       {
         "id": "p0005",
@@ -4611,15 +4682,25 @@
           "path": "actresses/portraits/p0005.jpg",
           "source": {
             "provider": "Gfriends",
-            "path": "Content/7-Madonna/翔田千里.jpg",
             "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "7-Madonna",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Madonna/%E7%BF%94%E7%94%B0%E5%8D%83%E9%87%8C.jpg",
-            "sha256": "f0ba57f32020bdb246f0f3b5b29b2028a2ecf2f541a1ca2fd27b3aeefed3dcbb",
-            "retrieved": "2026-10-06"
+            "path": "Content/8-Digigra/翔田千里.jpg",
+            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Digigra/%E7%BF%94%E7%94%B0%E5%8D%83%E9%87%8C.jpg",
+            "retrieved": "2026-10-06",
+            "sha256": "374a98c7253a83b50b3ee9e79cf7069d11e3665c3161b7ff42b818e97f746364"
           },
-          "reviewed": "2026-10-06"
-        }
+          "reviewed": "2026-10-06",
+          "display": {
+            "crop": [
+              0,
+              25,
+              384,
+              480
+            ],
+            "sourceSha256": "374a98c7253a83b50b3ee9e79cf7069d11e3665c3161b7ff42b818e97f746364",
+            "reviewed": "2026-10-06"
+          }
+        },
+        "japaneseName": "翔田千里"
       },
       {
         "id": "p0006",
@@ -4639,15 +4720,23 @@
         "portrait": {
           "path": "actresses/portraits/p0006.jpg",
           "source": {
-            "provider": "Gfriends",
-            "path": "Content/4-Kawaii/つぼみ.jpg",
-            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "4-Kawaii",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E3%81%A4%E3%81%BC%E3%81%BF.jpg",
-            "sha256": "f72a7f4370a96f802b9651527cbee80be82200b8d5d8d72727fa728296bbd1f9",
-            "retrieved": "2026-10-06"
+            "provider": "集英社オンライン",
+            "url": "https://shuon.ismcdn.jp/mwimgs/b/0/-/img_b0992d0dba3d99b6461c93dd4b3e16ca61139.jpg",
+            "profile": "https://shueisha.online/list/persons/65a92d928ce1158c70000006",
+            "retrieved": "2026-10-06",
+            "sha256": "fb907abd1f7b682d8b6eddb3f9d172877795319001fa980f11a8a99ce1ac5e51"
           },
-          "reviewed": "2026-10-06"
+          "reviewed": "2026-10-06",
+          "display": {
+            "crop": [
+              50,
+              0,
+              400,
+              500
+            ],
+            "sourceSha256": "fb907abd1f7b682d8b6eddb3f9d172877795319001fa980f11a8a99ce1ac5e51",
+            "reviewed": "2026-10-06"
+          }
         },
         "hallOfFame": {
           "reason": "项目精选：早期年度租赁榜中的代表人物。",
@@ -4656,6 +4745,18 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2011/",
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/"
           ],
+          "reviewed": "2026-10-06"
+        },
+        "japaneseName": "つぼみ",
+        "profile": {
+          "birthDate": "1987-12-25",
+          "debutYear": 2006,
+          "sourceName": "つぼみ",
+          "source": {
+            "url": "https://shueisha.online/list/persons/65a92d928ce1158c70000006",
+            "retrieved": "2026-10-06",
+            "sha256": "52b2546699d49fcb930d9e01cc2d06096e9ef883df6b6e06b9171d55b9011924"
+          },
           "reviewed": "2026-10-06"
         }
       },
@@ -4698,7 +4799,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "仲村 みう",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e4%bb%b2%e6%9d%91%e3%81%bf%e3%81%86/",
@@ -4706,13 +4806,9 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06",
-          "heightCm": 157,
-          "measurementsCm": [
-            83,
-            54,
-            83
-          ]
-        }
+          "heightCm": 157
+        },
+        "japaneseName": "仲村みう"
       },
       {
         "id": "p0008",
@@ -4743,7 +4839,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "佐山 愛",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e4%bd%90%e5%b1%b1%e6%84%9b/",
@@ -4752,13 +4847,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 165,
-          "birthDate": "1989-01-08",
-          "measurementsCm": [
-            98,
-            61,
-            90
-          ]
-        }
+          "birthDate": "1989-01-08"
+        },
+        "japaneseName": "佐山愛"
       },
       {
         "id": "p0009",
@@ -4786,21 +4877,41 @@
         "portrait": {
           "path": "actresses/portraits/p0009.jpg",
           "source": {
-            "provider": "Gfriends",
-            "path": "Content/5-Premium/川上ゆう.jpg",
-            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "5-Premium",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Premium/%E5%B7%9D%E4%B8%8A%E3%82%86%E3%81%86.jpg",
-            "sha256": "e7923512dcdcc58d2657b590e2a50d7d7226851c6c1234e8ecd3e69a1f61782a",
-            "retrieved": "2026-10-06"
+            "provider": "集英社オンライン",
+            "url": "https://shuon.ismcdn.jp/mwimgs/6/f/-/img_6f5b5db5623e8d5b5c439449bfba240155106.jpg",
+            "profile": "https://shueisha.online/list/persons/65aa13f88ce1159272000479",
+            "retrieved": "2026-10-06",
+            "sha256": "4341f807cb8546d8917c1f55dd2ce98f5c0acaeeb3dbb2befc51041aa87cdd7c"
           },
-          "reviewed": "2026-10-06"
+          "reviewed": "2026-10-06",
+          "display": {
+            "crop": [
+              45,
+              0,
+              400,
+              500
+            ],
+            "sourceSha256": "4341f807cb8546d8917c1f55dd2ce98f5c0acaeeb3dbb2befc51041aa87cdd7c",
+            "reviewed": "2026-10-06"
+          }
         },
         "hallOfFame": {
           "reason": "项目精选：早期年度租赁榜中的代表人物。",
           "sources": [
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/"
           ],
+          "reviewed": "2026-10-06"
+        },
+        "japaneseName": "川上ゆう",
+        "profile": {
+          "birthDate": "1982-03-03",
+          "debutYear": 2004,
+          "sourceName": "川上ゆう",
+          "source": {
+            "url": "https://shueisha.online/list/persons/65aa13f88ce1159272000479",
+            "retrieved": "2026-10-06",
+            "sha256": "9a84c031bb683bfaa395d6356cc2c3fa77f3b93a79472fa460a72a02c387f85b"
+          },
           "reviewed": "2026-10-06"
         }
       },
@@ -4815,6 +4926,10 @@
           {
             "name": "明日花綺羅",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=92210838"
+          },
+          {
+            "name": "Asuka Kirara",
+            "source": "https://laswan.jp/profile/"
           }
         ],
         "identities": {
@@ -4826,15 +4941,23 @@
         "portrait": {
           "path": "actresses/portraits/p0010.jpg",
           "source": {
-            "provider": "Gfriends",
-            "path": "Content/7-S1/明日花キララ.jpg",
-            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "7-S1",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%98%8E%E6%97%A5%E8%8A%B1%E3%82%AD%E3%83%A9%E3%83%A9.jpg",
-            "sha256": "d5ae2928cbdd8d9a25cd69adfcee197e991521bd44b4471d95dd57fda4d7dc8a",
-            "retrieved": "2026-10-06"
+            "provider": "LaSwan",
+            "url": "https://laswan.jp/wp-content/themes/Laswan/img/profile.jpg",
+            "profile": "https://laswan.jp/profile/",
+            "retrieved": "2026-10-06",
+            "sha256": "4ba705c3a42f2f0497631816520b6a43608fa801a52c0ee056d19a09fc9d2ed4"
           },
-          "reviewed": "2026-10-06"
+          "reviewed": "2026-10-06",
+          "display": {
+            "crop": [
+              75,
+              0,
+              600,
+              750
+            ],
+            "sourceSha256": "4ba705c3a42f2f0497631816520b6a43608fa801a52c0ee056d19a09fc9d2ed4",
+            "reviewed": "2026-10-06"
+          }
         },
         "hallOfFame": {
           "reason": "项目精选：早期年度租赁榜中的代表人物。",
@@ -4842,7 +4965,20 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2009/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "明日花キララ",
+        "profile": {
+          "birthDate": "1988-10-02",
+          "heightCm": 163,
+          "sourceName": "明日花キララ",
+          "source": {
+            "url": "https://laswan.jp/profile/",
+            "retrieved": "2026-10-06",
+            "sha256": "c0b68c66056666dce49493205c0e843a3e7333a3efbd158e66a7a46952fa1b92"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Asuka Kirara"
       },
       {
         "id": "p0011",
@@ -4881,7 +5017,6 @@
           "reviewed": "2026-10-06"
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "波多野 結衣",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%b3%a2%e5%a4%9a%e9%87%8e%e7%b5%90%e8%a1%a3/",
@@ -4890,13 +5025,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 163,
-          "birthDate": "1988-05-24",
-          "measurementsCm": [
-            93,
-            59,
-            103
-          ]
-        }
+          "birthDate": "1988-05-24"
+        },
+        "japaneseName": "波多野結衣"
       },
       {
         "id": "p0012",
@@ -4926,7 +5057,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Hohjoh Maki"
+        "romanization": "Hohjoh Maki",
+        "japaneseName": "北条麻妃"
       },
       {
         "id": "p0013",
@@ -4971,7 +5103,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "大槻 ひびき",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%a4%a7%e6%a7%bb%e3%81%b2%e3%81%b3%e3%81%8d/",
@@ -4980,13 +5111,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 161,
-          "birthDate": "1988-02-21",
-          "measurementsCm": [
-            87,
-            57,
-            88
-          ]
-        }
+          "birthDate": "1988-02-21"
+        },
+        "japaneseName": "大槻ひびき"
       },
       {
         "id": "p0014",
@@ -5025,7 +5152,8 @@
             "sourceSha256": "52d52b77ea1ef76edcb82391bb268c642487ca6d85f7165ee62198d5ff3ce271",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "椎名ゆな"
       },
       {
         "id": "p0015",
@@ -5055,7 +5183,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Haruna Hana"
+        "romanization": "Haruna Hana",
+        "japaneseName": "春菜はな"
       },
       {
         "id": "p0016",
@@ -5070,15 +5199,23 @@
         "portrait": {
           "path": "actresses/portraits/p0016.jpg",
           "source": {
-            "provider": "Gfriends",
-            "path": "Content/7-Moodyz/JULIA.jpg",
-            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "7-Moodyz",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/JULIA.jpg",
-            "sha256": "b65a0c1b4bf665914eb03a64e164a0bcdff3e9206e52c5a08aa963a931e315f7",
-            "retrieved": "2026-10-06"
+            "provider": "C-more",
+            "url": "https://cmore.jp/official/img/model/julia/julia.jpg",
+            "profile": "https://cmore.jp/official/model-julia.html",
+            "retrieved": "2026-10-06",
+            "sha256": "3eeae8771bee8346ef8b366acd6c4b12f85da4f411684266ce940d89b8f1382e"
           },
-          "reviewed": "2026-10-06"
+          "reviewed": "2026-10-06",
+          "display": {
+            "crop": [
+              55,
+              0,
+              412,
+              515
+            ],
+            "sourceSha256": "3eeae8771bee8346ef8b366acd6c4b12f85da4f411684266ce940d89b8f1382e",
+            "reviewed": "2026-10-06"
+          }
         },
         "hallOfFame": {
           "reason": "项目精选：早期年度租赁榜中的代表人物。",
@@ -5087,6 +5224,18 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2014/",
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
           ],
+          "reviewed": "2026-10-06"
+        },
+        "japaneseName": "JULIA",
+        "profile": {
+          "birthDate": "1987-05-25",
+          "heightCm": 158,
+          "sourceName": "JULIA",
+          "source": {
+            "url": "https://cmore.jp/official/model-julia.html",
+            "retrieved": "2026-10-06",
+            "sha256": "a8fcb246047330797853d1c7694e3aa63b460fb2c87e1b80d1cbda24c81588bf"
+          },
           "reviewed": "2026-10-06"
         }
       },
@@ -5117,7 +5266,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "葵つかさ"
       },
       {
         "id": "p0018",
@@ -5146,16 +5296,26 @@
           "path": "actresses/portraits/p0018.jpg",
           "source": {
             "provider": "Gfriends",
-            "path": "Content/4-Kawaii/篠田ゆう.jpg",
             "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "4-Kawaii",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E7%AF%A0%E7%94%B0%E3%82%86%E3%81%86.jpg",
-            "sha256": "46b7013dd8db50fb9b029a523d4f97b5c137c17536efd0fe7b16aeee59173d8d",
-            "retrieved": "2026-10-06"
+            "path": "Content/6-Tpowers/篠田ゆう.jpg",
+            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Tpowers/%E7%AF%A0%E7%94%B0%E3%82%86%E3%81%86.jpg",
+            "retrieved": "2026-10-06",
+            "sha256": "b8ba0ba0cd9272c4333cfe79ccf0125aabad39de5d3defcf66be52c98cc6143b"
           },
-          "reviewed": "2026-10-06"
+          "reviewed": "2026-10-06",
+          "display": {
+            "crop": [
+              100,
+              0,
+              800,
+              1000
+            ],
+            "sourceSha256": "b8ba0ba0cd9272c4333cfe79ccf0125aabad39de5d3defcf66be52c98cc6143b",
+            "reviewed": "2026-10-06"
+          }
         },
-        "romanization": "Shinoda Yuu"
+        "romanization": "Shinoda Yuu",
+        "japaneseName": "篠田ゆう"
       },
       {
         "id": "p0019",
@@ -5179,7 +5339,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "奥田咲"
       },
       {
         "id": "p0020",
@@ -5230,7 +5391,8 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "上原亜衣"
       },
       {
         "id": "p0021",
@@ -5285,7 +5447,6 @@
           "reviewed": "2026-10-06"
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "紗倉まな",
           "source": {
             "url": "https://mines-pro.jp/model/10218",
@@ -5294,13 +5455,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 160,
-          "birthDate": "1993-03-23",
-          "measurementsCm": [
-            89,
-            58,
-            89
-          ]
-        }
+          "birthDate": "1993-03-23"
+        },
+        "japaneseName": "紗倉まな"
       },
       {
         "id": "p0022",
@@ -5324,7 +5481,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "小早川怜子"
       },
       {
         "id": "p0023",
@@ -5367,7 +5525,8 @@
             "sourceSha256": "4b6455d014316dd283d402e3a8a7de1c3fe3cfd88fcbfeff748dc0d72f671bff",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "鈴村あいり"
       },
       {
         "id": "p0024",
@@ -5405,7 +5564,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Yumeno Aika"
+        "romanization": "Yumeno Aika",
+        "japaneseName": "夢乃あいか"
       },
       {
         "id": "p0025",
@@ -5444,7 +5604,6 @@
           "reviewed": "2026-10-06"
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "森沢 かな",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%a3%ae%e6%b2%a2%e3%81%8b%e3%81%aa/",
@@ -5453,13 +5612,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 160,
-          "birthDate": "1992-05-09",
-          "measurementsCm": [
-            88,
-            63,
-            93
-          ]
-        }
+          "birthDate": "1992-05-09"
+        },
+        "japaneseName": "森沢かな"
       },
       {
         "id": "p0026",
@@ -5501,7 +5656,6 @@
         },
         "romanization": "Natume Iroha",
         "profile": {
-          "agency": "t-powers",
           "sourceName": "夏目 彩春",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%a4%8f%e7%9b%ae%e5%bd%a9%e6%98%a5/",
@@ -5510,13 +5664,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 166,
-          "birthDate": "1984-06-20",
-          "measurementsCm": [
-            85,
-            57,
-            82
-          ]
-        }
+          "birthDate": "1984-06-20"
+        },
+        "japaneseName": "夏目彩春"
       },
       {
         "id": "p0027",
@@ -5558,7 +5708,19 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Kijima Airi"
+        "romanization": "Kijima Airi",
+        "japaneseName": "希島あいり",
+        "profile": {
+          "birthDate": "1988-12-24",
+          "heightCm": 160,
+          "sourceName": "希島あいり",
+          "source": {
+            "url": "https://www.duo-official.com/models/airi-kijima/",
+            "retrieved": "2026-10-06",
+            "sha256": "2e9fddd787d497d01f90880764bdd1b13f3c1e1ab3b8d8945e955e3e4439140a"
+          },
+          "reviewed": "2026-10-06"
+        }
       },
       {
         "id": "p0028",
@@ -5582,7 +5744,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "通野未帆"
       },
       {
         "id": "p0029",
@@ -5595,6 +5758,10 @@
           {
             "name": "橘瑪麗",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=90468381"
+          },
+          {
+            "name": "Mary Tachibana",
+            "source": "https://lightpro.jp/talent/tachibanamary.html"
           }
         ],
         "identities": {
@@ -5606,16 +5773,27 @@
         "portrait": {
           "path": "actresses/portraits/p0029.jpg",
           "source": {
-            "provider": "Gfriends",
-            "path": "Content/4-Kawaii/なぎさ.jpg",
-            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "4-Kawaii",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/4-Kawaii/%E3%81%AA%E3%81%8E%E3%81%95.jpg",
-            "sha256": "588767a3c3cb3eb10101227641fb90e84492b16683d7b63e04d83b3f52975a43",
-            "retrieved": "2026-10-06"
+            "provider": "LIGHT promotion",
+            "url": "https://lightpro.jp/img/talent/tachibanamar_m.jpg",
+            "profile": "https://lightpro.jp/talent/tachibanamary.html",
+            "retrieved": "2026-10-06",
+            "sha256": "98ba350e32524252b32f2564f8742f9eede318677d28a0f3b970efb2ab450184"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "橘メアリー",
+        "profile": {
+          "birthDate": "1993-07-07",
+          "heightCm": 168,
+          "sourceName": "橘メアリー",
+          "source": {
+            "url": "https://lightpro.jp/talent/tachibanamary.html",
+            "retrieved": "2026-10-06",
+            "sha256": "b456a775184fa19bbd15c52719a1f73cd1aa8e1448415c20fa43b53ee73741ea"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Mary Tachibana"
       },
       {
         "id": "p0030",
@@ -5649,7 +5827,8 @@
             "sourceSha256": "5e6545e91b129ffd8011f49e6209acd06567d1e3bdee39a8564a7d585fbd8474",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "武藤あやか"
       },
       {
         "id": "p0031",
@@ -5679,7 +5858,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Misaki Kanna"
+        "romanization": "Misaki Kanna",
+        "japaneseName": "美咲かんな"
       },
       {
         "id": "p0032",
@@ -5704,12 +5884,11 @@
           "path": "actresses/portraits/p0032.jpg",
           "source": {
             "provider": "Gfriends",
-            "path": "Content/7-S1/三上悠亜.jpg",
             "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "7-S1",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E4%B8%89%E4%B8%8A%E6%82%A0%E4%BA%9C.jpg",
-            "sha256": "d74b699042ba2053a7fa5d2a0568398d1d7dddd96b194c21546712a0232f76e2",
-            "retrieved": "2026-10-06"
+            "path": "Content/7-Moodyz/三上悠亜.jpg",
+            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E4%B8%89%E4%B8%8A%E6%82%A0%E4%BA%9C.jpg",
+            "retrieved": "2026-10-06",
+            "sha256": "df57dd9f7d5691fce66a560ca1720de694707c685780698353a80740cb7d2bdd"
           },
           "reviewed": "2026-10-06"
         },
@@ -5719,7 +5898,8 @@
             "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2016/"
           ],
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "三上悠亜"
       },
       {
         "id": "p0033",
@@ -5753,7 +5933,8 @@
             "sourceSha256": "26b72b5ede11d637b3a155f26a2d4fdc5bfb50a0ccdb816db8e17404635b8ec5",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "加藤あやの"
       },
       {
         "id": "p0034",
@@ -5792,7 +5973,8 @@
             "sourceSha256": "d0fafdfba9c096f283521f103e05de57f11d750f80b4bac1a02f23596cac832f",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "桃乃木かな"
       },
       {
         "id": "p0035",
@@ -5821,7 +6003,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "向井藍"
       },
       {
         "id": "p0036",
@@ -5864,7 +6047,8 @@
             "sourceSha256": "219abce6c871960ef20e93b6d3e3138e36cd67cbe6a04e58b7bac22b633b97d6",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "相沢みなみ"
       },
       {
         "id": "p0037",
@@ -5902,7 +6086,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Niimura Akari"
+        "romanization": "Niimura Akari",
+        "japaneseName": "新村あかり"
       },
       {
         "id": "p0038",
@@ -5926,7 +6111,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "一色桃子"
       },
       {
         "id": "p0039",
@@ -5955,6 +6141,19 @@
             "sha256": "1f3b3c9a70e48e4f502663d9cfe07ba6147b83b5888121d26b481dd145343ebe",
             "retrieved": "2026-10-06"
           }
+        },
+        "japaneseName": "明里つむぎ",
+        "profile": {
+          "birthDate": "1998-03-31",
+          "heightCm": 157,
+          "debutYear": 2017,
+          "sourceName": "明里つむぎ",
+          "source": {
+            "url": "https://cmore.jp/official/model-akari.html",
+            "retrieved": "2026-10-06",
+            "sha256": "fda13373b2435ccf7c3fe1a0b73acca983621a0bff8fb9b51106a76040af650a"
+          },
+          "reviewed": "2026-10-06"
         }
       },
       {
@@ -5988,7 +6187,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "水卜さくら"
       },
       {
         "id": "p0041",
@@ -6023,7 +6223,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "桜空 もも",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%a1%9c%e7%a9%ba%e3%82%82%e3%82%82/",
@@ -6032,13 +6231,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 160,
-          "birthDate": "1996-12-03",
-          "measurementsCm": [
-            90,
-            55,
-            86
-          ]
-        }
+          "birthDate": "1996-12-03"
+        },
+        "japaneseName": "桜空もも"
       },
       {
         "id": "p0042",
@@ -6057,17 +6252,17 @@
         "nameSource": "https://www.hk01.com/article/998043",
         "portrait": {
           "path": "actresses/portraits/p0042.jpg",
-          "reviewed": "2026-10-06",
           "source": {
-            "path": "Content/5-Premium/山岸逢花.jpg",
-            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
             "provider": "Gfriends",
-            "upstreamGroup": "5-Premium",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Premium/%E5%B1%B1%E5%B2%B8%E9%80%A2%E8%8A%B1.jpg",
-            "sha256": "ab79056a984ca9a2165153ad04910754b4fe4bc014cd20d4dc51fe4d7972d86a",
-            "retrieved": "2026-10-06"
-          }
-        }
+            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
+            "path": "Content/5-Premium/山岸あや花.jpg",
+            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/5-Premium/%E5%B1%B1%E5%B2%B8%E3%81%82%E3%82%84%E8%8A%B1.jpg",
+            "retrieved": "2026-10-06",
+            "sha256": "38252056abc47b48e53b4721e0faecfaa87d540978f918b71ad4e160e6f89430"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "japaneseName": "山岸あや花"
       },
       {
         "id": "p0043",
@@ -6101,7 +6296,8 @@
             "retrieved": "2026-10-06"
           }
         },
-        "romanization": "Mitani Akari"
+        "romanization": "Mitani Akari",
+        "japaneseName": "美谷朱音"
       },
       {
         "id": "p0044",
@@ -6146,7 +6342,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "君島 みお",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%90%9b%e5%b3%b6%e3%81%bf%e3%81%8a/",
@@ -6155,13 +6350,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 162,
-          "birthDate": "1988-04-25",
-          "measurementsCm": [
-            92,
-            59,
-            88
-          ]
-        }
+          "birthDate": "1988-04-25"
+        },
+        "japaneseName": "君島みお"
       },
       {
         "id": "p0045",
@@ -6190,7 +6381,8 @@
             "sha256": "3ba375d3d3b7fa21c1d0699cbef32099b282e8214f0a5b32b3cf7b14c0e3cf9b",
             "retrieved": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "岬ななみ"
       },
       {
         "id": "p0046",
@@ -6223,7 +6415,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "水戸かな"
       },
       {
         "id": "p0047",
@@ -6256,7 +6449,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "神宮寺ナオ"
       },
       {
         "id": "p0048",
@@ -6285,16 +6479,16 @@
           "path": "actresses/portraits/p0048.jpg",
           "source": {
             "provider": "Gfriends",
-            "path": "Content/7-Moodyz/七沢みあ.jpg",
             "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "7-Moodyz",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-Moodyz/%E4%B8%83%E6%B2%A2%E3%81%BF%E3%81%82.jpg",
-            "sha256": "6195f5b36323b52ac690eb05689dc17bf67ceb54599f72f1f3970b48c5e37bba",
-            "retrieved": "2026-10-06"
+            "path": "Content/6-Capsule/七沢みあ.jpg",
+            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/6-Capsule/%E4%B8%83%E6%B2%A2%E3%81%BF%E3%81%82.jpg",
+            "retrieved": "2026-10-06",
+            "sha256": "feebd594f4e46fcbe87f3767938f786dc4c5e62c3b8ad33a80d5054486e361bf"
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Nanasawa Mia"
+        "romanization": "Nanasawa Mia",
+        "japaneseName": "七沢みあ"
       },
       {
         "id": "p0049",
@@ -6325,6 +6519,18 @@
             "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/7-S1/%E6%9E%B6%E4%B9%83%E3%82%86%E3%82%89.jpg",
             "sha256": "c1df5a308c1e6d5a74119cbd519118719f8f8ea00ba4b2745ae468f6571531cc",
             "retrieved": "2026-10-06"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "japaneseName": "架乃ゆら",
+        "profile": {
+          "birthDate": "1998-12-28",
+          "heightCm": 156,
+          "sourceName": "架乃ゆら",
+          "source": {
+            "url": "https://pub.linx.live/contents/model/4602/",
+            "retrieved": "2026-10-06",
+            "sha256": "bd39390aec44ecd2143f36c20e9d86488672dca1bc24d4354d425c914a70ea09"
           },
           "reviewed": "2026-10-06"
         }
@@ -6367,7 +6573,8 @@
             "reviewed": "2026-10-06"
           }
         },
-        "romanization": "Itou Mayuki"
+        "romanization": "Itou Mayuki",
+        "japaneseName": "伊藤舞雪"
       },
       {
         "id": "p0051",
@@ -6400,7 +6607,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "宝田もなみ"
       },
       {
         "id": "p0052",
@@ -6439,7 +6647,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "河合 あすな",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%b2%b3%e5%90%88%e3%81%82%e3%81%99%e3%81%aa/",
@@ -6448,13 +6655,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 158,
-          "birthDate": "1998-03-21",
-          "measurementsCm": [
-            88,
-            59,
-            89
-          ]
-        }
+          "birthDate": "1998-03-21"
+        },
+        "japaneseName": "河合あすな"
       },
       {
         "id": "p0053",
@@ -6483,7 +6686,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "美園和花"
       },
       {
         "id": "p0054",
@@ -6522,7 +6726,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "河北 彩花",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/kawakitasaika/",
@@ -6531,13 +6734,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 169,
-          "birthDate": "1999-04-24",
-          "measurementsCm": [
-            87,
-            57,
-            86
-          ]
-        }
+          "birthDate": "1999-04-24"
+        },
+        "japaneseName": "河北彩花"
       },
       {
         "id": "p0055",
@@ -6571,6 +6770,18 @@
             "sourceSha256": "34456754a4b6188ad56ef740a44fbbddde1f20c3ba21139f3bf01bcb0325baad",
             "reviewed": "2026-10-06"
           }
+        },
+        "japaneseName": "水川スミレ",
+        "profile": {
+          "birthDate": "1995-02-03",
+          "heightCm": 155,
+          "sourceName": "水川スミレ",
+          "source": {
+            "url": "https://pub.linx.live/contents/model/4721/",
+            "retrieved": "2026-10-06",
+            "sha256": "5fd86344d8fbe143f5462eb4bf588e9b07d708cc4f02e675c9ccbed7fdef36c9"
+          },
+          "reviewed": "2026-10-06"
         }
       },
       {
@@ -6605,7 +6816,6 @@
           }
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "黒川すみれ",
           "source": {
             "url": "https://mines-pro.jp/model/10696",
@@ -6614,13 +6824,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 167,
-          "birthDate": "1991-04-25",
-          "measurementsCm": [
-            88,
-            56,
-            88
-          ]
-        }
+          "birthDate": "1991-04-25"
+        },
+        "japaneseName": "黒川すみれ"
       },
       {
         "id": "p0057",
@@ -6649,7 +6855,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "星宮一花"
       },
       {
         "id": "p0058",
@@ -6687,7 +6894,8 @@
             "retrieved": "2026-10-06"
           }
         },
-        "romanization": "Kaede Karen"
+        "romanization": "Kaede Karen",
+        "japaneseName": "楓カレン"
       },
       {
         "id": "p0059",
@@ -6716,7 +6924,8 @@
             "sha256": "24abd91e809a7e1df7e6752b5f6cb5ebd1e89066e2f810319803aec9403128e2",
             "retrieved": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "渚みつき"
       },
       {
         "id": "p0060",
@@ -6740,7 +6949,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "月乃ルナ"
       },
       {
         "id": "p0061",
@@ -6770,7 +6980,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Kusakabe Kana"
+        "romanization": "Kusakabe Kana",
+        "japaneseName": "日下部加奈"
       },
       {
         "id": "p0062",
@@ -6799,7 +7010,8 @@
             "sha256": "89adea79c91c51e31b84e47eb103fd63394d36d82eafdaea0033435292a80738",
             "retrieved": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "根尾あかり"
       },
       {
         "id": "p0063",
@@ -6844,7 +7056,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "涼森 れむ",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%b6%bc%e6%a3%ae%e3%82%8c%e3%82%80/",
@@ -6853,21 +7064,21 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 160,
-          "birthDate": "1997-12-03",
-          "measurementsCm": [
-            87,
-            58,
-            85
-          ]
-        }
+          "birthDate": "1997-12-03"
+        },
+        "japaneseName": "涼森れむ"
       },
       {
         "id": "p0064",
-        "name": "吉根ゆりあ",
+        "name": "吉根柚莉爱",
         "aliases": [
           {
             "name": "Yoshine Julia",
             "source": "https://github.com/gfriends/gfriends/blob/de8298f27afb4469100e39c159443c139ef0ef42/Filetree.json"
+          },
+          {
+            "name": "吉根ゆりあ",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/"
           }
         ],
         "identities": {
@@ -6875,7 +7086,7 @@
             "1052930"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=5/",
+        "nameSource": "https://zh.wikipedia.org/wiki/吉根柚莉愛",
         "portrait": {
           "path": "actresses/portraits/p0064.jpg",
           "source": {
@@ -6889,7 +7100,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Yoshine Julia"
+        "romanization": "Yoshine Julia",
+        "japaneseName": "吉根ゆりあ"
       },
       {
         "id": "p0065",
@@ -6922,7 +7134,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "竹内有紀"
       },
       {
         "id": "p0066",
@@ -6935,6 +7148,10 @@
           {
             "name": "彌生美月",
             "source": "https://zh.wikipedia.org/w/index.php?oldid=90273438"
+          },
+          {
+            "name": "Mizuki Yayoi",
+            "source": "https://lightpro.jp/talent/yayoimizuki.html"
           }
         ],
         "identities": {
@@ -6955,7 +7172,21 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "弥生みづき",
+        "profile": {
+          "birthDate": "1998-12-07",
+          "heightCm": 157,
+          "debutYear": 2019,
+          "sourceName": "弥生みづき",
+          "source": {
+            "url": "https://lightpro.jp/talent/yayoimizuki.html",
+            "retrieved": "2026-10-06",
+            "sha256": "727145759c86b98e5f753f130606278e1812d0ed71f0adceefed5ae15e155125"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Mizuki Yayoi"
       },
       {
         "id": "p0067",
@@ -6964,6 +7195,10 @@
           {
             "name": "松本いちか",
             "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=3/"
+          },
+          {
+            "name": "Ichika Matsumoto",
+            "source": "https://lightpro.jp/talent/matsumotoichika.html"
           }
         ],
         "identities": {
@@ -6984,7 +7219,20 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "松本いちか",
+        "profile": {
+          "heightCm": 153,
+          "debutYear": 2019,
+          "sourceName": "松本いちか",
+          "source": {
+            "url": "https://lightpro.jp/talent/matsumotoichika.html",
+            "retrieved": "2026-10-06",
+            "sha256": "368364c975ba8945f02f8bc0b21d11f9233d560cbaa1d224a2e2c0a5fb62942e"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Ichika Matsumoto"
       },
       {
         "id": "p0068",
@@ -7022,7 +7270,8 @@
             "retrieved": "2026-10-06"
           }
         },
-        "romanization": "Saitoh Amiri"
+        "romanization": "Saitoh Amiri",
+        "japaneseName": "斎藤あみり"
       },
       {
         "id": "p0069",
@@ -7042,25 +7291,36 @@
         "portrait": {
           "path": "actresses/portraits/p0069.jpg",
           "source": {
-            "provider": "Gfriends",
-            "path": "Content/8-Cmore/青空ひかり.jpg",
-            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "8-Cmore",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/8-Cmore/%E9%9D%92%E7%A9%BA%E3%81%B2%E3%81%8B%E3%82%8A.jpg",
-            "sha256": "1a345739bba38ce0723bf177aae929f995da97f1996e80483a95e182a9c50fb7",
-            "retrieved": "2026-10-06"
+            "provider": "C-more",
+            "url": "https://cmore.jp/official/img/model/aozora/aozora.jpg",
+            "profile": "https://cmore.jp/official/model-aozora.html",
+            "retrieved": "2026-10-06",
+            "sha256": "48dd5a25fd633f73dc460b6c7fa5e271bb5fd5a9bca27d233d0c399ae8f6d7c2"
           },
           "reviewed": "2026-10-06",
           "display": {
             "crop": [
-              528,
+              50,
               0,
-              864,
-              1080
+              412,
+              515
             ],
-            "sourceSha256": "1a345739bba38ce0723bf177aae929f995da97f1996e80483a95e182a9c50fb7",
+            "sourceSha256": "48dd5a25fd633f73dc460b6c7fa5e271bb5fd5a9bca27d233d0c399ae8f6d7c2",
             "reviewed": "2026-10-06"
           }
+        },
+        "japaneseName": "青空ひかり",
+        "profile": {
+          "birthDate": "1999-01-08",
+          "heightCm": 153,
+          "debutYear": 2019,
+          "sourceName": "青空ひかり",
+          "source": {
+            "url": "https://cmore.jp/official/model-aozora.html",
+            "retrieved": "2026-10-06",
+            "sha256": "458775676faf490b998e3153258e35d8648b3b3d15d312f1aa394e617bee7c19"
+          },
+          "reviewed": "2026-10-06"
         }
       },
       {
@@ -7095,7 +7355,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Amakawa Sora"
+        "romanization": "Amakawa Sora",
+        "japaneseName": "天川そら"
       },
       {
         "id": "p0071",
@@ -7134,7 +7395,6 @@
           }
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "八木奈々",
           "source": {
             "url": "https://mines-pro.jp/model/10786",
@@ -7143,13 +7403,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 156,
-          "birthDate": "2000-09-03",
-          "measurementsCm": [
-            82,
-            56,
-            86
-          ]
-        }
+          "birthDate": "2000-09-03"
+        },
+        "japaneseName": "八木奈々"
       },
       {
         "id": "p0072",
@@ -7183,7 +7439,8 @@
             "sourceSha256": "32608af8d0de74921e51f18135342fc61c1152d5ab30a1084340b9e15d7c0179",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "加美杏奈"
       },
       {
         "id": "p0073",
@@ -7207,7 +7464,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "藤森里穂"
       },
       {
         "id": "p0074",
@@ -7250,18 +7508,35 @@
             "sourceSha256": "83c6fddbbc9a1d5b937a32e7cd6698a0ab2ba6714fdc84dcb0c90e8f9fd7bd6b",
             "reviewed": "2026-10-06"
           }
+        },
+        "japaneseName": "東條なつ",
+        "profile": {
+          "birthDate": "1999-08-19",
+          "heightCm": 156,
+          "sourceName": "東條なつ",
+          "source": {
+            "url": "https://pub.linx.live/contents/model/4915/",
+            "retrieved": "2026-10-06",
+            "sha256": "8c5006d90f74f3f4c13afc0179aabd399736b236bf68f0d79558cce456b4dbed"
+          },
+          "reviewed": "2026-10-06"
         }
       },
       {
         "id": "p0075",
-        "name": "木下凛々子",
-        "aliases": [],
+        "name": "木下凛凛子",
+        "aliases": [
+          {
+            "name": "木下凛々子",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1059227"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=4/",
+        "nameSource": "https://www.theidolbase.com/actress/kinoshita-ririko/pictures",
         "portrait": {
           "path": "actresses/portraits/p0075.jpg",
           "source": {
@@ -7274,7 +7549,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "木下凛々子"
       },
       {
         "id": "p0076",
@@ -7308,7 +7584,8 @@
             "sourceSha256": "83757ae7c3b8189afeefdb887aa484fe6d589bf5af8a1fae0524dc240444a658",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "梓ヒカリ"
       },
       {
         "id": "p0077",
@@ -7346,7 +7623,8 @@
           },
           "reviewed": "2026-10-06"
         },
-        "romanization": "Kinoshita Himari"
+        "romanization": "Kinoshita Himari",
+        "japaneseName": "木下ひまり"
       },
       {
         "id": "p0078",
@@ -7370,7 +7648,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "田中ねね"
       },
       {
         "id": "p0079",
@@ -7404,7 +7683,8 @@
             "sourceSha256": "31b1d999697d38ded2ec751efad5bea28fb9b7b49beee40df3a26c1993b4f0e9",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "小野六花"
       },
       {
         "id": "p0080",
@@ -7428,7 +7708,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "蜜美杏"
       },
       {
         "id": "p0081",
@@ -7452,7 +7733,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "石原希望"
       },
       {
         "id": "p0082",
@@ -7476,18 +7758,28 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "森日向子"
       },
       {
         "id": "p0083",
-        "name": "葵いぶき",
-        "aliases": [],
+        "name": "葵伊吹",
+        "aliases": [
+          {
+            "name": "葵いぶき",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/"
+          },
+          {
+            "name": "Aoi Ibuki",
+            "source": "https://otsukichannouta.com/profile/detail/169/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1061760"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=2/",
+        "nameSource": "https://otsukichannouta.com/cn/profile/detail/949/",
         "portrait": {
           "path": "actresses/portraits/p0083.jpg",
           "source": {
@@ -7500,7 +7792,19 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "葵いぶき",
+        "profile": {
+          "heightCm": 162,
+          "sourceName": "葵いぶき",
+          "source": {
+            "url": "https://otsukichannouta.com/profile/detail/169/",
+            "retrieved": "2026-10-06",
+            "sha256": "f8e95e06165295f94886ffc608a12d9cbc8c8c2845bbea9dde723257e6274a19"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Aoi Ibuki"
       },
       {
         "id": "p0084",
@@ -7541,7 +7845,6 @@
           }
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "さつき芽衣",
           "source": {
             "url": "https://mines-pro.jp/model/10815",
@@ -7550,13 +7853,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 154,
-          "birthDate": "2000-08-16",
-          "measurementsCm": [
-            87,
-            60,
-            86
-          ]
-        }
+          "birthDate": "2000-08-16"
+        },
+        "japaneseName": "さつき芽衣"
       },
       {
         "id": "p0085",
@@ -7592,7 +7891,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "宮島 めい",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%ae%ae%e5%b3%b6%e3%82%81%e3%81%84/",
@@ -7601,13 +7899,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 155,
-          "birthDate": "2000-10-17",
-          "measurementsCm": [
-            90,
-            59,
-            80
-          ]
-        }
+          "birthDate": "2000-10-17"
+        },
+        "japaneseName": "宮島めい"
       },
       {
         "id": "p0086",
@@ -7650,7 +7944,8 @@
             "sourceSha256": "862d018216366e1416989a8d5f5604dfc0b8030494230915ffe868b13f48d094",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "三宮つばき"
       },
       {
         "id": "p0087",
@@ -7695,7 +7990,6 @@
           }
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "七瀬アリス",
           "source": {
             "url": "https://mines-pro.jp/model/11053",
@@ -7704,13 +7998,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 155,
-          "birthDate": "1997-02-25",
-          "measurementsCm": [
-            88,
-            58,
-            86
-          ]
-        }
+          "birthDate": "1997-02-25"
+        },
+        "japaneseName": "七瀬アリス"
       },
       {
         "id": "p0088",
@@ -7739,7 +8029,8 @@
             "sha256": "5db04043a710e14c8fc3a7de0495fbbcfc14155d8c204d9b4f1dd92e7da6212c",
             "retrieved": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "白桃はな"
       },
       {
         "id": "p0089",
@@ -7775,7 +8066,6 @@
           }
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "栗山莉緒",
           "source": {
             "url": "https://mines-pro.jp/model/10813",
@@ -7784,13 +8074,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 148,
-          "birthDate": "1998-08-02",
-          "measurementsCm": [
-            85,
-            54,
-            83
-          ]
-        }
+          "birthDate": "1998-08-02"
+        },
+        "japaneseName": "栗山莉緒"
       },
       {
         "id": "p0090",
@@ -7835,7 +8121,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "八掛 うみ",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%85%ab%e6%8e%9b%e3%81%86%e3%81%bf/",
@@ -7844,13 +8129,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 160,
-          "birthDate": "2000-09-02",
-          "measurementsCm": [
-            80,
-            57,
-            85
-          ]
-        }
+          "birthDate": "2000-09-02"
+        },
+        "japaneseName": "八掛うみ"
       },
       {
         "id": "p0091",
@@ -7874,7 +8155,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "市来まひろ"
       },
       {
         "id": "p0092",
@@ -7907,7 +8189,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "乙アリス"
       },
       {
         "id": "p0093",
@@ -7946,7 +8229,8 @@
             "sourceSha256": "64b70b6bfc7374080582c089afedeb5991c20799869c1128fcab378de852f9da",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "白峰ミウ"
       },
       {
         "id": "p0094",
@@ -7991,7 +8275,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "楪 カレン",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%a5%aa%e3%82%ab%e3%83%ac%e3%83%b3/",
@@ -8000,24 +8283,25 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 148,
-          "birthDate": "2001-03-28",
-          "measurementsCm": [
-            96,
-            58,
-            85
-          ]
-        }
+          "birthDate": "2001-03-28"
+        },
+        "japaneseName": "楪カレン"
       },
       {
         "id": "p0095",
-        "name": "花狩まい",
-        "aliases": [],
+        "name": "花狩舞",
+        "aliases": [
+          {
+            "name": "花狩まい",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1068670"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2023/page=2/",
+        "nameSource": "https://www.weibo.com/ttarticle/p/show?id=2309404625581626229112",
         "portrait": {
           "path": "actresses/portraits/p0095.jpg",
           "source": {
@@ -8030,7 +8314,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "花狩まい"
       },
       {
         "id": "p0096",
@@ -8054,7 +8339,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "北野未奈"
       },
       {
         "id": "p0097",
@@ -8088,7 +8374,8 @@
             "retrieved": "2026-10-06"
           }
         },
-        "romanization": "Koyoi Konan"
+        "romanization": "Koyoi Konan",
+        "japaneseName": "小宵こなん"
       },
       {
         "id": "p0098",
@@ -8117,7 +8404,8 @@
             "sha256": "8e0e9e378f1a87807294c8c7dce0efda8840454f3353fda347c1f23feb7e0833",
             "retrieved": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "工藤ララ"
       },
       {
         "id": "p0099",
@@ -8141,7 +8429,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "愛弓りょう"
       },
       {
         "id": "p0100",
@@ -8177,7 +8466,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "MINAMO",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/minamo/",
@@ -8186,13 +8474,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 153,
-          "birthYear": 2000,
-          "measurementsCm": [
-            88,
-            54,
-            88
-          ]
-        }
+          "birthYear": 2000
+        },
+        "japaneseName": "MINAMO"
       },
       {
         "id": "p0101",
@@ -8225,7 +8509,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "横宮七海"
       },
       {
         "id": "p0102",
@@ -8249,7 +8534,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "新井リマ"
       },
       {
         "id": "p0103",
@@ -8282,7 +8568,8 @@
             "sha256": "725b1dc32f09b13a23c2e3f0f6ce6ac9b8494291d37527f638e2a384ab6bf04f",
             "retrieved": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "楓ふうあ"
       },
       {
         "id": "p0104",
@@ -8306,7 +8593,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "石川澪"
       },
       {
         "id": "p0105",
@@ -8335,7 +8623,8 @@
             "sha256": "464aae01ac18601ea36490247b4601377afabda91f337aa229aabd614c836a53",
             "retrieved": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "小花のん"
       },
       {
         "id": "p0106",
@@ -8359,18 +8648,24 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "倉本すみれ"
       },
       {
         "id": "p0107",
-        "name": "つばさ舞",
-        "aliases": [],
+        "name": "翼舞",
+        "aliases": [
+          {
+            "name": "つばさ舞",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1072395"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/",
+        "nameSource": "https://www.momoshop.com.tw/product/14911976",
         "portrait": {
           "path": "actresses/portraits/p0107.jpg",
           "source": {
@@ -8383,7 +8678,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "つばさ舞"
       },
       {
         "id": "p0108",
@@ -8412,7 +8708,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "山手梨愛"
       },
       {
         "id": "p0109",
@@ -8455,7 +8752,8 @@
             "sourceSha256": "6afa66537157f98cd997d1261b458c5a46cd8aade85ee3c6ff357b9633bd5bbb",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "時田亜美"
       },
       {
         "id": "p0110",
@@ -8489,7 +8787,8 @@
             "sourceSha256": "7201406a45f4412af70df9a7454d57a03b9ce3c1919be3352201b1ea5bd58b19",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "宮西ひかる"
       },
       {
         "id": "p0111",
@@ -8515,7 +8814,6 @@
           "reviewed": "2026-10-06"
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "宍戸里帆",
           "source": {
             "url": "https://mines-pro.jp/model/10890",
@@ -8524,13 +8822,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 153,
-          "birthDate": "2001-10-14",
-          "measurementsCm": [
-            87,
-            59,
-            86
-          ]
-        }
+          "birthDate": "2001-10-14"
+        },
+        "japaneseName": "宍戸里帆"
       },
       {
         "id": "p0112",
@@ -8554,7 +8848,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "東雲みれい"
       },
       {
         "id": "p0113",
@@ -8578,7 +8873,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "柏木こなつ"
       },
       {
         "id": "p0114",
@@ -8602,7 +8898,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "皆瀬あかり"
       },
       {
         "id": "p0115",
@@ -8631,7 +8928,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "宮下玲奈"
       },
       {
         "id": "p0116",
@@ -8657,7 +8955,6 @@
           }
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "希咲那奈",
           "source": {
             "url": "https://mines-pro.jp/model/10880",
@@ -8666,13 +8963,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 166,
-          "birthDate": "1999-10-27",
-          "measurementsCm": [
-            75,
-            55,
-            85
-          ]
-        }
+          "birthDate": "1999-10-27"
+        },
+        "japaneseName": "希咲那奈"
       },
       {
         "id": "p0117",
@@ -8696,7 +8989,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "末広純"
       },
       {
         "id": "p0118",
@@ -8735,7 +9029,8 @@
             "sourceSha256": "5442b9ea00807c2f4ff45254f76b6cddffded9b529272dafcfb81474382b2b4a",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "恋渕ももな"
       },
       {
         "id": "p0119",
@@ -8774,7 +9069,8 @@
             "sourceSha256": "89a2327841a1fb6cb10fa48299b648a084e36df7f74b41b62730365a2f240ab2",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "神木麗"
       },
       {
         "id": "p0120",
@@ -8808,7 +9104,8 @@
             "sourceSha256": "b4a56ff4c42bc28796ae3ae1b708b95ca3b4e97971b88cb3c04f4735fac357b5",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "しおかわ雲丹"
       },
       {
         "id": "p0121",
@@ -8832,18 +9129,28 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "綾瀬こころ"
       },
       {
         "id": "p0122",
-        "name": "未歩なな",
-        "aliases": [],
+        "name": "未步奈奈",
+        "aliases": [
+          {
+            "name": "未歩なな",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/"
+          },
+          {
+            "name": "Miho Nana",
+            "source": "https://otsukichannouta.com/profile/detail/134/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1077071"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2025/page=5/",
+        "nameSource": "https://otsukichannouta.com/cn/profile/detail/935/",
         "portrait": {
           "path": "actresses/portraits/p0122.jpg",
           "source": {
@@ -8856,7 +9163,19 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "未歩なな",
+        "profile": {
+          "heightCm": 156,
+          "sourceName": "未歩なな",
+          "source": {
+            "url": "https://otsukichannouta.com/profile/detail/134/",
+            "retrieved": "2026-10-06",
+            "sha256": "345fd60f1a04e37205e44a95606ce04c907692518075a589abcbf029b905009a"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Miho Nana"
       },
       {
         "id": "p0123",
@@ -8890,7 +9209,8 @@
             "sourceSha256": "2b1913f56ef6ed7da9e0194b01094f52acc2a1c398cd1813bd295fc158a51043",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "藤かんな"
       },
       {
         "id": "p0124",
@@ -8926,7 +9246,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "小湊 よつ葉",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%b0%8f%e6%b9%8a%e3%82%88%e3%81%a4%e8%91%89/",
@@ -8935,7 +9254,8 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 153
-        }
+        },
+        "japaneseName": "小湊よつ葉"
       },
       {
         "id": "p0125",
@@ -8969,7 +9289,8 @@
             "sourceSha256": "038ae3e39472f055ee789c10e50e86a795a346049409811a61972c47b7934202",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "都月るいさ"
       },
       {
         "id": "p0126",
@@ -8993,7 +9314,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "星乃夏月"
       },
       {
         "id": "p0127",
@@ -9017,7 +9339,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "日向かえで"
       },
       {
         "id": "p0128",
@@ -9041,7 +9364,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "流川はる香"
       },
       {
         "id": "p0129",
@@ -9077,7 +9401,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "九野 ひなの",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e4%b9%9d%e9%87%8e%e3%81%b2%e3%81%aa%e3%81%ae/",
@@ -9086,13 +9409,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 157,
-          "birthDate": "2001-05-25",
-          "measurementsCm": [
-            90,
-            60,
-            88
-          ]
-        }
+          "birthDate": "2001-05-25"
+        },
+        "japaneseName": "九野ひなの"
       },
       {
         "id": "p0130",
@@ -9126,7 +9445,8 @@
             "sourceSha256": "e6cc4f78eee8fb76a317eacb2780e50ca85f7e19b630974d2bf9ef8eb3ce02fb",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "星乃莉子"
       },
       {
         "id": "p0131",
@@ -9150,7 +9470,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "凪ひかる"
       },
       {
         "id": "p0132",
@@ -9176,7 +9497,6 @@
           }
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "入田真綾",
           "source": {
             "url": "https://mines-pro.jp/model/10913",
@@ -9185,13 +9505,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 156,
-          "birthDate": "1990-11-15",
-          "measurementsCm": [
-            89,
-            58,
-            86
-          ]
-        }
+          "birthDate": "1990-11-15"
+        },
+        "japaneseName": "入田真綾"
       },
       {
         "id": "p0133",
@@ -9215,7 +9531,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "天月あず"
       },
       {
         "id": "p0134",
@@ -9230,25 +9547,35 @@
         "portrait": {
           "path": "actresses/portraits/p0134.jpg",
           "source": {
-            "provider": "Gfriends",
-            "path": "Content/y-Minnano/柴崎はる.jpg",
-            "revision": "de8298f27afb4469100e39c159443c139ef0ef42",
-            "upstreamGroup": "y-Minnano",
-            "url": "https://raw.githubusercontent.com/gfriends/gfriends/de8298f27afb4469100e39c159443c139ef0ef42/Content/y-Minnano/%E6%9F%B4%E5%B4%8E%E3%81%AF%E3%82%8B.jpg",
-            "sha256": "b70146d778d710ca69f4fe8f88a52b0f3baa67a9b8ebf1f8e9bb14157ef6243c",
-            "retrieved": "2026-10-06"
+            "provider": "LINX",
+            "url": "https://pub.linx.live/contents/img.php?model_id=5470&target_id=6&s=1",
+            "profile": "https://pub.linx.live/contents/model/5470/",
+            "retrieved": "2026-10-06",
+            "sha256": "cce6633e57701722449c73898b2de5808a9779c74d93eade297821eaf9539379"
           },
           "reviewed": "2026-10-06",
           "display": {
             "crop": [
-              21,
+              180,
               0,
-              179,
-              224
+              800,
+              1000
             ],
-            "sourceSha256": "b70146d778d710ca69f4fe8f88a52b0f3baa67a9b8ebf1f8e9bb14157ef6243c",
+            "sourceSha256": "cce6633e57701722449c73898b2de5808a9779c74d93eade297821eaf9539379",
             "reviewed": "2026-10-06"
           }
+        },
+        "japaneseName": "柴崎はる",
+        "profile": {
+          "birthDate": "2000-01-08",
+          "heightCm": 155,
+          "sourceName": "柴崎はる",
+          "source": {
+            "url": "https://pub.linx.live/contents/model/5470/",
+            "retrieved": "2026-10-06",
+            "sha256": "a3e6e991a6836ae425ab9d718c8fedc72aaab7e912ea3b6f19723a6d9efbbfae"
+          },
+          "reviewed": "2026-10-06"
         }
       },
       {
@@ -9290,7 +9617,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "小日向 みゆう",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%b0%8f%e6%97%a5%e5%90%91%e3%81%bf%e3%82%86%e3%81%86/",
@@ -9299,13 +9625,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 160,
-          "birthDate": "2002-07-10",
-          "measurementsCm": [
-            95,
-            58,
-            87
-          ]
-        }
+          "birthDate": "2002-07-10"
+        },
+        "japaneseName": "小日向みゆう"
       },
       {
         "id": "p0136",
@@ -9329,7 +9651,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "宇野みれい"
       },
       {
         "id": "p0137",
@@ -9355,7 +9678,6 @@
           "reviewed": "2026-10-06"
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "羽月 乃蒼",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e7%be%bd%e6%9c%88-%e4%b9%83%e8%92%bc/",
@@ -9364,18 +9686,19 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 158,
-          "birthDate": "2001-11-13",
-          "measurementsCm": [
-            98,
-            63,
-            93
-          ]
-        }
+          "birthDate": "2001-11-13"
+        },
+        "japaneseName": "羽月乃蒼"
       },
       {
         "id": "p0138",
         "name": "川越にこ",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Kawagoe Niko",
+            "source": "https://otsukichannouta.com/profile/detail/170/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1084346"
@@ -9394,7 +9717,19 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "川越にこ",
+        "profile": {
+          "heightCm": 150,
+          "sourceName": "川越にこ",
+          "source": {
+            "url": "https://otsukichannouta.com/profile/detail/170/",
+            "retrieved": "2026-10-06",
+            "sha256": "3fa7c9603f0832162ed4513b97807f9a06f2a75632ac8304ab48d0117eda2658"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Kawagoe Niko"
       },
       {
         "id": "p0139",
@@ -9418,7 +9753,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "五日市芽依"
       },
       {
         "id": "p0140",
@@ -9444,7 +9780,6 @@
           "reviewed": "2026-10-06"
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "明日葉 みつは",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%98%8e%e6%97%a5%e8%91%89%e3%81%bf%e3%81%a4%e3%81%af/",
@@ -9452,13 +9787,9 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06",
-          "heightCm": 175,
-          "measurementsCm": [
-            87,
-            58,
-            88
-          ]
-        }
+          "heightCm": 175
+        },
+        "japaneseName": "明日葉みつは"
       },
       {
         "id": "p0141",
@@ -9497,18 +9828,24 @@
             "sourceSha256": "81d1f2ed8edbd2e893fcee1e5f65a8abe09fbfb4a79518064a8db0993f1c4636",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "沖宮那美"
       },
       {
         "id": "p0142",
-        "name": "本郷愛",
-        "aliases": [],
+        "name": "本乡爱",
+        "aliases": [
+          {
+            "name": "本郷愛",
+            "source": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1085397"
           ]
         },
-        "nameSource": "https://www.dmm.co.jp/rental/-/ranking/=/article=actress/t=year_2024/page=2/",
+        "nameSource": "https://www.renwudang.com/person/hongou-ai",
         "portrait": {
           "path": "actresses/portraits/p0142.jpg",
           "source": {
@@ -9521,7 +9858,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "本郷愛"
       },
       {
         "id": "p0143",
@@ -9545,7 +9883,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "黒島玲衣"
       },
       {
         "id": "p0144",
@@ -9569,7 +9908,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "佐藤しお"
       },
       {
         "id": "p0145",
@@ -9593,7 +9933,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "白石もも"
       },
       {
         "id": "p0146",
@@ -9617,7 +9958,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "浅野こころ"
       },
       {
         "id": "p0147",
@@ -9656,7 +9998,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "瀧本 雫葉",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e7%80%a7%e6%9c%ac%e9%9b%ab%e8%91%89/",
@@ -9665,13 +10006,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 166,
-          "birthDate": "1999-05-08",
-          "measurementsCm": [
-            90,
-            57,
-            90
-          ]
-        }
+          "birthDate": "1999-05-08"
+        },
+        "japaneseName": "瀧本雫葉"
       },
       {
         "id": "p0148",
@@ -9695,7 +10032,8 @@
             "sha256": "97e132b4f50c2324f472d9fa8bffc4ca24fc8a01a66f377924896a8d3e15ab84",
             "retrieved": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "仁藤さや香"
       },
       {
         "id": "p0149",
@@ -9727,12 +10065,18 @@
             "sourceSha256": "18a2eb7024c4368317c6b362641ebf3fa91873d686dad71a4ebd1fbcafeff94c",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "渚恋生"
       },
       {
         "id": "p0150",
         "name": "佐々木さき",
-        "aliases": [],
+        "aliases": [
+          {
+            "name": "Sasaki Saki",
+            "source": "https://otsukichannouta.com/profile/detail/228/"
+          }
+        ],
         "identities": {
           "fanza": [
             "1087624"
@@ -9761,7 +10105,19 @@
             "sourceSha256": "b158209783278d9c9d163241b87557521936685dbfbce12e1dd9064b650798cb",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "佐々木さき",
+        "profile": {
+          "heightCm": 150,
+          "sourceName": "佐々木さき",
+          "source": {
+            "url": "https://otsukichannouta.com/profile/detail/228/",
+            "retrieved": "2026-10-06",
+            "sha256": "703e73f1c9cf97aaed71a11098c74fba8482f9a26eb1cf50ce1b4c8f166d9b54"
+          },
+          "reviewed": "2026-10-06"
+        },
+        "romanization": "Sasaki Saki"
       },
       {
         "id": "p0151",
@@ -9790,7 +10146,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "三田真鈴"
       },
       {
         "id": "p0152",
@@ -9816,7 +10173,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "月野江 すい",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%9c%88%e9%87%8e%e6%b1%9f%e3%81%99%e3%81%84/",
@@ -9825,13 +10181,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 166,
-          "birthDate": "2001-06-15",
-          "measurementsCm": [
-            85,
-            55,
-            83
-          ]
-        }
+          "birthDate": "2001-06-15"
+        },
+        "japaneseName": "月野江すい"
       },
       {
         "id": "p0153",
@@ -9860,7 +10212,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "百田光稀"
       },
       {
         "id": "p0154",
@@ -9893,7 +10246,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "逢沢みゆ"
       },
       {
         "id": "p0155",
@@ -9929,7 +10283,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "蒼乃 美月",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e8%92%bc%e9%87%8e%e7%be%8e%e6%9c%88/",
@@ -9938,13 +10291,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 165,
-          "birthDate": "2002-10-30",
-          "measurementsCm": [
-            92,
-            59,
-            89
-          ]
-        }
+          "birthDate": "2002-10-30"
+        },
+        "japaneseName": "蒼乃美月"
       },
       {
         "id": "p0156",
@@ -9980,7 +10329,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "長浜 みつり",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e9%95%b7%e6%b5%9c%e3%81%bf%e3%81%a4%e3%82%8a/",
@@ -9989,13 +10337,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 161,
-          "birthDate": "2002-06-01",
-          "measurementsCm": [
-            90,
-            58,
-            90
-          ]
-        }
+          "birthDate": "2002-06-01"
+        },
+        "japaneseName": "長浜みつり"
       },
       {
         "id": "p0157",
@@ -10019,7 +10363,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "小坂七香"
       },
       {
         "id": "p0158",
@@ -10053,22 +10398,17 @@
           }
         },
         "profile": {
-          "agency": "light",
           "sourceName": "宮本留衣",
           "heightCm": 167,
           "birthDate": "1999-01-06",
-          "measurementsCm": [
-            94,
-            62,
-            90
-          ],
           "source": {
             "url": "https://lightpro.jp/talent/miyamotorui.html",
             "sha256": "9ac8ad7207e56a327b9cb2b6d57e635c88d427644b5e8c3ca9718bddeb4c49b8",
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "宮本留衣"
       },
       {
         "id": "p0159",
@@ -10092,7 +10432,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "金松季歩"
       },
       {
         "id": "p0160",
@@ -10116,7 +10457,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "春陽モカ"
       },
       {
         "id": "p0161",
@@ -10152,7 +10494,6 @@
           }
         },
         "profile": {
-          "agency": "mines",
           "sourceName": "北岡果林",
           "source": {
             "url": "https://mines-pro.jp/model/10970",
@@ -10161,13 +10502,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 160,
-          "birthDate": "2003-09-19",
-          "measurementsCm": [
-            86,
-            57,
-            84
-          ]
-        }
+          "birthDate": "2003-09-19"
+        },
+        "japaneseName": "北岡果林"
       },
       {
         "id": "p0162",
@@ -10191,7 +10528,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "白上咲花"
       },
       {
         "id": "p0163",
@@ -10225,7 +10563,8 @@
             "sourceSha256": "1e480bee06cf6adb17d1b7b9e0d41f306929fe3d4b5ff0c723b824559e51afff",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "役野満里奈"
       },
       {
         "id": "p0164",
@@ -10266,7 +10605,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "倉木 華",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%80%89%e6%9c%a8%e8%8f%af/",
@@ -10275,13 +10613,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 168,
-          "birthDate": "2001-08-07",
-          "measurementsCm": [
-            88,
-            60,
-            87
-          ]
-        }
+          "birthDate": "2001-08-07"
+        },
+        "japaneseName": "倉木華"
       },
       {
         "id": "p0165",
@@ -10317,7 +10651,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "小野坂 ゆいか",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e5%b0%8f%e9%87%8e%e5%9d%82-%e3%82%86%e3%81%84%e3%81%8b/",
@@ -10326,13 +10659,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 164,
-          "birthDate": "2002-02-09",
-          "measurementsCm": [
-            95,
-            62,
-            90
-          ]
-        }
+          "birthDate": "2002-02-09"
+        },
+        "japaneseName": "小野坂ゆいか"
       },
       {
         "id": "p0166",
@@ -10356,7 +10685,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "静河"
       },
       {
         "id": "p0167",
@@ -10390,7 +10720,6 @@
           }
         },
         "profile": {
-          "agency": "t-powers",
           "sourceName": "泉 ももか",
           "source": {
             "url": "https://www.t-powers.co.jp/talent/%e6%b3%89%e3%82%82%e3%82%82%e3%81%8b/",
@@ -10399,13 +10728,9 @@
           },
           "reviewed": "2026-10-06",
           "heightCm": 156,
-          "birthDate": "2002-10-25",
-          "measurementsCm": [
-            87,
-            56,
-            88
-          ]
-        }
+          "birthDate": "2002-10-25"
+        },
+        "japaneseName": "泉ももか"
       },
       {
         "id": "p0168",
@@ -10429,7 +10754,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "榊原萌"
       },
       {
         "id": "p0169",
@@ -10453,7 +10779,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "輝星きら"
       },
       {
         "id": "p0170",
@@ -10477,7 +10804,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "篠原いよ"
       },
       {
         "id": "p0171",
@@ -10511,7 +10839,8 @@
             "sourceSha256": "c4c50d8a56ddbce2c3cb5d69c87e9734f8130e308bcb9e86fadacc7dd8bbf19f",
             "reviewed": "2026-10-06"
           }
-        }
+        },
+        "japaneseName": "愛才りあ"
       },
       {
         "id": "p0172",
@@ -10544,7 +10873,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "瀬戸環奈"
       },
       {
         "id": "p0173",
@@ -10568,7 +10898,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "新木希空"
       },
       {
         "id": "p0174",
@@ -10592,7 +10923,8 @@
             "retrieved": "2026-10-06"
           },
           "reviewed": "2026-10-06"
-        }
+        },
+        "japaneseName": "桜乃りの"
       }
     ],
     "redirects": {},
@@ -12129,20 +12461,6 @@
       "id": "fanza-monthly-dvd-rental",
       "title": "FANZA 月额 DVD 租赁",
       "method": "官方年度榜原始顺序；不进行月榜换算。仅反映该平台月额 DVD 租赁口径，不代表全行业人气；官方未公开本数、销售额及完整计算细则。"
-    },
-    "agencies": {
-      "t-powers": {
-        "name": "T-POWERS",
-        "url": "https://www.t-powers.co.jp/"
-      },
-      "mines": {
-        "name": "Mine’S",
-        "url": "https://mines-pro.jp/"
-      },
-      "light": {
-        "name": "LIGHT promotion",
-        "url": "https://lightpro.jp/"
-      }
     }
   }
 }

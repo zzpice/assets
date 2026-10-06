@@ -38,9 +38,9 @@ def normalized(value):
     return "".join(unicodedata.normalize("NFKC", value).casefold().split())
 
 
-def validate_profile(profile, agencies, names, pid):
-    """A reviewed official profile snapshot; missing facts are deliberately absent."""
-    allowed = {"sourceName", "source", "reviewed", "agency", "heightCm", "birthDate", "birthYear", "measurementsCm"}
+def validate_profile(profile, names, pid):
+    """Reviewed enduring facts, with the source's actual date precision."""
+    allowed = {"sourceName", "source", "reviewed", "heightCm", "birthDate", "birthYear", "debutYear"}
     if not isinstance(profile, dict) or set(profile) - allowed:
         raise ValueError(f"{pid}: unsupported profile fields")
     if normalized(required_text(profile.get("sourceName"), pid + ".profile.sourceName")) not in names:
@@ -51,8 +51,6 @@ def validate_profile(profile, agencies, names, pid):
     dated(source.get("retrieved"), pid + ".profile.source.retrieved")
     if not re.fullmatch(r"[a-f0-9]{64}", source.get("sha256", "")):
         raise ValueError(f"{pid}: profile source needs a snapshot SHA-256")
-    if "agency" in profile and profile["agency"] not in agencies:
-        raise ValueError(f"{pid}: unknown agency ID")
     if "heightCm" in profile and (type(profile["heightCm"]) is not int or not 100 <= profile["heightCm"] <= 230):
         raise ValueError(f"{pid}: heightCm must be a plausible integer in cm")
     if "birthDate" in profile:
@@ -61,10 +59,11 @@ def validate_profile(profile, agencies, names, pid):
             raise ValueError(f"{pid}: conflicting or future birth date")
     if "birthYear" in profile and (type(profile["birthYear"]) is not int or not 1900 <= profile["birthYear"] <= date.today().year):
         raise ValueError(f"{pid}: invalid birthYear")
-    if "measurementsCm" in profile:
-        values = profile["measurementsCm"]
-        if not isinstance(values, list) or len(values) != 3 or any(type(v) is not int or not 30 <= v <= 200 for v in values):
-            raise ValueError(f"{pid}: measurementsCm requires bust, waist, hip in cm")
+    if "debutYear" in profile:
+        year = profile["debutYear"]
+        born = int(profile["birthDate"][:4]) if "birthDate" in profile else profile.get("birthYear", 1900)
+        if type(year) is not int or not born <= year <= date.today().year:
+            raise ValueError(f"{pid}: invalid AV debutYear")
 
 
 def directory(root):
@@ -76,14 +75,8 @@ def directory(root):
     data = json.loads(file.read_text("utf-8"))
     if data.get("version") != 1 or not isinstance(data.get("people"), list) or not data["people"]:
         raise ValueError("actresses/data.json: invalid person registry")
-    agencies = data.get("agencies", {})
-    if not isinstance(agencies, dict):
-        raise ValueError("agencies must be an ID mapping")
-    for aid, agency in agencies.items():
-        if not re.fullmatch(r"[a-z][a-z0-9-]*", aid) or not isinstance(agency, dict):
-            raise ValueError("Agencies need stable internal IDs")
-        required_text(agency.get("name"), aid + ".name")
-        https(agency.get("url"), aid + ".url")
+    if "agencies" in data:
+        raise ValueError("Current agencies are not part of the enduring person registry")
     ids, identities, paths, hashes, names = {}, {}, set(), set(), {}
     for person in data["people"]:
         pid = person.get("id")
@@ -114,8 +107,10 @@ def directory(root):
         roman = person.get("romanization")
         if roman is not None and (not isinstance(roman, str) or normalized(roman) not in aliases):
             raise ValueError(f"{pid}: romanization must be a sourced name or alias")
+        if "japaneseName" in person and normalized(required_text(person["japaneseName"], pid + ".japaneseName")) not in aliases:
+            raise ValueError(f"{pid}: Japanese stage name must be a sourced name or alias")
         if "profile" in person:
-            validate_profile(person["profile"], agencies, aliases, pid)
+            validate_profile(person["profile"], aliases, pid)
         photo = person.get("portrait", {})
         path = photo.get("path")
         if not isinstance(path, str) or not re.fullmatch(r"actresses/portraits/" + re.escape(pid) + r"\.(jpg|png|webp)", path) or path in paths:
@@ -219,8 +214,6 @@ def directory(root):
         rankings.append({"series": SERIES, "year": year, "source": pages[0]["url"], "retrieved": snapshot["retrieved"], "snapshot": f"actresses/rankings/{year}.json", "entries": entries})
     compiled = {"people": data["people"], "redirects": redirects, "rankings": rankings,
                 "series": {"id": SERIES, "title": "FANZA 月额 DVD 租赁", "method": "官方年度榜原始顺序；不进行月榜换算。仅反映该平台月额 DVD 租赁口径，不代表全行业人气；官方未公开本数、销售额及完整计算细则。"}}
-    if agencies:
-        compiled["agencies"] = agencies
     return compiled, {person["portrait"]["path"]: person for person in ids.values()}
 
 

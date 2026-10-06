@@ -162,9 +162,6 @@ dialog::backdrop { background: rgb(6 12 18 / .76); }
 .person-method p { margin: 6px 0; }
 .person-method .source-link { margin-right: 18px; }
 .person-description { color: var(--muted); font-size: .8rem; margin: 10px 0 18px; }
-.person-index { display: flex; gap: 4px; flex-wrap: wrap; margin: 8px 0 0; }
-.person-index a { min-width: 36px; min-height: 40px; display: grid; place-items: center; padding: 6px 9px; text-decoration: none; border-radius: 6px; font-size: .78rem; }
-.person-index [aria-current="page"] { background: var(--accent); color: white; }
 .person-gallery { display: block; }
 .person-grid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 20px 14px; }
 .person-card { min-width: 0; overflow: hidden; text-decoration: none; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }

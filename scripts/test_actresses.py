@@ -145,23 +145,33 @@ class ActressTests(unittest.TestCase):
             portrait["display"]["crop"] = crop; self.write()
             with self.assertRaisesRegex(ValueError, message): update(self.root)
 
-    def test_optional_profiles_preserve_precision_identity_and_agency_ids(self):
-        self.data["agencies"] = {"example": {"name": "事务所原名", "url": "https://example.test/"}}
-        self.people[0]["profile"] = {"agency": "example", "sourceName": "人物1", "heightCm": 169, "birthYear": 2000,
-                                     "measurementsCm": [87, 57, 86], "source": {"url": "https://example.test/profile", "sha256": "a" * 64, "retrieved": "2026-01-01"}, "reviewed": "2026-01-01"}
+    def test_enduring_profiles_preserve_precision_and_reviewed_identity(self):
+        self.people[0]["profile"] = {"sourceName": "人物1", "heightCm": 169, "birthYear": 2000, "debutYear": 2020,
+                                     "source": {"url": "https://example.test/profile", "sha256": "a" * 64, "retrieved": "2026-01-01"}, "reviewed": "2026-01-01"}
         self.write(); update(self.root)
-        self.data["agencies"]["example"]["name"] = "Agency official name"
-        self.people[0].update(name="中文常用名", aliases=[{"name": "人物1", "source": "https://example.test/name"}])
+        self.people[0].update(name="中文常用名", japaneseName="人物1", aliases=[{"name": "人物1", "source": "https://example.test/name"}])
         self.write(); update(self.root)
         person = json.loads((self.root / "catalog.json").read_text())["actresses"]["people"][0]
-        self.assertEqual(person["profile"]["agency"], "example")
         self.assertEqual(person["profile"]["birthYear"], 2000)
+        self.assertEqual(person["profile"]["debutYear"], 2020)
+        self.assertEqual(person["japaneseName"], "人物1")
         self.assertNotIn("birthDate", person["profile"])
         self.assertEqual(person["id"], "p0001")
-        for field, value, message in [("agency", "unmapped", "unknown agency"), ("heightCm", "169 cm", "heightCm"), ("sourceName", "another person", "identity mapping"), ("birthDate", "2000-02-30", "valid ISO date")]:
+        for field, value, message in [("heightCm", "169 cm", "heightCm"), ("sourceName", "another person", "identity mapping"), ("birthDate", "2000-02-30", "valid ISO date"), ("debutYear", 1999, "invalid AV debutYear"), ("debutYear", True, "invalid AV debutYear")]:
             profile = self.people[0]["profile"]; before = profile.copy(); profile[field] = value; self.write()
             with self.assertRaisesRegex(ValueError, message): update(self.root)
             self.people[0]["profile"] = before
+
+        for field in ["agency", "measurementsCm", "cup", "status", "socialAccounts", "label"]:
+            profile = self.people[0]["profile"]; profile[field] = "unsupported"; self.write()
+            with self.assertRaisesRegex(ValueError, "unsupported profile fields"): update(self.root)
+            profile.pop(field)
+        self.people[0]["japaneseName"] = "unreviewed name"; self.write()
+        with self.assertRaisesRegex(ValueError, "sourced name or alias"): update(self.root)
+
+    def test_registry_rejects_obsolete_agency_mapping(self):
+        self.data["agencies"] = {}; self.write()
+        with self.assertRaisesRegex(ValueError, "not part of the enduring person registry"): update(self.root)
 
     def test_source_parser_ignores_products_and_detects_gate_or_missing_rank(self):
         cells = "".join(f'<td class=""><span class="rank">{rank}</span><img src="https://pics.dmm.co.jp/mono/actjpgs/example.jpg"><a href="https://www.dmm.co.jp/rental/-/list/=/article=actress/id={rank}/">人物{rank}</a><a href="https://example.test/product">Do not import product descriptions</a></td>' for rank in range(1, 21))
