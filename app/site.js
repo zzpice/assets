@@ -36,6 +36,7 @@ let toastTimeout;
 let activePreview;
 let previewUsingThumbnail = false;
 let visibleAssets = [];
+let renderedViewKey = null;
 let previewSequence = [];
 let initialRoute = true;
 let lockscreenEnabled = false;
@@ -197,10 +198,13 @@ function refreshControls() {
   fillSelect(controls.orientation,directions.map(value => [value,orientationLabels[value]]),"全部方向");
   if (controls.orientation.disabled) controls.orientation.value = "";
   const directionFiles = editionFiles.filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value);
+  const sizes = [...new Map(directionFiles.map(file => [resolutionKey(file),file])).entries()]
+    .sort((a,b) => b[1].width * b[1].height - a[1].width * a[1].height);
+  fillSelect(controls.resolution, sizes.map(([key,file]) => [key,key === "unknown" ? "尺寸未标注" : resolutionLabel(file)]), "全部尺寸");
   const sort = controls.sort.value;
   // Sorting is meaningful only when a rendered group contains different sizes.
   const groupSizes = new Map();
-  files.forEach(file => {
+  directionFiles.filter(file => !controls.resolution.value || resolutionKey(file) === controls.resolution.value).forEach(file => {
     const key = [file.category,kind === "wallpaper" ? file.device : "",isCard ? file.bank : ""].join("/");
     if (!groupSizes.has(key)) groupSizes.set(key,new Set());
     groupSizes.get(key).add(resolutionKey(file));
@@ -210,9 +214,6 @@ function refreshControls() {
   if (hasSizeOrder) sortOptions.push(["resolution-desc","组内尺寸从大到小"],["resolution-asc","组内尺寸从小到大"],["name","组内按名称排序"]);
   controls.sort.replaceChildren(...sortOptions.map(([value,label]) => new Option(label,value)));
   controls.sort.value = sortOptions.some(([value]) => value === sort) ? sort : defaultSort();
-  const sizes = [...new Map(directionFiles.map(file => [resolutionKey(file),file])).entries()]
-    .sort((a,b) => b[1].width * b[1].height - a[1].width * a[1].height);
-  fillSelect(controls.resolution, sizes.map(([key,file]) => [key,key === "unknown" ? "尺寸未标注" : resolutionLabel(file)]), "全部尺寸");
   controls.resolution.disabled = isCover;
   if (isCover) { controls.resolution.value = ""; controls.sort.value = defaultSort(); }
   [controls.category,controls.bank,controls.edition,controls.orientation,controls.resolution].forEach(control => showFilter(control,!control.disabled));
@@ -344,6 +345,12 @@ function withoutPreviewUrl() {
   return url;
 }
 
+function listRouteKey(params = new URLSearchParams(location.hash.slice(1)), viewKind = kind) {
+  const list = new URLSearchParams(params);
+  list.delete("image"); list.delete("person"); list.sort();
+  return viewKind + ":" + list.toString();
+}
+
 function syncRoute() {
   const params = new URLSearchParams(location.hash.slice(1));
   const series = params.get("series");
@@ -352,11 +359,24 @@ function syncRoute() {
   const requestedKind = params.get("kind");
   const defaultKind = assets.some(file => file.kind === "wallpaper") ? "wallpaper" : assets[0]?.kind || "wallpaper";
   const nextKind = params.has("actresses") || params.has("person") ? "actress" : params.has("series") || params.has("covers") ? "game-cover" : linkedImage?.kind || (Object.hasOwn(kindLabels,requestedKind) && requestedKind !== "actress" ? requestedKind : history.state?.galleryKind || defaultKind);
+  // Modal-only navigation must retain the list DOM, including focus, expanded
+  // information and the horizontal position of game series.
+  if (renderedViewKey === listRouteKey(params,nextKind)) {
+    syncPreviewRoute();
+    if (kind === "actress" && actressGallery) actressGallery.syncPerson(params.get("person"));
+    return;
+  }
   if (nextKind === "actress" && actressGallery && actressData) {
     kind = "actress"; activeSeries = "";
     const state = actressGallery.route(params);
     controls.search.value = state.query;
     refreshControls(); renderGallery();
+    const person = actressData.redirects?.[params.get("person")] || params.get("person");
+    if (initialRoute && actressData.people.some(item => item.id === person) && !history.state?.personPreview) {
+      const personLink = location.href;
+      history.replaceState({galleryKind:"actress",personPreview:false},"",actressGallery.viewUrl());
+      history.pushState({galleryKind:"actress",personPreview:true},"",personLink);
+    }
     syncPreviewRoute(); actressGallery.syncPerson(params.get("person"));
     return;
   }
@@ -377,9 +397,15 @@ function syncRoute() {
 }
 
 function navigatePersonView(url, scroll = true, replace = false) {
-  history[replace ? "replaceState" : "pushState"]({galleryKind:"actress",assetPreview:false},"",url);
+  const personPreview = new URLSearchParams(new URL(url).hash.slice(1)).has("person");
+  history[replace ? "replaceState" : "pushState"]({galleryKind:"actress",assetPreview:false,personPreview},"",url);
   syncRoute();
   if (scroll) window.scrollTo(0,0);
+}
+
+function closePerson() {
+  if (history.state?.personPreview) history.back();
+  else navigatePersonView(actressGallery.viewUrl(),false,true);
 }
 
 function previewPath() {
@@ -719,6 +745,7 @@ function matchesQuery(file,query) {
 }
 
 function renderGallery() {
+  renderedViewKey = listRouteKey();
   gallery.classList.remove("person-gallery");
   if (kind === "actress" && actressGallery && actressData) {
     document.getElementById("cover-navigation").hidden = true;
@@ -849,6 +876,7 @@ document.querySelectorAll("dialog").forEach(dialog => {
     if (toast.parentNode === dialog) document.body.append(toast);
   });
   dialog.addEventListener("click", event => {
+    if (dialog.id === "person-dialog") return; // Person routing owns its backdrop.
     const rect = dialog.getBoundingClientRect();
     if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) {
       if (dialog === previewDialog) closePreview(); else dialog.close();
@@ -956,7 +984,7 @@ function applyFiles(files,force = false) {
   if (!force && JSON.stringify(next) === JSON.stringify(assets)) return;
   assets = next;
   if (assets.length && !assets.some(file => file.kind === kind)) kind = assets[0].kind;
-  refreshControls(); renderGallery();
+  renderedViewKey = null;
   syncRoute();
 }
 
@@ -976,7 +1004,7 @@ async function load() {
     const files = new Map(catalog.assets.filter(file => file && typeof file.path === "string" && /^[a-z0-9][a-z0-9/.-]*$/.test(file.path) && !file.path.split("/").includes("..") && imagePattern.test(file.path) && !/^(app|scripts)\//.test(file.path)).map(file => [file.path,file]));
     const peopleChanged = JSON.stringify(actressData) !== JSON.stringify(catalog.actresses);
     actressData = catalog.actresses;
-    if (actressGallery) actressGallery.configure(actressData, [...files.values()], navigatePersonView);
+    if (actressGallery) actressGallery.configure(actressData, [...files.values()], navigatePersonView, requireConnection);
     directoryUnavailable = false;
     updateConnectionNotice();
     applyFiles(files.values(),banksChanged || gamesChanged || peopleChanged);
@@ -1001,8 +1029,8 @@ async function load() {
 }
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.addEventListener("controllerchange",() => { if (assets.length) renderGallery(); });
+  navigator.serviceWorker.addEventListener("controllerchange",() => { if (assets.length) load(); });
   navigator.serviceWorker.register(new URL("sw.js",base), { scope: base.pathname, updateViaCache: "none" }).catch(() => {});
 }
-if (actressGallery) actressGallery.bind();
+if (actressGallery) actressGallery.bind(closePerson);
 load();

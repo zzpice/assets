@@ -419,6 +419,22 @@ test("changing card region removes the previous bank and its incompatible size",
   assert.ok(nodes.get("bank").children.slice(1).every(option=>option.value.startsWith("singapore/")));
 });
 
+test("sorting disappears when current card filters leave no within-bank size differences",()=>{
+  const {context,nodes,read}=populatedGallery();
+  read('kind="bank-card"'); context.clearFilters();
+  assert.equal(nodes.get("sort").closest().hidden,false);
+  nodes.get("sort").value="resolution-desc";
+  nodes.get("category").value="singapore";
+  nodes.get("category").listeners.change[0]();
+  assert.equal(nodes.get("sort").closest().hidden,true);
+  assert.equal(nodes.get("sort").value,"collection");
+  assert.ok(!context.location.hash.includes("sort="));
+  assert.equal(read("visibleAssets.length"),2);
+  nodes.get("category").value="hong-kong";
+  nodes.get("category").listeners.change[0]();
+  assert.equal(nodes.get("sort").closest().hidden,false);
+});
+
 test("search combines words across existing fields and tolerates full-width text and filename separators",()=>{
   const {context,read,nodes}=populatedGallery();
   for (const [resource,query,count] of [["wallpaper","手机 动漫",2],["wallpaper","mount fuji",1],["icon","ＡＩ Claude",1],["bank-card","DBS Singapore",1],["game-cover","逆转 裁判",11]]) {
@@ -510,4 +526,78 @@ test("an unscoped link still opens available resources when no wallpapers remain
   context.syncRoute();
   assert.equal(read("kind"),"icon");
   assert.equal(read("visibleAssets.length"),61);
+});
+
+test("image preview history retains the existing list nodes and expanded card information",()=>{
+  const {context,nodes,read}=populatedGallery();
+  context.history.replaceState(null,"",base+"#covers"); context.syncRoute();
+  const sections=nodes.get("gallery").children;
+  const story=descend(nodes.get("gallery")).find(node=>node.className?.includes("game-synopsis"));
+  story.open=true;
+  context.openPreview(read("visibleAssets[0]"));
+  context.syncRoute();
+  assert.equal(nodes.get("gallery").children,sections);
+  context.closePreview(); context.syncRoute();
+  assert.equal(nodes.get("gallery").children,sections);
+  assert.equal(story.open,true);
+  assert.equal(nodes.get("preview-dialog").open,false);
+});
+
+test("closing person details returns to the list entry without adding a duplicate Back step",()=>{
+  const {context,nodes,read}=populatedGallery();
+  context.window.scrollTo=()=>{};
+  context.history.replaceState(null,"",base+"#actresses=all&page=2"); context.syncRoute();
+  read("initialRoute=false");
+  const cards=nodes.get("gallery").children;
+  const listUrl=context.location.href;
+  const person=read("actressGallery.select().items[0].person.id");
+  context.navigatePersonView(read(`actressGallery.viewUrl({},"${person}")`),false);
+  assert.equal(nodes.get("gallery").children,cards);
+  assert.equal(context.history.index,1);
+  assert.equal(nodes.get("person-dialog").open,true);
+  context.closePerson(); context.syncRoute();
+  assert.equal(context.location.href,listUrl);
+  assert.equal(context.history.index,0);
+  assert.equal(nodes.get("gallery").children,cards);
+  assert.equal(nodes.get("person-dialog").open,false);
+});
+
+test("a shared person detail has its own list beneath it and keeps page and query when closed",()=>{
+  const {context,nodes}=populatedGallery();
+  context.history.replaceState(null,"",base+"#actresses=all&q=Mikami&person=p0032");
+  context.syncRoute();
+  assert.equal(context.history.entries.length,2);
+  assert.equal(context.history.state.personPreview,true);
+  assert.equal(nodes.get("person-dialog").open,true);
+  context.closePerson(); context.syncRoute();
+  assert.equal(context.history.index,0);
+  assert.equal(new URLSearchParams(context.location.hash.slice(1)).get("person"),null);
+  assert.equal(nodes.get("search").value,"Mikami");
+});
+
+test("person avatar downloads use the same offline guard as other originals",()=>{
+  const {context,nodes,read}=populatedGallery();
+  read('actressGallery.configure(actressData,testCatalog.assets,navigatePersonView,requireConnection); showToast=message=>{globalThis.offlineMessage=message;}');
+  context.history.replaceState(null,"",base+"#actresses=all&person=p0032"); context.syncRoute();
+  const download=descend(nodes.get("person-content")).find(node=>node.textContent==="下载头像");
+  let prevented=false;
+  context.navigator.onLine=false;
+  download.listeners.click[0]({preventDefault(){prevented=true;}});
+  assert.equal(prevented,true);
+  assert.equal(read("offlineMessage"),"请联网后下载原图");
+  context.navigator.onLine=true; prevented=false;
+  download.listeners.click[0]({preventDefault(){prevented=true;}});
+  assert.equal(prevented,false);
+});
+
+test("refreshing an unchanged cached directory retains an open preview and its list nodes",async()=>{
+  const catalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
+  const {context,nodes,read}=gallery(async()=>new Response(JSON.stringify(catalog)),true);
+  context.history.replaceState(null,"",base+"#covers");
+  await context.load();
+  const sections=nodes.get("gallery").children;
+  context.openPreview(read("visibleAssets[0]"));
+  await context.load();
+  assert.equal(nodes.get("gallery").children,sections);
+  assert.equal(nodes.get("preview-dialog").open,true);
 });

@@ -10,6 +10,7 @@ window.ActressGallery = (() => {
   let state = { view: "annual", year: 0, query: "", page: 1 };
   let activePerson = "";
   let navigate;
+  let requireConnection;
   const base = new URL(".", document.baseURI);
   const node = (tag, className, text) => {
     const result = document.createElement(tag);
@@ -35,11 +36,12 @@ window.ActressGallery = (() => {
     return rows;
   }
 
-  function configure(data, files, onNavigate) {
+  function configure(data, files, onNavigate, onDownload = () => {}) {
     directory = data || { people: [], rankings: [], redirects: {} };
     people = new Map(directory.people.map(person => [person.id, { ...person, search: normalize([person.name, person.japaneseName || "", person.romanization || "", ...person.aliases.map(alias => alias.name)].join(" ")) } ]));
     photos = new Map(files.filter(file => file.kind === "actress").map(file => [file.person, file]));
     navigate = onNavigate;
+    requireConnection = onDownload;
   }
 
   function profileEvidence(person) {
@@ -250,7 +252,8 @@ window.ActressGallery = (() => {
     facts.append(sources);
     const actions = node("div", "person-detail-actions");
     if (photo) {
-      const download = node("a", "primary-button", "下载头像"); download.href = url(photo.path); download.download = photo.path.split("/").pop(); actions.append(download);
+      const download = node("a", "primary-button", "下载头像"); download.href = url(photo.path); download.download = photo.path.split("/").pop();
+      download.addEventListener("click",requireConnection); actions.append(download);
     }
     const copy = node("button", "secondary-button", "复制人物链接"); copy.type = "button";
     copy.addEventListener("click", async () => {
@@ -263,9 +266,9 @@ window.ActressGallery = (() => {
     document.body.style.overflow = "hidden";
   }
 
-  function bind() {
+  function bind(onClose) {
     const dialog = document.getElementById("person-dialog");
-    const close = () => navigate(viewUrl(), false, true);
+    const close = onClose || (() => navigate(viewUrl(), false, true));
     document.getElementById("person-close").addEventListener("click", close);
     dialog.addEventListener("cancel", event => { event.preventDefault(); close(); });
     dialog.addEventListener("close", () => { activePerson = ""; document.body.style.overflow = ""; document.getElementById("person-content").replaceChildren(); });
