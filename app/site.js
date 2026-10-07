@@ -14,6 +14,7 @@ const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "ban
 const actressGallery = window.ActressGallery;
 let actressData;
 const deviceLabels = { phone: "手机", desktop: "电脑", tablet: "平板", unknown: "待分类" };
+const orientationLabels = { portrait: "竖屏", landscape: "横屏", square: "方形", unknown: "未标注" };
 const cardRegionLabels = { "hong-kong": "香港", "china-mainland": "中国内地", singapore: "新加坡" };
 const cardEditionLabels = { originals: "原始卡面", custom: "修改版" };
 const coverRegionLabels = { Japan: "日本", "North America": "北美", Europe: "欧洲", Worldwide: "全球" };
@@ -151,6 +152,10 @@ function fillSelect(select, entries, placeholder) {
   if (entries.some(([value]) => value === old)) select.value = old;
 }
 
+function showFilter(control, available = true) {
+  control.closest(".field").hidden = !available || (control.children.length <= 2 && !control.value);
+}
+
 function refreshControls() {
   const files = viewFiles();
   const isCover = kind === "game-cover";
@@ -158,7 +163,7 @@ function refreshControls() {
   document.getElementById("filters-panel").hidden = isCover || isPerson;
   document.getElementById("actress-navigation").hidden = !isPerson;
   document.getElementById("show-favorites").hidden = isPerson;
-  controls.search.placeholder = isPerson ? "搜索姓名、别名或罗马字" : "搜索名称、种类或文件名";
+  controls.search.placeholder = isPerson ? "在当前栏目中搜索姓名、别名或罗马字" : isCover ? "在当前游戏封面中搜索作品、系列或平台" : kind === "bank-card" ? "在银行卡面中搜索名称、银行或钱包" : "在" + kindLabels[kind] + "中搜索名称、分类或文件名";
   document.querySelector('label[for="search"]').textContent = isPerson ? "搜索人物" : "搜索图片";
   document.getElementById("gallery").setAttribute("aria-label", isPerson ? "人物列表" : "图片列表");
   const devices = ["phone","desktop","tablet","unknown"].filter(device => files.some(file => file.device === device));
@@ -171,7 +176,7 @@ function refreshControls() {
   fillSelect(controls.category, categories.map(value => [value,categoryLabel({kind,category:value})]), kind === "bank-card" ? "全部地区" : "全部种类");
   controls.category.disabled = kind === "other" || isCover;
   controls.category.closest(".field").hidden = controls.category.disabled;
-  document.querySelector('label[for="category"]').textContent = kind === "bank-card" ? "地区" : kind === "icon" ? "用途分类" : "画面风格";
+  document.querySelector('label[for="category"]').textContent = kind === "bank-card" ? "地区" : kind === "icon" ? "用途分类" : "内容分类";
   if (controls.category.disabled) controls.category.value = "";
   controls.orientation.disabled = ["avatar","icon","bank-card","game-cover"].includes(kind);
   controls.orientation.closest(".field").hidden = controls.orientation.disabled;
@@ -188,15 +193,31 @@ function refreshControls() {
   const bankFiles = categoryFiles.filter(file => !controls.bank.value || collectionKey(file) === controls.bank.value);
   fillSelect(controls.edition,Object.keys(cardEditionLabels).filter(edition => bankFiles.some(file => file.edition === edition)).map(value => [value,cardEditionLabels[value]]),"全部版本");
   const editionFiles = bankFiles.filter(file => !controls.edition.value || file.edition === controls.edition.value);
+  const directions = Object.keys(orientationLabels).filter(value => editionFiles.some(file => orientation(file) === value));
+  fillSelect(controls.orientation,directions.map(value => [value,orientationLabels[value]]),"全部方向");
+  if (controls.orientation.disabled) controls.orientation.value = "";
+  const directionFiles = editionFiles.filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value);
   const sort = controls.sort.value;
-  const sortOptions = [["collection",isCard ? "地区与银行顺序" : kind === "wallpaper" ? "设备与种类顺序" : "分类顺序"],["resolution-desc","组内尺寸从大到小"],["resolution-asc","组内尺寸从小到大"],["name","组内按名称排序"]];
+  // Sorting is meaningful only when a rendered group contains different sizes.
+  const groupSizes = new Map();
+  files.forEach(file => {
+    const key = [file.category,kind === "wallpaper" ? file.device : "",isCard ? file.bank : ""].join("/");
+    if (!groupSizes.has(key)) groupSizes.set(key,new Set());
+    groupSizes.get(key).add(resolutionKey(file));
+  });
+  const hasSizeOrder = [...groupSizes.values()].some(sizes => sizes.size > 1);
+  const sortOptions = [["collection",isCard ? "地区与银行顺序" : kind === "wallpaper" ? "设备与种类顺序" : "分类顺序"]];
+  if (hasSizeOrder) sortOptions.push(["resolution-desc","组内尺寸从大到小"],["resolution-asc","组内尺寸从小到大"],["name","组内按名称排序"]);
   controls.sort.replaceChildren(...sortOptions.map(([value,label]) => new Option(label,value)));
   controls.sort.value = sortOptions.some(([value]) => value === sort) ? sort : defaultSort();
-  const sizes = [...new Map(editionFiles.map(file => [resolutionKey(file),file])).entries()]
+  const sizes = [...new Map(directionFiles.map(file => [resolutionKey(file),file])).entries()]
     .sort((a,b) => b[1].width * b[1].height - a[1].width * a[1].height);
   fillSelect(controls.resolution, sizes.map(([key,file]) => [key,key === "unknown" ? "尺寸未标注" : resolutionLabel(file)]), "全部尺寸");
   controls.resolution.disabled = isCover;
   if (isCover) { controls.resolution.value = ""; controls.sort.value = defaultSort(); }
+  [controls.category,controls.bank,controls.edition,controls.orientation,controls.resolution].forEach(control => showFilter(control,!control.disabled));
+  controls.sort.closest(".field").hidden = !hasSizeOrder;
+  document.getElementById("filters-panel").hidden = isCover || isPerson || ![controls.category,controls.bank,controls.edition,controls.orientation,controls.resolution,controls.sort].some(control => !control.closest(".field").hidden);
   document.querySelectorAll(".tab").forEach(tab => {
     const count = assets.filter(file => file.kind === tab.dataset.kind && (file.kind !== "game-cover" || !file.extra)).length;
     tab.querySelector("span").textContent = count;
@@ -268,26 +289,47 @@ function assetPreviewUrl(file) {
 }
 
 function previewUrl(file) {
-  const url = new URL(base);
-  const params = new URLSearchParams();
-  if (file.kind === "game-cover") {
-    if (activeSeries || file.extra) params.set("series",file.category);
-    else params.set("covers","");
-  }
+  const url = new URL(galleryViewUrl(file.kind,file.kind === "game-cover" && (activeSeries || file.extra) ? file.category : ""));
+  const params = new URLSearchParams(url.hash.slice(1));
   params.set("image",file.path);
   url.hash = params.toString();
   return url.href;
 }
 
-function coverViewUrl(series = "") {
+function galleryViewUrl(nextKind = kind,series = activeSeries,preserve = true) {
   const url = new URL(base);
-  url.hash = series ? new URLSearchParams({series}).toString() : "covers";
+  const params = new URLSearchParams();
+  if (nextKind === "game-cover") params.set(series ? "series" : "covers",series || "");
+  else if (nextKind !== "wallpaper") params.set("kind",nextKind);
+  if (preserve && nextKind === kind) {
+    if (controls.search.value.trim()) params.set("q",controls.search.value.trim());
+    if (favoritesOnly) params.set("favorites","1");
+    if (nextKind !== "game-cover") {
+      for (const name of ["device","category","bank","edition","orientation","resolution","sort"]) {
+        const value = controls[name].value;
+        if (value && (name !== "sort" || value !== defaultSort())) params.set(name,value);
+      }
+    }
+  }
+  url.hash = params.toString();
+  return url.href;
+}
+
+function saveGalleryView() {
+  if (kind !== "actress") history.replaceState({...history.state,galleryKind:kind,assetPreview:false},"",kind === "game-cover" ? coverViewUrl(activeSeries) : galleryViewUrl());
+}
+
+function coverViewUrl(series = "") {
+  // Keep the long-established unfiltered overview URL readable.
+  const url = new URL(galleryViewUrl("game-cover",series));
+  if (url.hash === "#covers=") url.hash = "covers";
   return url.href;
 }
 
 function navigateCoverView(event,series = "") {
   if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   event.preventDefault();
+  saveGalleryView();
   history.pushState({galleryKind:"game-cover",assetPreview:false},"",coverViewUrl(series));
   syncRoute();
   // Scroll after saving the overview position, so Back can restore it.
@@ -306,7 +348,10 @@ function syncRoute() {
   const params = new URLSearchParams(location.hash.slice(1));
   const series = params.get("series");
   const nextSeries = gameSeries.some(item => item.id === series) ? series : "";
-  const nextKind = params.has("actresses") || params.has("person") ? "actress" : params.has("series") || params.has("covers") ? "game-cover" : history.state?.galleryKind || kind;
+  const linkedImage = assets.find(file => file.path === params.get("image"));
+  const requestedKind = params.get("kind");
+  const defaultKind = assets.some(file => file.kind === "wallpaper") ? "wallpaper" : assets[0]?.kind || "wallpaper";
+  const nextKind = params.has("actresses") || params.has("person") ? "actress" : params.has("series") || params.has("covers") ? "game-cover" : linkedImage?.kind || (Object.hasOwn(kindLabels,requestedKind) && requestedKind !== "actress" ? requestedKind : history.state?.galleryKind || defaultKind);
   if (nextKind === "actress" && actressGallery && actressData) {
     kind = "actress"; activeSeries = "";
     const state = actressGallery.route(params);
@@ -316,10 +361,18 @@ function syncRoute() {
     return;
   }
   if (actressGallery) actressGallery.syncPerson(null);
-  if (activeSeries !== nextSeries || kind !== nextKind) {
-    activeSeries = nextSeries; kind = nextKind;
-    clearFilters(); renderGallery();
+  activeSeries = nextSeries; kind = nextKind;
+  controls.search.value = params.get("q") || "";
+  favoritesOnly = params.get("favorites") === "1";
+  for (const name of ["device","category","bank","edition","orientation","resolution","sort"]) {
+    const control = controls[name];
+    const value = params.get(name) || (name === "sort" ? defaultSort() : "");
+    // Native selects reject values absent from the previous view's options.
+    // Seed the route value, then let refreshControls validate the new scope.
+    if (value && !Array.from(control.children).some(option => option.value === value)) control.add(new Option(value,value));
+    control.value = value;
   }
+  refreshControls(); renderGallery();
   syncPreviewRoute();
 }
 
@@ -433,7 +486,7 @@ function syncPreviewRoute() {
   if (kind !== file.kind || !visibleAssets.some(item => item.path === path)) {
     kind = file.kind;
     if (file.kind === "game-cover" && (file.extra || activeSeries)) activeSeries = file.category;
-    clearFilters(); renderGallery();
+    clearFilters(false); renderGallery();
   }
   if (activePreview !== file || !previewDialog.open) openPreview(file,"none");
 }
@@ -658,12 +711,19 @@ function compareAssets(a,b) {
   return (controls.sort.value === "resolution-asc" ? difference : -difference) || byName;
 }
 
+function matchesQuery(file,query) {
+  const normalize = value => value.normalize("NFKC").toLocaleLowerCase().replace(/[-_/·・]+/g," ");
+  const terms = normalize(query.trim()).split(/\s+/).filter(Boolean);
+  const text = normalize([file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || "",gameInfo(file)?.title || "",file.cover?.version || "",file.cover?.platform || "",file.cover?.region || ""].join(" "));
+  return terms.every(term => text.includes(term));
+}
+
 function renderGallery() {
   gallery.classList.remove("person-gallery");
   if (kind === "actress" && actressGallery && actressData) {
     document.getElementById("cover-navigation").hidden = true;
     actressGallery.render(controls.search.value, gallery, results);
-    reset.disabled = !controls.search.value && !actressGallery.state.letter;
+    reset.disabled = !controls.search.value;
     return;
   }
   const query = controls.search.value.trim().toLocaleLowerCase();
@@ -676,7 +736,7 @@ function renderGallery() {
     .filter(file => !controls.edition.value || file.edition === controls.edition.value)
     .filter(file => !controls.resolution.value || resolutionKey(file) === controls.resolution.value)
     .filter(file => !controls.orientation.value || orientation(file) === controls.orientation.value)
-    .filter(file => !query || [file.title,file.path,categoryLabel(file),deviceLabels[file.device] || "",cardBank(file)?.name || "",cardBank(file)?.englishName || "",file.source?.wallet || "",gameInfo(file)?.title || "",file.cover?.version || "",file.cover?.platform || "",file.cover?.region || ""].join(" ").toLocaleLowerCase().includes(query));
+    .filter(file => !query || matchesQuery(file,query));
   visible.sort(compareAssets);
   visibleAssets = visible;
   const inSeries = kind === "game-cover" && Boolean(activeSeries);
@@ -698,7 +758,13 @@ function renderGallery() {
     gallery.replaceChildren(...sections);
   } else if (grouped) gallery.replaceChildren(...makeCategorySections(visible));
   else {
-    const empty = element("div","empty",favoritesOnly ? "这里还没有符合条件的收藏。点图片右上角的心形即可收藏，收藏保存在当前浏览器。" : "没有找到符合条件的图片。");
+    const empty = element("div","empty",favoritesOnly ? "当前" + kindLabels[kind] + "中没有符合条件的收藏。收藏保存在当前浏览器。" : "当前" + kindLabels[kind] + "中没有符合条件的图片。");
+    if (query) {
+      const clearSearch = element("button","secondary-button","清除搜索");
+      clearSearch.type = "button";
+      clearSearch.addEventListener("click",() => { controls.search.value = ""; saveGalleryView(); renderGallery(); controls.search.focus(); });
+      empty.append(element("br"),clearSearch);
+    }
     const clear = element("button","secondary-button",favoritesOnly ? "浏览全部图片" : "清除筛选");
     clear.type = "button";
     clear.addEventListener("click", () => { clearFilters(); renderGallery(); });
@@ -706,39 +772,38 @@ function renderGallery() {
   }
   results.textContent = kind === "game-cover" ? new Set(visible.map(collection => collection.category + "/" + collection.game)).size + " 款作品 · " + (inSeries ? visible.length + " 张封面" : new Set(visible.map(file => file.category)).size + " 个系列") : "显示 " + visible.length + " / " + scope.length + (kind === "icon" ? " 个" : " 张") + kindLabels[kind];
   const count = [controls.device.value,controls.category.value,controls.bank.value,controls.edition.value,controls.resolution.value,controls.orientation.value].filter(Boolean).length;
-  document.getElementById("filter-summary").textContent = count ? count + " 项筛选" : "全部图片";
+  const selected = ["device","category","bank","edition","orientation","resolution","sort"].flatMap(name => {
+    const control = controls[name];
+    return control.value && (name !== "sort" || control.value !== defaultSort()) ? [Array.from(control.children).find(option => option.value === control.value)?.textContent || control.value] : [];
+  });
+  if (favoritesOnly) selected.push("仅收藏");
+  document.getElementById("filter-summary").textContent = selected.join(" · ") || "全部图片";
   reset.disabled = !query && !count && !favoritesOnly && controls.sort.value === defaultSort();
 }
 
-function clearFilters() {
+function clearFilters(persist = true) {
   controls.search.value = ""; controls.device.value = ""; controls.category.value = "";
   controls.resolution.value = ""; controls.orientation.value = "";
   controls.bank.value = ""; controls.edition.value = "";
   controls.sort.value = defaultSort();
   favoritesOnly = false; refreshControls();
   if (kind === "actress" && actressGallery && actressData) {
-    const url = actressGallery.viewUrl({query:"",letter:"",page:1});
+    const url = actressGallery.viewUrl({query:"",page:1});
     history.replaceState({galleryKind:"actress"},"",url);
     actressGallery.route(new URLSearchParams(new URL(url).hash.slice(1)));
-  }
+  } else if (persist) saveGalleryView();
 }
 
 document.getElementById("filters-panel").open = !window.matchMedia("(max-width: 760px)").matches;
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => {
   const nextKind = tab.dataset.kind;
+  if (nextKind === kind) return;
+  saveGalleryView();
   if (nextKind === "actress" && actressGallery) {
-    navigatePersonView(actressGallery.viewUrl({view:"annual",query:"",letter:"",page:1})); return;
+    navigatePersonView(actressGallery.viewUrl({view:"annual",query:"",page:1})); return;
   }
-  if (kind === "actress") {
-    if (actressGallery) actressGallery.syncPerson(null);
-    history.pushState({galleryKind:nextKind,assetPreview:false},"",nextKind === "game-cover" ? coverViewUrl() : base.href);
-  } else if (kind !== nextKind && (kind === "game-cover" || nextKind === "game-cover")) {
-    history.replaceState({...history.state,galleryKind:kind},"",location.href);
-    history.pushState({galleryKind:nextKind,assetPreview:false},"",nextKind === "game-cover" ? coverViewUrl() : base.href);
-  } else if (nextKind === "game-cover" && activeSeries) history.pushState({galleryKind:nextKind,assetPreview:false},"",coverViewUrl());
-  kind = nextKind; activeSeries = "";
-  history.replaceState({...history.state,galleryKind:kind},"",location.href);
-  clearFilters(); renderGallery();
+  history.pushState({galleryKind:nextKind,assetPreview:false},"",galleryViewUrl(nextKind,"",false));
+  syncRoute();
 }));
 document.querySelector("#cover-navigation a").addEventListener("click",event => navigateCoverView(event));
 Object.entries(controls).forEach(([name,control]) => control.addEventListener(name === "search" ? "input" : "change", () => {
@@ -747,12 +812,13 @@ Object.entries(controls).forEach(([name,control]) => control.addEventListener(na
     history.replaceState({galleryKind:"actress"},"",url);
     actressGallery.route(new URLSearchParams(new URL(url).hash.slice(1)));
   }
-  if (["device","category","bank","edition"].includes(name)) refreshControls();
+  if (name !== "search") refreshControls();
+  saveGalleryView();
   renderGallery();
 }));
 reset.addEventListener("click", () => { clearFilters(); renderGallery(); });
 document.getElementById("show-favorites").addEventListener("click",() => {
-  favoritesOnly = !favoritesOnly; refreshFavoriteCount(); renderGallery();
+  favoritesOnly = !favoritesOnly; saveGalleryView(); refreshFavoriteCount(); renderGallery();
 });
 document.getElementById("preview-copy").addEventListener("click", () => {
   if (activePreview) copyUrl(imageUrl(activePreview.path));

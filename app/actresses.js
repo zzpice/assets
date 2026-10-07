@@ -79,8 +79,8 @@ window.ActressGallery = (() => {
     let items = state.view === "annual" ? (ranking?.entries || []).map(entry => ({ person: people.get(entry.person), rank: entry.rank })) : [...people.values()].filter(person => state.view !== "hall" || person.hallOfFame).map(person => ({ person }));
     items = items.filter(item => item.person);
     const scope = items.length;
-    const needle = normalize(query.trim());
-    items = items.filter(({ person }) => !needle || person.search.includes(needle));
+    const terms = query.normalize("NFKC").trim().split(/\s+/).map(normalize).filter(Boolean);
+    items = items.filter(({ person }) => terms.every(term => person.search.includes(term)));
     if (state.view !== "annual") items.sort((a, b) => (a.person.romanization || a.person.name).localeCompare(b.person.romanization || b.person.name, "zh-Hans-CN") || a.person.id.localeCompare(b.person.id));
     const count = items.length;
     const pages = Math.max(1, Math.ceil(count / PAGE_SIZE));
@@ -160,7 +160,11 @@ window.ActressGallery = (() => {
       if (person.romanization) meta.append(node("p", "", person.romanization));
       card.append(frame, meta); grid.append(card);
     }
-    if (!selected.count) grid.append(node("p", "empty", "没有找到人物，试试其他姓名或别名。"));
+    if (!selected.count) {
+      const empty = node("div", "empty", "当前" + (state.view === "annual" ? state.year + " 年度榜单" : labels[state.view]) + "中没有找到人物，试试其他姓名或别名。");
+      if (query.trim() && state.view !== "all") empty.append(node("br"),link("在全部女优中查找", { view: "all", page: 1 }, "secondary-button"));
+      grid.append(empty);
+    }
     const pagination = node("nav", "person-pagination"); pagination.setAttribute("aria-label", "人物列表分页");
     if (state.page > 1) pagination.append(link("← 上一页", { page: state.page - 1 }, "secondary-button"));
     pagination.append(node("span", "", state.page + " / " + selected.pages));

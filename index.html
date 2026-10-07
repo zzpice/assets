@@ -13,16 +13,16 @@
   <link rel="manifest" href="app/manifest.webmanifest">
   <link rel="icon" href="app/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="app/icon-180.png">
-  <link rel="stylesheet" href="app/site.css?v=c379c2d241">
-  <script src="app/actresses.js?v=acf51346e8" defer></script>
-  <script src="app/site.js?v=b33bb6ee23" defer></script>
+  <link rel="stylesheet" href="app/site.css?v=58b6a77be3">
+  <script src="app/actresses.js?v=57d562ebd4" defer></script>
+  <script src="app/site.js?v=95a920d457" defer></script>
 </head>
 <body>
   <header>
     <div>
       <p class="eyebrow">ZZPICE / ASSETS</p>
       <h1>图片资源库</h1>
-      <p class="intro">按种类与尺寸，找到合适的图片。</p>
+      <p class="intro">按用途浏览，找到合适的图片。</p>
     </div>
     <button id="install" class="install-button" type="button">添加到桌面</button>
   </header>
@@ -36,6 +36,7 @@
     <button class="tab" type="button" data-kind="actress" aria-pressed="false" hidden>女优图库<span>0</span></button>
     <button class="tab" type="button" data-kind="other" aria-pressed="false" hidden>其他图片<span>0</span></button>
   </nav>
+  <div class="field device-filter" hidden><label for="device">适用设备</label><select id="device"><option value="">全部设备</option></select></div>
   <section id="actress-navigation" hidden aria-label="女优人物图库"></section>
   <nav id="cover-navigation" class="cover-navigation" aria-label="游戏封面导航" hidden>
     <a href="#covers">游戏封面</a><span aria-hidden="true"> / </span><span id="cover-series-title"></span>
@@ -47,12 +48,11 @@
   <details class="filter-panel" id="filters-panel">
     <summary><span>筛选与排序</span><span id="filter-summary">全部图片</span></summary>
     <section class="filters" aria-label="筛选图片">
-      <div class="field"><label for="device">适用设备</label><select id="device"><option value="">全部设备</option></select></div>
-      <div class="field"><label for="category">画面风格</label><select id="category"><option value="">全部种类</option></select></div>
+      <div class="field"><label for="category">内容分类</label><select id="category"><option value="">全部种类</option></select></div>
       <div class="field" hidden><label for="bank">银行</label><select id="bank"><option value="">全部银行</option></select></div>
       <div class="field" hidden><label for="edition">卡面版本</label><select id="edition"><option value="">全部版本</option></select></div>
-      <div class="field"><label for="resolution">实际尺寸</label><select id="resolution"><option value="">全部尺寸</option></select></div>
       <div class="field"><label for="orientation">画面方向</label><select id="orientation"><option value="">全部方向</option><option value="portrait">竖屏</option><option value="landscape">横屏</option><option value="square">方形</option><option value="unknown">未标注</option></select></div>
+      <div class="field"><label for="resolution">实际尺寸</label><select id="resolution"><option value="">全部尺寸</option></select></div>
       <div class="field"><label for="sort">排序</label><select id="sort"><option value="collection">设备与种类顺序</option><option value="resolution-desc">组内尺寸从大到小</option><option value="resolution-asc">组内尺寸从小到大</option><option value="name">组内按名称排序</option></select></div>
     </section>
   </details>

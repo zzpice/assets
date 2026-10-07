@@ -298,7 +298,7 @@ test("series links support refresh, Back, overview and unknown-series fallback",
   assert.equal(read("visibleAssets.some(file=>file.extra)"),false);
   context.history.replaceState({galleryKind:"icon"},"",base); context.syncRoute();
   assert.equal(read("kind"),"icon");
-  assert.equal(nodes.get("filters-panel").hidden,false);
+  assert.equal(nodes.get("filters-panel").hidden,true); // No icons in this fixture, so no useful filters.
 });
 
 test("shared cover previews preserve their gallery context and navigate across works in the same series",()=>{
@@ -355,4 +355,159 @@ test("cover navigation starts at the top while Back and modified links retain br
   assert.equal(context.location.hash,"#covers");
   assert.equal(read("visibleAssets.length"),4);
   assert.deepEqual(scrolls.at(-1),[0,0,""]);
+});
+
+function populatedGallery() {
+  const state=gallery(undefined,true);
+  state.context.testCatalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
+  state.read('cardBanks=testCatalog.cardBanks; gameSeries=testCatalog.gameSeries; games=testCatalog.games; actressData=testCatalog.actresses; actressGallery.configure(actressData,testCatalog.assets,navigatePersonView); assets=testCatalog.assets.map(makeAsset)');
+  state.context.refreshControls();
+  return state;
+}
+
+test("wallpaper device overrides remain independent of aspect ratio and content category",()=>{
+  const {context}=populatedGallery();
+  const file=context.makeAsset({path:"wallpapers/anime/7500x5000/shinchan.jpg",device:"desktop"});
+  assert.equal(file.device,"desktop");
+  assert.equal(file.category,"anime");
+  assert.equal(context.inferDevice(1080,1920),"unknown");
+  assert.equal(context.makeAsset({path:"avatars/anime/1254x1254/girl.png"}).device,"");
+});
+
+test("changing wallpaper device clears incompatible direction and size without an empty result",()=>{
+  const {context,nodes,read}=populatedGallery();
+  nodes.get("orientation").value="landscape";
+  context.refreshControls();
+  nodes.get("resolution").value="7500x5000";
+  nodes.get("device").value="phone";
+  nodes.get("device").listeners.change[0]();
+  assert.equal(nodes.get("orientation").value,"");
+  assert.equal(nodes.get("resolution").value,"");
+  assert.equal(read("visibleAssets.length"),2);
+  assert.deepEqual(nodes.get("orientation").children.map(option=>option.value),["","portrait"]);
+  assert.equal(nodes.get("orientation").closest().hidden,true);
+  assert.equal(nodes.get("resolution").closest().hidden,true);
+  assert.equal(nodes.get("filters-panel").hidden,true);
+  assert.equal(nodes.get("device").closest().hidden,false);
+});
+
+test("single-value filters and ineffective sorting disappear while meaningful categories remain",()=>{
+  const {context,nodes,read}=populatedGallery();
+  for (const resource of ["avatar","icon","bank-card"]) {
+    read('kind="'+resource+'"'); context.clearFilters();
+    assert.equal(nodes.get("device").closest().hidden,true);
+    if (resource==="avatar") assert.equal(nodes.get("filters-panel").hidden,true);
+    if (resource==="icon") {
+      assert.equal(nodes.get("category").closest().hidden,false);
+      assert.equal(nodes.get("resolution").closest().hidden,true);
+      assert.equal(nodes.get("sort").closest().hidden,true);
+    }
+    if (resource==="bank-card") assert.equal(nodes.get("edition").closest().hidden,true);
+  }
+});
+
+test("changing card region removes the previous bank and its incompatible size",()=>{
+  const {context,nodes,read}=populatedGallery();
+  read('kind="bank-card"'); context.clearFilters();
+  nodes.get("category").value="hong-kong";
+  nodes.get("bank").value="hong-kong/hsbc";
+  context.refreshControls();
+  nodes.get("category").value="singapore";
+  nodes.get("category").listeners.change[0]();
+  assert.equal(nodes.get("bank").value,"");
+  assert.equal(read("visibleAssets.length"),2);
+  assert.ok(nodes.get("bank").children.slice(1).every(option=>option.value.startsWith("singapore/")));
+});
+
+test("search combines words across existing fields and tolerates full-width text and filename separators",()=>{
+  const {context,read,nodes}=populatedGallery();
+  for (const [resource,query,count] of [["wallpaper","手机 动漫",2],["wallpaper","mount fuji",1],["icon","ＡＩ Claude",1],["bank-card","DBS Singapore",1],["game-cover","逆转 裁判",11]]) {
+    read('kind="'+resource+'"'); context.clearFilters();
+    nodes.get("search").value=query; context.renderGallery();
+    assert.equal(read("visibleAssets.length"),count,query);
+  }
+});
+
+test("links restore scope, search, device, category, size and favorites from another view",()=>{
+  const {context,nodes,read}=populatedGallery();
+  read('kind="icon"'); context.clearFilters();
+  context.history.replaceState(null,"",base+"#q=少女&device=phone&category=anime&resolution=1440x3120&favorites=1");
+  read('favorites=new Set([assets.find(file=>file.kind==="wallpaper").path])');
+  context.syncRoute();
+  assert.equal(read("kind"),"wallpaper");
+  assert.equal(nodes.get("search").value,"少女");
+  assert.equal(nodes.get("device").value,"phone");
+  assert.equal(nodes.get("category").value,"anime");
+  assert.equal(nodes.get("resolution").value,"1440x3120");
+  assert.equal(read("favoritesOnly"),true);
+  assert.equal(read("visibleAssets.length"),1);
+  assert.ok(nodes.get("filter-summary").textContent.includes("手机 · 动漫"));
+});
+
+test("tab Back and closing a preview preserve the filtered list; clicking the active tab is harmless",()=>{
+  const {context,nodes,read}=populatedGallery();
+  nodes.get("device").value="phone"; nodes.get("device").listeners.change[0]();
+  nodes.get("search").value="雨夜"; nodes.get("search").listeners.input[0]();
+  const filtered=context.location.href;
+  nodes.get("tab-wallpaper").listeners.click[0]();
+  assert.equal(context.location.href,filtered);
+  context.openPreview(read("visibleAssets[0]"));
+  assert.ok(context.location.hash.includes("q="));
+  context.closePreview(); context.syncRoute();
+  assert.equal(context.location.href,filtered);
+  assert.equal(read("visibleAssets.length"),1);
+  nodes.get("tab-icon").listeners.click[0]();
+  assert.equal(read("kind"),"icon");
+  context.history.back(); context.syncRoute();
+  assert.equal(context.location.href,filtered);
+  assert.equal(nodes.get("device").value,"phone");
+  assert.equal(nodes.get("search").value,"雨夜");
+  assert.equal(read("visibleAssets.length"),1);
+});
+
+test("series navigation retains search and Back returns to the same overview query",()=>{
+  const {context,nodes,read}=coverGallery();
+  context.window.scrollTo=()=>{};
+  context.history.replaceState(null,"",base+"#covers"); context.syncRoute();
+  nodes.get("search").value="999"; nodes.get("search").listeners.input[0]();
+  const overview=context.location.href;
+  context.navigateCoverView({button:0,preventDefault(){}},"zero-escape");
+  assert.equal(nodes.get("search").value,"999");
+  assert.equal(read("visibleAssets.length"),2);
+  context.history.back(); context.syncRoute();
+  assert.equal(context.location.href,overview);
+  assert.equal(nodes.get("search").value,"999");
+  assert.equal(read("visibleAssets.length"),1);
+});
+
+test("empty search can be cleared without losing device or favorites",()=>{
+  const {context,nodes,read}=populatedGallery();
+  read('favoritesOnly=true; favorites=new Set([assets.find(file=>file.kind==="wallpaper").path])');
+  nodes.get("device").value="phone"; nodes.get("device").listeners.change[0]();
+  nodes.get("search").value="no-such-picture"; nodes.get("search").listeners.input[0]();
+  const button=descend(nodes.get("gallery")).find(node=>node.textContent==="清除搜索");
+  button.listeners.click[0]();
+  assert.equal(nodes.get("device").value,"phone");
+  assert.equal(read("favoritesOnly"),true);
+  assert.equal(read("visibleAssets.length"),1);
+});
+
+test("an absent annual result offers the full person index with the same search",()=>{
+  const {context,nodes}=populatedGallery();
+  context.history.replaceState(null,"",base+"#actresses=annual&year=2025&q=三上悠亚");
+  context.syncRoute();
+  const link=descend(nodes.get("gallery")).find(node=>node.textContent==="在全部女优中查找");
+  assert.ok(link);
+  const params=new URLSearchParams(new URL(link.href).hash.slice(1));
+  assert.equal(params.get("actresses"),"all");
+  assert.equal(params.get("q"),"三上悠亚");
+  assert.equal(params.get("page"),null);
+});
+
+test("an unscoped link still opens available resources when no wallpapers remain",()=>{
+  const {context,read}=populatedGallery();
+  read('assets=assets.filter(file=>file.kind==="icon")');
+  context.syncRoute();
+  assert.equal(read("kind"),"icon");
+  assert.equal(read("visibleAssets.length"),61);
 });

@@ -81,6 +81,15 @@ test("retired person links resolve directly to the retained profile",()=>{
   assert.equal(new URLSearchParams(target.hash.slice(1)).get("person"),"p0054");
 });
 
+test("Latin name searches accept either word order and existing compact spellings",()=>{
+  const module=gallery(); module.route(new URLSearchParams({actresses:"all"}));
+  for (const query of ["Mikami Yua","Yua Mikami","Ｍｉｋａｍｉ　Ｙｕａ","MikamiYua","三上 Yua"]) {
+    const selected=module.select(query);
+    assert.equal(selected.count,1,query);
+    assert.equal(selected.items[0].person.id,"p0032");
+  }
+});
+
 test("common Chinese and original Japanese names share a canonical identity",()=>{
   const module=gallery(); module.route(new URLSearchParams({actresses:"all"}));
   for (const [cn, jp, pid] of [["河北彩花","河北彩伽","p0054"],["樱空桃","桜空もも","p0041"],["枫花恋","楓カレン","p0058"],["美谷朱里","美谷朱音","p0043"],["葵伊吹","葵いぶき","p0083"],["未步奈奈","未歩なな","p0122"],["翼舞","つばさ舞","p0107"]]) {
