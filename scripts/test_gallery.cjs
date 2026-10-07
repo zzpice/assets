@@ -7,7 +7,7 @@ const vm = require("node:vm");
 const source = fs.readFileSync(require("node:path").join(__dirname,"../app/site.js"),"utf8").replace(/\nload\(\);\s*$/, "\n");
 const base = "https://example.test/assets/";
 
-function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]}'), withTabs = false) {
+function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]}'), withTabs = false, storage = new Map()) {
   const nodes = new Map();
   const node = (tagName="") => ({tagName,value:"",children:[],dataset:{},listeners:{},style:{setProperty(){}},classList:{toggle(){},remove(){},add(){}},addEventListener(name,handler){(this.listeners[name] ||= []).push(handler);},setAttribute(){},removeAttribute(){},querySelector(){return this.label ||= node();},closest(){return this.field ||= {};},add(child){this.children.push(child);},replaceChildren(...children){this.children=children;if(this.tagName==="select")this.value=children[0]?.value || "";},append(...children){this.children.push(...children);},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
   const tabs = withTabs ? ["wallpaper","avatar","icon","bank-card","game-cover","actress"].map(kind=>{const tab=node("button");tab.dataset.kind=kind;nodes.set("tab-"+kind,tab);return tab;}) : [];
@@ -22,7 +22,7 @@ function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]
   };
   const context = vm.createContext({URL,URLSearchParams,Response,AbortController,setTimeout,clearTimeout,document,fetch:fetchResponse,
     Option:function(label,value){return {textContent:label,value};},
-    localStorage:{getItem:()=>null},navigator:{onLine:true},location,history,
+    localStorage:{getItem:key=>storage.get(key) ?? null,setItem:(key,value)=>storage.set(key,value),removeItem:key=>storage.delete(key)},navigator:{onLine:true},location,history,
     window:{matchMedia:()=>({matches:false}),addEventListener(){}}
   });
   if (withTabs) vm.runInContext(fs.readFileSync(require("node:path").join(__dirname,"../app/actresses.js"),"utf8"),context);
@@ -50,14 +50,40 @@ test("leaving the person gallery adds one history entry and Back restores its vi
     read('actressData=testCatalog.actresses; actressGallery.configure(actressData,testCatalog.assets,navigatePersonView); gameSeries=testCatalog.gameSeries; games=testCatalog.games; assets=testCatalog.assets.map(makeAsset)');
     context.history.replaceState({galleryKind:"actress"},"",base+"#actresses=all&page=2");
     context.syncRoute();
+    assert.equal(nodes.get("tab-actress").hidden,false);
     nodes.get("tab-"+nextKind).listeners.click[0]();
     assert.equal(context.history.entries.length,2,nextKind);
     assert.equal(read("kind"),nextKind);
+    assert.equal(nodes.get("tab-actress").hidden,true,nextKind);
+    assert.equal(nodes.get("actress-navigation").hidden,true,nextKind);
+    assert.ok(!nodes.get("summary").textContent.includes("女优"));
     context.history.back(); context.syncRoute();
     assert.equal(read("kind"),"actress");
+    assert.equal(nodes.get("tab-actress").hidden,false);
     assert.equal(read("actressGallery.state.view"),"all");
     assert.equal(read("actressGallery.state.page"),2);
   }
+});
+
+test("ordinary routes never fall back to the unlisted collection or reveal its tab",()=>{
+  const {context,read,nodes}=gallery(undefined,true);
+  context.testFiles=[
+    context.makeAsset({path:"actresses/portraits/p0001.jpg",person:"p0001"}),
+    context.makeAsset({path:"icons/ai/claude.png"})
+  ];
+  // Clearing the hash must not reopen the collection through stale history state.
+  context.history.replaceState({galleryKind:"actress"},"",base);
+  context.applyFiles(context.testFiles);
+  assert.equal(read("kind"),"icon");
+  assert.equal(nodes.get("tab-actress").hidden,true);
+  assert.equal(nodes.get("actress-navigation").hidden,true);
+  assert.ok(!nodes.get("summary").textContent.includes("女优"));
+  assert.ok(Array.from(read("viewFiles()")).every(file=>file.kind!=="actress"));
+  // A future catalog with only personal content still has no implicit entry.
+  context.applyFiles(context.testFiles.slice(0,1));
+  assert.equal(read("kind"),"wallpaper");
+  assert.equal(read("viewFiles().length"),0);
+  assert.equal(nodes.get("tab-actress").hidden,true);
 });
 
 test("icon previews carry a content version while canonical download URLs remain stable",()=>{
@@ -357,13 +383,52 @@ test("cover navigation starts at the top while Back and modified links retain br
   assert.deepEqual(scrolls.at(-1),[0,0,""]);
 });
 
-function populatedGallery() {
-  const state=gallery(undefined,true);
+function populatedGallery(storage) {
+  const state=gallery(undefined,true,storage);
   state.context.testCatalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
   state.read('cardBanks=testCatalog.cardBanks; gameSeries=testCatalog.gameSeries; games=testCatalog.games; actressData=testCatalog.actresses; actressGallery.configure(actressData,testCatalog.assets,navigatePersonView); assets=testCatalog.assets.map(makeAsset)');
   state.context.refreshControls();
   return state;
 }
+
+test("the owner can retain the navigation shortcut across visits and remove it without losing direct access",()=>{
+  const storage=new Map();
+  const first=populatedGallery(storage);
+  first.read("showToast=()=>{}");
+  first.context.history.replaceState(null,"",base+"#actresses=hall"); first.context.syncRoute();
+  assert.equal(first.nodes.get("actress-entry-preference").hidden,false);
+  first.nodes.get("actress-keep-entry").listeners.change[0]({target:{checked:true}});
+  first.nodes.get("tab-icon").listeners.click[0]();
+  assert.equal(first.nodes.get("tab-actress").hidden,false);
+  assert.equal(first.nodes.get("actress-entry-preference").hidden,true);
+
+  const next=populatedGallery(storage);
+  next.read("showToast=()=>{}"); next.context.window.scrollTo=()=>{};
+  next.context.syncRoute();
+  assert.equal(next.read("kind"),"wallpaper"); // A shortcut does not auto-open content.
+  assert.equal(next.nodes.get("tab-actress").hidden,false);
+  next.nodes.get("tab-actress").listeners.click[0]();
+  assert.equal(next.read("kind"),"actress");
+  assert.equal(next.nodes.get("actress-keep-entry").checked,true);
+  next.nodes.get("actress-keep-entry").listeners.change[0]({target:{checked:false}});
+  assert.equal(next.nodes.get("tab-actress").hidden,false); // Remains usable until leaving.
+  next.nodes.get("tab-icon").listeners.click[0]();
+  assert.equal(next.nodes.get("tab-actress").hidden,true);
+  assert.equal(populatedGallery(storage).nodes.get("tab-actress").hidden,true);
+  next.context.history.replaceState(null,"",base+"#actresses=all&person=p0032"); next.context.syncRoute();
+  assert.equal(next.nodes.get("person-dialog").open,true);
+  assert.equal(next.nodes.get("tab-actress").hidden,false);
+  assert.equal(populatedGallery().nodes.get("tab-actress").hidden,true); // Separate browser.
+});
+
+test("blocked local storage keeps the shortcut usable for the current page",()=>{
+  const blocked={get(){throw new Error("blocked");},set(){throw new Error("blocked");},delete(){throw new Error("blocked");}};
+  const {context,nodes,read}=populatedGallery(blocked);
+  read("showToast=message=>{globalThis.storageMessage=message;}");
+  nodes.get("actress-keep-entry").listeners.change[0]({target:{checked:true}});
+  assert.equal(nodes.get("tab-actress").hidden,false);
+  assert.equal(context.storageMessage,"入口设置仅当前页面有效");
+});
 
 test("wallpaper device overrides remain independent of aspect ratio and content category",()=>{
   const {context}=populatedGallery();

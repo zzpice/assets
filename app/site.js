@@ -45,6 +45,9 @@ let directoryUnavailable = false;
 let loadGeneration = 0;
 let favoritesOnly = false;
 const favoriteKey = "zzpice-assets-favorites:" + base.pathname;
+const actressEntryKey = "zzpice-assets-actress-entry:" + base.pathname;
+let actressEntryVisible = false;
+try { actressEntryVisible = localStorage.getItem(actressEntryKey) === "1"; } catch { /* Direct links remain available. */ }
 let favorites = new Set();
 try {
   const saved = JSON.parse(localStorage.getItem(favoriteKey) || "[]");
@@ -163,6 +166,8 @@ function refreshControls() {
   const isPerson = kind === "actress";
   document.getElementById("filters-panel").hidden = isCover || isPerson;
   document.getElementById("actress-navigation").hidden = !isPerson;
+  document.getElementById("actress-entry-preference").hidden = !isPerson;
+  document.getElementById("actress-keep-entry").checked = actressEntryVisible;
   document.getElementById("show-favorites").hidden = isPerson;
   controls.search.placeholder = isPerson ? "在当前栏目中搜索姓名、别名或罗马字" : isCover ? "在当前游戏封面中搜索作品、系列或平台" : kind === "bank-card" ? "在银行卡面中搜索名称、银行或钱包" : "在" + kindLabels[kind] + "中搜索名称、分类或文件名";
   document.querySelector('label[for="search"]').textContent = isPerson ? "搜索人物" : "搜索图片";
@@ -222,7 +227,8 @@ function refreshControls() {
   document.querySelectorAll(".tab").forEach(tab => {
     const count = assets.filter(file => file.kind === tab.dataset.kind && (file.kind !== "game-cover" || !file.extra)).length;
     tab.querySelector("span").textContent = count;
-    tab.hidden = ["icon","bank-card","game-cover","actress","other"].includes(tab.dataset.kind) && !count;
+    // Unlisted by default; the owner can keep a shortcut in their own browser.
+    tab.hidden = tab.dataset.kind === "actress" ? (!actressEntryVisible && kind !== "actress") || !count : ["icon","bank-card","game-cover","other"].includes(tab.dataset.kind) && !count;
     tab.disabled = !count;
     tab.setAttribute("aria-pressed", String(tab.dataset.kind === kind));
   });
@@ -232,8 +238,7 @@ function refreshControls() {
   const iconCount = assets.filter(file => file.kind === "icon").length;
   const coverCount = assets.filter(file => file.kind === "game-cover" && !file.extra).length;
   const cardCount = assets.filter(file => file.kind === "bank-card").length;
-  const personCount = assets.filter(file => file.kind === "actress").length;
-  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "") + (coverCount ? " · " + coverCount + " 张游戏封面" : "") + (personCount ? " · " + personCount + " 位女优" : "");
+  document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "") + (coverCount ? " · " + coverCount + " 张游戏封面" : "");
   refreshFavoriteCount();
 }
 
@@ -357,8 +362,9 @@ function syncRoute() {
   const nextSeries = gameSeries.some(item => item.id === series) ? series : "";
   const linkedImage = assets.find(file => file.path === params.get("image"));
   const requestedKind = params.get("kind");
-  const defaultKind = assets.some(file => file.kind === "wallpaper") ? "wallpaper" : assets[0]?.kind || "wallpaper";
-  const nextKind = params.has("actresses") || params.has("person") ? "actress" : params.has("series") || params.has("covers") ? "game-cover" : linkedImage?.kind || (Object.hasOwn(kindLabels,requestedKind) && requestedKind !== "actress" ? requestedKind : history.state?.galleryKind || defaultKind);
+  const defaultKind = assets.some(file => file.kind === "wallpaper") ? "wallpaper" : assets.find(file => file.kind !== "actress")?.kind || "wallpaper";
+  const restoredKind = history.state?.galleryKind === "actress" ? defaultKind : history.state?.galleryKind || defaultKind;
+  const nextKind = params.has("actresses") || params.has("person") ? "actress" : params.has("series") || params.has("covers") ? "game-cover" : linkedImage?.kind || (Object.hasOwn(kindLabels,requestedKind) && requestedKind !== "actress" ? requestedKind : restoredKind);
   // Modal-only navigation must retain the list DOM, including focus, expanded
   // information and the horizontal position of game series.
   if (renderedViewKey === listRouteKey(params,nextKind)) {
@@ -822,6 +828,16 @@ function clearFilters(persist = true) {
 }
 
 document.getElementById("filters-panel").open = !window.matchMedia("(max-width: 760px)").matches;
+document.getElementById("actress-keep-entry").addEventListener("change",event => {
+  actressEntryVisible = event.target.checked;
+  let persistent = true;
+  try {
+    if (actressEntryVisible) localStorage.setItem(actressEntryKey,"1");
+    else localStorage.removeItem(actressEntryKey);
+  } catch { persistent = false; }
+  refreshControls();
+  showToast(persistent ? actressEntryVisible ? "已在此浏览器保留入口" : "离开人物图库后隐藏入口" : "入口设置仅当前页面有效");
+});
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => {
   const nextKind = tab.dataset.kind;
   if (nextKind === kind) return;
@@ -983,7 +999,7 @@ function applyFiles(files,force = false) {
   const next = [...files].map(makeAsset).sort((a,b)=>a.path.localeCompare(b.path));
   if (!force && JSON.stringify(next) === JSON.stringify(assets)) return;
   assets = next;
-  if (assets.length && !assets.some(file => file.kind === kind)) kind = assets[0].kind;
+  if (assets.length && !assets.some(file => file.kind === kind)) kind = assets.find(file => file.kind !== "actress")?.kind || "wallpaper";
   renderedViewKey = null;
   syncRoute();
 }

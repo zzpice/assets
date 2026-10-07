@@ -80,6 +80,23 @@ test("installation caches all verified mandatory resources and prioritizes wallp
   assert.equal(state.stores.get(previewCache).size,24);
 });
 
+test("installation never prefetches personal portraits even when public previews are sparse",async()=>{
+  const portrait=catalog.assets.find(file=>file.kind==="actress");
+  const wallpaper=catalog.assets.find(file=>file.kind==="wallpaper");
+  for (const files of [[portrait,wallpaper],[portrait]]) {
+    const requested=[];
+    const state=worker(async request=>{
+      requested.push(request.url);
+      return new Response(fs.readFileSync(path.join(root,new URL(request.url).pathname.slice("/assets/".length))));
+    });
+    state.context.cachedCatalog=async()=>new Response(JSON.stringify({assets:files}));
+    await state.dispatch("install");
+    assert.ok(!requested.includes(base+portrait.thumbnail));
+    assert.ok(!requested.some(url=>url.includes("/actresses/portraits/")));
+    assert.equal(requested.includes(base+wallpaper.thumbnail),files.includes(wallpaper));
+  }
+});
+
 test("a missing mandatory script prevents installation and leaves the old bundle intact",async()=>{
   const state=worker(async request=>{
     if(request.url.includes("app/site.js")) return new Response("unavailable",{status:503});

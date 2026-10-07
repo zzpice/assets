@@ -167,6 +167,9 @@ dialog::backdrop { background: rgb(6 12 18 / .76); }
 .person-method p { margin: 6px 0; }
 .person-method .source-link { margin-right: 18px; }
 .person-description { color: var(--muted); font-size: .8rem; margin: 10px 0 18px; }
+.person-entry-preference { display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; color: var(--muted); font-size: .8rem; margin-bottom: 14px; }
+.person-entry-preference label { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; }
+.person-entry-preference input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); }
 .person-gallery { display: block; }
 .person-grid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 20px 14px; }
 .person-card { min-width: 0; overflow: hidden; text-decoration: none; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }

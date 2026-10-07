@@ -6,16 +6,16 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#10171e" media="(prefers-color-scheme: dark)">
-  <meta name="description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与女优人物图库。">
+  <meta name="description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="图片资源">
   <title>图片资源库 · zzpice</title>
   <link rel="manifest" href="app/manifest.webmanifest">
   <link rel="icon" href="app/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="app/icon-180.png">
-  <link rel="stylesheet" href="app/site.css?v=1b7c42df0a">
+  <link rel="stylesheet" href="app/site.css?v=9bbad7db3c">
   <script src="app/actresses.js?v=4619ad5278" defer></script>
-  <script src="app/site.js?v=2ce7d94efc" defer></script>
+  <script src="app/site.js?v=f5215e5787" defer></script>
 </head>
 <body>
   <header>
@@ -38,6 +38,7 @@
   </nav>
   <div class="field device-filter" hidden><label for="device">适用设备</label><select id="device"><option value="">全部设备</option></select></div>
   <section id="actress-navigation" hidden aria-label="女优人物图库"></section>
+  <div id="actress-entry-preference" class="person-entry-preference" hidden><label><input id="actress-keep-entry" type="checkbox" aria-describedby="actress-entry-hint">在此浏览器保留入口</label><span id="actress-entry-hint">共用此浏览器的人也会看到入口。</span></div>
   <nav id="cover-navigation" class="cover-navigation" aria-label="游戏封面导航" hidden>
     <a href="#covers">游戏封面</a><span aria-hidden="true"> / </span><span id="cover-series-title"></span>
   </nav>
