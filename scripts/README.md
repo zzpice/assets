@@ -12,7 +12,7 @@
 | 游戏封面、作品简介 | [收录、选图与作品资料](../game-covers/README.md) | 原图；`catalog.json` 的 `gameSeries`、`games`、图片 `path`／`source`／可选 `cover` |
 | 女优人物、头像、年度榜与名人堂 | [人物与榜单规则](../actresses/README.md)、[名人堂标准](../actresses/HALL-OF-FAME.md#判断标准) | `actresses/data.json`、审核后的 `actresses/rankings/<年>.json`、每人的唯一源图 |
 | 其他图片 | [通用归档](../README.md#归档)、[上传约定](#上传约定) | 原图；`catalog.json` 对应图片的 `title` 与必要的 `note` |
-| 网站界面、分类名称与离线行为 | [界面与离线缓存](#界面与离线缓存) | `index.html`、`app/site.js`、`app/site.css`、`app/actresses.js`、`app/design.css` 等界面文件及 `sw.js` 的行为逻辑 |
+| 网站界面、分类名称与离线行为 | [界面与离线缓存](#界面与离线缓存) | `index.html`、`app/site.js`、`app/site.css`、`app/actresses.js`、`app/catalog.js`、`app/theme.css` 等界面文件及 `sw.js` 的行为逻辑 |
 
 `catalog.json` 同时保存人工资料和生成内容。分类、尺寸、大小、内容标识、预览地址由工具读取原图与目录生成，不手改这些字段；人物的 `catalog.actresses` 和对应图片记录从人物登记及年度快照生成。卡面、游戏和人物须在运行生成器前完成所需登记与来源审核。
 
@@ -57,6 +57,7 @@ python3 scripts/update_catalog.py --check
 
 ```sh
 python3 -m unittest discover -s scripts -p 'test_*.py'
+node --check app/catalog.js
 node --check app/site.js
 node --check app/actresses.js
 node --check sw.js
@@ -83,6 +84,20 @@ node --test scripts/test_*.cjs
 
 安装时可选预览的网络预取最多等待 8 秒，超时会取消未完成的预取，让已完整校验的界面完成安装；必需界面文件仍须全部校验成功。游戏封面的模糊背景随对应懒加载图片成功加载后显示，避免背景提前请求远处的封面。
 
-## 网页共同视觉
+## 网页结构与发布
 
-`app/design.css` 是 ZZP 公共变量的本地副本；它和图库样式一同参与内容校验及离线版本。图标和社交图保存在 `app/`，不会进入图片资源目录。布局、资源数据和图库交互仍由本项目维护。
+`app/catalog.js` 是无 DOM 的分类、查询、尺寸与排序模块，浏览器和 Node 检查使用同一实现；`app/site.js` 负责状态、路由、列表与对话框，`app/actresses.js` 负责独立人物资料。`app/theme.css` 维护本项目的基础变量，`app/site.css` 维护布局。桌面侧栏和移动端横向用途导航共用 DOM；内容区按搜索、筛选、结果和图片排列。
+
+生成器的 `VERSIONED_ASSETS` 是必需界面文件的单一声明，驱动版本链接、内容校验和 Service Worker 安装清单。新增必需文件时改这里，再运行生成与检查，不在多个列表中各补一份。
+
+真实浏览器检查：
+
+```sh
+npm install --no-save --package-lock=false playwright@1.62.1
+npx playwright install --with-deps chromium webkit
+node scripts/browser-check.cjs
+```
+
+覆盖两引擎、桌面 / 手机 / 平板、收藏、筛选、分享网址、预览关闭后的焦点和错误重试；Chromium 还执行离线重载。Playwright WebKit 离线导航存在驱动限制，Safari 的冷启动需真机确认。
+
+Pages 由 Check gallery 在所有检查通过后发布，白名单包含网页、目录、应用资源与原始图片目录。维护脚本、测试、来源审核临时报告与开发依赖不进入站点产物；原始图片的公开地址不变。修复或撤销问题提交后重新运行工作流即可恢复。

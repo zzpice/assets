@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f5f5ef" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151c19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f7f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)">
   <meta name="description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="图片资源">
@@ -13,10 +13,11 @@
   <link rel="manifest" href="app/manifest.webmanifest">
   <link rel="icon" href="app/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="app/icon-180.png">
-  <link rel="stylesheet" href="app/design.css?v=1821ddadb2">
-  <link rel="stylesheet" href="app/site.css?v=6f156390e0">
+  <link rel="stylesheet" href="app/theme.css?v=84c5bbff00">
+  <link rel="stylesheet" href="app/site.css?v=9f135e1737">
   <script src="app/actresses.js?v=4619ad5278" defer></script>
-  <script src="app/site.js?v=1609c4744f" defer></script>
+  <script src="app/catalog.js?v=2f72d84160" defer></script>
+  <script src="app/site.js?v=c9961456e2" defer></script>
   <link rel="canonical" href="https://zzpice.github.io/assets/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
@@ -35,6 +36,8 @@
 </head>
 <body>
   <a class="skip-link" href="#gallery">跳到图片列表</a>
+  <div class="library-shell">
+  <aside class="library-sidebar">
   <header>
     <div>
       <a class="ecosystem-link" href="https://zzp.moe/" target="_blank" rel="noopener noreferrer" aria-label="ZZP · 所有项目（新标签页）">ZZP / 工具与资源</a>
@@ -53,16 +56,18 @@
     <button class="tab" type="button" data-kind="actress" aria-pressed="false" hidden>女优图库<span>0</span></button>
     <button class="tab" type="button" data-kind="other" aria-pressed="false" hidden>其他图片<span>0</span></button>
   </nav>
+  </aside>
+  <div class="library-content">
+  <div class="search-row">
+    <label class="sr-only" for="search">搜索图片</label>
+    <input id="search" type="search" placeholder="搜索名称、种类或文件名" autocomplete="off">
+  </div>
   <div class="field device-filter" hidden><label for="device">适用设备</label><select id="device"><option value="">全部设备</option></select></div>
   <section id="actress-navigation" hidden aria-label="女优人物图库"></section>
   <div id="actress-entry-preference" class="person-entry-preference" hidden><label><input id="actress-keep-entry" type="checkbox" aria-describedby="actress-entry-hint">在此浏览器保留入口</label><span id="actress-entry-hint">共用此浏览器的人也会看到入口。</span></div>
   <nav id="cover-navigation" class="cover-navigation" aria-label="游戏封面导航" hidden>
     <a href="#covers">游戏封面</a><span aria-hidden="true"> / </span><span id="cover-series-title"></span>
   </nav>
-  <div class="search-row">
-    <label class="sr-only" for="search">搜索图片</label>
-    <input id="search" type="search" placeholder="搜索名称、种类或文件名" autocomplete="off">
-  </div>
   <details class="filter-panel" id="filters-panel">
     <summary><span>筛选与排序</span><span id="filter-summary">全部图片</span></summary>
     <section class="filters" aria-label="筛选图片">
@@ -85,6 +90,8 @@
     <span>点击图片预览 · 下载保留完整尺寸</span>
     <div><a href="https://zzp.moe/" target="_blank" rel="noopener noreferrer" aria-label="所有项目（新标签页）">所有项目 ↗</a><a href="https://github.com/zzpice/assets" target="_blank" rel="noopener noreferrer">GitHub 仓库</a><a href="https://github.com/zzpice/assets/blob/main/README.md" target="_blank" rel="noopener noreferrer">归档规则</a><details id="footer-more" class="footer-more"><summary>更多</summary><a id="actress-entry" href="#actresses=annual">女优图库</a></details></div>
   </footer>
+  </div>
+  </div>
   <dialog id="person-dialog" class="person-dialog" aria-labelledby="person-title">
     <div class="dialog-header"><div><h2 id="person-title"></h2><p id="person-romanization"></p></div><button id="person-close" class="close-button" type="button" aria-label="关闭人物资料">×</button></div>
     <div id="person-content" class="person-content"></div>

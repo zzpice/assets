@@ -26,6 +26,7 @@ function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]
     window:{matchMedia:()=>({matches:false}),addEventListener(){}}
   });
   if (withTabs) vm.runInContext(fs.readFileSync(require("node:path").join(__dirname,"../app/actresses.js"),"utf8"),context);
+  vm.runInContext(fs.readFileSync(require("node:path").join(__dirname,"../app/catalog.js"),"utf8"),context);
   vm.runInContext(source,context);
   return {context,nodes,read:expression=>vm.runInContext(expression,context)};
 }
@@ -431,11 +432,11 @@ test("blocked local storage keeps the shortcut usable for the current page",()=>
 });
 
 test("wallpaper device overrides remain independent of aspect ratio and content category",()=>{
-  const {context}=populatedGallery();
+  const {context,read}=populatedGallery();
   const file=context.makeAsset({path:"wallpapers/anime/7500x5000/shinchan.jpg",device:"desktop"});
   assert.equal(file.device,"desktop");
   assert.equal(file.category,"anime");
-  assert.equal(context.inferDevice(1080,1920),"unknown");
+  assert.equal(read("inferDevice(1080,1920)"),"unknown");
   assert.equal(context.makeAsset({path:"avatars/anime/1254x1254/girl.png"}).device,"");
 });
 

@@ -69,13 +69,13 @@ test("versioned scripts only use the same version, never an unversioned or diffe
   await assert.rejects(()=>state.context.shellResponse(new Request(base+"app/site.js?v=0000000000")),/version unavailable/);
 });
 
-test("shared design tokens resolve to the same pinned version online and offline",async()=>{
-  const current=Object.keys(manifest).find(name=>name.startsWith("app/design.css?"));
-  assert.ok(current,"shared CSS must be in the verified shell");
+test("project theme resolve to the same pinned version online and offline",async()=>{
+  const current=Object.keys(manifest).find(name=>name.startsWith("app/theme.css?"));
+  assert.ok(current,"project CSS must be in the verified shell");
   const state=worker(async()=>{throw new Error("offline");},{[shellCache]:[[base+current,new Response("design tokens")]]});
   assert.equal(await(await state.context.shellResponse(new Request(base+current))).text(),"design tokens");
-  assert.equal(await(await state.context.shellResponse(new Request(base+"app/design.css"))).text(),"design tokens");
-  await assert.rejects(()=>state.context.shellResponse(new Request(base+"app/design.css?v=0000000000")),/version unavailable/);
+  assert.equal(await(await state.context.shellResponse(new Request(base+"app/theme.css"))).text(),"design tokens");
+  await assert.rejects(()=>state.context.shellResponse(new Request(base+"app/theme.css?v=0000000000")),/version unavailable/);
 });
 
 test("installation caches all verified mandatory resources and prioritizes wallpaper previews",async()=>{
