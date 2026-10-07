@@ -61,6 +61,27 @@ class CoverTests(unittest.TestCase):
         self.assertEqual(self.read()["assets"][0]["cover"], {"platform": "Nintendo DS", "region": "North America", "version": "再版"})
         self.assertEqual(self.read()["games"][0]["firstReleaseYear"], 2009)
 
+    def test_sourced_synopsis_belongs_to_the_work_and_survives_generation(self):
+        synopsis = {"text": "九人被困，必须解谜寻找出口。", "source": "https://example.com/official-story"}
+        self.metadata["games"][0]["synopsis"] = synopsis
+        self.add_cover("game-covers/example/extras/first/scan.png")
+        self.save()
+        update(self.root)
+        update(self.root, check=True)
+        catalog = self.read()
+        self.assertEqual(catalog["games"][0]["synopsis"], synopsis)
+        self.assertTrue(all("synopsis" not in asset for asset in catalog["assets"]))
+
+    def test_synopsis_requires_text_and_a_safe_source_before_publication(self):
+        for synopsis in [None, "简介", {"text": "简介"}, {"source": "https://example.com"},
+                         {"text": " ", "source": "https://example.com"},
+                         {"text": "简介", "source": "javascript:alert(1)"}]:
+            with self.subTest(synopsis=synopsis):
+                self.metadata["games"][0]["synopsis"] = synopsis
+                self.save()
+                with self.assertRaises(ValueError): update(self.root)
+                self.assertFalse((self.root / "app/previews").exists())
+
     def test_rare_extra_cover_does_not_change_selected_work_or_first_year(self):
         self.add_cover("game-covers/example/extras/first/ps4-jp.png", cover={"version": "高清版（2017）"})
         self.save()

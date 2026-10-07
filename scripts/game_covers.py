@@ -41,6 +41,12 @@ def game_indexes(series, games):
         key = game["series"] + "/" + game["id"]
         require_text(game.get("title"), key + ".title")
         require_year(game.get("firstReleaseYear"), key + ".firstReleaseYear")
+        if "synopsis" in game:
+            synopsis = game["synopsis"]
+            if not isinstance(synopsis, dict) or set(synopsis) != {"text", "source"}:
+                raise ValueError(f"{key}: synopsis 须同时记录简介 text 与依据 source")
+            require_text(synopsis["text"], key + ".synopsis.text")
+            require_url(synopsis["source"], key + ".synopsis.source")
         if key in game_index:
             raise ValueError(f"{key}: games 不能重复")
         game_index[key] = game

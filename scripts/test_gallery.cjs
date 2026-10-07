@@ -233,6 +233,34 @@ test("game-cover cards show identity and one source, without processing or dupli
   assert.equal(descend(context.makeCard(unsafe)).filter(node=>node.className==="source-link").length,0);
 });
 
+test("cover synopses are collapsed, cited, shared across editions and rendered as text",()=>{
+  const {context,read}=coverGallery();
+  read('games[0].synopsis={text:"九人被困 <script>不会执行</script>",source:"https://example.com/story"}');
+  for (const file of context.testFiles.filter(file=>file.game==="999")) {
+    const contents=descend(context.makeCard(file));
+    const story=contents.find(node=>node.className==="asset-info game-synopsis");
+    assert.ok(story); assert.ok(!story.open);
+    assert.equal(descend(story).find(node=>node.className==="synopsis").textContent,"九人被困 <script>不会执行</script>");
+    const link=descend(story).find(node=>node.className==="source-link");
+    assert.equal(link.href,"https://example.com/story");
+    assert.equal(link.rel,"noopener noreferrer");
+  }
+  read('games[0].synopsis.source="javascript:alert(1)"');
+  assert.equal(descend(context.makeCard(context.testFiles.find(file=>file.game==="999"))).some(node=>node.className==="synopsis"),false);
+  assert.equal(descend(context.makeCard(context.testFiles.find(file=>file.game==="vlr"))).some(node=>node.className==="synopsis"),false);
+});
+
+test("licensed person photos display author, license and the full source download",()=>{
+  const {context,read,nodes}=gallery(undefined,true);
+  context.testCatalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
+  read('actressGallery.configure(testCatalog.actresses,testCatalog.assets,()=>{}); actressGallery.syncPerson("p0029")');
+  const contents=descend(nodes.get("person-content"));
+  assert.ok(contents.some(node=>node.textContent?.includes("署名：三立娛樂星聞")));
+  const license=contents.find(node=>node.textContent==="图片许可：CC BY 3.0 ↗");
+  assert.equal(license.href,"https://creativecommons.org/licenses/by/3.0/");
+  assert.equal(contents.find(node=>node.textContent==="下载头像").href,base+"actresses/portraits/p0029.png");
+});
+
 test("series links support refresh, Back, overview and unknown-series fallback",()=>{
   const {context,read,nodes}=coverGallery();
   context.history.replaceState(null,"",base+"#covers");

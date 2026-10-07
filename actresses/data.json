@@ -1699,15 +1699,20 @@
       },
       "nameSource": "https://zh.wikipedia.org/w/index.php?oldid=90468381",
       "portrait": {
-        "path": "actresses/portraits/p0029.jpg",
+        "path": "actresses/portraits/p0029.png",
         "source": {
-          "provider": "LIGHT promotion",
-          "url": "https://lightpro.jp/img/talent/tachibanamar_m.jpg",
-          "profile": "https://lightpro.jp/talent/tachibanamary.html",
-          "retrieved": "2026-10-06",
-          "sha256": "98ba350e32524252b32f2564f8742f9eede318677d28a0f3b970efb2ab450184"
+          "provider": "Wikimedia Commons / 三立娛樂星聞",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/%E6%A9%98%E3%83%A1%E3%82%A2%E3%83%AA%E3%83%BC.png",
+          "profile": "https://commons.wikimedia.org/w/index.php?title=File:%E6%A9%98%E3%83%A1%E3%82%A2%E3%83%AA%E3%83%BC.png&oldid=999908286",
+          "retrieved": "2026-10-07",
+          "sha256": "770458dfc248157036a53617b12e1ad95b914616f669872dcdb42f846f3eedc1",
+          "license": {
+            "name": "CC BY 3.0",
+            "url": "https://creativecommons.org/licenses/by/3.0/",
+            "author": "三立娛樂星聞"
+          }
         },
-        "reviewed": "2026-10-06"
+        "reviewed": "2026-10-07"
       },
       "japaneseName": "橘メアリー",
       "profile": {

@@ -236,7 +236,11 @@ window.ActressGallery = (() => {
     const sources = node("details", "person-method");
     const treatment = person.portrait.display ? "列表与详情采用经审核的预览取景；下载保留完整源图。" : "保留源图尺寸和构图。";
     sources.append(node("summary", "", "头像来源与版权"), node("p", "", "来源：" + person.portrait.source.provider + " · 获取于 " + person.portrait.source.retrieved + "。" + treatment + "版权归摄影者、所属经纪公司及其他原权利人，本项目不另授许可。"), sourceLink("选定源文件 ↗", person.portrait.source.url));
-    if (person.portrait.source.profile) sources.append(sourceLink("原网站人物页与声明 ↗", person.portrait.source.profile));
+    if (person.portrait.source.profile) sources.append(sourceLink("出处页面与声明 ↗", person.portrait.source.profile));
+    if (person.portrait.source.license) {
+      const license = person.portrait.source.license;
+      sources.append(node("p", "", "署名：" + license.author + "。源文件保持原样，网页预览" + (person.portrait.display ? "取景并缩小。" : "仅缩小生成。")), sourceLink("图片许可：" + license.name + " ↗", license.url));
+    }
     if (person.portrait.source.restoration) sources.append(node("p", "", "头像采用上游 AI 修复版本，已与历史原图比较；修复细节不作为人物事实依据。"), sourceLink("历史未修复原图 ↗", person.portrait.source.restoration.originalUrl));
     if (person.portrait.source.provider === "Gfriends") sources.append(sourceLink("Gfriends 来源声明 ↗", "https://github.com/gfriends/gfriends/blob/" + person.portrait.source.revision + "/README.md"));
     facts.append(sources);

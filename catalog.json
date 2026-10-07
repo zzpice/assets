@@ -400,15 +400,15 @@
       "sha": "742badbca0794614dbc15c2a7004916ca60d9ecd"
     },
     {
-      "path": "actresses/portraits/p0029.jpg",
+      "path": "actresses/portraits/p0029.png",
       "title": "橘玛丽",
       "kind": "actress",
       "person": "p0029",
-      "width": 309,
-      "height": 387,
-      "thumbnail": "app/previews/p0029-72e0f9a40e.webp",
-      "size": 35375,
-      "sha": "5abb054e7cca864b8125c6652fa8549259d4e894"
+      "width": 1286,
+      "height": 1748,
+      "thumbnail": "app/previews/p0029-a1a015027a.webp",
+      "size": 1309883,
+      "sha": "d5f45a1552c77e74458ca6ed22080a7df3effc8d"
     },
     {
       "path": "actresses/portraits/p0030.jpg",
@@ -2468,6 +2468,7 @@
       "category": "anime",
       "width": 1254,
       "height": 1254,
+      "note": "维护者使用 GPT 原创生成",
       "thumbnail": "app/previews/girl-rain-c8d54431be.webp",
       "size": 1843255,
       "sha": "d8a1d44ad1728b8efea73f996876e1ae1d712b50"
@@ -4366,7 +4367,7 @@
       "device": "phone",
       "width": 1440,
       "height": 3120,
-      "note": "由 852×1846 重绘稿等比例放大导出",
+      "note": "维护者使用 GPT 原创生成；由 852×1846 重绘稿等比例放大导出",
       "thumbnail": "app/previews/girl-rain-b84ffaff8d.webp",
       "size": 5052214,
       "sha": "2abf110efeb100ac9f7d5c251d28b3520c8b4cc4"
@@ -4379,7 +4380,7 @@
       "device": "phone",
       "width": 1440,
       "height": 3120,
-      "note": "由 852×1846 重绘稿等比例放大导出",
+      "note": "维护者使用 GPT 原创生成；由 852×1846 重绘稿等比例放大导出",
       "thumbnail": "app/previews/girl-wink-shh-cc06503cca.webp",
       "size": 3895586,
       "sha": "6cd7c9787e9a51c9a334be98fa3fd497f701052d"
@@ -4392,7 +4393,7 @@
       "device": "desktop",
       "width": 7500,
       "height": 5000,
-      "note": "来源文件标注：哲风壁纸",
+      "note": "维护者使用 GPT 原创生成",
       "thumbnail": "app/previews/shinchan-snowy-lakeside-440766f1ad.webp",
       "size": 3129306,
       "sha": "2a2b1a33373d25f9663011e431f2e54f47b78d06"
@@ -4405,7 +4406,7 @@
       "device": "desktop",
       "width": 6664,
       "height": 3748,
-      "note": "来源文件标注：哲风壁纸 · AI 扩图",
+      "note": "维护者使用 GPT 原创生成",
       "thumbnail": "app/previews/starry-study-room-229a9af775.webp",
       "size": 1352444,
       "sha": "f31a4c3e5baa94778feecca441aa531d7bd73401"
@@ -4418,7 +4419,7 @@
       "device": "desktop",
       "width": 8000,
       "height": 4501,
-      "note": "来源文件标注：哲风壁纸",
+      "note": "维护者使用 GPT 原创生成",
       "thumbnail": "app/previews/mount-fuji-convenience-store-535f864e3b.webp",
       "size": 5399530,
       "sha": "09f9663f010c2fd777cb1127b6d1fb70528d4f60"
@@ -4525,115 +4526,191 @@
       "series": "zero-escape",
       "id": "999",
       "title": "999：9小时9人9扇门",
-      "firstReleaseYear": 2009
+      "firstReleaseYear": 2009,
+      "synopsis": {
+        "text": "淳平与另外八人被神秘人物 Zero 困在一艘邮轮上，每人手腕都有编号装置。他们必须在九小时内解开密室与数字门的机关，寻找出口，并查明这场游戏的目的。",
+        "source": "https://www.spike-chunsoft.com/news/zero-escape-the-nonary-games-price-reduced/"
+      }
     },
     {
       "series": "zero-escape",
       "id": "virtues-last-reward",
       "title": "极限脱出：善人死亡",
-      "firstReleaseYear": 2012
+      "firstReleaseYear": 2012,
+      "synopsis": {
+        "text": "一名青年在陌生设施中醒来，与另外八名被绑架者参加 Zero III 主持的 AB 游戏。在解谜与彼此试探之间，众人必须寻找离开设施的方法，追查囚禁他们的真相。",
+        "source": "https://www.spike-chunsoft.com/news/zero-escape-the-nonary-games-price-reduced/"
+      }
     },
     {
       "series": "zero-escape",
       "id": "zero-time-dilemma",
       "title": "极限脱出：刻之困境",
-      "firstReleaseYear": 2016
+      "firstReleaseYear": 2016,
+      "synopsis": {
+        "text": "九名参与者在地下设施中醒来，被迫参加决定生死的「决策游戏」。他们必须解开房间机关、作出艰难选择，并从零散的事件中拼出这场实验的真相。",
+        "source": "https://store.steampowered.com/app/311240/"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "phoenix-wright-ace-attorney",
       "title": "逆转裁判",
-      "firstReleaseYear": 2001
+      "firstReleaseYear": 2001,
+      "synopsis": {
+        "text": "新人律师成步堂龙一从为儿时好友辩护开始，逐步卷入更复杂的案件。他与助手绫里真宵调查现场、追问证人，在御剑怜侍等检察官面前寻找证词的矛盾，为委托人争取清白。",
+        "source": "https://news.capcomusa.com/lets/browse/take-that-phoenix-wright-ace-attorney-trilogy-is-out-now"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "justice-for-all",
       "title": "逆转裁判2",
-      "firstReleaseYear": 2002
+      "firstReleaseYear": 2002,
+      "synopsis": {
+        "text": "成步堂龙一迎来新的案件与天才检察官狩魔冥的挑战。他借助勾玉看见证人心中的秘密，在调查和法庭交锋中追寻真相，也面对身为律师的艰难抉择。",
+        "source": "https://news.capcomusa.com/lets/browse/take-that-phoenix-wright-ace-attorney-trilogy-is-out-now"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "trials-and-tribulations",
       "title": "逆转裁判3",
-      "firstReleaseYear": 2004
+      "firstReleaseYear": 2004,
+      "synopsis": {
+        "text": "成步堂龙一与伙伴面对一连串棘手案件，以及神秘检察官戈德的步步紧逼。过去与现在的线索逐渐交织，他必须穿过层层证词与谜团，继续寻找事件背后的真相。",
+        "source": "https://news.capcomusa.com/lets/browse/take-that-phoenix-wright-ace-attorney-trilogy-is-out-now"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "apollo-justice",
       "title": "逆转裁判4",
-      "firstReleaseYear": 2007
+      "firstReleaseYear": 2007,
+      "synopsis": {
+        "text": "新人律师王泥喜法介第一次独立出庭，便要为被控谋杀的成步堂龙一辩护。这场意外的审判开启他的律师生涯，也把他引向成步堂、美贯与一系列相互牵连的谜案。",
+        "source": "https://news.capcomusa.com/2024/01/25/take-that-apollo-justice-ace-attorney-trilogy-is-out-now/"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "investigations-miles-edgeworth",
       "title": "逆转检事",
-      "firstReleaseYear": 2009
+      "firstReleaseYear": 2009,
+      "synopsis": {
+        "text": "检察官御剑怜侍走出法庭，亲自搜查犯罪现场并询问相关人物。他把证据与线索逐一连结，在接连发生的案件中以逻辑推理逼近真相。",
+        "source": "https://store.steampowered.com/app/2401970/"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "investigations-2",
       "title": "逆转检事2",
-      "firstReleaseYear": 2011
+      "firstReleaseYear": 2011,
+      "synopsis": {
+        "text": "御剑怜侍再次面对复杂案件，过去与现在的线索交织在一起。他必须通过现场调查和对证人的追问揭开层层疑点，继续追寻检察官应当守护的真相。",
+        "source": "https://store.steampowered.com/app/2401970/"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "professor-layton-vs-phoenix-wright",
       "title": "雷顿教授 VS 逆转裁判",
-      "firstReleaseYear": 2012
+      "firstReleaseYear": 2012,
+      "synopsis": {
+        "text": "雷顿教授与成步堂龙一因一本神秘的书来到充满魔女传说的迷宫城。少女被指控为魔女，雷顿调查城镇谜团，成步堂则在陌生的审判制度下为她辩护。",
+        "source": "https://www.nintendo.com/en-gb/Games/Nintendo-3DS-games/Professor-Layton-vs-Phoenix-Wright-Ace-Attorney-845517.html"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "dual-destinies",
       "title": "逆转裁判5",
-      "firstReleaseYear": 2013
+      "firstReleaseYear": 2013,
+      "synopsis": {
+        "text": "成步堂龙一重新取得律师资格，与王泥喜法介、新人希月心音一起投入案件调查。在司法公信力动摇的「法律黑暗时代」，三人运用各自的能力，面对连锁事件与法庭上的强敌。",
+        "source": "https://news.capcomusa.com/2024/01/25/take-that-apollo-justice-ace-attorney-trilogy-is-out-now/"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "the-great-ace-attorney-adventures",
       "title": "大逆转裁判：成步堂龙之介的冒险",
-      "firstReleaseYear": 2015
+      "firstReleaseYear": 2015,
+      "synopsis": {
+        "text": "明治时代的青年成步堂龙之介从日本踏上前往伦敦的旅程。在御琴羽寿沙都的协助下，他学习陌生的司法制度，通过调查、推理与法庭辩论，为卷入案件的人寻找真相。",
+        "source": "https://news.capcomusa.com/lets/browse/the-great-ace-attorney-chronicles-is-available-now"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "spirit-of-justice",
       "title": "逆转裁判6",
-      "firstReleaseYear": 2016
+      "firstReleaseYear": 2016,
+      "synopsis": {
+        "text": "成步堂龙一前往克莱因王国，却卷入当地的谋杀审判；这里的辩护律师会与败诉的被告同受惩罚。与此同时，王泥喜法介与希月心音在国内处理危及事务所的案件，两地的行动逐渐引发司法变革。",
+        "source": "https://news.capcomusa.com/2024/01/25/take-that-apollo-justice-ace-attorney-trilogy-is-out-now/"
+      }
     },
     {
       "series": "ace-attorney",
       "id": "the-great-ace-attorney-2-resolve",
       "title": "大逆转裁判2：成步堂龙之介的觉悟",
-      "firstReleaseYear": 2017
+      "firstReleaseYear": 2017,
+      "synopsis": {
+        "text": "承接前作，成步堂龙之介与伙伴继续在日本与伦敦的案件中追寻真相。看似独立的审判逐渐与过去的悬案相连，逼迫他以更坚定的觉悟面对新的考验。",
+        "source": "https://news.capcomusa.com/lets/browse/the-great-ace-attorney-chronicles-is-available-now"
+      }
     },
     {
       "series": "danganronpa",
       "id": "trigger-happy-havoc",
       "title": "弹丸论破：希望的学园和绝望的高中生",
-      "firstReleaseYear": 2010
+      "firstReleaseYear": 2010,
+      "synopsis": {
+        "text": "一群优秀学生被困在希望之峰学园，被黑白熊强迫参加以杀人换取逃脱机会的游戏。每当命案发生，幸存者就要搜集证据并举行学级审判，在谎言与怀疑中找出凶手。",
+        "source": "https://store.steampowered.com/app/413410/"
+      }
     },
     {
       "series": "danganronpa",
       "id": "goodbye-despair",
       "title": "超级弹丸论破2：再见绝望学园",
-      "firstReleaseYear": 2012
+      "firstReleaseYear": 2012,
+      "synopsis": {
+        "text": "希望之峰学园的学生来到南国岛屿参加修学旅行，却被黑白熊卷入互相残杀的游戏。他们必须调查岛上的命案、在学级审判中辨明真相，同时追查这座岛隐藏的秘密。",
+        "source": "https://store.steampowered.com/app/413420/"
+      }
     },
     {
       "series": "danganronpa",
       "id": "ultra-despair-girls",
       "title": "绝对绝望少女：弹丸论破 Another Episode",
-      "firstReleaseYear": 2014
+      "firstReleaseYear": 2014,
+      "synopsis": {
+        "text": "苗木困被囚禁一年多后终于获得逃脱机会，却发现城市已被孩子们与大量黑白熊控制。她与腐川冬子联手，在袭击和机关中求生，寻找离开城市的方法，并揭开叛乱背后的秘密。",
+        "source": "https://store.steampowered.com/app/555950/"
+      }
     },
     {
       "series": "danganronpa",
       "id": "killing-harmony",
       "title": "新弹丸论破V3：大家的自相残杀新学期",
-      "firstReleaseYear": 2017
+      "firstReleaseYear": 2017,
+      "synopsis": {
+        "text": "十六名拥有特殊才能的学生被绑架并关进一所学园，再次面对黑白熊设计的杀人游戏。他们需要调查命案、在激烈的学级审判中拆穿谎言，追寻这场囚禁的真正目的。",
+        "source": "https://store.steampowered.com/app/567640/"
+      }
     },
     {
       "series": "danganronpa",
       "id": "ultimate-summer-camp",
       "title": "快乐弹丸论破S：超高中级的南国掷骰合宿",
-      "firstReleaseYear": 2021
+      "firstReleaseYear": 2021,
+      "synopsis": {
+        "text": "系列各作角色齐聚南国岛屿，展开充满交流事件的合宿生活。玩家通过掷骰探索、战斗与角色培养收集希望碎片，体验以角色互动和成长为核心的独立外传。",
+        "source": "https://store.steampowered.com/app/1691970/"
+      }
     }
   ],
   "actresses": {
@@ -6335,15 +6412,20 @@
         },
         "nameSource": "https://zh.wikipedia.org/w/index.php?oldid=90468381",
         "portrait": {
-          "path": "actresses/portraits/p0029.jpg",
+          "path": "actresses/portraits/p0029.png",
           "source": {
-            "provider": "LIGHT promotion",
-            "url": "https://lightpro.jp/img/talent/tachibanamar_m.jpg",
-            "profile": "https://lightpro.jp/talent/tachibanamary.html",
-            "retrieved": "2026-10-06",
-            "sha256": "98ba350e32524252b32f2564f8742f9eede318677d28a0f3b970efb2ab450184"
+            "provider": "Wikimedia Commons / 三立娛樂星聞",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/%E6%A9%98%E3%83%A1%E3%82%A2%E3%83%AA%E3%83%BC.png",
+            "profile": "https://commons.wikimedia.org/w/index.php?title=File:%E6%A9%98%E3%83%A1%E3%82%A2%E3%83%AA%E3%83%BC.png&oldid=999908286",
+            "retrieved": "2026-10-07",
+            "sha256": "770458dfc248157036a53617b12e1ad95b914616f669872dcdb42f846f3eedc1",
+            "license": {
+              "name": "CC BY 3.0",
+              "url": "https://creativecommons.org/licenses/by/3.0/",
+              "author": "三立娛樂星聞"
+            }
           },
-          "reviewed": "2026-10-06"
+          "reviewed": "2026-10-07"
         },
         "japaneseName": "橘メアリー",
         "profile": {

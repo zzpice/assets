@@ -99,6 +99,7 @@ h1 { margin: 0 0 6px; font-size: clamp(1.55rem,4vw,2.15rem); letter-spacing: -.0
 .asset-info summary::after { content: "+"; }
 .asset-info[open] summary::after { content: "−"; }
 .details { margin: 0 0 7px; font-size: .75rem; }
+.synopsis { margin: 0; font-size: .8rem; line-height: 1.7; }
 .note { margin: 8px 0; padding: 7px 8px; border-radius: 6px; background: var(--soft); font-size: .73rem; }
 .filename { display: block; margin: 8px 0; font-size: .72rem; overflow-wrap: anywhere; }
 .asset-info button { width: 100%; margin-bottom: 4px; font-weight: 400; font-size: .76rem; }

@@ -511,6 +511,18 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   download.href = url; download.download = file.path.split("/").pop();
   download.addEventListener("click",requireConnection);
   actions.append(download); meta.append(actions);
+  if (work?.synopsis && typeof work.synopsis.text === "string") {
+    try {
+      const link = new URL(work.synopsis.source);
+      if (["http:","https:"].includes(link.protocol)) {
+        const story = element("details", "asset-info game-synopsis");
+        const source = element("a", "source-link", "简介依据 ↗");
+        source.href = link.href; source.target = "_blank"; source.rel = "noopener noreferrer";
+        story.append(element("summary", "", "剧情简介"), element("p", "synopsis", work.synopsis.text), source);
+        meta.append(story);
+      }
+    } catch { /* Invalid synopsis sources do not interrupt image browsing. */ }
+  }
   info.append(element("summary", "", "图片信息"), details);
   if (file.kind === "game-cover") {
     const label = [file.cover?.version,file.cover?.platform,coverRegionLabels[file.cover?.region] || file.cover?.region].filter(Boolean).join(" · ");
@@ -525,6 +537,11 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
     } catch { /* Invalid source links do not interrupt the gallery. */ }
   }
   if (file.note && file.kind !== "game-cover") info.append(element("p", "note", file.note));
+  if (["wallpaper","avatar"].includes(file.kind)) {
+    const source = element("a", "source-link", "来源与许可记录 ↗");
+    source.href = "https://github.com/zzpice/assets/blob/main/wallpapers/SOURCES.md";
+    source.target = "_blank"; source.rel = "noopener noreferrer"; info.append(source);
+  }
   if (file.kind === "bank-card") {
     const sourcePath = file.edition === "custom" ? file.derivedFrom : file.source?.url;
     if (sourcePath) {

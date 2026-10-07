@@ -142,6 +142,13 @@ def directory(root):
         https(source.get("url"), pid + ".portrait.source.url")
         required_text(source.get("provider"), pid + ".portrait.source.provider")
         dated(source.get("retrieved"), pid + ".portrait.source.retrieved")
+        if "license" in source:
+            license_info = source["license"]
+            if not isinstance(license_info, dict) or set(license_info) != {"name", "url", "author"}:
+                raise ValueError(f"{pid}: portrait license requires name, url and author")
+            required_text(license_info["name"], pid + ".portrait.source.license.name")
+            required_text(license_info["author"], pid + ".portrait.source.license.author")
+            https(license_info["url"], pid + ".portrait.source.license.url")
         if "restoration" in source:
             restoration = source["restoration"]
             if not isinstance(restoration, dict) or set(restoration) != {"method", "originalUrl", "originalSha256", "reviewed"}:

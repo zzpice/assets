@@ -115,6 +115,19 @@ class ActressTests(unittest.TestCase):
         self.write()
         with self.assertRaisesRegex(ValueError, "distinct original"): directory(self.root)
 
+    def test_portrait_license_preserves_credit_and_rejects_incomplete_or_unsafe_terms(self):
+        source = self.people[0]["portrait"]["source"]
+        credit = {"name": "CC BY 3.0", "url": "https://creativecommons.org/licenses/by/3.0/", "author": "摄影者"}
+        source["license"] = credit
+        self.write()
+        compiled, _ = directory(self.root)
+        self.assertEqual(compiled["people"][0]["portrait"]["source"]["license"], credit)
+        for license_info in [None, {"name": "CC BY 3.0"}, {**credit, "author": ""}, {**credit, "url": "javascript:alert(1)"}]:
+            with self.subTest(license_info=license_info):
+                source["license"] = license_info
+                self.write()
+                with self.assertRaises(ValueError): directory(self.root)
+
     def test_missing_page_rank_and_incompatible_scope_never_publish(self):
         initial = copy.deepcopy(self.snapshot)
         for field, value, message in [("pages", self.snapshot["pages"][:4], "all five"), ("rows", self.snapshot["rows"][:99], "without gaps"), ("series", "video-sales", "incompatible")]:
