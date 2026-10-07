@@ -828,6 +828,14 @@ function clearFilters(persist = true) {
 }
 
 document.getElementById("filters-panel").open = !window.matchMedia("(max-width: 760px)").matches;
+document.getElementById("home-link").addEventListener("click",event => {
+  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  saveGalleryView();
+  if (location.href !== base.href) history.pushState({galleryKind:"wallpaper"},"",base.href);
+  syncRoute();
+  window.scrollTo(0,0);
+});
 document.getElementById("actress-entry").addEventListener("click",event => {
   if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !actressGallery || !actressData) return;
   event.preventDefault();

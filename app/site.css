@@ -12,6 +12,7 @@ button:disabled { opacity: .45; cursor: default; }
 header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .eyebrow { color: var(--muted); font-size: .7rem; letter-spacing: .15em; margin: 0 0 5px; }
 h1 { margin: 0 0 6px; font-size: clamp(1.55rem,4vw,2.15rem); letter-spacing: -.035em; }
+h1 a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
 .intro { margin: 0; color: var(--muted); font-size: .86rem; }
 .install-button { flex-shrink: 0; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; min-height: 44px; background: var(--surface); font-size: .85rem; font-weight: 600; }
 #summary { margin: 16px 0; color: var(--muted); font-size: .8rem; }
