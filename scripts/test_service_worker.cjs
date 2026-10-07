@@ -91,6 +91,27 @@ test("a missing mandatory script prevents installation and leaves the old bundle
   assert.equal(state.claimed,false);
 });
 
+test("stalled optional previews are aborted so the verified shell can finish installation",async()=>{
+  let aborted=0;
+  const pending=[];
+  const state=worker(async request=>{
+    if(request.url.includes("/previews/")) return new Promise((resolve,reject)=>{
+      pending.push(request);
+      request.signal.addEventListener("abort",()=>{aborted++;reject(new Error("preview timeout"));},{once:true});
+    });
+    return new Response(fs.readFileSync(path.join(root,new URL(request.url).pathname.slice("/assets/".length))));
+  },{}, {setTimeout:callback=>setTimeout(callback,20),clearTimeout});
+  let watchdog;
+  try {
+    await Promise.race([state.dispatch("install"),new Promise((resolve,reject)=>{watchdog=setTimeout(()=>reject(new Error("Installation stalled on optional previews")),1000);})]);
+  } finally { clearTimeout(watchdog); }
+  assert.equal(aborted,24);
+  assert.ok(pending.every(request=>request.signal.aborted));
+  assert.equal(state.stores.get(shellCache).size,Object.keys(manifest).length);
+  await state.dispatch("activate");
+  assert.equal(state.claimed,true);
+});
+
 test("a 200 response from another release also prevents installation",async()=>{
   const state=worker(async request=>{
     if(request.url.includes("app/site.js")) return new Response("different script");

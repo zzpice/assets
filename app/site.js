@@ -462,6 +462,7 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   preview.setAttribute("aria-label", "预览" + file.title);
   preview.addEventListener("click", () => openPreview(file,"push",sequence));
   const img = element("img");
+  const backdrop = file.kind === "game-cover" ? element("span","cover-backdrop") : null;
   img.alt = file.title; img.loading = "lazy"; img.decoding = "async";
   if (file.width && file.height) { img.width = file.width; img.height = file.height; }
   let usingThumbnail = Boolean(file.thumbnail);
@@ -475,6 +476,8 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   }
   updateDetails();
   img.addEventListener("load", () => {
+    // Let the lazy image trigger loading; an eager CSS background fetches every cover.
+    if (backdrop) backdrop.style.backgroundImage = 'url("' + (img.currentSrc || img.src) + '")';
     // Preview pixels must never replace the full image dimensions.
     if (usingThumbnail || file.path.toLowerCase().endsWith(".svg")) return;
     if (img.naturalWidth && img.naturalHeight && (file.width !== img.naturalWidth || file.height !== img.naturalHeight)) {
@@ -487,10 +490,8 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
     img.remove(); preview.append(element("span", "image-error", "图片暂时无法加载"));
   });
   img.src = file.thumbnail ? imageUrl(file.thumbnail) : assetPreviewUrl(file);
-  if (file.kind === "game-cover") {
-    const backdrop = element("span","cover-backdrop");
+  if (backdrop) {
     backdrop.setAttribute("aria-hidden","true");
-    backdrop.style.backgroundImage = 'url("' + img.src + '")';
     preview.append(backdrop);
   }
   preview.append(img);

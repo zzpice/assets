@@ -1,10 +1,11 @@
 import hashlib
+import io
 import json
 from pathlib import Path
 import tempfile
 import unittest
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 
 from update_catalog import infer_device, update
 
@@ -33,6 +34,49 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "实际尺寸 120x240"):
             update(self.root)
         self.assertFalse((self.root / "catalog.json").exists())
+
+    def test_exif_orientation_preserves_source_and_preview_pixels(self):
+        self.image.unlink()
+        for orientation in (1, 2, 3, 4, 5, 6, 7, 8):
+            with self.subTest(orientation=orientation):
+                image = Image.new("RGB", (60, 120), "navy")
+                ImageDraw.Draw(image).rectangle((0, 0, 29, 39), fill="red")
+                exif = Image.Exif()
+                exif[274] = orientation
+                size = "120x60" if orientation >= 5 else "60x120"
+                source = self.root / f"avatars/anime/{size}/oriented.jpg"
+                source.parent.mkdir(parents=True, exist_ok=True)
+                image.save(source, exif=exif)
+                before = source.read_bytes()
+                with Image.open(io.BytesIO(before)) as original:
+                    expected = ImageOps.exif_transpose(original)
+                buffer = io.BytesIO()
+                expected.save(buffer, "WEBP", quality=82, method=6)
+                update(self.root)
+                item = next(item for item in self.catalog()["assets"] if item["path"] == source.relative_to(self.root).as_posix())
+                self.assertEqual((item["width"], item["height"]), expected.size)
+                self.assertEqual((self.root / item["thumbnail"]).read_bytes(), buffer.getvalue())
+                self.assertEqual(source.read_bytes(), before)
+                update(self.root, check=True)
+                source.unlink()
+
+    def test_gif_preview_keeps_first_frame_and_original_animation(self):
+        self.image.unlink()
+        source = self.root / "other/animated.gif"
+        source.parent.mkdir()
+        Image.new("RGB", (24, 32), "red").save(source, save_all=True, append_images=[Image.new("RGB", (24, 32), "blue")], duration=100, loop=0)
+        before = source.read_bytes()
+        update(self.root)
+        item = self.catalog()["assets"][0]
+        with Image.open(self.root / item["thumbnail"]) as preview:
+            red, green, blue = preview.convert("RGB").getpixel((12, 16))
+            self.assertGreater(red, 240)
+            self.assertLess(green, 15)
+            self.assertLess(blue, 15)
+        self.assertEqual(source.read_bytes(), before)
+        with Image.open(source) as original:
+            self.assertEqual(original.n_frames, 2)
+        update(self.root, check=True)
 
     def test_replacement_keeps_title_and_removes_stale_note(self):
         update(self.root)

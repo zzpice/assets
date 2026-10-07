@@ -196,10 +196,10 @@ def build_catalog(root):
         if relative.suffix == ".svg":
             width, height = svg_size(data)
         else:
-            with Image.open(io.BytesIO(data)) as original:
-                image_format = original.format
-                image = ImageOps.exif_transpose(original)
-                image.load()
+            image = Image.open(io.BytesIO(data))
+            image_format = image.format
+            # The image is closed below; avoid copying the full decoded source.
+            ImageOps.exif_transpose(image, in_place=True)
             width, height = image.size
         if path.startswith(("wallpapers/", "avatars/")):
             folder = relative.parts[0]

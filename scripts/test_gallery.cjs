@@ -250,6 +250,22 @@ test("cover synopses are collapsed, cited, shared across editions and rendered a
   assert.equal(descend(context.makeCard(context.testFiles.find(file=>file.game==="vlr"))).some(node=>node.className==="synopsis"),false);
 });
 
+test("cover backgrounds wait for lazy images and follow the successfully loaded fallback",()=>{
+  const {context}=coverGallery();
+  const file=context.makeAsset({path:"game-covers/zero-escape/999.jpg",thumbnail:"app/previews/999-abc.webp",width:1400,height:1252});
+  const contents=descend(context.makeCard(file));
+  const image=contents.find(node=>node.tagName==="img");
+  const backdrop=contents.find(node=>node.className==="cover-backdrop");
+  assert.equal(image.loading,"lazy");
+  assert.equal(backdrop.style.backgroundImage,undefined);
+  image.listeners.load[0]();
+  assert.equal(backdrop.style.backgroundImage,'url("'+base+file.thumbnail+'")');
+  image.listeners.error[0]();
+  image.naturalWidth=file.width; image.naturalHeight=file.height;
+  image.listeners.load[0]();
+  assert.equal(backdrop.style.backgroundImage,'url("'+base+file.path+'")');
+});
+
 test("licensed person photos display author, license and the full source download",()=>{
   const {context,read,nodes}=gallery(undefined,true);
   context.testCatalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
