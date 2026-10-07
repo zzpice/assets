@@ -34,6 +34,7 @@ let kind = "wallpaper";
 let deferredInstall = null;
 let toastTimeout;
 let activePreview;
+let previewTrigger;
 let previewUsingThumbnail = false;
 let visibleAssets = [];
 let renderedViewKey = null;
@@ -545,7 +546,10 @@ function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
   preview.type = "button";
   if (file.kind !== "game-cover" && file.width && file.height) preview.style.aspectRatio = file.width + " / " + file.height;
   preview.setAttribute("aria-label", "预览" + file.title);
-  preview.addEventListener("click", () => openPreview(file,"push",sequence));
+  preview.addEventListener("click", () => {
+    previewTrigger = preview;
+    openPreview(file,"push",sequence);
+  });
   const img = element("img");
   const backdrop = file.kind === "game-cover" ? element("span","cover-backdrop") : null;
   img.alt = file.title; img.loading = "lazy"; img.decoding = "async";
@@ -935,6 +939,11 @@ document.getElementById("image-stage").addEventListener("touchend",event => {
 },{passive:true});
 document.getElementById("image-stage").addEventListener("touchcancel",() => { swipeStart = null; },{passive:true});
 previewDialog.addEventListener("close", () => {
+  // Safari does not focus buttons on pointer activation. Restore to the actual
+  // opener explicitly rather than relying on the dialog's previous focus.
+  const trigger = previewTrigger;
+  previewTrigger = null;
+  if (trigger?.isConnected) trigger.focus({preventScroll:true});
   previewImage.removeAttribute("src"); activePreview = null; lockscreenEnabled = false;
   updateAvatarShape();
 });

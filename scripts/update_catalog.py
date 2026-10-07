@@ -285,7 +285,7 @@ def versioned_html(root):
     if not page.exists():
         return None
     text = page.read_text("utf-8")
-    for path in ["app/site.js", "app/site.css", "app/actresses.js"]:
+    for path in ["app/site.js", "app/site.css", "app/design.css", "app/actresses.js"]:
         file = root / path
         if file.exists():
             version = hashlib.sha256(file.read_bytes()).hexdigest()[:10]
@@ -301,13 +301,13 @@ def versioned_service_worker(root, catalog_text, html):
     text = worker.read_text("utf-8")
     shell_hashes = {}
     contents = {"index.html": (html or "").encode("utf-8"), "catalog.json": catalog_text.encode("utf-8")}
-    for path in ["app/site.js", "app/site.css", "app/actresses.js", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
+    for path in ["app/site.js", "app/site.css", "app/design.css", "app/actresses.js", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
         file = root / path
         if file.exists():
             contents[path] = file.read_bytes()
     for path, data in contents.items():
         digest = hashlib.sha256(data).hexdigest()
-        key = path + "?v=" + digest[:10] if path in {"app/site.js", "app/site.css", "app/actresses.js"} else path
+        key = path + "?v=" + digest[:10] if path in {"app/site.js", "app/site.css", "app/design.css", "app/actresses.js"} else path
         shell_hashes[key] = digest
     shell_pattern = r"const SHELL_HASHES = \{.*?\};"
     text = re.sub(shell_pattern, lambda _: "const SHELL_HASHES = " + json.dumps(shell_hashes, indent=2) + ";", text, count=1, flags=re.S)
@@ -315,7 +315,7 @@ def versioned_service_worker(root, catalog_text, html):
     normalized = re.sub(pattern, r'\g<1>VERSION\g<2>', text, count=1)
     digest = hashlib.sha256(normalized.encode("utf-8"))
     digest.update(("\0catalog.json\0" + catalog_text + "\0index.html\0" + (html or "")).encode("utf-8"))
-    for path in ["app/site.js", "app/site.css", "app/actresses.js", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
+    for path in ["app/site.js", "app/site.css", "app/design.css", "app/actresses.js", "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png"]:
         file = root / path
         if file.exists():
             digest.update(("\0" + path + "\0").encode("utf-8"))

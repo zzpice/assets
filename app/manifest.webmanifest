@@ -1,14 +1,14 @@
 {
   "id": "../",
-  "name": "zzpice 图片资源库",
+  "name": "图片资源库 · ZZP",
   "short_name": "图片资源",
   "description": "浏览与下载壁纸、头像及其他图片",
   "lang": "zh-CN",
   "start_url": "../",
   "scope": "../",
   "display": "standalone",
-  "background_color": "#10171e",
-  "theme_color": "#10171e",
+  "background_color": "#f5f5ef",
+  "theme_color": "#316348",
   "icons": [
     {
       "src": "icon-192.png",

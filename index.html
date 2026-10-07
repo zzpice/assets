@@ -4,23 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#10171e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f5ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151c19" media="(prefers-color-scheme: dark)">
   <meta name="description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="图片资源">
-  <title>图片资源库 · zzpice</title>
+  <title>图片资源库 · ZZP</title>
   <link rel="manifest" href="app/manifest.webmanifest">
   <link rel="icon" href="app/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="app/icon-180.png">
-  <link rel="stylesheet" href="app/site.css?v=8c2e641c92">
+  <link rel="stylesheet" href="app/design.css?v=1821ddadb2">
+  <link rel="stylesheet" href="app/site.css?v=6f156390e0">
   <script src="app/actresses.js?v=4619ad5278" defer></script>
-  <script src="app/site.js?v=fd0827d99f" defer></script>
+  <script src="app/site.js?v=1609c4744f" defer></script>
+  <link rel="canonical" href="https://zzpice.github.io/assets/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="ZZP 工具与资源">
+  <meta property="og:title" content="图片资源库 · ZZP">
+  <meta property="og:description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。">
+  <meta property="og:url" content="https://zzpice.github.io/assets/">
+  <meta property="og:image" content="https://zzpice.github.io/assets/app/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="图片资源库 · ZZP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="图片资源库 · ZZP">
+  <meta name="twitter:description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。">
+  <meta name="twitter:image" content="https://zzpice.github.io/assets/app/social-preview.png">
 </head>
 <body>
+  <a class="skip-link" href="#gallery">跳到图片列表</a>
   <header>
     <div>
-      <p class="eyebrow">ZZPICE / ASSETS</p>
+      <a class="ecosystem-link" href="https://zzp.moe/" target="_blank" rel="noopener noreferrer" aria-label="ZZP · 所有项目（新标签页）">ZZP / 工具与资源</a>
       <h1><a id="home-link" href="./" aria-label="图片资源库首页">图片资源库</a></h1>
       <p class="intro">按用途浏览，找到合适的图片。</p>
     </div>
@@ -62,11 +79,11 @@
     <div class="result-actions"><button id="show-favorites" type="button" aria-pressed="false">收藏 <span id="favorite-count">0</span></button><button id="reset" type="button" disabled>清除筛选</button></div>
   </div>
   <p id="notice" role="status" hidden></p>
-  <main id="gallery" class="grid" aria-label="图片列表"><div class="empty">正在读取图片列表…</div></main>
+  <main id="gallery" tabindex="-1" class="grid" aria-label="图片列表"><div class="empty">正在读取图片列表…</div></main>
   <noscript><p class="empty">请开启 JavaScript 浏览图库，也可以<a href="https://github.com/zzpice/assets">在 GitHub 查看和下载图片</a>。</p></noscript>
   <footer>
     <span>点击图片预览 · 下载保留完整尺寸</span>
-    <div><a href="https://zzp.moe/" target="_blank" rel="noopener noreferrer" aria-label="所有项目（新标签页）">所有项目 ↗</a><a href="https://github.com/zzpice/assets" target="_blank" rel="noopener">GitHub 仓库 ↗</a><a href="https://github.com/zzpice/assets/blob/main/README.md" target="_blank" rel="noopener">归档规则 ↗</a><details id="footer-more" class="footer-more"><summary>更多</summary><a id="actress-entry" href="#actresses=annual">女优图库</a></details></div>
+    <div><a href="https://zzp.moe/" target="_blank" rel="noopener noreferrer" aria-label="所有项目（新标签页）">所有项目 ↗</a><a href="https://github.com/zzpice/assets" target="_blank" rel="noopener noreferrer">GitHub 仓库</a><a href="https://github.com/zzpice/assets/blob/main/README.md" target="_blank" rel="noopener noreferrer">归档规则</a><details id="footer-more" class="footer-more"><summary>更多</summary><a id="actress-entry" href="#actresses=annual">女优图库</a></details></div>
   </footer>
   <dialog id="person-dialog" class="person-dialog" aria-labelledby="person-title">
     <div class="dialog-header"><div><h2 id="person-title"></h2><p id="person-romanization"></p></div><button id="person-close" class="close-button" type="button" aria-label="关闭人物资料">×</button></div>
