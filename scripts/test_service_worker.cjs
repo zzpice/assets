@@ -199,6 +199,34 @@ test("viewed versioned icons are verified once and remain available offline",asy
   assert.equal(calls,1);
 });
 
+test("slow icons can outlast shell recovery while stalled icons still abort without caching",async()=>{
+  const data="slow icon bytes",sha=blobSha(data);
+  for(const elapsed of [9000,31000]) {
+    const scheduled=new Map();let nextId=0,finish,signal;
+    const state=worker((request,options)=>new Promise((resolve,reject)=>{
+      signal=options.signal;finish=()=>resolve(new Response(data));
+      signal.addEventListener("abort",()=>reject(new Error("image timeout")),{once:true});
+    }),{}, {
+      setTimeout:(callback,delay)=>{const id=++nextId;scheduled.set(id,{callback,delay});return id;},
+      clearTimeout:id=>scheduled.delete(id)
+    });
+    const outcome=state.context.iconResponse(new Request(base+"icons/ai/slow.png?v="+sha))
+      .then(response=>({response}),error=>({error}));
+    await new Promise(setImmediate);
+    for(const timer of scheduled.values())if(timer.delay<=elapsed)timer.callback();
+    if(elapsed===9000) {
+      assert.equal(signal.aborted,false,"queued image must survive the shell's shorter deadline");
+      finish();const result=await outcome;
+      assert.equal(await result.response.text(),data);
+      assert.equal(state.stores.get(iconCache).size,1);
+    } else {
+      assert.equal(signal.aborted,true);assert.match((await outcome).error.message,/timeout/);
+      assert.equal(state.stores.get(iconCache).size,0);
+    }
+    assert.equal(scheduled.size,0);
+  }
+});
+
 test("replacing an icon cannot reuse the prior content version or cache mismatched bytes",async()=>{
   const old="old icon",fresh="new icon",oldSha=blobSha(old),newSha=blobSha(fresh);
   const oldUrl=base+"icons/finance/example.png?v="+oldSha;

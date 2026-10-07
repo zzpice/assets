@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "zzpice-assets-";
-const CACHE_NAME = CACHE_PREFIX + "v3-a1dc19b4cfc4";
+const CACHE_NAME = CACHE_PREFIX + "v3-51dd5113b165";
 const PREVIEW_CACHE = CACHE_PREFIX + "previews-v1";
 const ICON_CACHE = CACHE_PREFIX + "icons-v1";
 const base = new URL("./", self.location.href);
@@ -32,9 +32,9 @@ async function contentHash(data, gitBlob = false) {
   return [...new Uint8Array(hash)].map(value => value.toString(16).padStart(2,"0")).join("");
 }
 
-async function verifiedResponse(request, expected, gitBlob = false) {
+async function verifiedResponse(request, expected, {gitBlob = false, timeoutMs = 8000} = {}) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(),8000);
+  const timeout = setTimeout(() => controller.abort(),timeoutMs);
   try {
     const response = await fetch(request,{cache:"no-cache",signal:controller.signal});
     if (!response.ok) throw new Error("HTTP " + response.status);
@@ -139,7 +139,9 @@ async function iconResponse(request) {
   const cache = await caches.open(ICON_CACHE);
   const cached = await cache.match(url.href);
   if (cached) return cached;
-  const response = await verifiedResponse(new Request(url.href),sha,true);
+  // Image requests can queue behind other visible images on a cold connection.
+  // Keep shell recovery short while allowing this independent cache more time.
+  const response = await verifiedResponse(new Request(url.href),sha,{gitBlob:true,timeoutMs:30000});
   await cache.put(url.href,response.clone()).catch(() => {});
   await trimCache(cache,64);
   return response;

@@ -53,12 +53,23 @@ const server=http.createServer((req,res)=>{
     }
     assert.deepEqual(errors,[]);await context.close();
    }
+   const images=await browser.newContext();const allIcons=await images.newPage();
+   await allIcons.goto(url);await allIcons.evaluate(()=>navigator.serviceWorker.ready);await allIcons.reload();
+   await allIcons.locator('.tab[data-kind="icon"]').click();
+   await allIcons.waitForFunction(count=>{
+    const cards=[...document.querySelectorAll('.card')];
+    cards.forEach(card=>card.querySelectorAll('img').forEach(image=>image.loading='eager'));
+    return cards.length===count&&cards.every(card=>card.querySelector('.image-error')||
+     [...card.querySelectorAll('img')].every(image=>image.complete&&image.naturalWidth>0));
+   },iconCount,{timeout:45000});
+   assert.equal(await allIcons.locator('.card .image-error').count(),0,'All catalog icons must decode with the active worker');
+   await images.close();
    const context=await browser.newContext({serviceWorkers:'block'});const page=await context.newPage();
    await page.route('**/catalog.json',route=>route.abort());await page.goto(url);await page.locator('.empty button').waitFor();
    assert.match(await page.locator('.empty').innerText(),/无法读取/);
    await page.unroute('**/catalog.json');await page.locator('.empty button').click();
    await page.waitForFunction(()=>document.querySelectorAll('.card').length>0);await context.close();
-   console.log(`${name}: filters, favorites, preview focus, shareable routes, mobile/tablet, offline actions and error recovery passed`);
+   console.log(`${name}: filters, favorites, preview focus, shareable routes, mobile/tablet, offline actions, all ${iconCount} icons and error recovery passed`);
   } finally {await browser.close();}
  }
 })().catch(error=>{console.error(error);process.exitCode=1;}).finally(()=>server.close());
