@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const http=require('node:http');
-const root=path.resolve(__dirname,'..');
+const root=path.resolve(process.env.SITE_ROOT || path.join(__dirname,'..'));
 const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'),'utf8')).assets;
 const iconCount=catalog.filter(file=>file.path.startsWith('icons/')).length;
 const claudeCount=catalog.filter(file=>file.path.startsWith('icons/') && (file.path+' '+file.title).toLowerCase().includes('claude')).length;
