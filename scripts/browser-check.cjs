@@ -32,7 +32,7 @@ const server=http.createServer((req,res)=>{
     await page.locator('.preview').first().click();assert.equal(await page.locator('#preview-dialog').isVisible(),true);
     await page.keyboard.press('Escape');await page.waitForFunction(()=>!document.querySelector('#preview-dialog').open);
     assert.equal(await page.locator('.preview').first().evaluate(el=>el===document.activeElement),true);
-    await page.locator('#reset').click();await page.locator('.tab[data-kind="wallpaper"]').click();
+    await page.locator('#filters-panel summary').click();await page.locator('#reset').click();await page.locator('.tab[data-kind="wallpaper"]').click();
     await page.locator('#device').selectOption('phone');await page.waitForFunction(count=>document.querySelectorAll('.card').length===count,phoneCount);
     const route=page.url();await page.reload();await page.waitForFunction(count=>document.querySelectorAll('.card').length===count,phoneCount);assert.equal(page.url(),route);
     assert.equal(await page.locator('#favorite-count').innerText(),'0'); // Count is scoped to the current kind.
@@ -44,7 +44,7 @@ const server=http.createServer((req,res)=>{
      await page.evaluate(()=>navigator.serviceWorker.ready);
      await context.setOffline(true);
      await page.waitForFunction(()=>navigator.onLine===false);
-     await page.locator('#gallery .primary-button').first().click();
+     await page.locator('.preview').first().click();await page.locator('#preview-download').click();
      await page.waitForFunction(()=>document.querySelector('#toast').textContent.includes('联网'));
      // Playwright Chromium resets navigator.onLine after a worker-served reload, despite
      // requests remaining offline. Check the download guard before testing cold reload.

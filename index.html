@@ -1,118 +1,529 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f7f7f8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)">
-  <meta name="description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="图片资源">
-  <title>图片资源库 · ZZP</title>
-  <link rel="manifest" href="app/manifest.webmanifest">
-  <link rel="icon" href="app/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="app/icon-180.png">
-  <link rel="stylesheet" href="app/theme.css?v=84c5bbff00">
-  <link rel="stylesheet" href="app/site.css?v=9f135e1737">
-  <script src="app/actresses.js?v=4619ad5278" defer></script>
-  <script src="app/catalog.js?v=2f72d84160" defer></script>
-  <script src="app/site.js?v=c9961456e2" defer></script>
-  <link rel="canonical" href="https://zzpice.github.io/assets/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:site_name" content="ZZP 工具与资源">
-  <meta property="og:title" content="图片资源库 · ZZP">
-  <meta property="og:description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。">
-  <meta property="og:url" content="https://zzpice.github.io/assets/">
-  <meta property="og:image" content="https://zzpice.github.io/assets/app/social-preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="图片资源库 · ZZP">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="图片资源库 · ZZP">
-  <meta name="twitter:description" content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。">
-  <meta name="twitter:image" content="https://zzpice.github.io/assets/app/social-preview.png">
-</head>
-<body>
-  <a class="skip-link" href="#gallery">跳到图片列表</a>
-  <div class="library-shell">
-  <aside class="library-sidebar">
-  <header>
-    <div>
-      <a class="ecosystem-link" href="https://zzp.moe/" target="_blank" rel="noopener noreferrer" aria-label="ZZP · 所有项目（新标签页）">ZZP / 工具与资源</a>
-      <h1><a id="home-link" href="./" aria-label="图片资源库首页">图片资源库</a></h1>
-      <p class="intro">按用途浏览，找到合适的图片。</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#f7f7f8"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#16181c"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="description"
+      content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="图片资源" />
+    <title>图片资源库 · ZZP</title>
+    <link rel="manifest" href="app/manifest.webmanifest" />
+    <link rel="icon" href="app/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="app/icon-180.png" />
+    <link rel="stylesheet" href="app/theme.css?v=ad678d78fd" />
+    <link rel="stylesheet" href="app/site.css?v=d34845733e" />
+    <script src="app/actresses.js?v=4619ad5278" defer></script>
+    <script src="app/catalog.js?v=2f72d84160" defer></script>
+    <script src="app/site.js?v=1015e75f0b" defer></script>
+    <link rel="canonical" href="https://zzpice.github.io/assets/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="ZZP 工具与资源" />
+    <meta property="og:title" content="图片资源库 · ZZP" />
+    <meta
+      property="og:description"
+      content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。"
+    />
+    <meta property="og:url" content="https://zzpice.github.io/assets/" />
+    <meta
+      property="og:image"
+      content="https://zzpice.github.io/assets/app/social-preview.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="图片资源库 · ZZP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="图片资源库 · ZZP" />
+    <meta
+      name="twitter:description"
+      content="浏览壁纸、头像、图标、银行卡面、游戏封面与其他常用图片。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://zzpice.github.io/assets/app/social-preview.png"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#gallery">跳到图片列表</a>
+    <div class="library-shell">
+      <aside class="library-sidebar">
+        <header>
+          <div>
+            <a
+              class="ecosystem-link"
+              href="https://zzp.moe/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="ZZP · 所有项目（新标签页）"
+              >ZZP / 工具与资源</a
+            >
+            <h1>
+              <a id="home-link" href="./" aria-label="图片资源库首页"
+                ><img
+                  src="app/icon.svg"
+                  width="28"
+                  height="28"
+                  alt=""
+                />图片资源库</a
+              >
+            </h1>
+            <p class="intro">你的图片收藏架</p>
+          </div>
+          <button id="install" class="install-button" type="button">
+            ＋ 添加到桌面
+          </button>
+        </header>
+        <p id="summary">正在读取图片目录…</p>
+        <nav class="tabs" aria-label="资源用途">
+          <button
+            class="tab"
+            type="button"
+            data-kind="wallpaper"
+            aria-pressed="true"
+          >
+            壁纸<span>—</span>
+          </button>
+          <button
+            class="tab"
+            type="button"
+            data-kind="avatar"
+            aria-pressed="false"
+          >
+            头像<span>—</span>
+          </button>
+          <button
+            class="tab"
+            type="button"
+            data-kind="icon"
+            aria-pressed="false"
+            hidden
+          >
+            图标<span>—</span>
+          </button>
+          <button
+            class="tab"
+            type="button"
+            data-kind="bank-card"
+            aria-pressed="false"
+            hidden
+          >
+            银行卡面<span>—</span>
+          </button>
+          <button
+            class="tab"
+            type="button"
+            data-kind="game-cover"
+            aria-pressed="false"
+            hidden
+          >
+            游戏封面<span>—</span>
+          </button>
+          <button
+            class="tab"
+            type="button"
+            data-kind="actress"
+            aria-pressed="false"
+            hidden
+          >
+            女优图库<span>—</span>
+          </button>
+          <button
+            class="tab"
+            type="button"
+            data-kind="other"
+            aria-pressed="false"
+            hidden
+          >
+            其他图片<span>—</span>
+          </button>
+        </nav>
+      </aside>
+      <div class="library-content">
+        <div class="search-row">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5" />
+            <path d="m16 16 4.5 4.5" />
+          </svg>
+          <label class="sr-only" for="search">搜索图片</label>
+          <input
+            id="search"
+            type="search"
+            placeholder="搜索名称、种类或文件名"
+            autocomplete="off"
+          />
+          <kbd aria-hidden="true">/</kbd>
+        </div>
+        <div class="collection-heading">
+          <div><h2 id="collection-title">壁纸</h2></div>
+          <button
+            id="density-toggle"
+            type="button"
+            class="secondary-button"
+            aria-pressed="false"
+            title="切换图片显示密度"
+          >
+            紧凑视图
+          </button>
+        </div>
+        <div class="browse-toolbar">
+          <div class="field device-filter" hidden>
+            <label for="device">适用设备</label
+            ><select id="device">
+              <option value="">全部设备</option>
+            </select>
+          </div>
+          <section
+            id="actress-navigation"
+            hidden
+            aria-label="女优人物图库"
+          ></section>
+          <div
+            id="actress-entry-preference"
+            class="person-entry-preference"
+            hidden
+          >
+            <label
+              ><input
+                id="actress-keep-entry"
+                type="checkbox"
+                aria-describedby="actress-entry-hint"
+              />在此浏览器保留入口</label
+            ><span id="actress-entry-hint">共用此浏览器的人也会看到入口。</span>
+          </div>
+          <nav
+            id="cover-navigation"
+            class="cover-navigation"
+            aria-label="游戏封面导航"
+            hidden
+          >
+            <a href="#covers">游戏封面</a><span aria-hidden="true"> / </span
+            ><span id="cover-series-title"></span>
+          </nav>
+          <details class="filter-panel" id="filters-panel">
+            <summary>
+              <span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7h16M7 12h10M10 17h4" /></svg
+                >筛选与排序</span
+              ><span id="filter-summary">全部图片</span>
+            </summary>
+            <section class="filters" aria-label="筛选图片">
+              <div class="field">
+                <label for="category">内容分类</label
+                ><select id="category">
+                  <option value="">全部种类</option>
+                </select>
+              </div>
+              <div class="field" hidden>
+                <label for="bank">银行</label
+                ><select id="bank">
+                  <option value="">全部银行</option>
+                </select>
+              </div>
+              <div class="field" hidden>
+                <label for="edition">卡面版本</label
+                ><select id="edition">
+                  <option value="">全部版本</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="orientation">画面方向</label
+                ><select id="orientation">
+                  <option value="">全部方向</option>
+                  <option value="portrait">竖屏</option>
+                  <option value="landscape">横屏</option>
+                  <option value="square">方形</option>
+                  <option value="unknown">未标注</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="resolution">实际尺寸</label
+                ><select id="resolution">
+                  <option value="">全部尺寸</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="sort">排序</label
+                ><select id="sort">
+                  <option value="collection">设备与种类顺序</option>
+                  <option value="resolution-desc">组内尺寸从大到小</option>
+                  <option value="resolution-asc">组内尺寸从小到大</option>
+                  <option value="name">组内按名称排序</option>
+                </select>
+              </div>
+              <div class="filter-actions">
+                <button
+                  id="reset"
+                  class="secondary-button"
+                  type="button"
+                  disabled
+                >
+                  清除筛选
+                </button>
+              </div>
+            </section>
+          </details>
+        </div>
+        <div class="results-bar">
+          <span id="results" role="status" aria-live="polite"
+            >正在读取图片…</span
+          >
+          <div class="result-actions">
+            <button id="show-favorites" type="button" aria-pressed="false">
+              收藏 <span id="favorite-count">0</span>
+            </button>
+          </div>
+        </div>
+        <p id="notice" role="status" hidden></p>
+        <main
+          id="gallery"
+          tabindex="-1"
+          class="grid loading-gallery"
+          aria-label="图片列表"
+          aria-busy="true"
+        >
+          <div class="gallery-skeleton" aria-hidden="true"></div>
+          <div class="gallery-skeleton" aria-hidden="true"></div>
+          <div class="gallery-skeleton" aria-hidden="true"></div>
+          <div class="gallery-skeleton" aria-hidden="true"></div>
+          <div class="gallery-skeleton" aria-hidden="true"></div>
+          <div class="gallery-skeleton" aria-hidden="true"></div>
+        </main>
+        <noscript
+          ><p class="empty">
+            请开启 JavaScript 浏览图库，也可以<a
+              href="https://github.com/zzpice/assets"
+              >在 GitHub 查看和下载图片</a
+            >。
+          </p></noscript
+        >
+        <footer>
+          <span>点击图片预览 · 下载保留完整尺寸</span>
+          <div>
+            <a
+              href="https://zzp.moe/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="所有项目（新标签页）"
+              >所有项目 ↗</a
+            ><a
+              href="https://github.com/zzpice/assets"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub 仓库</a
+            ><a
+              href="https://github.com/zzpice/assets/blob/main/README.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              >归档规则</a
+            >
+            <details id="footer-more" class="footer-more">
+              <summary>更多</summary>
+              <a id="actress-entry" href="#actresses=annual">女优图库</a>
+            </details>
+          </div>
+        </footer>
+      </div>
     </div>
-    <button id="install" class="install-button" type="button">添加到桌面</button>
-  </header>
-  <p id="summary">正在读取图片目录…</p>
-  <nav class="tabs" aria-label="资源用途">
-    <button class="tab" type="button" data-kind="wallpaper" aria-pressed="true">壁纸<span>0</span></button>
-    <button class="tab" type="button" data-kind="avatar" aria-pressed="false">头像<span>0</span></button>
-    <button class="tab" type="button" data-kind="icon" aria-pressed="false" hidden>图标<span>0</span></button>
-    <button class="tab" type="button" data-kind="bank-card" aria-pressed="false" hidden>银行卡面<span>0</span></button>
-    <button class="tab" type="button" data-kind="game-cover" aria-pressed="false" hidden>游戏封面<span>0</span></button>
-    <button class="tab" type="button" data-kind="actress" aria-pressed="false" hidden>女优图库<span>0</span></button>
-    <button class="tab" type="button" data-kind="other" aria-pressed="false" hidden>其他图片<span>0</span></button>
-  </nav>
-  </aside>
-  <div class="library-content">
-  <div class="search-row">
-    <label class="sr-only" for="search">搜索图片</label>
-    <input id="search" type="search" placeholder="搜索名称、种类或文件名" autocomplete="off">
-  </div>
-  <div class="field device-filter" hidden><label for="device">适用设备</label><select id="device"><option value="">全部设备</option></select></div>
-  <section id="actress-navigation" hidden aria-label="女优人物图库"></section>
-  <div id="actress-entry-preference" class="person-entry-preference" hidden><label><input id="actress-keep-entry" type="checkbox" aria-describedby="actress-entry-hint">在此浏览器保留入口</label><span id="actress-entry-hint">共用此浏览器的人也会看到入口。</span></div>
-  <nav id="cover-navigation" class="cover-navigation" aria-label="游戏封面导航" hidden>
-    <a href="#covers">游戏封面</a><span aria-hidden="true"> / </span><span id="cover-series-title"></span>
-  </nav>
-  <details class="filter-panel" id="filters-panel">
-    <summary><span>筛选与排序</span><span id="filter-summary">全部图片</span></summary>
-    <section class="filters" aria-label="筛选图片">
-      <div class="field"><label for="category">内容分类</label><select id="category"><option value="">全部种类</option></select></div>
-      <div class="field" hidden><label for="bank">银行</label><select id="bank"><option value="">全部银行</option></select></div>
-      <div class="field" hidden><label for="edition">卡面版本</label><select id="edition"><option value="">全部版本</option></select></div>
-      <div class="field"><label for="orientation">画面方向</label><select id="orientation"><option value="">全部方向</option><option value="portrait">竖屏</option><option value="landscape">横屏</option><option value="square">方形</option><option value="unknown">未标注</option></select></div>
-      <div class="field"><label for="resolution">实际尺寸</label><select id="resolution"><option value="">全部尺寸</option></select></div>
-      <div class="field"><label for="sort">排序</label><select id="sort"><option value="collection">设备与种类顺序</option><option value="resolution-desc">组内尺寸从大到小</option><option value="resolution-asc">组内尺寸从小到大</option><option value="name">组内按名称排序</option></select></div>
-    </section>
-  </details>
-  <div class="results-bar">
-    <span id="results" role="status" aria-live="polite">正在读取图片…</span>
-    <div class="result-actions"><button id="show-favorites" type="button" aria-pressed="false">收藏 <span id="favorite-count">0</span></button><button id="reset" type="button" disabled>清除筛选</button></div>
-  </div>
-  <p id="notice" role="status" hidden></p>
-  <main id="gallery" tabindex="-1" class="grid" aria-label="图片列表"><div class="empty">正在读取图片列表…</div></main>
-  <noscript><p class="empty">请开启 JavaScript 浏览图库，也可以<a href="https://github.com/zzpice/assets">在 GitHub 查看和下载图片</a>。</p></noscript>
-  <footer>
-    <span>点击图片预览 · 下载保留完整尺寸</span>
-    <div><a href="https://zzp.moe/" target="_blank" rel="noopener noreferrer" aria-label="所有项目（新标签页）">所有项目 ↗</a><a href="https://github.com/zzpice/assets" target="_blank" rel="noopener noreferrer">GitHub 仓库</a><a href="https://github.com/zzpice/assets/blob/main/README.md" target="_blank" rel="noopener noreferrer">归档规则</a><details id="footer-more" class="footer-more"><summary>更多</summary><a id="actress-entry" href="#actresses=annual">女优图库</a></details></div>
-  </footer>
-  </div>
-  </div>
-  <dialog id="person-dialog" class="person-dialog" aria-labelledby="person-title">
-    <div class="dialog-header"><div><h2 id="person-title"></h2><p id="person-romanization"></p></div><button id="person-close" class="close-button" type="button" aria-label="关闭人物资料">×</button></div>
-    <div id="person-content" class="person-content"></div>
-  </dialog>
-  <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title">
-    <div class="dialog-header"><div><h2 id="preview-title"></h2><p id="preview-size"></p></div><button type="button" class="close-button" data-close="preview-dialog" aria-label="关闭预览">×</button></div>
-    <div class="preview-toolbar"><div class="preview-navigation" aria-label="切换图片"><button id="preview-previous" type="button" class="secondary-button" aria-label="上一张图片">‹</button><span id="preview-position" role="status"></span><button id="preview-next" type="button" class="secondary-button" aria-label="下一张图片">›</button></div><button id="preview-lockscreen" type="button" class="secondary-button" aria-pressed="false">锁屏效果</button><button id="preview-avatar-round" type="button" class="secondary-button" aria-pressed="false" hidden>圆形效果</button></div>
-    <div class="full-image"><div id="image-stage" class="image-stage"><img id="preview-image" alt=""><div id="lockscreen-clock" class="lockscreen-clock" aria-hidden="true" hidden><span id="lock-date"></span><span id="lock-time"></span></div></div><p id="preview-status" class="image-error" role="status">正在加载原图…</p></div>
-    <p id="lockscreen-hint" class="preview-hint" hidden>时钟位置为示意，以手机实际设置为准；下载的图片不含时钟。</p>
-    <p id="avatar-round-hint" class="preview-hint" hidden>圆形效果为居中裁切示意，下载仍保留原图。</p>
-    <button id="preview-retry" type="button" class="secondary-button" hidden>重新加载原图</button>
-    <div class="dialog-footer"><a id="preview-download" class="primary-button">下载原图</a><button id="preview-share" class="secondary-button" type="button">分享预览</button><button id="preview-copy" class="secondary-button" type="button">复制原图链接</button><p>左右滑动切换，长按图片可保存。分享链接可直接打开图片。</p></div>
-  </dialog>
-  <dialog id="install-dialog" class="install-dialog" aria-labelledby="install-title">
-    <div class="dialog-header"><h2 id="install-title">添加到主屏幕</h2><button type="button" class="close-button" data-close="install-dialog" aria-label="关闭添加指引">×</button></div>
-    <p class="install-intro">下次从手机桌面，直接打开图片资源库。</p>
-    <section><h3>iPhone / iPad</h3><ol><li>用 Safari 打开这个网站。</li><li>点「分享」（部分布局需先点「更多」）。</li><li>选「添加到主屏幕」，如有「作为网页 App 打开」请开启，再点「添加」。</li></ol></section>
-    <section><h3>Android</h3><p>在浏览器菜单中选择「安装应用」或「添加到主屏幕」。支持直接安装时，页面按钮会打开安装提示。</p></section>
-    <p class="install-hint">如果当前浏览器没有这些选项，复制网址后用 Safari 或 Chrome 打开。</p>
-    <button id="copy-site" class="primary-button" type="button">复制网站链接</button>
-  </dialog>
-  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-</body>
+    <dialog
+      id="person-dialog"
+      class="person-dialog"
+      aria-labelledby="person-title"
+    >
+      <div class="dialog-header">
+        <div>
+          <h2 id="person-title"></h2>
+          <p id="person-romanization"></p>
+        </div>
+        <button
+          id="person-close"
+          class="close-button"
+          type="button"
+          aria-label="关闭人物资料"
+        >
+          ×
+        </button>
+      </div>
+      <div id="person-content" class="person-content"></div>
+    </dialog>
+    <dialog
+      id="preview-dialog"
+      class="preview-dialog"
+      aria-labelledby="preview-title"
+    >
+      <div class="dialog-header">
+        <div>
+          <h2 id="preview-title"></h2>
+          <p id="preview-size"></p>
+        </div>
+        <button
+          type="button"
+          class="close-button"
+          data-close="preview-dialog"
+          aria-label="关闭预览"
+        >
+          ×
+        </button>
+      </div>
+      <div class="preview-toolbar">
+        <div class="preview-navigation" aria-label="切换图片">
+          <button
+            id="preview-previous"
+            type="button"
+            class="secondary-button"
+            aria-label="上一张图片"
+          >
+            ‹</button
+          ><span id="preview-position" role="status"></span
+          ><button
+            id="preview-next"
+            type="button"
+            class="secondary-button"
+            aria-label="下一张图片"
+          >
+            ›
+          </button>
+        </div>
+        <div class="preview-options">
+          <button
+            id="preview-favorite"
+            type="button"
+            class="secondary-button"
+            aria-pressed="false"
+          >
+            ♡ 收藏</button
+          ><button
+            id="preview-info-toggle"
+            type="button"
+            class="secondary-button"
+            aria-pressed="false"
+            aria-controls="preview-details"
+          >
+            图片资料</button
+          ><button
+            id="preview-lockscreen"
+            type="button"
+            class="secondary-button"
+            aria-pressed="false"
+          >
+            锁屏效果</button
+          ><button
+            id="preview-avatar-round"
+            type="button"
+            class="secondary-button"
+            aria-pressed="false"
+            hidden
+          >
+            圆形效果
+          </button>
+        </div>
+      </div>
+      <div class="viewer-body">
+        <div class="full-image">
+          <div id="image-stage" class="image-stage">
+            <img
+              id="preview-placeholder"
+              class="preview-placeholder"
+              alt=""
+              aria-hidden="true"
+              hidden
+            /><img id="preview-image" alt="" />
+            <div
+              id="lockscreen-clock"
+              class="lockscreen-clock"
+              aria-hidden="true"
+              hidden
+            >
+              <span id="lock-date"></span><span id="lock-time"></span>
+            </div>
+          </div>
+          <p id="preview-status" class="image-error" role="status">
+            正在加载原图…
+          </p>
+        </div>
+        <aside
+          id="preview-details"
+          class="preview-details"
+          hidden
+          aria-label="图片资料"
+        ></aside>
+      </div>
+      <p id="lockscreen-hint" class="preview-hint" hidden>
+        时钟位置为示意，以手机实际设置为准；下载的图片不含时钟。
+      </p>
+      <p id="avatar-round-hint" class="preview-hint" hidden>
+        圆形效果为居中裁切示意，下载仍保留原图。
+      </p>
+      <button id="preview-retry" type="button" class="secondary-button" hidden>
+        重新加载原图
+      </button>
+      <div class="dialog-footer">
+        <a id="preview-download" class="primary-button">下载原图</a
+        ><button id="preview-share" class="secondary-button" type="button">
+          分享预览</button
+        ><button id="preview-copy" class="secondary-button" type="button">
+          复制原图链接
+        </button>
+        <p>左右滑动切换，长按图片可保存。分享链接可直接打开图片。</p>
+      </div>
+    </dialog>
+    <dialog
+      id="install-dialog"
+      class="install-dialog"
+      aria-labelledby="install-title"
+    >
+      <div class="dialog-header">
+        <h2 id="install-title">添加到主屏幕</h2>
+        <button
+          type="button"
+          class="close-button"
+          data-close="install-dialog"
+          aria-label="关闭添加指引"
+        >
+          ×
+        </button>
+      </div>
+      <p class="install-intro">下次从手机桌面，直接打开图片资源库。</p>
+      <section>
+        <h3>iPhone / iPad</h3>
+        <ol>
+          <li>用 Safari 打开这个网站。</li>
+          <li>点「分享」（部分布局需先点「更多」）。</li>
+          <li>
+            选「添加到主屏幕」，如有「作为网页 App 打开」请开启，再点「添加」。
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h3>Android</h3>
+        <p>
+          在浏览器菜单中选择「安装应用」或「添加到主屏幕」。支持直接安装时，页面按钮会打开安装提示。
+        </p>
+      </section>
+      <p class="install-hint">
+        如果当前浏览器没有这些选项，复制网址后用 Safari 或 Chrome 打开。
+      </p>
+      <button id="copy-site" class="primary-button" type="button">
+        复制网站链接
+      </button>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </body>
 </html>

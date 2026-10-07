@@ -131,16 +131,16 @@ test("category order remains stable while name and resolution sorting operate wi
   assert.equal(files.slice().sort(context.compareAssets)[0].title,"Z");
 });
 
-test("switching an open preview to another category rebuilds its navigation sequence",()=>{
+test("preview follows the supplied visible sequence across categories",()=>{
   const {context,read,nodes}=gallery();
   const files=[{path:"icons/ai/claude.png",title:"Claude",kind:"icon",category:"ai",width:512,height:512},{path:"icons/finance/icbc.png",title:"工商银行",kind:"icon",category:"finance",width:512,height:512},{path:"icons/finance/ccb.png",title:"建设银行",kind:"icon",category:"finance",width:512,height:512}];
   context.testFiles=files;
   read('assets=testFiles; visibleAssets=testFiles; kind="icon"');
   context.openPreview(files[0],"none",files);
-  assert.equal(nodes.get("preview-position").textContent,"1 / 1");
+  assert.equal(nodes.get("preview-position").textContent,"1 / 3");
   context.openPreview(files[1],"none",files);
-  assert.equal(nodes.get("preview-position").textContent,"1 / 2");
-  assert.deepEqual(Array.from(read("previewSequence")),files.slice(1).map(file=>file.path));
+  assert.equal(nodes.get("preview-position").textContent,"2 / 3");
+  assert.deepEqual(Array.from(read("previewSequence")),files.map(file=>file.path));
 });
 
 test("loading uses only the deployed catalog and never consults the live GitHub tree",async()=>{
@@ -236,28 +236,32 @@ test("series scope includes rare extras under the work, collapsed until needed b
   assert.equal(extra.children[1].tagName,"article");
 });
 
-test("game-cover cards show identity and one source, without processing or duplicated release history",()=>{
-  const {context}=coverGallery();
+test("game-cover cards keep identity while source and edition details live in the viewer",()=>{
+  const {context,nodes}=coverGallery();
   const file=context.makeAsset({path:"game-covers/zero-escape/999.jpg",title:"善人死亡",game:"vlr",edition:"alternate",cover:{platform:"Nintendo DS",region:"North America"},source:"https://example.com/999.jpg",note:"旧处理细节",width:1400,height:1252});
   assert.equal(file.title,"999：9小时9人9扇门");
   assert.equal(file.game,"999");
   assert.equal(file.extra,false);
   assert.equal(file.edition,"");
   const contents=descend(context.makeCard(file,[file]));
-  const links=contents.filter(node=>node.className==="source-link");
+  assert.equal(contents.filter(node=>node.className==="source-link").length,0);
+  context.openPreview(file,"none",[file]);
+  const info=descend(nodes.get("preview-details"));
+  const links=info.filter(node=>node.className==="source-link");
   assert.equal(links.length,1);
   assert.equal(links[0].href,file.source);
   assert.equal(contents.filter(node=>node.textContent==="首发 2009").length,1);
-  assert.ok(contents.some(node=>node.textContent==="Nintendo DS · 北美"));
+  assert.ok(info.some(node=>node.textContent==="Nintendo DS · 北美"));
   assert.equal(contents.some(node=>node.className==="note"),false);
   const preview=contents.find(node=>node.tagName==="button" && node.className.startsWith("preview "));
   assert.equal(preview.style.aspectRatio,undefined);
   assert.ok(contents.some(node=>node.className==="cover-backdrop"));
-  assert.equal(contents.find(node=>node.textContent==="下载原始封面").href,base+file.path);
+  assert.equal(nodes.get("preview-download").href,base+file.path);
   const optional=context.makeAsset({path:"game-covers/zero-escape/vlr.jpg",source:"https://example.com/vlr.jpg"});
   assert.equal(descend(context.makeCard(optional)).some(node=>node.textContent?.includes("undefined")),false);
   const unsafe=context.makeAsset({...file,source:"javascript:alert(1)"});
-  assert.equal(descend(context.makeCard(unsafe)).filter(node=>node.className==="source-link").length,0);
+  context.openPreview(unsafe,"none",[unsafe]);
+  assert.equal(descend(nodes.get("preview-details")).filter(node=>node.className==="source-link").length,0);
 });
 
 test("cover synopses are collapsed, cited, shared across editions and rendered as text",()=>{

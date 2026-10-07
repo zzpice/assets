@@ -198,6 +198,7 @@ function refreshControls() {
   const coverCount = assets.filter(file => file.kind === "game-cover" && !file.extra).length;
   const cardCount = assets.filter(file => file.kind === "bank-card").length;
   document.getElementById("summary").textContent = wallpapers.length + " 张壁纸 · " + sizeCount + " 种尺寸" + (avatarCount ? " · " + avatarCount + " 张头像" : "") + (iconCount ? " · " + iconCount + " 个图标" : "") + (cardCount ? " · " + cardCount + " 张卡面" : "") + (coverCount ? " · " + coverCount + " 张游戏封面" : "");
+  document.getElementById("collection-title").textContent = kindLabels[kind] + (favoritesOnly ? " · 收藏" : "");
   refreshFavoriteCount();
 }
 
@@ -209,6 +210,7 @@ function refreshFavoriteCount() {
 function updateFavoriteButton(button,file) {
   const saved = favorites.has(file.path);
   button.setAttribute("aria-pressed",String(saved));
+  button.dataset.assetPath = file.path;
   button.setAttribute("aria-label",(saved ? "取消收藏" : "收藏") + file.title);
 }
 
@@ -218,6 +220,8 @@ function toggleFavorite(file,button) {
   let persistent = true;
   try { localStorage.setItem(favoriteKey,JSON.stringify([...favorites])); } catch { persistent = false; }
   updateFavoriteButton(button,file); refreshFavoriteCount();
+  document.querySelectorAll(".favorite-toggle").forEach(item => { if (item.dataset.assetPath === file.path) updateFavoriteButton(item,file); });
+  if (activePreview?.path === file.path) updatePreviewFavorite();
   showToast((saved ? "已收藏" : "已取消收藏") + (persistent ? "" : " · 仅当前页面"));
   if (favoritesOnly && !saved) {
     renderGallery(); document.getElementById("show-favorites").focus();
@@ -411,6 +415,9 @@ function loadPreviewImage(force = false) {
   if (!activePreview) return;
   previewUsingThumbnail = false;
   previewImage.hidden = true;
+  const placeholder=document.getElementById("preview-placeholder");
+  placeholder.hidden=!activePreview.thumbnail;
+  if(activePreview.thumbnail)placeholder.src=imageUrl(activePreview.thumbnail);
   const status = document.getElementById("preview-status");
   status.textContent = "正在加载原图…"; status.hidden = false;
   const retry = document.getElementById("preview-retry");
@@ -435,7 +442,7 @@ function openPreview(file,historyMode = "push",sequence = visibleAssets) {
     lockscreenEnabled = false;
     avatarRoundEnabled = false;
   }
-  previewSequence = sequence.filter(item => samePreviewGroup(item,file)).map(item => item.path);
+  previewSequence = sequence.filter(item => item.kind === file.kind).map(item => item.path);
   if (!previewSequence.includes(file.path)) previewSequence = assets.filter(item => samePreviewGroup(item,file)).sort(compareAssets).map(item => item.path);
   activePreview = file;
   document.getElementById("preview-title").textContent = file.title;
@@ -449,20 +456,29 @@ function openPreview(file,historyMode = "push",sequence = visibleAssets) {
   }
   if (!previewDialog.open) previewDialog.showModal();
   document.body.style.overflow = "hidden";
-  refreshPreviewNavigation(); loadPreviewImage();
+  refreshPreviewNavigation(); loadPreviewImage(); renderPreviewDetails(file); updatePreviewFavorite();
+  const index = previewSequence.indexOf(file.path);
+  [index - 1,index + 1].forEach(i => { const neighbor = assets.find(item => item.path === previewSequence[i]); if (neighbor?.thumbnail) { const image = document.createElement("img"); image.src = imageUrl(neighbor.thumbnail); } });
+}
+
+function dismissPreview() {
+  // Restore immediately; a delayed close event must not steal a new keyboard focus.
+  const trigger=previewTrigger;
+  previewDialog.close();
+  if(trigger?.isConnected)trigger.focus({preventScroll:true});
 }
 
 function closePreview() {
   if (history.state?.assetPreview && previewPath()) history.back();
   else {
     history.replaceState({...history.state,assetPreview:false},"",withoutPreviewUrl());
-    previewDialog.close();
+    dismissPreview();
   }
 }
 
 function syncPreviewRoute() {
   const path = previewPath();
-  if (!path) { if (previewDialog.open) previewDialog.close(); return; }
+  if (!path) { if (previewDialog.open) dismissPreview(); return; }
   const file = assets.find(item => item.path === path);
   if (!file) return;
   if (initialRoute) {
@@ -494,122 +510,53 @@ function movePreview(delta) {
   }
 }
 
+function publicSource(value) {
+  try { const url = new URL(value); return ["https:","http:"].includes(url.protocol) ? url.href : null; } catch { return null; }
+}
+
 function makeCard(file,sequence = visibleAssets,titleTag = "h2") {
-  const url = imageUrl(file.path);
-  const work = file.kind === "game-cover" ? gameInfo(file) : undefined;
-  const card = element("article", "card");
-  const preview = element("button", "preview " + orientation(file));
-  preview.classList.toggle("icon",file.kind === "icon");
-  preview.classList.toggle("game-cover",file.kind === "game-cover");
-  preview.type = "button";
+  const card = element("article","card"); card.dataset.kind = file.kind;
+  const preview = element("button","preview " + orientation(file));
+  preview.classList.toggle("icon",file.kind === "icon"); preview.classList.toggle("game-cover",file.kind === "game-cover");
+  preview.type = "button"; preview.setAttribute("aria-label","预览" + file.title);
   if (file.kind !== "game-cover" && file.width && file.height) preview.style.aspectRatio = file.width + " / " + file.height;
-  preview.setAttribute("aria-label", "预览" + file.title);
-  preview.addEventListener("click", () => {
-    previewTrigger = preview;
-    openPreview(file,"push",sequence);
+  const img = element("img"); img.alt=file.title; img.loading="lazy";img.decoding="async";
+  if (file.width && file.height) {img.width=file.width;img.height=file.height;}
+  const backdrop=file.kind === "game-cover" ? element("span","cover-backdrop") : null;
+  if (backdrop) {backdrop.setAttribute("aria-hidden","true");preview.append(backdrop);}
+  let usingThumbnail=!!file.thumbnail, errored=false, retryVersion="";
+  const src=()=>{
+    const url=new URL(usingThumbnail ? imageUrl(file.thumbnail) : assetPreviewUrl(file));
+    if(retryVersion)url.searchParams.set("retry",retryVersion);
+    return url.href;
+  };
+  img.addEventListener("load",()=>{
+    preview.classList.add("is-loaded"); preview.classList.remove("has-error");
+    if(backdrop)backdrop.style.backgroundImage='url("'+(img.currentSrc||img.src)+'")';
   });
-  const img = element("img");
-  const backdrop = file.kind === "game-cover" ? element("span","cover-backdrop") : null;
-  img.alt = file.title; img.loading = "lazy"; img.decoding = "async";
-  if (file.width && file.height) { img.width = file.width; img.height = file.height; }
-  let usingThumbnail = Boolean(file.thumbnail);
-  const meta = element("div", "meta");
-  const size = element("p", "resolution", file.kind === "game-cover" ? work ? "首发 " + work.firstReleaseYear : "游戏封面" : file.kind === "icon" ? categoryLabel(file) : file.kind === "bank-card" ? cardEditionLabels[file.edition] + (file.source?.wallet ? " · " + file.source.wallet : "") : file.kind === "wallpaper" ? categoryLabel(file) + " · " + resolutionLabel(file) : resolutionLabel(file));
-  const info = element("details", "asset-info");
-  const details = element("p", "details");
-  function updateDetails() {
-    const format = file.path.split(".").pop().toUpperCase();
-    details.textContent = (file.kind === "other" ? kindLabels[file.kind] : categoryLabel(file)) + (["bank-card","game-cover"].includes(file.kind) ? " · " + resolutionLabel(file) : "") + (file.device ? " · " + deviceLabels[file.device] : "") + " · " + format + (file.size ? " · " + (file.size / 1048576).toFixed(1) + " MB" : "");
-  }
-  updateDetails();
-  img.addEventListener("load", () => {
-    // Let the lazy image trigger loading; an eager CSS background fetches every cover.
-    if (backdrop) backdrop.style.backgroundImage = 'url("' + (img.currentSrc || img.src) + '")';
-    // Preview pixels must never replace the full image dimensions.
-    if (usingThumbnail || file.path.toLowerCase().endsWith(".svg")) return;
-    if (img.naturalWidth && img.naturalHeight && (file.width !== img.naturalWidth || file.height !== img.naturalHeight)) {
-      file.width = img.naturalWidth; file.height = img.naturalHeight;
-      refreshControls(); renderGallery();
-    }
+  img.addEventListener("error",()=>{
+    if(usingThumbnail){usingThumbnail=false;img.src=src();return;}
+    errored=true;img.hidden=true;preview.classList.add("has-error");
+    if(!preview.querySelector(".image-error"))preview.append(element("span","image-error","图片暂时无法加载 · 点按重试"));
   });
-  img.addEventListener("error", () => {
-    if (usingThumbnail) { usingThumbnail = false; img.src = url; return; }
-    img.remove(); preview.append(element("span", "image-error", "图片暂时无法加载"));
+  preview.addEventListener("click",()=>{
+    if(errored){errored=false;usingThumbnail=!!file.thumbnail;retryVersion=String(Date.now());img.hidden=false;preview.classList.remove("has-error");preview.querySelector(".image-error")?.remove();img.src=src();return;}
+    previewTrigger=preview;openPreview(file,"push",sequence);
   });
-  img.src = file.thumbnail ? imageUrl(file.thumbnail) : assetPreviewUrl(file);
-  if (backdrop) {
-    backdrop.setAttribute("aria-hidden","true");
-    preview.append(backdrop);
+  img.src=src();preview.append(img);
+  const favorite=element("button","favorite-toggle");favorite.type="button";updateFavoriteButton(favorite,file);
+  favorite.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg>';
+  favorite.addEventListener("click",()=>toggleFavorite(file,favorite));
+  const wrap=element("div","preview-wrap");wrap.append(preview,favorite);
+  const meta=element("div","meta"); const work=gameInfo(file);
+  const description=file.kind === "game-cover" ? work ? "首发 " + work.firstReleaseYear : "游戏封面" : file.kind === "icon" ? "" : file.kind === "bank-card" ? cardEditionLabels[file.edition]+(file.source?.wallet ? " · "+file.source.wallet : "") : resolutionLabel(file);
+  meta.append(element(titleTag,"",file.title));if(description)meta.append(element("p","resolution",description));
+  const synopsisSource=publicSource(work?.synopsis?.source);
+  if(work?.synopsis?.text && synopsisSource){
+    const details=element("details","asset-info game-synopsis");details.append(element("summary","","剧情简介"),element("p","synopsis",work.synopsis.text));
+    const link=element("a","source-link","简介依据 ↗");link.href=synopsisSource;link.target="_blank";link.rel="noopener noreferrer";details.append(link);meta.append(details);
   }
-  preview.append(img);
-  const previewWrap = element("div","preview-wrap");
-  const favorite = element("button","favorite-toggle");
-  favorite.type = "button"; updateFavoriteButton(favorite,file);
-  const heart = document.createElementNS("http://www.w3.org/2000/svg","svg");
-  heart.setAttribute("viewBox","0 0 24 24"); heart.setAttribute("aria-hidden","true");
-  const heartPath = document.createElementNS("http://www.w3.org/2000/svg","path");
-  heartPath.setAttribute("d","M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z");
-  heart.append(heartPath); favorite.append(heart);
-  favorite.addEventListener("click",() => toggleFavorite(file,favorite));
-  previewWrap.append(preview,favorite);
-  meta.append(element(titleTag, "", file.title), size);
-  const actions = element("div", "actions");
-  const download = element("a", "primary-button", "下载原图");
-  if (file.kind === "game-cover") download.textContent = "下载原始封面";
-  download.href = url; download.download = file.path.split("/").pop();
-  download.addEventListener("click",requireConnection);
-  actions.append(download); meta.append(actions);
-  if (work?.synopsis && typeof work.synopsis.text === "string") {
-    try {
-      const link = new URL(work.synopsis.source);
-      if (["http:","https:"].includes(link.protocol)) {
-        const story = element("details", "asset-info game-synopsis");
-        const source = element("a", "source-link", "简介依据 ↗");
-        source.href = link.href; source.target = "_blank"; source.rel = "noopener noreferrer";
-        story.append(element("summary", "", "剧情简介"), element("p", "synopsis", work.synopsis.text), source);
-        meta.append(story);
-      }
-    } catch { /* Invalid synopsis sources do not interrupt image browsing. */ }
-  }
-  info.append(element("summary", "", "图片信息"), details);
-  if (file.kind === "game-cover") {
-    const label = [file.cover?.version,file.cover?.platform,coverRegionLabels[file.cover?.region] || file.cover?.region].filter(Boolean).join(" · ");
-    if (label) info.append(element("p","details",label));
-    try {
-      const link = new URL(file.source);
-      if (["http:","https:"].includes(link.protocol)) {
-        const source = element("a","source-link","图片来源（" + link.hostname + "） ↗");
-        source.href = link.href; source.target = "_blank"; source.rel = "noopener noreferrer";
-        info.append(source,element("br"));
-      }
-    } catch { /* Invalid source links do not interrupt the gallery. */ }
-  }
-  if (file.note && file.kind !== "game-cover") info.append(element("p", "note", file.note));
-  if (["wallpaper","avatar"].includes(file.kind)) {
-    const source = element("a", "source-link", "来源与许可记录 ↗");
-    source.href = "https://github.com/zzpice/assets/blob/main/wallpapers/SOURCES.md";
-    source.target = "_blank"; source.rel = "noopener noreferrer"; info.append(source);
-  }
-  if (file.kind === "bank-card") {
-    const sourcePath = file.edition === "custom" ? file.derivedFrom : file.source?.url;
-    if (sourcePath) {
-      try {
-        const sourceUrl = new URL(sourcePath,base);
-        if (sourceUrl.protocol === "https:" || sourceUrl.origin === base.origin) {
-          const source = element("a","source-link",file.edition === "custom" ? "查看对应原始卡面 ↗" : "Cardentify 原文件 ↗");
-          source.href = sourceUrl.href; source.target = "_blank"; source.rel = "noopener noreferrer";
-          info.append(source);
-        }
-      } catch { /* Invalid source links do not affect browsing or downloads. */ }
-    }
-  }
-  const filename = element("span", "filename", file.path.split("/").pop());
-  filename.title = file.path; info.append(filename);
-  const copy = element("button", "secondary-button", "复制链接");
-  copy.type = "button"; copy.addEventListener("click", () => copyUrl(url));
-  info.append(copy); meta.append(info);
-  card.append(previewWrap, meta);
-  return card;
+  card.append(wrap,meta);return card;
 }
 
 function makeCategorySections(files,device = kind,titleTag = "h2") {
@@ -632,7 +579,7 @@ function makeDeviceSection(device,files) {
   title.append(element("span","device-count",files.length + " 张"));
   section.setAttribute("aria-labelledby",title.id);
   const grid = element("div","grid"); grid.dataset.device = device;
-  grid.append(...files.map(file => makeCard(file,files,"h3")));
+  grid.append(...files.map(file => makeCard(file,visibleAssets,"h3")));
   section.append(title,grid);
   return section;
 }
@@ -706,6 +653,9 @@ function matchesQuery(file,query) { return window.AssetCatalog.matchesQuery(file
 function renderGallery() {
   renderedViewKey = listRouteKey();
   gallery.classList.remove("person-gallery");
+  gallery.classList.remove("loading-gallery");
+  gallery.setAttribute("aria-busy","false");
+  document.getElementById("collection-title").textContent = kindLabels[kind] + (favoritesOnly ? " · 收藏" : "");
   if (kind === "actress" && actressGallery && actressData) {
     document.getElementById("cover-navigation").hidden = true;
     actressGallery.render(controls.search.value, gallery, results);
@@ -736,7 +686,7 @@ function renderGallery() {
   if (grouped && kind === "game-cover") gallery.replaceChildren(...makeGameSeries(visible));
   else if (grouped && kind === "bank-card") gallery.replaceChildren(...makeCardRegions(visible));
   else if (grouped && kind === "wallpaper") {
-    const sections = ["phone","desktop","tablet","unknown"].map(device => {
+    const sections = ["desktop","phone","tablet","unknown"].map(device => {
       const files = visible.filter(file => (file.device || "unknown") === device);
       return files.length ? makeDeviceSection(device,files) : null;
     }).filter(Boolean);
@@ -780,7 +730,7 @@ function clearFilters(persist = true) {
   } else if (persist) saveGalleryView();
 }
 
-document.getElementById("filters-panel").open = !window.matchMedia("(max-width: 760px)").matches;
+document.getElementById("filters-panel").open = false;
 document.getElementById("home-link").addEventListener("click",event => {
   if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   event.preventDefault();
@@ -877,10 +827,10 @@ previewDialog.addEventListener("keydown",event => {
 });
 let swipeStart;
 document.getElementById("image-stage").addEventListener("touchstart",event => {
-  swipeStart = event.touches.length === 1 ? {x:event.touches[0].clientX,y:event.touches[0].clientY} : null;
+  swipeStart = event.touches.length === 1 && (window.visualViewport?.scale || 1) <= 1.01 ? {x:event.touches[0].clientX,y:event.touches[0].clientY} : null;
 },{passive:true});
 document.getElementById("image-stage").addEventListener("touchend",event => {
-  if (!swipeStart || event.touches.length || event.changedTouches.length !== 1) { swipeStart = null; return; }
+  if (!swipeStart || (window.visualViewport?.scale || 1) > 1.01 || event.touches.length || event.changedTouches.length !== 1) { swipeStart = null; return; }
   const dx = event.changedTouches[0].clientX - swipeStart.x;
   const dy = event.changedTouches[0].clientY - swipeStart.y;
   swipeStart = null;
@@ -888,17 +838,16 @@ document.getElementById("image-stage").addEventListener("touchend",event => {
 },{passive:true});
 document.getElementById("image-stage").addEventListener("touchcancel",() => { swipeStart = null; },{passive:true});
 previewDialog.addEventListener("close", () => {
-  // Safari does not focus buttons on pointer activation. Restore to the actual
-  // opener explicitly rather than relying on the dialog's previous focus.
-  const trigger = previewTrigger;
   previewTrigger = null;
-  if (trigger?.isConnected) trigger.focus({preventScroll:true});
+  document.getElementById("preview-placeholder").hidden=true;
   previewImage.removeAttribute("src"); activePreview = null; lockscreenEnabled = false;
   updateAvatarShape();
 });
+document.getElementById("preview-placeholder").addEventListener("error",event=>{event.currentTarget.hidden=true;});
 previewImage.addEventListener("load",() => {
   if (!activePreview) return;
   previewImage.hidden = false;
+  document.getElementById("preview-placeholder").hidden=true;
   if (previewImage.naturalWidth && previewImage.naturalHeight) document.getElementById("image-stage").style.setProperty("--image-ratio",previewImage.naturalWidth / previewImage.naturalHeight);
   document.getElementById("preview-status").hidden = true;
   updateLockscreen();
@@ -919,6 +868,55 @@ previewImage.addEventListener("error", () => {
 });
 window.addEventListener("popstate",syncRoute);
 window.addEventListener("hashchange",syncRoute);
+
+
+function updatePreviewFavorite() {
+  if (!activePreview) return;
+  const button = document.getElementById("preview-favorite");
+  updateFavoriteButton(button,activePreview);
+  button.textContent = favorites.has(activePreview.path) ? "♥ 已收藏" : "♡ 收藏";
+}
+function renderPreviewDetails(file) {
+  const panel = document.getElementById("preview-details");
+  const list = element("dl");
+  for (const [label,value] of [["用途",kindLabels[file.kind]],["分类",categoryLabel(file)],["原图尺寸",resolutionLabel(file)],["格式",file.path.split(".").pop().toUpperCase()],["大小",file.size ? (file.size/1048576).toFixed(2)+" MB" : "未登记"]]) {
+    list.append(element("dt","",label),element("dd","",value));
+  }
+  panel.replaceChildren(element("h3","","图片资料"),list);
+  if (file.note && file.kind !== "game-cover") panel.append(element("p","note",file.note));
+  const work = gameInfo(file);
+  const cover = [file.cover?.version,file.cover?.platform,coverRegionLabels[file.cover?.region] || file.cover?.region].filter(Boolean).join(" · ");
+  if(cover)panel.append(element("p","note",cover));
+  const synopsisSource=publicSource(work?.synopsis?.source);
+  if (work?.synopsis?.text && synopsisSource) {
+    panel.append(element("h3","","剧情简介"),element("p","synopsis",work.synopsis.text));
+    const link=element("a","source-link","简介依据 ↗");link.href=synopsisSource;link.target="_blank";link.rel="noopener noreferrer";panel.append(link);
+  }
+  panel.append(element("p","filename",file.path));
+  const source = file.edition === "custom" && file.derivedFrom ? imageUrl(file.derivedFrom) : typeof file.source === "string" ? file.source : file.source?.url;
+  if (source) { try { const url = new URL(source); if (["https:","http:"].includes(url.protocol)) { const link = element("a","source-link","查看图片来源 ↗"); link.href=url.href;link.target="_blank";link.rel="noopener noreferrer";panel.append(link); } } catch {} }
+  if (["wallpaper","avatar"].includes(file.kind)) { const link=element("a","source-link","来源与许可记录 ↗");link.href="https://github.com/zzpice/assets/blob/main/wallpapers/SOURCES.md";link.target="_blank";link.rel="noopener noreferrer";panel.append(link); }
+}
+document.getElementById("preview-favorite").addEventListener("click",() => { if(activePreview) toggleFavorite(activePreview,document.getElementById("preview-favorite")); });
+document.getElementById("preview-info-toggle").addEventListener("click",event => {
+  const panel = document.getElementById("preview-details"); panel.hidden = !panel.hidden;
+  event.currentTarget.setAttribute("aria-pressed",String(!panel.hidden));
+  previewDialog.classList.toggle("show-info",!panel.hidden);
+});
+document.getElementById("density-toggle").addEventListener("click",event => {
+  const compact = document.body.classList.toggle("compact-gallery");
+  event.currentTarget.setAttribute("aria-pressed",String(compact));
+  event.currentTarget.textContent = compact ? "舒展视图" : "紧凑视图";
+});
+window.addEventListener("pointerdown",event => { const panel=document.getElementById("filters-panel"); if(panel.open&&!panel.contains(event.target))panel.open=false; });
+window.addEventListener("keydown",event => {
+  const panel=document.getElementById("filters-panel");
+  if(event.key === "Escape" && panel.open && !previewDialog.open){panel.open=false;panel.querySelector("summary").focus();event.preventDefault();return;}
+  if (event.isComposing || event.ctrlKey || event.metaKey || event.altKey || event.target.closest("input,textarea,select,[contenteditable=true]")) return;
+  if (event.key === "/" && !document.querySelector("dialog[open]")) {event.preventDefault();controls.search.focus();}
+  if (event.key.toLowerCase() === "f" && previewDialog.open) {event.preventDefault();document.getElementById("preview-favorite").click();}
+  if (event.key.toLowerCase() === "i" && previewDialog.open) {event.preventDefault();document.getElementById("preview-info-toggle").click();}
+});
 
 function requireConnection(event) {
   if (!navigator.onLine) { event.preventDefault(); showToast("请联网后下载原图"); }
@@ -1001,12 +999,14 @@ async function load() {
     if (!files.size) gallery.replaceChildren(element("div","empty","仓库里还没有图片。"));
     if (previewPath() && !assets.some(file => file.path === previewPath())) {
       history.replaceState({...history.state,assetPreview:false},"",withoutPreviewUrl());
-      if (previewDialog.open) previewDialog.close();
+      if (previewDialog.open) dismissPreview();
       showToast("这张图片已移除，已返回图库");
     }
     initialRoute = false;
   } catch {
     if (generation !== loadGeneration) return;
+    gallery.classList.remove("loading-gallery");
+  gallery.setAttribute("aria-busy","false");
     directoryUnavailable = true;
     updateConnectionNotice();
     if (assets.length) return;
