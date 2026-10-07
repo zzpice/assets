@@ -75,7 +75,9 @@ def audit_portraits(output):
             if source["provider"] != "Gfriends":
                 return {"id": person["id"], "status": "manual-source"}
             folder, filename = source["path"].split("/", 2)[1:]
-            upstream = tree.get(folder, {}).get(filename)
+            entries = tree.get(folder, {})
+            # Filetree keys omit AI-Fix-, while values contain the actual filename.
+            upstream = entries.get(filename) or next((value for value in entries.values() if value.split('?')[0] == filename), None)
             if not upstream:
                 return {"id": person["id"], "status": "missing-upstream"}
             path = f"Content/{folder}/{upstream.split('?')[0]}"

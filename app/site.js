@@ -714,8 +714,7 @@ document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", (
   if (kind === "actress") {
     if (actressGallery) actressGallery.syncPerson(null);
     history.pushState({galleryKind:nextKind,assetPreview:false},"",nextKind === "game-cover" ? coverViewUrl() : base.href);
-  }
-  if (kind !== nextKind && (kind === "game-cover" || nextKind === "game-cover")) {
+  } else if (kind !== nextKind && (kind === "game-cover" || nextKind === "game-cover")) {
     history.replaceState({...history.state,galleryKind:kind},"",location.href);
     history.pushState({galleryKind:nextKind,assetPreview:false},"",nextKind === "game-cover" ? coverViewUrl() : base.href);
   } else if (nextKind === "game-cover" && activeSeries) history.pushState({galleryKind:nextKind,assetPreview:false},"",coverViewUrl());

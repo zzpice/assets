@@ -9,7 +9,7 @@ from unittest.mock import patch
 from PIL import Image
 
 from actresses import directory
-from actress_sources import fetch_annual, parse_ranking, ranking_url, SERIES
+from actress_sources import audit_portraits, fetch_annual, parse_ranking, ranking_url, SERIES
 from update_catalog import update
 
 
@@ -221,6 +221,32 @@ class ActressTests(unittest.TestCase):
             output = self.root / "review"
             with self.assertRaises(ValueError): fetch_annual(2023, output)
             self.assertFalse(output.exists())
+
+    def test_portrait_review_matches_actual_ai_fix_filename_without_changing_live_data(self):
+        self.data["people"] = self.people[:4]
+        revision = "a" * 40
+        for person, filename in zip(self.people, ["普通.jpg", "AI-Fix-修复.jpg", "missing.jpg"]):
+            person["portrait"]["source"].update(provider="Gfriends", path="Content/group/" + filename)
+        self.write()
+        before = (self.root / "actresses/data.json").read_bytes()
+        tree = {"Content": {"group": {"普通.jpg": "普通.jpg?t=1", "修复.jpg": "AI-Fix-修复.jpg?t=2"}}}
+        images = {"%E6%99%AE%E9%80%9A.jpg": self.people[0], "AI-Fix-%E4%BF%AE%E5%A4%8D.jpg": self.people[1]}
+
+        def download(url):
+            if url.endswith("commits/master"):
+                return json.dumps({"sha": revision}).encode()
+            if url.endswith("Filetree.json"):
+                return json.dumps(tree).encode()
+            person = images[url.rsplit("/", 1)[1]]
+            return (self.root / person["portrait"]["path"]).read_bytes()
+
+        output = self.root / "review"
+        with patch("actress_sources.ROOT", self.root), patch("actress_sources.download", side_effect=download):
+            audit_portraits(output)
+        report = json.loads((output / "portraits.json").read_text())
+        self.assertEqual([row["status"] for row in report], ["unchanged", "unchanged", "missing-upstream", "manual-source"])
+        self.assertIn("AI-Fix-", report[1]["url"])
+        self.assertEqual((self.root / "actresses/data.json").read_bytes(), before)
 
 
 if __name__ == "__main__": unittest.main()

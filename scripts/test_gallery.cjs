@@ -7,10 +7,11 @@ const vm = require("node:vm");
 const source = fs.readFileSync(require("node:path").join(__dirname,"../app/site.js"),"utf8").replace(/\nload\(\);\s*$/, "\n");
 const base = "https://example.test/assets/";
 
-function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]}')) {
+function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]}'), withTabs = false) {
   const nodes = new Map();
-  const node = (tagName="") => ({tagName,value:"",children:[],dataset:{},style:{setProperty(){}},classList:{toggle(){},remove(){}},addEventListener(){},setAttribute(){},removeAttribute(){},closest(){return this.field ||= {};},add(child){this.children.push(child);},replaceChildren(...children){this.children=children;if(this.tagName==="select")this.value=children[0]?.value || "";},append(...children){this.children.push(...children);},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
-  const document = {baseURI:base,body:node(),getElementById(id){if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);},querySelectorAll:()=>[],querySelector:()=>node(),createElement:node,createElementNS:node};
+  const node = (tagName="") => ({tagName,value:"",children:[],dataset:{},listeners:{},style:{setProperty(){}},classList:{toggle(){},remove(){},add(){}},addEventListener(name,handler){(this.listeners[name] ||= []).push(handler);},setAttribute(){},removeAttribute(){},querySelector(){return this.label ||= node();},closest(){return this.field ||= {};},add(child){this.children.push(child);},replaceChildren(...children){this.children=children;if(this.tagName==="select")this.value=children[0]?.value || "";},append(...children){this.children.push(...children);},showModal(){this.open=true;},close(){this.open=false;},focus(){}});
+  const tabs = withTabs ? ["wallpaper","avatar","icon","bank-card","game-cover","actress"].map(kind=>{const tab=node("button");tab.dataset.kind=kind;nodes.set("tab-"+kind,tab);return tab;}) : [];
+  const document = {baseURI:base,body:node(),getElementById(id){if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);},querySelectorAll:selector=>selector===".tab" ? tabs : [],querySelector:()=>node(),createElement:node,createElementNS:node};
   for(const id of ["device","category","bank","edition","resolution","orientation","sort"]) document.getElementById(id).tagName="select";
   const location={href:base,hash:""};
   const setLocation=url=>{location.href=new URL(url,base).href;location.hash=new URL(location.href).hash;};
@@ -24,6 +25,7 @@ function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]
     localStorage:{getItem:()=>null},navigator:{onLine:true},location,history,
     window:{matchMedia:()=>({matches:false}),addEventListener(){}}
   });
+  if (withTabs) vm.runInContext(fs.readFileSync(require("node:path").join(__dirname,"../app/actresses.js"),"utf8"),context);
   vm.runInContext(source,context);
   return {context,nodes,read:expression=>vm.runInContext(expression,context)};
 }
@@ -38,6 +40,24 @@ test("bad display metadata falls back to safe strings and path-derived classific
   assert.equal(asset.width,1440);
   assert.equal(asset.height,3120);
   assert.equal(asset.device,"phone");
+});
+
+test("leaving the person gallery adds one history entry and Back restores its view",()=>{
+  const catalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
+  for (const nextKind of ["wallpaper","avatar","icon","bank-card","game-cover"]) {
+    const {context,read,nodes}=gallery(undefined,true);
+    context.testCatalog=catalog;
+    read('actressData=testCatalog.actresses; actressGallery.configure(actressData,testCatalog.assets,navigatePersonView); gameSeries=testCatalog.gameSeries; games=testCatalog.games; assets=testCatalog.assets.map(makeAsset)');
+    context.history.replaceState({galleryKind:"actress"},"",base+"#actresses=all&page=2");
+    context.syncRoute();
+    nodes.get("tab-"+nextKind).listeners.click[0]();
+    assert.equal(context.history.entries.length,2,nextKind);
+    assert.equal(read("kind"),nextKind);
+    context.history.back(); context.syncRoute();
+    assert.equal(read("kind"),"actress");
+    assert.equal(read("actressGallery.state.view"),"all");
+    assert.equal(read("actressGallery.state.page"),2);
+  }
 });
 
 test("icon previews carry a content version while canonical download URLs remain stable",()=>{
