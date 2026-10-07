@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "zzpice-assets-";
-const CACHE_NAME = CACHE_PREFIX + "v3-d123157bceb8";
+const CACHE_NAME = CACHE_PREFIX + "v3-9a1d00b231d3";
 const PREVIEW_CACHE = CACHE_PREFIX + "previews-v1";
 const ICON_CACHE = CACHE_PREFIX + "icons-v1";
 const base = new URL("./", self.location.href);
@@ -151,6 +151,6 @@ self.addEventListener("fetch", event => {
   const path = url.pathname.slice(base.pathname.length);
   if (path.startsWith("app/previews/")) event.respondWith(thumbnailResponse(request));
   else if (path.startsWith("icons/") && /\.png$/.test(path) && /^[a-f0-9]{40}$/.test(url.searchParams.get("v") || "")) event.respondWith(iconResponse(request));
-  else if (path === "" || path === "index.html" || path === "catalog.json" || path.startsWith("app/")) event.respondWith(shellResponse(request));
+  else if (path === "" || Object.keys(SHELL_HASHES).some(key => key.split("?")[0] === path)) event.respondWith(shellResponse(request));
   // Canonical full-size download URLs retain normal browser behavior.
 });

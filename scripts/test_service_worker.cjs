@@ -243,12 +243,13 @@ test("activation preserves current previews and icons while removing obsolete ve
   assert.equal(state.claimed,true);
 });
 
-test("canonical originals, external origins and non-GET requests are not intercepted",()=>{
+test("canonical originals, share images, external origins and non-GET requests are not intercepted",()=>{
   const state=worker();
   const requests=[
     new Request(base+"wallpapers/anime/1440x3120/image.png"),
     new Request(base+"avatars/anime/512x512/image.png"),
     new Request(base+"icons/ai/claude.png"),
+    new Request(base+"app/social-preview.png"),
     new Request("https://api.github.com/repos/zzpice/assets/git/trees/main"),
     new Request(base+"catalog.json",{method:"POST"})
   ];
