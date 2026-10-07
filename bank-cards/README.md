@@ -32,7 +32,8 @@ bank-cards/custom/<地区>/<银行>/<名称>.<格式>
 - 同一卡片通常只保留最高优先级的版本。汇丰 Mastercard Debit 的彩色／银色 Mastercard 标识，以及 Premier Mastercard 的蓝色／紫色布局存在明显差异，因此各保留两个 Apple Pay 版本；不推测发行年份。
 - 中銀卡保留 Apple Pay 版本，省略 Samsung Pay 版本。汇丰附属扣账卡仅有已确认的 Samsung Pay 版本；香港渣打國泰 Mastercard 仅有已确认的 PayPal 版本。
 - 原始文件保持字节不变，不裁剪、缩放、压缩、转码或覆盖。不同原版使用新的描述性名称；修改后的文件放入 `custom`。
-- 每个原版在 `catalog.json` 的 `source` 中记录 `collection`、`wallet`、原文件 `url`、Cardentify 的 `cardId` 和 `assetId`、获取日期 `retrieved`、文件 `sha256`。文件地址中的内容哈希与保存文件核对一致；钱包来源依据 Cardentify 标注，未独立从钱包设备提取。
+- 新增卡面先确认 `catalog.json` 的 `cardBanks` 已登记对应地区、银行目录名、机构名称 `name` 和英文名称 `englishName`，缺少银行时先补登记，再在 `assets` 登记图片路径及来源；生成前须完成登记。
+- 每个原版在 `catalog.json` 对应图片的 `source` 中记录非空来源集合 `collection`、上述四种钱包之一的 `wallet`、原文件 HTTPS 地址 `url`、Cardentify 的正整数 `cardId` 和 `assetId`、`YYYY-MM-DD` 获取日期 `retrieved`、与文件匹配的 `sha256`。文件地址中的内容哈希与保存文件核对一致；钱包来源依据 Cardentify 标注，未独立从钱包设备提取。
 - 修改版在 `catalog.json` 中填写 `derivedFrom`，指向同地区、同银行的原始文件，并在 `note` 中说明修改内容；不将其标为钱包原版。
 
 上传前按[维护说明](../scripts/README.md)更新目录、生成小型预览并检查。预览位于 `app/previews/`，下载始终提供对应资源文件；工具会拒绝覆盖已有原版、来源或哈希缺失、修改版未关联原版的情况。
