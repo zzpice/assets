@@ -22,6 +22,18 @@ select {
   font: inherit;
   color: inherit;
 }
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-size: 4px 4px;
+  background-repeat: no-repeat;
+}
 button,
 summary {
   cursor: pointer;
@@ -264,7 +276,7 @@ button:disabled {
   min-height: 34px;
   font-size: 12px;
   padding: 5px 26px 5px 10px;
-  background: var(--soft);
+  background-color: var(--soft);
   border: 1px solid transparent;
 }
 .filter-panel {
@@ -354,8 +366,8 @@ summary::-webkit-details-marker {
   font-size: 12px;
   border: 1px solid var(--line);
   border-radius: 5px;
-  background: var(--surface);
-  padding: 7px 9px;
+  background-color: var(--surface);
+  padding: 7px 28px 7px 9px;
 }
 .results-bar {
   display: flex;
@@ -1141,8 +1153,8 @@ body:has(dialog[open]) {
 }
 .person-year select {
   min-height: 44px;
-  padding: 8px 14px;
-  background: var(--surface);
+  padding: 8px 28px 8px 14px;
+  background-color: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--site-radius-sm);
 }
@@ -1528,7 +1540,7 @@ body:has(dialog[open]) {
   .field select {
     font-size: 16px;
     min-height: 42px;
-    padding: 8px 9px;
+    padding: 8px 28px 8px 9px;
   }
   .field label {
     font-size: 11px;
