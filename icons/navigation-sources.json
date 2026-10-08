@@ -1,0 +1,1092 @@
+{
+  "date": "2026-10-08",
+  "icons": [
+    {
+      "path": "icons/media/youtube.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/youtube.png",
+      "title": "YouTube",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "21712266fd01c447e36b4461ff86124735c483c8921252c011f0a43547031552",
+      "originalSize": [
+        731,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 731×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "e9b7f45b20a18e009c7295c0be7480432b237bcb3c3790c794582dfc54f0d015"
+    },
+    {
+      "path": "icons/media/bilibili.png",
+      "source": "uploads.zip!2025/8/3/fc6f4e349e0347956396e39680111e2c.png",
+      "title": "bilibili",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "589adb4d82b25f8d214b232a6df2dedf03b81bbfb35a792cc245f0122d026199",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        1024,
+        1024
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2fcd01ca46bffbe8d2bd4381f3744167a089ce4a4a84a21ae7179f5c0defaad8"
+    },
+    {
+      "path": "icons/media/youtube-music.png",
+      "source": "uploads.zip!2025/8/2/b84ee9af917ea2e3ba96ba3a3c9f1fe9.png",
+      "title": "YouTube Music",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "ef27047527c0ac3a07a9fab7e4a2b55cb955302fffd6e4f91d9ed019cc8a01a6",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        1024,
+        1024
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "4190e41173326e22ea6d52ed380f41c1da9d7cce464b8e9081a9790ff169ee7c"
+    },
+    {
+      "path": "icons/media/apple-music.png",
+      "source": "uploads.zip!2025/8/2/dd466d96aa536072bc2c2c487eb97d83.png",
+      "title": "‎Apple Music",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "d85561f327a019a418dcbf87b71e5399257bffc320444eedc437d1e62e782ed9",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        1024,
+        1024
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "69227c586da44cd706941f6d88ab821a6f8f4a7f47eaee78aa21d734d3cc9242"
+    },
+    {
+      "path": "icons/social/x.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/x.png",
+      "title": "X",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "32a7e2dede5e29f94724a267f96743fde931038c3f3be13802de159b548791e2",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "5000ac54fb2a7ee2782db7ba8cd40f8f5febf2d8df9d354823a73497661b96cb"
+    },
+    {
+      "path": "icons/media/spotify.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/spotify.png",
+      "title": "Spotify",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "253d15d7551c4fd34d525965023dd4cd2f5db0d2f5f05497d59015017d5d079a",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2f95700a561b7441e6e84ef4fd5bf93d147bbacaa201ce3e1ffe2e813b325477"
+    },
+    {
+      "path": "icons/productivity/notion.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/notion.png",
+      "title": "Notion",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "385d360e996dc36bb5967ee3eeb1bdb21b69fecb74b0784c53574156a973f6f1",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "3e234e63e97cc272464b3911fd49a7e48ccbf4def914e80e258028f232e5edbb"
+    },
+    {
+      "path": "icons/productivity/pamir-mail.png",
+      "source": "https://mail.ryanvan.com/assets/mail-CSokca-y.png",
+      "title": "Pamir University",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "cd4d7d25778c3862f79fca6e2c9700a46535ed2b59be32c924503f18886732ff",
+      "originalSize": [
+        64,
+        64
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 64×64；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "2c4ba4a934f5a6492ffbc37c2eba1589c51f24688f82eb6f75d48c5f75a9d5b5"
+    },
+    {
+      "path": "icons/productivity/agsv-image.png",
+      "source": "https://img.seedvault.cn/favicon.ico",
+      "title": "AGSVPT公开图床",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "89e0462105404391c6a8d85b769185ab8f28b8a4be45481a8b46b61ada14805a",
+      "originalSize": [
+        128,
+        128
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "fa882723aba44daa75cca942a7b41ea17504c1f28abda4ad6f1ae05af4837e37"
+    },
+    {
+      "path": "icons/learning/anki.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/anki.png",
+      "title": "Anki中文网",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "f94b2d5bace87d4f953d21af2da1fdb5e01ae7af3ec8a774ae08caab86848640",
+      "originalSize": [
+        1280,
+        1280
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 1280×1280；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2ce0831dd724f457a51a08d3bb15ad032f3b62e2f59ec7f3b5b73743824408b3"
+    },
+    {
+      "path": "icons/productivity/pdf-guru-anki.png",
+      "source": "https://guru.kevin2li.top/img/favicon.ico",
+      "title": "PDF Guru Anki",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "d6d64096bff649b00b9e1bf2cc617d665135fe9d1be839d7b9ebcff499cb1b1a",
+      "originalSize": [
+        2737,
+        2053
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 2737×2053；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "3eee59b596ef53b4bd007d1771bbbbc353a144584d14ba6352d0b22fca56d272"
+    },
+    {
+      "path": "icons/productivity/wolai.png",
+      "source": "https://cdn.wostatic.cn/dist/app_icon_1024.png",
+      "title": "云深考公",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "69f032833a97f2b7778c0666a356bdff63962e2fc9c653afca1f152082dcdd42",
+      "originalSize": [
+        1025,
+        1024
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 1025×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "7d7ee80983aa38fceaf6338b272be305e7fd3c21789872573b26d20a769ff07c"
+    },
+    {
+      "path": "icons/network/routeros.png",
+      "source": "uploads.zip!2025/8/2/538390352d48e021a376b5f1998ef4de.png",
+      "title": "RouterOS",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "07f8a01401fb35f24e592e84b18c7f48bec4ef33a6478f7388c9e76d28fe6abf",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        800,
+        800
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 800×800；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "b458dae296a6dc9b9a40188ef69aa8dbf37af5e3ea34aa452a0a98a09a55f7ae"
+    },
+    {
+      "path": "icons/self-hosted/proxmox.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/proxmox.png",
+      "title": "PVE",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "0fc53d37b6685c1af5018fa37d15ef02a16883661cefd68f6c62264ddf2bdf8b",
+      "originalSize": [
+        590,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 590×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "86cc66b35e4e1d93ff9678b19c41b23553ad273cddcc7cdcf0bbf7afece8f189"
+    },
+    {
+      "path": "icons/self-hosted/fnos.png",
+      "source": "uploads.zip!2025/10/5/742062dcfd3329a46eae48b437b178eb.webp",
+      "title": "飞牛 fnOS",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "c2b82dd70a6e1eb6e335cea13cc92d249911f054aa1a19ae3430855d4ba84573",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        512,
+        513
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×513；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "52c63e7f5c9f9b3f782000105a776248be832d6e7c7fd3822a77c171bad91d6a"
+    },
+    {
+      "path": "icons/media-players/movie-pilot.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/movie-pilot.png",
+      "title": "MoviePilot",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "02fcc9f7ae8e797d19e455adbcea28ee0c710064977387fc6e0d5ee73ec02601",
+      "originalSize": [
+        450,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 450×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "b2031a36268082669d5f277ee975d470ad1523fbb8b26642dcac158b6d53f77c"
+    },
+    {
+      "path": "icons/self-hosted/qbittorrent.png",
+      "source": "uploads.zip!2025/8/2/0069b64e2f920b339bc8906c132cc5cd.png",
+      "title": "qBittorrent",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "e7e73add36802fc6ab54e71147e16ea5e870bbf40c862cf266005d71b91fe806",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        1024,
+        1024
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "631d3307ce7e2fa44df65ca8c6a567ca2350ac039913770fc93348960a4c593e"
+    },
+    {
+      "path": "icons/network/emby-nginx.png",
+      "source": "uploads.zip!2025/8/29/d64a9189dccbc0d187ca2c306acc4cc4.ico",
+      "title": "Emby Nginx",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "b3475df6924d9456be2e31741ba02e4bf284f2d1bcf7c821d3e90bf1c41a7f2e",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        128,
+        128
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "82ef5a584a064d922439fc098db767ec833cf3af77b3fd4d4c74075a5defd2b6"
+    },
+    {
+      "path": "icons/self-hosted/smbox.png",
+      "source": "uploads.zip!2025/8/2/510e0166260c755a4656b9386d5a805c.webp",
+      "title": "SMBox",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "8bf19e44e2af7c6e8ce5267be3b39f88c8ae71cdbeeff9fdb5101cdf83cf2f12",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        512,
+        512
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "bcef06437274906dcce016ee8e7b8827333c7c7b4af9901c818aed9f80879d5b"
+    },
+    {
+      "path": "icons/network/huawei.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/huawei.png",
+      "title": "5G CPE 5s",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "13f3fac94a71614a7dd899b74de259c18c89ef110eb31dc9a20e7e665f8c18e1",
+      "originalSize": [
+        503,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 503×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "9906ac0bfa4a1b3224a7baddcf7c6dee1089e68e69fa055b3530e1edb4140e47"
+    },
+    {
+      "path": "icons/network/sub-store.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/sub-store.png",
+      "title": "Sub Store",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "f1ef0ba3f3cafeaf4c2afcc5ceb4edf5e8217f8fc3213248e638d538260c18d7",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "c0640881453e708758e2649c2844749c20c4d4d9fe88fabb14241fa1d5036ab2"
+    },
+    {
+      "path": "icons/self-hosted/sun-panel-helper.png",
+      "source": "uploads.zip!2025/9/21/a526061d89f242f185af79c59881c538.svg",
+      "title": "Sun-Panel-Helper",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "d54e29c7de4e6762cdd8884413b404725a54c3dfeca9f477e55fb41b1dfff0ee",
+      "originalSize": "vector",
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "a4ae3323bc6fb80fa9caee0925d70819c849280ce2355f8381cb8417410b1b23"
+    },
+    {
+      "path": "icons/media-players/navidrome.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/navidrome.png",
+      "title": "Navidrome",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "db74f277facdac14c0161ad4bcd80c38e5d09785a8b6c93c20ba7806879a7ca9",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "7138fb49fd6f09ee93d89d743125c031bab4527496f4d253bea8ef7ca85b1bc3"
+    },
+    {
+      "path": "icons/social/v2ex.png",
+      "source": "https://www.v2ex.com/static/icon-192.png",
+      "title": "V2EX",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f160bf4ecae6db26ecfd84f2ff5f6c66a47402e62099ac15c78d7e46571807af",
+      "originalSize": [
+        192,
+        192
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 192×192；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "75a2c2ccff58c3d3d59c2ee74140a5acce3cc2373494851c01cff8ce717b6d3c"
+    },
+    {
+      "path": "icons/social/hostloc.png",
+      "source": "uploads.zip!2025/8/2/e4541549a99c2812fc5475b08d375f09.png",
+      "title": "HOSTLOC",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "2c9bb9935da7c2dbbc700eb8f80942c404bc149540eedd5da66ecebf49e59186",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        250,
+        250
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 250×250；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "0fe0a40065611d3d7bd97bead51a4578837b4c1a1915b2cb62e40d3aa12f2838"
+    },
+    {
+      "path": "icons/social/linuxdo.png",
+      "source": "uploads.zip!2025/8/2/3f960dab58095f53518f8ef4cca42c54.png",
+      "title": "LINUX DO",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "ec212694698034178b58c5c49ef935175cbbefd37a915f7edcf74681677e2772",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        896,
+        896
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 896×896；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "ad4cdb5e8a109816f8c3546a50670cd8086ec8dab40bd35d73dabad679f6d8aa"
+    },
+    {
+      "path": "icons/social/chiphell.png",
+      "source": "uploads.zip!2025/8/2/e397032de0f8326d031a001a2b095bd8.png",
+      "title": "Chiphell",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "cf84129197909836dc3ce943c1c028f2da5be87f562ecd651110af30d94c8ad6",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        82,
+        97
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 82×97；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "d4807fbe0629d8076e6fde6739a805faec46635a55ab80f0e00ddc069d592fab"
+    },
+    {
+      "path": "icons/social/nga.png",
+      "source": "uploads.zip!2025/8/2/8aa4783db3c1c6f9ac3de51192257a52.png",
+      "title": "NGA",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "e09c3b16627974cc1f95ee08d844b8f5963803b87504fc2f9563569952be6fc1",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        225,
+        225
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 225×225；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "c84676c9d477330e8eb86a03b115ecf48c4ad43f7409fd0e3aa1e33e3115b7d1"
+    },
+    {
+      "path": "icons/social/nodeseek.png",
+      "source": "https://www.nodeseek.com/static/image/favicon/android-chrome-512x512.png",
+      "title": "NodeSeek",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f22c9c80849d70e3641449b4eae420622980a89ca64dda1ba506863416fb7189",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "282a2185b16b792cb8d5146dc1c2cc1589547b897cf8d0dabf52248c4fa51b4d"
+    },
+    {
+      "path": "icons/social/playgm.png",
+      "source": "uploads.zip!2025/8/2/107c2c1ba050600d0d35b1200dff92ba.jpg",
+      "title": "爆棚小组",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "9efef549a4980cd389f0861a3faa96fc94d3a597f7f46010349512f066ad0581",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        278,
+        181
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 278×181；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "f57c7cb6dd9e120b040100bb3bb21b884fcf10207acad4ea7975c53c5f3d48d4"
+    },
+    {
+      "path": "icons/network/mikrotik.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/mikrotik.png",
+      "title": "MikroTik",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "fe6ad9346844658cc815c4e7aa21c09caf07c24173571b81f90345001d051463",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "889849b6710da9df876077bb541a3d4bb3033357107301d100bb1d6fc28220d9"
+    },
+    {
+      "path": "icons/social/reddit.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/reddit.png",
+      "title": "Reddit",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "d1eda6164d659f19ebf93964589a689224a3cb26df7331eea10a910544447ef5",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "945b02b28eaed461fe019cc184f151f98512b10e05549324e41d9c9557d9cf34"
+    },
+    {
+      "path": "icons/social/bahamut.png",
+      "source": "https://i2.bahamut.com.tw/favicon.svg?v=1689129528",
+      "title": "巴哈姆特",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f337d7b7e60e15b9c5a80954822eb6c6fad5fb2612854e2bfbce7455d8bea6e6",
+      "originalSize": "vector",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "b58931f3d8c8fd3500477f21531314e1714fda9fe21857f8d3cc73fb827bd2ec"
+    },
+    {
+      "path": "icons/social/52pojie.png",
+      "source": "https://www.52pojie.cn/favicon.svg",
+      "title": "吾爱破解",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f5e1cb39a684ee5819d55eacc96263465e06dc19a22aa7434cf39a6bdfcf94cf",
+      "originalSize": "vector",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "5f9554b137fb05091bff74f0e24e52577fe1089e8fe0707b7190dd075e30a22f"
+    },
+    {
+      "path": "icons/media/m-team.png",
+      "source": "uploads.zip!2025/8/2/56074ee5acb824c6347818303289b768.png",
+      "title": "M-Team",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "fa50eab6542a28061d22ac8bdd1f9be68609f466cfa1c4004017c314c17d3224",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        128,
+        128
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "987520fa16ac8c1cc167706b69da9c570bc979ce1b8bb2d713123c9bf1555256"
+    },
+    {
+      "path": "icons/media/audiences.png",
+      "source": "uploads.zip!2025/8/2/beebdf7a3c2f26c5156f0d5ebfc86a25.jpg",
+      "title": "Audiences",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "8b3001330070c8c351dff658be232ddbe4b8ad7c1b7c9c5ec449b710f096eb7e",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        225,
+        225
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 225×225；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2773c1aa7998f10f639c4c94cc93f5d4d23b1c07c1972ab531f97155433626ce"
+    },
+    {
+      "path": "icons/media/hd-kylin.png",
+      "source": "uploads.zip!2025/8/2/a1fea89e3de75f137e4a8ef07a566396.png",
+      "title": "HDKylin",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "f0202a5d3dbfcb34e9a0e2b2c760edc17762e4b4186eb78b24404fa8cd4b0a48",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        266,
+        190
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 266×190；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "0c48c4429d87b665c4e8809e5ed86340dc2d9c4e9b72ada4f223c0e27a4d7bf3"
+    },
+    {
+      "path": "icons/media/btschool.png",
+      "source": "uploads.zip!2025/8/2/61325ce1fd4c2f6a0f316faba356a387.jpg",
+      "title": "BTSCHOOL",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "bf3ee2e60d62457a24490f1d35c2edc8773ed86f103e9c3762e844355e037c11",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        280,
+        210
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 280×210；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "e9661ba8526be957010e596896d9c9bf6d8e14c12d9eb195720841aa615ec46e"
+    },
+    {
+      "path": "icons/media/zhuque.png",
+      "source": "https://zhuque.in/assets/images/512.png",
+      "title": "朱雀",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "2a943a3d5846caaffa2d4ac706419a8d47935826d718c78f3b9a86bf0a229ef6",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "1154ce44b55a86975010fdc451d51a1c6585f973897a9a1a2cdd6d2d21136370"
+    },
+    {
+      "path": "icons/media/guaniu.png",
+      "source": "uploads.zip!2025/8/2/35cc993523ef54a4928bf1aefabddba0.png",
+      "title": "瓜牛居士",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "2c53a80c8f442ec8ade2dad6b7298f0eddbecc5fd0033d59555e633d14028ba7",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        192,
+        192
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 192×192；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "43d9e3a966ffdf6b7c28f9aeaccf4449c37ebed9b855fc5ee2a5b0a4ee98bf37"
+    },
+    {
+      "path": "icons/media/btnull.png",
+      "source": "uploads.zip!2025/8/2/b51e5260a736dfab11ef03eafee349a4.jpg",
+      "title": "BTNULL",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "6bdb838d45bcfa71af47076ae358318ff4f96cc44c907e94002e05f365caa980",
+      "originalSize": [
+        225,
+        225
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 225×225；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "22d2e5f8072038c530467ec0641238e3c18d63bd0196156e3cec93d48aa6881a"
+    },
+    {
+      "path": "icons/media/haowallpaper.png",
+      "source": "https://haowallpaper.com/favicon.ico",
+      "title": "哲风壁纸",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "e1bfd2658a6127bf3aa0ec9da4f15a05499c71ef9f2d7f20f664e4632726c17c",
+      "originalSize": [
+        256,
+        256
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 256×256；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "54159b1f8c2c0319ab1a9ce3b2c8b7854dbae700d74488caf2bc3278fec68aad"
+    },
+    {
+      "path": "icons/media/flowus.png",
+      "source": "https://cdn2.flowus.cn/assets/flowus-favicon-36b0b2bc.svg",
+      "title": "最全IPTV电视直播源及工具",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "36b0b2bc441396829a4a3b1ae876a45361e412c80daede93291f6fbc1df80799",
+      "originalSize": "vector",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "3fd8a44db981fe3eb18347f49c792d971f41e3e169a4812835e08fb36c2e7e45"
+    },
+    {
+      "path": "icons/media/myhkw.png",
+      "source": "https://myhkw.cn/favicon.ico",
+      "title": "明月浩空网",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "0210ca0ab4e32fb82c7183743f31a40ccd8764a3aa19e9a9e5f2f3aefc5799da",
+      "originalSize": [
+        128,
+        128
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "5e0a47dd07d4d04943a9b8db30685ac57d34ba4d461848839e68949bc76c4873"
+    },
+    {
+      "path": "icons/cloud/aliyun.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/aliyun.png",
+      "title": "阿里云",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "a28cb83b76ac7c1b7aa69c7a0ea73c01e20058dbfafdfef3f43a9619f38ce477",
+      "originalSize": [
+        821,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 821×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "77d5c87f905f4507068dd1d9ba201ef0f55c04b3d90e32a5f4a24ab7e53cf5ab"
+    },
+    {
+      "path": "icons/network/nexitally.png",
+      "source": "https://naiixi.com/images/mainlogo.png",
+      "title": "Nexitally",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "77e9078ae7fe9f16f6b1dcee850decddda0719dc44aecf3fb184f6862916fa0a",
+      "originalSize": [
+        1024,
+        1024
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "5d82e1e206dd71a4c962839f0018f37f609bc91413ad1d37b18618f878ef2034"
+    },
+    {
+      "path": "icons/cloud/ytoo.png",
+      "source": "uploads.zip!2025/8/2/9c9e642bd64196f7e2dc1e5549eba6de.jpg",
+      "title": "YToo",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "d6aa7f066d8db64886e6b7a581360128e04d58ace740efb0fdbc766aade35cd2",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        640,
+        640
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 640×640；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2c12c66f78bdfcd2567ab700c454f7b9602abe1f8f5f54cc1ade2b6eafb8baec"
+    },
+    {
+      "path": "icons/self-hosted/proxmox-helper-scripts.png",
+      "source": "https://raw.githubusercontent.com/selfhst/icons/2053b70b283ffed5f2cc1424d1e17d9c554a846d/png/proxmox-helper-scripts.png",
+      "title": "Proxmox VE Helper",
+      "license": "CC BY 4.0",
+      "repository": "selfhst/icons",
+      "revision": "2053b70b283ffed5f2cc1424d1e17d9c554a846d",
+      "sourceSHA256": "31efaf52e893a73ed853b2ecb827069c964b5579dad005c5f88f335172f5d4cb",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "84fcfdabac5783dcc611029e8e62a1119ba0d6bcb6a778aeee59d4faba511703"
+    },
+    {
+      "path": "icons/network/speedtest.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/ookla-speedtest.png",
+      "title": "Speedtest",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "51715cc7cda2e6a65003ecb493f9d8d0642489de0fa683a14c8bcfd113a1e115",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "fd5fc9ec2569e5d70eaee703e048d60ba2bfdf5a0bebeef180750e8bfc35f09d"
+    },
+    {
+      "path": "icons/network/itdog.png",
+      "source": "uploads.zip!2025/8/2/f2290234fa87a2b789733af81ca9e18c.jpg",
+      "title": "ITDOG",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "eeef7026a6bba833da04d684d92959eb1f506b4a65a0fa6a485b328bfecb1cda",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        126,
+        126
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 126×126；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "dfec73c3d6c926180ad637d0c6515975073542bee234cf3bc504e0fd8c9e8960"
+    },
+    {
+      "path": "icons/network/ipleak.png",
+      "source": "uploads.zip!2025/8/2/2fddd1ff3eb51db9f2b909e0065f43f6.png",
+      "title": "ipleak",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "b05e95166d95da1ae146bbe0a8f811e0ab56e83872db73e5c5426ae3623f926e",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        137,
+        137
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 137×137；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "8b9e9431f0d465aeac39a414ae3660c24978c9270c9ae288cf7ba569ff662a2f"
+    },
+    {
+      "path": "icons/network/geolocation.png",
+      "source": "uploads.zip!2025/8/2/3bf3d4ed85d239ad622db206575dbd5e.png",
+      "title": "ip位置查询",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "1b9a121202d1b428a51a9e10095b7aa42aa614a291721a4ece72b7cd781ec32b",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        400,
+        400
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 400×400；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "8d2864064652b7d51a36983de967cea03d8609ee12dd2dc62b8954696d71e151"
+    },
+    {
+      "path": "icons/network/censys.png",
+      "source": "uploads.zip!2025/8/2/2c35f6af1730bf7d12e8a97f80bad43d.png",
+      "title": "Censys",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "743d4586cce004bd8e00bf827d45b7dd5b6a1ee601aeb5a14e7a6adb924e3925",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        400,
+        400
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "verification": "原配置把 Censys / Scamalytics 选图互换；橙色 C 已按 https://censys.com/ 核对，Scamalytics 沿用其官网盾牌图案",
+      "retrieved": "2026-10-08",
+      "processing": "来源 400×400；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "425eb7e41b1662f63dbe6850c388df2dc634ea9499f34c5a1cd3533fa7916b7c"
+    },
+    {
+      "path": "icons/network/scamalytics.png",
+      "source": "https://scamalytics.com/wp-content/uploads/2016/06/icon_128.png",
+      "title": "Scamalytics",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "7d076a2f2e1d4d038dc1306ed9a802bd36f4bc129435f0ba293bfea98b3656a3",
+      "originalSize": [
+        128,
+        128
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "f3bea552145bee7b02e54d96394bac38c182477bf45ff7f722c62efae10e5023"
+    },
+    {
+      "path": "icons/cloud/cloudflare.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/cloudflare.png",
+      "title": "Cloudflare",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "8f2b4022d67811025fec71b40f363e2b3b8287df3714d8e9eeca00a5aa5e0490",
+      "originalSize": [
+        1132,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 1132×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "143a4bab17211d56f8e609deccb53661d93b6e7de92c3bfd88fbe5e583c2e6cb"
+    },
+    {
+      "path": "icons/cloud/namesilo.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/name-silo.png",
+      "title": "NameSilo",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "6885d36f41c63ac4197478b169db5d7036734d9431e2993d1437b504c28a8c33",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "9dc2e2f8ec6161b698f9dd80d2267823d0e7d284184814015780ce7e25f19cbe"
+    },
+    {
+      "path": "icons/network/gname.png",
+      "source": "uploads.zip!2025/8/2/d72d08cbbe4e5a4c6907877a7c05167c.jpg",
+      "title": "GNAME",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "c9b6884186fcf190f25f79b2f2d79f92b1035d65d935de4ff26692d1803083c3",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        225,
+        225
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 225×225；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "eba859a5d7bade0dbf53f55f0788e2ef019cd5514f960665df517692fda2464c"
+    },
+    {
+      "path": "icons/cloud/porkbun.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/porkbun.png",
+      "title": "porkbun",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "11d93135f16dd3ad2d0a38794a7c947605fd9f3467ce3aa770b3a3a98d98734a",
+      "originalSize": [
+        490,
+        490
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 490×490；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "67a5851bb4b5d6a675b58f8f5ab434ade983ccdfb4e782c7689e001d0477a3a9"
+    },
+    {
+      "path": "icons/adult/south-plus.png",
+      "source": "uploads.zip!2025/8/2/cd3fef69710b9dea8dd0b4ec0b57577b.png",
+      "title": "南+ South Plus",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "98b94e0316b8e385af51d388ddd18a396d41b074ba215c1b6775ae649fb58bfd",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        200,
+        200
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 200×200；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2de81394ed143a26841665c9b51f9e059edd0fabe4fb4c3f53c9b0e542311023"
+    },
+    {
+      "path": "icons/adult/moxing.png",
+      "source": "uploads.zip!2025/8/2/8e264bc2c63e4694253d7c560a0d52ee.jpeg",
+      "title": "moxing",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "68e9f610dac586f045bead204ce7d329fb9e13e04d8990735fa657d1c14385be",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        1024,
+        1024
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2d92e8bb58344596f02abde23f7d2bc4a29ec3232abd553d3b08d91c65c90244"
+    },
+    {
+      "path": "icons/adult/sehuatang.png",
+      "source": "uploads.zip!2025/8/2/f1698bccb6185ae9c5fded33a55794d7.jpg",
+      "title": "98堂",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "10d394b510b381d05874c2b7178686f46b5ed3fb5362aa7e02c5134c9002a3bf",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        400,
+        400
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 400×400；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "57cc3e5090a07ef78c1a916ea48a1600e5bf6817e6864a57ce10d7915b194d97"
+    },
+    {
+      "path": "icons/social/pixiv.png",
+      "source": "https://raw.githubusercontent.com/selfhst/icons/2053b70b283ffed5f2cc1424d1e17d9c554a846d/png/pixiv.png",
+      "title": "pixiv",
+      "license": "CC BY 4.0",
+      "repository": "selfhst/icons",
+      "revision": "2053b70b283ffed5f2cc1424d1e17d9c554a846d",
+      "sourceSHA256": "ac3b5d232fe592d9acdf3b699df7d969d8f62aa20aea281630c49336f2dc45f6",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "64c77a1d9956c00bcda1e7e01837276f8a7b5758244655efa45ceebdeb938881"
+    },
+    {
+      "path": "icons/adult/xvideos.png",
+      "source": "https://assets-cdn77.xvideos-cdn.com/v3/img/skins/default/logo/xv.white.svg",
+      "title": "XVIDEOS",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "da68f064e51f3c427298770419f7e6da72ceec406d6afd1f5f639269e74cef5b",
+      "originalSize": "vector",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "4de4f9c1c1c03313ede62cf076484b0016040482e96a7257f5e3d0a44969b45f"
+    },
+    {
+      "path": "icons/adult/pornhub.png",
+      "source": "uploads.zip!2025/8/2/0fdc70cd6143692e9ba09d8cc242037e.png",
+      "title": "Pornhub",
+      "license": "用户提供的 SunPanel uploads；原始作者或开放许可未确认，品牌权利归相应权利人",
+      "sourceSHA256": "a55082ea5c738825021411bf2c28f9557484705aac1a10ec2de7452c9e09f830",
+      "archiveSHA256": "ec20792505e8d5801b909f749dbe441d913af82843cb0ecae465f6bb08f68513",
+      "originalSize": [
+        150,
+        150
+      ],
+      "providedBy": "zzpice",
+      "providedDate": "2026-10-08",
+      "retrieved": "2026-10-08",
+      "processing": "来源 150×150；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2702dbbe78dd62fe5b6360e5a506d78bc81f1cd2f937a3465ae6b7f0671aa125"
+    },
+    {
+      "path": "icons/productivity/knowledge-cards.png",
+      "source": "OpenAI ImageGen / exec-4e438255-2910-4a78-afea-07e69971064a",
+      "title": "知识卡片",
+      "license": "AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌",
+      "sourceSHA256": "660e653a6b537ce6a8536d5da7398e55f5d114ffd78316ee4caeb9f4eeec2387",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "generated": true,
+      "prompt": "Use case: logo-brand. Asset type: one production bitmap icon for a personal navigation directory, a generic knowledge-card/book tool, not a third-party brand. Create a clean flat app icon: two offset cream flashcards with a small indigo bookmark and a simple open-book silhouette. Centered readable at 40px. Square 512x512 RGBA PNG style. Pale warm white rounded-square tile, corner radius about 115px at 512px, outside fully transparent. Large simple bold shapes, restrained indigo and soft violet palette, no gradients, no shadows, no text, no watermark, no brand logo. The mark occupies 65% of the square with generous balanced padding. One icon only, not a sheet.",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1254×1254；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 AI 生成的通用图案，非官方标识。",
+      "outputSHA256": "853ab0872586a2a5b8873c2b44fea058a8628a0e9966e89cd1f8eefcdf4ccdb4"
+    },
+    {
+      "path": "icons/self-hosted/private-service.png",
+      "source": "OpenAI ImageGen / exec-fe90524f-8267-421e-99bd-6daf911337ea",
+      "title": "私有服务",
+      "license": "AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌",
+      "sourceSHA256": "39120cda9eb552164214112b5814aa7eba213828816eedaa2d09e12f286b68c0",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "generated": true,
+      "prompt": "Use case: logo-brand. Asset type: one production bitmap icon for a personal navigation directory, a generic private server/service console, not a third-party brand. Create a clean flat app icon: a friendly abstract two-unit server stack with two tiny green status lights and a single small connection node. Centered readable at 40px. Square 512x512 RGBA PNG style. Pale warm white rounded-square tile, corner radius about 115px at 512px, outside fully transparent. Large simple bold shapes, restrained indigo and soft teal palette, no gradients, no shadows, no text, no watermark, no brand logo. The mark occupies 65% of the square with generous balanced padding. One icon only, not a sheet.",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1254×1254；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 AI 生成的通用图案，非官方标识。",
+      "outputSHA256": "b3ed324956ba5770e61acac2f3023e913f54f5c46c6f2898099eaedf32897851"
+    },
+    {
+      "path": "icons/social/community.png",
+      "source": "OpenAI ImageGen / exec-a4f5889b-e54e-4a3d-a5da-2098f9110de3",
+      "title": "社区交流",
+      "license": "AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌",
+      "sourceSHA256": "931bfcbf3545cc4e28126e9f06bbe4e6c6e76ef886c0c9531d9fb0e6256fc2a7",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "generated": true,
+      "prompt": "Use case: logo-brand. Asset type: one production bitmap icon for a personal navigation directory, a generic web community, not a third-party brand. Create a clean flat app icon: two overlapping rounded conversation bubbles, one indigo and one soft lavender, with three small dots. Centered readable at 40px. Square 512x512 RGBA PNG style. Pale warm white rounded-square tile, corner radius about 115px at 512px, outside fully transparent. Large simple bold shapes, no gradients, no shadows, no text, no watermark, no brand logo. The mark occupies 65% of the square with generous balanced padding. One icon only, not a sheet.",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1254×1254；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 AI 生成的通用图案，非官方标识。",
+      "outputSHA256": "d440975232525bad8ec2700dd1ee19327d33fbe567892f04ec4174bd84b4a00d"
+    },
+    {
+      "path": "icons/media/media-library.png",
+      "source": "OpenAI ImageGen / exec-861a1412-7397-45d7-8c62-e5a86fe64f73",
+      "title": "影音资源",
+      "license": "AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌",
+      "sourceSHA256": "c336ac726473c46aaed98c4740ac106a90d5bb97608a6a6fecaef1cc3510dec6",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "generated": true,
+      "prompt": "Use case: logo-brand. Asset type: one production bitmap icon for a personal navigation directory, a generic media/resource library, not a third-party brand. Create a clean flat app icon: a small stack of two rounded media tiles, the front tile has a bold simple play triangle, a small teal musical note sits in the lower right. Centered readable at 40px. Square 512x512 RGBA PNG style. Pale warm white rounded-square tile, corner radius about 115px at 512px, outside fully transparent. Large simple bold shapes, restrained indigo and soft teal palette, no gradients, no shadows, no text, no watermark, no brand logo. The mark occupies 65% of the square with generous balanced padding. One icon only, not a sheet.",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1254×1254；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 AI 生成的通用图案，非官方标识。",
+      "outputSHA256": "d7d824a119ac6b9afe278374f0c84492a75b5290ff9bef06998aceb37a25167c"
+    }
+  ]
+}
