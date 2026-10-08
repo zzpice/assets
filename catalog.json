@@ -3747,59 +3747,15 @@
       "sha": "14e3c4e7d5640e294ee632651c6eeb418ee75a7d"
     },
     {
-      "path": "icons/adult/cangku.png",
-      "title": "绅士仓库",
-      "kind": "icon",
-      "category": "adult",
-      "width": 512,
-      "height": 512,
-      "note": "来源 16×16；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 36709,
-      "sha": "683f3ac0b8f8174489074312c37d9e190b92908b"
-    },
-    {
-      "path": "icons/adult/cool18.png",
-      "title": "禁忌书屋",
-      "kind": "icon",
-      "category": "adult",
-      "width": 512,
-      "height": 512,
-      "note": "来源 34×35；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 77861,
-      "sha": "7542ca835562ccab92484e2e807f4cc1a9f51baf"
-    },
-    {
-      "path": "icons/adult/laowang.png",
-      "title": "老王论坛",
-      "kind": "icon",
-      "category": "adult",
-      "width": 512,
-      "height": 512,
-      "note": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 36036,
-      "sha": "5ad4c296f4e7b5b27fb570c74860e3e2aafc2ea8"
-    },
-    {
       "path": "icons/adult/moxing.png",
       "title": "moxing",
       "kind": "icon",
       "category": "adult",
       "width": 512,
       "height": 512,
-      "note": "来源 206×256；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 179066,
-      "sha": "a73377c1b0cfa23bb84d6c27062150bba4f2ca23"
-    },
-    {
-      "path": "icons/adult/mxshm.png",
-      "title": "漫小肆韓漫",
-      "kind": "icon",
-      "category": "adult",
-      "width": 512,
-      "height": 512,
-      "note": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 103173,
-      "sha": "0be1f424b35e1017b73e2cdbf09e153bbea095b0"
+      "note": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 249091,
+      "sha": "3fa4e193698fde0229d34739c2a2460db64a46f5"
     },
     {
       "path": "icons/adult/pornhub.png",
@@ -3808,9 +3764,9 @@
       "category": "adult",
       "width": 512,
       "height": 512,
-      "note": "来源 48×48；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 28168,
-      "sha": "1233166fcd9ef1806308af7345c331ca0d1c39bf"
+      "note": "来源 150×150；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 44271,
+      "sha": "349d6b0b7bca356a1c6395646448e43cf5cfbbf1"
     },
     {
       "path": "icons/adult/sehuatang.png",
@@ -3819,9 +3775,9 @@
       "category": "adult",
       "width": 512,
       "height": 512,
-      "note": "来源 16×16；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 110735,
-      "sha": "62a13b1475e332ec2de21ad586aea5065677c64e"
+      "note": "来源 400×400；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 97508,
+      "sha": "de588afd259a0361cd9af1a5199bc4d4bae301eb"
     },
     {
       "path": "icons/adult/south-plus.png",
@@ -3830,20 +3786,9 @@
       "category": "adult",
       "width": 512,
       "height": 512,
-      "note": "来源 16×16；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 100651,
-      "sha": "1f8e2f1e9e315e67b06965713462867777685736"
-    },
-    {
-      "path": "icons/adult/t66y.png",
-      "title": "1024",
-      "kind": "icon",
-      "category": "adult",
-      "width": 512,
-      "height": 512,
-      "note": "来源 64×64；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 156400,
-      "sha": "2a4a852dcc450e8c4762a81a2c7ca55538ca1ce4"
+      "note": "来源 200×200；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 64899,
+      "sha": "6efb486618b54dc167d0259bb39332d8ad43f220"
     },
     {
       "path": "icons/adult/xvideos.png",
@@ -3969,6 +3914,17 @@
       "note": "来源 490×490；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
       "size": 28222,
       "sha": "2fef69a5b5e96a6925734807751437f04a8d1f70"
+    },
+    {
+      "path": "icons/cloud/ytoo.png",
+      "title": "YToo",
+      "kind": "icon",
+      "category": "cloud",
+      "width": 512,
+      "height": 512,
+      "note": "来源 640×640；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 77507,
+      "sha": "4b0a4a148d20ba9916b0e66b6da3867acc21b0b9"
     },
     {
       "path": "icons/development/cursor.png",
@@ -4304,26 +4260,26 @@
       "sha": "35402089a5277bddeda6a1f203f112ece12c1e3f"
     },
     {
-      "path": "icons/media/agsv.png",
-      "title": "AGSV",
-      "kind": "icon",
-      "category": "media",
-      "width": 512,
-      "height": 512,
-      "note": "来源 48×48；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 229526,
-      "sha": "d7d303c068636263613e0c688a8b43c30a474606"
-    },
-    {
       "path": "icons/media/apple-music.png",
       "title": "‎Apple Music",
       "kind": "icon",
       "category": "media",
       "width": 512,
       "height": 512,
-      "note": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 19897,
-      "sha": "5fd995f91627be44f3fddfabc40b60a294570dc3"
+      "note": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 101936,
+      "sha": "f26d3c95ee604e322927695a57c90c99c05f8b7f"
+    },
+    {
+      "path": "icons/media/audiences.png",
+      "title": "Audiences",
+      "kind": "icon",
+      "category": "media",
+      "width": 512,
+      "height": 512,
+      "note": "来源 225×225；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 62825,
+      "sha": "8c6ee315b2334b116848123f2e741de18e8ff6e8"
     },
     {
       "path": "icons/media/bilibili.png",
@@ -4332,9 +4288,20 @@
       "category": "media",
       "width": 512,
       "height": 512,
-      "note": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 41511,
-      "sha": "a16adb20d7411476927deafb09bb7480fa67e051"
+      "note": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 21931,
+      "sha": "a9b773ab03894eb8470a960b618c9c961c2b2ece"
+    },
+    {
+      "path": "icons/media/btnull.png",
+      "title": "BTNULL",
+      "kind": "icon",
+      "category": "media",
+      "width": 512,
+      "height": 512,
+      "note": "来源 225×225；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 112924,
+      "sha": "8631e1dfb00c00f0b8627a3592699adb3d46624c"
     },
     {
       "path": "icons/media/btschool.png",
@@ -4343,31 +4310,9 @@
       "category": "media",
       "width": 512,
       "height": 512,
-      "note": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 135734,
-      "sha": "1502da143a49cdc3904b447c6256319c0e4c7882"
-    },
-    {
-      "path": "icons/media/carpt.png",
-      "title": "CarPT",
-      "kind": "icon",
-      "category": "media",
-      "width": 512,
-      "height": 512,
-      "note": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 147188,
-      "sha": "49f6dd03d2a381613b73347e0fdfeb7266f2abb5"
-    },
-    {
-      "path": "icons/media/chdbits.png",
-      "title": "CHDBits",
-      "kind": "icon",
-      "category": "media",
-      "width": 512,
-      "height": 512,
-      "note": "来源 48×48；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 37107,
-      "sha": "9ccf9773d5a2de22db1717685b134a0064beb8d3"
+      "note": "来源 280×210；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 67226,
+      "sha": "02247483873ccd59644dd9e16a9fefd39bd63f66"
     },
     {
       "path": "icons/media/flowus.png",
@@ -4381,6 +4326,17 @@
       "sha": "dccfd7d445ce0993449756db62629c3a815d2d3d"
     },
     {
+      "path": "icons/media/guaniu.png",
+      "title": "瓜牛居士",
+      "kind": "icon",
+      "category": "media",
+      "width": 512,
+      "height": 512,
+      "note": "来源 192×192；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 141280,
+      "sha": "40de3665f3cd8f56f579d3a96e342df91bdc516f"
+    },
+    {
       "path": "icons/media/haowallpaper.png",
       "title": "哲风壁纸",
       "kind": "icon",
@@ -4392,15 +4348,26 @@
       "sha": "806ac1bc119de2a9ee6fe1a137539bbe8ebe5021"
     },
     {
+      "path": "icons/media/hd-kylin.png",
+      "title": "HDKylin",
+      "kind": "icon",
+      "category": "media",
+      "width": 512,
+      "height": 512,
+      "note": "来源 266×190；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 68760,
+      "sha": "9e1896ccadd13fb89aa78fa288436f200b5295e1"
+    },
+    {
       "path": "icons/media/m-team.png",
       "title": "M-Team",
       "kind": "icon",
       "category": "media",
       "width": 512,
       "height": 512,
-      "note": "来源 24×24；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 79001,
-      "sha": "ce61b231b224ad46e3cb4676036fb919ca4443d1"
+      "note": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 38339,
+      "sha": "7e1ec1c3924db3d5e740d7cc90f51790ac532388"
     },
     {
       "path": "icons/media/media-library.png",
@@ -4442,9 +4409,9 @@
       "category": "media",
       "width": 512,
       "height": 512,
-      "note": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 27095,
-      "sha": "91c019d3815ddd1a0ae06bd6372b2e5fba65ab80"
+      "note": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 22119,
+      "sha": "3221f830e1b5113c1b162cef1c9945a52035ad15"
     },
     {
       "path": "icons/media/youtube.png",
@@ -4531,15 +4498,37 @@
       "sha": "6389e8e2ded80b7c9d48f5ad60c79cbae5dab1c3"
     },
     {
+      "path": "icons/network/censys.png",
+      "title": "Censys",
+      "kind": "icon",
+      "category": "network",
+      "width": 512,
+      "height": 512,
+      "note": "来源 400×400；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 22540,
+      "sha": "dd1596bef24693232d0978154403227ebb61f6bb"
+    },
+    {
+      "path": "icons/network/emby-nginx.png",
+      "title": "Emby Nginx",
+      "kind": "icon",
+      "category": "network",
+      "width": 512,
+      "height": 512,
+      "note": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 42359,
+      "sha": "04207427ce6d3db28ef636da09bacf738cd549e3"
+    },
+    {
       "path": "icons/network/geolocation.png",
       "title": "ip位置查询",
       "kind": "icon",
       "category": "network",
       "width": 512,
       "height": 512,
-      "note": "来源 180×180；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 30824,
-      "sha": "dd49afdf347797c81400ed49f599ac68fe5cb653"
+      "note": "来源 400×400；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 57287,
+      "sha": "bee50a06ba7f273cb15a4ebf7038e821f2967cf5"
     },
     {
       "path": "icons/network/gname.png",
@@ -4548,9 +4537,9 @@
       "category": "network",
       "width": 512,
       "height": 512,
-      "note": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 87188,
-      "sha": "55d272122beba5c4a042d05dd43b58b5f19dc6e5"
+      "note": "来源 225×225；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 134722,
+      "sha": "7a8c76f2f0f97ebebeb619916660d05d701caa67"
     },
     {
       "path": "icons/network/huawei.png",
@@ -4570,9 +4559,9 @@
       "category": "network",
       "width": 512,
       "height": 512,
-      "note": "来源 16×16；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 65899,
-      "sha": "b50f45d23c73a54644b5cf18e5058bed002e82e3"
+      "note": "来源 137×137；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 109678,
+      "sha": "12c84a6d9078db5dea27f16f5f79ba7ee3bb2da9"
     },
     {
       "path": "icons/network/itdog.png",
@@ -4581,9 +4570,9 @@
       "category": "network",
       "width": 512,
       "height": 512,
-      "note": "来源 48×48；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 87364,
-      "sha": "6dfb8430b0bc5d4f640f8d0d871a12a797dc456a"
+      "note": "来源 126×126；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "size": 114259,
+      "sha": "27719b61736dcc7aa077f96f5f1b288a8d821cca"
     },
     {
       "path": "icons/network/mikrotik.png",
@@ -4608,15 +4597,15 @@
       "sha": "c88bc083fd4174a5064f381a4a54026d097d9fb4"
     },
     {
-      "path": "icons/network/nginx.png",
-      "title": "Emby Nginx",
+      "path": "icons/network/routeros.png",
+      "title": "RouterOS",
       "kind": "icon",
       "category": "network",
       "width": 512,
       "height": 512,
-      "note": "来源 449×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 23835,
-      "sha": "9c98eca105cf5f415e2f7f8a1b2606599f1d6eaa"
+      "note": "来源 800×800；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 93787,
+      "sha": "236d37a74bfd5b09fea3c6560165bd7145b3b6ef"
     },
     {
       "path": "icons/network/scamalytics.png",
@@ -4905,9 +4894,9 @@
       "category": "self-hosted",
       "width": 512,
       "height": 512,
-      "note": "来源 655×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 17802,
-      "sha": "4f8f8f909bb46b1faf4301f8f9d2d779fbfb6cf3"
+      "note": "来源 512×513；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 34814,
+      "sha": "34bf77fa332a2643c58e8f38f7371afd38f4ce93"
     },
     {
       "path": "icons/self-hosted/private-service.png",
@@ -4949,20 +4938,31 @@
       "category": "self-hosted",
       "width": 512,
       "height": 512,
-      "note": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 61365,
-      "sha": "a27298056c567a590529e034b0b56c0993a023cb"
+      "note": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 81324,
+      "sha": "2c1f362a5ec283b2fa80bffc7ca775da350d8bdc"
     },
     {
-      "path": "icons/self-hosted/sun-panel.png",
+      "path": "icons/self-hosted/smbox.png",
+      "title": "SMBox",
+      "kind": "icon",
+      "category": "self-hosted",
+      "width": 512,
+      "height": 512,
+      "note": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 35902,
+      "sha": "d6741d002f70073d7040120c4e7d1694809af142"
+    },
+    {
+      "path": "icons/self-hosted/sun-panel-helper.png",
       "title": "Sun-Panel-Helper",
       "kind": "icon",
       "category": "self-hosted",
       "width": 512,
       "height": 512,
-      "note": "来源 510×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 26645,
-      "sha": "e16292a2d6ba1a4fa7c6e30b379af36225b96eed"
+      "note": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "size": 25227,
+      "sha": "62d8767a28d00f693a0a5d32d5b1e3bd03565d74"
     },
     {
       "path": "icons/social/52pojie.png",
@@ -4987,6 +4987,17 @@
       "sha": "c626868211cc61a7cc3ff68686bb187eeca919be"
     },
     {
+      "path": "icons/social/chiphell.png",
+      "title": "Chiphell",
+      "kind": "icon",
+      "category": "social",
+      "width": 512,
+      "height": 512,
+      "note": "来源 82×97；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "size": 52418,
+      "sha": "881f24521af0d47f008b2087899e87f38a65ae10"
+    },
+    {
       "path": "icons/social/community.png",
       "title": "社区交流",
       "kind": "icon",
@@ -5004,9 +5015,9 @@
       "category": "social",
       "width": 512,
       "height": 512,
-      "note": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 86200,
-      "sha": "1bb242b11fe77dba30de856789a03785fd4d9c2c"
+      "note": "来源 250×250；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 17550,
+      "sha": "4562db64b39e25dc408ec7637fd615bebcb58c7c"
     },
     {
       "path": "icons/social/linuxdo.png",
@@ -5015,9 +5026,20 @@
       "category": "social",
       "width": 512,
       "height": 512,
-      "note": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
-      "size": 22894,
-      "sha": "e95eb62df441c53015c5bdc7aab85421085880bb"
+      "note": "来源 896×896；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 22369,
+      "sha": "f3002fc5161750f29c9cf84936d5ef3739748742"
+    },
+    {
+      "path": "icons/social/nga.png",
+      "title": "NGA",
+      "kind": "icon",
+      "category": "social",
+      "width": 512,
+      "height": 512,
+      "note": "来源 225×225；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 36810,
+      "sha": "3be9a891b3a8bcdbddb7219784a59c66ff2b6089"
     },
     {
       "path": "icons/social/nodeseek.png",
@@ -5042,6 +5064,17 @@
       "sha": "eaee3fe0eb91714c9e38762d287c1edacc2c7e05"
     },
     {
+      "path": "icons/social/playgm.png",
+      "title": "爆棚小组",
+      "kind": "icon",
+      "category": "social",
+      "width": 512,
+      "height": 512,
+      "note": "来源 278×181；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "size": 76718,
+      "sha": "b799a551209af1b17b99b3918adc7bcf7c9359ac"
+    },
+    {
       "path": "icons/social/reddit.png",
       "title": "Reddit",
       "kind": "icon",
@@ -5051,17 +5084,6 @@
       "note": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
       "size": 32536,
       "sha": "e9caee77ef16a29093f6adb77774e5db2cbc50f8"
-    },
-    {
-      "path": "icons/social/right.png",
-      "title": "恩山",
-      "kind": "icon",
-      "category": "social",
-      "width": 512,
-      "height": 512,
-      "note": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
-      "size": 70638,
-      "sha": "5d6a47d06754533b71ffa86e1ba49031ea8c54eb"
     },
     {
       "path": "icons/social/v2ex.png",
