@@ -3747,6 +3747,28 @@
       "sha": "14e3c4e7d5640e294ee632651c6eeb418ee75a7d"
     },
     {
+      "path": "icons/adult/jinji-books.png",
+      "title": "禁忌书屋",
+      "kind": "icon",
+      "category": "adult",
+      "width": 512,
+      "height": 512,
+      "note": "来源 474×474；512×512 PNG / RGBA、等比缩放及 r=115 圆角。恢复用户归档中的橙底白色 j，仅标准化尺寸与圆角。来源不标称为网站官方品牌。",
+      "size": 15056,
+      "sha": "0cd971fc4327360111517a7664fd4e12b26b8bda"
+    },
+    {
+      "path": "icons/adult/missav.png",
+      "title": "MissAV",
+      "kind": "icon",
+      "category": "adult",
+      "width": 512,
+      "height": 512,
+      "note": "来源 48×48；512×512 PNG / RGBA、等比缩放及 r=115 圆角。原图为确定的粉色圆形与白色播放三角；取样主色 #fe628e，按原轮廓位置确定性矢量重建、光栅化，未生成其他细节。",
+      "size": 23684,
+      "sha": "43d83006a9decbf0c1e8d253cfdafcf8493a999e"
+    },
+    {
       "path": "icons/adult/moxing.png",
       "title": "moxing",
       "kind": "icon",
@@ -3883,6 +3905,17 @@
       "sha": "903c73080c2c075459cc27f533203ac16d87524b"
     },
     {
+      "path": "icons/cloud/bandwagonhost.png",
+      "title": "bandwagonhost",
+      "kind": "icon",
+      "category": "cloud",
+      "width": 512,
+      "height": 512,
+      "note": "来源 814×100；512×512 PNG / RGBA、等比缩放及 r=115 圆角。保留官网完整横向品牌字样，不采用归档中的网页截图。",
+      "size": 26678,
+      "sha": "a6fd6a800dcd29fd34d868515dfcc0d3566fec72"
+    },
+    {
       "path": "icons/cloud/cloudflare.png",
       "title": "Cloudflare",
       "kind": "icon",
@@ -3892,6 +3925,17 @@
       "note": "来源 1132×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
       "size": 15747,
       "sha": "c7128a721fe6958ca6f06e1b15f6a9a9209938dd"
+    },
+    {
+      "path": "icons/cloud/dmit.png",
+      "title": "DMIT",
+      "kind": "icon",
+      "category": "cloud",
+      "width": 512,
+      "height": 512,
+      "note": "来源矢量；512×512 PNG / RGBA、等比缩放及 r=115 圆角。从官网 SVG 的原始 viewBox 提取左侧方形标识，保留原路径、底色和内嵌图形；Sharp 光栅化，无重绘。",
+      "size": 23651,
+      "sha": "6d923ea7eeb1e36b6e9d4f822b0e730770cd887d"
     },
     {
       "path": "icons/cloud/namesilo.png",
@@ -4260,6 +4304,17 @@
       "sha": "35402089a5277bddeda6a1f203f112ece12c1e3f"
     },
     {
+      "path": "icons/media/agsv.png",
+      "title": "AGSV",
+      "kind": "icon",
+      "category": "media",
+      "width": 512,
+      "height": 512,
+      "note": "来源 666×666；512×512 PNG / RGBA、等比缩放及 r=115 圆角。官网登录页所用高清徽章，与归档 favicon 核对相同山形、字母和圆框。",
+      "size": 233504,
+      "sha": "333862153b3f3bd9dfb35fae714bf306242a863e"
+    },
+    {
       "path": "icons/media/apple-music.png",
       "title": "‎Apple Music",
       "kind": "icon",
@@ -4313,6 +4368,17 @@
       "note": "来源 280×210；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
       "size": 67226,
       "sha": "02247483873ccd59644dd9e16a9fefd39bd63f66"
+    },
+    {
+      "path": "icons/media/chdbits.png",
+      "title": "CHDBits",
+      "kind": "icon",
+      "category": "media",
+      "width": 512,
+      "height": 512,
+      "note": "来源 245×110；512×512 PNG / RGBA、等比缩放及 r=115 圆角。保留官网红黑品牌字样；原始尺寸为 245×110，标准化放大不宣称恢复新细节。",
+      "size": 62551,
+      "sha": "f1e2f912a5529e778b1b2e1adfe9c015430f6911"
     },
     {
       "path": "icons/media/flowus.png",
@@ -4652,6 +4718,17 @@
       "sha": "c2492b22a3ec5c42f17e5a03c6f6df7617a4f436"
     },
     {
+      "path": "icons/productivity/kikkua.png",
+      "title": "kikkua · 知识卡片",
+      "kind": "icon",
+      "category": "productivity",
+      "width": 512,
+      "height": 512,
+      "note": "来源矢量；512×512 PNG / RGBA、等比缩放及 r=115 圆角。正确解析原站 data:image/svg+xml favicon，在 Chromium 按原 SVG 和系统 emoji 字形渲染；不推测或生成品牌。",
+      "size": 104795,
+      "sha": "f9fd564cac28d0e96e9ef287f6d956de3bebb8f1"
+    },
+    {
       "path": "icons/productivity/knowledge-cards.png",
       "title": "知识卡片",
       "kind": "icon",
@@ -4941,6 +5018,17 @@
       "note": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
       "size": 81324,
       "sha": "2c1f362a5ec283b2fa80bffc7ca775da350d8bdc"
+    },
+    {
+      "path": "icons/self-hosted/s-ui.png",
+      "title": "S-UI",
+      "kind": "icon",
+      "category": "self-hosted",
+      "width": 512,
+      "height": 512,
+      "note": "来源 512×512；512×512 PNG / RGBA、等比缩放及 r=115 圆角。",
+      "size": 27443,
+      "sha": "7eb48559689ad2ecdbf237661cd66866ea046e31"
     },
     {
       "path": "icons/self-hosted/smbox.png",

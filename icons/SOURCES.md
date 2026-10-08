@@ -209,3 +209,18 @@ Dashboard Icons 保留 [Apache-2.0](licenses/dashboard-icons-apache-2.0.txt)，s
 | 私有服务 | [private-service.png](self-hosted/private-service.png) | OpenAI ImageGen（通用图案） | AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌 |
 | 社区交流 | [community.png](social/community.png) | OpenAI ImageGen（通用图案） | AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌 |
 | 影音资源 | [media-library.png](media/media-library.png) | OpenAI ImageGen（通用图案） | AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌 |
+
+## 2026-10-08 第二轮导航修复
+
+仅替换导航中 8 个通用图案引用，已有 129 枚图标文件保持不变。S-UI 保留完整 [GPL-3.0 许可](licenses/s-ui-frontend-gpl-3.0.txt)；修改与固定上游来源记录在 [navigation-sources.json](navigation-sources.json)。低清放大与确定性几何重建均有明确说明，没有新增 AI 图案。
+
+| 名称 | 文件 | 来源 |
+|---|---|---|
+| S-UI | [s-ui.png](self-hosted/s-ui.png) | [S-UI 原站素材](https://raw.githubusercontent.com/alireza0/s-ui-frontend/e4525297b002c1c3be234cc1c9695ef84be741a0/public/assets/icon-512.png) |
+| DMIT | [dmit.png](cloud/dmit.png) | [DMIT 原站素材](https://www.dmit.io/templates/dmit_theme_2020/dmit/assets/images/dmit_logo_with_text.svg) |
+| bandwagonhost | [bandwagonhost.png](cloud/bandwagonhost.png) | [bandwagonhost 原站素材](https://bandwagonhost.com/templates/organicbandwagon/images/logo4.png) |
+| AGSV | [agsv.png](media/agsv.png) | [AGSV 原站素材](https://www.agsvpt.com/pic/login_left.png) |
+| CHDBits | [chdbits.png](media/chdbits.png) | [CHDBits 原站素材](https://ptchdbits.co/chdbits.png) |
+| 禁忌书屋 | [jinji-books.png](adult/jinji-books.png) | 用户原始归档，详见来源记录 |
+| kikkua · 知识卡片 | [kikkua.png](productivity/kikkua.png) | [kikkua · 知识卡片 原站素材](https://kikkua.online/) |
+| MissAV | [missav.png](adult/missav.png) | 用户原始归档，详见来源记录 |
