@@ -1,6 +1,6 @@
 /* Appearance belongs to this image library. */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --site-font:
     Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
     "Microsoft YaHei", sans-serif;
@@ -22,7 +22,8 @@
   --site-overlay: #111318b8;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
+    color-scheme: dark;
     --site-bg: #151617;
     --site-surface: #202224;
     --site-soft: #2b2e31;
@@ -38,6 +39,23 @@
     --site-disabled-text: #939ca7;
     --site-overlay: #08090bd9;
   }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --site-bg: #151617;
+  --site-surface: #202224;
+  --site-soft: #2b2e31;
+  --site-text: #eceef1;
+  --site-muted: #aeb4bd;
+  --site-line: #3b4046;
+  --site-line-strong: #78838f;
+  --site-accent: #afc9ed;
+  --site-on-accent: #19293c;
+  --site-selected: #27364b;
+  --site-hover: #303740;
+  --site-disabled-bg: #303439;
+  --site-disabled-text: #939ca7;
+  --site-overlay: #08090bd9;
 }
 .ecosystem-link {
   display: inline-flex;

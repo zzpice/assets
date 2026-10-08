@@ -281,8 +281,8 @@ def build_catalog(root):
 
 
 # One bundle declaration drives HTML versioning, integrity checks and offline generations.
-VERSIONED_ASSETS = ("app/site.js", "app/site.css", "app/theme.css", "app/catalog.js", "app/actresses.js")
-SHELL_ASSETS = (*VERSIONED_ASSETS, "app/manifest.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png")
+VERSIONED_ASSETS = ("app/theme.js", "app/site.js", "app/site.css", "app/theme.css", "app/catalog.js", "app/actresses.js")
+SHELL_ASSETS = (*VERSIONED_ASSETS, "app/manifest.webmanifest", "app/manifest-dark.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png")
 
 
 def versioned_html(root):

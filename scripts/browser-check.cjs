@@ -16,6 +16,34 @@ const server=http.createServer((req,res)=>{
  if(!file.startsWith(root+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404).end();return;}
  res.setHeader('Content-Type',mime[path.extname(file)]||'application/octet-stream');res.end(fs.readFileSync(file));
 });
+async function checkAppearance(page, url) {
+  const select = page.locator('#appearance');
+  const expectTheme = async (mode, theme) => {
+    await page.waitForFunction(({mode,theme}) => document.documentElement.dataset.themeMode === mode && document.documentElement.dataset.theme === theme, {mode,theme});
+    assert.equal(await page.locator('meta[name="theme-color"]').getAttribute('content'), theme === 'dark' ? '#151617' : '#ffffff');
+    assert.equal(await page.locator('html').evaluate(el => getComputedStyle(el).colorScheme), theme);
+  };
+  for (const colorScheme of ['dark','light']) {
+    await page.emulateMedia({colorScheme}); await expectTheme('system', colorScheme);
+  }
+  await select.selectOption('dark'); await page.reload(); await expectTheme('dark','dark');
+  const manifests = await page.evaluate(async () => {
+    const darkURL = document.querySelector('link[rel="manifest"]').href;
+    return Promise.all([darkURL, darkURL.replace('manifest-dark', 'manifest')].map(async url => ({url, data:await (await fetch(url)).json()})));
+  });
+  assert.equal(new URL(manifests[0].data.id, new URL(url).origin).href, new URL('/assets/', url).href);
+  assert.equal(manifests[0].data.theme_color, '#151617');
+  for (const key of ['id','scope','start_url','icons']) assert.deepEqual(manifests[0].data[key], manifests[1].data[key]);
+  const tab = await page.context().newPage(); await tab.goto(url);
+  assert.equal(await tab.locator('#appearance').inputValue(),'dark');
+  await tab.locator('#appearance').selectOption('light'); await expectTheme('light','light');
+  await tab.close();
+  await page.emulateMedia({colorScheme:'dark'}); await expectTheme('light','light');
+  await select.selectOption('system'); await expectTheme('system','dark');
+  assert.equal(await page.evaluate(() => localStorage.getItem('zzpice-assets-theme')),null);
+  await page.emulateMedia({colorScheme:'light'}); await expectTheme('system','light');
+}
+
 (async()=>{
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  const url=process.env.SITE_URL||`http://127.0.0.1:${server.address().port}/assets/`;
@@ -25,7 +53,7 @@ const server=http.createServer((req,res)=>{
    for(const [width,colorScheme] of [[1440,'light'],[390,'dark'],[768,'light'],[320,'dark']]){
     const context=await browser.newContext({viewport:{width,height:900},colorScheme,hasTouch:width<500});
     const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
-    await page.goto(url);await page.waitForFunction(()=>document.querySelectorAll('.card').length>0);
+    await page.goto(url);if(width===1440) await checkAppearance(page,url);await page.waitForFunction(()=>document.querySelectorAll('.card').length>0);
     await page.locator('.tab[data-kind="icon"]').click();await page.waitForFunction(count=>document.querySelectorAll('.card').length===count,iconCount);
     await page.locator('#search').fill('claude');await page.waitForFunction(count=>document.querySelectorAll('.card').length===count,claudeCount);
     await page.locator('.favorite-toggle').first().click();assert.equal(await page.locator('#favorite-count').innerText(),'1');

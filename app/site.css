@@ -22,6 +22,11 @@ select {
   font: inherit;
   color: inherit;
 }
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
 select {
   -webkit-appearance: none;
   appearance: none;
@@ -254,6 +259,19 @@ button:disabled {
   gap: 16px;
   margin-bottom: 18px;
 }
+#appearance {
+  flex: 0 0 auto;
+  min-height: 44px;
+  max-width: 120px;
+  padding: 7px 28px 7px 10px;
+  font-size: 0.8125rem;
+  color: var(--site-text);
+  background-color: var(--surface);
+  border: 1px solid var(--site-line-strong);
+  border-radius: 5px;
+  cursor: pointer;
+}
+#appearance:hover { border-color: var(--accent); }
 .collection-heading h2 {
   font-size: 1.625rem;
   font-weight: 600;
@@ -908,6 +926,13 @@ body:has(dialog[open]) {
   --site-text: #f0f1f3;
   --site-on-accent: #17202b;
   --site-muted: #b8bec7;
+  --site-surface: #202225;
+  --site-line-strong: #78838f;
+  --site-selected: #27364b;
+  --site-hover: #303740;
+  --site-disabled-bg: #303439;
+  --site-disabled-text: #939ca7;
+  color-scheme: dark;
 }
 .preview-dialog .dialog-header {
   height: 76px;
