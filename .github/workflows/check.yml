@@ -1,4 +1,4 @@
-name: Check gallery and deploy
+name: Check and deploy image library
 
 on:
   push:

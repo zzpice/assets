@@ -1,8 +1,8 @@
 {
   "id": "/assets/",
   "name": "图片资源库 · ZZP",
-  "short_name": "图片资源",
-  "description": "浏览与下载壁纸、头像及其他图片",
+  "short_name": "图片资源库",
+  "description": "浏览、预览与下载壁纸、头像、图标、银行卡面、游戏封面等图片",
   "lang": "zh-CN",
   "start_url": "../",
   "scope": "../",

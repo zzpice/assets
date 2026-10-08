@@ -1,4 +1,4 @@
-# 图片目录维护
+# 图片资源库维护说明
 
 ## 按任务查规则
 
@@ -53,7 +53,7 @@ python3 scripts/update_catalog.py --check
 
 此命令只检查、不写文件；它检查路径、尺寸、图标标准、各类登记约束及生成文件是否同步。内容分类、适用设备、人物身份、来源可信度和选图质量仍须按专属规则人工判断。
 
-修改生成器、界面脚本、样式或离线逻辑时，还须运行与 [Check gallery](../.github/workflows/check.yml) 一致的现有验证：
+修改生成器、界面脚本、样式或离线逻辑时，还须运行与 [图库检查与部署](../.github/workflows/check.yml) 一致的现有验证：
 
 ```sh
 python3 -m unittest discover -s scripts -p 'test_*.py'
