@@ -1,0 +1,1014 @@
+{
+  "date": "2026-10-08",
+  "icons": [
+    {
+      "path": "icons/media/youtube.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/youtube.png",
+      "title": "YouTube",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "21712266fd01c447e36b4461ff86124735c483c8921252c011f0a43547031552",
+      "originalSize": [
+        731,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 731×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "e9b7f45b20a18e009c7295c0be7480432b237bcb3c3790c794582dfc54f0d015"
+    },
+    {
+      "path": "icons/media/bilibili.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/bilibili.png",
+      "title": "bilibili",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "99d108e25dca79ad4aa459d994984070bc3903b7e93f200e804d5d284cd46a98",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "56ae497741c68db67fb70d0c00efe65d384bb525cc8f5fda81dc21eaa2926718"
+    },
+    {
+      "path": "icons/media/youtube-music.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/youtube-music.png",
+      "title": "YouTube Music",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "d97cc992130f6e62e3b87883fe4221eea03d079819dd46f2eb45369d00b676a2",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "f1ab6cff1298d7ac0008e2f2bd2abdcbf2c119ced2da3703cba9cbfd35a6ce0a"
+    },
+    {
+      "path": "icons/media/apple-music.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/apple-music.png",
+      "title": "‎Apple Music",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "652a8e8c3d7b1a0ec631512b2931f68704901d78f2e4b7a6e04b38e41b9a3ef7",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "ff4861bb22d39693905689c83ab40acff988df84580c636f8d2e9445bf756c51"
+    },
+    {
+      "path": "icons/social/x.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/x.png",
+      "title": "X",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "32a7e2dede5e29f94724a267f96743fde931038c3f3be13802de159b548791e2",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "5000ac54fb2a7ee2782db7ba8cd40f8f5febf2d8df9d354823a73497661b96cb"
+    },
+    {
+      "path": "icons/media/spotify.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/spotify.png",
+      "title": "Spotify",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "253d15d7551c4fd34d525965023dd4cd2f5db0d2f5f05497d59015017d5d079a",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2f95700a561b7441e6e84ef4fd5bf93d147bbacaa201ce3e1ffe2e813b325477"
+    },
+    {
+      "path": "icons/productivity/notion.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/notion.png",
+      "title": "Notion",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "385d360e996dc36bb5967ee3eeb1bdb21b69fecb74b0784c53574156a973f6f1",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "3e234e63e97cc272464b3911fd49a7e48ccbf4def914e80e258028f232e5edbb"
+    },
+    {
+      "path": "icons/productivity/pamir-mail.png",
+      "source": "https://mail.ryanvan.com/assets/mail-CSokca-y.png",
+      "title": "Pamir University",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "cd4d7d25778c3862f79fca6e2c9700a46535ed2b59be32c924503f18886732ff",
+      "originalSize": [
+        64,
+        64
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 64×64；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "2c4ba4a934f5a6492ffbc37c2eba1589c51f24688f82eb6f75d48c5f75a9d5b5"
+    },
+    {
+      "path": "icons/productivity/agsv-image.png",
+      "source": "https://img.seedvault.cn/favicon.ico",
+      "title": "AGSVPT公开图床",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "89e0462105404391c6a8d85b769185ab8f28b8a4be45481a8b46b61ada14805a",
+      "originalSize": [
+        128,
+        128
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "fa882723aba44daa75cca942a7b41ea17504c1f28abda4ad6f1ae05af4837e37"
+    },
+    {
+      "path": "icons/learning/anki.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/anki.png",
+      "title": "Anki中文网",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "f94b2d5bace87d4f953d21af2da1fdb5e01ae7af3ec8a774ae08caab86848640",
+      "originalSize": [
+        1280,
+        1280
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 1280×1280；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "2ce0831dd724f457a51a08d3bb15ad032f3b62e2f59ec7f3b5b73743824408b3"
+    },
+    {
+      "path": "icons/productivity/pdf-guru-anki.png",
+      "source": "https://guru.kevin2li.top/img/favicon.ico",
+      "title": "PDF Guru Anki",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "d6d64096bff649b00b9e1bf2cc617d665135fe9d1be839d7b9ebcff499cb1b1a",
+      "originalSize": [
+        2737,
+        2053
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 2737×2053；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "3eee59b596ef53b4bd007d1771bbbbc353a144584d14ba6352d0b22fca56d272"
+    },
+    {
+      "path": "icons/productivity/wolai.png",
+      "source": "https://cdn.wostatic.cn/dist/app_icon_1024.png",
+      "title": "云深考公",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "69f032833a97f2b7778c0666a356bdff63962e2fc9c653afca1f152082dcdd42",
+      "originalSize": [
+        1025,
+        1024
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 1025×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "7d7ee80983aa38fceaf6338b272be305e7fd3c21789872573b26d20a769ff07c"
+    },
+    {
+      "path": "icons/network/mikrotik.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/mikrotik.png",
+      "title": "MikroTik",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "fe6ad9346844658cc815c4e7aa21c09caf07c24173571b81f90345001d051463",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "889849b6710da9df876077bb541a3d4bb3033357107301d100bb1d6fc28220d9"
+    },
+    {
+      "path": "icons/self-hosted/proxmox.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/proxmox.png",
+      "title": "PVE",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "0fc53d37b6685c1af5018fa37d15ef02a16883661cefd68f6c62264ddf2bdf8b",
+      "originalSize": [
+        590,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 590×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "86cc66b35e4e1d93ff9678b19c41b23553ad273cddcc7cdcf0bbf7afece8f189"
+    },
+    {
+      "path": "icons/self-hosted/fnos.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/fnos.png",
+      "title": "飞牛 fnOS",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "e5f7b1f83a7393c3e0051946dace0c25c51588f36758617bac1ceca8bc088e8e",
+      "originalSize": [
+        655,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 655×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "44f2091ba5610cee65900b3fe4709880a22b207d381c2e19b024fffc4dc5041f"
+    },
+    {
+      "path": "icons/media-players/movie-pilot.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/movie-pilot.png",
+      "title": "MoviePilot",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "02fcc9f7ae8e797d19e455adbcea28ee0c710064977387fc6e0d5ee73ec02601",
+      "originalSize": [
+        450,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 450×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "b2031a36268082669d5f277ee975d470ad1523fbb8b26642dcac158b6d53f77c"
+    },
+    {
+      "path": "icons/self-hosted/qbittorrent.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/qbittorrent.png",
+      "title": "qBittorrent",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "3d03a2c91440a85ab6879207f90e17a8ff9c9580ae5a26ec3a64b2c2418f7019",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "55902f332e5ee39fd2c5b5157ef837100ee344dad4284cefb38b749c650cba6c"
+    },
+    {
+      "path": "icons/network/nginx.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/nginx.png",
+      "title": "Emby Nginx",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "7d4cde544ba22678985fc840dda3dac5d85524d4f2fb288907bea1e5e3962bd0",
+      "originalSize": [
+        449,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 449×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "5a3df4d8dca2189d0419e3b87fa6a2762a6efb87e10626f22b1e2004d469c67a"
+    },
+    {
+      "path": "icons/network/huawei.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/huawei.png",
+      "title": "5G CPE 5s",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "13f3fac94a71614a7dd899b74de259c18c89ef110eb31dc9a20e7e665f8c18e1",
+      "originalSize": [
+        503,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 503×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "9906ac0bfa4a1b3224a7baddcf7c6dee1089e68e69fa055b3530e1edb4140e47"
+    },
+    {
+      "path": "icons/network/sub-store.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/sub-store.png",
+      "title": "Sub Store",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "f1ef0ba3f3cafeaf4c2afcc5ceb4edf5e8217f8fc3213248e638d538260c18d7",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "c0640881453e708758e2649c2844749c20c4d4d9fe88fabb14241fa1d5036ab2"
+    },
+    {
+      "path": "icons/self-hosted/sun-panel.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/sun-panel.png",
+      "title": "Sun-Panel-Helper",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "7a10bde958b84efd93ab63d67e3bc0aaca5e5b7c4d96547cfaf8cb748d01205c",
+      "originalSize": [
+        510,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 510×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "dcca9d665f2f9b614da392ba9ab47f14437fb12d7bb6473919dc3d4f173277f7"
+    },
+    {
+      "path": "icons/media-players/navidrome.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/navidrome.png",
+      "title": "Navidrome",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "db74f277facdac14c0161ad4bcd80c38e5d09785a8b6c93c20ba7806879a7ca9",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "7138fb49fd6f09ee93d89d743125c031bab4527496f4d253bea8ef7ca85b1bc3"
+    },
+    {
+      "path": "icons/social/v2ex.png",
+      "source": "https://www.v2ex.com/static/icon-192.png",
+      "title": "V2EX",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f160bf4ecae6db26ecfd84f2ff5f6c66a47402e62099ac15c78d7e46571807af",
+      "originalSize": [
+        192,
+        192
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 192×192；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "75a2c2ccff58c3d3d59c2ee74140a5acce3cc2373494851c01cff8ce717b6d3c"
+    },
+    {
+      "path": "icons/social/right.png",
+      "source": "https://www.right.com.cn/forum/favicon.ico",
+      "title": "恩山",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "7abda15c7f2a33108e2cf8941b785f5583d2f1be8640649e87358b22b2cc3fb0",
+      "originalSize": [
+        32,
+        32
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "b36d9123ae8dc8f6539bc0f1e30f866334e435227fe48263855398cdd1108463"
+    },
+    {
+      "path": "icons/social/hostloc.png",
+      "source": "https://hostloc.com/favicon.ico",
+      "title": "HOSTLOC",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "1a96b13a48680dfbe30976329a0e1121ddf6b3ab37cae4d2cecf4874ad85d67b",
+      "originalSize": [
+        32,
+        32
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "2605f6d58a26db5cef875d65444b5badfdec389cd54591e119edf56bf1207fc7"
+    },
+    {
+      "path": "icons/social/linuxdo.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/linuxdo.png",
+      "title": "LINUX DO",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "efa9471b63feb905ee8a31e7ab8a84fdf86bf61dab0e440756135469a563c203",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "22e0c5fe613ae26b78fb7e7f71eeefce0ca8c545a7f5a9b1e8e727f0bb9d90ae"
+    },
+    {
+      "path": "icons/social/nodeseek.png",
+      "source": "https://www.nodeseek.com/static/image/favicon/android-chrome-512x512.png",
+      "title": "NodeSeek",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f22c9c80849d70e3641449b4eae420622980a89ca64dda1ba506863416fb7189",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "282a2185b16b792cb8d5146dc1c2cc1589547b897cf8d0dabf52248c4fa51b4d"
+    },
+    {
+      "path": "icons/social/reddit.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/reddit.png",
+      "title": "Reddit",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "d1eda6164d659f19ebf93964589a689224a3cb26df7331eea10a910544447ef5",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "945b02b28eaed461fe019cc184f151f98512b10e05549324e41d9c9557d9cf34"
+    },
+    {
+      "path": "icons/social/bahamut.png",
+      "source": "https://i2.bahamut.com.tw/favicon.svg?v=1689129528",
+      "title": "巴哈姆特",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f337d7b7e60e15b9c5a80954822eb6c6fad5fb2612854e2bfbce7455d8bea6e6",
+      "originalSize": "vector",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "b58931f3d8c8fd3500477f21531314e1714fda9fe21857f8d3cc73fb827bd2ec"
+    },
+    {
+      "path": "icons/social/52pojie.png",
+      "source": "https://www.52pojie.cn/favicon.svg",
+      "title": "吾爱破解",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f5e1cb39a684ee5819d55eacc96263465e06dc19a22aa7434cf39a6bdfcf94cf",
+      "originalSize": "vector",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "5f9554b137fb05091bff74f0e24e52577fe1089e8fe0707b7190dd075e30a22f"
+    },
+    {
+      "path": "icons/media/m-team.png",
+      "source": "https://static.m-team.cc/favicon.ico",
+      "title": "M-Team",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "f940bb67727de74eeb620a78f2c992f14722c8a7cb7521194132ab1049bfb381",
+      "originalSize": [
+        24,
+        24
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 24×24；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "f85af300ba109ecb83dbc77f8056257e98fb690201a97d54f70289f2f535a29b"
+    },
+    {
+      "path": "icons/media/chdbits.png",
+      "source": "https://ptchdbits.co/favicon.ico",
+      "title": "CHDBits",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "61875b9f18310c24550ccb4f4379998a77fd372491a7e99000d6edbb25498a2e",
+      "originalSize": [
+        48,
+        48
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 48×48；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "4f65fdfc256a580c67f8263c9924c3a0f5d69653f365c16ba820d02bc319d994"
+    },
+    {
+      "path": "icons/media/agsv.png",
+      "source": "https://www.agsvpt.com/favicon.ico",
+      "title": "AGSV",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "cc005065c325c60347816a6bfac7993fdef881e88e93d198331370a0a759296f",
+      "originalSize": [
+        48,
+        48
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 48×48；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "5cc0b07b21bc9fa13b52af44dab88f1ec70eaf789498acb9d79ae1e8963fff00"
+    },
+    {
+      "path": "icons/media/btschool.png",
+      "source": "https://pt.btschool.club/favicon.ico",
+      "title": "BTSCHOOL",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "798693258daa8aa27a299b955a0b65694a325fe172bb5998f0d29716ecff7568",
+      "originalSize": [
+        32,
+        32
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "be6d120fc88e56bb05f1d25d6fde362e51ccfdf56a551a8ee81af77c939339e6"
+    },
+    {
+      "path": "icons/media/zhuque.png",
+      "source": "https://zhuque.in/assets/images/512.png",
+      "title": "朱雀",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "2a943a3d5846caaffa2d4ac706419a8d47935826d718c78f3b9a86bf0a229ef6",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "1154ce44b55a86975010fdc451d51a1c6585f973897a9a1a2cdd6d2d21136370"
+    },
+    {
+      "path": "icons/media/carpt.png",
+      "source": "https://carpt.net/favicon.ico",
+      "title": "CarPT",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "bf922ffdea43e3dcc950f4a0892bda0de97790cd79480a72f9ca9e1d104dc879",
+      "originalSize": [
+        32,
+        32
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "ca5540b8adc61413e7d864cc2ea0ca693156cba9cef5eaba5ab80db32a2ec4ee"
+    },
+    {
+      "path": "icons/media/haowallpaper.png",
+      "source": "https://haowallpaper.com/favicon.ico",
+      "title": "哲风壁纸",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "e1bfd2658a6127bf3aa0ec9da4f15a05499c71ef9f2d7f20f664e4632726c17c",
+      "originalSize": [
+        256,
+        256
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 256×256；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "54159b1f8c2c0319ab1a9ce3b2c8b7854dbae700d74488caf2bc3278fec68aad"
+    },
+    {
+      "path": "icons/media/flowus.png",
+      "source": "https://cdn2.flowus.cn/assets/flowus-favicon-36b0b2bc.svg",
+      "title": "最全IPTV电视直播源及工具",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "36b0b2bc441396829a4a3b1ae876a45361e412c80daede93291f6fbc1df80799",
+      "originalSize": "vector",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "3fd8a44db981fe3eb18347f49c792d971f41e3e169a4812835e08fb36c2e7e45"
+    },
+    {
+      "path": "icons/media/myhkw.png",
+      "source": "https://myhkw.cn/favicon.ico",
+      "title": "明月浩空网",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "0210ca0ab4e32fb82c7183743f31a40ccd8764a3aa19e9a9e5f2f3aefc5799da",
+      "originalSize": [
+        128,
+        128
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "5e0a47dd07d4d04943a9b8db30685ac57d34ba4d461848839e68949bc76c4873"
+    },
+    {
+      "path": "icons/cloud/aliyun.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/aliyun.png",
+      "title": "阿里云",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "a28cb83b76ac7c1b7aa69c7a0ea73c01e20058dbfafdfef3f43a9619f38ce477",
+      "originalSize": [
+        821,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 821×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "77d5c87f905f4507068dd1d9ba201ef0f55c04b3d90e32a5f4a24ab7e53cf5ab"
+    },
+    {
+      "path": "icons/network/nexitally.png",
+      "source": "https://naiixi.com/images/mainlogo.png",
+      "title": "Nexitally",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "77e9078ae7fe9f16f6b1dcee850decddda0719dc44aecf3fb184f6862916fa0a",
+      "originalSize": [
+        1024,
+        1024
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 1024×1024；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "5d82e1e206dd71a4c962839f0018f37f609bc91413ad1d37b18618f878ef2034"
+    },
+    {
+      "path": "icons/self-hosted/proxmox-helper-scripts.png",
+      "source": "https://raw.githubusercontent.com/selfhst/icons/2053b70b283ffed5f2cc1424d1e17d9c554a846d/png/proxmox-helper-scripts.png",
+      "title": "Proxmox VE Helper",
+      "license": "CC BY 4.0",
+      "repository": "selfhst/icons",
+      "revision": "2053b70b283ffed5f2cc1424d1e17d9c554a846d",
+      "sourceSHA256": "31efaf52e893a73ed853b2ecb827069c964b5579dad005c5f88f335172f5d4cb",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "84fcfdabac5783dcc611029e8e62a1119ba0d6bcb6a778aeee59d4faba511703"
+    },
+    {
+      "path": "icons/network/speedtest.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/ookla-speedtest.png",
+      "title": "Speedtest",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "51715cc7cda2e6a65003ecb493f9d8d0642489de0fa683a14c8bcfd113a1e115",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "fd5fc9ec2569e5d70eaee703e048d60ba2bfdf5a0bebeef180750e8bfc35f09d"
+    },
+    {
+      "path": "icons/network/itdog.png",
+      "source": "https://www.itdog.cn/favicon.ico",
+      "title": "ITDOG",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "4f94c185da76f829fd27b2cb8239a52b576ee556f46a81c750197af36bea2ba3",
+      "originalSize": [
+        48,
+        48
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 48×48；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "a2441bd636d589fa3dcacd4cab084e206be561069a1558b72ba8986100795625"
+    },
+    {
+      "path": "icons/network/ipleak.png",
+      "source": "https://ipleak.net/favicon.ico",
+      "title": "ipleak",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "6cd17b000ea6607df5f864a18c3745a19d2de5c97ec0d8fe4ac625f5e254a94f",
+      "originalSize": [
+        16,
+        16
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 16×16；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "8926826a60937c1724fe83a130375b73a76349dd52b54854dc6fec8432a4ea86"
+    },
+    {
+      "path": "icons/network/geolocation.png",
+      "source": "https://www.geolocation.com/apple-touch-icon.png",
+      "title": "ip位置查询",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "124d22978971e1ad3f8c1adc3ff527adf74023938d2058242ca10a493ebfe5a8",
+      "originalSize": [
+        180,
+        180
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 180×180；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "bd8c7db312ea853dc28815e7b4e267bf2dcd23db0718367c53ccfc4da0dc1548"
+    },
+    {
+      "path": "icons/network/scamalytics.png",
+      "source": "https://scamalytics.com/wp-content/uploads/2016/06/icon_128.png",
+      "title": "Scamalytics",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "7d076a2f2e1d4d038dc1306ed9a802bd36f4bc129435f0ba293bfea98b3656a3",
+      "originalSize": [
+        128,
+        128
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 128×128；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "f3bea552145bee7b02e54d96394bac38c182477bf45ff7f722c62efae10e5023"
+    },
+    {
+      "path": "icons/cloud/cloudflare.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/cloudflare.png",
+      "title": "Cloudflare",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "8f2b4022d67811025fec71b40f363e2b3b8287df3714d8e9eeca00a5aa5e0490",
+      "originalSize": [
+        1132,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 1132×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "143a4bab17211d56f8e609deccb53661d93b6e7de92c3bfd88fbe5e583c2e6cb"
+    },
+    {
+      "path": "icons/cloud/namesilo.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/name-silo.png",
+      "title": "NameSilo",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "6885d36f41c63ac4197478b169db5d7036734d9431e2993d1437b504c28a8c33",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "9dc2e2f8ec6161b698f9dd80d2267823d0e7d284184814015780ce7e25f19cbe"
+    },
+    {
+      "path": "icons/network/gname.png",
+      "source": "https://file-sg.gname.net/f/favicon.ico",
+      "title": "GNAME",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "3ebf51cc7d38f150ab8eb8811b791ef0b1594d9b5cf162119c7166cc443b7534",
+      "originalSize": [
+        32,
+        32
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "d6d0a0cfad755f1e7b62be9822a7a5839cd9a495961189ea1deb738026c7c36e"
+    },
+    {
+      "path": "icons/cloud/porkbun.png",
+      "source": "https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/porkbun.png",
+      "title": "porkbun",
+      "license": "Apache-2.0",
+      "repository": "homarr-labs/dashboard-icons",
+      "revision": "57e939e504eda0ea764098015da93aa666ad6f31",
+      "sourceSHA256": "11d93135f16dd3ad2d0a38794a7c947605fd9f3467ce3aa770b3a3a98d98734a",
+      "originalSize": [
+        490,
+        490
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 490×490；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "67a5851bb4b5d6a675b58f8f5ab434ade983ccdfb4e782c7689e001d0477a3a9"
+    },
+    {
+      "path": "icons/adult/south-plus.png",
+      "source": "https://www.south-plus.net/favicon.ico",
+      "title": "南+ South Plus",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "86ac3a52c7ead3252a8057f2f9ca6cdd52478440face6f0d53e313f32ae595f8",
+      "originalSize": [
+        16,
+        16
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 16×16；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "d5494d3d00c00458e9b850b66008e474c0be55b98b2795b9d81cb6067df86c5a"
+    },
+    {
+      "path": "icons/adult/moxing.png",
+      "source": "https://mox.live/images/logo/favicon.ico",
+      "title": "moxing",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "1c7b739776b38423ee132d251279137d508c785250ddae20ebbc44b4b722868d",
+      "originalSize": [
+        206,
+        256
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 206×256；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "d9d22f27b998ac88a2598def378b8ebc39f1950125c6bc74c34b92fa12028ab7"
+    },
+    {
+      "path": "icons/adult/sehuatang.png",
+      "source": "https://sehuatang.org/favicon.ico",
+      "title": "98堂",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "b06103f6652d288ab8cf4976aa1850e47dc2ed0584c10439430b11abed14e47e",
+      "originalSize": [
+        16,
+        16
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 16×16；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "189a2f8114862e6c2ed4dbe4dffc956edb3dccc89cddba9d832807bc2b09c668"
+    },
+    {
+      "path": "icons/social/pixiv.png",
+      "source": "https://raw.githubusercontent.com/selfhst/icons/2053b70b283ffed5f2cc1424d1e17d9c554a846d/png/pixiv.png",
+      "title": "pixiv",
+      "license": "CC BY 4.0",
+      "repository": "selfhst/icons",
+      "revision": "2053b70b283ffed5f2cc1424d1e17d9c554a846d",
+      "sourceSHA256": "ac3b5d232fe592d9acdf3b699df7d969d8f62aa20aea281630c49336f2dc45f6",
+      "originalSize": [
+        512,
+        512
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 512×512；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。",
+      "outputSHA256": "64c77a1d9956c00bcda1e7e01837276f8a7b5758244655efa45ceebdeb938881"
+    },
+    {
+      "path": "icons/adult/t66y.png",
+      "source": "https://t66y.com/favicon.ico",
+      "title": "1024",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "e283f91e7edc144ad905e145ec11aae3b2cb0b7005f9e2f317c05782c51c277c",
+      "originalSize": [
+        64,
+        64
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 64×64；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "a11fe7cc2d7cf75315dd72e471b3ffad5e995f8381d5d2806ba35d21866772fc"
+    },
+    {
+      "path": "icons/adult/cool18.png",
+      "source": "https://www.cool18.com/favicon.ico",
+      "title": "禁忌书屋",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "b66f5c0d485ce507527e16ce416da742eec4c00aad88d489e221a4b3b6f470b1",
+      "originalSize": [
+        34,
+        35
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 34×35；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "9fe0dbb9cd5ce748c695583c92c85332dc81bbbc8f8402939340af816760d875"
+    },
+    {
+      "path": "icons/adult/xvideos.png",
+      "source": "https://assets-cdn77.xvideos-cdn.com/v3/img/skins/default/logo/xv.white.svg",
+      "title": "XVIDEOS",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "da68f064e51f3c427298770419f7e6da72ceec406d6afd1f5f639269e74cef5b",
+      "originalSize": "vector",
+      "retrieved": "2026-10-08",
+      "processing": "来源 矢量 SVG；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 SVG 经 Sharp 光栅化。",
+      "outputSHA256": "4de4f9c1c1c03313ede62cf076484b0016040482e96a7257f5e3d0a44969b45f"
+    },
+    {
+      "path": "icons/adult/pornhub.png",
+      "source": "https://ei.phncdn.com/www-static/favicon.ico?cache=2026100802",
+      "title": "Pornhub",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "c0574f958234962b5d31f8a4d4c3cecdfdbe74caf0cac17f73f5537cef64761d",
+      "originalSize": [
+        48,
+        48
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 48×48；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "ea8cdd089d8268b96e8448f746e5701c07f5fec838e8a2c90216ffe024573dfe"
+    },
+    {
+      "path": "icons/adult/mxshm.png",
+      "source": "https://www.mxshm.top/static/images/favicon.ico",
+      "title": "漫小肆韓漫",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "a90ee6230965a6f9325de3ad25a121c6dfa2799ea8f189fc2458502f8b169b29",
+      "originalSize": [
+        32,
+        32
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "d7c35459fadee067eaf974341c672cb4097e05c71c7ed40d15aaca77f4193c20"
+    },
+    {
+      "path": "icons/adult/laowang.png",
+      "source": "https://laowang.vip/favicon.ico",
+      "title": "老王论坛",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "64cbb68a04074de515f6cd1c787668515dc54943f55f349839140cbcca7f48bf",
+      "originalSize": [
+        32,
+        32
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 32×32；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "292198402ef6940b7522870528b2d7ea66fce83de540734bc08ae0cf63c30253"
+    },
+    {
+      "path": "icons/adult/cangku.png",
+      "source": "https://cangku.moe/favicon.ico",
+      "title": "绅士仓库",
+      "license": "未发现开放许可；原站标识权利归原权利人，仅用于识别",
+      "repository": null,
+      "sourceSHA256": "709160ca89cda3b2b7b8fd604dd19ff8323a0a8c60af0642a84417df8a819f6c",
+      "originalSize": [
+        16,
+        16
+      ],
+      "retrieved": "2026-10-08",
+      "processing": "来源 16×16；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 低分辨率原站 favicon，放大不恢复细节。",
+      "outputSHA256": "97df26b904ed89566162b5855d5f161cc37264a3133b292215e15de9dd6063fc"
+    },
+    {
+      "path": "icons/productivity/knowledge-cards.png",
+      "source": "OpenAI ImageGen / exec-4e438255-2910-4a78-afea-07e69971064a",
+      "title": "知识卡片",
+      "license": "AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌",
+      "sourceSHA256": "660e653a6b537ce6a8536d5da7398e55f5d114ffd78316ee4caeb9f4eeec2387",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "generated": true,
+      "prompt": "Use case: logo-brand. Asset type: one production bitmap icon for a personal navigation directory, a generic knowledge-card/book tool, not a third-party brand. Create a clean flat app icon: two offset cream flashcards with a small indigo bookmark and a simple open-book silhouette. Centered readable at 40px. Square 512x512 RGBA PNG style. Pale warm white rounded-square tile, corner radius about 115px at 512px, outside fully transparent. Large simple bold shapes, restrained indigo and soft violet palette, no gradients, no shadows, no text, no watermark, no brand logo. The mark occupies 65% of the square with generous balanced padding. One icon only, not a sheet.",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1254×1254；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 AI 生成的通用图案，非官方标识。",
+      "outputSHA256": "853ab0872586a2a5b8873c2b44fea058a8628a0e9966e89cd1f8eefcdf4ccdb4"
+    },
+    {
+      "path": "icons/self-hosted/private-service.png",
+      "source": "OpenAI ImageGen / exec-fe90524f-8267-421e-99bd-6daf911337ea",
+      "title": "私有服务",
+      "license": "AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌",
+      "sourceSHA256": "39120cda9eb552164214112b5814aa7eba213828816eedaa2d09e12f286b68c0",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "generated": true,
+      "prompt": "Use case: logo-brand. Asset type: one production bitmap icon for a personal navigation directory, a generic private server/service console, not a third-party brand. Create a clean flat app icon: a friendly abstract two-unit server stack with two tiny green status lights and a single small connection node. Centered readable at 40px. Square 512x512 RGBA PNG style. Pale warm white rounded-square tile, corner radius about 115px at 512px, outside fully transparent. Large simple bold shapes, restrained indigo and soft teal palette, no gradients, no shadows, no text, no watermark, no brand logo. The mark occupies 65% of the square with generous balanced padding. One icon only, not a sheet.",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1254×1254；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 AI 生成的通用图案，非官方标识。",
+      "outputSHA256": "b3ed324956ba5770e61acac2f3023e913f54f5c46c6f2898099eaedf32897851"
+    },
+    {
+      "path": "icons/social/community.png",
+      "source": "OpenAI ImageGen / exec-a4f5889b-e54e-4a3d-a5da-2098f9110de3",
+      "title": "社区交流",
+      "license": "AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌",
+      "sourceSHA256": "931bfcbf3545cc4e28126e9f06bbe4e6c6e76ef886c0c9531d9fb0e6256fc2a7",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "generated": true,
+      "prompt": "Use case: logo-brand. Asset type: one production bitmap icon for a personal navigation directory, a generic web community, not a third-party brand. Create a clean flat app icon: two overlapping rounded conversation bubbles, one indigo and one soft lavender, with three small dots. Centered readable at 40px. Square 512x512 RGBA PNG style. Pale warm white rounded-square tile, corner radius about 115px at 512px, outside fully transparent. Large simple bold shapes, no gradients, no shadows, no text, no watermark, no brand logo. The mark occupies 65% of the square with generous balanced padding. One icon only, not a sheet.",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1254×1254；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 AI 生成的通用图案，非官方标识。",
+      "outputSHA256": "d440975232525bad8ec2700dd1ee19327d33fbe567892f04ec4174bd84b4a00d"
+    },
+    {
+      "path": "icons/media/media-library.png",
+      "source": "OpenAI ImageGen / exec-861a1412-7397-45d7-8c62-e5a86fe64f73",
+      "title": "影音资源",
+      "license": "AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌",
+      "sourceSHA256": "c336ac726473c46aaed98c4740ac106a90d5bb97608a6a6fecaef1cc3510dec6",
+      "originalSize": [
+        1254,
+        1254
+      ],
+      "generated": true,
+      "prompt": "Use case: logo-brand. Asset type: one production bitmap icon for a personal navigation directory, a generic media/resource library, not a third-party brand. Create a clean flat app icon: a small stack of two rounded media tiles, the front tile has a bold simple play triangle, a small teal musical note sits in the lower right. Centered readable at 40px. Square 512x512 RGBA PNG style. Pale warm white rounded-square tile, corner radius about 115px at 512px, outside fully transparent. Large simple bold shapes, restrained indigo and soft teal palette, no gradients, no shadows, no text, no watermark, no brand logo. The mark occupies 65% of the square with generous balanced padding. One icon only, not a sheet.",
+      "retrieved": "2026-10-08",
+      "processing": "来源 1254×1254；等比缩放、留边、512×512 RGBA 与 r=115 圆角处理。 AI 生成的通用图案，非官方标识。",
+      "outputSHA256": "d7d824a119ac6b9afe278374f0c84492a75b5290ff9bef06998aceb37a25167c"
+    }
+  ]
+}

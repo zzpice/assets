@@ -595,7 +595,7 @@ test("an unscoped link still opens available resources when no wallpapers remain
   read('assets=assets.filter(file=>file.kind==="icon")');
   context.syncRoute();
   assert.equal(read("kind"),"icon");
-  assert.equal(read("visibleAssets.length"),61);
+  assert.equal(read("visibleAssets.length"),read("assets.length"));
 });
 
 test("image preview history retains the existing list nodes and expanded card information",()=>{

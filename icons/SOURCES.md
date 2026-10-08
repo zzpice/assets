@@ -126,3 +126,82 @@ Claude 的上游文件名为 `Anthropic.png`，Gemini 的上游文件名为 `Goo
 | UOB / 大华银行 | [uob.png](finance/uob.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/uobchina-rect.svg) | [官方资料](https://www.uobgroup.com/uobgroup/about/index.page) |
 | UBS / 瑞银 | [ubs.png](finance/ubs.png) | [源 SVG](https://github.com/icongo/bank-logos/blob/ffca539a043900fbf2a4fd6a5d32f1706ae5dfd1/logos/ubs-rect.svg) | [官方资料](https://www.ubs.com/global/en/our-firm/our-history.html) |
 | Deutsche Bank / 德意志银行 | [deutsche-bank.png](finance/deutsche-bank.png) | [源 SVG](https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/deutschebank.svg) | [官方资料](https://www.db.com) |
+
+## 2026-10-08：个人导航补充
+
+补充 66 个文件，继续使用现有单文件、单主要用途规范。下表和 [逐项机器可读记录](navigation-sources.json) 记录原始 URL、固定提交、获取日期、原始尺寸、源文件与成品 SHA-256。原始二进制不重复入库。
+
+Dashboard Icons 保留 [Apache-2.0](licenses/dashboard-icons-apache-2.0.txt)，selfh.st（selfhst/icons）保留 [CC BY 4.0](licenses/selfhst-cc-by-4.0.txt)；作者与许可沿用各固定版本。原站 favicon 未发现开放许可时明确保留原站权利，只作为对应入口的识别标记，不宣称取得开放授权。品牌与商标权利属于相应权利人。
+
+全部等比缩放并留边、以白色衬底（XVIDEOS 为深色）合成 512×512 RGBA，使用 r=115 遮罩令圆角外完全透明；SVG 用 Sharp 光栅化。小于 128 像素的来源在目录 note 中标注，放大不恢复细节。PNG 内嵌来源、许可与处理说明。
+
+4 个通用用途图案通过 OpenAI ImageGen 生成，再按相同规则标准化；不是缺失网站的官方 logo，也不是恢复出的 SunPanel 原图。生成记录与完整提示词见 JSON。AI 生成不等于已授予开放许可，本批未另行指定资源许可。
+
+| 名称 | 文件 | 原始来源 / 生成 | 许可 / 权利 |
+|---|---|---|---|
+| YouTube | [youtube.png](media/youtube.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/youtube.png) | Apache-2.0 |
+| bilibili | [bilibili.png](media/bilibili.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/bilibili.png) | Apache-2.0 |
+| YouTube Music | [youtube-music.png](media/youtube-music.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/youtube-music.png) | Apache-2.0 |
+| ‎Apple Music | [apple-music.png](media/apple-music.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/apple-music.png) | Apache-2.0 |
+| X | [x.png](social/x.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/x.png) | Apache-2.0 |
+| Spotify | [spotify.png](media/spotify.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/spotify.png) | Apache-2.0 |
+| Notion | [notion.png](productivity/notion.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/notion.png) | Apache-2.0 |
+| Pamir University | [pamir-mail.png](productivity/pamir-mail.png) | [源文件](https://mail.ryanvan.com/assets/mail-CSokca-y.png) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| AGSVPT公开图床 | [agsv-image.png](productivity/agsv-image.png) | [源文件](https://img.seedvault.cn/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| Anki中文网 | [anki.png](learning/anki.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/anki.png) | Apache-2.0 |
+| PDF Guru Anki | [pdf-guru-anki.png](productivity/pdf-guru-anki.png) | [源文件](https://guru.kevin2li.top/img/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 云深考公 | [wolai.png](productivity/wolai.png) | [源文件](https://cdn.wostatic.cn/dist/app_icon_1024.png) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| MikroTik | [mikrotik.png](network/mikrotik.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/mikrotik.png) | Apache-2.0 |
+| PVE | [proxmox.png](self-hosted/proxmox.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/proxmox.png) | Apache-2.0 |
+| 飞牛 fnOS | [fnos.png](self-hosted/fnos.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/fnos.png) | Apache-2.0 |
+| MoviePilot | [movie-pilot.png](media-players/movie-pilot.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/movie-pilot.png) | Apache-2.0 |
+| qBittorrent | [qbittorrent.png](self-hosted/qbittorrent.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/qbittorrent.png) | Apache-2.0 |
+| Emby Nginx | [nginx.png](network/nginx.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/nginx.png) | Apache-2.0 |
+| 5G CPE 5s | [huawei.png](network/huawei.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/huawei.png) | Apache-2.0 |
+| Sub Store | [sub-store.png](network/sub-store.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/sub-store.png) | Apache-2.0 |
+| Sun-Panel-Helper | [sun-panel.png](self-hosted/sun-panel.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/sun-panel.png) | Apache-2.0 |
+| Navidrome | [navidrome.png](media-players/navidrome.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/navidrome.png) | Apache-2.0 |
+| V2EX | [v2ex.png](social/v2ex.png) | [源文件](https://www.v2ex.com/static/icon-192.png) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 恩山 | [right.png](social/right.png) | [源文件](https://www.right.com.cn/forum/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| HOSTLOC | [hostloc.png](social/hostloc.png) | [源文件](https://hostloc.com/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| LINUX DO | [linuxdo.png](social/linuxdo.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/linuxdo.png) | Apache-2.0 |
+| NodeSeek | [nodeseek.png](social/nodeseek.png) | [源文件](https://www.nodeseek.com/static/image/favicon/android-chrome-512x512.png) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| Reddit | [reddit.png](social/reddit.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/reddit.png) | Apache-2.0 |
+| 巴哈姆特 | [bahamut.png](social/bahamut.png) | [源文件](https://i2.bahamut.com.tw/favicon.svg?v=1689129528) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 吾爱破解 | [52pojie.png](social/52pojie.png) | [源文件](https://www.52pojie.cn/favicon.svg) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| M-Team | [m-team.png](media/m-team.png) | [源文件](https://static.m-team.cc/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| CHDBits | [chdbits.png](media/chdbits.png) | [源文件](https://ptchdbits.co/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| AGSV | [agsv.png](media/agsv.png) | [源文件](https://www.agsvpt.com/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| BTSCHOOL | [btschool.png](media/btschool.png) | [源文件](https://pt.btschool.club/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 朱雀 | [zhuque.png](media/zhuque.png) | [源文件](https://zhuque.in/assets/images/512.png) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| CarPT | [carpt.png](media/carpt.png) | [源文件](https://carpt.net/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 哲风壁纸 | [haowallpaper.png](media/haowallpaper.png) | [源文件](https://haowallpaper.com/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 最全IPTV电视直播源及工具 | [flowus.png](media/flowus.png) | [源文件](https://cdn2.flowus.cn/assets/flowus-favicon-36b0b2bc.svg) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 明月浩空网 | [myhkw.png](media/myhkw.png) | [源文件](https://myhkw.cn/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 阿里云 | [aliyun.png](cloud/aliyun.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/aliyun.png) | Apache-2.0 |
+| Nexitally | [nexitally.png](network/nexitally.png) | [源文件](https://naiixi.com/images/mainlogo.png) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| Proxmox VE Helper | [proxmox-helper-scripts.png](self-hosted/proxmox-helper-scripts.png) | [源文件](https://raw.githubusercontent.com/selfhst/icons/2053b70b283ffed5f2cc1424d1e17d9c554a846d/png/proxmox-helper-scripts.png) | CC BY 4.0 |
+| Speedtest | [speedtest.png](network/speedtest.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/ookla-speedtest.png) | Apache-2.0 |
+| ITDOG | [itdog.png](network/itdog.png) | [源文件](https://www.itdog.cn/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| ipleak | [ipleak.png](network/ipleak.png) | [源文件](https://ipleak.net/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| ip位置查询 | [geolocation.png](network/geolocation.png) | [源文件](https://www.geolocation.com/apple-touch-icon.png) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| Scamalytics | [scamalytics.png](network/scamalytics.png) | [源文件](https://scamalytics.com/wp-content/uploads/2016/06/icon_128.png) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| Cloudflare | [cloudflare.png](cloud/cloudflare.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/cloudflare.png) | Apache-2.0 |
+| NameSilo | [namesilo.png](cloud/namesilo.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/name-silo.png) | Apache-2.0 |
+| GNAME | [gname.png](network/gname.png) | [源文件](https://file-sg.gname.net/f/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| porkbun | [porkbun.png](cloud/porkbun.png) | [源文件](https://raw.githubusercontent.com/homarr-labs/dashboard-icons/57e939e504eda0ea764098015da93aa666ad6f31/png/porkbun.png) | Apache-2.0 |
+| 南+ South Plus | [south-plus.png](adult/south-plus.png) | [源文件](https://www.south-plus.net/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| moxing | [moxing.png](adult/moxing.png) | [源文件](https://mox.live/images/logo/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 98堂 | [sehuatang.png](adult/sehuatang.png) | [源文件](https://sehuatang.org/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| pixiv | [pixiv.png](social/pixiv.png) | [源文件](https://raw.githubusercontent.com/selfhst/icons/2053b70b283ffed5f2cc1424d1e17d9c554a846d/png/pixiv.png) | CC BY 4.0 |
+| 1024 | [t66y.png](adult/t66y.png) | [源文件](https://t66y.com/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 禁忌书屋 | [cool18.png](adult/cool18.png) | [源文件](https://www.cool18.com/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| XVIDEOS | [xvideos.png](adult/xvideos.png) | [源文件](https://assets-cdn77.xvideos-cdn.com/v3/img/skins/default/logo/xv.white.svg) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| Pornhub | [pornhub.png](adult/pornhub.png) | [源文件](https://ei.phncdn.com/www-static/favicon.ico?cache=2026100802) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 漫小肆韓漫 | [mxshm.png](adult/mxshm.png) | [源文件](https://www.mxshm.top/static/images/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 老王论坛 | [laowang.png](adult/laowang.png) | [源文件](https://laowang.vip/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 绅士仓库 | [cangku.png](adult/cangku.png) | [源文件](https://cangku.moe/favicon.ico) | 未发现开放许可；原站标识权利归原权利人，仅用于识别 |
+| 知识卡片 | [knowledge-cards.png](productivity/knowledge-cards.png) | OpenAI ImageGen（通用图案） | AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌 |
+| 私有服务 | [private-service.png](self-hosted/private-service.png) | OpenAI ImageGen（通用图案） | AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌 |
+| 社区交流 | [community.png](social/community.png) | OpenAI ImageGen（通用图案） | AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌 |
+| 影音资源 | [media-library.png](media/media-library.png) | OpenAI ImageGen（通用图案） | AI 生成，未另行指定开放许可；通用用途图案，不是对应网站的官方品牌 |

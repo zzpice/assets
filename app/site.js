@@ -8,7 +8,9 @@ const styleCategoryLabels = { anime: "动漫", illustration: "插画", landscape
 const iconCategoryLabels = {
   ai: "AI", "media-players": "媒体播放器", gaming: "游戏",
   finance: "银行、券商与金融机构", development: "开发工具",
-  "proxy-clients": "代理客户端", routes: "线路与专线", regions: "国家与地区"
+  "proxy-clients": "代理客户端", routes: "线路与专线", regions: "国家与地区",
+  media: "影音与资源", social: "社区与社交", productivity: "效率工具",
+  learning: "学习", network: "网络工具", "self-hosted": "设备与自托管", cloud: "云与域名", adult: "成人网站"
 };
 const categoryLabels = { ...styleCategoryLabels, ...iconCategoryLabels };
 const kindLabels = { wallpaper: "壁纸", avatar: "头像", icon: "图标", "bank-card": "银行卡面", "game-cover": "游戏封面", actress: "女优", other: "其他图片" };
