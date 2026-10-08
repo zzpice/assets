@@ -440,6 +440,7 @@ function samePreviewGroup(item,file) {
 }
 
 function openPreview(file,historyMode = "push",sequence = visibleAssets) {
+  document.getElementById("edit-image").hidden = !window.AssetGitHub.editable(file);
   if (!previewDialog.open || !activePreview || !samePreviewGroup(activePreview,file)) {
     lockscreenEnabled = false;
     avatarRoundEnabled = false;
@@ -886,6 +887,7 @@ function renderPreviewDetails(file) {
   }
   panel.replaceChildren(element("h3","","图片资料"),list);
   if (file.note && file.kind !== "game-cover") panel.append(element("p","note",file.note));
+  if (file.license) panel.append(element("p","note","许可：" + file.license));
   const work = gameInfo(file);
   const cover = [file.cover?.version,file.cover?.platform,coverRegionLabels[file.cover?.region] || file.cover?.region].filter(Boolean).join(" · ");
   if(cover)panel.append(element("p","note",cover));
@@ -900,6 +902,9 @@ function renderPreviewDetails(file) {
   if (["wallpaper","avatar"].includes(file.kind)) { const link=element("a","source-link","来源与许可记录 ↗");link.href="https://github.com/zzpice/assets/blob/main/wallpapers/SOURCES.md";link.target="_blank";link.rel="noopener noreferrer";panel.append(link); }
 }
 document.getElementById("preview-favorite").addEventListener("click",() => { if(activePreview) toggleFavorite(activePreview,document.getElementById("preview-favorite")); });
+const managerContext = () => ({assets, kind, styleLabels: styleCategoryLabels, iconLabels: iconCategoryLabels});
+document.getElementById("upload-image").addEventListener("click", () => window.AssetManager.open(null, managerContext()));
+document.getElementById("edit-image").addEventListener("click", () => window.AssetManager.open(activePreview, managerContext()));
 document.getElementById("preview-info-toggle").addEventListener("click",event => {
   const panel = document.getElementById("preview-details"); panel.hidden = !panel.hidden;
   event.currentTarget.setAttribute("aria-pressed",String(!panel.hidden));

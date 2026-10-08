@@ -20,26 +20,55 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
+          fetch-depth: 2
           persist-credentials: false
+      - name: Select related checks
+        id: changes
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          python3 - <<'PY'
+          import os, re, subprocess
+          base = os.environ.get('BASE', '')
+          try:
+              files = subprocess.check_output(['git', 'diff', '--name-only', base, 'HEAD'], text=True).splitlines()
+              code = 'index.html' in files or any(p.startswith(('app/', 'scripts/', '.github/workflows/')) and not p.endswith(('.md', '.webp', '.png', '.jpg')) for p in files)
+              if 'sw.js' in files:
+                  normalize = lambda s: re.sub(r'const SHELL_HASHES = \{.*?\};', '', re.sub(r'const CACHE_NAME = CACHE_PREFIX \+ "[^"]+";', '', s), flags=re.S)
+                  old = subprocess.check_output(['git', 'show', base + ':sw.js'], text=True)
+                  code |= normalize(old) != normalize(open('sw.js').read())
+          except subprocess.CalledProcessError:
+              code = True  # Manual runs or an unavailable comparison get the full checks.
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('code=' + str(code).lower() + '\n')
+          PY
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - run: python -m pip install -r scripts/requirements.txt
       - run: python -m unittest discover -s scripts -p 'test_*.py'
-      - run: python scripts/update_catalog.py --check
+        if: steps.changes.outputs.code == 'true'
+      - name: Validate resources and generate catalog, previews and wallpaper index
+        run: python scripts/update_catalog.py
       - uses: actions/setup-node@v7
+        if: steps.changes.outputs.code == 'true'
         with:
           node-version: '24'
-      - run: node --check app/catalog.js
-      - run: node --check app/site.js && node --check app/actresses.js && node --check sw.js
-      - run: node --test scripts/test_*.cjs
+      - name: Check frontend and critical behavior
+        if: steps.changes.outputs.code == 'true'
+        run: |
+          for file in app/*.js sw.js; do node --check "$file"; done
+          node --test scripts/test_*.cjs
       - run: npm install --no-save --package-lock=false playwright@1.62.1
+        if: steps.changes.outputs.code == 'true'
       - run: npx playwright install --with-deps chromium webkit
-      - name: Assemble public site
+        if: steps.changes.outputs.code == 'true'
+      - name: Assemble public site from generated output
         run: |
           mkdir -p build/pages
           cp -R index.html catalog.json sw.js .nojekyll app wallpapers avatars icons bank-cards game-covers actresses build/pages/
       - run: SITE_ROOT=build/pages node scripts/browser-check.cjs
+        if: steps.changes.outputs.code == 'true'
       - uses: actions/upload-pages-artifact@v5
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:

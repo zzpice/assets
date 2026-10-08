@@ -83,10 +83,10 @@ test("installation caches all verified mandatory resources and prioritizes wallp
   await state.dispatch("install");
   const stored=state.stores.get(shellCache);
   for(const name of Object.keys(manifest)) assert.ok(stored.has(base+name),name);
-  for(const file of catalog.assets.filter(file=>["wallpaper","avatar"].includes(file.kind))) {
-    assert.ok(state.stores.get(previewCache).has(base+file.thumbnail),file.path);
-  }
-  assert.equal(state.stores.get(previewCache).size,24);
+  const priority={wallpaper:0,avatar:1,"bank-card":2,other:3};
+  const selected=catalog.assets.filter(file=>file.kind!=="actress"&&file.thumbnail).sort((a,b)=>(priority[a.kind]??3)-(priority[b.kind]??3)).slice(0,24);
+  for(const file of selected) assert.ok(state.stores.get(previewCache).has(base+file.thumbnail),file.path);
+  assert.equal(state.stores.get(previewCache).size,new Set(selected.map(file=>file.thumbnail)).size);
 });
 
 test("installation never prefetches personal portraits even when public previews are sparse",async()=>{
@@ -131,7 +131,7 @@ test("stalled optional previews are aborted so the verified shell can finish ins
   try {
     await Promise.race([state.dispatch("install"),new Promise((resolve,reject)=>{watchdog=setTimeout(()=>reject(new Error("Installation stalled on optional previews")),1000);})]);
   } finally { clearTimeout(watchdog); }
-  assert.equal(aborted,24);
+  assert.equal(aborted,Math.min(24,catalog.assets.filter(file=>file.kind!=="actress"&&file.thumbnail).length));
   assert.ok(pending.every(request=>request.signal.aborted));
   assert.equal(state.stores.get(shellCache).size,Object.keys(manifest).length);
   await state.dispatch("activate");

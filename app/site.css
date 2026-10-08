@@ -2004,3 +2004,24 @@ body:has(dialog[open]) {
     background: var(--soft);
   }
 }
+
+/* Ordinary resource editing uses the existing gallery, without a separate dashboard. */
+.manage-dialog { width: min(680px, calc(100% - 24px)); max-height: calc(100dvh - 24px); padding: 24px; border: 1px solid var(--line); border-radius: 20px; color: var(--site-text); background: var(--surface, var(--site-bg)); overflow-y: auto; }
+.manage-dialog::backdrop { background: rgb(0 0 0 / .55); }
+.manage-dialog .dialog-header { position: sticky; top: -24px; z-index: 2; background: var(--surface, var(--site-bg)); padding: 16px 0; }
+.manage-dialog fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.manage-dialog label { display: grid; gap: 6px; margin: 14px 0; font-size: 14px; }
+.manage-dialog input:not([type=checkbox]), .manage-dialog select, .manage-dialog textarea { width: 100%; min-height: 42px; box-sizing: border-box; padding: 9px 12px; border: 1px solid var(--line); border-radius: 9px; background: var(--site-bg); color: var(--site-text); font: inherit; }
+.manage-dialog small, .manage-hint, #manage-tech { color: var(--muted); font-size: 13px; }
+.manage-dialog .manage-drop { border: 1px dashed var(--line); border-radius: 12px; padding: 18px; text-align: center; }
+.manage-drop.drag-over { outline: 2px solid var(--accent); }
+.manage-picture { display: grid; justify-items: center; }
+#manage-image { max-width: 100%; max-height: 220px; border-radius: 10px; object-fit: contain; }
+.manage-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.manage-dialog .manage-check { display: flex; align-items: center; gap: 8px; }
+.manage-warning, #manage-error { color: var(--danger, #b43d3d); }
+#manage-summary { border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-wrap: anywhere; }
+#manage-summary p { margin: 8px 0; }
+.manage-buttons { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+#manage-path { overflow-wrap: anywhere; }
+@media (max-width: 600px) { .manage-dialog { padding: 18px; } .manage-row { grid-template-columns: 1fr; gap: 0; } .manage-dialog .dialog-header { top: -18px; } }

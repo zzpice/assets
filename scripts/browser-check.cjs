@@ -98,6 +98,7 @@ async function checkAppearance(page, url) {
    await page.unroute('**/catalog.json');await page.locator('.empty button').click();
    await page.waitForFunction(()=>document.querySelectorAll('.card').length>0);await context.close();
    console.log(`${name}: filters, favorites, preview focus, shareable routes, mobile/tablet, offline actions, all ${iconCount} icons and error recovery passed`);
+   if(name==='Chromium') await require('./manage-check.cjs')(browser,url,root);
   } finally {await browser.close();}
  }
 })().catch(error=>{console.error(error);process.exitCode=1;}).finally(()=>server.close());

@@ -151,7 +151,7 @@ def validate_icon(image, image_format, path):
         raise ValueError(f"{path}: r=115 圆角外侧必须完全透明")
 
 
-def usable_preview(root, path, width, height):
+def usable_preview(root, path, width, height, bounds=(420, 1024)):
     if not isinstance(path, str) or not path.startswith("app/previews/"):
         return False
     file = root / path
@@ -164,7 +164,7 @@ def usable_preview(root, path, width, height):
         with Image.open(io.BytesIO(data)) as image:
             tw, th = image.size
             image.verify()
-        return 0 < tw <= 420 and 0 < th <= 1024 and abs(tw * height - th * width) <= max(width, height)
+        return 0 < tw <= bounds[0] and 0 < th <= bounds[1] and abs(tw * height - th * width) <= max(width, height)
     except (OSError, ValueError):
         return False
 
@@ -229,6 +229,13 @@ def build_catalog(root):
             kind = "other"
             category = None
         item = {"path": path, "title": old.get("title") or relative.stem.replace("-", " "), "kind": kind}
+        if kind in {"wallpaper", "avatar", "icon"}:
+            # catalog remains the only editable metadata store, including on replacement.
+            generated = {"path", "title", "kind", "category", "width", "height", "size", "sha", "thumbnail", "background", "device", "note"}
+            item.update({key: value for key, value in old.items() if key not in generated})
+            for field in ("source", "license"):
+                if field in item and not isinstance(item[field], str):
+                    raise ValueError(f"{path}: {field} 应为字符串")
         item.update(card_info)
         if category:
             item["category"] = category
@@ -239,9 +246,23 @@ def build_catalog(root):
         elif kind == "wallpaper":
             item["device"] = infer_device(width, height)
         item.update(width=width, height=height)
-        if kind not in {"game-cover", "actress"} and same_source and old.get("note"):
+        if kind not in {"game-cover", "actress"} and (same_source or kind in {"wallpaper", "avatar", "icon"}) and old.get("note"):
             item["note"] = old["note"]
         if image is not None and kind != "icon":
+            if kind == "wallpaper":
+                if same_source and usable_preview(root, old.get("background"), width, height, (1920, 1200)):
+                    item["background"] = old["background"]
+                else:
+                    background = ImageOps.contain(image, (1920, 1200), Image.Resampling.LANCZOS)
+                    if background.mode not in {"RGB", "RGBA"}:
+                        background = background.convert("RGBA" if "transparency" in background.info else "RGB")
+                    buffer = io.BytesIO()
+                    background.save(buffer, "WEBP", quality=88, method=6)
+                    background.close()
+                    data_preview = buffer.getvalue()
+                    background_path = f"app/previews/{relative.stem}-background-{hashlib.sha256(data_preview).hexdigest()[:10]}.webp"
+                    previews[background_path] = data_preview
+                    item["background"] = background_path
             preview_width, preview_height = width, height
             crop = card_info.get("previewCrop")
             if crop:
@@ -275,13 +296,13 @@ def build_catalog(root):
     if actress_directory:
         catalog["actresses"] = actress_directory
     text = json.dumps(catalog, ensure_ascii=False, indent=2) + "\n"
-    referenced = {item["thumbnail"] for item in assets if item.get("thumbnail")}
+    referenced = {item[key] for item in assets for key in ("thumbnail", "background") if item.get(key)}
     stale = [path for path in (root / "app/previews").glob("*.webp") if path.relative_to(root).as_posix() not in referenced]
     return text, previews, stale
 
 
 # One bundle declaration drives HTML versioning, integrity checks and offline generations.
-VERSIONED_ASSETS = ("app/theme.js", "app/site.js", "app/site.css", "app/theme.css", "app/catalog.js", "app/actresses.js")
+VERSIONED_ASSETS = ("app/theme.js", "app/site.js", "app/site.css", "app/theme.css", "app/catalog.js", "app/actresses.js", "app/github.js", "app/manage.js")
 SHELL_ASSETS = (*VERSIONED_ASSETS, "app/manifest.webmanifest", "app/manifest-dark.webmanifest", "app/icon.svg", "app/icon-180.png", "app/icon-192.png", "app/icon-512.png")
 
 
@@ -331,6 +352,13 @@ def versioned_service_worker(root, catalog_text, html):
 
 def update(root=ROOT, check=False):
     text, previews, stale = build_catalog(root)
+    # Derived from the same catalog; no separately maintained wallpaper data.
+    wallpaper_index = json.dumps({"version": 1, "wallpapers": [
+        {key: item[key] for key in ("path", "title", "device", "width", "height", "sha", "thumbnail", "background") if key in item}
+        for item in json.loads(text)["assets"] if item["kind"] == "wallpaper"
+    ]}, ensure_ascii=False, indent=2) + "\n"
+    index_path = root / "wallpapers/index.json"
+    index_changed = not index_path.exists() or index_path.read_text("utf-8") != wallpaper_index
     catalog = root / "catalog.json"
     changed = not catalog.exists() or catalog.read_text("utf-8") != text
     page = root / "index.html"
@@ -340,9 +368,12 @@ def update(root=ROOT, check=False):
     worker_text = versioned_service_worker(root, text, html)
     worker_changed = worker_text is not None and worker.read_text("utf-8") != worker_text
     if check:
-        if changed or previews or stale or page_changed or worker_changed:
+        if changed or previews or stale or page_changed or worker_changed or index_changed:
             raise ValueError("目录、预览、页面或离线缓存版本需要更新，请运行 python3 scripts/update_catalog.py 后提交生成的文件")
     else:
+        if index_changed:
+            index_path.parent.mkdir(parents=True, exist_ok=True)
+            index_path.write_text(wallpaper_index, encoding="utf-8")
         for path, data in previews.items():
             destination = root / path
             destination.parent.mkdir(parents=True, exist_ok=True)

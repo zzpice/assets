@@ -40,10 +40,12 @@
     <link rel="apple-touch-icon" href="app/icon-180.png" />
     <script src="app/theme.js?v=37d20d150e"></script>
     <link rel="stylesheet" href="app/theme.css?v=e8a827181c" />
-    <link rel="stylesheet" href="app/site.css?v=46f9d2e73c" />
+    <link rel="stylesheet" href="app/site.css?v=635d372841" />
     <script src="app/actresses.js?v=4619ad5278" defer></script>
-    <script src="app/catalog.js?v=2f72d84160" defer></script>
-    <script src="app/site.js?v=b231b89c99" defer></script>
+    <script src="app/catalog.js?v=530a7ac6e6" defer></script>
+    <script src="app/github.js?v=ce0c44944d" defer></script>
+    <script src="app/manage.js?v=f462f52251" defer></script>
+    <script src="app/site.js?v=1eceb6064e" defer></script>
     <link rel="canonical" href="https://zzpice.github.io/assets/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="zh_CN" />
@@ -189,6 +191,7 @@
         </div>
         <div class="collection-heading">
           <div><h2 id="collection-title">壁纸</h2></div>
+          <button id="upload-image" type="button" class="secondary-button">上传图片</button>
           <button
             id="density-toggle"
             type="button"
@@ -419,6 +422,7 @@
           </button>
         </div>
         <div class="preview-options">
+          <button id="edit-image" type="button" class="secondary-button" hidden>编辑图片</button>
           <button
             id="preview-favorite"
             type="button"

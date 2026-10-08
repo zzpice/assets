@@ -1,29 +1,29 @@
 # 精选图标
 
-137 个图标，覆盖常用服务、金融机构、代理客户端、线路及常用国家和地区。每项保留一个文件，用于个人导航、文档、网页和代理客户端。
+精选图标，覆盖常用服务、金融机构、代理客户端、线路及常用国家和地区。每项保留一个文件，用于个人导航、文档、网页和代理客户端。
 
 **图片标准：512×512 PNG、RGBA，r=115 圆角外侧完全透明，保留主体底色和图形。**
 
 ## 分类
 
-| 用途 | 目录 | 数量 |
-|---|---|---:|
-| AI | [ai/](ai/) | 7 |
-| 媒体播放器 | [media-players/](media-players/) | 6 |
-| 游戏 | [gaming/](gaming/) | 4 |
-| 银行、券商与金融机构 | [finance/](finance/) | 23 |
-| 开发工具 | [development/](development/) | 5 |
-| 代理客户端 | [proxy-clients/](proxy-clients/) | 2 |
-| 线路与专线 | [routes/](routes/) | 4 |
-| 国家与地区 | [regions/](regions/) | 12 |
-| 影音与资源 | [media/](media/) | 18 |
-| 社区与社交 | [social/](social/) | 13 |
-| 效率工具 | [productivity/](productivity/) | 7 |
-| 学习 | [learning/](learning/) | 1 |
-| 网络工具 | [network/](network/) | 13 |
-| 设备与自托管 | [self-hosted/](self-hosted/) | 8 |
-| 云与域名 | [cloud/](cloud/) | 7 |
-| 成人网站 | [adult/](adult/) | 7 |
+| 用途 | 目录 |
+|---|---|
+| AI | [ai/](ai/) |
+| 媒体播放器 | [media-players/](media-players/) |
+| 游戏 | [gaming/](gaming/) |
+| 银行、券商与金融机构 | [finance/](finance/) |
+| 开发工具 | [development/](development/) |
+| 代理客户端 | [proxy-clients/](proxy-clients/) |
+| 线路与专线 | [routes/](routes/) |
+| 国家与地区 | [regions/](regions/) |
+| 影音与资源 | [media/](media/) |
+| 社区与社交 | [social/](social/) |
+| 效率工具 | [productivity/](productivity/) |
+| 学习 | [learning/](learning/) |
+| 网络工具 | [network/](network/) |
+| 设备与自托管 | [self-hosted/](self-hosted/) |
+| 云与域名 | [cloud/](cloud/) |
+| 成人网站 | [adult/](adult/) |
 
 文件路径为 `icons/<分类>/<名称>.png`，名称使用小写英文、数字和短横线。同一图标只归入一个主要用途，不按母公司嵌套，不制作多尺寸或明暗变体。
 
@@ -47,7 +47,7 @@
 
 ## 新增、替换与检查
 
-新增或替换时核对品牌、图片标准及逐项来源，同步更新 [SOURCES.md](SOURCES.md)、本页分类数量和相应许可文件。展示名在 `catalog.json` 对应图片的 `title` 中维护，金融图标沿用上面的品牌命名约定。
+新增或替换时核对品牌、图片标准及逐项来源，同步更新 [SOURCES.md](SOURCES.md)、相应许可文件；当前数量由网页目录自动统计。展示名在 `catalog.json` 对应图片的 `title` 中维护，金融图标沿用上面的品牌命名约定。
 
 新分类会自动追加到已有分类之后；需要调整默认顺序或中文名称时，更新 `app/site.js` 的 `iconCategoryLabels` 和本页分类说明。
 

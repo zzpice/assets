@@ -27,6 +27,7 @@ function gallery(fetchResponse = async()=>new Response('{"version":1,"assets":[]
   });
   if (withTabs) vm.runInContext(fs.readFileSync(require("node:path").join(__dirname,"../app/actresses.js"),"utf8"),context);
   vm.runInContext(fs.readFileSync(require("node:path").join(__dirname,"../app/catalog.js"),"utf8"),context);
+  vm.runInContext(fs.readFileSync(require("node:path").join(__dirname,"../app/github.js"),"utf8"),context);
   vm.runInContext(source,context);
   return {context,nodes,read:expression=>vm.runInContext(expression,context)};
 }

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "wallpapers": [
+    {
+      "path": "wallpapers/anime/1440x3120/girl-rain.png",
+      "title": "雨夜少女",
+      "device": "phone",
+      "width": 1440,
+      "height": 3120,
+      "sha": "2abf110efeb100ac9f7d5c251d28b3520c8b4cc4",
+      "thumbnail": "app/previews/girl-rain-b84ffaff8d.webp",
+      "background": "app/previews/girl-rain-background-4b5b3352ab.webp"
+    },
+    {
+      "path": "wallpapers/anime/1440x3120/girl-wink-shh.png",
+      "title": "眨眼少女 · 嘘",
+      "device": "phone",
+      "width": 1440,
+      "height": 3120,
+      "sha": "6cd7c9787e9a51c9a334be98fa3fd497f701052d",
+      "thumbnail": "app/previews/girl-wink-shh-cc06503cca.webp",
+      "background": "app/previews/girl-wink-shh-background-d94117463d.webp"
+    },
+    {
+      "path": "wallpapers/anime/7500x5000/shinchan-snowy-lakeside.jpg",
+      "title": "小新与小白 · 雪夜湖畔",
+      "device": "desktop",
+      "width": 7500,
+      "height": 5000,
+      "sha": "2a2b1a33373d25f9663011e431f2e54f47b78d06",
+      "thumbnail": "app/previews/shinchan-snowy-lakeside-440766f1ad.webp",
+      "background": "app/previews/shinchan-snowy-lakeside-background-b28b4bfe15.webp"
+    },
+    {
+      "path": "wallpapers/illustration/6664x3748/starry-study-room.jpg",
+      "title": "星空书房",
+      "device": "desktop",
+      "width": 6664,
+      "height": 3748,
+      "sha": "f31a4c3e5baa94778feecca441aa531d7bd73401",
+      "thumbnail": "app/previews/starry-study-room-229a9af775.webp",
+      "background": "app/previews/starry-study-room-background-ea88f9e779.webp"
+    },
+    {
+      "path": "wallpapers/landscape/8000x4501/mount-fuji-convenience-store.jpg",
+      "title": "富士山下的便利店",
+      "device": "desktop",
+      "width": 8000,
+      "height": 4501,
+      "sha": "09f9663f010c2fd777cb1127b6d1fb70528d4f60",
+      "thumbnail": "app/previews/mount-fuji-convenience-store-535f864e3b.webp",
+      "background": "app/previews/mount-fuji-convenience-store-background-80927be7f0.webp"
+    }
+  ]
+}

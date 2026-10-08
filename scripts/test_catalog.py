@@ -78,10 +78,10 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(original.n_frames, 2)
         update(self.root, check=True)
 
-    def test_replacement_keeps_title_and_removes_stale_note(self):
+    def test_replacement_preserves_manual_metadata_and_removes_stale_previews(self):
         update(self.root)
         catalog = self.catalog()
-        catalog["assets"][0].update(title="中文标题", note="旧的处理说明")
+        catalog["assets"][0].update(title="中文标题", note="已核对的说明", source="维护者提供", license="待核实")
         (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
         old_preview = catalog["assets"][0]["thumbnail"]
         Image.new("RGB", (120, 260), "red").save(self.image)
@@ -90,7 +90,9 @@ class CatalogTests(unittest.TestCase):
         update(self.root)
         item = self.catalog()["assets"][0]
         self.assertEqual(item["title"], "中文标题")
-        self.assertNotIn("note", item)
+        self.assertEqual(item["note"], "已核对的说明")
+        self.assertEqual(item["source"], "维护者提供")
+        self.assertEqual(item["license"], "待核实")
         self.assertNotEqual(item["thumbnail"], old_preview)
         self.assertFalse((self.root / old_preview).exists())
 
@@ -131,7 +133,8 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn("thumbnail", item)
         self.assertNotIn("device", item)
         self.assertEqual(icon.read_bytes(), before)
-        self.assertEqual(len(list((self.root / "app/previews").glob("*.webp"))), 1)
+        referenced = {item[key] for item in self.catalog()["assets"] for key in ("thumbnail", "background") if item.get(key)}
+        self.assertEqual({path.relative_to(self.root).as_posix() for path in (self.root / "app/previews").glob("*.webp")}, referenced)
         update(self.root, check=True)
 
     def test_icons_reject_wrong_dimensions_or_color_mode(self):
