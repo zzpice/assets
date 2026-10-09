@@ -96,6 +96,57 @@ class CatalogTests(unittest.TestCase):
         self.assertNotEqual(item["thumbnail"], old_preview)
         self.assertFalse((self.root / old_preview).exists())
 
+    def test_unambiguous_move_preserves_all_manual_metadata(self):
+        update(self.root)
+        catalog = self.catalog()
+        catalog["assets"][0].update(title="人工标题", note="人工备注", source="已确认来源", license="许可记录", device="tablet", credit={"author": "作者"})
+        (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        target = self.root / "wallpapers/landscape/120x260/renamed.png"
+        target.parent.mkdir(parents=True)
+        self.image.rename(target)
+        update(self.root)
+        item = self.catalog()["assets"][0]
+        for field in ("title", "note", "source", "license", "device", "credit"):
+            self.assertEqual(item[field], catalog["assets"][0][field])
+        self.assertEqual(item["path"], target.relative_to(self.root).as_posix())
+        update(self.root, check=True)
+
+    def test_ambiguous_moves_stop_without_overwriting_metadata(self):
+        duplicate = self.image.with_name("duplicate.png")
+        duplicate.write_bytes(self.image.read_bytes())
+        update(self.root)
+        before = (self.root / "catalog.json").read_bytes()
+        self.image.rename(self.image.with_name("renamed.png"))
+        duplicate.unlink()
+        with self.assertRaisesRegex(ValueError, "匹配不唯一"):
+            update(self.root)
+        self.assertEqual((self.root / "catalog.json").read_bytes(), before)
+
+    def test_preview_without_source_hash_is_never_trusted(self):
+        update(self.root)
+        catalog = self.catalog()
+        old_preview = catalog["assets"][0]["thumbnail"]
+        del catalog["assets"][0]["sha"]
+        (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        Image.new("RGB", (120, 260), "red").save(self.image)
+        update(self.root)
+        self.assertNotEqual(self.catalog()["assets"][0]["thumbnail"], old_preview)
+        self.assertFalse((self.root / old_preview).exists())
+
+    def test_other_image_replacement_preserves_sources_and_notes(self):
+        self.image.unlink()
+        image = self.root / "other/example.png"
+        image.parent.mkdir()
+        Image.new("RGB", (24, 24), "blue").save(image)
+        update(self.root)
+        catalog = self.catalog()
+        catalog["assets"][0].update(title="人工标题", note="处理记录", source="来源", license="许可")
+        (self.root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        Image.new("RGB", (24, 24), "red").save(image)
+        update(self.root)
+        for field in ("title", "note", "source", "license"):
+            self.assertEqual(self.catalog()["assets"][0][field], catalog["assets"][0][field])
+
     def test_deleted_images_remove_metadata_and_previews(self):
         update(self.root)
         self.image.unlink()

@@ -179,7 +179,30 @@ def build_catalog(root):
     _, game_index = game_indexes(game_series, games)
     actress_directory, people = directory(root)
     assets, previews = [], {}
-    for relative in source_paths(root):
+    paths = source_paths(root)
+    present = {path.as_posix() for path in paths}
+    ordinary = {"wallpaper", "avatar", "icon", "other"}
+    removed = {}
+    for path, item in metadata.items():
+        if path not in present and item.get("kind") in ordinary and item.get("sha"):
+            removed.setdefault((item["kind"], item["sha"]), []).append(item)
+    # Recover only unambiguous, byte-identical moves. Special registries retain
+    # their own identity rules; ambiguous moves require an explicit catalog edit.
+    relocated = {}
+    for relative in paths:
+        path = relative.as_posix()
+        if path in metadata:
+            continue
+        kind = {"wallpapers": "wallpaper", "avatars": "avatar", "icons": "icon"}.get(relative.parts[0], "other")
+        if relative.parts[0] in {"bank-cards", "game-covers", "actresses"}:
+            continue
+        key = (kind, git_blob_sha((root / relative).read_bytes()))
+        candidates = removed.get(key, [])
+        if candidates:
+            if len(candidates) != 1 or key in relocated.values():
+                raise ValueError(f"{path}: 改名匹配不唯一，请先在 catalog.json 明确更新图片路径，保留人工资料")
+            relocated[path] = key
+    for relative in paths:
         path = relative.as_posix()
         file = root / relative
         if file.is_symlink():
@@ -188,9 +211,9 @@ def build_catalog(root):
             raise ValueError(f"{path}: 路径请使用小写英文、数字和短横线")
         data = file.read_bytes()
         sha = git_blob_sha(data)
-        old = metadata.get(path, {})
+        old = metadata.get(path, removed[relocated[path]][0] if path in relocated else {})
         card_info = {}
-        same_source = old.get("sha") in {None, sha}
+        same_source = old.get("sha") == sha
         image = None
         image_format = None
         if relative.suffix == ".svg":
@@ -229,7 +252,7 @@ def build_catalog(root):
             kind = "other"
             category = None
         item = {"path": path, "title": old.get("title") or relative.stem.replace("-", " "), "kind": kind}
-        if kind in {"wallpaper", "avatar", "icon"}:
+        if kind in ordinary:
             # catalog remains the only editable metadata store, including on replacement.
             generated = {"path", "title", "kind", "category", "width", "height", "size", "sha", "thumbnail", "background", "device", "note"}
             item.update({key: value for key, value in old.items() if key not in generated})
@@ -246,7 +269,7 @@ def build_catalog(root):
         elif kind == "wallpaper":
             item["device"] = infer_device(width, height)
         item.update(width=width, height=height)
-        if kind not in {"game-cover", "actress"} and (same_source or kind in {"wallpaper", "avatar", "icon"}) and old.get("note"):
+        if kind not in {"game-cover", "actress"} and (same_source or kind in ordinary) and old.get("note"):
             item["note"] = old["note"]
         if image is not None and kind != "icon":
             if kind == "wallpaper":

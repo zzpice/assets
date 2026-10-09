@@ -45,7 +45,7 @@ test("bad display metadata falls back to safe strings and path-derived classific
 });
 
 test("leaving the person gallery adds one history entry and Back restores its view",()=>{
-  const catalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
+  const catalog=require("./fixtures/catalog.cjs")();
   for (const nextKind of ["wallpaper","avatar","icon","bank-card","game-cover"]) {
     const {context,read,nodes}=gallery(undefined,true);
     context.testCatalog=catalog;
@@ -300,10 +300,10 @@ test("cover backgrounds wait for lazy images and follow the successfully loaded 
 
 test("licensed person photos display author, license and the full source download",()=>{
   const {context,read,nodes}=gallery(undefined,true);
-  context.testCatalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
+  context.testCatalog=require("./fixtures/catalog.cjs")();
   read('actressGallery.configure(testCatalog.actresses,testCatalog.assets,()=>{}); actressGallery.syncPerson("p0029")');
   const contents=descend(nodes.get("person-content"));
-  assert.ok(contents.some(node=>node.textContent?.includes("署名：三立娛樂星聞")));
+  assert.ok(contents.some(node=>node.textContent?.includes("署名：样本作者")));
   const license=contents.find(node=>node.textContent==="图片许可：CC BY 3.0 ↗");
   assert.equal(license.href,"https://creativecommons.org/licenses/by/3.0/");
   assert.equal(contents.find(node=>node.textContent==="下载头像").href,base+"actresses/portraits/p0029.png");
@@ -391,7 +391,7 @@ test("cover navigation starts at the top while Back and modified links retain br
 
 function populatedGallery(storage) {
   const state=gallery(undefined,true,storage);
-  state.context.testCatalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
+  state.context.testCatalog=require("./fixtures/catalog.cjs")();
   state.read('cardBanks=testCatalog.cardBanks; gameSeries=testCatalog.gameSeries; games=testCatalog.games; actressData=testCatalog.actresses; actressGallery.configure(actressData,testCatalog.assets,navigatePersonView); assets=testCatalog.assets.map(makeAsset)');
   state.context.refreshControls();
   return state;
@@ -508,7 +508,7 @@ test("sorting disappears when current card filters leave no within-bank size dif
 
 test("search combines words across existing fields and tolerates full-width text and filename separators",()=>{
   const {context,read,nodes}=populatedGallery();
-  for (const [resource,query,count] of [["wallpaper","手机 动漫",2],["wallpaper","mount fuji",1],["icon","ＡＩ Claude",1],["bank-card","DBS Singapore",1],["game-cover","逆转 裁判",11]]) {
+  for (const [resource,query,count] of [["wallpaper","手机 动漫",2],["wallpaper","mount fuji",1],["icon","ＡＩ Claude",1],["bank-card","DBS Singapore",1],["game-cover","逆转 裁判",3]]) {
     read('kind="'+resource+'"'); context.clearFilters();
     nodes.get("search").value=query; context.renderGallery();
     assert.equal(read("visibleAssets.length"),count,query);
@@ -662,7 +662,7 @@ test("person avatar downloads use the same offline guard as other originals",()=
 });
 
 test("refreshing an unchanged cached directory retains an open preview and its list nodes",async()=>{
-  const catalog=JSON.parse(fs.readFileSync(require("node:path").join(__dirname,"../catalog.json"),"utf8"));
+  const catalog=require("./fixtures/catalog.cjs")();
   const {context,nodes,read}=gallery(async()=>new Response(JSON.stringify(catalog)),true);
   context.history.replaceState(null,"",base+"#covers");
   await context.load();

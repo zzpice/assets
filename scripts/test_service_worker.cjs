@@ -15,6 +15,9 @@ const previewCache = "zzpice-assets-previews-v1";
 const iconCache = "zzpice-assets-icons-v1";
 const manifest = JSON.parse(source.split("const SHELL_HASHES = ")[1].split(";")[0]);
 const catalog = JSON.parse(fs.readFileSync(path.join(root,"catalog.json"),"utf8"));
+const sampleCatalog = require('./fixtures/catalog.cjs')();
+const sampleWallpaper = {...sampleCatalog.assets.find(file=>file.kind==='wallpaper'), thumbnail:'app/previews/sample-0123456789.webp'};
+const samplePortrait = sampleCatalog.assets.find(file=>file.kind==='actress');
 const blobSha = data => createHash("sha1").update("blob " + Buffer.byteLength(data) + "\0").update(data).digest("hex");
 
 function worker(fetchResponse = async request => new Response(fs.readFileSync(path.join(root,new URL(request.url).pathname.slice("/assets/".length)))), entries = {}, timers = {setTimeout,clearTimeout}) {
@@ -86,16 +89,17 @@ test("installation caches all verified mandatory resources and prioritizes wallp
   const priority={wallpaper:0,avatar:1,"bank-card":2,other:3};
   const selected=catalog.assets.filter(file=>file.kind!=="actress"&&file.thumbnail).sort((a,b)=>(priority[a.kind]??3)-(priority[b.kind]??3)).slice(0,24);
   for(const file of selected) assert.ok(state.stores.get(previewCache).has(base+file.thumbnail),file.path);
-  assert.equal(state.stores.get(previewCache).size,new Set(selected.map(file=>file.thumbnail)).size);
+  assert.equal((state.stores.get(previewCache)?.size || 0),new Set(selected.map(file=>file.thumbnail)).size);
 });
 
 test("installation never prefetches personal portraits even when public previews are sparse",async()=>{
-  const portrait=catalog.assets.find(file=>file.kind==="actress");
-  const wallpaper=catalog.assets.find(file=>file.kind==="wallpaper");
+  const portrait=samplePortrait;
+  const wallpaper=sampleWallpaper;
   for (const files of [[portrait,wallpaper],[portrait]]) {
     const requested=[];
     const state=worker(async request=>{
       requested.push(request.url);
+      if(request.url.includes("/previews/")) return new Response("fixture preview");
       return new Response(fs.readFileSync(path.join(root,new URL(request.url).pathname.slice("/assets/".length))));
     });
     state.context.cachedCatalog=async()=>new Response(JSON.stringify({assets:files}));
@@ -250,12 +254,12 @@ test("icon storage is capped at 64 without removing the shell",async()=>{
 });
 
 test("activation preserves current previews and icons while removing obsolete versions",async()=>{
-  const file=catalog.assets.find(file=>file.kind==="wallpaper");
-  const icon=catalog.assets.find(file=>file.kind==="icon");
+  const file=sampleWallpaper;
+  const icon=sampleCatalog.assets.find(file=>file.kind==="icon");
   const iconUrl=base+icon.path+"?v="+icon.sha;
   const staleIcon=base+icon.path+"?v="+"0".repeat(40);
   const state=worker(undefined,{
-    [shellCache]:[[base+"catalog.json",new Response(JSON.stringify(catalog))]],
+    [shellCache]:[[base+"catalog.json",new Response(JSON.stringify({assets:[file,icon]}))]],
     "zzpice-assets-old":[[base+"index.html",new Response("old shell")],[base+file.thumbnail,new Response("visited preview")]],
     [previewCache]:[[base+"app/previews/deleted.webp",new Response("stale")]],
     [iconCache]:[[iconUrl,new Response("current icon")],[staleIcon,new Response("stale")]],

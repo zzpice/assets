@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   const api = window.AssetGitHub;
-  let dialog, current, upload, publisher, prepared, busy = false, dirty = false, previewURL;
+  let dialog, current, upload, publisher, prepared, busy = false, dirty = false, previewURL, uploadError = "", deviceTouched = false;
   const labels = {wallpaper: "壁纸", avatar: "头像", icon: "图标"};
   const $ = selector => dialog.querySelector(selector);
   const element = (tag, text) => { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; return node; };
@@ -38,6 +38,7 @@
     dialog.addEventListener("close", () => { dispose(); if (previewURL) URL.revokeObjectURL(previewURL); previewURL = null; upload = current = null; dirty = false; });
     dialog.addEventListener("input", event => {
       if (event.target.name === "token") return;
+      if (event.target.name === "device") deviceTouched = true;
       dirty = true; $("#manage-error").textContent = ""; updatePath();
     });
     $("[name=kind]").onchange = () => { categories(); updatePath(); };
@@ -112,10 +113,10 @@
       $("#manage-tech").textContent = `${upload.width} × ${upload.height} · ${extension.toUpperCase()} · ${(file.size / 1048576).toFixed(2)} MB`;
       const form = $("#manage-form").elements;
       if (!form.filename.value) form.filename.value = file.name.replace(/\.[^.]+$/, "").toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "");
-      form.device.value = window.AssetCatalog.inferDevice(upload.width, upload.height);
+      if (!current.original && !deviceTouched) form.device.value = window.AssetCatalog.inferDevice(upload.width, upload.height);
       form.source.required = form.license.required = true;
-      dirty = true; $("#manage-error").textContent = ""; updatePath();
-    } catch (error) { $("#manage-error").textContent = error.message; $("[name=image]").value = ""; }
+      uploadError = ""; dirty = true; $("#manage-error").textContent = ""; updatePath();
+    } catch (error) { uploadError = error.message; $("#manage-error").textContent = uploadError; $("[name=image]").value = ""; }
     finally { busy = false; $("#manage-prepare").disabled = false; }
   }
   function validateIcon() {
@@ -137,6 +138,7 @@
     try {
       if (!navigator.onLine) throw Error("上传与编辑保存需要联网。");
       const remove = $("[name=remove]").checked, next = remove ? null : target();
+      if (!remove && uploadError) throw Error(uploadError + " 请重新选择有效图片后再保存。");
       if (!remove && !next) throw Error("请先选择图片。");
       if (!remove) validateIcon();
       if (current.original && next && next.kind !== current.original.kind && !upload && next.kind === "icon") throw Error("转为图标时请重新选择符合规范的 PNG 文件。");
@@ -188,7 +190,7 @@
   window.AssetManager = {
     open(original, context) {
       if (original && !api.editable(original)) return;
-      setup(); dispose(); current = {original: original ? structuredClone(original) : null, context}; upload = null; dirty = false;
+      setup(); dispose(); current = {original: original ? structuredClone(original) : null, context}; upload = null; dirty = false; uploadError = ""; deviceTouched = false;
       $("#manage-form").reset(); $("#manage-fields").disabled = false; $("#manage-save").disabled = false;
       $("#manage-title").textContent = original ? "编辑图片" : "上传图片";
       $("[name=kind]").value = original?.kind || (["wallpaper", "avatar", "icon"].includes(context.kind) ? context.kind : "wallpaper");

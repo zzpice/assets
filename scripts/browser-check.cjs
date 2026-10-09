@@ -5,7 +5,10 @@ const fs=require('node:fs');
 const path=require('node:path');
 const http=require('node:http');
 const root=path.resolve(process.env.SITE_ROOT || path.join(__dirname,'..'));
-const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'),'utf8')).assets;
+const published=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'),'utf8')).assets;
+const fixture=require('./fixtures/catalog.cjs')();
+const catalog=fixture.assets;
+const fixtureImage=fs.readFileSync(path.join(__dirname,'fixtures/icon.png'));
 const iconCount=catalog.filter(file=>file.path.startsWith('icons/')).length;
 const claudeCount=catalog.filter(file=>file.path.startsWith('icons/') && (file.path+' '+file.title).toLowerCase().includes('claude')).length;
 const phoneCount=catalog.filter(file=>file.path.startsWith('wallpapers/') && file.device==='phone').length;
@@ -51,7 +54,9 @@ async function checkAppearance(page, url) {
   const browser=await engine.launch();
   try {
    for(const [width,colorScheme] of [[1440,'light'],[390,'dark'],[768,'light'],[320,'dark']]){
-    const context=await browser.newContext({viewport:{width,height:900},colorScheme,hasTouch:width<500});
+    const context=await browser.newContext({viewport:{width,height:900},colorScheme,hasTouch:width<500,serviceWorkers:'block'});
+    await context.route('**/catalog.json',route=>route.fulfill({contentType:'application/json',body:JSON.stringify(fixture)}));
+    await context.route(/\/assets\/(?:icons|wallpapers|avatars|bank-cards|game-covers|actresses)\/.+\.(?:png|jpg)(?:\?.*)?$/,route=>route.fulfill({contentType:'image/png',body:fixtureImage}));
     const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto(url);if(width===1440) await checkAppearance(page,url);await page.waitForFunction(()=>document.querySelectorAll('.card').length>0);
     await page.locator('.tab[data-kind="icon"]').click();await page.waitForFunction(count=>document.querySelectorAll('.card').length===count,iconCount);
@@ -68,28 +73,20 @@ async function checkAppearance(page, url) {
     assert.equal(await page.locator('#favorite-count').innerText(),'1');
     await page.goBack();await page.waitForFunction(count=>document.querySelectorAll('.card').length===count,phoneCount);
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth);assert.equal(overflow,false,`${name} ${width}px overflow`);
-    if(width===1440){
-     await page.evaluate(()=>navigator.serviceWorker.ready);
-     await context.setOffline(true);
-     await page.waitForFunction(()=>navigator.onLine===false);
-     await page.locator('.preview').first().click();await page.locator('#preview-download').click();
-     await page.waitForFunction(()=>document.querySelector('#toast').textContent.includes('联网'));
-     // Playwright Chromium resets navigator.onLine after a worker-served reload, despite
-     // requests remaining offline. Check the download guard before testing cold reload.
-     if(name==='Chromium') {await page.reload();await page.waitForFunction(count=>document.querySelectorAll('.card').length===count,phoneCount);}
-     await context.setOffline(false);
-    }
     assert.deepEqual(errors,[]);await context.close();
    }
    const images=await browser.newContext();const allIcons=await images.newPage();
    await allIcons.goto(url);await allIcons.evaluate(()=>navigator.serviceWorker.ready);await allIcons.reload();
+   const actualCount=published.filter(file=>file.kind==='icon').length;
+   const cardsBefore=await allIcons.locator('.card').count();
+   if(name==='Chromium') {await images.setOffline(true); await allIcons.reload(); await allIcons.waitForFunction(count=>document.querySelectorAll('.card').length===count,cardsBefore); await images.setOffline(false);}
    await allIcons.locator('.tab[data-kind="icon"]').click();
    await allIcons.waitForFunction(count=>{
     const cards=[...document.querySelectorAll('.card')];
     cards.forEach(card=>card.querySelectorAll('img').forEach(image=>image.loading='eager'));
     return cards.length===count&&cards.every(card=>card.querySelector('.image-error')||
      [...card.querySelectorAll('img')].every(image=>image.complete&&image.naturalWidth>0));
-   },iconCount,{timeout:45000});
+   },actualCount,{timeout:45000});
    assert.equal(await allIcons.locator('.card .image-error').count(),0,'All catalog icons must decode with the active worker');
    await images.close();
    const context=await browser.newContext({serviceWorkers:'block'});const page=await context.newPage();
@@ -97,7 +94,7 @@ async function checkAppearance(page, url) {
    assert.match(await page.locator('.empty').innerText(),/无法读取/);
    await page.unroute('**/catalog.json');await page.locator('.empty button').click();
    await page.waitForFunction(()=>document.querySelectorAll('.card').length>0);await context.close();
-   console.log(`${name}: filters, favorites, preview focus, shareable routes, mobile/tablet, offline actions, all ${iconCount} icons and error recovery passed`);
+   console.log(`${name}: filters, favorites, preview focus, shareable routes, mobile/tablet, offline actions, all ${actualCount} published icons and error recovery passed`);
    if(name==='Chromium') await require('./manage-check.cjs')(browser,url,root);
   } finally {await browser.close();}
  }

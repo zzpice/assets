@@ -2,7 +2,7 @@ const fs=require('node:fs'), path=require('node:path'), assert=require('node:ass
 module.exports=async function checkManager(browser,url,root){
  const original={path:'wallpapers/anime/1920x1080/example.png',kind:'wallpaper',category:'anime',title:'受控壁纸',width:1920,height:1080,sha:'b'.repeat(40),device:'desktop',note:'保留说明',source:'维护者提供',license:'待核实'};
  const catalog={version:1,assets:[original]}, source='# 来源记录\n\n[图片](anime/1920x1080/example.png)\n';
- const fixtureIcon=fs.readFileSync(path.join(root,'icons/ai/claude.png'));
+ const fixtureIcon=fs.readFileSync(path.join(__dirname,'fixtures/icon.png'));
  for(const width of [1440,390]){
   const context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'}),page=await context.newPage(),writes=[],errors=[];let head='a'.repeat(40);
   page.on('pageerror',error=>errors.push(error.message));page.on('dialog',dialog=>dialog.accept());
@@ -37,6 +37,15 @@ module.exports=async function checkManager(browser,url,root){
    const bytes=Uint8Array.from(atob(base64),c=>c.charCodeAt(0)),transfer=new DataTransfer();transfer.items.add(new File([bytes],'browser-icon.png',{type:'image/png'}));node.dispatchEvent(new DragEvent('drop',{dataTransfer:transfer,bubbles:true,cancelable:true}));
   },fixtureIcon.toString('base64'));
   await page.waitForFunction(()=>document.querySelector('#manage-tech').textContent.includes('512 × 512'));
+  await page.locator('#manage-dialog [name=image]').setInputFiles({name:'broken.png',mimeType:'image/png',buffer:Buffer.from('invalid')});
+  await page.waitForFunction(()=>document.querySelector('#manage-error').textContent.includes('格式不一致'));
+  await page.locator('#manage-dialog [name=title]').fill('修改标题不能掩盖失败的图片选择');
+  await page.locator('#manage-dialog [name=token]').fill('github_pat_browser_test');
+  await page.locator('#manage-prepare').click();
+  await page.waitForFunction(()=>document.querySelector('#manage-error').textContent.includes('重新选择'));
+  assert.equal(writes.length,0,'invalid latest selection cannot submit the previous image');
+  await page.locator('#manage-dialog [name=image]').setInputFiles({name:'browser-icon.png',mimeType:'image/png',buffer:fixtureIcon});
+  await page.waitForFunction(()=>document.querySelector('#manage-error').textContent==='');
   await page.locator('#manage-dialog [name=token]').fill('github_pat_browser_test');
   await page.locator('#manage-prepare').click();await page.locator('#manage-confirm:visible').waitFor();
   assert.equal(await page.locator('#manage-dialog [name=token]').inputValue(),'');
@@ -53,7 +62,11 @@ module.exports=async function checkManager(browser,url,root){
   assert.match(await page.locator('#manage-warning').innerText(),/外链/);
   await page.locator('#manage-dialog [name=token]').fill('github_pat_browser_test');await page.locator('#manage-prepare').click();await page.locator('#manage-confirm:visible').waitFor();
   assert.match(await page.locator('#manage-summary').innerText(),/wallpapers\/landscape\/1920x1080\/renamed.png/);
-  await page.locator('#manage-back').click();await page.locator('#manage-dialog [name=remove]').check();
+  await page.locator('#manage-back').click();
+  await page.locator('#manage-dialog [name=image]').setInputFiles({name:'replacement.png',mimeType:'image/png',buffer:fixtureIcon});
+  await page.waitForFunction(()=>document.querySelector('#manage-tech').textContent.includes('512 × 512'));
+  assert.equal(await page.locator('#manage-dialog [name=device]').inputValue(),original.device,'replacement retains the manually confirmed device');
+  await page.locator('#manage-dialog [name=remove]').check();
   await page.locator('#manage-dialog [name=token]').fill('github_pat_browser_test');await page.locator('#manage-prepare').click();await page.locator('#manage-confirm:visible').waitFor();
   assert.ok((await page.locator('#manage-summary').innerText()).includes('删除 '+original.path));
   await page.locator('#manage-close').click();assert.deepEqual(errors,[]);await context.close();

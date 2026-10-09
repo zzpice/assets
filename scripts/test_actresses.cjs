@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
 const root = path.join(__dirname,"..");
-const catalog = JSON.parse(fs.readFileSync(path.join(root,"catalog.json"),"utf8"));
+const catalog = require("./fixtures/catalog.cjs")();
 
 function gallery() {
   const context = vm.createContext({window:{},document:{baseURI:"https://example.test/assets/"},URL,URLSearchParams});
@@ -15,7 +15,7 @@ function gallery() {
   return module;
 }
 
-test("three complete official annual views reference one shared person database",()=>{
+test("controlled annual views reference one shared person database",()=>{
   const module = gallery();
   for(const year of [2023,2024,2025]) {
     module.route(new URLSearchParams({actresses:"annual",year}));
