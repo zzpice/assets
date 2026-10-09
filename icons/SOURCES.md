@@ -224,3 +224,9 @@ Dashboard Icons 保留 [Apache-2.0](licenses/dashboard-icons-apache-2.0.txt)，s
 | 禁忌书屋 | [jinji-books.png](adult/jinji-books.png) | 用户原始归档，详见来源记录 |
 | kikkua · 知识卡片 | [kikkua.png](productivity/kikkua.png) | [kikkua · 知识卡片 原站素材](https://kikkua.online/) |
 | MissAV | [missav.png](adult/missav.png) | 用户原始归档，详见来源记录 |
+
+## 2026-10-09 GitHub 文件加速项目图标
+
+[development/github-proxy.png](development/github-proxy.png) 为本项目使用 Codex 原创绘制的几何图标，以端正的文件轮廓和下载箭头表示文件加速工具，不采用 GitHub 官方 Logo。沿用现有项目图标的纯色底板与白色线条，无渐变或阴影。成品为 512×512 PNG / RGBA，按现有 r=115 整数圆角掩码将外侧 alpha 置零；主体从高分辨率几何图形等比采样，无第三方图形素材。原创图案未另行指定开放许可。
+
+SHA-256：`4f35bd9aa767cbcbebf2c0310632a713f191180690e6f2560efe0c9494c60179`。图标原图只在本仓库维护，zzp-home 通过固定提交与校验值生成发布资源。

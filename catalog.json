@@ -3991,6 +3991,19 @@
       "sha": "aeee7dbd877ef6de6c55a9b861316c7c99cf7e37"
     },
     {
+      "path": "icons/development/github-proxy.png",
+      "title": "GitHub 文件加速",
+      "kind": "icon",
+      "source": "为 zzpice/github-proxy 原创设计的几何图标（Codex，2026-10-09）",
+      "license": "原创图案，未另行指定开放许可",
+      "category": "development",
+      "width": 512,
+      "height": 512,
+      "note": "纯色底板、端正文件轮廓与下载箭头；512×512 RGBA，r=115 圆角外侧透明。",
+      "size": 17673,
+      "sha": "2a8dfaabc077b60bcb95e5509646f830867225e2"
+    },
+    {
       "path": "icons/development/github.png",
       "title": "GitHub",
       "kind": "icon",
